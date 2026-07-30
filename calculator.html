@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Your Fort Worth Rent Actually Buys — Rent vs. Own Calculator</title>
+<meta name="description" content="Enter your rent, see roughly what purchase price the same monthly payment supports in Fort Worth — including Texas property taxes and insurance. Free, instant, no sign-up.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Instrument+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header><div class="wrap"><div class="topbar">
+  <a class="brand" href="index.html">West FW <span>Living</span><small> · with Anastasia Weaver</small></a>
+  <nav>
+    <a href="second-chance.html">Second Chance</a>
+    <a href="rent-to-own.html">Rent-to-Own</a>
+    <a href="calculator.html">Rent Math</a>
+    <a href="areas.html">Areas</a>
+    <a href="specials.html">This Month's Specials</a>
+  </nav>
+</div></div></header>
+
+<main><div class="wrap">
+<p class="crumb"><a href="index.html">Home</a> / Rent Math</p>
+
+<section class="hero">
+  <span class="eyebrow">30 SECONDS · NO SIGN-UP · NO CREDIT PULL</span>
+  <h1>What does your rent actually buy?</h1>
+  <p class="lede">Slide to your rent. The math includes Texas property taxes (they're real out here) and insurance — not just the loan. This is an estimate to start a conversation, not a loan offer.</p>
+
+  <div class="calc-panel">
+    <label for="rent">Your monthly rent</label>
+    <div class="slider-row">
+      <input type="range" id="rent" min="1000" max="3500" step="50" value="1650" aria-describedby="price">
+      <span class="finevalue" id="rentVal">$1,650</span>
+    </div>
+    <p style="margin:14px 0 4px;font-size:.9rem;color:var(--ink-soft)">That payment supports roughly…</p>
+    <div class="calc-result" id="price" aria-live="polite">≈ $195,000</div>
+    <div class="receipt" style="max-width:100%">
+      <div class="row"><span>Principal &amp; interest</span><span id="pi">$—</span></div>
+      <div class="row"><span>Property tax (est. 2.1%/yr)</span><span id="tax">$—</span></div>
+      <div class="row"><span>Home insurance (est.)</span><span id="ins">$—</span></div>
+      <div class="row total"><span>Total monthly</span><span id="total">$—</span></div>
+      <div class="stamp" id="ratestamp">assumes 30-yr fixed near 6.75% · 5% down · verified Jul 2026</div>
+    </div>
+    <div class="btn-row">
+      <a class="btn" id="smslink" href="sms:+16822331426">Text Anastasia this number → get a real pre-qual</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Three honest footnotes</h2>
+  <p><strong>1. Ownership costs more than the payment.</strong> Maintenance is yours, and Texas property taxes rise with values. Budget for both.<br>
+  <strong>2. If you might leave DFW inside ~3 years, renting can genuinely win.</strong> I'll say so to your face.<br>
+  <strong>3. The real number comes from a lender.</strong> A soft pre-qual takes 10 minutes, doesn't touch your score, and turns "roughly" into "exactly." I'll connect you with one who's fast and won't spam you.</p>
+</section>
+
+<section>
+  <h2>"But I assumed I couldn't qualify"</h2>
+  <p>Most renters who tell me that are running on an assumption, not a denial. FHA loans run 3.5% down with flexible credit; VA loans are 0% down for eligible service members; and down-payment assistance programs exist across Tarrant and Parker County. And if your credit genuinely isn't there yet, <a href="rent-to-own.html">rent-to-own programs</a> start around a 550 score. There's a door for almost every situation — the trick is knowing which one is yours.</p>
+  <div class="btn-row">
+    <a class="btn ghost" href="sms:+16822331426?&body=Hi%20Anastasia%20—%20my%20rent%20is%20%24___%20and%20I%20want%20to%20know%20my%20real%20number.">Find out your real number</a>
+  </div>
+</section>
+</div></main>
+
+<div class="textbar"><a href="sms:+16822331426?&body=Hi%20Anastasia!">Text Anastasia now</a></div>
+
+<footer><div class="wrap">
+  <p><strong>Anastasia Weaver, REALTOR®</strong> · Brokered by [BROKERAGE LEGAL NAME] · TX License #[LICENSE]</p>
+  <p><a href="[IABS-PDF-URL]">TREC Information About Brokerage Services</a> · <a href="https://www.trec.texas.gov/forms/consumer-protection-notice">TREC Consumer Protection Notice</a></p>
+  <p class="disclaim">Estimates only; not a loan offer, prequalification, or commitment to lend, and I am not a lender. Rates, taxes, and insurance vary by property, credit, and lender. Equal Housing Opportunity.</p>
+</div></footer>
+
+<script>
+// ---- CONFIG: update RATE monthly; ratestamp text too ----
+const RATE = 0.0675;         // 30-yr fixed, verified 2026-07-30
+const TAX_RATE = 0.021;      // effective TX property tax est.
+const INS_MONTHLY_PER_100K = 21; // insurance est. $/mo per $100K value
+const DOWN = 0.05;           // 5% down assumption
+
+const rentEl = document.getElementById('rent');
+const fmt = n => '$' + Math.round(n).toLocaleString('en-US');
+
+function update(){
+  const rent = +rentEl.value;
+  document.getElementById('rentVal').textContent = fmt(rent);
+  // Solve price where PITI ≈ rent
+  const r = RATE/12, n = 360;
+  const payFactor = r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1); // P&I per $1 loan
+  // monthly cost per $1 of price: loan share * payFactor + tax + insurance
+  const perDollar = (1-DOWN)*payFactor + TAX_RATE/12 + (INS_MONTHLY_PER_100K/100000);
+  let price = rent / perDollar;
+  price = Math.round(price/5000)*5000; // round to $5K
+  const loan = price*(1-DOWN);
+  const pi = loan*payFactor, tax = price*TAX_RATE/12, ins = price/100000*INS_MONTHLY_PER_100K;
+  document.getElementById('price').textContent = '≈ ' + fmt(price);
+  document.getElementById('pi').textContent = fmt(pi);
+  document.getElementById('tax').textContent = fmt(tax);
+  document.getElementById('ins').textContent = fmt(ins);
+  document.getElementById('total').textContent = fmt(pi+tax+ins) + ' /mo';
+  document.getElementById('smslink').href =
+    'sms:+16822331426?&body=' + encodeURIComponent('Hi Anastasia! My rent is ' + fmt(rent) + ' and your calculator says ≈ ' + fmt(price) + '. What\'s my real number?');
+}
+rentEl.addEventListener('input', update);
+update();
+</script>
+</body>
+</html>
