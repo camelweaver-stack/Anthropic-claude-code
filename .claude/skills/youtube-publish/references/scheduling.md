@@ -22,33 +22,35 @@ your browser, and your login. It doesn't need to be on 24/7 — see the "missed 
 
 ## Recommended: Windows Task Scheduler (tolerates an off-most-of-the-time PC)
 
+Everything is bundled — you edit two paths and run one installer.
+
 One-time, on the PC:
 ```bat
-cd C:\Users\camel\<path-to-skill>\scripts
+cd <path-to-skill>\scripts
 npm install & npx playwright install chromium
 node setup_auth.mjs            REM log into West FW Living once
 ```
 
-Create the scheduled task (run in an elevated PowerShell; adjust the queue path):
-```powershell
-$scripts = "C:\Users\camel\<path-to-skill>\scripts"
-$queue   = "C:\Users\camel\iCloudDrive\<...>\Video Upload Queue"
-$action  = New-ScheduledTaskAction -Execute "node.exe" `
-  -Argument "publish_queue.mjs --queue `"$queue`" --days mon,wed,fri" -WorkingDirectory $scripts
-$trigger = New-ScheduledTaskTrigger -Daily -At 9am
-$settings = New-ScheduledTaskSettingsSet -StartWhenAvailable -RunOnlyIfNetworkAvailable
-Register-ScheduledTask -TaskName "YouTube Auto-Publish" -Action $action -Trigger $trigger -Settings $settings
-```
+Then:
+1. **Edit the three values** at the top of `scheduled_run.cmd` — your `QUEUE` folder, your `SITE_REPO` checkout, and
+   `SITE_URL` (+ optional `INDEXNOW_KEY`). Those are the only machine-specific bits.
+2. **Register the task:**
+   ```powershell
+   powershell -ExecutionPolicy Bypass -File install_schedule.ps1
+   ```
 
-The key flag is **`-StartWhenAvailable`** ("run task as soon as possible after a scheduled start is missed"). If the
-PC is off at 9am, the task fires the next time you power on. Combined with `--days mon,wed,fri`, that gives a
-2–3/week cadence that survives an intermittently-on machine. `-RunOnlyIfNetworkAvailable` avoids firing offline.
+`scheduled_run.cmd` runs both halves in order: `publish_queue.mjs` (publish ready videos, capped) then
+`process_pending_embed.mjs` (embed the new IDs into the site and deploy). The installer sets
+**`-StartWhenAvailable`** ("run as soon as possible after a missed start"), so if the PC was off at 9am the task
+fires next boot — that's what makes this work without an always-on machine. Days/time are set in both
+`install_schedule.ps1` and the `DAYS` line of `scheduled_run.cmd`; keep them in sync (default Mon/Wed/Fri 9am).
 
 **First real run:** before trusting the schedule, run it once by hand with `--dry-run` and watch it, so you can
 calibrate any Studio selector that moved (see `youtube-studio-workflow.md`):
 ```bat
 node publish_queue.mjs --queue "%QUEUE%" --dry-run
 ```
+Test the whole chained task on demand with:  `Start-ScheduledTask -TaskName "West FW Living Auto-Publish"`
 
 ---
 
@@ -64,11 +66,12 @@ missed), calling the same `node publish_queue.mjs --queue ... --days mon,wed,fri
 - **Does:** scan READY_ folders oldest-first, classify Short (`#Shorts` in title.txt) vs full, enforce per-day caps
   via a `.publish-ledger.json`, publish each through `publish_video.mjs`, drop the `READY_` prefix on success, and
   append results to `publish_queue.log`.
-- **Doesn't:** the **site embed-back** (Step 4 of SKILL.md) — that needs the site repo checked out + a deploy, which
-  is environment-specific. Published IDs + their `embed-target` are written to `pending_embed.jsonl` in the queue so
-  the embed-back can be run afterward (e.g., ask Claude "process pending_embed.jsonl" in a session that has the site
-  repo). If you want the schedule to embed too, add a follow-up scheduled step that runs your site's deploy against
-  that file.
+- **Embed-back is now automated too**, via `process_pending_embed.mjs` (run second by `scheduled_run.cmd`). It drains
+  `pending_embed.jsonl`, replaces `YOUTUBE_VIDEO_ID` in each twin page (`embed-target.txt` must be set in the kit),
+  un-hides the `.video-embed` block, commits + pushes the site repo (Netlify auto-builds; override with `--deploy-cmd`),
+  and pings IndexNow if you pass `--indexnow-key`. Processed entries move to `embedded.jsonl`; anything it can't safely
+  edit (missing `embed-target.txt`, page not found) is left in `pending_embed.jsonl` and logged to `embed.log` for a
+  manual look — it never guesses which page to edit.
 
 ---
 
