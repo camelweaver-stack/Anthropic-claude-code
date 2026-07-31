@@ -1,9 +1,15 @@
-# Netlify configuration for anastasiaweaver.com
-# Static site — no build step; publish the repository root as-is.
+# Netlify configuration for westfwliving.com
+# Static site — no compile step; publish the repository root as-is.
+# The build command only pings IndexNow after each deploy (fail-safe: `|| true`
+# guarantees a ping error can never fail the deploy).
 
 [build]
   publish = "."
-  command = ""
+  command = "node scripts/ping-indexnow.js || true"
+
+[build.environment]
+  # Node 20 for a stable global fetch() in the ping script.
+  NODE_VERSION = "20"
 
 # Security + performance headers
 [[headers]]
