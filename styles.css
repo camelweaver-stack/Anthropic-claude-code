@@ -206,3 +206,17 @@ img{max-width:100%;height:auto}
 }
 .print-sheet{background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:34px;max-width:680px;margin:0 auto}
 .print-sheet .qr{width:120px;height:120px;float:right;margin:0 0 12px 18px;border:1.5px solid var(--line);border-radius:8px}
+
+/* ===== v10: mobile hero art direction ===== */
+@media(max-width:700px){
+  .hero-photo{display:block;min-height:0;padding:0 0 36px;background:var(--bg)}
+  .hero-photo .bg{position:relative;inset:auto;display:block;width:100%;height:225px;object-fit:cover;object-position:center 32%;border-bottom:1.5px solid var(--line)}
+  .hero-photo::after{display:none}
+  .hero-photo .wrap{padding-top:26px}
+  .hero-photo h1{color:var(--ink);text-shadow:none;font-size:clamp(1.9rem,8.4vw,2.4rem);max-width:none}
+  .hero-photo .lede{color:var(--ink-soft);text-shadow:none}
+  .hero-photo .eyebrow{background:#fff;border-color:var(--green)}
+  .hero-photo .btn.ghost{background:#fff;color:var(--green);border-color:var(--green);backdrop-filter:none}
+  .page-photo img{max-height:210px;object-position:center 40%}
+  figure.photo{border-radius:12px}
+}
