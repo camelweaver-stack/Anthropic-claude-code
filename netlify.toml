@@ -5,7 +5,8 @@
 
 [build]
   publish = "."
-  command = "node scripts/ping-indexnow.js || true"
+  # `timeout 30` is a hard cap so a hung ping can never stall the build; `|| true` so a ping error never fails it.
+  command = "timeout 30 node scripts/ping-indexnow.js || true"
 
 [build.environment]
   # Node 20 for a stable global fetch() in the ping script.

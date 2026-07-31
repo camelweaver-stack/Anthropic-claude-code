@@ -24,17 +24,25 @@ const ENDPOINT = 'https://api.indexnow.org/indexnow';
       console.log('[indexnow] sitemap.xml has no <loc> URLs — skipping ping');
       return;
     }
-    const res = await fetch(ENDPOINT, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json; charset=utf-8' },
-      body: JSON.stringify({
-        host: HOST,
-        key: KEY,
-        keyLocation: `https://${HOST}/${KEY}.txt`,
-        urlList: urls,
-      }),
-    });
-    console.log(`[indexnow] submitted ${urls.length} URLs -> HTTP ${res.status}`);
+    // Hard timeout so a slow/unreachable IndexNow endpoint can never hang the build.
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 10000);
+    try {
+      const res = await fetch(ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json; charset=utf-8' },
+        body: JSON.stringify({
+          host: HOST,
+          key: KEY,
+          keyLocation: `https://${HOST}/${KEY}.txt`,
+          urlList: urls,
+        }),
+        signal: controller.signal,
+      });
+      console.log(`[indexnow] submitted ${urls.length} URLs -> HTTP ${res.status}`);
+    } finally {
+      clearTimeout(timer);
+    }
   } catch (err) {
     console.log(`[indexnow] ping skipped (non-fatal): ${err && err.message}`);
   }
