@@ -128,9 +128,11 @@ After a successful publish, spot-check via the returned URL (open the watch page
 
 You do this directly (no browser). Detail in `references/embed-back.md`; the shape:
 
-1. Open the twin page — the path in `embed-target.txt` if present, else `rent-report/<month>.html` for monthly reports.
-2. Replace **every** `YOUTUBE_VIDEO_ID` placeholder with the real ID, and remove `display:none` from the
-   `.video-embed` div so the player shows.
+1. Open the twin page — the path in `embed-target.txt` if present, else `rent-report/<month>-<year>.html` (e.g.
+   `rent-report/august-2026.html`). The site is this same repo (camelweaver-stack/Anthropic-claude-code).
+2. Replace **every** `YOUTUBE_VIDEO_ID` placeholder with the real ID — there are usually **3** (the iframe `src`
+   plus `embedUrl` and `thumbnailUrl` in the JSON-LD `VideoObject` schema) — and remove `display:none` from the
+   `.video-embed` div (keep its `margin`) so the player shows.
 3. Deploy to Netlify (the repo's normal deploy path) and ping IndexNow so the update gets crawled.
 4. Verify no `YOUTUBE_VIDEO_ID` remains (`grep` should return zero).
 

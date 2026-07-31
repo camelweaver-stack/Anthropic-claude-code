@@ -13,7 +13,10 @@ lands on a live video, not a placeholder.
 
 The page to edit is:
 - Whatever path the kit's `embed-target.txt` names, if present. Use it exactly.
-- Otherwise, for monthly rent reports, the convention is `rent-report/<month>.html` in the site repo.
+- Otherwise, for monthly rent reports, the convention is `rent-report/<month>-<year>.html` (e.g.
+  `rent-report/august-2026.html`) in the site repo, which is this same repo
+  (camelweaver-stack/Anthropic-claude-code). Each page carries a `<!-- VIDEO-EMBED-SLOT -->` comment marking the
+  three `YOUTUBE_VIDEO_ID` placeholders (iframe + the JSON-LD schema's `embedUrl` and `thumbnailUrl`).
 
 If neither resolves cleanly, ask the user which page this video belongs to rather than editing the wrong file.
 

@@ -11,12 +11,14 @@ REM --- (1) Your Google Drive Video Upload Queue folder (where READY_ folders la
 REM     Drive for desktop usually mounts as a drive letter, e.g. G:\My Drive\... (check yours):
 set "QUEUE=G:\My Drive\West FW Living\Video Upload Queue"
 
-REM --- (2) Your local checkout of the West FW Living SITE repo (has rent-report\*.html):
-set "SITE_REPO=%USERPROFILE%\code\westfwliving"
+REM --- (2) Your local clone of the SITE repo = camelweaver-stack/Anthropic-claude-code
+REM     (this same repo holds the site: rent-report\*.html, tv.html, netlify.toml). Point this at
+REM     wherever you cloned it on this machine:
+set "SITE_REPO=%USERPROFILE%\code\Anthropic-claude-code"
 
-REM --- (3) Your public site URL (for IndexNow) and IndexNow key (optional; leave key blank to skip):
+REM --- (3) Site URL + IndexNow key (pre-filled from the key file in the repo root; leave key blank to skip):
 set "SITE_URL=https://westfwliving.com"
-set "INDEXNOW_KEY="
+set "INDEXNOW_KEY=f61db218770282944b56755e36b90509"
 
 REM --- Cadence: which weekday(s) may publish (keeps you to 2-3/week):
 set "DAYS=mon,wed,fri"
