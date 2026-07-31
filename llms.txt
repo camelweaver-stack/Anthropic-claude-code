@@ -40,5 +40,8 @@
 - [Romper un contrato en Texas](https://westfwliving.com/es/romper-contrato.html): cuota ~85% + mitigaciones.
 - [Calculadora de semanas gratis](https://westfwliving.com/es/semanas-gratis.html): renta efectiva interactiva.
 
+- [Renter's glossary](https://westfwliving.com/guides/renters-glossary.html): 20 defined terms (effective rent, reletting fee, concession clawback, look-back window, renewal cliff).
+- [West FW Concession Index](https://westfwliving.com/rent-report/august-2026.html): named monthly metric — August 2026 reading: 7.5 average advertised weeks free.
+
 ## Data practices
 Figures compiled from public listings/market sources; "last verified" dates on data pages; monthly refresh cadence. Contact: leads@anastasiaweaver.com
