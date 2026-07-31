@@ -159,6 +159,16 @@ review. Because the script makes publishing effortless, **you** are the throttle
 **Shorts** use the same kit structure with `#Shorts` appended to the title, and count against the "2 Shorts/day"
 side of the cap.
 
+### Unattended / scheduled publishing
+
+For "publish the queue on a schedule" without a person driving each one, use the batch runner
+`scripts/publish_queue.mjs` — it scans all `READY_` folders, enforces the caps above via a ledger, classifies
+Shorts vs full, publishes each through `publish_video.mjs`, and logs results. A scheduler (Windows Task Scheduler,
+cron, or launchd) calls it. **Full setup, and the honest limits, are in `references/scheduling.md`** — read it
+before promising a schedule, because a scheduled job only runs when a machine with the queue + a logged-in browser
+is powered on (the cloud sandbox behind the web/mobile app cannot do it). The runner leaves the site embed-back to a
+follow-up step, writing published IDs to `pending_embed.jsonl` for later processing.
+
 ---
 
 ## First-Run Calibration — Set Expectations Honestly
