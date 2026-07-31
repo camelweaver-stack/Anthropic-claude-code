@@ -1,36 +1,48 @@
 #!/usr/bin/env python3
 """
-stage_kit.py — assemble a READY_<slug>/ folder in the exact shape the youtube-publish skill consumes,
+stage_kit.py — assemble a READY_<slug>/ folder in the shape the youtube-publish skill consumes,
 then move it into the Video Upload Queue. Run after build_video.py + build_v2.py.
 
-Why this exists: youtube-publish reads SEPARATE files — title.txt, description.txt, tags.txt,
-pinned-comment.txt, and (optional) embed-target.txt + thumbnail.png. Producing one combined
-"tags-pinned-embed.txt" (an earlier convention) would silently break the handoff. This script
-validates the kit against what youtube-publish actually expects, so a bad kit is caught here, not
-at upload time.
+Kit shape (the real West FW Living convention, confirmed from the live queue):
+  title.txt              one line, exact title (append " #Shorts" for a Short)
+  description.txt        includes the https://westfwliving.com/tv.html link and a CHAPTERS block
+                         (first chapter "0:00" on its own line, >=3 chapters)
+  tags-pinned-embed.txt  combined file:
+                             <comma-separated tags>
+                             ---PINNED COMMENT---
+                             <comment to pin>
+                             ---EMBED TARGET---
+                             rent-report/<month>-<year>.html
+                             ---VIDEO FILE---
+                             <slug>.mp4 (place in this folder; thumbnail.png alongside)
+  <slug>.mp4             the rendered video
+  thumbnail.png          optional 1280x720 thumbnail
+
+Separate tags.txt / pinned-comment.txt / embed-target.txt are also accepted (youtube-publish reads
+either form) — but the combined file is the house convention, so prefer it.
 
 Usage:
-  python stage_kit.py --slug west-fw-rent-report-august-2026 [--workdir .] [--queue "<path>"] [--copy]
+  python stage_kit.py --slug rent-report-september-2026 [--workdir .] [--queue "<path>"] [--copy]
 
---queue defaults to the path recorded in queue_path.txt next to this script (see SKILL.md setup).
---copy leaves originals in place (default is move). The MP4 and thumbnail are expected in --workdir
-as <slug>.mp4 and thumbnail.png (that's where the build scripts put them).
-
-Author the four text files in --workdir before running (Claude writes these each month):
-  title.txt            one line, exact video title (append " #Shorts" for a Short)
-  description.txt       first line = https://westfwliving.com/tv.html ; then blurb ; then a CHAPTERS
-                        block whose first line is "0:00 ..." with each chapter on its own line
-  tags.txt              comma-separated tags
-  pinned-comment.txt    the comment to pin after publish
-  embed-target.txt      (optional) site page to embed into, e.g. rent-report/august.html
+--queue defaults to queue_path.txt next to this script. --copy leaves originals in place (default: move).
 """
 import argparse, os, shutil, sys, re
 
-REQUIRED_TEXT = ["title.txt", "description.txt", "tags.txt", "pinned-comment.txt"]
-OPTIONAL = ["embed-target.txt", "thumbnail.png"]
+SEP = re.compile(r"^-{2,}\s*(PINNED COMMENT|EMBED TARGET|VIDEO FILE)\s*-{2,}\s*$", re.I)
 
 def die(msg):
     print(f"ERROR: {msg}", file=sys.stderr); sys.exit(1)
+
+def parse_combined(text):
+    key = {"PINNED COMMENT": "pinned", "EMBED TARGET": "embed", "VIDEO FILE": "video"}
+    buckets = {"tags": [], "pinned": [], "embed": [], "video": []}
+    cur = "tags"
+    for line in text.splitlines():
+        m = SEP.match(line)
+        if m:
+            cur = key[m.group(1).upper()]; continue
+        buckets[cur].append(line)
+    return {k: "\n".join(v).strip() for k, v in buckets.items()}
 
 def main():
     here = os.path.dirname(os.path.abspath(__file__))
@@ -44,7 +56,6 @@ def main():
     wd = os.path.abspath(args.workdir)
     slug = args.slug
 
-    # Resolve the queue path
     queue = args.queue
     if not queue:
         qp = os.path.join(here, "queue_path.txt")
@@ -55,28 +66,51 @@ def main():
     if not os.path.isdir(queue):
         die(f"Queue folder not found: {queue}")
 
-    mp4 = os.path.join(wd, f"{slug}.mp4")
+    def wpath(name): return os.path.join(wd, name)
+    mp4 = wpath(f"{slug}.mp4")
 
-    # ---- validate everything BEFORE touching the queue ----
-    missing = [f for f in REQUIRED_TEXT if not os.path.exists(os.path.join(wd, f))]
+    # ---- validate BEFORE touching the queue ----
+    missing = []
+    for f in ("title.txt", "description.txt"):
+        if not os.path.exists(wpath(f)):
+            missing.append(f)
     if not os.path.exists(mp4):
         missing.append(f"{slug}.mp4")
+
+    has_combined = os.path.exists(wpath("tags-pinned-embed.txt"))
+    has_separate = os.path.exists(wpath("tags.txt")) and os.path.exists(wpath("pinned-comment.txt"))
+    if not (has_combined or has_separate):
+        missing.append("tags-pinned-embed.txt (or separate tags.txt + pinned-comment.txt)")
     if missing:
         die("Missing required kit file(s) in workdir: " + ", ".join(missing))
 
-    # description sanity — the two things youtube-publish specifically checks
-    desc = open(os.path.join(wd, "description.txt"), encoding="utf-8").read()
-    first_line = desc.splitlines()[0].strip() if desc.strip() else ""
+    # resolve tags/pinned/embed for validation
+    if has_combined:
+        parts = parse_combined(open(wpath("tags-pinned-embed.txt"), encoding="utf-8").read())
+        tags, pinned, embed = parts["tags"], parts["pinned"], parts["embed"]
+    else:
+        tags = open(wpath("tags.txt"), encoding="utf-8").read().strip()
+        pinned = open(wpath("pinned-comment.txt"), encoding="utf-8").read().strip()
+        embed = (open(wpath("embed-target.txt"), encoding="utf-8").read().strip()
+                 if os.path.exists(wpath("embed-target.txt")) else "")
+
+    desc = open(wpath("description.txt"), encoding="utf-8").read()
     warnings = []
-    if "westfwliving.com/tv.html" not in first_line:
-        warnings.append("description.txt line 1 should be the https://westfwliving.com/tv.html link")
+    if "westfwliving.com/tv.html" not in desc:
+        warnings.append("description.txt should include the https://westfwliving.com/tv.html link")
     chapter_lines = [l for l in desc.splitlines() if re.match(r"^\s*\d{1,2}:\d{2}\b", l)]
     if not any(l.strip().startswith("0:00") for l in chapter_lines):
-        warnings.append("CHAPTERS block must start with a '0:00' line on its own line (YouTube won't render chapters otherwise)")
+        warnings.append("CHAPTERS needs a '0:00' line on its own line (YouTube won't render chapters otherwise)")
     elif len(chapter_lines) < 3:
-        warnings.append(f"only {len(chapter_lines)} chapter line(s) found; YouTube needs >=3 to show chapters")
+        warnings.append(f"only {len(chapter_lines)} chapter line(s); YouTube needs >=3 to show chapters")
+    if not tags:
+        warnings.append("no tags found")
+    if not pinned:
+        warnings.append("no pinned comment found")
+    if not embed:
+        warnings.append("no embed target found (embed-back step will skip this video until set)")
 
-    title = open(os.path.join(wd, "title.txt"), encoding="utf-8").read().strip()
+    title = open(wpath("title.txt"), encoding="utf-8").read().strip()
     is_short = "#shorts" in title.lower()
 
     # ---- assemble READY_ folder ----
@@ -87,17 +121,15 @@ def main():
 
     op = shutil.copy2 if args.copy else shutil.move
     op(mp4, os.path.join(dest, f"{slug}.mp4"))
-    for f in REQUIRED_TEXT:
-        op(os.path.join(wd, f), os.path.join(dest, f))
-    for f in OPTIONAL:
-        src = os.path.join(wd, f)
-        if os.path.exists(src):
-            op(src, os.path.join(dest, f))
+    for f in ("title.txt", "description.txt", "tags-pinned-embed.txt",
+              "tags.txt", "pinned-comment.txt", "embed-target.txt", "thumbnail.png"):
+        if os.path.exists(wpath(f)):
+            op(wpath(f), os.path.join(dest, f))
 
     print(f"Staged {'SHORT' if is_short else 'FULL'} kit -> {dest}")
     print("  files:", ", ".join(sorted(os.listdir(dest))))
     if warnings:
-        print("\nHEADS-UP (fix before publishing, youtube-publish will flag these):")
+        print("\nHEADS-UP (fix before publishing):")
         for w in warnings:
             print("  - " + w)
     else:

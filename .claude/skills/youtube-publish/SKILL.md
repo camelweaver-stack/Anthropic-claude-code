@@ -75,14 +75,14 @@ Each kit contains:
 |------|---------------|
 | `<slug>.mp4` | The rendered video (the script uploads this) |
 | `title.txt` | Exact title — used verbatim |
-| `description.txt` | Full description; first line has the `westfwliving.com/tv.html` link; includes a CHAPTERS block |
-| `tags.txt` | Comma-separated tags |
-| `pinned-comment.txt` | Comment posted and pinned after publish |
+| `description.txt` | Full description; **includes** the `westfwliving.com/tv.html` link somewhere and a CHAPTERS block |
+| `tags-pinned-embed.txt` | The house convention — one file holding tags, then `---PINNED COMMENT---`, `---EMBED TARGET---` (e.g. `rent-report/august-2026.html`), and `---VIDEO FILE---` sections |
 | `thumbnail.png` | Optional custom thumbnail, 1280×720 |
-| `embed-target.txt` | Optional — the site page to embed into (see Step 4) |
 
-The script reads these itself; you don't need to pre-parse them. But do glance at `title.txt` and `description.txt`
-so your report to the user is accurate.
+The script reads these itself via `kit.mjs`, which **accepts both** the combined `tags-pinned-embed.txt` above and
+separate `tags.txt` / `pinned-comment.txt` / `embed-target.txt` files (separate wins if present) — so kits from the
+human pipeline and from `video-render` both work. You don't need to pre-parse them; just glance at `title.txt` and
+`description.txt` so your report is accurate.
 
 ---
 

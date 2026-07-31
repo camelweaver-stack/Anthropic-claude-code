@@ -23,6 +23,7 @@ import { join, dirname, basename } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { homedir } from 'node:os';
 import { spawn } from 'node:child_process';
+import { loadKit } from './kit.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 
@@ -113,10 +114,9 @@ function publishOne(kitPath, isShort) {
   await logline(`Found ${entries.length} READY_ folder(s). Day caps remaining: full ${MAX_FULL - full}, shorts ${MAX_SHORTS - shorts}.${DRY ? ' [DRY-RUN]' : ''}`);
 
   for (const e of entries) {
-    // classify short vs full
-    let isShort = false;
-    const titlePath = join(e.path, 'title.txt');
-    if (await exists(titlePath)) isShort = /#shorts/i.test(await readFile(titlePath, 'utf8'));
+    // read the kit once (handles combined tags-pinned-embed.txt + separate files); classify short vs full
+    const kit = await loadKit(e.path);
+    const isShort = /#shorts/i.test(kit.title || '');
 
     if (isShort && shorts >= MAX_SHORTS) { await logline(`Skip (shorts cap): ${e.name}`); continue; }
     if (!isShort && full >= MAX_FULL) { await logline(`Skip (full cap): ${e.name}`); continue; }
@@ -130,9 +130,7 @@ function publishOne(kitPath, isShort) {
       ledger[day].published.push({ folder: e.name, videoId: r.videoId, url: r.url, commentPinned: r.commentPinned });
       await saveLedger(ledger);
       // record for the site embed-back step (done separately — needs the repo + deploy)
-      const embedTarget = (await exists(join(e.path, 'embed-target.txt')))
-        ? (await readFile(join(e.path, 'embed-target.txt'), 'utf8')).trim() : null;
-      await appendFile(EMBED, JSON.stringify({ videoId: r.videoId, url: r.url, embedTarget, folder: e.name, date: day }) + '\n').catch(() => {});
+      await appendFile(EMBED, JSON.stringify({ videoId: r.videoId, url: r.url, embedTarget: kit.embedTarget, folder: e.name, date: day }) + '\n').catch(() => {});
       // mark complete: drop READY_
       const done = join(QUEUE, e.name.replace(/^READY_/, ''));
       await rename(e.path, done).catch(err => logline(`  (could not rename ${e.name}: ${err.message})`));

@@ -24,6 +24,7 @@ import { chromium } from 'playwright';
 import { readFile, mkdir, access } from 'node:fs/promises';
 import { join, basename } from 'node:path';
 import { homedir } from 'node:os';
+import { loadKit } from './kit.mjs';
 
 // ------------------------------- args -------------------------------
 const args = Object.fromEntries(
@@ -74,11 +75,6 @@ const SEL = {
 function log(...m) { process.stderr.write(m.join(' ') + '\n'); }
 function fail(msg) { process.stdout.write(JSON.stringify({ ok: false, error: msg }) + '\n'); process.exit(1); }
 async function exists(p) { try { await access(p); return true; } catch { return false; } }
-async function readKit(name, required = false) {
-  const p = join(KIT, name);
-  if (!(await exists(p))) { if (required) fail(`Kit missing required file: ${name}`); return null; }
-  return (await readFile(p, 'utf8'));
-}
 async function shot(page, label) {
   try { await mkdir(ART, { recursive: true }); await page.screenshot({ path: join(ART, `${label}.png`), fullPage: false }); } catch {}
 }
@@ -95,26 +91,21 @@ async function fillContentEditable(page, selector, text, stepName) {
 
 // ------------------------------- main -------------------------------
 (async () => {
-  // Load the kit
-  const title = (await readKit('title.txt', true)).trim();
-  const description = await readKit('description.txt', true);
-  const tags = (await readKit('tags.txt')) || '';
-  const pinnedComment = (await readKit('pinned-comment.txt')) || '';
-  const slug = basename(KIT).replace(/^READY_/, '');
+  // Load the kit — tolerant of the combined tags-pinned-embed.txt AND separate files (see kit.mjs)
+  const kit = await loadKit(KIT);
+  if (!kit.title) fail('Kit missing required file: title.txt');
+  if (!kit.description) fail('Kit missing required file: description.txt');
+  if (!kit.videoPath) fail(`No .mp4 found in ${KIT}`);
+  const title = kit.title;
+  const description = kit.description;
+  const tags = kit.tags;
+  const pinnedComment = kit.pinnedComment;
+  const embedTarget = kit.embedTarget;
+  const slug = kit.slug;
+  const mp4 = kit.videoPath;
+  const thumb = kit.thumbnailPath;
 
-  // Find the video file
-  let mp4 = join(KIT, `${slug}.mp4`);
-  if (!(await exists(mp4))) {
-    // fall back to the first .mp4 in the folder
-    const { readdir } = await import('node:fs/promises');
-    const files = await readdir(KIT);
-    const found = files.find(f => f.toLowerCase().endsWith('.mp4'));
-    if (!found) fail(`No .mp4 found in ${KIT}`);
-    mp4 = join(KIT, found);
-  }
-  const thumb = (await exists(join(KIT, 'thumbnail.png'))) ? join(KIT, 'thumbnail.png') : null;
-
-  log(`[kit] "${title}"  video=${basename(mp4)}  thumb=${thumb ? 'yes' : 'no'}  visibility=${VISIBILITY}${DRY_RUN ? '  DRY-RUN' : ''}`);
+  log(`[kit] "${title}"  video=${basename(mp4)}  thumb=${thumb ? 'yes' : 'no'}  tags=${tags ? 'yes' : 'no'}  pinned=${pinnedComment ? 'yes' : 'no'}  embed=${embedTarget || 'none'}  visibility=${VISIBILITY}${DRY_RUN ? '  DRY-RUN' : ''}`);
 
   // Launch the persistent (logged-in) profile
   const ctx = await chromium.launchPersistentContext(PROFILE, {
@@ -243,7 +234,7 @@ async function fillContentEditable(page, selector, text, stepName) {
       commentPinned = await postAndPin(page, videoId, pinnedComment.trim()).catch(e => { log(`[warn] comment/pin: ${e.message}`); return false; });
     }
 
-    process.stdout.write(JSON.stringify({ ok: true, videoId, url: videoId ? `https://youtu.be/${videoId}` : url, commentPinned }) + '\n');
+    process.stdout.write(JSON.stringify({ ok: true, videoId, url: videoId ? `https://youtu.be/${videoId}` : url, commentPinned, embedTarget }) + '\n');
     await ctx.close();
   } catch (err) {
     await shot(page, 'error');

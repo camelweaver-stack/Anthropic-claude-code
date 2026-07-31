@@ -57,10 +57,8 @@ python stage_kit.py --slug $RENDER_SLUG
    | File | Contents |
    |------|----------|
    | `title.txt` | One line, exact title. Append ` #Shorts` for a Short. |
-   | `description.txt` | **Line 1 = `https://westfwliving.com/tv.html`**. Then a short blurb. Then a `CHAPTERS` block whose first line is `0:00 …`, each chapter on its own line, ≥3 chapters — timed from build_v2.py's printed durations. |
-   | `tags.txt` | Comma-separated tags. |
-   | `pinned-comment.txt` | The comment youtube-publish will post and pin. |
-   | `embed-target.txt` | *(optional)* site page to embed the video into, e.g. `rent-report/september.html`. Include it so the embed-back step knows the twin page. |
+   | `description.txt` | **Includes** the `https://westfwliving.com/tv.html` link and a `CHAPTERS` block whose first line is `0:00 …`, each chapter on its own line, ≥3 chapters — timed from build_v2.py's printed durations. |
+   | `tags-pinned-embed.txt` | The house convention — one file: comma-separated tags, then `---PINNED COMMENT---` (the comment to pin), `---EMBED TARGET---` (e.g. `rent-report/september-2026.html`), and `---VIDEO FILE---` (`<slug>.mp4`). See the August kit in the queue as the format reference. |
 
 5. **Stage it:** `python stage_kit.py --slug <slug>`. It validates (flags a missing tv.html link or a broken CHAPTERS
    block *before* upload), builds `READY_<slug>/`, and moves the MP4, thumbnail, and text files in. Drive sync
@@ -77,7 +75,8 @@ python stage_kit.py --slug $RENDER_SLUG
 
 ## Notes on the kit format (why stage_kit.py exists)
 
-youtube-publish reads **separate** `title.txt`, `description.txt`, `tags.txt`, `pinned-comment.txt`, and optional
-`embed-target.txt` + `thumbnail.png`. An earlier convention bundled tags/pinned/embed into one file — that silently
-breaks the handoff. stage_kit.py is the guardrail: it only ever writes the shape youtube-publish expects, and refuses
-to overwrite an existing READY_ folder.
+The house convention (confirmed from the live August kit in the queue) is `title.txt` + `description.txt` + a
+**combined `tags-pinned-embed.txt`** + `<slug>.mp4` + optional `thumbnail.png`. youtube-publish's `kit.mjs` reads
+that combined file (and also accepts separate `tags.txt`/`pinned-comment.txt`/`embed-target.txt` if you prefer them).
+stage_kit.py is the guardrail: it validates the kit (tv.html link present, real CHAPTERS block, tags/pinned/embed all
+resolved) before staging, and refuses to overwrite an existing READY_ folder.
