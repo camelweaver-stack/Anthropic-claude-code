@@ -1,0 +1,32 @@
+/* West FW Living — tools/quiz/deals layer. Uses the v3 field-guide tokens. */
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.chip{font-family:'IBM Plex Mono',monospace;font-size:.74rem;letter-spacing:.04em;background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:7px 14px;cursor:pointer;color:var(--ink-soft)}
+.chip:hover{border-color:var(--green);color:var(--green-dark)}
+.chip.on{background:var(--green);border-color:var(--green);color:#fff}
+.field-row{display:grid;gap:6px;margin-bottom:16px}
+.seg{display:inline-flex;border:1.5px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
+.seg button{font:inherit;font-size:.88rem;font-weight:600;padding:10px 16px;border:none;background:none;cursor:pointer;color:var(--ink-soft)}
+.seg button.on{background:var(--green);color:#fff}
+.tool-note{font-size:.85rem;color:var(--ink-soft)}
+.verdict{font-family:'Fraunces',serif;font-weight:600;font-size:1.3rem;margin:10px 0;color:var(--green-dark)}
+.verdict.warn{color:#8a5a00}
+/* quiz */
+.q-step{background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:24px;margin-bottom:16px}
+.q-opts{display:grid;gap:10px;margin-top:12px}
+@media(min-width:700px){.q-opts{grid-template-columns:1fr 1fr}}
+.q-opt{display:flex;gap:10px;align-items:flex-start;border:1.5px solid var(--line);border-radius:10px;padding:13px 15px;cursor:pointer;background:#fff;font-size:.95rem}
+.q-opt:hover{border-color:var(--green)}
+.q-opt input{width:auto;margin-top:3px;accent-color:var(--green)}
+.q-opt.on{border-color:var(--green);background:rgba(47,107,79,.06)}
+.q-progress{font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--green-dark);margin-bottom:8px}
+.match-card{border:2px solid var(--green);border-radius:16px;background:var(--card);padding:28px;margin:18px 0;box-shadow:0 20px 46px -30px rgba(24,32,25,.55)}
+.match-card .why{margin:10px 0 0;padding-left:20px}
+.match-card .why li{margin-bottom:6px;color:var(--ink-soft)}
+/* deals & charts */
+.rankbadge{font-family:'IBM Plex Mono',monospace;font-weight:700;background:var(--wheat);border-radius:6px;padding:2px 9px;font-size:.8rem}
+.chart-box{background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:20px;margin:18px 0}
+.chart-box svg{width:100%;height:auto;display:block}
+.chart-cap{font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-top:8px}
+.bar-line{fill:var(--green)}
+.tick-t{font:600 11px 'IBM Plex Mono',monospace;fill:#4C564E}
+@media print{.chips,.seg{display:none}}

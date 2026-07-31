@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="max-image-preview:large">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prorated Rent Calculator (Texas) — Actual-Days vs 30-Day Method | West FW Living</title>
+<meta name="description" content="Moving in mid-month? Calculate your prorated first month's rent both ways Texas offices compute it, see the difference, and learn which clause to check in your lease.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,600&family=Instrument+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/assets/tools.css">
+<link rel="canonical" href="https://westfwliving.com/tools/prorated-rent-calculator.html">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Prorated Rent Calculator","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://westfwliving.com/tools/prorated-rent-calculator"}</script>
+
+<script src="/assets/wfl-data.js"></script>
+</head>
+<body>
+<header><div class="wrap"><div class="topbar">
+  <a class='brand' href='/'>West FW <span>Living</span><small>the west side field guide</small></a>
+  <nav>
+    <a href='/specials'>Specials</a>
+    <a href='/deals'>Best Deals</a>
+    <a href='/tools/'>Tools</a>
+    <a href='/quiz'>Match Quiz</a>
+    <a href='/guides/'>Guides</a>
+  <a href='/es/' style='font-weight:600'>Español</a></nav>
+</div></div></header>
+
+<main><div class="wrap">
+<p class="crumb"><a href='/'>Home</a> / <a href='/tools/'>Tools</a> / Prorated Rent</p>
+
+<section class="hero hero-inner">
+  <span class="eyebrow">CHECK THE OFFICE'S MATH BEFORE YOU SIGN</span>
+  <h1>Prorated rent, computed both ways</h1>
+  <p class="lede">Move in mid-month and your first payment is a fraction of the rent — but offices calculate that fraction two different ways, and the difference is real money. Texas law doesn't dictate a method; <strong>your lease does</strong>. Run both, then check which one is in yours.</p>
+
+  <div class="calc-panel" style="max-width:640px">
+    <div class="field-row"><label for="prRent">Monthly rent</label>
+      <div class="slider-row"><input type="range" id="prRent" min="900" max="3200" step="10" value="1650"><span class="finevalue" id="prRentVal">$1,650</span></div></div>
+    <div class="field-row"><label for="prDate">Move-in date</label>
+      <input type="date" id="prDate" value="2026-08-19"></div>
+    <div class="receipt" style="max-width:100%">
+      <div class="row"><span>Days you occupy</span><span id="prDays">—</span></div>
+      <div class="row"><span>Actual-days method <span class="tool-note">(rent &divide; days in that month)</span></span><span id="prActual">$—</span></div>
+      <div class="row"><span>30-day "banker's month" method</span><span id="prBank">$—</span></div>
+      <div class="row total"><span>Difference</span><span id="prDiff">$—</span></div>
+      <div class="stamp">first partial month only — normal rent resumes on the 1st</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Three things worth knowing</h2>
+  <p><strong>1. The method lives in your lease.</strong> The TAA lease common in Texas typically prorates on a daily basis; which daily basis (actual days vs. a flat 30) varies by how the lease is filled in. If the office quotes a number, ask them to show the formula — a good office will, instantly.</p>
+  <p><strong>2. Prorated rent and free weeks stack strangely.</strong> If your special applies free weeks to month one, confirm in writing whether the proration happens <em>before</em> or <em>after</em> the concession — the order changes your move-in check. The <a href="/guides/free-rent-specials-fine-print">fine-print guide</a> has the exact question to ask.</p>
+  <p><strong>3. Month-end move-ins can beat mid-month.</strong> Many specials require move-in by month-end anyway — and a move-in on the 28th means a tiny prorated payment plus a full month to settle before rent one. Timing notes are in <a href="/guides/renters-negotiation-cheat-sheet">the negotiation cheat sheet</a>.</p>
+</section>
+
+<section>
+  <details><summary>Which method is more common?</summary><div><p>Both are everywhere. Actual-days is more precise; the 30-day method is simpler and is slightly better for you in 31-day months, slightly worse in February. On a $1,650 rent the gap is usually under $20 — but on a $2,400 townhome it's worth checking.</p></div></details>
+  <details><summary>Do I pay prorated rent for my last month too?</summary><div><p>Only if your lease ends mid-month, which is uncommon on standard 12–14 month terms. If you're leaving early instead, that's a different (and more expensive) calculation — see <a href="/guides/breaking-a-lease-in-texas-cost">what breaking a lease in Texas actually costs</a>.</p></div></details>
+</section>
+
+<section class="tint" style="border-radius:14px;padding:34px 28px">
+  <h2>Planning a move in the next few months?</h2>
+  <p>The early list gets each month's verified specials roundup first — timed to lease-end season.</p>
+<form class="lead" action="https://formsubmit.co/leads@anastasiaweaver.com" method="POST">
+    <input type="hidden" name="_subject" value="PRORATE-CALC lead — West FW Living">
+    <input type="hidden" name="_next" value="https://westfwliving.com/thanks.html">
+    
+    <label for="prname">Name</label><input id="prname" name="name" required>
+    <label for="prphone">Phone</label><input id="prphone" name="phone" type="tel" required>
+    <label for="prleaseend">When are you planning to move?</label><input id="prleaseend" name="lease_end" placeholder="e.g., November 2026" required>
+    <button class="btn" type="submit">Put me on the early list</button>
+  </form>
+</section>
+
+<script>
+(function(){
+  var M=window.WFL.money, rent=document.getElementById('prRent'), date=document.getElementById('prDate');
+  function calc(){
+    var r=+rent.value; document.getElementById('prRentVal').textContent=M(r);
+    var d=new Date(date.value+'T12:00:00'); if(isNaN(d)) return;
+    var dim=new Date(d.getFullYear(), d.getMonth()+1, 0).getDate();
+    var days=dim-d.getDate()+1;
+    var actual=r/dim*days, bank=r/30*days;
+    document.getElementById('prDays').textContent=days+' of '+dim;
+    document.getElementById('prActual').textContent=M(actual);
+    document.getElementById('prBank').textContent=M(bank);
+    document.getElementById('prDiff').textContent=M(Math.abs(actual-bank));
+  }
+  rent.oninput=calc; date.onchange=calc; calc();
+})();
+</script>
+
+</div></main>
+
+<footer><div class="wrap">
+  <div class="fgrid">
+    <div><h4>West FW Living</h4><p>An independent field guide to renting and buying on Fort Worth's west side. Full service is coming soon; <a href='/#list'>the early list hears first</a>.</p></div>
+    <div><h4>The Guide</h4><ul><li><a href='/specials'>This Month's Specials</a></li><li><a href='/deals'>Best Deals, Ranked</a></li><li><a href='/tools/'>Renter Tools</a></li><li><a href='/quiz'>Match Quiz</a></li><li><a href='/guides/'>All Guides</a></li></ul></div>
+    <div><h4>Situations</h4><ul><li><a href='/second-chance'>Second Chance Renting</a></li><li><a href='/rent-to-own'>Rent-to-Own Reality</a></li><li><a href='/rentals/'>Browse by Feature</a></li><li><a href='/schools/willow-park-school-zones'>School Zones</a></li></ul></div>
+  </div>
+  <p class="disclaim">West FW Living is not a real estate brokerage and does not currently offer brokerage, leasing, or apartment-locating services. All rent figures, specials, and program details are compiled from public listings and sources, change without notice, and should be verified directly with the property or program. Payment estimates are educational only — not a loan offer, prequalification, or lending advice. Drive times are typical off-peak estimates, not guarantees. School attendance zones are set by districts, are address-specific, and change; always verify a specific unit's zoning with the district before signing. Equal Housing Opportunity.</p>
+</div></footer>
+<div class="textbar"><a href="sms:+16822331426?&body=Add%20me%20to%20the%20West%20FW%20Living%20early%20list!%20My%20lease%20ends%3A%20___">Text to join the early list</a></div>
+</body>
+</html>
