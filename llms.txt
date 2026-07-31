@@ -43,5 +43,8 @@
 - [Renter's glossary](https://westfwliving.com/guides/renters-glossary.html): 20 defined terms (effective rent, reletting fee, concession clawback, look-back window, renewal cliff).
 - [West FW Concession Index](https://westfwliving.com/rent-report/august-2026.html): named monthly metric — August 2026 reading: 7.5 average advertised weeks free.
 
+- [White Settlement area guide](https://westfwliving.com/areas/white-settlement.html): 1BR $810-1,380, rents down ~13% YoY, strongest renter's market on the west side.
+- [Benbrook area guide](https://westfwliving.com/areas/benbrook.html): 1BR avg $980-1,195, houses median $1,650, conflicting trend signals noted honestly.
+
 ## Data practices
 Figures compiled from public listings/market sources; "last verified" dates on data pages; monthly refresh cadence. Contact: leads@anastasiaweaver.com
