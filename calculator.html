@@ -64,6 +64,17 @@
     <a class="btn ghost" href="sms:+16822331426?&body=Add%20me%20to%20the%20early%20list!%20My%20rent%20is%20%24___%20and%20I%20want%20the%20full%20worksheet.">Get the full worksheet — join the early list</a>
   </div>
 </section>
+
+<div class="calc-email">
+<p><strong>Want this in writing?</strong> We’ll email your breakdown — the number, the method, and the three-step path to a real pre-qual.</p>
+<form action="https://formsubmit.co/leads@anastasiaweaver.com" method="POST">
+<input type="hidden" name="_subject" value="Calculator email request — West FW Living">
+<input type="hidden" name="_next" value="https://westfwliving.com/thanks.html">
+<input type="hidden" name="calc_result" id="calcResultField" value="">
+<input type="email" name="email" placeholder="you@email.com" required>
+<button class="btn" type="submit">Email my breakdown</button>
+</form>
+</div>
 </div></main>
 
 <div class="textbar"><a href="sms:+16822331426?&body=Add%20me%20to%20the%20West%20FW%20Living%20early%20list!%20My%20lease%20ends%3A%20___">Text to join the early list</a></div>
@@ -109,6 +120,11 @@ function update(){
 }
 rentEl.addEventListener('input', update);
 update();
+</script>
+
+<script>
+(function(){var f=document.getElementById('calcResultField');if(!f)return;
+setInterval(function(){var r=document.querySelector('.calc-result');if(r)f.value=r.textContent;},1500);})();
 </script>
 </body>
 </html>

@@ -183,3 +183,26 @@ img{max-width:100%;height:auto}
 }
 .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:16px 0}
 .table-scroll table{margin:0;min-width:560px}
+
+/* ===== v8: list prompt, book page, print one-pager ===== */
+#wfl-prompt{position:fixed;inset:0;background:rgba(24,32,25,.45);z-index:90;display:flex;align-items:flex-end;justify-content:center;animation:wflIn .25s ease}
+@media(min-width:700px){#wfl-prompt{align-items:center}}
+@keyframes wflIn{from{opacity:0}to{opacity:1}}
+.wfl-card{background:var(--bg);border:1.5px solid var(--line);border-radius:18px 18px 0 0;max-width:430px;width:100%;padding:28px 26px 30px;position:relative;box-shadow:0 -20px 60px rgba(0,0,0,.35)}
+@media(min-width:700px){.wfl-card{border-radius:18px}}
+.wfl-x{position:absolute;top:10px;right:14px;background:none;border:none;font-size:1.6rem;color:var(--ink-soft);cursor:pointer;padding:6px}
+.wfl-k{font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.16em;color:var(--green-dark);margin-bottom:8px}
+.wfl-h{font-family:'Fraunces',serif;font-weight:600;font-size:1.4rem;line-height:1.15;margin-bottom:8px}
+.wfl-b{color:var(--ink-soft);font-size:.95rem;margin-bottom:16px}
+.wfl-btn{display:block;text-align:center;background:var(--green);color:#fff;font-weight:600;padding:14px;border-radius:10px;text-decoration:none}
+.calc-email{margin-top:22px;padding-top:18px;border-top:1.5px dashed var(--line)}
+.calc-email p{font-size:.9rem;color:var(--ink-soft);margin-bottom:10px}
+.calc-email form{display:flex;gap:10px;flex-wrap:wrap}
+.calc-email input[type=email]{flex:1;min-width:200px}
+@media print{
+  header,.textbar,footer,.no-print{display:none!important}
+  body{padding:0;background:#fff;font-size:13px}
+  .print-sheet{max-width:100%;page-break-inside:avoid}
+}
+.print-sheet{background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:34px;max-width:680px;margin:0 auto}
+.print-sheet .qr{width:120px;height:120px;float:right;margin:0 0 12px 18px;border:1.5px solid var(--line);border-radius:8px}
