@@ -11,5 +11,11 @@
 - [Living near Lockheed Martin Fort Worth](https://westfwliving.com/guides/apartments-near-lockheed-martin-fort-worth.html): pocket map with drive times and rent bands.
 - [Complex field notes](https://westfwliving.com/complexes/olympus-willow-park.html): Olympus Willow Park, Gates at Meadow Place, Canvas at Willow Park.
 
+- [How much rent can you afford in Fort Worth](https://westfwliving.com/guides/how-much-rent-can-i-afford-fort-worth.html): 2.5-3x income rule at four salary levels.
+- [Free-rent specials fine print](https://westfwliving.com/guides/free-rent-specials-fine-print.html): up-to clauses, prorated vs upfront, lease-length strings, renewal cliff.
+- [Aledo ISD rental houses](https://westfwliving.com/guides/aledo-isd-rental-houses.html): $1,400-1,900 3BR band, 60-day campaign playbook.
+- [Moving to Fort Worth: which side](https://westfwliving.com/guides/moving-to-fort-worth-which-side.html): directional guide with 1BR bands per side.
+- [Willow Crossing Townhomes field notes](https://westfwliving.com/complexes/willow-crossing-townhomes.html): 3-4BR gated townhomes, Aledo ISD, from $2,129.
+
 ## Data practices
 Figures compiled from public listings/market sources; "last verified" dates on data pages; monthly refresh cadence. Contact: leads@anastasiaweaver.com
