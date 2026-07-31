@@ -26,5 +26,11 @@
 
 - [Family relocation to western Fort Worth](https://westfwliving.com/guides/relocating-to-west-fort-worth-family-guide.html): the school decision (Aledo ISD), commute geometry, rent-first vs buy-now, 90-day checklist.
 
+- [Breaking a lease in Texas](https://westfwliving.com/guides/breaking-a-lease-in-texas-cost.html): ~85% reletting fee + rent-until-relet math; broken lease vs eviction.
+- [NAS JRB Fort Worth housing guide](https://westfwliving.com/guides/apartments-near-nas-jrb-fort-worth.html): five pockets by gate-to-door time; BAH stretching via concessions.
+- [Willow Park four-community comparison](https://westfwliving.com/guides/olympus-vs-gates-vs-canvas-willow-park.html): Olympus vs Gates vs Canvas vs Willow Crossing.
+- [Divvy vs Pathway 2026](https://westfwliving.com/guides/divvy-vs-pathway-homes.html): status-aware comparison.
+- [Weeks-free rent calculator](https://westfwliving.com/guides/free-rent-specials-fine-print.html): interactive effective-rent calculator.
+
 ## Data practices
 Figures compiled from public listings/market sources; "last verified" dates on data pages; monthly refresh cadence. Contact: leads@anastasiaweaver.com

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"><meta name="robots" content="max-image-preview:large">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>“6 Weeks Free” Rent Specials: The Fine Print, Decoded (Fort Worth 2026)</title>
+<title>How Does “6 Weeks Free” Rent Work? The Calculator + Fine Print (Fort Worth 2026)</title>
 <meta name="description" content="The four trapdoors in every free-rent banner: “up to,” upfront vs prorated, lease-length strings, and “while supplies last” — plus the renewal cliff and the one formula that settles every comparison.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,600&family=Instrument+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;600;700&display=swap" rel="stylesheet">
@@ -34,6 +34,29 @@
 <div class="row total"><span>Winner</span><span>B — by $7/mo, despite the smaller banner</span></div>
 <div class="stamp">— total cost ÷ total months. always. —</div>
 </div>
+
+<h2>The weeks-free calculator</h2>
+<div class="calc-panel" id="wfcalc">
+<label for="wf-rent">Advertised monthly rent</label>
+<div class="slider-row"><input type="range" id="wf-rent" min="800" max="3000" step="25" value="1450"><span class="finevalue" id="wf-rent-v">$1,450</span></div>
+<label for="wf-weeks">Weeks free</label>
+<div class="slider-row"><input type="range" id="wf-weeks" min="0" max="10" step="1" value="6"><span class="finevalue" id="wf-weeks-v">6</span></div>
+<label for="wf-term">Lease length (months)</label>
+<div class="slider-row"><input type="range" id="wf-term" min="6" max="18" step="1" value="12"><span class="finevalue" id="wf-term-v">12</span></div>
+<p style="margin:14px 0 2px;font-size:.85rem;color:var(--ink-soft)">Your effective rent</p>
+<div class="calc-result" id="wf-out">$1,283/mo</div>
+<p style="font-size:.85rem;color:var(--ink-soft)" id="wf-save">≈ $2,008 total value — vs. sticker over the term</p>
+</div>
+<script>
+(function(){function $(i){return document.getElementById(i)}
+function fmt(n){return '$'+Math.round(n).toLocaleString()}
+function go(){var r=+$('wf-rent').value,w=+$('wf-weeks').value,t=+$('wf-term').value;
+$('wf-rent-v').textContent=fmt(r);$('wf-weeks-v').textContent=w;$('wf-term-v').textContent=t;
+var free=r*w*12/52, eff=(r*t-free)/t;
+$('wf-out').textContent=fmt(eff)+'/mo';
+$('wf-save').textContent='≈ '+fmt(free)+' total value — vs. sticker over the term';}
+['wf-rent','wf-weeks','wf-term'].forEach(function(i){$(i).addEventListener('input',go)});go();})();
+</script>
 <h2>The renewal cliff, and how to see it coming</h2>
 <p>Concessions are a first-year price. At renewal, offices quote from sticker — so a lease that <em>felt</em> like $1,250 renews against $1,450 plus an increase. Two defenses: know the number now (ask “what did renewals run last year?” — they know), and put your lease-end date on <a href="../index.html#list">the early list</a>, so 120 days out you get the current market table and negotiate your renewal against it instead of against hope. Full current offers: <a href="../specials.html">the specials guide</a> and <a href="willow-park-specials-august-2026.html">this month’s Willow Park table</a>.</p>
 <p style="margin-top:30px"><a class="btn" href="sms:+16822331426?&body=Add%20me%20to%20the%20early%20list%20—%20fine%20print.%20Lease%20ends%3A%20___">Join the early list</a></p>
