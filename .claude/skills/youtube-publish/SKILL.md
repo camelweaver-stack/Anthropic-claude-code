@@ -66,8 +66,9 @@ Videos wait in the Video Upload Queue, one folder per video, prefixed `READY_`:
 Video Upload Queue/READY_<slug>/
 ```
 
-This lives alongside the user's other West FW Living working files (same sync root as the Bellwick queues). If you
-can't find it, ask the user for the path once and reuse it. Process oldest first if folder names carry date stamps.
+This lives in the user's **Google Drive** (all West FW Living assets and management are on Google Drive), synced
+locally via Drive for desktop — typically under the mounted Drive (e.g. `G:\My Drive\...` on Windows). If you can't
+find it, ask the user for the path once and reuse it. Process oldest first if folder names carry date stamps.
 Each kit contains:
 
 | File | What it's for |

@@ -9,7 +9,7 @@
  * cap or double-publish.
  *
  * Usage (typically from a scheduled task):
- *   node publish_queue.mjs --queue "C:\\Users\\camel\\iCloudDrive\\...\\Video Upload Queue" \
+ *   node publish_queue.mjs --queue "G:\\My Drive\\West FW Living\\Video Upload Queue" \
  *       [--days mon,wed,fri] [--max-full 1] [--max-shorts 2] [--dry-run] [--headless]
  *
  * A Short is detected by "#Shorts" in title.txt (case-insensitive). Everything else is a full video.

@@ -11,8 +11,9 @@ unattended. But scheduling has a hard requirement worth stating plainly.
 
 - The **managed cloud sandbox** (where Claude runs when you use the web/mobile app) **cannot** do it — its proxy
   blocks YouTube and it has none of your files.
-- A **cloud VM you rent** technically can, but: iCloud Drive doesn't sync to Linux (you'd have to feed the queue via
-  other storage), and Google challenges/logs-out sessions from datacenter IPs, so an unattended uploader there
+- A **cloud VM you rent** technically can, but: Google Drive has no clean Linux client (you'd have to feed the queue
+  via other storage or the Drive API), and Google challenges/logs-out sessions from datacenter IPs, so an unattended
+  uploader there
   **breaks silently and needs periodic manual re-login.** Only choose this if you accept that maintenance.
 
 The reliable path is **your own computer** (the Windows PC you already run book-upload on), which has the queue,

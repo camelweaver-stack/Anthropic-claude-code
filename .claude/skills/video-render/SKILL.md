@@ -38,9 +38,10 @@ python stage_kit.py --slug $RENDER_SLUG
 1. `pip install piper-tts pillow` and confirm `ffmpeg` is installed.
 2. Download the voice once: `python -m piper.download_voices en_US-ryan-high` (build_v2.py uses `en_US-ryan-high`).
    For Spanish `/es/` twins use `es_MX-*` (or best available es_MX/es_ES) and pull the script from the `/es/` page.
-3. **Record the queue path** in `queue_path.txt` next to the scripts. This MUST be the same Video Upload Queue that
-   youtube-publish reads — whichever cloud drive it lives on (confirm iCloud vs Google Drive so both skills agree;
-   they must point at one folder). stage_kit.py reads this file when `--queue` isn't passed.
+3. **Record the queue path** in `queue_path.txt` next to the scripts. This MUST be the same **Google Drive** Video
+   Upload Queue that youtube-publish reads (all West FW Living assets live on Google Drive; Drive for desktop mounts
+   it locally, e.g. `G:\My Drive\...`). Both skills must point at this one folder. stage_kit.py reads this file when
+   `--queue` isn't passed.
 
 ## Producing an episode
 

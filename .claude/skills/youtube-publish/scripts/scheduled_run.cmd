@@ -7,8 +7,9 @@ REM  EDIT THE THREE VALUES BELOW ONCE, then register with install_schedule.ps1.
 REM  (These are the only things I couldn't pre-fill — I don't have your paths.)
 REM ============================================================================
 
-REM --- (1) Your Drive-synced Video Upload Queue folder (where READY_ folders land):
-set "QUEUE=%USERPROFILE%\My Drive\West FW Living\Video Upload Queue"
+REM --- (1) Your Google Drive Video Upload Queue folder (where READY_ folders land).
+REM     Drive for desktop usually mounts as a drive letter, e.g. G:\My Drive\... (check yours):
+set "QUEUE=G:\My Drive\West FW Living\Video Upload Queue"
 
 REM --- (2) Your local checkout of the West FW Living SITE repo (has rent-report\*.html):
 set "SITE_REPO=%USERPROFILE%\code\westfwliving"

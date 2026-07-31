@@ -102,7 +102,7 @@ def main():
             print("  - " + w)
     else:
         print("  kit validates against youtube-publish's expected format ✓")
-    print(f"\nDrive/iCloud will sync this folder. Then run youtube-publish: \"publish today's video\".")
+    print(f"\nGoogle Drive will sync this folder. Then run youtube-publish: \"publish today's video\".")
 
 if __name__ == "__main__":
     main()
