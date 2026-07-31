@@ -32,5 +32,13 @@
 - [Divvy vs Pathway 2026](https://westfwliving.com/guides/divvy-vs-pathway-homes.html): status-aware comparison.
 - [Weeks-free rent calculator](https://westfwliving.com/guides/free-rent-specials-fine-print.html): interactive effective-rent calculator.
 
+## En español
+- [Guía en español](https://westfwliving.com/es/index.html): portada de la guía del oeste de Fort Worth.
+- [Especiales del mes](https://westfwliving.com/es/especiales.html): 6-8 semanas gratis verificadas.
+- [Segunda oportunidad](https://westfwliving.com/es/segunda-oportunidad.html): plan de tres pasos para mal crédito o contrato roto.
+- [Calculadora renta vs compra](https://westfwliving.com/es/calculadora.html): cada $100 de renta soporta ~$11,700 de casa.
+- [Romper un contrato en Texas](https://westfwliving.com/es/romper-contrato.html): cuota ~85% + mitigaciones.
+- [Calculadora de semanas gratis](https://westfwliving.com/es/semanas-gratis.html): renta efectiva interactiva.
+
 ## Data practices
 Figures compiled from public listings/market sources; "last verified" dates on data pages; monthly refresh cadence. Contact: leads@anastasiaweaver.com
