@@ -13,6 +13,7 @@ NAV_EN = ("<a href='/specials'>Specials</a>"
           "<a href='/neighborhoods/'>Neighborhoods</a>"
           "<a href='/schools/'>Schools</a>"
           "<a href='/buy/'>Buying</a>"
+          "<a href='/sell/'>Selling</a>"
           "<a href='/relocate/'>Relocate</a>"
           "<a href='/guides/'>Guides</a>"
           "<a href='/tools/'>Tools</a>"
@@ -20,6 +21,7 @@ NAV_EN = ("<a href='/specials'>Specials</a>"
 
 NAV_ES = ("<a href='/es/'>Inicio</a>"
           "<a href='/es/comprar/'>Comprar</a>"
+          "<a href='/es/vender/'>Vender</a>"
           "<a href='/es/especiales'>Especiales</a>"
           "<a href='/es/segunda-oportunidad'>Segunda Oportunidad</a>"
           "<a href='/es/relocate/'>Mudanza</a>"
@@ -32,6 +34,7 @@ FGRID_EN = """<div class="fgrid">
     <div><h4>Renting</h4><ul><li><a href='/specials'>This Month's Specials</a></li><li><a href='/deals'>Best Deals, Ranked</a></li><li><a href='/rentals/'>Browse by Feature</a></li><li><a href='/second-chance'>Second Chance Renting</a></li><li><a href='/rent-to-own'>Rent-to-Own Reality</a></li><li><a href='/areas'>Areas We Cover</a></li></ul></div>
     <div><h4>Explore West FW</h4><ul><li><a href='/neighborhoods/'>Neighborhoods</a></li><li><a href='/schools/'>Schools &amp; ISDs</a></li><li><a href='/compare/'>Compare Places</a></li><li><a href='/relocate/'>Relocating Here</a></li><li><a href='/move/'>Move Checklist</a></li><li><a href='/community/'>Community &amp; Local Life</a></li><li><a href='/military/'>Military &amp; BAH</a></li><li><a href='/guides/'>All Guides</a></li></ul></div>
     <div><h4>Buying</h4><ul><li><a href='/buy/'>Buy the West Side</a></li><li><a href='/calculator'>Rent vs. Buy Math</a></li><li><a href='/quiz'>Rent-or-Buy Quiz</a></li><li><a href='/es/'>En Español</a></li></ul></div>
+    <div><h4>Selling</h4><ul><li><a href='/sell/'>Sell Your Home</a></li><li><a href='/sell/home-value'>What's My Home Worth</a></li><li><a href='/sell/equity-report'>The Equity Report</a></li><li><a href='/sell/sell-before-buying'>Sell Before You Buy</a></li></ul></div>
     <div><h4>Data &amp; Tools</h4><ul><li><a href='/tools/'>Renter Tools</a></li><li><a href='/data/'>Rent Data &amp; Reports</a></li><li><a href='/rent-report/august-2026'>Latest Rent Report</a></li><li><a href='/resources/'>Resources</a></li></ul></div>
   </div>"""
 
@@ -39,6 +42,7 @@ FGRID_ES = """<div class="fgrid">
     <div><h4>West FW Living</h4><p>Una guía independiente para rentar y comprar en el oeste de Fort Worth. El servicio completo llega pronto; <a href='/es/#lista'>la lista se entera primero</a>.</p></div>
     <div><h4>Rentar</h4><ul><li><a href='/es/especiales'>Especiales del Mes</a></li><li><a href='/deals'>Mejores Ofertas</a></li><li><a href='/es/segunda-oportunidad'>Segunda Oportunidad</a></li><li><a href='/es/semanas-gratis'>Semanas Gratis</a></li><li><a href='/es/romper-contrato'>Romper el Contrato</a></li></ul></div>
     <div><h4>Comprar</h4><ul><li><a href='/es/comprar/'>Comprar Casa</a></li><li><a href='/es/comprar/renta-o-compra'>Renta o Compra</a></li><li><a href='/es/comprar/primera-vivienda-texas'>Primera Vivienda</a></li><li><a href='/es/comprar/asistencia-enganche'>Ayuda con el Enganche</a></li></ul></div>
+    <div><h4>Vender</h4><ul><li><a href='/es/vender/'>Vender tu Casa</a></li><li><a href='/es/vender/valor-de-tu-casa'>Valor de tu Casa</a></li><li><a href='/es/vender/reporte-de-plusvalia'>Reporte de Plusvalía</a></li></ul></div>
     <div><h4>Recursos</h4><ul><li><a href='/es/calculadora'>Calculadora</a></li><li><a href='/es/puntaje-credito'>Puntaje de Crédito</a></li><li><a href='/es/relocate/'>Mudanza</a></li><li><a href='/es/comunidad/'>Comunidad</a></li><li><a href='/'>English site</a></li></ul></div>
   </div>"""
 
