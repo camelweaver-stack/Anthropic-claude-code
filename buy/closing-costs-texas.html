@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="max-image-preview:large">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Closing Costs in Texas for Buyers — The 2–4% Breakdown, Estimator & Who Pays What</title>
+<meta name="description" content="Texas buyer closing costs itemized with an instant estimator: state-promulgated title rates, the negotiable owner's-policy custom, the T-47 survey shortcut, tax-heavy prepaids, and where builder credits apply.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,600&family=Instrument+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/assets/tools.css">
+<link rel="canonical" href="https://westfwliving.com/buy/closing-costs-texas.html">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Texas Closing Cost Estimator","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://westfwliving.com/buy/closing-costs-texas"}</script>
+
+</head>
+<body>
+<header><div class="wrap"><div class="topbar">
+  <a class='brand' href='/'>West FW <span>Living</span><small>the west side field guide</small></a>
+  <nav>
+    <a href='/specials'>Specials</a>
+    <a href='/deals'>Best Deals</a>
+    <a href='/buy/'>Buying</a>
+    <a href='/tools/'>Tools</a>
+    <a href='/guides/'>Guides</a>
+  <a href='/es/' style='font-weight:600'>Español</a></nav>
+</div></div></header>
+
+<main><div class="wrap">
+<p class="crumb"><a href='/'>Home</a> / <a href='/buy/'>Buying</a> / Closing Costs</p>
+
+<section class="hero hero-inner">
+  <span class="eyebrow">THE CHECK BESIDE THE DOWN PAYMENT</span>
+  <h1>Closing costs in Texas: what buyers actually pay</h1>
+  <p class="lede">Plan on roughly <strong>2–4% of the purchase price</strong> beyond your down payment — but that range hides Texas-specific quirks worth knowing, including state-regulated title rates and the negotiation about who pays which policy. Estimate yours, then see the line items.</p>
+</section>
+
+<section>
+  <div class="calc-panel" style="max-width:640px">
+    <div class="field-row"><label for="ccPrice">Purchase price</label>
+      <div class="slider-row"><input type="range" id="ccPrice" min="250000" max="950000" step="5000" value="400000"><span class="finevalue" id="ccPriceVal">$400,000</span></div></div>
+    <div class="receipt" style="max-width:100%">
+      <div class="row"><span>Lender fees (origination, underwriting)</span><span id="ccLender">$—</span></div>
+      <div class="row"><span>Appraisal + credit + flood cert</span><span id="ccApp">$—</span></div>
+      <div class="row"><span>Title &amp; escrow (lender's policy, fees)</span><span id="ccTitle">$—</span></div>
+      <div class="row"><span>Survey (if new one needed)</span><span id="ccSurvey">$—</span></div>
+      <div class="row"><span>Prepaids (taxes, insurance, interest)</span><span id="ccPre">$—</span></div>
+      <div class="row total"><span>Estimated range</span><span id="ccTotal">$—</span></div>
+      <div class="stamp">estimate only — your Loan Estimate is the real document</div>
+    </div>
+    <p class="tool-note">Ranges reflect typical Texas transactions; prepaids dominate the variance because Texas tax escrows are large — at this corridor's 1.9–2.7% rates, several months of taxes collected at closing is real money. The calculator assumes ~2.2% blended.</p>
+  </div>
+</section>
+
+<section>
+  <h2>The Texas-specific parts</h2>
+  <p><strong>Title insurance rates are state-promulgated</strong> — every title company charges the same premium for the same coverage, so "shopping title" in Texas means shopping escrow fees and service, not the policy price. <strong>Who pays the owner's policy is negotiable</strong> and set in the contract — sellers customarily pay it in many Texas transactions, but custom isn't law; make sure the contract says what you think it says. Buyers typically pay the (smaller) lender's policy. <strong>The survey question:</strong> if the seller has an existing survey and signs a T-47 affidavit, you may reuse it and skip a few hundred dollars; otherwise a new one joins your bill. <strong>Seller and builder credits are the pressure valve:</strong> concessions toward closing costs are standard negotiating currency — and on new builds, closing-cost coverage is one of the classic uses of <a href="/builder-report/2026-08">flex cash</a>, usually contingent on the preferred lender.</p>
+  <p>Your protection is the paperwork sequence: the <strong>Loan Estimate</strong> within three days of application, the <strong>Closing Disclosure</strong> three days before signing — compare them line by line, and question any fee that grew. Full process context: <a href="/buy/first-time-buyer-texas">the Texas buying sequence</a>.</p>
+</section>
+<section class="tint" style="border-radius:14px;padding:34px 28px">
+  <h2>Get the West Fort Worth Buyer's Field Guide</h2>
+  <p>The full corridor playbook by email — plus the monthly Buyer Report with the Builder Incentive Index, so you know what builders are actually giving away before you tour.</p>
+<form class="lead" action="https://formsubmit.co/leads@anastasiaweaver.com" method="POST">
+    <input type="hidden" name="_subject" value="BUYER-CLOSING lead — West FW Living">
+    <input type="hidden" name="_next" value="https://westfwliving.com/thanks.html">
+    <input type="hidden" name="audience" value="buyer-intent">
+    <label for="ccname">Name</label><input id="ccname" name="name" required>
+    <label for="ccemail">Email</label><input id="ccemail" name="email" type="email" required>
+    <label for="ccwhen">When are you hoping to buy?</label><input id="ccwhen" name="buy_window" placeholder="e.g., Spring 2027" required>
+    <button class="btn" type="submit">Get the Buyer's Field Guide by email</button>
+  </form>
+</section>
+<script>
+(function(){
+  var M=function(n){return '$'+Math.round(n).toLocaleString();};
+  var price=document.getElementById('ccPrice');
+  function calc(){
+    var p=+price.value;
+    document.getElementById('ccPriceVal').textContent=M(p);
+    var lender=[Math.max(1200,p*0.005),p*0.01], app=[650,950], title=[p*0.006,p*0.009],
+        survey=[0,650], pre=[p*0.008,p*0.016];
+    function set(id,r){document.getElementById(id).textContent=M(r[0])+' – '+M(r[1]);}
+    set('ccLender',lender);set('ccApp',app);set('ccTitle',title);set('ccSurvey',survey);set('ccPre',pre);
+    var lo=lender[0]+app[0]+title[0]+survey[0]+pre[0], hi=lender[1]+app[1]+title[1]+survey[1]+pre[1];
+    document.getElementById('ccTotal').textContent=M(lo)+' – '+M(hi)+' ('+(100*lo/p).toFixed(1)+'–'+(100*hi/p).toFixed(1)+'%)';
+  }
+  price.oninput=calc;calc();
+})();
+</script>
+
+</div></main>
+
+<footer><div class="wrap">
+  <div class="fgrid">
+    <div><h4>West FW Living</h4><p>An independent field guide to renting and buying on Fort Worth's west side. Full service is coming soon; <a href='/#list'>the early list hears first</a>.</p></div>
+    <div><h4>The Guide</h4><ul><li><a href='/specials'>This Month's Specials</a></li><li><a href='/deals'>Best Deals, Ranked</a></li><li><a href='/buy/'>Buyer's Guide</a></li><li><a href='/builder-report/2026-08'>Builder Incentive Index</a></li><li><a href='/tools/'>Renter Tools</a></li></ul></div>
+    <div><h4>Situations</h4><ul><li><a href='/second-chance'>Second Chance Renting</a></li><li><a href='/military/'>Military &amp; PCS</a></li><li><a href='/buy/rent-vs-buy'>Rent vs. Buy</a></li><li><a href='/rentals/'>Browse by Feature</a></li><li><a href='/schools/willow-park-school-zones'>School Zones</a></li></ul></div>
+  </div>
+  <p class="disclaim">West FW Living is not a real estate brokerage and does not currently offer brokerage or advisory services. All prices, incentives, tax rates, and program details are compiled from public sources, change without notice, and should be verified with the builder, taxing authority, or program administrator. Payment and affordability estimates are educational only — not a loan offer, prequalification, or lending, legal, or tax advice; consult licensed professionals for your situation. Down-payment program listings are informational; we have no lender relationships and receive no compensation from any provider mentioned. Equal Housing Opportunity.</p>
+</div></footer>
+<div class="textbar"><a href="sms:+16822331426?&body=Send%20me%20the%20West%20Fort%20Worth%20Buyer%27s%20Field%20Guide%20—%20I%27m%20hoping%20to%20buy%3A%20___">Text for the Buyer's Field Guide</a></div>
+</body>
+</html>

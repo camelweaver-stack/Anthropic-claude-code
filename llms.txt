@@ -64,3 +64,9 @@ Figures compiled from public listings/market sources; "last verified" dates on d
 - [Construction pipeline tracker](https://westfwliving.com/data/pipeline.html): $41M Greystar filing among 20 projects in 6 months.
 - [Specials half-life tracker](https://westfwliving.com/data/specials-longevity.html): observed concession decay, updated monthly.
 - [2026 BAH rates & what they rent](https://westfwliving.com/military/bah-fort-worth.html): Fort Worth MHA anchors vs tracked rents.
+- [Buyer property-tax playbook](https://westfwliving.com/buy/property-taxes-for-buyers.html): $140K homestead exemption (Prop 13, 2025), protest process, PID/MUD math.
+- [VA loans on the west side](https://westfwliving.com/buy/va-loans-fort-worth.html): zero down, BAH gross-up, computed buying power at local tax rates.
+- [Texas closing costs + estimator](https://westfwliving.com/buy/closing-costs-texas.html)
+- [Texas option period & inspections](https://westfwliving.com/buy/inspection-option-period.html)
+- [New build vs resale ledger](https://westfwliving.com/buy/new-vs-resale.html)
+- [District buyer guides](https://westfwliving.com/buy/schools/aledo-isd.html): Aledo, Weatherford, Brock ISD tax math.
