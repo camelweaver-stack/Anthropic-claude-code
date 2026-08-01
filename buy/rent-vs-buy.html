@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="max-image-preview:large">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rent vs Buy in West Fort Worth — Computed With Real Tracked Rents & Actual Tax Rates (2026)</title>
+<meta name="description" content="The rent-vs-buy calculator that uses real data: this corridor's verified net-effective rents against true PITI at actual local tax rates (including Walsh's PID), market vs builder-buydown rates, and the year-two tax trap.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,600&family=Instrument+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/assets/tools.css">
+<link rel="canonical" href="https://westfwliving.com/buy/rent-vs-buy.html">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"West FW Rent vs Buy Calculator","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://westfwliving.com/buy/rent-vs-buy"}</script>
+<script src="/assets/wfl-data.js"></script>
+<script src="/assets/wfl-buy-data.js"></script>
+</head>
+<body>
+<header><div class="wrap"><div class="topbar">
+  <a class='brand' href='/'>West FW <span>Living</span><small>the west side field guide</small></a>
+  <nav>
+    <a href='/specials'>Specials</a>
+    <a href='/deals'>Best Deals</a>
+    <a href='/buy/'>Buying</a>
+    <a href='/tools/'>Tools</a>
+    <a href='/guides/'>Guides</a>
+  <a href='/es/' style='font-weight:600'>Español</a></nav>
+</div></div></header>
+
+<main><div class="wrap">
+<p class="crumb"><a href='/'>Home</a> / <a href='/buy/'>Buying</a> / Rent vs. Buy</p>
+
+<section class="hero hero-inner">
+  <span class="eyebrow">THE ONLY VERSION USING REAL LOCAL RENTS</span>
+  <h1>Rent vs. buy in west Fort Worth, computed honestly</h1>
+  <p class="lede">Every rent-vs-buy calculator on the internet guesses at your rent. We don't have to — this site verifies this corridor's rents monthly. Below: true monthly ownership cost (principal, interest, taxes at <em>actual local rates</em>, insurance, HOA) against the net-effective rents on our tracker, side by side.</p>
+</section>
+
+<section>
+  <div class="calc-panel" style="max-width:680px">
+    <div class="field-row"><label for="rbPrice">Home price</label>
+      <div class="slider-row"><input type="range" id="rbPrice" min="250000" max="950000" step="5000" value="360000"><span class="finevalue" id="rbPriceVal">$360,000</span></div></div>
+    <div class="field-row"><label for="rbDown">Down payment</label>
+      <div class="slider-row"><input type="range" id="rbDown" min="0" max="30" step="1" value="5"><span class="finevalue" id="rbDownVal">5%</span></div></div>
+    <div class="field-row"><label>Rate</label>
+      <div class="seg" id="rbRate"><button data-r="resale" class="on">Market rate</button><button data-r="builder">Advertised builder buydown</button></div>
+      <p class="tool-note" id="rbRateNote"></p></div>
+    <div class="field-row"><label for="rbTax">Where (sets the real tax rate)</label>
+      <select id="rbTax"></select></div>
+    <div class="field-row"><label for="rbHoa">HOA / month</label><input type="number" id="rbHoa" value="60" min="0" step="10"></div>
+    <div class="receipt" style="max-width:100%">
+      <div class="row"><span>Principal &amp; interest</span><span id="rbPI">$—</span></div>
+      <div class="row"><span>Property taxes</span><span id="rbTaxO">$—</span></div>
+      <div class="row"><span>Insurance (est.)</span><span id="rbIns">$—</span></div>
+      <div class="row"><span>HOA</span><span id="rbHoaO">$—</span></div>
+      <div class="row total"><span>True monthly cost</span><span id="rbTotal">$—</span></div>
+      <div class="stamp" id="rbStamp"></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Against this month's real rents</h2>
+  <p>The tracked market's family-sized options, verified from listings and adjusted for concessions:</p>
+  <div class="table-scroll"><table id="rbRents"><thead><tr><th>Tracked rental</th><th>Unit</th><th>Net-effective</th><th>vs. your buy scenario</th></tr></thead><tbody></tbody></table></div>
+  <p class="tool-note" id="rbVerified"></p>
+</section>
+
+<section>
+  <h2>What the comparison can't show</h2>
+  <p><strong>The parts favoring buying:</strong> principal paydown is forced savings (roughly the first years' $-hundreds monthly of your P&amp;I builds equity, growing over time), a fixed P&amp;I never gets a renewal letter, and the homestead exemption plus appreciation work quietly in your favor. <strong>The parts favoring renting:</strong> your deposit isn't a down payment locked in a roof, maintenance is someone else's 2 a.m. problem (budget ~1% of home value yearly when you own), selling costs mean short stays lose money — under ~3–5 years, renting usually wins on math alone — and this corridor's <a href="/deals">concession-heavy rents</a> are temporarily cheap.</p>
+  <p><strong>The year-two tax trap on new builds:</strong> new construction is often taxed on land value in year one, then reassessed at full value — bills commonly jump 30–50%. Budget on the full assessment from day one; the calculator above already does.</p>
+  <p>Related: <a href="/buy/affordability-calculator">what your income supports</a> · <a href="/builder-report/2026-08">what builders are giving away this month</a> · <a href="/data/property-tax">the corridor's tax rates explained</a> · renters running the other direction: <a href="/calculator">the quick rent-side version</a>.</p>
+</section>
+<section class="tint" style="border-radius:14px;padding:34px 28px">
+  <h2>Get the West Fort Worth Buyer's Field Guide</h2>
+  <p>The full corridor playbook by email — plus the monthly Buyer Report with the Builder Incentive Index, so you know what builders are actually giving away before you tour.</p>
+<form class="lead" action="https://formsubmit.co/leads@anastasiaweaver.com" method="POST">
+    <input type="hidden" name="_subject" value="BUYER-RENTVSBUY lead — West FW Living">
+    <input type="hidden" name="_next" value="https://westfwliving.com/thanks.html">
+    <input type="hidden" name="audience" value="buyer-intent">
+    <label for="rbname">Name</label><input id="rbname" name="name" required>
+    <label for="rbemail">Email</label><input id="rbemail" name="email" type="email" required>
+    <label for="rbwhen">When are you hoping to buy?</label><input id="rbwhen" name="buy_window" placeholder="e.g., Spring 2027" required>
+    <button class="btn" type="submit">Get the Buyer's Field Guide by email</button>
+  </form>
+</section>
+<script>
+(function(){
+  var B=window.WFLBUY,C=window.WFL,M=C.money;
+  var price=document.getElementById('rbPrice'),down=document.getElementById('rbDown'),hoa=document.getElementById('rbHoa'),
+      sel=document.getElementById('rbTax'),mode='resale';
+  var taxOpts=C.tax.rows.map(function(r){return {label:r.place+' — '+r.total.toFixed(2)+'%',v:r.total};});
+  taxOpts.push({label:'Walsh (incl. PID) — 2.69%',v:2.689});
+  taxOpts.forEach(function(o,i){var op=document.createElement('option');op.value=o.v;op.textContent=o.label;sel.appendChild(op);});
+  sel.selectedIndex=0;
+  document.getElementById('rbRate').addEventListener('click',function(e){if(e.target.dataset.r){mode=e.target.dataset.r;
+    document.querySelectorAll('#rbRate button').forEach(function(x){x.classList.toggle('on',x===e.target);});calc();}});
+  function calc(){
+    var p=+price.value,d=+down.value,rate=mode==='resale'?B.rates.resale30:B.rates.builderAdvertised;
+    document.getElementById('rbPriceVal').textContent=M(p);
+    document.getElementById('rbDownVal').textContent=d+'%';
+    document.getElementById('rbRateNote').textContent=(mode==='resale'?B.rates.resale30+'% — '+B.rates.resaleNote:B.rates.builderAdvertised+'% — '+B.rates.builderNote);
+    var r=B.piti(p,rate,d,+sel.value,B.insuranceMonthlyPer100k,+hoa.value||0);
+    document.getElementById('rbPI').textContent=M(r.pi);
+    document.getElementById('rbTaxO').textContent=M(r.tax);
+    document.getElementById('rbIns').textContent=M(r.ins);
+    document.getElementById('rbHoaO').textContent=M(r.hoa);
+    document.getElementById('rbTotal').textContent=M(r.total)+'/mo';
+    document.getElementById('rbStamp').textContent=rate+'% · '+d+'% down · taxes at '+(+sel.value).toFixed(2)+'% · 30-yr';
+    var tb=document.querySelector('#rbRents tbody');tb.innerHTML='';
+    C.complexes.filter(function(c){return c.beds['3']!=null && !c.senior;}).forEach(function(c){
+      var eff=C.netEffective(c.beds['3'],c.weeksFree,c.leaseMonths).effective;
+      var diff=r.total-eff, verdict=diff>0? 'Renting is '+M(diff)+'/mo cheaper today' : 'Buying is '+M(-diff)+'/mo cheaper today';
+      tb.insertAdjacentHTML('beforeend','<tr><td><a href="'+c.url+'">'+c.name+'</a></td><td>3BR</td><td class="money">'+M(eff)+'/mo</td><td>'+verdict+'</td></tr>');});
+  }
+  price.oninput=calc;down.oninput=calc;hoa.oninput=calc;sel.onchange=calc;calc();
+  document.getElementById('rbVerified').textContent='Rents verified '+C.verified+'; rate & incentive basis verified '+B.verified+'. "Cheaper today" compares monthly cash cost only — see below for what it can\u2019t show.';
+})();
+</script>
+
+</div></main>
+
+<footer><div class="wrap">
+  <div class="fgrid">
+    <div><h4>West FW Living</h4><p>An independent field guide to renting and buying on Fort Worth's west side. Full service is coming soon; <a href='/#list'>the early list hears first</a>.</p></div>
+    <div><h4>The Guide</h4><ul><li><a href='/specials'>This Month's Specials</a></li><li><a href='/deals'>Best Deals, Ranked</a></li><li><a href='/buy/'>Buyer's Guide</a></li><li><a href='/builder-report/2026-08'>Builder Incentive Index</a></li><li><a href='/tools/'>Renter Tools</a></li></ul></div>
+    <div><h4>Situations</h4><ul><li><a href='/second-chance'>Second Chance Renting</a></li><li><a href='/military/'>Military &amp; PCS</a></li><li><a href='/buy/rent-vs-buy'>Rent vs. Buy</a></li><li><a href='/rentals/'>Browse by Feature</a></li><li><a href='/schools/willow-park-school-zones'>School Zones</a></li></ul></div>
+  </div>
+  <p class="disclaim">West FW Living is not a real estate brokerage and does not currently offer brokerage or advisory services. All prices, incentives, tax rates, and program details are compiled from public sources, change without notice, and should be verified with the builder, taxing authority, or program administrator. Payment and affordability estimates are educational only — not a loan offer, prequalification, or lending, legal, or tax advice; consult licensed professionals for your situation. Down-payment program listings are informational; we have no lender relationships and receive no compensation from any provider mentioned. Equal Housing Opportunity.</p>
+</div></footer>
+<div class="textbar"><a href="sms:+16822331426?&body=Send%20me%20the%20West%20Fort%20Worth%20Buyer%27s%20Field%20Guide%20—%20I%27m%20hoping%20to%20buy%3A%20___">Text for the Buyer's Field Guide</a></div>
+</body>
+</html>

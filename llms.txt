@@ -48,3 +48,19 @@
 
 ## Data practices
 Figures compiled from public listings/market sources; "last verified" dates on data pages; monthly refresh cadence. Contact: leads@anastasiaweaver.com
+
+## Buyer-side pages (added Jul 31, 2026)
+- [Rent vs buy with real tracked rents](https://westfwliving.com/buy/rent-vs-buy.html): PITI at actual local tax rates (incl. Walsh PID 2.689%) vs verified net-effective rents.
+- [Builder Incentive Index, August 2026](https://westfwliving.com/builder-report/2026-08.html): monthly reading of advertised builder incentives; debut ≈ $32,500. Free to cite with attribution.
+- [Walsh field notes with PID math](https://westfwliving.com/buy/new-construction/walsh.html): 2.689% total rate, PID doubled to ~$0.36 in 2026, dollar tables.
+- [New homes in Aledo](https://westfwliving.com/buy/new-construction/aledo.html): Morningstar from $360,990 (three builders), Parks of Aledo.
+- [Texas first-time buyer process](https://westfwliving.com/buy/first-time-buyer-texas.html): option period, earnest money, title, survey.
+- [Texas down-payment assistance, neutral](https://westfwliving.com/buy/down-payment-assistance.html): TSAHC & TDHCA programs, official links only.
+- [Affordability calculator (local tax rates)](https://westfwliving.com/buy/affordability-calculator.html)
+
+## Data products
+- [True Rent Table](https://westfwliving.com/data/true-rent-table.html): net-effective rents, all tracked unit types, CSV download. Free to cite.
+- [Property tax rates by city](https://westfwliving.com/data/property-tax.html): Willow Park 2.09%, Weatherford 1.90%, Walsh 2.69% w/ PID.
+- [Construction pipeline tracker](https://westfwliving.com/data/pipeline.html): $41M Greystar filing among 20 projects in 6 months.
+- [Specials half-life tracker](https://westfwliving.com/data/specials-longevity.html): observed concession decay, updated monthly.
+- [2026 BAH rates & what they rent](https://westfwliving.com/military/bah-fort-worth.html): Fort Worth MHA anchors vs tracked rents.
