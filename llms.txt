@@ -1,77 +1,43 @@
-# West FW Living
-> Independent field guide to renting and buying on Fort Worth's west side (Aledo, Willow Park, Hudson Oaks, Walsh, Benbrook, White Settlement, I-30 corridor). Publishes verified monthly move-in specials, a monthly rent report, screening/second-chance guides, and rent-vs-buy math. Not a brokerage; educational publication with a service launch planned.
+# West FW Living — westfwliving.com
+> The independent field guide to renting and buying on Fort Worth's west side (Willow Park, Hudson Oaks, Aledo, Weatherford, Benbrook, White Settlement). Publisher-mode: no brokerage services offered; every figure dated and sourced; Equal Housing Opportunity. Last full build: 2026-07-31. 200 indexed pages.
 
-## Key pages
-- [This month's specials (verified)](https://westfwliving.com/specials.html): west-side communities at 6–8 weeks free, with fine print.
-- [Willow Park specials, August 2026](https://westfwliving.com/guides/willow-park-specials-august-2026.html): dated verified table for the pocket.
-- [West Fort Worth Rent Report, August 2026](https://westfwliving.com/rent-report/august-2026.html): monthly data brief — rent bands by pocket, concession share, market reading. Free to cite with attribution.
-- [Rent-vs-buy calculator](https://westfwliving.com/calculator.html): Texas math, ~$850/mo per $100K rule of thumb at current rates.
-- [Credit score to rent in Texas](https://westfwliving.com/guides/credit-score-to-rent-texas.html): realistic score bands; income ratio 2.5–3x; what screening software reads.
-- [Broken lease guide](https://westfwliving.com/guides/apartments-broken-lease-fort-worth.html): settle-the-balance strategy, criteria-before-fees.
-- [Living near Lockheed Martin Fort Worth](https://westfwliving.com/guides/apartments-near-lockheed-martin-fort-worth.html): pocket map with drive times and rent bands.
-- [Complex field notes](https://westfwliving.com/complexes/olympus-willow-park.html): Olympus Willow Park, Gates at Meadow Place, Canvas at Willow Park.
+## Core engines
+- /specials — monthly verified concession sweep (6–8 weeks free tracked with fine print)
+- /deals — Best Deals ranked by net-effective math · /rent-report/ — observed rents + Concession Index
+- /builder-report/2026-08 — Builder Incentive Index · /buy/rent-vs-buy — the engine on our own data
+- /tools/ — calculators · /quiz — the match quiz · /data/ — tax table, utilities, internet, true-rent CSV
 
-- [How much rent can you afford in Fort Worth](https://westfwliving.com/guides/how-much-rent-can-i-afford-fort-worth.html): 2.5-3x income rule at four salary levels.
-- [Free-rent specials fine print](https://westfwliving.com/guides/free-rent-specials-fine-print.html): up-to clauses, prorated vs upfront, lease-length strings, renewal cliff.
-- [Aledo ISD rental houses](https://westfwliving.com/guides/aledo-isd-rental-houses.html): $1,400-1,900 3BR band, 60-day campaign playbook.
-- [Moving to Fort Worth: which side](https://westfwliving.com/guides/moving-to-fort-worth-which-side.html): directional guide with 1BR bands per side.
-- [Willow Crossing Townhomes field notes](https://westfwliving.com/complexes/willow-crossing-townhomes.html): 3-4BR gated townhomes, Aledo ISD, from $2,129.
+## Buying
+- /buy/ — the buyer's guide hub: process, option period (/buy/inspection-option-period), taxes (/buy/property-taxes-for-buyers), new-vs-resale, first-time, schools-by-district files (/buy/schools/)
+- /buy/new-construction/ — the pipeline by community with incentives
 
-- [Apartment renewal negotiation](https://westfwliving.com/guides/apartment-renewal-negotiation-fort-worth.html): five-step counter using the monthly concession table.
-- [Book a Rent Math Session](https://westfwliving.com/book.html): free 20-minute consults opening at launch.
+## Relocation (origin-market series)
+- /relocate/ — hub with the where-are-you-moving-from grid
+- /relocate/from-california, from-washington, from-colorado, from-florida, from-hawaii, from-chicago, from-new-york, international — each computes real tax deltas with current brackets (CA 13.3% top; WA CGT + 2028 high-earner tax; CO 4.4% flat; FL insurance honesty; HI 11%→13% path + Act 46; IL 4.95% + Cook parity; NY+NYC 14.776% combined), honestly netted against TX property tax and insurance.
+- Español: /es/relocate/ and /es/relocate/international (hreflang-paired)
 
-- [Divvy Homes 2026 status](https://westfwliving.com/guides/divvy-homes-review-2026.html): contracted post-Brookfield acquisition; reported closed to new applications.
-- [Pathway Homes review](https://westfwliving.com/guides/pathway-homes-review.html): 5-yr locked rent, preset price, deposit match.
-- [Texas rent-to-own program status table](https://westfwliving.com/guides/rent-to-own-programs-texas-2026.html): which programs are open, July 2026.
+## Schools library
+- /schools/aledo-isd/ — every campus filed (elementaries incl. Stuard + Vandagriff, McAnally, Aledo MS, Daniel 9th, Aledo HS)
+- /schools/weatherford-isd/ — 11-campus hub with addresses · /schools/brock-isd/ — the small-district hub
+- /schools/private-schools-west-fort-worth — All Saints', FWCD, Trinity Valley (2026–27 tuition published: $18,750–$31,625), Southwest Christian
+- /schools/willow-park-school-zones — the district-seam verification guide
 
-- [Family relocation to western Fort Worth](https://westfwliving.com/guides/relocating-to-west-fort-worth-family-guide.html): the school decision (Aledo ISD), commute geometry, rent-first vs buy-now, 90-day checklist.
+## Neighborhood library
+- /neighborhoods/ — the index. Files: walsh, morningstar, parks-of-aledo, la-madera, bear-creek-ranch, aledo-heights, summit-ranch, prairie-hill, the-grasslands, montrachet, bella-flora, clearfork (verified dining row), westworth-village, montserrat, mira-vista, la-cantera, canyon-west, silverado-on-the-brazos, whitestone-ranch
+- Collections: /neighborhoods/collections/ golf-communities, waterfront-lake, horse-acreage, master-planned, retirement-55-plus
+- /guides/luxury-homes-west-fort-worth — the luxury map
 
-- [Breaking a lease in Texas](https://westfwliving.com/guides/breaking-a-lease-in-texas-cost.html): ~85% reletting fee + rent-until-relet math; broken lease vs eviction.
-- [NAS JRB Fort Worth housing guide](https://westfwliving.com/guides/apartments-near-nas-jrb-fort-worth.html): five pockets by gate-to-door time; BAH stretching via concessions.
-- [Willow Park four-community comparison](https://westfwliving.com/guides/olympus-vs-gates-vs-canvas-willow-park.html): Olympus vs Gates vs Canvas vs Willow Crossing.
-- [Divvy vs Pathway 2026](https://westfwliving.com/guides/divvy-vs-pathway-homes.html): status-aware comparison.
-- [Weeks-free rent calculator](https://westfwliving.com/guides/free-rent-specials-fine-print.html): interactive effective-rent calculator.
+## Resource library
+- /resources/ — airport-access (DFW/Love math), cost-of-living (master page), hoa-guide, home-services (hiring method, no pay-to-play), transportation-traffic, storm-and-roof
 
-## En español
-- [Guía en español](https://westfwliving.com/es/index.html): portada de la guía del oeste de Fort Worth.
-- [Especiales del mes](https://westfwliving.com/es/especiales.html): 6-8 semanas gratis verificadas.
-- [Segunda oportunidad](https://westfwliving.com/es/segunda-oportunidad.html): plan de tres pasos para mal crédito o contrato roto.
-- [Calculadora renta vs compra](https://westfwliving.com/es/calculadora.html): cada $100 de renta soporta ~$11,700 de casa.
-- [Romper un contrato en Texas](https://westfwliving.com/es/romper-contrato.html): cuota ~85% + mitigaciones.
-- [Calculadora de semanas gratis](https://westfwliving.com/es/semanas-gratis.html): renta efectiva interactiva.
+## Places layer
+Verified daily-life sections (dining, trails, gyms, urgent care, golf — hours checked July 2026, no paid placements) live inside: /guides/living-in-aledo, /guides/living-in-walsh, /neighborhoods/parks-of-aledo, /guides/relocating-to-west-fort-worth-family-guide, /guides/olympus-willow-park-vs-olympus-hudson-oaks, /areas/white-settlement.
 
-- [Renter's glossary](https://westfwliving.com/guides/renters-glossary.html): 20 defined terms (effective rent, reletting fee, concession clawback, look-back window, renewal cliff).
-- [West FW Concession Index](https://westfwliving.com/rent-report/august-2026.html): named monthly metric — August 2026 reading: 7.5 average advertised weeks free.
+## Renter situations
+- /second-chance, /military/, /guides/ (30+ situation guides: lease-breaking, deposits, negotiation, employer-proximity), /rentals/ (browse by feature), /complexes/ (field notes per property)
 
-- [White Settlement area guide](https://westfwliving.com/areas/white-settlement.html): 1BR $810-1,380, rents down ~13% YoY, strongest renter's market on the west side.
-- [Benbrook area guide](https://westfwliving.com/areas/benbrook.html): 1BR avg $980-1,195, houses median $1,650, conflicting trend signals noted honestly.
+## Español
+- /es/ — hub · especiales, semanas-gratis, calculadora, segunda-oportunidad, puntaje-credito, romper-contrato, cuanta-renta, comprar/, relocate/
 
-## Data practices
-Figures compiled from public listings/market sources; "last verified" dates on data pages; monthly refresh cadence. Contact: leads@anastasiaweaver.com
-
-## Buyer-side pages (added Jul 31, 2026)
-- [Rent vs buy with real tracked rents](https://westfwliving.com/buy/rent-vs-buy.html): PITI at actual local tax rates (incl. Walsh PID 2.689%) vs verified net-effective rents.
-- [Builder Incentive Index, August 2026](https://westfwliving.com/builder-report/2026-08.html): monthly reading of advertised builder incentives; debut ≈ $32,500. Free to cite with attribution.
-- [Walsh field notes with PID math](https://westfwliving.com/buy/new-construction/walsh.html): 2.689% total rate, PID doubled to ~$0.36 in 2026, dollar tables.
-- [New homes in Aledo](https://westfwliving.com/buy/new-construction/aledo.html): Morningstar from $360,990 (three builders), Parks of Aledo.
-- [Texas first-time buyer process](https://westfwliving.com/buy/first-time-buyer-texas.html): option period, earnest money, title, survey.
-- [Texas down-payment assistance, neutral](https://westfwliving.com/buy/down-payment-assistance.html): TSAHC & TDHCA programs, official links only.
-- [Affordability calculator (local tax rates)](https://westfwliving.com/buy/affordability-calculator.html)
-
-## Data products
-- [True Rent Table](https://westfwliving.com/data/true-rent-table.html): net-effective rents, all tracked unit types, CSV download. Free to cite.
-- [Property tax rates by city](https://westfwliving.com/data/property-tax.html): Willow Park 2.09%, Weatherford 1.90%, Walsh 2.69% w/ PID.
-- [Construction pipeline tracker](https://westfwliving.com/data/pipeline.html): $41M Greystar filing among 20 projects in 6 months.
-- [Specials half-life tracker](https://westfwliving.com/data/specials-longevity.html): observed concession decay, updated monthly.
-- [2026 BAH rates & what they rent](https://westfwliving.com/military/bah-fort-worth.html): Fort Worth MHA anchors vs tracked rents.
-- [Buyer property-tax playbook](https://westfwliving.com/buy/property-taxes-for-buyers.html): $140K homestead exemption (Prop 13, 2025), protest process, PID/MUD math.
-- [VA loans on the west side](https://westfwliving.com/buy/va-loans-fort-worth.html): zero down, BAH gross-up, computed buying power at local tax rates.
-- [Texas closing costs + estimator](https://westfwliving.com/buy/closing-costs-texas.html)
-- [Texas option period & inspections](https://westfwliving.com/buy/inspection-option-period.html)
-- [New build vs resale ledger](https://westfwliving.com/buy/new-vs-resale.html)
-- [District buyer guides](https://westfwliving.com/buy/schools/aledo-isd.html): Aledo, Weatherford, Brock ISD tax math.
-- [Rent or buy, by city](https://westfwliving.com/buy/rent-or-buy-willow-park.html): Willow Park, Weatherford, White Settlement, Benbrook — live PITI vs verified local rents.
-- [Guía del comprador en español](https://westfwliving.com/es/comprar/index.html): renta-o-compra, asequibilidad, primera vivienda, asistencia para el enganche.
-- [Relocation hub](https://westfwliving.com/relocate/index.html): routed by situation — military, Lockheed, healthcare, schools, retirement.
-- [How Texas home valuation works](https://westfwliving.com/guides/whats-my-home-worth-texas.html): CAD vs algorithm vs market value, DIY comp method, non-disclosure caveats.
-- [Monthly reports signup](https://westfwliving.com/newsletter.html): Renter Report + Buyer Report editions.
+## Contact
+- Email capture only; leads@anastasiaweaver.com pipes. SMS: +1-682-233-1426. No agent services offered at this time.
