@@ -58,10 +58,16 @@ exports.handler = async (event) => {
         .map((b) => b.text)
         .join("\n") || "Sorry — I hit a snag. Try again?";
 
+    // TEMP DIAGNOSTIC (secret-safe: upstream status + error type only; no key, no body).
+    const diag = (event.queryStringParameters || {}).diag === "1";
+    const body = diag
+      ? { reply: text, _status: r.status, _type: data && data.error ? data.error.type : null, _keyset: !!process.env.ANTHROPIC_API_KEY }
+      : { reply: text };
+
     return {
       statusCode: 200,
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ reply: text }),
+      body: JSON.stringify(body),
     };
   } catch (e) {
     return { statusCode: 500, body: JSON.stringify({ error: "Server error" }) };
