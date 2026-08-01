@@ -1,0 +1,172 @@
+// West FW Living comparison data — verified July 2026 against the site's own tax table, campus files, and places layer.
+window.WFL_COMPARE = {
+ "willow-park": {
+  "name": "Willow Park",
+  "cat": "city",
+  "tax": "2.091% total (city 0.4325)",
+  "taxnote": "Aledo ISD side; WISD seam exists — verify per address",
+  "district": "Aledo ISD (most addresses; seam with WISD)",
+  "price": "New construction $350–500K band; district premium priced in",
+  "daily": "The District at Willow Park (Cork &amp; Pig, live-music pavilion), Parker County Brewing, Crown Pointe medical cluster incl. 24/7 ER",
+  "commute": "I-20 direct; ~25–35 min to downtown FW off-peak",
+  "character": "The corridor's newest retail center + the medical cluster; small city that added a downtown in one stroke",
+  "link": "/guides/olympus-vs-gates-vs-canvas-willow-park"
+ },
+ "hudson-oaks": {
+  "name": "Hudson Oaks",
+  "cat": "city",
+  "tax": "~1.32% median effective (county data)",
+  "taxnote": "Retail sales tax funds the city — the nominal city levy runs notably low; verify the parcel's stack",
+  "district": "Weatherford ISD side of the seam (Mary Martin Elem); some Aledo ISD edges",
+  "price": "Established stock + selective new; often undercuts Willow Park like-for-like",
+  "daily": "Boo-Ray's, Bush League + the cinema strip, Oakridge Urgent Care (Sunday hrs), No Fear Fitness 24/7",
+  "commute": "I-20 direct; a hair west of Willow Park — functionally identical",
+  "character": "The no-frills, low-tax retail spine — commercial corridor up front, quiet streets behind it",
+  "link": "/guides/olympus-willow-park-vs-olympus-hudson-oaks"
+ },
+ "aledo": {
+  "name": "Aledo",
+  "cat": "city",
+  "tax": "2.056% total (city 0.3901)",
+  "taxnote": "Aledo ISD throughout",
+  "district": "Aledo ISD — the district's namesake core",
+  "price": "New construction $350–500K band; downtown-adjacent resale carries the identity premium",
+  "daily": "Press Café, Jakes Burgers, Wild Honey Collective, Cultivate; Parks of Aledo trail system; Split Rail golf",
+  "commute": "Add ~5 min vs Willow Park; FM 1187 is the artery",
+  "character": "The small-town-with-the-schools identity — Friday nights are a civic event",
+  "link": "/guides/living-in-aledo"
+ },
+ "weatherford": {
+  "name": "Weatherford",
+  "cat": "city",
+  "tax": "1.902% total — the corridor's lowest",
+  "taxnote": "Weatherford ISD",
+  "district": "Weatherford ISD (11 campuses)",
+  "price": "The corridor's lowest entry prices; full spread from historic to new",
+  "daily": "The courthouse square, Antebellum Ale House, full-city services, Medical City Weatherford",
+  "commute": "Add ~10–15 min vs Willow Park to any FW destination",
+  "character": "A real county-seat city — services, history, and the price relief that distance buys",
+  "link": "/buy/rent-or-buy-weatherford"
+ },
+ "benbrook": {
+  "name": "Benbrook",
+  "cat": "city",
+  "tax": "Benbrook + Tarrant + FWISD stack",
+  "taxnote": "Pull the parcel; Tarrant-side rates differ from Parker",
+  "district": "Fort Worth ISD (western campuses)",
+  "price": "The Tarrant-side value play — under comparable FW neighborhoods",
+  "daily": "Benbrook Lake (trails, marina), Whitestone golf side, 15 min to Clearfork's dining row",
+  "commute": "Inside the loop conversation — shortest FW commutes on this list",
+  "character": "The lake-country value case: FW proximity without FW pricing",
+  "link": "/areas/benbrook"
+ },
+ "white-settlement": {
+  "name": "White Settlement",
+  "cat": "city",
+  "tax": "WS + Tarrant + FWISD stack",
+  "taxnote": "Pull the parcel",
+  "district": "Fort Worth ISD / White Settlement ISD — verify per address",
+  "price": "The lowest entry prices in this guide's coverage",
+  "daily": "Hawks Creek golf next door, NAS JRB economy, quick Cultural District access",
+  "commute": "The shortest drive to the base and west FW employers",
+  "character": "The unpretentious entry point — daily costs stay low and the golf is five minutes out",
+  "link": "/areas/white-settlement"
+ },
+ "walsh": {
+  "name": "Walsh",
+  "cat": "neighborhood",
+  "tax": "FW-in-Parker stack 2.353% + plan assessments — read the disclosures",
+  "taxnote": "Highest stack on this list; the plan's amenities are what it buys",
+  "district": "Aledo ISD — Walsh Elementary on site",
+  "price": "The corridor's master-plan premium; townhomes to customs",
+  "daily": "Own market, amenity campus, gig fiber standard; Clearfork 20–25 min east, The District 10–12 min west",
+  "commute": "West FW edge — best-positioned master plan for FW jobs",
+  "character": "The full-ecosystem flagship: the plan IS the product",
+  "link": "/guides/living-in-walsh"
+ },
+ "morningstar": {
+  "name": "Morningstar",
+  "cat": "neighborhood",
+  "tax": "Aledo-side Parker stack — verify parcel + any PID/MUD",
+  "taxnote": "Read the assessment disclosures like every master plan",
+  "district": "Aledo ISD",
+  "price": "The value master plan — the amenity set without Walsh's ceiling",
+  "daily": "Established phases, pools/parks; Willow Park's District 10 min; Aledo's core 10 min",
+  "commute": "North of I-20 — clean interstate access",
+  "character": "The established, resale-deep alternative — less spectacle, more house per dollar",
+  "link": "/neighborhoods/morningstar"
+ },
+ "parks-of-aledo": {
+  "name": "Parks of Aledo",
+  "cat": "neighborhood",
+  "tax": "Aledo city stack 2.056% — verify parcel",
+  "taxnote": "",
+  "district": "Aledo ISD",
+  "price": "In-town Aledo new-and-recent; the trail adjacency is priced",
+  "daily": "THE amenity: ~6 miles of WMBA-maintained greenbelt trails — real infrastructure with its own constituency",
+  "commute": "In-town Aledo; FM 1187 to I-20",
+  "character": "The trails-first plan — the amenity that holds value independent of builder marketing",
+  "link": "/neighborhoods/parks-of-aledo"
+ },
+ "aledo-isd": {
+  "name": "Aledo ISD",
+  "cat": "district",
+  "tax": "ISD levy 1.2052 within member-city stacks",
+  "taxnote": "$140K school-portion homestead exemption applies",
+  "district": "Single-track: elems → McAnally/Aledo MS → Daniel 9th → Aledo High",
+  "price": "The district premium is real across its zone",
+  "daily": "A-rated posture, top-decile identity; every campus filed on this site",
+  "commute": "Spans Willow Park–Aledo–Walsh footprint",
+  "character": "The reason many families move here — small-district feel at growing scale, rezoning as it grows",
+  "link": "/schools/aledo-isd/"
+ },
+ "weatherford-isd": {
+  "name": "Weatherford ISD",
+  "cat": "district",
+  "tax": "ISD levy 1.0342 within Weatherford's 1.902 stack",
+  "taxnote": "",
+  "district": "11 campuses: WHS + 9th Gr Center, Tison + Hall MS, 7 elementaries",
+  "price": "The corridor's lowest housing costs sit in its zone",
+  "daily": "Big-district program menu: AP, dual credit w/ Weatherford College, CTE tracks",
+  "commute": "Weatherford + Hudson Oaks side of the seam",
+  "character": "Near-average state performance traded against meaningfully lower cost of entry",
+  "link": "/schools/weatherford-isd/"
+ },
+ "brock-isd": {
+  "name": "Brock ISD",
+  "cat": "district",
+  "tax": "Rural Parker stacks — verify parcel",
+  "taxnote": "",
+  "district": "Four-campus ladder: Elementary → Intermediate → Junior High → High",
+  "price": "Acreage and land pricing under the Aledo premium",
+  "daily": "Statewide athletics reputation outsized for enrollment; consistently strong ratings",
+  "commute": "Add 10+ min past Weatherford",
+  "character": "The small-and-mighty district anchoring the land-and-small-school plan",
+  "link": "/schools/brock-isd/"
+ },
+ "montrachet": {
+  "name": "Montrachet",
+  "cat": "luxury",
+  "tax": "FW + Tarrant stack; MUD/PID check per contract",
+  "taxnote": "",
+  "district": "FWISD + the private set five minutes east",
+  "price": "Low-to-mid seven figures new; premier lots above",
+  "daily": "Guarded gate, amenity center, custom builder roster; Clearfork 10–15 min",
+  "commute": "I-30/White Settlement Rd corridor",
+  "character": "The newest flagship — uniform polish, gate-and-amenity driven",
+  "link": "/neighborhoods/montrachet"
+ },
+ "montserrat": {
+  "name": "Montserrat",
+  "cat": "luxury",
+  "tax": "FW + Tarrant stack per parcel",
+  "taxnote": "",
+  "district": "FWISD + the private set",
+  "price": "Seven figures for newer/view customs; resale depth Montrachet lacks",
+  "daily": "Established landscaping, settled build-out, the same ridge views",
+  "commute": "Same Team Ranch corridor",
+  "character": "The ridge's original — maturity over polish, resales over builder queues",
+  "link": "/neighborhoods/montserrat"
+ }
+};
+window.WFL_COMPARE_ROWS = [["tax", "The tax line"], ["district", "Schools"], ["price", "Price posture"], ["daily", "Daily life"], ["commute", "Commute"], ["character", "Character, honestly"]];
