@@ -48,8 +48,10 @@
     <input type="hidden" name="_subject" value="RES-COL lead — West FW Living">
     <input type="hidden" name="_next" value="https://westfwliving.com/thanks.html">
     <input type="hidden" name="audience" value="schools">
-    <label for="sRES-COLn">Name</label><input id="sRES-COLn" name="name" required>
-    <label for="sRES-COLe">Email</label><input id="sRES-COLe" name="email" type="email" required>
+    <label for="sRES-COLn">Name</label><input id="sRES-COLn" name="name" required autocomplete="name">
+    <label for="sRES-COLe">Email</label><input id="sRES-COLe" name="email" type="email" required autocomplete="email">
+    <label for="sRES-COLexp">Phone</label><input id="sRES-COLexp" name="phone" type="tel" required autocomplete="tel">
+    <label for="sRES-COLexd">When are you planning to move? (optional)</label><input id="sRES-COLexd" name="move_date" placeholder="e.g., spring 2027">
     <button class="btn" type="submit">Send it to me</button>
   </form>
 </section>

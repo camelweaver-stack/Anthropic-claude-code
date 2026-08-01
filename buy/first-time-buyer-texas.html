@@ -53,8 +53,10 @@
     <input type="hidden" name="_subject" value="BUYER-FIRSTTIME lead — West FW Living">
     <input type="hidden" name="_next" value="https://westfwliving.com/thanks.html">
     <input type="hidden" name="audience" value="buyer-intent">
-    <label for="ftname">Name</label><input id="ftname" name="name" required>
-    <label for="ftemail">Email</label><input id="ftemail" name="email" type="email" required>
+    <label for="ftname">Name</label><input id="ftname" name="name" required autocomplete="name">
+    <label for="ftemail">Email</label><input id="ftemail" name="email" type="email" required autocomplete="email">
+    <label for="ftemailxp">Phone</label><input id="ftemailxp" name="phone" type="tel" required autocomplete="tel">
+    <label for="ftemailxd">When are you planning to move? (optional)</label><input id="ftemailxd" name="move_date" placeholder="e.g., spring 2027">
     <label for="ftwhen">When are you hoping to buy?</label><input id="ftwhen" name="buy_window" placeholder="e.g., Spring 2027" required>
     <button class="btn" type="submit">Get the Buyer's Field Guide by email</button>
   </form>

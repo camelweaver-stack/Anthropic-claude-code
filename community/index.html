@@ -45,6 +45,16 @@
   <h2>The vibe files, by area</h2>
   <p><a href="/community/vibes/willow-park">Willow Park</a> · <a href="/community/vibes/hudson-oaks">Hudson Oaks</a> · <a href="/community/vibes/aledo">Aledo</a> · <a href="/community/vibes/weatherford">Weatherford</a> · <a href="/community/vibes/benbrook">Benbrook</a> · <a href="/community/vibes/white-settlement">White Settlement</a></p>
 </section>
+<section>
+  <h2>The practical desk</h2>
+  <div class="grid cols2">
+    <div class="card"><h3><a href="/community/civic">Civic life</a></h3><p>Chambers, trail crews, 4-H — and the one-year plug-in playbook.</p></div>
+    <div class="card"><h3><a href="/community/city-services">City services</a></h3><p>Six city halls, four libraries, one famous cat.</p></div>
+    <div class="card"><h3><a href="/community/utilities-setup">Utilities setup</a></h3><p>The Oncor-vs-co-op twist and the who-to-call file.</p></div>
+    <div class="card"><h3><a href="/community/kids">Kids &amp; youth</a></h3><p>Gymnastics pipelines, youth leagues, 4-H, and the free layer.</p></div>
+    <div class="card"><h3><a href="/community/entertainment">Entertainment</a></h3><p>Secret gardens, the opry house, the movie house, live music.</p></div>
+  </div>
+</section>
 <section class="tint" style="border-radius:14px;padding:34px 28px">
   <h2>Get each new dispatch by email</h2>
   <p>The Community Desk's monthly dispatch — what's coming up, what changed in the rankings, and the newest vibe file.</p>
@@ -52,8 +62,10 @@
     <input type="hidden" name="_subject" value="COMM-HUB lead — West FW Living">
     <input type="hidden" name="_next" value="https://westfwliving.com/thanks.html">
     <input type="hidden" name="audience" value="schools">
-    <label for="sCOMM-HUBn">Name</label><input id="sCOMM-HUBn" name="name" required>
-    <label for="sCOMM-HUBe">Email</label><input id="sCOMM-HUBe" name="email" type="email" required>
+    <label for="sCOMM-HUBn">Name</label><input id="sCOMM-HUBn" name="name" required autocomplete="name">
+    <label for="sCOMM-HUBe">Email</label><input id="sCOMM-HUBe" name="email" type="email" required autocomplete="email">
+    <label for="sCOMM-HUBexp">Phone</label><input id="sCOMM-HUBexp" name="phone" type="tel" required autocomplete="tel">
+    <label for="sCOMM-HUBexd">When are you planning to move? (optional)</label><input id="sCOMM-HUBexd" name="move_date" placeholder="e.g., spring 2027">
     <button class="btn" type="submit">Send it to me</button>
   </form>
 </section>

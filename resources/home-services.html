@@ -44,8 +44,10 @@
     <input type="hidden" name="_subject" value="RES-SVC lead — West FW Living">
     <input type="hidden" name="_next" value="https://westfwliving.com/thanks.html">
     <input type="hidden" name="audience" value="schools">
-    <label for="sRES-SVCn">Name</label><input id="sRES-SVCn" name="name" required>
-    <label for="sRES-SVCe">Email</label><input id="sRES-SVCe" name="email" type="email" required>
+    <label for="sRES-SVCn">Name</label><input id="sRES-SVCn" name="name" required autocomplete="name">
+    <label for="sRES-SVCe">Email</label><input id="sRES-SVCe" name="email" type="email" required autocomplete="email">
+    <label for="sRES-SVCexp">Phone</label><input id="sRES-SVCexp" name="phone" type="tel" required autocomplete="tel">
+    <label for="sRES-SVCexd">When are you planning to move? (optional)</label><input id="sRES-SVCexd" name="move_date" placeholder="e.g., spring 2027">
     <button class="btn" type="submit">Send it to me</button>
   </form>
 </section>

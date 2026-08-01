@@ -44,8 +44,10 @@
     <input type="hidden" name="_subject" value="RES-AIR lead — West FW Living">
     <input type="hidden" name="_next" value="https://westfwliving.com/thanks.html">
     <input type="hidden" name="audience" value="schools">
-    <label for="sRES-AIRn">Name</label><input id="sRES-AIRn" name="name" required>
-    <label for="sRES-AIRe">Email</label><input id="sRES-AIRe" name="email" type="email" required>
+    <label for="sRES-AIRn">Name</label><input id="sRES-AIRn" name="name" required autocomplete="name">
+    <label for="sRES-AIRe">Email</label><input id="sRES-AIRe" name="email" type="email" required autocomplete="email">
+    <label for="sRES-AIRexp">Phone</label><input id="sRES-AIRexp" name="phone" type="tel" required autocomplete="tel">
+    <label for="sRES-AIRexd">When are you planning to move? (optional)</label><input id="sRES-AIRexd" name="move_date" placeholder="e.g., spring 2027">
     <button class="btn" type="submit">Send it to me</button>
   </form>
 </section>

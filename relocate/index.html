@@ -95,8 +95,10 @@
     <input type="hidden" name="_subject" value="RELOCATE-HUB lead — West FW Living">
     <input type="hidden" name="_next" value="https://westfwliving.com/thanks.html">
     <input type="hidden" name="audience" value="relocation">
-    <label for="rlname">Name</label><input id="rlname" name="name" required>
-    <label for="rlemail">Email</label><input id="rlemail" name="email" type="email" required>
+    <label for="rlname">Name</label><input id="rlname" name="name" required autocomplete="name">
+    <label for="rlemail">Email</label><input id="rlemail" name="email" type="email" required autocomplete="email">
+    <label for="rlemailxp">Phone</label><input id="rlemailxp" name="phone" type="tel" required autocomplete="tel">
+    <label for="rlemailxd">When are you planning to move? (optional)</label><input id="rlemailxd" name="move_date" placeholder="e.g., spring 2027">
     <label for="rlwhen">When's the move?</label><input id="rlwhen" name="move_window" placeholder="e.g., October 2026" required>
     <button class="btn" type="submit">Send me the Relocation Guide</button>
   </form>

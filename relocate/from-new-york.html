@@ -96,8 +96,10 @@
     <input type="hidden" name="_next" value="https://westfwliving.com/thanks.html">
     <input type="hidden" name="audience" value="relocation">
     <input type="hidden" name="origin_market" value="NY">
-    <label for="rlNYn">Name</label><input id="rlNYn" name="name" required>
-    <label for="rlNYe">Email</label><input id="rlNYe" name="email" type="email" required>
+    <label for="rlNYn">Name</label><input id="rlNYn" name="name" required autocomplete="name">
+    <label for="rlNYe">Email</label><input id="rlNYe" name="email" type="email" required autocomplete="email">
+    <label for="rlNYexp">Phone</label><input id="rlNYexp" name="phone" type="tel" required autocomplete="tel">
+    <label for="rlNYexd">When are you planning to move? (optional)</label><input id="rlNYexd" name="move_date" placeholder="e.g., spring 2027">
     <label for="rlNYw">When's the move?</label><input id="rlNYw" name="move_window" placeholder="e.g., October 2026" required>
     <button class="btn" type="submit">Send me the relocation kit</button>
   </form>

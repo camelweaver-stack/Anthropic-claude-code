@@ -40,8 +40,10 @@
     <input type="hidden" name="_subject" value="SCH-WISD lead — West FW Living">
     <input type="hidden" name="_next" value="https://westfwliving.com/thanks.html">
     <input type="hidden" name="audience" value="schools">
-    <label for="sSCH-WISDn">Name</label><input id="sSCH-WISDn" name="name" required>
-    <label for="sSCH-WISDe">Email</label><input id="sSCH-WISDe" name="email" type="email" required>
+    <label for="sSCH-WISDn">Name</label><input id="sSCH-WISDn" name="name" required autocomplete="name">
+    <label for="sSCH-WISDe">Email</label><input id="sSCH-WISDe" name="email" type="email" required autocomplete="email">
+    <label for="sSCH-WISDexp">Phone</label><input id="sSCH-WISDexp" name="phone" type="tel" required autocomplete="tel">
+    <label for="sSCH-WISDexd">When are you planning to move? (optional)</label><input id="sSCH-WISDexd" name="move_date" placeholder="e.g., spring 2027">
     <button class="btn" type="submit">Send it to me</button>
   </form>
 </section>

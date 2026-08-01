@@ -46,8 +46,10 @@
     <input type="hidden" name="_subject" value="COMM-BBQ lead — West FW Living">
     <input type="hidden" name="_next" value="https://westfwliving.com/thanks.html">
     <input type="hidden" name="audience" value="schools">
-    <label for="sCOMM-BBQn">Name</label><input id="sCOMM-BBQn" name="name" required>
-    <label for="sCOMM-BBQe">Email</label><input id="sCOMM-BBQe" name="email" type="email" required>
+    <label for="sCOMM-BBQn">Name</label><input id="sCOMM-BBQn" name="name" required autocomplete="name">
+    <label for="sCOMM-BBQe">Email</label><input id="sCOMM-BBQe" name="email" type="email" required autocomplete="email">
+    <label for="sCOMM-BBQexp">Phone</label><input id="sCOMM-BBQexp" name="phone" type="tel" required autocomplete="tel">
+    <label for="sCOMM-BBQexd">When are you planning to move? (optional)</label><input id="sCOMM-BBQexd" name="move_date" placeholder="e.g., spring 2027">
     <button class="btn" type="submit">Send it to me</button>
   </form>
 </section>

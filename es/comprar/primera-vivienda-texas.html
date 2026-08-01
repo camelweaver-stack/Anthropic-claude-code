@@ -48,8 +48,10 @@
     <input type="hidden" name="_next" value="https://westfwliving.com/thanks.html">
     <input type="hidden" name="audience" value="buyer-intent">
     <input type="hidden" name="idioma" value="es">
-    <label for="epnombre">Nombre</label><input id="epnombre" name="name" required>
-    <label for="epcorreo">Correo electrónico</label><input id="epcorreo" name="email" type="email" required>
+    <label for="epnombre">Nombre</label><input id="epnombre" name="name" required autocomplete="name">
+    <label for="epcorreo">Correo electrónico</label><input id="epcorreo" name="email" type="email" required autocomplete="email">
+    <label for="epcorreoxp">Teléfono</label><input id="epcorreoxp" name="phone" type="tel" required autocomplete="tel">
+    <label for="epcorreoxd">¿Para cuándo planea mudarse? (opcional)</label><input id="epcorreoxd" name="move_date" placeholder="p. ej., primavera 2027">
     <label for="epcuando">¿Cuándo espera comprar?</label><input id="epcuando" name="buy_window" placeholder="p. ej., primavera 2027" required>
     <button class="btn" type="submit">Recibir la Guía del Comprador por correo</button>
   </form>

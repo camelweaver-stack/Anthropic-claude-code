@@ -40,8 +40,10 @@
     <input type="hidden" name="_subject" value="RES-HOA lead — West FW Living">
     <input type="hidden" name="_next" value="https://westfwliving.com/thanks.html">
     <input type="hidden" name="audience" value="schools">
-    <label for="sRES-HOAn">Name</label><input id="sRES-HOAn" name="name" required>
-    <label for="sRES-HOAe">Email</label><input id="sRES-HOAe" name="email" type="email" required>
+    <label for="sRES-HOAn">Name</label><input id="sRES-HOAn" name="name" required autocomplete="name">
+    <label for="sRES-HOAe">Email</label><input id="sRES-HOAe" name="email" type="email" required autocomplete="email">
+    <label for="sRES-HOAexp">Phone</label><input id="sRES-HOAexp" name="phone" type="tel" required autocomplete="tel">
+    <label for="sRES-HOAexd">When are you planning to move? (optional)</label><input id="sRES-HOAexd" name="move_date" placeholder="e.g., spring 2027">
     <button class="btn" type="submit">Send it to me</button>
   </form>
 </section>

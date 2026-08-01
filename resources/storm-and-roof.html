@@ -40,8 +40,10 @@
     <input type="hidden" name="_subject" value="RES-STORM lead — West FW Living">
     <input type="hidden" name="_next" value="https://westfwliving.com/thanks.html">
     <input type="hidden" name="audience" value="schools">
-    <label for="sRES-STORMn">Name</label><input id="sRES-STORMn" name="name" required>
-    <label for="sRES-STORMe">Email</label><input id="sRES-STORMe" name="email" type="email" required>
+    <label for="sRES-STORMn">Name</label><input id="sRES-STORMn" name="name" required autocomplete="name">
+    <label for="sRES-STORMe">Email</label><input id="sRES-STORMe" name="email" type="email" required autocomplete="email">
+    <label for="sRES-STORMexp">Phone</label><input id="sRES-STORMexp" name="phone" type="tel" required autocomplete="tel">
+    <label for="sRES-STORMexd">When are you planning to move? (optional)</label><input id="sRES-STORMexd" name="move_date" placeholder="e.g., spring 2027">
     <button class="btn" type="submit">Send it to me</button>
   </form>
 </section>

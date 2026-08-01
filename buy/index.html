@@ -70,8 +70,10 @@
     <input type="hidden" name="_subject" value="BUYER-HUB lead — West FW Living">
     <input type="hidden" name="_next" value="https://westfwliving.com/thanks.html">
     <input type="hidden" name="audience" value="buyer-intent">
-    <label for="bhname">Name</label><input id="bhname" name="name" required>
-    <label for="bhemail">Email</label><input id="bhemail" name="email" type="email" required>
+    <label for="bhname">Name</label><input id="bhname" name="name" required autocomplete="name">
+    <label for="bhemail">Email</label><input id="bhemail" name="email" type="email" required autocomplete="email">
+    <label for="bhemailxp">Phone</label><input id="bhemailxp" name="phone" type="tel" required autocomplete="tel">
+    <label for="bhemailxd">When are you planning to move? (optional)</label><input id="bhemailxd" name="move_date" placeholder="e.g., spring 2027">
     <label for="bhwhen">When are you hoping to buy?</label><input id="bhwhen" name="buy_window" placeholder="e.g., Spring 2027" required>
     <button class="btn" type="submit">Get the Buyer's Field Guide by email</button>
   </form>

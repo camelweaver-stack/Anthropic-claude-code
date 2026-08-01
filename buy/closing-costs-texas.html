@@ -62,8 +62,10 @@
     <input type="hidden" name="_subject" value="BUYER-CLOSING lead — West FW Living">
     <input type="hidden" name="_next" value="https://westfwliving.com/thanks.html">
     <input type="hidden" name="audience" value="buyer-intent">
-    <label for="ccname">Name</label><input id="ccname" name="name" required>
-    <label for="ccemail">Email</label><input id="ccemail" name="email" type="email" required>
+    <label for="ccname">Name</label><input id="ccname" name="name" required autocomplete="name">
+    <label for="ccemail">Email</label><input id="ccemail" name="email" type="email" required autocomplete="email">
+    <label for="ccemailxp">Phone</label><input id="ccemailxp" name="phone" type="tel" required autocomplete="tel">
+    <label for="ccemailxd">When are you planning to move? (optional)</label><input id="ccemailxd" name="move_date" placeholder="e.g., spring 2027">
     <label for="ccwhen">When are you hoping to buy?</label><input id="ccwhen" name="buy_window" placeholder="e.g., Spring 2027" required>
     <button class="btn" type="submit">Get the Buyer's Field Guide by email</button>
   </form>

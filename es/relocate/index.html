@@ -45,8 +45,10 @@
     <input type="hidden" name="_next" value="https://westfwliving.com/es/gracias.html">
     <input type="hidden" name="audience" value="relocation">
     <input type="hidden" name="idioma" value="es">
-    <label for="eRELO-ESn">Nombre</label><input id="eRELO-ESn" name="name" required>
-    <label for="eRELO-ESe">Correo electrónico</label><input id="eRELO-ESe" name="email" type="email" required>
+    <label for="eRELO-ESn">Nombre</label><input id="eRELO-ESn" name="name" required autocomplete="name">
+    <label for="eRELO-ESe">Correo electrónico</label><input id="eRELO-ESe" name="email" type="email" required autocomplete="email">
+    <label for="eRELO-ESexp">Teléfono</label><input id="eRELO-ESexp" name="phone" type="tel" required autocomplete="tel">
+    <label for="eRELO-ESexd">¿Para cuándo planea mudarse? (opcional)</label><input id="eRELO-ESexd" name="move_date" placeholder="p. ej., primavera 2027">
     <button class="btn" type="submit">Envíamelo</button>
   </form>
 </section>

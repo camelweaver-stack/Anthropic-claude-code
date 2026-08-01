@@ -43,8 +43,10 @@
     <input type="hidden" name="_subject" value="LUX-BF lead — West FW Living">
     <input type="hidden" name="_next" value="https://westfwliving.com/thanks.html">
     <input type="hidden" name="audience" value="luxury">
-    <label for="lxBFn">Name</label><input id="lxBFn" name="name" required>
-    <label for="lxBFe">Email</label><input id="lxBFe" name="email" type="email" required>
+    <label for="lxBFn">Name</label><input id="lxBFn" name="name" required autocomplete="name">
+    <label for="lxBFe">Email</label><input id="lxBFe" name="email" type="email" required autocomplete="email">
+    <label for="lxBFexp">Phone</label><input id="lxBFexp" name="phone" type="tel" required autocomplete="tel">
+    <label for="lxBFexd">When are you planning to move? (optional)</label><input id="lxBFexd" name="move_date" placeholder="e.g., spring 2027">
     <button class="btn" type="submit">Send me the pocket report</button>
   </form>
 </section>

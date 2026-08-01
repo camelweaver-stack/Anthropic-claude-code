@@ -97,8 +97,10 @@
     <input type="hidden" name="_next" value="https://westfwliving.com/thanks.html">
     <input type="hidden" name="audience" value="relocation">
     <input type="hidden" name="origin_market" value="CHI">
-    <label for="rlCHIn">Name</label><input id="rlCHIn" name="name" required>
-    <label for="rlCHIe">Email</label><input id="rlCHIe" name="email" type="email" required>
+    <label for="rlCHIn">Name</label><input id="rlCHIn" name="name" required autocomplete="name">
+    <label for="rlCHIe">Email</label><input id="rlCHIe" name="email" type="email" required autocomplete="email">
+    <label for="rlCHIexp">Phone</label><input id="rlCHIexp" name="phone" type="tel" required autocomplete="tel">
+    <label for="rlCHIexd">When are you planning to move? (optional)</label><input id="rlCHIexd" name="move_date" placeholder="e.g., spring 2027">
     <label for="rlCHIw">When's the move?</label><input id="rlCHIw" name="move_window" placeholder="e.g., October 2026" required>
     <button class="btn" type="submit">Send me the relocation kit</button>
   </form>

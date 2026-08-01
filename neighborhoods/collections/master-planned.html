@@ -40,8 +40,10 @@
     <input type="hidden" name="_subject" value="COL-MP lead — West FW Living">
     <input type="hidden" name="_next" value="https://westfwliving.com/thanks.html">
     <input type="hidden" name="audience" value="schools">
-    <label for="sCOL-MPn">Name</label><input id="sCOL-MPn" name="name" required>
-    <label for="sCOL-MPe">Email</label><input id="sCOL-MPe" name="email" type="email" required>
+    <label for="sCOL-MPn">Name</label><input id="sCOL-MPn" name="name" required autocomplete="name">
+    <label for="sCOL-MPe">Email</label><input id="sCOL-MPe" name="email" type="email" required autocomplete="email">
+    <label for="sCOL-MPexp">Phone</label><input id="sCOL-MPexp" name="phone" type="tel" required autocomplete="tel">
+    <label for="sCOL-MPexd">When are you planning to move? (optional)</label><input id="sCOL-MPexd" name="move_date" placeholder="e.g., spring 2027">
     <button class="btn" type="submit">Send it to me</button>
   </form>
 </section>

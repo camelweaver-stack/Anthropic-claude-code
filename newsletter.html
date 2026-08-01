@@ -34,23 +34,24 @@
   <div class="grid cols2">
     <div class="card"><h3>The Renter Report</h3><p>The refreshed <a href="/deals">deals leaderboard</a>, the <a href="/rent-report/august-2026">Concession Index</a> reading, which specials <a href="/data/specials-longevity">died mid-month</a>, and what's opening — timed to your lease-end window.</p>
       <form class="lead" action="https://formsubmit.co/leads@anastasiaweaver.com" method="POST">
-        <input type="hidden" name="_subject" value="NEWSLETTER-RENTER lead — West FW Living">
-        <input type="hidden" name="_next" value="https://westfwliving.com/thanks.html">
-        <input type="hidden" name="audience" value="renter-newsletter">
-        <label for="nrname">Name</label><input id="nrname" name="name" required>
-        <label for="leadmail0">Email</label>
-        <input id="leadmail0" name="email" type="email" required autocomplete="email">
-        <label for="nrphone">Phone or email</label><input id="nrphone" name="contact" required>
-        <label for="nrlease">Lease ends</label><input id="nrlease" name="lease_end" placeholder="e.g., November 2026" required>
-        <button class="btn" type="submit">Get the Renter Report</button>
-      </form></div>
+    <input type="hidden" name="_subject" value="NEWSLETTER-RENTER lead — West FW Living">
+    <input type="hidden" name="_next" value="https://westfwliving.com/thanks.html">
+    <input type="hidden" name="audience" value="renter-newsletter">
+    <label for="nrname">Name</label><input id="nrname" name="name" required autocomplete="name">
+    <label for="nrmail">Email</label><input id="nrmail" name="email" type="email" required autocomplete="email">
+    <label for="nrphone">Phone</label><input id="nrphone" name="phone" type="tel" required autocomplete="tel">
+    <label for="nrlease">When does your current lease end? (optional)</label><input id="nrlease" name="lease_end" placeholder="e.g., November 2026">
+    <button class="btn" type="submit">Sign me up</button>
+  </form></div>
     <div class="card"><h3>The Buyer Report</h3><p>The <a href="/builder-report/2026-08">Builder Incentive Index</a> reading, rate movement, what filed in <a href="/data/pipeline">the permit pipeline</a>, and the month's sharpest incentive plays.</p>
 <form class="lead" action="https://formsubmit.co/leads@anastasiaweaver.com" method="POST">
     <input type="hidden" name="_subject" value="NEWSLETTER-BUYER lead — West FW Living">
     <input type="hidden" name="_next" value="https://westfwliving.com/thanks.html">
     <input type="hidden" name="audience" value="buyer-intent">
-    <label for="nbname">Name</label><input id="nbname" name="name" required>
-    <label for="nbemail">Email</label><input id="nbemail" name="email" type="email" required>
+    <label for="nbname">Name</label><input id="nbname" name="name" required autocomplete="name">
+    <label for="nbemail">Email</label><input id="nbemail" name="email" type="email" required autocomplete="email">
+    <label for="nbemailxp">Phone</label><input id="nbemailxp" name="phone" type="tel" required autocomplete="tel">
+    <label for="nbemailxd">When are you planning to move? (optional)</label><input id="nbemailxd" name="move_date" placeholder="e.g., spring 2027">
     <label for="nbwhen">When are you hoping to buy?</label><input id="nbwhen" name="buy_window" placeholder="e.g., Spring 2027" required>
     <button class="btn" type="submit">Get the Buyer's Field Guide by email</button>
   </form>

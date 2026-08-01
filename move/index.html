@@ -104,6 +104,7 @@
   refresh();
 })();
 </script>
+<section><p><strong>Utilities week:</strong> the who-to-call file — including the Oncor-vs-co-op electricity twist — is at <a href="/community/utilities-setup">utilities setup</a>, with <a href="/community/city-services">city services</a> covering the city-hall layer.</p></section>
 <section class="tint" style="border-radius:14px;padding:34px 28px">
   <h2>Email me the printable edition</h2>
   <p>The full checklist as a printable worksheet, plus phase-by-phase reminders if you want them.</p>
@@ -111,8 +112,10 @@
     <input type="hidden" name="_subject" value="MOVE-CHECK lead — West FW Living">
     <input type="hidden" name="_next" value="https://westfwliving.com/thanks.html">
     <input type="hidden" name="audience" value="schools">
-    <label for="sMOVE-CHECKn">Name</label><input id="sMOVE-CHECKn" name="name" required>
-    <label for="sMOVE-CHECKe">Email</label><input id="sMOVE-CHECKe" name="email" type="email" required>
+    <label for="sMOVE-CHECKn">Name</label><input id="sMOVE-CHECKn" name="name" required autocomplete="name">
+    <label for="sMOVE-CHECKe">Email</label><input id="sMOVE-CHECKe" name="email" type="email" required autocomplete="email">
+    <label for="sMOVE-CHECKexp">Phone</label><input id="sMOVE-CHECKexp" name="phone" type="tel" required autocomplete="tel">
+    <label for="sMOVE-CHECKexd">When are you planning to move? (optional)</label><input id="sMOVE-CHECKexd" name="move_date" placeholder="e.g., spring 2027">
     <button class="btn" type="submit">Send it to me</button>
   </form>
 </section>

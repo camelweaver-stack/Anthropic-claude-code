@@ -45,8 +45,10 @@
     <input type="hidden" name="_subject" value="BUYER-BROCKISD lead — West FW Living">
     <input type="hidden" name="_next" value="https://westfwliving.com/thanks.html">
     <input type="hidden" name="audience" value="buyer-intent">
-    <label for="sdname">Name</label><input id="sdname" name="name" required>
-    <label for="sdemail">Email</label><input id="sdemail" name="email" type="email" required>
+    <label for="sdname">Name</label><input id="sdname" name="name" required autocomplete="name">
+    <label for="sdemail">Email</label><input id="sdemail" name="email" type="email" required autocomplete="email">
+    <label for="sdemailxp">Phone</label><input id="sdemailxp" name="phone" type="tel" required autocomplete="tel">
+    <label for="sdemailxd">When are you planning to move? (optional)</label><input id="sdemailxd" name="move_date" placeholder="e.g., spring 2027">
     <label for="sdwhen">When are you hoping to buy?</label><input id="sdwhen" name="buy_window" placeholder="e.g., Spring 2027" required>
     <button class="btn" type="submit">Get the Buyer's Field Guide by email</button>
   </form>

@@ -31,8 +31,10 @@
     <input type="hidden" name="_subject" value="SCHOOL-ALEDO lead — West FW Living">
     <input type="hidden" name="_next" value="https://westfwliving.com/thanks.html">
     <input type="hidden" name="audience" value="buyer-intent">
-    <label for="nbname">Name</label><input id="nbname" name="name" required>
-    <label for="nbemail">Email</label><input id="nbemail" name="email" type="email" required>
+    <label for="nbname">Name</label><input id="nbname" name="name" required autocomplete="name">
+    <label for="nbemail">Email</label><input id="nbemail" name="email" type="email" required autocomplete="email">
+    <label for="nbemailxp">Phone</label><input id="nbemailxp" name="phone" type="tel" required autocomplete="tel">
+    <label for="nbemailxd">When are you planning to move? (optional)</label><input id="nbemailxd" name="move_date" placeholder="e.g., spring 2027">
     <label for="nbwhen">When are you hoping to buy?</label><input id="nbwhen" name="buy_window" placeholder="e.g., Spring 2027" required>
     <button class="btn" type="submit">Get the Buyer's Field Guide by email</button>
   </form>

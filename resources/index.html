@@ -41,6 +41,7 @@
   <h2>The move checklist</h2>
   <p><a href="/move/"><strong>Move With Confidence</strong></a> — the whole relocation as one interactive checklist: six phases, every task linked to its guide, progress saving as you go. Free, no account.</p>
 </section>
+<section><p>The community side of the practical layer: <a href="/community/city-services">city services</a>, <a href="/community/utilities-setup">utilities setup</a>, <a href="/community/civic">civic life</a>, and <a href="/community/kids">the kids file</a> — at <a href="/community/">the Community Desk</a>.</p></section>
 <section class="tint" style="border-radius:14px;padding:34px 28px">
   <h2>Get the whole library by email</h2>
   <p>The six resource worksheets in one packet, plus the monthly report.</p>
@@ -48,8 +49,10 @@
     <input type="hidden" name="_subject" value="RES-HUB lead — West FW Living">
     <input type="hidden" name="_next" value="https://westfwliving.com/thanks.html">
     <input type="hidden" name="audience" value="schools">
-    <label for="sRES-HUBn">Name</label><input id="sRES-HUBn" name="name" required>
-    <label for="sRES-HUBe">Email</label><input id="sRES-HUBe" name="email" type="email" required>
+    <label for="sRES-HUBn">Name</label><input id="sRES-HUBn" name="name" required autocomplete="name">
+    <label for="sRES-HUBe">Email</label><input id="sRES-HUBe" name="email" type="email" required autocomplete="email">
+    <label for="sRES-HUBexp">Phone</label><input id="sRES-HUBexp" name="phone" type="tel" required autocomplete="tel">
+    <label for="sRES-HUBexd">When are you planning to move? (optional)</label><input id="sRES-HUBexd" name="move_date" placeholder="e.g., spring 2027">
     <button class="btn" type="submit">Send it to me</button>
   </form>
 </section>
