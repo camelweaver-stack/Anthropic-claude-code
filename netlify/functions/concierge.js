@@ -61,7 +61,7 @@ exports.handler = async (event) => {
     // TEMP DIAGNOSTIC (secret-safe: upstream status + error type only; no key, no body).
     const diag = (event.queryStringParameters || {}).diag === "1";
     const body = diag
-      ? { reply: text, _status: r.status, _type: data && data.error ? data.error.type : null, _keyset: !!process.env.ANTHROPIC_API_KEY }
+      ? { reply: text, _status: r.status, _type: data && data.error ? data.error.type : null, _msg: data && data.error ? data.error.message : null, _keyset: !!process.env.ANTHROPIC_API_KEY }
       : { reply: text };
 
     return {
