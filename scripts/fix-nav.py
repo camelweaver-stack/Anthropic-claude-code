@@ -30,7 +30,7 @@ NAV_ES = ("<a href='/es/'>Inicio</a>"
 FGRID_EN = """<div class="fgrid">
     <div><h4>West FW Living</h4><p>An independent field guide to renting and buying on Fort Worth's west side — Aledo, Willow Park, Hudson Oaks, Walsh, Benbrook and the Chisholm Trail corridor. Full service is coming soon; <a href='/#list'>the early list hears first</a>.</p></div>
     <div><h4>Renting</h4><ul><li><a href='/specials'>This Month's Specials</a></li><li><a href='/deals'>Best Deals, Ranked</a></li><li><a href='/rentals/'>Browse by Feature</a></li><li><a href='/second-chance'>Second Chance Renting</a></li><li><a href='/rent-to-own'>Rent-to-Own Reality</a></li><li><a href='/areas'>Areas We Cover</a></li></ul></div>
-    <div><h4>Explore West FW</h4><ul><li><a href='/neighborhoods/'>Neighborhoods</a></li><li><a href='/schools/'>Schools &amp; ISDs</a></li><li><a href='/compare/'>Compare Places</a></li><li><a href='/relocate/'>Relocating Here</a></li><li><a href='/move/'>Move Checklist</a></li><li><a href='/military/'>Military &amp; BAH</a></li><li><a href='/guides/'>All Guides</a></li></ul></div>
+    <div><h4>Explore West FW</h4><ul><li><a href='/neighborhoods/'>Neighborhoods</a></li><li><a href='/schools/'>Schools &amp; ISDs</a></li><li><a href='/compare/'>Compare Places</a></li><li><a href='/relocate/'>Relocating Here</a></li><li><a href='/move/'>Move Checklist</a></li><li><a href='/community/'>Community &amp; Local Life</a></li><li><a href='/military/'>Military &amp; BAH</a></li><li><a href='/guides/'>All Guides</a></li></ul></div>
     <div><h4>Buying</h4><ul><li><a href='/buy/'>Buy the West Side</a></li><li><a href='/calculator'>Rent vs. Buy Math</a></li><li><a href='/quiz'>Rent-or-Buy Quiz</a></li><li><a href='/es/'>En Español</a></li></ul></div>
     <div><h4>Data &amp; Tools</h4><ul><li><a href='/tools/'>Renter Tools</a></li><li><a href='/data/'>Rent Data &amp; Reports</a></li><li><a href='/rent-report/august-2026'>Latest Rent Report</a></li><li><a href='/resources/'>Resources</a></li></ul></div>
   </div>"""
@@ -39,7 +39,7 @@ FGRID_ES = """<div class="fgrid">
     <div><h4>West FW Living</h4><p>Una guía independiente para rentar y comprar en el oeste de Fort Worth. El servicio completo llega pronto; <a href='/es/#lista'>la lista se entera primero</a>.</p></div>
     <div><h4>Rentar</h4><ul><li><a href='/es/especiales'>Especiales del Mes</a></li><li><a href='/deals'>Mejores Ofertas</a></li><li><a href='/es/segunda-oportunidad'>Segunda Oportunidad</a></li><li><a href='/es/semanas-gratis'>Semanas Gratis</a></li><li><a href='/es/romper-contrato'>Romper el Contrato</a></li></ul></div>
     <div><h4>Comprar</h4><ul><li><a href='/es/comprar/'>Comprar Casa</a></li><li><a href='/es/comprar/renta-o-compra'>Renta o Compra</a></li><li><a href='/es/comprar/primera-vivienda-texas'>Primera Vivienda</a></li><li><a href='/es/comprar/asistencia-enganche'>Ayuda con el Enganche</a></li></ul></div>
-    <div><h4>Recursos</h4><ul><li><a href='/es/calculadora'>Calculadora</a></li><li><a href='/es/puntaje-credito'>Puntaje de Crédito</a></li><li><a href='/es/relocate/'>Mudanza</a></li><li><a href='/'>English site</a></li></ul></div>
+    <div><h4>Recursos</h4><ul><li><a href='/es/calculadora'>Calculadora</a></li><li><a href='/es/puntaje-credito'>Puntaje de Crédito</a></li><li><a href='/es/relocate/'>Mudanza</a></li><li><a href='/es/comunidad/'>Comunidad</a></li><li><a href='/'>English site</a></li></ul></div>
   </div>"""
 
 def replace_nav(html, es):

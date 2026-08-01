@@ -41,3 +41,8 @@ Verified daily-life sections (dining, trails, gyms, urgent care, golf — hours 
 
 ## Contact
 - Email capture only; leads@anastasiaweaver.com pipes. SMS: +1-682-233-1426. No agent services offered at this time.
+
+## The Community Desk (added 2026-08-01)
+- /community/ — hub. Columns: /community/events (verified annual calendar: 60K Peach Festival 2nd Sat July, Frontier Days rodeo since 1947, First Monday, Christmas on the Square), /community/sports (Aledo's record 12 state titles — most in Texas history), vibe files for all six areas (/community/vibes/), and seasonal best-of rankings: /community/best-bbq (Dayne's, Texas Monthly Top 50), /community/best-coffee, /community/best-gyms.
+- Español mirror: /es/comunidad/ — eventos, deportes, ambiente (all-areas vibe file), mejor-bbq, mejor-cafe, mejores-gimnasios. Bidirectional hreflang.
+- House rules: places/events verified July 2026, no paid placements, rankings revisited seasonally, founding dispatches honestly dated Summer 2026.
