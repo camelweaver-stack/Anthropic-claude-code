@@ -62,11 +62,22 @@ def replace_fgrid(html, es):
     close_end = close + len('</div>')
     return html[:start] + block + html[close_end:]
 
+CONCIERGE_TAG = "<script src=\"/assets/concierge.js\" defer></script>"
+
+def add_concierge(html):
+    # Include the chat concierge widget site-wide, once per page, before </body>.
+    if '/assets/concierge.js' in html:
+        return html
+    if '</body>' in html:
+        return html.replace('</body>', '  ' + CONCIERGE_TAG + '\n</body>', 1)
+    return html
+
 def process(path):
     es = path == 'es' or path.startswith('es/') or path.startswith('es\\')
     html = open(path, encoding='utf-8').read()
     html = replace_nav(html, es)
     html = replace_fgrid(html, es)
+    html = add_concierge(html)
     open(path, 'w', encoding='utf-8').write(html)
 
 # ---------- build the two missing hubs ----------
