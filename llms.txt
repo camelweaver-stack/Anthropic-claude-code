@@ -70,3 +70,13 @@ Figures compiled from public listings/market sources; "last verified" dates on d
 - [Texas option period & inspections](https://westfwliving.com/buy/inspection-option-period.html)
 - [New build vs resale ledger](https://westfwliving.com/buy/new-vs-resale.html)
 - [District buyer guides](https://westfwliving.com/buy/schools/aledo-isd.html): Aledo, Weatherford, Brock ISD tax math.
+- [Rent or buy, by city](https://westfwliving.com/buy/rent-or-buy-willow-park.html): Willow Park, Weatherford, White Settlement, Benbrook — live PITI vs verified local rents.
+- [Guía del comprador en español](https://westfwliving.com/es/comprar/index.html): renta-o-compra, asequibilidad, primera vivienda, asistencia para el enganche.
+- [Relocation hub](https://westfwliving.com/relocate/index.html): routed by situation — military, Lockheed, healthcare, schools, retirement.
+- [How Texas home valuation works](https://westfwliving.com/guides/whats-my-home-worth-texas.html): CAD vs algorithm vs market value, DIY comp method, non-disclosure caveats.
+- [Monthly reports signup](https://westfwliving.com/newsletter.html): Renter Report + Buyer Report editions.
+- [The neighborhood library](https://westfwliving.com/neighborhoods/index.html): every active Aledo-corridor subdivision profiled — Morningstar, Summit Ranch, Parks of Aledo, Bear Creek Ranch, Walsh villages and more.
+- [Aledo ISD campus guide](https://westfwliving.com/schools/aledo-isd/index.html): all campuses explained incl. the standalone ninth-grade structure.
+- [Living in Aledo — definitive guide](https://westfwliving.com/guides/living-in-aledo.html)
+- [Living in Walsh — definitive guide](https://westfwliving.com/guides/living-in-walsh.html): PID by planning area ($0.18 vs $0.36).
+- [West FW luxury file](https://westfwliving.com/guides/luxury-homes-west-fort-worth.html)
