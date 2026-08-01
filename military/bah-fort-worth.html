@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="max-image-preview:large">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 BAH Rates Fort Worth (NAS JRB) — And Which Rentals Actually Fit Them</title>
+<meta name="description" content="Official 2026 Fort Worth MHA BAH anchor rates (E-1 through O-7+) matched against net-effective rents at 11 tracked west-side communities — the fit table no BAH chart shows, plus VA-loan and renewal caveats.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,600&family=Instrument+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/assets/tools.css">
+<link rel="canonical" href="https://westfwliving.com/military/bah-fort-worth.html">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"2026 Fort Worth BAH Rates and What They Rent","url":"https://westfwliving.com/military/bah-fort-worth"}</script>
+<script src="/assets/wfl-data.js"></script>
+</head>
+<body>
+<header><div class="wrap"><div class="topbar">
+  <a class='brand' href='/'>West FW <span>Living</span><small>the west side field guide</small></a>
+  <nav>
+    <a href='/specials'>Specials</a>
+    <a href='/deals'>Best Deals</a>
+    <a href='/buy/'>Buying</a>
+    <a href='/tools/'>Tools</a>
+    <a href='/guides/'>Guides</a>
+  <a href='/es/' style='font-weight:600'>Español</a></nav>
+</div></div></header>
+
+<main><div class="wrap">
+<p class="crumb"><a href='/'>Home</a> / <a href='/military/'>Military & PCS</a> / BAH Rates</p>
+
+<section class="hero hero-inner">
+  <span class="eyebrow">FORT WORTH MHA · EFFECTIVE JANUARY 1, 2026</span>
+  <h1>What your 2026 BAH actually rents in west Fort Worth</h1>
+  <p class="lede">BAH is set for the Fort Worth Military Housing Area from annual rental surveys — 2026 rates rose 1.4% over 2025. Below: the official anchor rates, and the part no BAH table shows you — which tracked communities fit each rate <em>on true (net-effective) rent</em>, not just the advertised number.</p>
+</section>
+
+<section>
+  <h2>2026 anchor rates — Fort Worth MHA</h2>
+  <div class="table-scroll"><table>
+    <thead><tr><th>Pay grade</th><th>Status</th><th>2026 monthly BAH</th></tr></thead>
+    <tbody id="bahRows"></tbody>
+  </table></div>
+  <p class="tool-note">Source: DoD/DTMO rates effective January 1, 2026, as republished by base-guide services. With-dependents rates run roughly 25% above without-dependents. These are planning anchors for the grades most commonly asked about — look up your exact grade and status at the official DTMO BAH calculator before making decisions.</p>
+</section>
+
+<section>
+  <h2>Which tracked communities fit each anchor</h2>
+  <p>Matched on <strong>net-effective rent</strong> (after current concessions) for each community's headline unit. BAH also has to cover utilities — the table flags fits at both 100% and a more realistic 85% of BAH.</p>
+  <div id="bahFit"></div>
+  <p class="tool-note" id="bahVerified"></p>
+</section>
+
+<section>
+  <h2>Three things the BAH table can't tell you</h2>
+  <p><strong>1. Concessions are a year-one illusion for budgeting.</strong> Your BAH is steady; the community's effective rent isn't. A deep-concession lease-up can jump at renewal — ask what recent renewal increases looked like, because year two negotiates from base rent.</p>
+  <p><strong>2. The buy question is live at these prices.</strong> BAH counts as qualifying income for VA loans, it's tax-free (many lenders gross it up), and active-duty members can use the benefit while serving. An E-5-with-dependents rate of $2,118 overlaps the entire 3-bedroom rental market out here — which is exactly the payment range where owning starts competing. Run the <a href="/calculator">rent-vs-own math</a> before signing long.</p>
+  <p><strong>3. Separation changes everything mid-lease.</strong> BAH stops at separation. If you're within two years of a decision point, match your lease end to it deliberately — and read <a href="/guides/breaking-a-lease-in-texas-cost">what breaking a Texas lease actually costs</a> before assuming you can exit early.</p>
+</section>
+
+<section class="tint" style="border-radius:14px;padding:34px 28px">
+  <h2>Get the monthly roundup, timed to your window</h2>
+<form class="lead" action="https://formsubmit.co/leads@anastasiaweaver.com" method="POST">
+    <input type="hidden" name="_subject" value="BAH-PAGE lead — West FW Living">
+    <input type="hidden" name="_next" value="https://westfwliving.com/thanks.html">
+    <label for="bpname">Name</label><input id="bpname" name="name" required>
+    <label for="bpphone">Phone</label><input id="bpphone" name="phone" type="tel" required>
+    <label for="bpleaseend">When's your report / move date?</label><input id="bpleaseend" name="lease_end" placeholder="e.g., November 2026" required>
+    <button class="btn" type="submit">Put me on the early list</button>
+  </form>
+</section>
+
+<script>
+(function(){
+  var C=window.WFL,M=C.money,B=C.bah;
+  var rows=document.getElementById('bahRows');
+  B.anchors.forEach(function(a){ rows.insertAdjacentHTML('beforeend','<tr><td class="money">'+a.grade+'</td><td>'+a.dep+'</td><td class="money">'+M(a.amt)+'</td></tr>'); });
+  var effs=C.complexes.map(function(c){ return {c:c, eff:C.netEffective(c.headline.rent,c.weeksFree,c.leaseMonths).effective}; }).sort(function(a,b){return a.eff-b.eff;});
+  var out=document.getElementById('bahFit');
+  B.anchors.forEach(function(a){
+    var fits=effs.filter(function(e){return e.eff<=a.amt;});
+    var comfy=effs.filter(function(e){return e.eff<=a.amt*0.85;});
+    var html='<h3 style="margin-top:20px">'+a.grade+' '+a.dep+' — '+M(a.amt)+'/mo</h3>';
+    if(!fits.length){ html+='<p class="tool-note">No tracked headline unit fits at this rate this month.</p>'; }
+    else { html+='<p>'+fits.map(function(e){ var star=comfy.indexOf(e)>-1?' ✓':''; return '<a href="'+e.c.url+'">'+e.c.name+'</a> ('+M(e.eff)+'/mo'+star+')'; }).join(' · ')+'</p>'; }
+    out.insertAdjacentHTML('beforeend',html);
+  });
+  out.insertAdjacentHTML('beforeend','<p class="tool-note">✓ = fits within 85% of BAH, leaving realistic room for utilities.</p>');
+  document.getElementById('bahVerified').textContent='Rents verified from public listings '+C.verified+'; BAH effective '+B.effective+'. Both change — confirm before deciding.';
+})();
+</script>
+
+</div></main>
+
+<footer><div class="wrap">
+  <div class="fgrid">
+    <div><h4>West FW Living</h4><p>An independent field guide to renting and buying on Fort Worth's west side. Full service is coming soon; <a href='/#list'>the early list hears first</a>.</p></div>
+    <div><h4>The Guide</h4><ul><li><a href='/specials'>This Month's Specials</a></li><li><a href='/deals'>Best Deals, Ranked</a></li><li><a href='/data/true-rent-table'>True Rent Table</a></li><li><a href='/tools/'>Renter Tools</a></li><li><a href='/quiz'>Match Quiz</a></li><li><a href='/guides/'>All Guides</a></li></ul></div>
+    <div><h4>Situations</h4><ul><li><a href='/second-chance'>Second Chance Renting</a></li><li><a href='/military/'>Military &amp; PCS</a></li><li><a href='/rent-to-own'>Rent-to-Own Reality</a></li><li><a href='/rentals/'>Browse by Feature</a></li><li><a href='/schools/willow-park-school-zones'>School Zones</a></li></ul></div>
+  </div>
+  <p class="disclaim">West FW Living is not a real estate brokerage and does not currently offer brokerage, leasing, or apartment-locating services. All rent figures, specials, and program details are compiled from public listings and sources, change without notice, and should be verified directly with the property or program. Payment estimates are educational only — not a loan offer, prequalification, or lending advice. Drive times are typical off-peak estimates, not guarantees. School attendance zones are set by districts, are address-specific, and change; always verify with the district. BAH figures are for planning only; confirm your rate with DTMO or your finance office. Equal Housing Opportunity.</p>
+</div></footer>
+<div class="textbar"><a href="sms:+16822331426?&body=Add%20me%20to%20the%20West%20FW%20Living%20early%20list!%20My%20lease%20ends%3A%20___">Text to join the early list</a></div>
+</body>
+</html>
