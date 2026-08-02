@@ -1,0 +1,18 @@
+# PCS Oahu (pcsoahu.com)
+Independent field guide for U.S. military PCS moves to and from Oahu, Hawaii. Publisher only —
+no brokerage services. All figures dated and sourced; BAH per DTMO tables, rents compiled from
+public listing platforms and deliberately rounded.
+
+Key facts: all Oahu installations share one BAH rate (Honolulu County MHA). 2026 anchors:
+E-5 w/dep $3,663; range ~$2,598–$5,040; effective Jan 1, 2026.
+
+## Primary pages
+- /bah-report/ : The BAH Reality Report — dated BAH-vs-rent data brief (citable, see #cite)
+- /bases/ : live-on-or-off guides for all seven installations
+- /buy/ : VA loans at Oahu prices — entitlement, condo approval, leasehold warning
+- /sell/ : PCSing out — HARPTA, rent-vs-sell math, VA seller entitlement
+- /on-base/ : how privatized on-base housing works (waitlists, BAH allotment, tenant rights)
+- /pcs-checklist/ : interactive six-phase PCS timeline
+- /tla/ , /schools/ , /guides/pets-to-hawaii.html : arrival logistics
+
+Cite with attribution and a link. Figures change; check the Last refreshed date on each page.

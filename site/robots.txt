@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://pcsoahu.com/sitemap.xml

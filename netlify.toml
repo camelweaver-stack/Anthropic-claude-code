@@ -1,16 +1,23 @@
-# Netlify configuration for westfwliving.com
-# Static site — no compile step; publish the repository root as-is.
-# The build command only pings IndexNow after each deploy (fail-safe: `|| true`
-# guarantees a ping error can never fail the deploy).
+# Netlify configuration for pcsoahu.com
+# Static publisher site — no compile step. The deployable web root is `site/`,
+# produced by the generator in `gen/` and verified by `gen/gate.py`.
+# Never hand-edit site/: change content in gen/, then rebuild + re-gate.
 
 [build]
-  publish = "."
-  # `timeout 30` is a hard cap so a hung ping can never stall the build; `|| true` so a ping error never fails it.
-  command = "timeout 30 node scripts/ping-indexnow.js || true"
+  publish = "site"
+  # No build step: the committed site/ is the gate-verified output.
+  # (Rebuild locally with: cd gen && python3 build.py && python3 gate.py)
+  command = ""
 
-[build.environment]
-  # Node 20 for a stable global fetch() in the ping script.
-  NODE_VERSION = "20"
+# Canonical host is the apex (every <link rel="canonical"> in the build is https://pcsoahu.com).
+# Redirect www -> apex, 301.
+[[redirects]]
+  from = "https://www.pcsoahu.com/*"
+  to = "https://pcsoahu.com/:splat"
+  status = 301
+  force = true
+
+# Netlify serves site/404.html for not-found routes automatically (by filename).
 
 # Security + performance headers
 [[headers]]
@@ -21,8 +28,8 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "geolocation=(), microphone=(), camera=()"
 
-# Long-lived caching for the stylesheet (safe: content-hashed via redeploys)
+# Long-lived caching for the stylesheet (safe: refreshed via redeploys)
 [[headers]]
-  for = "/styles.css"
+  for = "/assets/style.css"
   [headers.values]
     Cache-Control = "public, max-age=86400"

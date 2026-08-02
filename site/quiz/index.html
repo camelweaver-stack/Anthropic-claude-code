@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oahu Pocket-Match Quiz: Which Neighborhood Fits Your Orders? | PCS Oahu</title>
+<meta name="description" content="Five questions — duty station, bedrooms, budget, priorities — scored against current Oahu rent bands and commute realities. Top three pockets, reasoning shown.">
+<link rel="canonical" href="https://pcsoahu.com/quiz/">
+<meta property="og:site_name" content="PCS Oahu">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Oahu Pocket-Match Quiz: Which Neighborhood Fits Your Orders? | PCS Oahu">
+<meta property="og:description" content="Five questions — duty station, bedrooms, budget, priorities — scored against current Oahu rent bands and commute realities. Top three pockets, reasoning shown.">
+<meta property="og:url" content="https://pcsoahu.com/quiz/">
+<meta property="og:image" content="https://pcsoahu.com/assets/og-card.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=IBM+Plex+Mono:wght@400;600&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+
+</head>
+<body>
+<header class="site"><div class="wrap"><a class="brand" href="/"><b>PCS Oahu</b><span>the orders-to-island field guide</span></a></div></header><nav class="main" aria-label="Primary"><ul><li><a href="/bases/">Bases</a></li><li><a href="/bah-report/">BAH Report</a></li><li><a href="/neighborhoods/" aria-current="page">Neighborhoods</a></li><li><a href="/schools/">Schools</a></li><li><a href="/buy/">Buying</a></li><li><a href="/sell/">Selling</a></li><li><a href="/pcs-checklist/">PCS Checklist</a></li><li><a href="/tla/">TLA & Arrival</a></li><li><a href="/guides/">Guides</a></li><li><a href="/tools/">Tools</a></li></ul></nav>
+<main>
+
+<div class="hero"><div class="wrap">
+<p class="eyebrow">Five questions · scored against the current rent bands · reasoning shown</p>
+<h1>The pocket-match quiz</h1>
+<p class="lede">Duty station, bedrooms, budget, and what you're optimizing for — scored against
+this edition's rent bands and commute realities. Top three pockets, with the why. Runs entirely
+in your browser; nothing is uploaded anywhere.</p>
+</div></div>
+<div class="wrap">
+<div class="tool" id="quizbox">
+<label for="q1">1. Where do you report?</label>
+<select id="q1"><option value="">Choose your installation</option>
+<option value="jbphh">Joint Base Pearl Harbor–Hickam</option>
+<option value="schofield">Schofield Barracks / Wheeler</option>
+<option value="mcbh">MCBH Kaneohe Bay</option>
+<option value="campsmith">Camp Smith</option>
+<option value="tripler">Tripler AMC</option>
+<option value="shafter">Fort Shafter</option>
+<option value="uscg">USCG Base Honolulu</option></select>
+<label for="q2">2. Bedrooms you actually need</label>
+<select id="q2"><option value="">Choose</option><option value="s">1–2 (just us / roommate math)</option>
+<option value="m">3 (family standard)</option><option value="l">4+ (big crew)</option></select>
+<label for="q3">3. Monthly housing budget (your BAH is a good start — it covers utilities too)</label>
+<select id="q3"><option value="">Choose</option><option value="1">Under $2,500</option>
+<option value="2">$2,500–$3,200</option><option value="3">$3,200–$4,000</option>
+<option value="4">$4,000+</option></select>
+<label for="q4">4. What are you optimizing for?</label>
+<select id="q4"><option value="">Choose</option>
+<option value="commute">Shortest possible commute</option>
+<option value="space">Most space per dollar</option>
+<option value="windward">Windward / beach-town living</option>
+<option value="new">Newest housing stock</option></select>
+<label for="q5">5. This tour, you're most likely to…</label>
+<select id="q5"><option value="">Choose</option><option value="rent">Rent</option>
+<option value="buy">Seriously consider buying</option></select>
+<p><button class="btn" type="button" id="go">Show my pockets</button></p>
+<output id="res" style="font-family:inherit;font-weight:400"></output>
+</div>
+
+<section id="list"><h2>Want your match kept current?</h2><p style="max-width:44rem">Rent bands move monthly in PCS season. Join the list and your shortlisted pockets come with the refreshed numbers, timed to your report window.</p>
+<form class="lead" action="https://formsubmit.co/leads@anastasiaweaver.com" method="POST">
+  <input type="hidden" name="_subject" value="PCSOAHU-QUIZ">
+  <input type="hidden" name="audience" value="referral-hi-oahu-pcs">
+  <input type="hidden" name="segment" value="pcs-renter">
+  <label for="name">Name</label>
+  <input id="name" name="name" type="text" autocomplete="name">
+  <label for="email">Email</label>
+  <input id="email" name="email" type="email" required autocomplete="email">
+  <label for="phone">Phone</label>
+  <input id="phone" name="phone" type="tel" required autocomplete="tel">
+  <label for="move_date">When are you planning to move? <span class="opt">(optional)</span></label><input id="move_date" name="move_date" type="text" placeholder="e.g., report NLT June 2027">
+  <button class="btn" type="submit">Join the list</button> 
+  <p class="fine">Two required fields plus your phone. We never sell your info.</p>
+</form></section>
+</div>
+<script>
+(function(){
+// pocket data: [name, url-slugless label, minRent(s/m/l band floor, null=rare), commute rank per base (1=best), space, windward, newness]
+var P={
+ aiea:      ["Aiea","aiea",[1900,3200,3900],{jbphh:1,campsmith:1,tripler:2,shafter:3,schofield:4,uscg:3,mcbh:5},2,0,1],
+ pearlcity: ["Pearl City","pearlcity",[2400,3000,3700],{jbphh:2,campsmith:3,tripler:3,shafter:4,schofield:3,uscg:4,mcbh:5},3,0,1],
+ saltlake:  ["Salt Lake / Moanalua","saltlake",[1800,2900,null],{jbphh:1,campsmith:2,tripler:1,shafter:1,schofield:5,uscg:3,mcbh:5},1,0,1],
+ waipahu:   ["Waipahu","waipahu",[2000,2700,3400],{jbphh:2,campsmith:4,tripler:4,shafter:4,schofield:3,uscg:5,mcbh:6},3,0,1],
+ mililani:  ["Mililani","mililani",[2500,3200,4000],{jbphh:3,campsmith:4,tripler:4,shafter:4,schofield:2,uscg:5,mcbh:6},3,0,2],
+ ewa:       ["Ewa Beach / Kapolei","ewa",[2600,3000,3800],{jbphh:4,campsmith:5,tripler:5,shafter:5,schofield:4,uscg:6,mcbh:7},3,0,3],
+ wahiawa:   ["Wahiawa","wahiawa",[1900,2600,3300],{jbphh:4,campsmith:5,tripler:5,shafter:5,schofield:1,uscg:6,mcbh:6},3,0,0],
+ kaneohe:   ["Kaneohe","kaneohe",[2600,3400,4300],{jbphh:5,campsmith:4,tripler:4,shafter:4,schofield:6,uscg:5,mcbh:1},2,1,1],
+ kailua:    ["Kailua","kailua",[3200,4000,5000],{jbphh:5,campsmith:5,tripler:5,shafter:5,schofield:6,uscg:5,mcbh:1},1,1,1],
+ downtown:  ["Downtown / Kakaako","downtown",[2000,3600,null],{jbphh:4,campsmith:3,tripler:3,shafter:2,schofield:6,uscg:1,mcbh:5},0,0,3],
+ kalihi:    ["Kalihi","kalihi",[1500,2400,null],{jbphh:3,campsmith:3,tripler:2,shafter:1,schofield:5,uscg:1,mcbh:5},1,0,0]
+};
+var BASEURL={jbphh:"pearl-harbor-hickam",schofield:"schofield-wheeler",mcbh:"kaneohe-bay",
+ campsmith:"camp-smith",tripler:"tripler",shafter:"fort-shafter",uscg:"coast-guard-honolulu"};
+var BUDGET={1:2500,2:3200,3:4000,4:99999};
+var BR={s:0,m:1,l:2};
+document.getElementById('go').addEventListener('click',function(){
+ var b=document.getElementById('q1').value,br=document.getElementById('q2').value,
+     bg=document.getElementById('q3').value,pr=document.getElementById('q4').value,
+     hz=document.getElementById('q5').value,res=document.getElementById('res');
+ if(!b||!br||!bg||!pr||!hz){res.textContent='Answer all five and try again.';return}
+ var cap=BUDGET[bg],bi=BR[br],scored=[];
+ for(var k in P){
+  var p=P[k],rent=p[2][bi],why=[];
+  if(rent===null)continue; // pocket rarely offers this size
+  var s=0;
+  var cr=p[3][b]; s+=(7-cr)*3; if(cr<=2)why.push('one of the closest pockets to your gate');
+  if(rent<=cap){s+=6;why.push('band floor fits your budget')}
+  else if(rent<=cap*1.1){s+=2;why.push('tight against your budget — negotiate or size down')}
+  else s-=8;
+  if(pr==='commute')s+=(7-cr)*3;
+  if(pr==='space'){s+=p[4]*3;if(p[4]>=3)why.push('strong space-per-dollar')}
+  if(pr==='windward'){s+=p[5]*12;if(p[5])why.push('windward side')}
+  if(pr==='new'){s+=p[6]*4;if(p[6]>=2)why.push('newest stock on the island')}
+  if(hz==='buy'&&(k==='ewa'||k==='mililani'||k==='waipahu'))
+    {s+=2;why.push('active buy-side inventory near typical VA price points')}
+  scored.push([s,p[0],why]);
+ }
+ scored.sort(function(a,z){return z[0]-a[0]});
+ var top=scored.slice(0,3),html='<h3 style="margin-top:1rem">Your three pockets</h3>';
+ top.forEach(function(t,i){
+  html+='<p><strong>'+(i+1)+'. '+t[1]+'</strong> — '+(t[2].length?t[2].join('; '):'balanced fit')+'.</p>';
+ });
+ html+='<p>Bands and commutes for these live on your <a href="/bases/'+BASEURL[b]+
+   '.html">base guide</a> and the <a href="/neighborhoods/">pocket table</a>.'+
+   (hz==='buy'?' Buying this tour? Read the <a href="/buy/">VA brief</a> before touring anything.':'')+
+   '</p><p style="font-size:.85rem;color:#5b6b73">Scored against the current edition\'s rounded '+
+   'bands — a compass, not a lease decision. Verify asking rents directly.</p>';
+ res.innerHTML=html;
+});
+})();
+</script>
+</main>
+
+<footer class="site"><div class="wrap">
+  <div class="footgrid">
+    <div><h4>PCS Oahu</h4>
+      <p style="max-width:22rem">An independent field guide for service members and families on
+      orders to — and from — Oahu. Educational content and honest math only. Full service coming soon.</p></div>
+    <div><h4>Arriving</h4><ul>
+      <li><a href="/bases/">Base-by-base guides</a></li>
+      <li><a href="/bah-report/">The BAH Reality Report</a></li>
+      <li><a href="/tla/">TLA &amp; interim housing</a></li>
+      <li><a href="/pcs-checklist/">PCS timeline checklist</a></li>
+      <li><a href="/neighborhoods/">Neighborhoods</a></li>
+      <li><a href="/quiz/">Pocket-match quiz</a></li>
+      <li><a href="/on-base/">On-base housing</a></li>
+      <li><a href="/schools/">Schools</a></li></ul></div>
+    <div><h4>Buying &amp; Selling</h4><ul>
+      <li><a href="/buy/">VA loans on Oahu</a></li>
+      <li><a href="/sell/">PCSing out: sell or rent</a></li>
+      <li><a href="/tools/">Calculators</a></li></ul></div>
+    <div><h4>Life on Island</h4><ul>
+      <li><a href="/guides/spouse-employment.html">Spouse employment</a></li>
+      <li><a href="/guides/school-transition.html">School transitions</a></li>
+      <li><a href="/guides/">All guides</a></li></ul></div>
+  </div>
+  <div class="legal">
+    <p>PCS Oahu is not a real estate brokerage and does not currently offer brokerage, leasing, or
+    relocation services. All BAH figures, rents, prices, and program details are compiled from public
+    sources — DoD/DTMO tables, public listing platforms, and Honolulu market reports — change without
+    notice, and should be verified independently with the source, the property, or your installation's
+    housing office. Nothing here is a valuation, a loan offer, prequalification, or lending, legal, or
+    tax advice. PCS Oahu is not affiliated with, or endorsed by, the Department of Defense or any
+    military service. Equal Housing Opportunity.</p>
+    <p>Data anchors on this build compiled August 2026. BAH: DTMO 2026 tables, effective
+    January 1, 2026. Market medians: Honolulu Board of REALTORS&reg; data as republished in public
+    June 2026 market reports. Rent bands: public listing platforms, mid-2026, deliberately rounded.</p>
+  </div>
+</div></footer>
+</body>
+</html>

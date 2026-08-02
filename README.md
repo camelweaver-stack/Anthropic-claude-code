@@ -1,28 +1,24 @@
-# anastasiaweaver.com
+# PCS Oahu — pcsoahu.com
 
-Static marketing site for **Anastasia Weaver** — free apartment locating &
-real-estate services in west Fort Worth (Aledo, Willow Park, Hudson Oaks,
-Benbrook, Weatherford).
+Dedicated Oahu military/PCS publisher site (WFL family, its own brand). Educational content +
+email capture only; referral-first lead routing. Static site, no runtime backend.
 
-## Structure
+## Layout
+- `site/` — deployable static web root (24 pages incl. 404, `assets/`, `sitemap.xml`,
+  `robots.txt`, `llms.txt`). **Do not hand-edit** — it is generated output.
+- `gen/` — Python generator (`build.py`) + QA gate (`gate.py`). Content lives here.
+- `netlify.toml` — Netlify deploy config (`publish = "site"`).
+- `indexnow-payload.json` — IndexNow submission body (key is a placeholder; see deploy runbook).
+- `DEPLOY_BRIEF.md` — full operator brief + human checklist.
+- `CLAUDE_CODE_DEPLOY.md` — executable deploy runbook.
+- `REFRESH_RUNBOOK.md` — gate-enforced data-refresh cadence.
+- `PITCH_KIT.md` — BAH Reality Report link-outreach kit (fire in December).
 
-Plain HTML/CSS — no build step.
+## Build & gate (required before any deploy)
+```bash
+cd gen && python3 build.py && python3 gate.py   # must print GATE PASSED
+```
+The committed `site/` is the gate-verified output of the committed `gen/`.
 
-| Path | Page |
-| --- | --- |
-| `index.html` | Home / apartment locating |
-| `second-chance.html` | Second-chance apartments |
-| `rent-to-own.html` | Rent-to-own |
-| `calculator.html` | Rent math calculator |
-| `areas.html` | Areas served |
-| `specials.html` | This month's specials |
-| `complexes/*.html` | Individual community pages |
-| `thanks.html` | Post-contact thank-you |
-| `styles.css` | Shared styles |
-| `sitemap.xml`, `robots.txt` | SEO |
-
-## Deploying to Netlify
-
-This repo deploys as a static site (see `netlify.toml`; publish dir = repo
-root, no build command). Connect the repo to a Netlify site, then set the
-custom domain to `anastasiaweaver.com`.
+See `CLAUDE_CODE_DEPLOY.md` for the full deploy + search-plumbing runbook and
+`DEPLOY_BRIEF.md` for the operator/human checklist.
