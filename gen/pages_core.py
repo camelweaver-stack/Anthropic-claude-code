@@ -163,7 +163,8 @@ BASES = [
 ]
 
 def base_page(b):
-    prows = [(POCKETS[p][0], POCKETS[p][1]) for p in b["pockets"]]
+    prows = [(f'<a href="/neighborhoods/{p}.html">{POCKETS[p][0]}</a>', POCKETS[p][1])
+             for p in b["pockets"]]
     commute_rows = "".join(f"<tr><td>{n}</td><td>{d}</td></tr>" for n, d in b["commute"])
     body = f'''
 <div class="hero"><div class="wrap">

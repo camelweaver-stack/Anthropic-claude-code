@@ -73,8 +73,23 @@ scarcity moves them. This report is a compass, not a valuation.</div>
                 jsonld={"@context": "https://schema.org",
                         "@graph": [dataset_ld(), faq_ld(qas)]})
 
+def bah_report_2026_archive():
+    import re as _re
+    live = bah_report()
+    m = _re.search(r"<main>(.*)</main>", live, _re.S)
+    body = ('<div class="wrap"><div class="warn" style="margin-top:1.5rem"><strong>Archived '
+            'edition (August 2026).</strong> Preserved so citations never break. The current '
+            'edition, refreshed with each BAH cycle, lives at '
+            '<a href="/bah-report/">pcsoahu.com/bah-report/</a>.</div></div>' + m.group(1))
+    return page("/bah-report/2026-edition/",
+        "The BAH Reality Report — August 2026 Edition (Archived) | PCS Oahu",
+        "Archived August 2026 edition of the BAH Reality Report: 2026 Honolulu County BAH "
+        "anchors vs dated Oahu rent bands. Current edition at /bah-report/.",
+        body, "/bah-report/")
+
 def neighborhoods():
-    rows = "".join(f"<tr><td>{v[0]}</td><td class='num'>{v[1]}</td></tr>" for v in POCKETS.values())
+    rows = "".join(f"<tr><td><a href='/neighborhoods/{k}.html'>{v[0]}</a></td>"
+                   f"<td class='num'>{v[1]}</td></tr>" for k, v in POCKETS.items())
     body = f'''
 <div class="hero"><div class="wrap">
 <p class="eyebrow">Eleven pockets, one honest table</p>
@@ -522,6 +537,7 @@ def build():
     out = {
         "/bah-report/index.html": bah_report(),
         "/neighborhoods/index.html": neighborhoods(),
+        "/bah-report/2026-edition/index.html": bah_report_2026_archive(),
         "/schools/index.html": schools(),
         "/buy/index.html": buy(),
         "/sell/index.html": sell(),

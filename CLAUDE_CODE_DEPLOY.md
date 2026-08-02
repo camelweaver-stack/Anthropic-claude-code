@@ -1,26 +1,26 @@
 # CLAUDE_CODE_DEPLOY.md — pcsoahu.com
-Executable runbook. Everything in `webroot/` gets published as-is; nothing in `deploy/` ever
-gets published. Do not edit webroot files by hand — content changes happen in the full build
-package (generator + gate), not here.
+Executable runbook. Single-package layout: `site/` is the ONLY directory that gets published. `gen/` (generator +
+gate), the runbooks, and `indexnow-payload.json` never get published. Do not hand-edit site/
+files — content changes go through `gen/` (edit, `python3 gen/build.py`, re-gate).
 
 ## 0 · Pre-flight (mandatory)
 ```bash
-python3 deploy/gate.py webroot
+python3 gen/gate.py site
 ```
 Must print `GATE PASSED`. If it fails, STOP — do not deploy; report the failures instead.
-Sanity: `webroot/` should contain 24 HTML files, sitemap.xml (23 URLs), robots.txt, llms.txt,
-assets/ (style.css + og-card.png).
+Sanity: `site/` should contain 36 HTML files, sitemap.xml (35 URLs), robots.txt, llms.txt,
+assets/ (style.css, og-card.png, img/ with 11 photos).
 
 ## 1 · Deploy
 **Primary path — Netlify** (account is connected):
 ```bash
-netlify deploy --dir=webroot --prod
+netlify deploy --dir=site --prod
 ```
 Then attach the custom domain: `netlify domains:add pcsoahu.com` (or via dashboard), and let
 Netlify provision HTTPS. Netlify serves `404.html` for not-found routes automatically —
 verify in step 3.
 
-**Fallback — any static host:** upload webroot/ contents as the document root; set the error
+**Fallback — any static host:** upload site/ contents as the document root; set the error
 document to `/404.html`; force HTTPS; add a 301 from www → apex (or apex → www, but pick apex:
 every canonical in the build is `https://pcsoahu.com`).
 
@@ -48,10 +48,10 @@ pockets with reasoning; /tools/ calculators compute. Finally, one canonical spot
 3. **IndexNow:**
 ```bash
 KEY=$(openssl rand -hex 16)
-echo $KEY > webroot/$KEY.txt   # redeploy this one file
-# then update deploy/indexnow-payload.json: replace both REPLACE_WITH_INDEXNOW_KEY with $KEY
+echo $KEY > site/$KEY.txt   # redeploy this one file
+# then update indexnow-payload.json: replace both REPLACE_WITH_INDEXNOW_KEY with $KEY
 curl -s -X POST https://api.indexnow.org/indexnow \
-  -H 'Content-Type: application/json' -d @deploy/indexnow-payload.json
+  -H 'Content-Type: application/json' -d @indexnow-payload.json
 ```
 Expect HTTP 200/202. Report the key back to the operator — it's needed for every future refresh.
 

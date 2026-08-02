@@ -1,6 +1,6 @@
 import os, json
 from common import DOMAIN
-import pages_core, pages_content, pages_tools, pages_growth
+import pages_core, pages_content, pages_tools, pages_growth, pages_pockets
 
 SITE = os.path.join(os.path.dirname(__file__), "..", "site")
 
@@ -9,6 +9,33 @@ pages.update(pages_core.build())
 pages.update(pages_content.build())
 pages.update(pages_tools.build())
 pages.update(pages_growth.build())
+pages.update(pages_pockets.build())
+
+# hero image injection (post-process; gate verifies referenced files exist)
+_mf = json.load(open(os.path.join(os.path.dirname(__file__), "img_manifest.json")))
+HERO_MAP = {
+  "/index.html": "home",
+  "/bases/pearl-harbor-hickam.html": "jbphh", "/bases/schofield-wheeler.html": "schofield",
+  "/bases/kaneohe-bay.html": "mcbh", "/bases/tripler.html": "tripler",
+  "/bases/coast-guard-honolulu.html": "uscg", "/bases/fort-shafter.html": "shafter",
+  "/bases/index.html": "home", "/bah-report/index.html": "home",
+  "/bah-report/2026-edition/index.html": "home",
+  "/buy/index.html": "ewa", "/sell/index.html": "home", "/tla/index.html": "downtown",
+  "/quiz/index.html": "home", "/on-base/index.html": "jbphh",
+  "/neighborhoods/index.html": "home",
+  "/neighborhoods/aiea.html": "jbphh", "/neighborhoods/pearlcity.html": "jbphh",
+  "/neighborhoods/saltlake.html": "tripler", "/neighborhoods/waipahu.html": "ewa",
+  "/neighborhoods/mililani.html": "mililani", "/neighborhoods/ewa.html": "ewa",
+  "/neighborhoods/wahiawa.html": "schofield", "/neighborhoods/kaneohe.html": "mcbh",
+  "/neighborhoods/kailua.html": "kailua", "/neighborhoods/downtown.html": "downtown",
+  "/neighborhoods/kalihi.html": "downtown",
+}
+for _pth, _key in HERO_MAP.items():
+    if _pth in pages and _key in _mf:
+        _style = ("background:linear-gradient(rgba(13,27,37,.84),rgba(16,34,46,.93)),"
+                  "url('" + _mf[_key]["file"] + "') center/cover")
+        pages[_pth] = pages[_pth].replace('<div class="hero">',
+                                          '<div class="hero" style="' + _style + '">', 1)
 
 for path, htmldoc in pages.items():
     fp = os.path.normpath(SITE + path)

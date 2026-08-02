@@ -1,0 +1,79 @@
+{
+  "home": {
+    "file": "/assets/img/home.jpg",
+    "title": "File:Diamond Head East Aerial View, Waikiki and Honolulu Hawaii, Summer \u2261 Eric Tessmer, Molokai, Hawaii - panoramio.jpg",
+    "artist": "Eric Tessmer",
+    "license": "CC BY 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Diamond_Head_East_Aerial_View,_Waikiki_and_Honolulu_Hawaii,_Summer_%E2%89%A1_Eric_Tessmer,_Molokai,_Hawaii_-_panoramio.jpg"
+  },
+  "jbphh": {
+    "file": "/assets/img/jbphh.jpg",
+    "title": "File:2025 Pearl Harbor 02.jpg",
+    "artist": "Farragutful",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:2025_Pearl_Harbor_02.jpg"
+  },
+  "schofield": {
+    "file": "/assets/img/schofield.jpg",
+    "title": "File:Oahu-Kukaniloko-entrance&KolekolePass.JPG",
+    "artist": "Joel Bradshaw",
+    "license": "Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Oahu-Kukaniloko-entrance%26KolekolePass.JPG"
+  },
+  "mcbh": {
+    "file": "/assets/img/mcbh.jpg",
+    "title": "File:Kaneohe Bay LC400.jpg",
+    "artist": "J\u00f6rg Hempel",
+    "license": "CC BY-SA 3.0 de",
+    "source": "https://commons.wikimedia.org/wiki/File:Kaneohe_Bay_LC400.jpg"
+  },
+  "tripler": {
+    "file": "/assets/img/tripler.jpg",
+    "title": "File:Tripler Army Medical Center aerial view.jpg",
+    "artist": "Jim Dung, U.S. Army Corps of Engineers",
+    "license": "Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Tripler_Army_Medical_Center_aerial_view.jpg"
+  },
+  "uscg": {
+    "file": "/assets/img/uscg.jpg",
+    "title": "File:Aloha Tower Honolulu. (10754440616).jpg",
+    "artist": "Bernard Spragg. NZ from Christchurch, New Zealand",
+    "license": "CC0",
+    "source": "https://commons.wikimedia.org/wiki/File:Aloha_Tower_Honolulu._(10754440616).jpg"
+  },
+  "shafter": {
+    "file": "/assets/img/shafter.jpg",
+    "title": "File:PalmCircle AerialView.jpg",
+    "artist": "Unknown",
+    "license": "Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:PalmCircle_AerialView.jpg"
+  },
+  "kailua": {
+    "file": "/assets/img/kailua.jpg",
+    "title": "File:Kailua Beach Park - Oahu - Hawaii.jpg",
+    "artist": "Tony Webster",
+    "license": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Kailua_Beach_Park_-_Oahu_-_Hawaii.jpg"
+  },
+  "mililani": {
+    "file": "/assets/img/mililani.jpg",
+    "title": "File:PINEAPPLE FIELDS IN MILILANI TOWN. PINEAPPLE GROWERS HAVE BEEN DEVELOPING \"SURPLUS LAND\" SINCE 1958. OF A PROPOSED... - NARA - 553697.jpg",
+    "artist": "Charles O'Rear",
+    "license": "Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:PINEAPPLE_FIELDS_IN_MILILANI_TOWN._PINEAPPLE_GROWERS_HAVE_BEEN_DEVELOPING_%22SURPLUS_LAND%22_SINCE_1958._OF_A_PROPOSED..._-_NARA_-_553697.jpg"
+  },
+  "downtown": {
+    "file": "/assets/img/downtown.jpg",
+    "title": "File:Honolulu Skyline train.jpg",
+    "artist": "eli fessler",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Honolulu_Skyline_train.jpg"
+  },
+  "ewa": {
+    "file": "/assets/img/ewa.jpg",
+    "title": "File:Kapolei Oahu Aerial.jpg",
+    "artist": "Travis.Thurston",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Kapolei_Oahu_Aerial.jpg"
+  }
+}

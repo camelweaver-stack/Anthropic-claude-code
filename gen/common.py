@@ -1,5 +1,10 @@
 # PCS Oahu — shared build framework
-import json, html
+import json, html, os
+_mfp = os.path.join(os.path.dirname(__file__), "img_manifest.json")
+IMG = json.load(open(_mfp)) if os.path.exists(_mfp) else {}
+_CREDITS = "; ".join(
+    v["title"].replace("File:", "").rsplit(".", 1)[0][:48] + " — " + v["artist"] +
+    " (" + v["license"] + ")" for v in IMG.values())
 
 DOMAIN = "https://pcsoahu.com"
 BUILD_DATE = "August 2026"
@@ -120,6 +125,9 @@ FOOTER = f'''
       <li><a href="/guides/">All guides</a></li></ul></div>
   </div>
   <div class="legal">
+    <p><strong>Photo credits</strong> (Wikimedia Commons, used under the stated licenses with
+    thanks): {_CREDITS}. Imagery is illustrative of the areas discussed; source links in the
+    build manifest.</p>
     <p>PCS Oahu is not a real estate brokerage and does not currently offer brokerage, leasing, or
     relocation services. All BAH figures, rents, prices, and program details are compiled from public
     sources — DoD/DTMO tables, public listing platforms, and Honolulu market reports — change without

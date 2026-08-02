@@ -84,12 +84,12 @@ document.getElementById('go').addEventListener('click',function(){{
   if(pr==='new'){{s+=p[6]*4;if(p[6]>=2)why.push('newest stock on the island')}}
   if(hz==='buy'&&(k==='ewa'||k==='mililani'||k==='waipahu'))
     {{s+=2;why.push('active buy-side inventory near typical VA price points')}}
-  scored.push([s,p[0],why]);
+  scored.push([s,p[0],why,k]);
  }}
  scored.sort(function(a,z){{return z[0]-a[0]}});
  var top=scored.slice(0,3),html='<h3 style="margin-top:1rem">Your three pockets</h3>';
  top.forEach(function(t,i){{
-  html+='<p><strong>'+(i+1)+'. '+t[1]+'</strong> — '+(t[2].length?t[2].join('; '):'balanced fit')+'.</p>';
+  html+='<p><strong>'+(i+1)+'. <a href="/neighborhoods/'+t[3]+'.html">'+t[1]+'</a></strong> — '+(t[2].length?t[2].join('; '):'balanced fit')+'.</p>';
  }});
  html+='<p>Bands and commutes for these live on your <a href="/bases/'+BASEURL[b]+
    '.html">base guide</a> and the <a href="/neighborhoods/">pocket table</a>.'+

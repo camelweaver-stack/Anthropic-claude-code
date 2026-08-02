@@ -81,6 +81,13 @@ for fp in html_files:
     if 'class="rates"' in doc and "Last refreshed:" not in doc:
         fail(f"{rel}: rates block without visible refresh date")
 
+# 6c. images: referenced /assets/img files must exist; credits present when heroes used
+    for imref in re.findall(r"/assets/img/([\w.-]+\.jpg)", doc):
+        if not os.path.exists(os.path.join(SITE, "assets", "img", imref)):
+            fail(f"{rel}: references missing image {imref}")
+    if "url('/assets/img/" in doc and "Photo credits" not in doc:
+        fail(f"{rel}: hero image without credits footer")
+
 # 7. sitemap/loc parity
 sm = open(os.path.join(SITE, "sitemap.xml")).read()
 locs = set(re.findall(r"<loc>(.*?)</loc>", sm))
