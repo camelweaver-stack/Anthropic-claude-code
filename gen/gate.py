@@ -26,6 +26,15 @@ for fp in html_files:
     rel = os.path.relpath(fp, SITE)
     doc = open(fp).read()
 
+    # embed widget: standalone iframe — its own mini-battery, then skip site chrome checks
+    if rel.replace(os.sep, "/") == "embed/bah-widget.html":
+        if 'name="robots" content="noindex"' not in doc: fail(f"{rel}: widget must be noindex")
+        if 'rel="canonical"' not in doc: fail(f"{rel}: widget missing canonical")
+        if "Equal Housing Opportunity" not in doc: fail(f"{rel}: widget missing EHO")
+        if "/bah-report/?utm_source=embed" not in doc: fail(f"{rel}: widget missing attribution link")
+        if "Last refreshed" not in doc: fail(f"{rel}: widget missing refresh date")
+        continue
+
     # 1. nav count
     navm = re.search(r'<nav class="main".*?</nav>', doc, re.S)
     links = len(re.findall(r"<a ", navm.group(0))) if navm else 0
@@ -36,6 +45,7 @@ for fp in html_files:
     if '<link rel="canonical"' not in doc: fail(f"{rel}: missing canonical")
     if not re.search(r"<title>.+</title>", doc): fail(f"{rel}: missing title")
     if 'name="description"' not in doc: fail(f"{rel}: missing meta description")
+    if '/assets/favicon.svg' not in doc: fail(f"{rel}: missing favicon link")
     for og in ('og:title','og:description','og:url','og:image'):
         if f'property="{og}"' not in doc: fail(f"{rel}: missing {og}")
     if 'name="twitter:card"' not in doc: fail(f"{rel}: missing twitter card")
@@ -94,7 +104,7 @@ locs = set(re.findall(r"<loc>(.*?)</loc>", sm))
 expected = set()
 for fp in html_files:
     rel = "/" + os.path.relpath(fp, SITE).replace(os.sep, "/")
-    if rel == "/404.html": continue
+    if rel in ("/404.html", "/embed/bah-widget.html"): continue
     expected.add(DOMAIN + (rel[:-len("index.html")] if rel.endswith("/index.html") else rel))
 if locs != expected:
     fail(f"sitemap parity: only-in-sitemap={sorted(locs-expected)} missing={sorted(expected-locs)}")

@@ -52,6 +52,7 @@ deliberate splurge, not a default.</p>
 fits the Salt Lake, Kalihi, and downtown 1–2BR bands — the single-service-member market is a condo
 market, which is why VA condo approval (see the <a href="/buy/">buying guide</a>) matters here more
 than almost anywhere in the country.</p>
+<p style="max-width:46rem">Running a blog, group, or unit page? <a href="/embed/">Embed the live widget</a> — it refreshes with each edition.</p>
 <section id="cite"><h2>Cite this report</h2>
 <p style="max-width:46rem">Journalists, bloggers, and researchers may quote or chart this report
 with attribution and a link. Suggested citation:</p>
@@ -339,6 +340,7 @@ active housing search. Rates key off the Honolulu locality per diem and your fam
 numbers change; the rules have edges. <strong>Your installation housing office and the current
 Joint Travel Regulations are the authority</strong> — treat every dollar figure you read anywhere
 else, including here, as orientation.</p>
+<p style="max-width:46rem">Companion page: <a href="/tla/field-notes.html">the lodging field notes</a> — options by installation and the off-base booking filters.</p>
 <h2>The practical sequence</h2>
 <p style="max-width:46rem"><strong>Before you fly:</strong> book TLA-eligible lodging near your
 gaining base (on-base lodging first — it simplifies the paperwork and the commute), stage your
@@ -516,6 +518,12 @@ Hawaii PCS that paperwork alone doesn't cover.</p>
   <div class="card"><span class="tag">Family</span>
     <h3><a href="/guides/school-transition.html">The school transition, managed</a></h3>
     <p>Records, enrollment, the early calendar, and the Interstate Compact — in the order that works.</p></div>
+  <div class="card"><span class="tag">Arriving</span>
+    <h3><a href="/vehicle-shipping/">Vehicle shipping, end to end</a></h3>
+    <p>The one-POV entitlement, PCSmyPOV, the real timeline, the gap-car math, and the 10-day registration clock.</p></div>
+  <div class="card"><span class="tag">Arriving</span>
+    <h3><a href="/tla/field-notes.html">TLA lodging field notes</a></h3>
+    <p>Base lodging by installation, the Hale Koa option, and the off-base filters that matter.</p></div>
   <div class="card"><span class="tag">Arriving</span>
     <h3><a href="/guides/pets-to-hawaii.html">Pets to Hawaii: the quarantine clock</a></h3>
     <p>Microchip, OIE-FAVN, the waiting period, Direct Airport Release — dated backward from your report date.</p></div>

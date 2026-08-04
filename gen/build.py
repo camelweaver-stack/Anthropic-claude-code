@@ -1,6 +1,6 @@
 import os, json
 from common import DOMAIN
-import pages_core, pages_content, pages_tools, pages_growth, pages_pockets
+import pages_core, pages_content, pages_tools, pages_growth, pages_pockets, pages_vehicle, pages_embed
 
 SITE = os.path.join(os.path.dirname(__file__), "..", "site")
 
@@ -10,6 +10,8 @@ pages.update(pages_content.build())
 pages.update(pages_tools.build())
 pages.update(pages_growth.build())
 pages.update(pages_pockets.build())
+pages.update(pages_vehicle.build())
+pages.update(pages_embed.build())
 
 # hero image injection (post-process; gate verifies referenced files exist)
 _mf = json.load(open(os.path.join(os.path.dirname(__file__), "img_manifest.json")))
@@ -49,7 +51,7 @@ def url_for(path):
         return DOMAIN + path[:-len("index.html")]
     return DOMAIN + path
 
-urls = sorted(url_for(p) for p in pages if p != "/404.html")
+urls = sorted(url_for(p) for p in pages if p not in ("/404.html", "/embed/bah-widget.html"))
 
 with open(os.path.join(SITE, "sitemap.xml"), "w") as f:
     f.write('<?xml version="1.0" encoding="UTF-8"?>\n'

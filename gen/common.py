@@ -110,6 +110,8 @@ FOOTER = f'''
       <li><a href="/bases/">Base-by-base guides</a></li>
       <li><a href="/bah-report/">The BAH Reality Report</a></li>
       <li><a href="/tla/">TLA &amp; interim housing</a></li>
+      <li><a href="/tla/field-notes.html">TLA lodging field notes</a></li>
+      <li><a href="/vehicle-shipping/">Vehicle shipping</a></li>
       <li><a href="/pcs-checklist/">PCS timeline checklist</a></li>
       <li><a href="/neighborhoods/">Neighborhoods</a></li>
       <li><a href="/quiz/">Pocket-match quiz</a></li>
@@ -162,6 +164,8 @@ def page(path, title, desc, body, current="", jsonld=None, extra_head=""):
 <meta property="og:image" content="{DOMAIN}/assets/og-card.png">
 <meta name="twitter:card" content="summary_large_image">
 {FONTS}
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon.png" type="image/png">
 <link rel="stylesheet" href="/assets/style.css">
 {ld}{extra_head}
 </head>
