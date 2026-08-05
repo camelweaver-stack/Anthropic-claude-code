@@ -13,6 +13,7 @@ Legend — Status: `LIVE` shipped · `NEXT` queued · `IDEA` backlog · `HOLD` n
 | Date | Topic | Cluster | Audience | Target query | Src | Traffic | Txn | Status | Links |
 |---|---|---|---|---|---|---|---|---|---|
 | 2026-08-05 | Household goods to Hawaii (OCONUS HHG: UB, sea shipment, NTS, pro-gear, DPS) | PCS logistics | Inbound PCS families | "shipping household goods to hawaii military" | Verified (MilOneSource, Move.mil/DPS, DTMO) | H | M | LIVE `/guides/household-goods.html` | guides hub, vehicle-shipping, pets, pcs-checklist, school-transition |
+| 2026-08-05 | Registering a car in Hawaii (30-day clock, CS-L(MVR)50 exemption, out-of-state permit) | PCS logistics | Inbound PCS families w/ POV | "register car hawaii military" | Verified (Honolulu CSD, HI DOT, HRS 286) | M | L | LIVE `/guides/vehicle-registration.html` | guides hub, vehicle-shipping, pcs-checklist, on-base |
 
 ## Backlog — scored, cluster-balanced (draw the daily slot from here, highest utility first)
 
@@ -27,7 +28,7 @@ Legend — Status: `LIVE` shipped · `NEXT` queued · `IDEA` backlog · `HOLD` n
 | 7 | Spouse licensure & the MSAAA/compact map for Hawaii | Family / Benefits | Spouses | "military spouse license hawaii" | Sourceable (DoD SECO) | M | L | IDEA |
 | 8 | TLA math + the wheels-down-to-keys sequence (deepen existing /tla/) | PCS logistics | All inbound | "tla hawaii how long" | Have | M | M | UPDATE |
 | 9 | VA loan condo approval on Oahu — why the list matters here | Buying / VA | Single/junior buyers | "va approved condo oahu" | Sourceable (VA) | M | H | IDEA |
-| 10 | Registering your car in Honolulu — the 10-day clock, safety check, weight tax | PCS logistics | All w/ POV | "register car hawaii military 10 days" | Sourceable (honolulu.gov) | M | L | IDEA |
+| 10 | Registering your car in Honolulu — safety check, weight tax | PCS logistics | All w/ POV | "register car hawaii military" | SHIPPED 2026-08-05 → /guides/vehicle-registration.html | M | L | LIVE |
 | 11 | Childcare on Oahu: MilitaryChildCare.com + realistic waitlists (deepen) | Family | Families w/ kids | "oahu military childcare waitlist" | Have | M | L | UPDATE |
 | 12 | The December BAH-cycle report refresh + PITCH_KIT outreach wave | BAH / Data | Press + all | "2027 bah oahu vs rent" | Scheduled (Dec, DTMO) | H | M | HOLD (Dec) |
 
