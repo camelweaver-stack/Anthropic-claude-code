@@ -1,6 +1,6 @@
 import os, json
 from common import DOMAIN
-import pages_core, pages_content, pages_tools, pages_growth, pages_pockets, pages_vehicle, pages_embed
+import pages_core, pages_content, pages_tools, pages_growth, pages_pockets, pages_vehicle, pages_embed, pages_phase_a
 
 SITE = os.path.join(os.path.dirname(__file__), "..", "site")
 
@@ -12,6 +12,7 @@ pages.update(pages_growth.build())
 pages.update(pages_pockets.build())
 pages.update(pages_vehicle.build())
 pages.update(pages_embed.build())
+pages.update(pages_phase_a.build())
 
 # hero image injection (post-process; gate verifies referenced files exist)
 _mf = json.load(open(os.path.join(os.path.dirname(__file__), "img_manifest.json")))

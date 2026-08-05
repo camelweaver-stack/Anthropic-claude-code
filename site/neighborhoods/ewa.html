@@ -37,10 +37,19 @@
 <h2>The honest trade</h2>
 <p style="max-width:46rem">The H-1 eastbound at 0600 is the whole conversation. If your report time is standard staff hours, drive it once before you commit; if you're on shift work or the rail line serves your gate, the math changes completely.</p>
 <div class="note"><strong>Buyer note.</strong> The center of gravity for VA purchases on Oahu — new-construction builders here know the VA process cold, and resale competition is thickest at exactly these price points. Full math in the <a href="/buy/">VA brief</a>.</div>
+<p><button class="btn ghost" style="color:#1f5a54;border-color:#9db4ae" id="savep" data-pocket="ewa">Save Ewa Beach / Kapolei to My PCS</button></p>
 <p style="max-width:46rem">School boundaries here run street by street — check any exact address
 against the HIDOE lookup before signing (the <a href="/schools/">schools guide</a> explains how
 Hawaii's statewide district and Geographic Exceptions work), and see how Ewa Beach / Kapolei scores against
 your priorities in the <a href="/quiz/">pocket-match quiz</a>.</p>
+<script>
+(function(){var b=document.getElementById('savep'),k=b.getAttribute('data-pocket'),K='pcsoahu-saved-pockets';
+function arr(){try{return JSON.parse(localStorage.getItem(K))||[]}catch(e){return[]}}
+function paint(){b.textContent=(arr().indexOf(k)>-1?'Saved to My PCS (tap to remove)':'Save Ewa Beach / Kapolei to My PCS')}
+b.addEventListener('click',function(){var a=arr(),i=a.indexOf(k);
+if(i>-1)a.splice(i,1);else a.push(k);
+try{localStorage.setItem(K,JSON.stringify(a))}catch(e){};paint()});paint()})();
+</script>
 
 <section id="list"><h2>Watching Ewa Beach / Kapolei?</h2><p style="max-width:44rem">Join the list and the monthly refresh includes this pocket's bands next to your grade's allowance, timed to your report window.</p>
 <form class="lead" action="https://formsubmit.co/leads@anastasiaweaver.com" method="POST">
@@ -83,7 +92,10 @@ your priorities in the <a href="/quiz/">pocket-match quiz</a>.</p>
     <div><h4>Life on Island</h4><ul>
       <li><a href="/guides/spouse-employment.html">Spouse employment</a></li>
       <li><a href="/guides/school-transition.html">School transitions</a></li>
-      <li><a href="/guides/">All guides</a></li></ul></div>
+      <li><a href="/guides/">All guides</a></li>
+      <li><a href="/my-pcs/">My PCS dashboard</a></li>
+      <li><a href="/ask/">Ask PCS Oahu</a></li>
+      <li><a href="/data/">Data desk</a></li></ul></div>
   </div>
   <div class="legal">
     <p><strong>Photo credits</strong> (Wikimedia Commons, used under the stated licenses with

@@ -52,6 +52,16 @@ on this site is built to map.</p>
     <p>BAH-vs-rent fit, rent-vs-sell for departing owners, and a payment reality check — free,
     nothing leaves your phone.</p></div>
 </div>
+<h2>Make it yours</h2>
+<div class="grid c3">
+  <div class="card"><span class="tag">No account needed</span><h3><a href="/my-pcs/">My PCS dashboard</a></h3>
+    <p>Your quiz match, saved pockets, checklist, and calculator results — on your device,
+    exportable as a plan.</p></div>
+  <div class="card"><span class="tag">Concierge</span><h3><a href="/ask/">Ask PCS Oahu</a></h3>
+    <p>Questions answered from the guides, with links — and honest limits.</p></div>
+  <div class="card"><span class="tag">Research</span><h3><a href="/data/">The data desk</a></h3>
+    <p>Every named report, the refresh cadence, and what's coming next.</p></div>
+</div>
 {lead_form("HOME", "pcs-renter",
   heading="The arrival brief, before you arrive",
   blurb="Join the list and get the current BAH Reality Report, the rent-band refresh for your "

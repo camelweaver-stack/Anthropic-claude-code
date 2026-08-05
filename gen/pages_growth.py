@@ -97,6 +97,7 @@ document.getElementById('go').addEventListener('click',function(){{
    '</p><p style="font-size:.85rem;color:#5b6b73">Scored against the current edition\\'s rounded '+
    'bands — a compass, not a lease decision. Verify asking rents directly.</p>';
  res.innerHTML=html;
+ try{{localStorage.setItem('pcsoahu-quiz-result',JSON.stringify({{top:top.map(function(t){{return t[1]}}),base:document.getElementById('q1').selectedOptions[0].text}}))}}catch(e){{}}
 }});
 }})();
 </script>'''

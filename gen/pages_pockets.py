@@ -133,10 +133,19 @@ def pocket_page(key):
 <h2>The honest trade</h2>
 <p style="max-width:46rem">{trade}</p>
 {buy_html}
+<p><button class="btn ghost" style="color:#1f5a54;border-color:#9db4ae" id="savep" data-pocket="{key}">Save {name} to My PCS</button></p>
 <p style="max-width:46rem">School boundaries here run street by street — check any exact address
 against the HIDOE lookup before signing (the <a href="/schools/">schools guide</a> explains how
 Hawaii's statewide district and Geographic Exceptions work), and see how {name} scores against
 your priorities in the <a href="/quiz/">pocket-match quiz</a>.</p>
+<script>
+(function(){{var b=document.getElementById('savep'),k=b.getAttribute('data-pocket'),K='pcsoahu-saved-pockets';
+function arr(){{try{{return JSON.parse(localStorage.getItem(K))||[]}}catch(e){{return[]}}}}
+function paint(){{b.textContent=(arr().indexOf(k)>-1?'Saved to My PCS (tap to remove)':'Save {name} to My PCS')}}
+b.addEventListener('click',function(){{var a=arr(),i=a.indexOf(k);
+if(i>-1)a.splice(i,1);else a.push(k);
+try{{localStorage.setItem(K,JSON.stringify(a))}}catch(e){{}};paint()}});paint()}})();
+</script>
 {lead_form(tag, "pcs-renter",
   heading="Watching " + name + "?",
   blurb="Join the list and the monthly refresh includes this pocket's bands next to your grade's "

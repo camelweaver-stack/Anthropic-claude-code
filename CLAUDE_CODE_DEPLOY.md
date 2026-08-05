@@ -8,13 +8,13 @@ files — content changes go through `gen/` (edit, `python3 gen/build.py`, re-ga
 python3 gen/gate.py site
 ```
 Must print `GATE PASSED`. If it fails, STOP — do not deploy; report the failures instead.
-Sanity: `site/` should contain 36 HTML files, sitemap.xml (35 URLs), robots.txt, llms.txt,
+Sanity: `site/` should contain 47 HTML files, sitemap.xml (45 URLs), robots.txt, llms.txt,
 assets/ (style.css, og-card.png, img/ with 11 photos).
 
 ## 1 · Deploy
 **Primary path — Netlify** (account is connected):
 ```bash
-netlify deploy --dir=site --prod
+netlify deploy --prod   # netlify.toml sets publish=site and functions=netlify/functions
 ```
 Then attach the custom domain: `netlify domains:add pcsoahu.com` (or via dashboard), and let
 Netlify provision HTTPS. Netlify serves `404.html` for not-found routes automatically —

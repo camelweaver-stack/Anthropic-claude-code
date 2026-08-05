@@ -29,7 +29,8 @@ email capture only; referral-first lead routing (Hawaii pipeline).
       endpoint per-form and Anastasia confirms receipt. Tags in this build:
       HOME, BASES, JBPHH, SCHOFIELD, MCBH, CAMPSMITH, TRIPLER, USCG, BAHREPORT, NEIGHBORHOODS,
       SCHOOLS, BUY, SELL, CHECKLIST, TLA, GUIDES, SPOUSE, SCHOOLTRANSITION, PETS, TOOLS,
-      SHAFTER, QUIZ, ONBASE, NOTFOUND.
+      SHAFTER, QUIZ, ONBASE, NOTFOUND, VEHICLE, LODGING, EMBED, MYPCS, ASK, DATA,
+      UTILITIES, HEALTHCARE, CHILDCARE, SPONSORSHIP.
       All carry `audience=referral-hi-oahu-pcs` + `segment=pcs-renter|pcs-buyer|pcs-seller`.
 - [ ] **GSC inspection priorities (in order):** `/bah-report/` (the backlink asset), `/buy/`
       (flagship VA brief, FAQ schema), the six `/bases/*` pages, `/sell/`, home.

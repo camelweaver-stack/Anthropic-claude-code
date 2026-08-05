@@ -518,6 +518,18 @@ Hawaii PCS that paperwork alone doesn't cover.</p>
   <div class="card"><span class="tag">Family</span>
     <h3><a href="/guides/school-transition.html">The school transition, managed</a></h3>
     <p>Records, enrollment, the early calendar, and the Interstate Compact — in the order that works.</p></div>
+  <div class="card"><span class="tag">Settling</span>
+    <h3><a href="/guides/utilities.html">Utilities, honestly</a></h3>
+    <p>The highest electric rates in the country, the AC question, and the two internet providers.</p></div>
+  <div class="card"><span class="tag">Family</span>
+    <h3><a href="/guides/healthcare.html">Healthcare &amp; TRICARE</a></h3>
+    <p>The enrollment sequence, the geography of care, and the EFMP fine print.</p></div>
+  <div class="card"><span class="tag">Family</span>
+    <h3><a href="/guides/childcare.html">Childcare: start now</a></h3>
+    <p>MilitaryChildCare.com, realistic waitlists, and fee assistance in parallel.</p></div>
+  <div class="card"><span class="tag">Orders</span>
+    <h3><a href="/guides/sponsorship.html">Accompanied orders &amp; EFMP</a></h3>
+    <p>Hawaii runs accompanied-orders and EFMP screening, not foreign-style command sponsorship.</p></div>
   <div class="card"><span class="tag">Arriving</span>
     <h3><a href="/vehicle-shipping/">Vehicle shipping, end to end</a></h3>
     <p>The one-POV entitlement, PCSmyPOV, the real timeline, the gap-car math, and the 10-day registration clock.</p></div>

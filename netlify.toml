@@ -9,6 +9,12 @@
   # (Rebuild locally with: cd gen && python3 build.py && python3 gate.py)
   command = ""
 
+# Serverless functions (the /ask/ concierge). Requires env var ANTHROPIC_API_KEY
+# set in the Netlify project before /ask/ returns live answers; until then the
+# function degrades gracefully to an "offline" message (no broken UX).
+[functions]
+  directory = "netlify/functions"
+
 # Canonical host is the apex (every <link rel="canonical"> in the build is https://pcsoahu.com).
 # Redirect www -> apex, 301.
 [[redirects]]
