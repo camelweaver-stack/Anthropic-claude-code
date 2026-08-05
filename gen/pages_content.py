@@ -628,6 +628,108 @@ starts late.</p>
                 "booking. Sourced and dated.",
                 body, "/guides/", jsonld=ld)
 
+def vehicle_registration():
+    qas = [
+      ("How long do I have to register my car after it arrives in Hawaii?",
+       "Within 30 days of the vehicle's arrival on Oahu you must obtain either a Hawaii "
+       "registration or an out-of-state permit (City & County of Honolulu). The process runs "
+       "through a safety inspection that initially ‘fails’ because the car has no Hawaii "
+       "registration yet — that failed certificate is what lets you register, and you return to "
+       "the inspection station within 30 days of that failed check for the passing sticker once "
+       "you’re registered. Confirm current timelines with Honolulu’s Department of Customer "
+       "Services — forms and windows change."),
+      ("Do active-duty military have to pay Hawaii's vehicle weight tax?",
+       "Nonresident active-duty service members and their spouses are exempt from Honolulu’s "
+       "motor-vehicle weight tax when they submit a properly completed Non-Resident Certificate, "
+       "Form CS-L(MVR)50, with each registration transaction (the county notes the current form is "
+       "dated 04/2026). You can also keep your home-state plates instead, via the out-of-state "
+       "permit, Form CS-L(MVR)27. Verify both forms’ current versions on honolulu.gov."),
+      ("Where do I register a PCS vehicle on Oahu?",
+       "At any Satellite City Hall (City & County of Honolulu, Department of Customer Services), "
+       "with an on-base option at Joint Base Pearl Harbor-Hickam for the initial out-of-state "
+       "registration. Bring your out-of-state title/registration, Hawaii insurance, orders, the "
+       "failed Hawaii safety-inspection certificate, and the applicable form."),
+    ]
+    body = f'''
+<div class="hero"><div class="wrap">
+<p class="eyebrow">PCS logistics · after the car lands</p>
+<h1>Registering your car in Hawaii: the arrival clock</h1>
+<p class="lede">Shipping the car is one process; putting Hawaii plates on it is another. There is no
+one-counter, same-day path — the sequence runs insurance → a safety inspection that deliberately
+‘fails’ first → registration → back for the passing sticker. Active-duty families get a real
+choice and a weight-tax exemption most people don’t know about.</p>
+</div></div>
+<div class="wrap">
+<h2>The direct answer</h2>
+<p style="max-width:46rem">When your POV arrives (see <a href="/vehicle-shipping/">vehicle
+shipping</a> for getting it here), the registration sequence on Oahu is:</p>
+<ol style="max-width:46rem">
+<li><strong>Know the deadline: 30 days.</strong> Per the City &amp; County of Honolulu, within
+30 days of the vehicle's arrival on Oahu you must obtain either a Hawaii registration or an
+out-of-state permit. Start the steps below the week the car lands.</li>
+<li><strong>Get Hawaii auto insurance first.</strong> You need proof of Hawaii insurance to obtain
+a safety inspection, and the inspection is required for every registration transaction.</li>
+<li><strong>Take the car for a Hawaii safety inspection — which ‘fails.’</strong> With no Hawaii
+registration yet, the station issues a <em>failed</em> certificate. That failed certificate is not
+a problem; it is the document that lets you register.</li>
+<li><strong>Register at a Satellite City Hall</strong> (or the Joint Base Pearl Harbor-Hickam option
+for the initial out-of-state registration), choosing plates or an out-of-state permit — see below.</li>
+<li><strong>Return for the passing sticker.</strong> Per the City &amp; County of Honolulu, you go
+back to the inspection station within <strong>30 days</strong> of that original failed check to
+complete the passing inspection once you’re registered.</li>
+</ol>
+<h2>The choice active-duty families have</h2>
+<p style="max-width:46rem">Nonresident active-duty service members (and spouses) don’t have to
+convert to Hawaii plates at all — there are two legitimate paths:</p>
+<p style="max-width:46rem"><strong>Keep your home-state plates</strong> via the out-of-state permit,
+<strong>Form CS-L(MVR)27</strong>. Or <strong>register in Hawaii</strong> with <strong>Form
+CS-L(MVR)50</strong>, the Non-Resident Certificate, which also claims the exemption below. Both are
+recognized options; pick based on your home state’s renewal cost and how long the tour runs.</p>
+<div class="warn"><strong>The weight-tax exemption worth knowing.</strong> Nonresident active-duty
+military and their spouses are <strong>exempt from Honolulu’s motor-vehicle weight tax</strong>
+when they file a properly completed CS-L(MVR)50 with each registration transaction — the county
+notes the current form is dated 04/2026. That exemption is easy to miss and it is not automatic:
+the form has to be submitted every time. (You still pay the standard state registration fee and the
+safety-inspection fee, which the state updated in 2025 — check the current schedule on honolulu.gov.)</div>
+<h2>What to bring</h2>
+<p style="max-width:46rem">Your out-of-state title and current registration, proof of Hawaii
+insurance, a copy of your orders, the <em>failed</em> Hawaii safety-inspection certificate, and the
+applicable form (CS-L(MVR)50 to register in Hawaii with the exemption, or CS-L(MVR)27 for the
+out-of-state permit). If the car came by sea, keep the shipping paperwork from the port with the
+packet — you may need it to prove arrival.</p>
+<div class="warn"><strong>Honest limits.</strong> Forms, fees, inspection rules, and timelines are
+set by the City &amp; County of Honolulu (Department of Customer Services) and the Hawaii Department
+of Transportation, and they change — the county even versions the CS-L(MVR)50 by date. This guide is
+orientation compiled from honolulu.gov and hidot.hawaii.gov and verified <strong>August 5, 2026</strong>;
+confirm the current forms and fees with the county before you go, and use your installation’s
+in-processing brief. Nothing here is legal or tax advice.</p>
+<p style="max-width:46rem">This is the last step of the car’s PCS journey; the first is the
+<a href="/vehicle-shipping/">shipment itself</a>, and the registration deadline is one of the arrival
+tasks tracked on the <a href="/pcs-checklist/">PCS timeline checklist</a>. Setting up on base first?
+See <a href="/on-base/">on-base housing</a>.</p>
+{lead_form("VEHREG", "pcs-renter",
+  heading="Working the arrival checklist?",
+  blurb="Join the list and the arrival brief sequences the registration, inspection, and insurance "
+        "steps against your report window so the safety-inspection clock never catches you late.")}
+</div>'''
+    p = "/guides/vehicle-registration.html"
+    ld = {"@context": "https://schema.org", "@graph": [
+        {"@type": "Article",
+         "headline": "Registering your car in Hawaii: the arrival clock",
+         "description": "How PCS families register an imported vehicle on Oahu — the safety-inspection "
+                        "sequence, the 30-day clock, the nonresident-military weight-tax exemption "
+                        "(Form CS-L(MVR)50), and the out-of-state permit option.",
+         "datePublished": "2026-08-05", "dateModified": "2026-08-05",
+         "author": {"@type": "Organization", "name": "PCS Oahu"},
+         "publisher": {"@type": "Organization", "name": "PCS Oahu"},
+         "mainEntityOfPage": DOMAIN + p},
+        faq_ld(qas)]}
+    return p, page(p, "Registering a Car in Hawaii on PCS Orders: Forms, Weight Tax, Inspection | PCS Oahu",
+                "How military families register an imported vehicle on Oahu: the safety-inspection "
+                "sequence and 30-day clock, the nonresident weight-tax exemption (CS-L(MVR)50), and "
+                "the out-of-state permit (CS-L(MVR)27). Sourced and dated.",
+                body, "/guides/", jsonld=ld)
+
 def guides_hub():
     body = f'''
 <div class="hero"><div class="wrap">
@@ -663,6 +765,9 @@ Hawaii PCS that paperwork alone doesn't cover.</p>
     <h3><a href="/guides/household-goods.html">Household goods to Hawaii</a></h3>
     <p>The OCONUS move in order: unaccompanied baggage first, the sea shipment, storage, pro-gear, and the DPS booking clock.</p></div>
   <div class="card"><span class="tag">Arriving</span>
+    <h3><a href="/guides/vehicle-registration.html">Registering your car in Hawaii</a></h3>
+    <p>The safety-inspection sequence and 30-day clock, the nonresident weight-tax exemption, and the out-of-state permit option.</p></div>
+  <div class="card"><span class="tag">Arriving</span>
     <h3><a href="/tla/field-notes.html">TLA lodging field notes</a></h3>
     <p>Base lodging by installation, the Hale Koa option, and the off-base filters that matter.</p></div>
   <div class="card"><span class="tag">Arriving</span>
@@ -693,7 +798,7 @@ def build():
         "/tla/index.html": tla(),
         "/guides/index.html": guides_hub(),
     }
-    for fn in (spouse, school_transition, pets, household_goods):
+    for fn in (spouse, school_transition, pets, household_goods, vehicle_registration):
         p, h = fn()
         out[p] = h
     return out

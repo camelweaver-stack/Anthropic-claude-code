@@ -21,11 +21,13 @@ def vehicle():
        "and Pasha Hawaii are the two direct carriers — get current quotes from both before "
        "deciding whether the car is worth more than the invoice."),
       ("How soon must I register my car in Hawaii after it arrives?",
-       "Within 10 days of the vehicle's arrival in the state. Non-residents (which includes most "
-       "service members keeping a mainland state of legal residence) can keep home plates but "
-       "must obtain a Hawaii permit — bring proof of ownership or registration, the shipping "
-       "documents, Hawaii no-fault insurance, and the non-resident certificate Form CS-L (MVR) "
-       "from your personnel office. Every vehicle also needs Hawaii's annual safety inspection."),
+       "Within 30 days of the vehicle's arrival on Oahu you must obtain either a Hawaii "
+       "registration or an out-of-state permit (City & County of Honolulu). Non-residents (which "
+       "includes most service members keeping a mainland state of legal residence) can keep home "
+       "plates via the out-of-state permit, or register in Hawaii and claim the nonresident "
+       "weight-tax exemption. The full form-by-form process — insurance, the ‘failed’ safety "
+       "inspection, CS-L(MVR)50 vs CS-L(MVR)27 — is in the "
+       "<a href=\"/guides/vehicle-registration.html\">vehicle-registration guide</a>."),
       ("Should I ship my car to Hawaii or buy one on the island?",
        "Run three numbers: the second-vehicle shipping invoice, the gap-car cost while you wait "
        "(airport rentals commonly run $600–$900+ a week in mid-2026), and the island's used-car "
@@ -38,7 +40,7 @@ def vehicle():
 <p class="eyebrow">The complete brief · drop-off to Hawaii plates</p>
 <h1>Shipping your vehicle to Hawaii on PCS orders, end to end</h1>
 <p class="lede">One POV ships free on your orders. Everything else about the process — the
-booking site, the quarter-tank rule, the 30-to-60-day gap, the 10-day registration clock on
+booking site, the quarter-tank rule, the 30-to-60-day gap, the 30-day registration clock on
 the other end — is where PCS budgets and tempers actually go. This is the whole sequence in
 one place, dated mid-2026, with every step pointed at its official source.</p>
 </div></div>
@@ -118,15 +120,16 @@ window, and read the contract's extension terms since your date is a guess); or 
 island car first and letting the shipped car be the second arrival. Whatever the plan, make it
 before wheels-down — <a href="/tla/">TLA logistics</a> and a car search in the same week is the
 classic arrival overload.</p>
-<h3>8 — Registration: the 10-day clock</h3>
-<p style="max-width:46rem">Hawaii requires registration <strong>within 10 days of the vehicle's
-arrival in the state</strong>. As a non-resident service member you may keep your home-state
-plates, but you still register for a Hawaii permit. Bring: proof of ownership or current
-registration, the shipping documents, <strong>Hawaii no-fault insurance</strong> (mainland
+<h3>8 — Registration: the 30-day clock</h3>
+<p style="max-width:46rem">Per the City &amp; County of Honolulu, within <strong>30 days of the
+vehicle's arrival on Oahu</strong> you must obtain either a Hawaii registration or an out-of-state
+permit. As a non-resident service member you may keep your home-state plates via the permit, or
+register in Hawaii and claim the nonresident weight-tax exemption. Bring: proof of ownership or
+current registration, the shipping documents, <strong>Hawaii no-fault insurance</strong> (mainland
 policies don't automatically satisfy this — call your carrier before the ship docks), and the
-<strong>Non-Resident Certificate, Form CS-L (MVR)</strong>, issued through your personnel
-office against your home of record. Registration runs through the City &amp; County of
-Honolulu's motor-vehicle offices and satellite city halls.</p>
+<strong>Non-Resident Certificate, Form CS-L(MVR)50</strong> (or the out-of-state permit,
+CS-L(MVR)27). Full step-by-step, with the forms and the ‘failed’-inspection sequence, is in the
+<a href="/guides/vehicle-registration.html">vehicle-registration guide</a>.</p>
 <h3>9 — Safety inspection, annually</h3>
 <p style="max-width:46rem">Every vehicle on Hawaii highways carries a current annual safety
 inspection — gas stations and service shops island-wide perform them. Sequence note: insurance
@@ -168,12 +171,12 @@ authority, and this page is the map to them.</p>
 {lead_form("VEHICLE", "pcs-renter",
   heading="Shipping a vehicle this cycle?",
   blurb="Join the list and the arrival brief paces the VPC booking, the lien letter, the "
-        "gap-car decision, and the 10-day registration clock against your report window.")}
+        "gap-car decision, and the 30-day registration clock against your report window.")}
 </div>'''
     p = "/vehicle-shipping/"
     return page(p, "Shipping Your Car to Hawaii on PCS Orders: The Complete 2026 Guide | PCS Oahu",
                 "End to end: the one-POV entitlement, PCSmyPOV booking, quarter-tank prep, the "
-                "real 30–60 day timeline, the gap-car math, and Hawaii's 10-day registration "
+                "real 30–60 day timeline, the gap-car math, and Hawaii's 30-day registration "
                 "clock — every step sourced.",
                 body, "/guides/",
                 jsonld={"@context": "https://schema.org",
