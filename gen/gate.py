@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """PCS Oahu QA gate battery. Run from anywhere: python3 gate.py [site_dir]
 Exits nonzero on any failure. Ship this with the package; run before every deploy."""
-import os, re, sys, glob
+import os, re, sys, glob, json
 
 SITE = sys.argv[1] if len(sys.argv) > 1 else os.path.join(os.path.dirname(__file__), "..", "site")
 DOMAIN = "https://pcsoahu.com"
@@ -112,6 +112,56 @@ if locs != expected:
 rep = open(os.path.join(SITE, "bah-report", "index.html")).read()
 if "Cite this report" not in rep: fail("bah-report: missing cite block")
 if '"@type": "Dataset"' not in rep: fail("bah-report: missing Dataset schema")
+
+# ---- §8 structured-data battery ----
+BLOCKLIST_TYPES = {"RealEstateAgent", "RealEstateListing", "Residence", "Offer",
+                   "Product", "LocalBusiness", "Service"}
+def _walk(o):
+    if isinstance(o, dict):
+        yield o
+        for v in o.values(): yield from _walk(v)
+    elif isinstance(o, list):
+        for v in o: yield from _walk(v)
+
+# 8.1 + 8.2: every JSON-LD block parses; no blocklisted @type; Dataset nodes complete
+for fp in html_files:
+    rel = os.path.relpath(fp, SITE)
+    doc = open(fp).read()
+    for block in re.findall(r'<script type="application/ld\+json">(.*?)</script>', doc, re.S):
+        try:
+            data = json.loads(block)
+        except Exception as e:
+            fail(f"{rel}: invalid JSON-LD ({e})"); continue
+        for node in _walk(data):
+            t = node.get("@type")
+            for tt in (t if isinstance(t, list) else [t]):
+                if tt in BLOCKLIST_TYPES:
+                    fail(f"{rel}: forbidden schema @type '{tt}'")
+            if t == "Dataset" or (isinstance(t, list) and "Dataset" in t):
+                for req in ("license", "dateModified", "distribution"):
+                    if req not in node:
+                        fail(f"{rel}: Dataset node missing '{req}'")
+
+# 8.3: data-file freshness — date_refreshed must equal the sitewide refresh date (sitemap lastmod)
+_lm = re.search(r"<lastmod>(\d{4}-\d{2}-\d{2})</lastmod>",
+                open(os.path.join(SITE, "sitemap.xml")).read())
+_dfp = os.path.join(SITE, "data", "bah-reality-report.json")
+if not os.path.exists(_dfp):
+    fail("data/bah-reality-report.json missing")
+else:
+    try:
+        _d = json.load(open(_dfp))
+        if _lm and _d.get("date_refreshed") != _lm.group(1):
+            fail(f"data freshness: date_refreshed {_d.get('date_refreshed')} != sitemap {_lm.group(1)}")
+        for req in ("license", "citation", "bah_anchors_usd_monthly", "rent_bands_usd_monthly"):
+            if req not in _d: fail(f"data json missing '{req}'")
+    except Exception as e:
+        fail(f"data/bah-reality-report.json invalid JSON ({e})")
+
+# 8.4: embed attribution — caption backlink present outside the iframe
+_ep = os.path.join(SITE, "embed", "index.html")
+if os.path.exists(_ep) and 'href="https://pcsoahu.com/bah-report/"' not in open(_ep).read():
+    fail('embed: missing caption backlink href="https://pcsoahu.com/bah-report/"')
 
 if FAILS:
     print(f"GATE FAILED — {len(FAILS)} issue(s):")

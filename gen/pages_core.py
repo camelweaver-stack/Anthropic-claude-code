@@ -68,12 +68,11 @@ on this site is built to map.</p>
         "gaining base, and a heads-up timed to your report window. First access when full service "
         "opens. No spam. Leave anytime.")}
 </div>'''
-    ld = {"@context": "https://schema.org", "@type": "WebSite", "name": "PCS Oahu",
-          "url": DOMAIN, "description": "The independent field guide for military PCS moves to and from Oahu."}
+    # WebSite/Organization now emitted sitewide by page() (see common.identity_graph()).
     return page("/", "PCS Oahu — The Field Guide for Military Orders to Oahu",
                 "Orders to Hawaii? Base-by-base BAH vs rent math, VA loans at Oahu prices, TLA, "
                 "schools, and the sell-or-rent call when you PCS out. Independent and honest.",
-                body, "/bases/" if False else "", jsonld=ld)
+                body, "")
 
 BASES = [
  dict(slug="pearl-harbor-hickam", tag="JBPHH", name="Joint Base Pearl Harbor–Hickam",

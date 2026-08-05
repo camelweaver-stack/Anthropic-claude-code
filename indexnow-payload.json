@@ -1,7 +1,7 @@
 {
   "host": "pcsoahu.com",
-  "key": "12ef30fd51aefc63524ab6eb41e58f99",
-  "keyLocation": "https://pcsoahu.com/12ef30fd51aefc63524ab6eb41e58f99.txt",
+  "key": "26a14273b45a7783390b8eeeefe2906d",
+  "keyLocation": "https://pcsoahu.com/26a14273b45a7783390b8eeeefe2906d.txt",
   "urlList": [
     "https://pcsoahu.com/",
     "https://pcsoahu.com/ask/",
@@ -47,6 +47,9 @@
     "https://pcsoahu.com/tla/",
     "https://pcsoahu.com/tla/field-notes.html",
     "https://pcsoahu.com/tools/",
-    "https://pcsoahu.com/vehicle-shipping/"
+    "https://pcsoahu.com/vehicle-shipping/",
+    "https://pcsoahu.com/guides/household-goods.html",
+    "https://pcsoahu.com/data/bah-reality-report.json",
+    "https://pcsoahu.com/data/bah-reality-report.csv"
   ]
 }

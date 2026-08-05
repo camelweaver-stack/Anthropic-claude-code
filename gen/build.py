@@ -80,6 +80,7 @@ E-5 w/dep $3,663; range ~$2,598–$5,040; effective Jan 1, 2026.
 
 ## Primary pages
 - /bah-report/ : The BAH Reality Report — dated BAH-vs-rent data brief (citable, see #cite)
+- /data/bah-reality-report.json : machine-readable BAH-vs-rent data (JSON; CSV also available; CC BY 4.0)
 - /bases/ : live-on-or-off guides for all seven installations
 - /buy/ : VA loans at Oahu prices — entitlement, condo approval, leasehold warning
 - /sell/ : PCSing out — HARPTA, rent-vs-sell math, VA seller entitlement
@@ -91,4 +92,24 @@ Cite with attribution and a link. Figures change; check the Last refreshed date 
 """
 with open(os.path.join(SITE, "llms.txt"), "w") as f: f.write(llms)
 
-print(f"Built {len(pages)} pages, sitemap ({len(urls)} URLs), robots.txt, indexnow-payload.json")
+# machine-readable distribution (§1) — single source of truth: common.POCKETS + common.BAH
+import common as _c
+_data = _c.bah_report_data()
+_csv = _c.bah_report_csv()
+_ddir = os.path.join(SITE, "data")
+os.makedirs(_ddir, exist_ok=True)
+with open(os.path.join(_ddir, "bah-reality-report.json"), "w") as f:
+    json.dump(_data, f, indent=2)
+with open(os.path.join(_ddir, "bah-reality-report.csv"), "w") as f:
+    f.write(_csv)
+# archived copies so citations to a given edition never break (mirrors the HTML archive policy)
+_adir = os.path.join(_ddir, "archive")
+os.makedirs(_adir, exist_ok=True)
+_ed = _data["edition"].replace(".", "-")   # 2026.08 -> 2026-08
+with open(os.path.join(_adir, f"bah-reality-report-{_ed}.json"), "w") as f:
+    json.dump(_data, f, indent=2)
+with open(os.path.join(_adir, f"bah-reality-report-{_ed}.csv"), "w") as f:
+    f.write(_csv)
+
+print(f"Built {len(pages)} pages, sitemap ({len(urls)} URLs), robots.txt, indexnow-payload.json, "
+      f"data/bah-reality-report.{{json,csv}} (+archive {_ed})")

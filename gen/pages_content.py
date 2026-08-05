@@ -15,6 +15,18 @@ def bah_report():
        "It depends entirely on pocket and bedroom count. Mid-2026 public listing data shows island "
        "medians around $2,700–$3,200 overall, with windward and beach-town pockets well above an "
        "E-5 allowance and several central and leeward pockets comfortably inside it."),
+      ("Which Oahu neighborhoods fit an E-5 BAH with dependents?",
+       f"At the 2026 with-dependents anchor of {BAH['e5_dep']}, typical 3-bedroom asking bands in "
+       "Wahiawa, Waipahu, and much of Pearl City and Aiea fall inside the allowance with room for "
+       "utilities. Windward pockets such as Kailua generally do not. Bands are rounded asking rents, "
+       "compiled mid-2026."),
+      ("Is Kailua affordable on BAH?",
+       f"Kailua 3-bedroom asking bands ($4,000–$5,500, mid-2026) begin around where the E-6 "
+       f"with-dependents allowance ({BAH['e6_dep']}) ends. Kaneohe prices materially lower for "
+       "windward access."),
+      ("Where can I download Oahu BAH-vs-rent data?",
+       "The BAH Reality Report publishes machine-readable JSON and CSV at pcsoahu.com/data/, free "
+       "to reuse with attribution (CC BY 4.0), refreshed each BAH cycle."),
     ]
     body = f'''
 <div class="hero"><div class="wrap">
@@ -82,11 +94,15 @@ def bah_report_2026_archive():
             'edition (August 2026).</strong> Preserved so citations never break. The current '
             'edition, refreshed with each BAH cycle, lives at '
             '<a href="/bah-report/">pcsoahu.com/bah-report/</a>.</div></div>' + m.group(1))
+    arch = DOMAIN + "/bah-report/2026-edition/"
     return page("/bah-report/2026-edition/",
         "The BAH Reality Report — August 2026 Edition (Archived) | PCS Oahu",
         "Archived August 2026 edition of the BAH Reality Report: 2026 Honolulu County BAH "
         "anchors vs dated Oahu rent bands. Current edition at /bah-report/.",
-        body, "/bah-report/")
+        body, "/bah-report/",
+        jsonld={"@context": "https://schema.org",
+                "@graph": [dataset_ld(url=arch, at_id=arch + "#dataset",
+                                      same_as=DOMAIN + "/bah-report/")]})
 
 def neighborhoods():
     rows = "".join(f"<tr><td><a href='/neighborhoods/{k}.html'>{v[0]}</a></td>"

@@ -203,7 +203,7 @@ href="/bah-report/#cite">citation block</a>.</p>
     return page("/data/", "The PCS Oahu Data Desk: Reports, Cadence, Methodology | PCS Oahu",
         "The named, dated data products behind every number on the site — the BAH Reality "
         "Report, the refresh cadence, archived editions, and what's in development.",
-        body, "/bah-report/")
+        body, "/bah-report/", jsonld=datacatalog_ld())
 
 def my_pcs():
     body = f'''

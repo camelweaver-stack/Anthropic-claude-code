@@ -1,0 +1,148 @@
+{
+  "dataset": "The BAH Reality Report",
+  "publisher": "PCS Oahu (pcsoahu.com)",
+  "edition": "2026.08",
+  "date_refreshed": "2026-08-01",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "citation": "PCS Oahu, \"The BAH Reality Report,\" August 2026 edition, pcsoahu.com/bah-report/",
+  "canonical_url": "https://pcsoahu.com/bah-report/",
+  "methodology": "BAH: DTMO 2026 tables, Honolulu County MHA, effective 2026-01-01. Rent bands: public listing platforms, mid-2026, deliberately rounded to describe asking rents, not lease outcomes.",
+  "bah_anchors_usd_monthly": {
+    "mha": "Honolulu County, HI (one Military Housing Area covers every Oahu installation)",
+    "effective": "2026-01-01",
+    "E-5_with_dependents": 3663,
+    "E-5_without_dependents": 2856,
+    "E-6_with_dependents": 3912,
+    "E-6_without_dependents": 3036,
+    "island_floor_jr_enlisted_no_dep": 2598,
+    "island_ceiling_sr_officer_with_dep": 5040
+  },
+  "rent_bands_usd_monthly": [
+    {
+      "pocket": "Aiea",
+      "1br": [
+        1900,
+        2300
+      ],
+      "2br": [
+        2400,
+        2900
+      ],
+      "3br": [
+        3200,
+        3800
+      ]
+    },
+    {
+      "pocket": "Pearl City",
+      "2br": [
+        2400,
+        2900
+      ],
+      "3br": [
+        3000,
+        3600
+      ]
+    },
+    {
+      "pocket": "Salt Lake / Moanalua",
+      "1br": [
+        1800,
+        2300
+      ],
+      "2br": [
+        2300,
+        2900
+      ]
+    },
+    {
+      "pocket": "Waipahu",
+      "2br": [
+        2000,
+        2500
+      ],
+      "3br": [
+        2700,
+        3300
+      ]
+    },
+    {
+      "pocket": "Mililani",
+      "2br": [
+        2500,
+        3000
+      ],
+      "3br": [
+        3200,
+        3900
+      ]
+    },
+    {
+      "pocket": "Ewa Beach / Kapolei",
+      "3br": [
+        3000,
+        3800
+      ],
+      "4br": [
+        3800,
+        4500
+      ]
+    },
+    {
+      "pocket": "Wahiawa",
+      "2br": [
+        1900,
+        2400
+      ],
+      "3br": [
+        2600,
+        3200
+      ]
+    },
+    {
+      "pocket": "Kaneohe",
+      "2br": [
+        2600,
+        3200
+      ],
+      "3br": [
+        3400,
+        4200
+      ]
+    },
+    {
+      "pocket": "Kailua",
+      "2br": [
+        3200,
+        4000
+      ],
+      "3br": [
+        4000,
+        5500
+      ]
+    },
+    {
+      "pocket": "Downtown / Kakaako",
+      "1br": [
+        2000,
+        2600
+      ],
+      "2br": [
+        2800,
+        3800
+      ]
+    },
+    {
+      "pocket": "Kalihi",
+      "1br": [
+        1500,
+        2000
+      ],
+      "2br": [
+        2000,
+        2600
+      ]
+    }
+  ]
+}

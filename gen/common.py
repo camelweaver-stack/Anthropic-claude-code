@@ -1,5 +1,5 @@
 # PCS Oahu — shared build framework
-import json, html, os
+import json, html, os, re
 _mfp = os.path.join(os.path.dirname(__file__), "img_manifest.json")
 IMG = json.load(open(_mfp)) if os.path.exists(_mfp) else {}
 _CREDITS = "; ".join(
@@ -10,6 +10,11 @@ DOMAIN = "https://pcsoahu.com"
 BUILD_DATE = "August 2026"
 BAH_YEAR = "2026"
 LAST_REFRESHED = "August 1, 2026"
+REFRESH_ISO = "2026-08-01"   # ISO mirror of LAST_REFRESHED — both move together each refresh
+BAH_EFFECTIVE_ISO = "2026-01-01"
+DATA_EDITION = "2026.08"     # dataset edition tag (YYYY.MM); archived under this on each refresh
+LICENSE_URL = "https://creativecommons.org/licenses/by/4.0/"
+CITATION = 'PCS Oahu, "The BAH Reality Report," ' + BUILD_DATE + ' edition, pcsoahu.com/bah-report/'
 SMS_NUMBER = ""  # set to E.164 (e.g. +18085551234) and rebuild to enable SMS join buttons
 
 def sms_button(label="Text to join the list"):
@@ -148,9 +153,10 @@ FOOTER = f'''
 
 def page(path, title, desc, body, current="", jsonld=None, extra_head=""):
     canonical = DOMAIN + path
-    ld = ""
+    # Sitewide identity graph (Organization + WebSite) on every page; page-specific nodes follow.
+    ld = f'<script type="application/ld+json">{json.dumps(identity_graph())}</script>'
     if jsonld:
-        ld = f'<script type="application/ld+json">{json.dumps(jsonld)}</script>'
+        ld += f'<script type="application/ld+json">{json.dumps(jsonld)}</script>'
     return f'''<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -201,15 +207,126 @@ def article_ld(path, headline, desc):
             "publisher": {"@type": "Organization", "name": "PCS Oahu"},
             "mainEntityOfPage": DOMAIN + path}
 
-def dataset_ld():
-    return {"@context": "https://schema.org", "@type": "Dataset",
-            "name": "The BAH Reality Report — Oahu BAH vs Market Rents",
-            "description": "Dated comparison of Honolulu County BAH anchors against rounded "
-                           "rent bands by Oahu neighborhood pocket, refreshed with the annual "
-                           "BAH cycle.",
-            "url": DOMAIN + "/bah-report/", "creator": {"@type": "Organization", "name": "PCS Oahu"},
-            "temporalCoverage": "2026", "dateModified": "2026-08-01",
-            "license": "https://pcsoahu.com/bah-report/#cite"}
+def dataset_ld(url=None, at_id=None, version=None, same_as=None):
+    """BAH Reality Report Dataset node (goes inside a page @graph; references #org by @id).
+    Defaults describe the live edition; archived editions pass their own url/@id/version/sameAs."""
+    return {
+        "@type": "Dataset",
+        "@id": at_id or DOMAIN + "/bah-report/#dataset",
+        "name": "The BAH Reality Report — Oahu BAH vs Market Rents",
+        "alternateName": "BAH Reality Report",
+        "description": "Dated comparison of Honolulu County BAH anchors (DTMO 2026 tables) against "
+                       "rounded asking-rent bands across 11 Oahu neighborhood pockets, refreshed with "
+                       "the annual BAH cycle and mid-year band moves. Covers all Oahu military "
+                       "installations, which share a single Military Housing Area.",
+        "url": url or DOMAIN + "/bah-report/",
+        "sameAs": same_as or DOMAIN + "/data/",
+        "version": version or DATA_EDITION,
+        "datePublished": REFRESH_ISO,
+        "dateModified": REFRESH_ISO,
+        "creator": {"@id": DOMAIN + "/#org"},
+        "publisher": {"@id": DOMAIN + "/#org"},
+        "license": LICENSE_URL,
+        "isAccessibleForFree": True,
+        "keywords": ["BAH", "Basic Allowance for Housing", "Oahu", "Honolulu County MHA",
+                     "military housing", "PCS Hawaii", "rent", "Pearl Harbor", "Schofield Barracks",
+                     "MCBH Kaneohe Bay"],
+        "temporalCoverage": BAH_EFFECTIVE_ISO + "/" + REFRESH_ISO,
+        "spatialCoverage": {"@type": "Place", "name": "Oahu, Honolulu County, Hawaii, USA",
+                            "geo": {"@type": "GeoCoordinates", "latitude": 21.44, "longitude": -158.00}},
+        "variableMeasured": [
+            {"@type": "PropertyValue", "name": "BAH monthly rate",
+             "description": "Basic Allowance for Housing by pay grade and dependency status, "
+                            "Honolulu County MHA", "unitText": "USD/month"},
+            {"@type": "PropertyValue", "name": "Asking rent band",
+             "description": "Low–high asking rent by neighborhood pocket and bedroom count, "
+                            "deliberately rounded", "unitText": "USD/month"}],
+        "distribution": [
+            {"@type": "DataDownload", "encodingFormat": "application/json",
+             "contentUrl": DOMAIN + "/data/bah-reality-report.json"},
+            {"@type": "DataDownload", "encodingFormat": "text/csv",
+             "contentUrl": DOMAIN + "/data/bah-reality-report.csv"}],
+        "citation": CITATION,
+    }
+
+def identity_graph():
+    """Sitewide Organization + WebSite, emitted on every page() so #org/#website resolve
+    for Dataset/DataCatalog @id references. No email (none public), no sameAs (no profiles)."""
+    return {"@context": "https://schema.org", "@graph": [
+        {"@type": "Organization", "@id": DOMAIN + "/#org",
+         "name": "PCS Oahu", "url": DOMAIN + "/",
+         "logo": {"@type": "ImageObject", "url": DOMAIN + "/assets/og-card.png"},
+         "description": "Independent publisher of field guides and data on U.S. military PCS moves "
+                        "to and from Oahu, Hawaii. Not a real estate brokerage."},
+        {"@type": "WebSite", "@id": DOMAIN + "/#website",
+         "name": "PCS Oahu", "url": DOMAIN + "/",
+         "description": "The independent field guide for military PCS moves to and from Oahu.",
+         "publisher": {"@id": DOMAIN + "/#org"}},
+    ]}
+
+def datacatalog_ld():
+    """DataCatalog for /data/. Lists only published datasets (in-development products excluded)."""
+    return {"@context": "https://schema.org", "@type": "DataCatalog",
+            "@id": DOMAIN + "/data/#catalog",
+            "name": "The PCS Oahu Data Desk", "url": DOMAIN + "/data/",
+            "description": "Named, dated data products on Oahu military housing, refreshed on a "
+                           "published cadence. Free to cite with attribution.",
+            "publisher": {"@id": DOMAIN + "/#org"},
+            "dataset": [{"@id": DOMAIN + "/bah-report/#dataset"}]}
+
+# ---- machine-readable data distribution (single source: POCKETS + BAH) ----
+def _money_to_int(s):
+    return int(re.sub(r"[^\d]", "", s))
+
+def _parse_bands(desc):
+    """'1BR $1,900–2,300 · 2BR $2,400–2,900' -> {'1br':[1900,2300], '2br':[2400,2900]}"""
+    bands = {}
+    for seg in desc.split("·"):
+        m = re.search(r"(\d+)BR\s*\$([\d,]+)\s*[–-]\s*\$?([\d,]+)", seg)
+        if m:
+            bands[m.group(1) + "br"] = [_money_to_int(m.group(2)), _money_to_int(m.group(3))]
+    return bands
+
+def bah_report_data():
+    """The /data/bah-reality-report.json payload, generated from POCKETS + BAH."""
+    rent_bands = []
+    for name, desc in (v for v in POCKETS.values()):
+        row = {"pocket": name}
+        row.update(_parse_bands(desc))
+        rent_bands.append(row)
+    return {
+        "dataset": "The BAH Reality Report",
+        "publisher": "PCS Oahu (pcsoahu.com)",
+        "edition": DATA_EDITION,
+        "date_refreshed": REFRESH_ISO,
+        "license": "CC BY 4.0",
+        "license_url": LICENSE_URL,
+        "citation": CITATION,
+        "canonical_url": DOMAIN + "/bah-report/",
+        "methodology": "BAH: DTMO 2026 tables, Honolulu County MHA, effective " + BAH_EFFECTIVE_ISO +
+                       ". Rent bands: public listing platforms, mid-2026, deliberately rounded to "
+                       "describe asking rents, not lease outcomes.",
+        "bah_anchors_usd_monthly": {
+            "mha": BAH["mha"],
+            "effective": BAH_EFFECTIVE_ISO,
+            "E-5_with_dependents": _money_to_int(BAH["e5_dep"]),
+            "E-5_without_dependents": _money_to_int(BAH["e5_solo"]),
+            "E-6_with_dependents": _money_to_int(BAH["e6_dep"]),
+            "E-6_without_dependents": _money_to_int(BAH["e6_solo"]),
+            "island_floor_jr_enlisted_no_dep": _money_to_int(BAH["floor"]),
+            "island_ceiling_sr_officer_with_dep": _money_to_int(BAH["ceiling"]),
+        },
+        "rent_bands_usd_monthly": rent_bands,
+    }
+
+def bah_report_csv():
+    """Flat long-format CSV of the rent bands, with a citation+license header comment."""
+    lines = ["# " + CITATION + " | License: CC BY 4.0 (" + LICENSE_URL + ") | Refreshed " + REFRESH_ISO,
+             "pocket,bedrooms,rent_low_usd,rent_high_usd,refreshed"]
+    for name, desc in (v for v in POCKETS.values()):
+        for br, (lo, hi) in sorted(_parse_bands(desc).items(), key=lambda kv: int(kv[0][0])):
+            lines.append(f"{name},{br.upper()},{lo},{hi},{REFRESH_ISO}")
+    return "\n".join(lines) + "\n"
 
 def faq_ld(qas):
     return {"@context": "https://schema.org", "@type": "FAQPage",

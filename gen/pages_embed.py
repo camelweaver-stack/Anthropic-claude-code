@@ -35,10 +35,14 @@ The BAH Reality Report — pcsoahu.com</a>. Equal Housing Opportunity.</div>
 </html>'''
 
 def embed_page():
+    # The caption <a> lives in the HOST page's DOM (outside the iframe) so every embedding
+    # site passes pcsoahu.com a real, crawlable backlink. No UTM on it (clean canonical target).
     snippet = html.escape(
         f'<iframe src="{DOMAIN}/embed/bah-widget.html" width="100%" height="620" '
         f'style="border:0;max-width:520px" loading="lazy" '
-        f'title="Oahu BAH vs Rent — PCS Oahu"></iframe>')
+        f'title="Oahu BAH vs Rent — PCS Oahu"></iframe>\n'
+        f'<p style="font-size:.8rem;margin-top:.25rem">Data: '
+        f'<a href="{DOMAIN}/bah-report/">The BAH Reality Report — PCS Oahu</a></p>')
     body = f'''
 <div class="hero"><div class="wrap">
 <p class="eyebrow">For publishers, bloggers, and group admins</p>
@@ -53,13 +57,16 @@ refresh the data, your embed refreshes with it.</p>
 <iframe src="/embed/bah-widget.html" width="100%" height="620"
  style="border:1px solid var(--rule);border-radius:8px;max-width:520px" loading="lazy"
  title="Oahu BAH vs Rent — PCS Oahu"></iframe>
+<p style="font-size:.85rem;margin-top:.4rem">Data:
+  <a href="{DOMAIN}/bah-report/">The BAH Reality Report — PCS Oahu</a></p>
 <h2>Copy-paste embed code</h2>
 <p style="max-width:44rem"><code style="display:block;background:#fff;border:1px solid var(--rule);
 border-radius:6px;padding:1rem;font-size:.85rem;overflow-x:auto;white-space:pre-wrap">{snippet}</code></p>
 <h2>Terms, short version</h2>
 <p style="max-width:44rem">Use it anywhere audiences find it useful — personal blogs, spouse
-groups, unit resource pages, newsrooms. Keep the attribution link intact; don't present the
-data as your own or strip the refresh date. For charts, custom cuts, or a quote for a story,
+groups, unit resource pages, newsrooms. Keep the attribution caption — the
+<a href="/bah-report/">The BAH Reality Report — PCS Oahu</a> link beneath the iframe — intact;
+don't present the data as your own or strip the refresh date. For charts, custom cuts, or a quote for a story,
 the <a href="/bah-report/#cite">citation block</a> on the report has what you need — and we
 answer data questions from writers, free.</p>
 {lead_form("EMBED", "pcs-renter",
