@@ -1,0 +1,63 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//PCS Oahu//Daily Publishing Driver//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:pcs-oahu-daily-driver-20260806@pcsoahu.com
+DTSTAMP:20260805T220000Z
+DTSTART:20260806T080000
+DTEND:20260806T081500
+RRULE:FREQ=DAILY
+SUMMARY:PCS Oahu - run the daily publishing cycle
+LOCATION:Claude Code (drop the note below into a session)
+URL:https://pcsoahu.com/
+DESCRIPTION:HOW TO RUN: open a Claude Code session on the repo and paste ev
+ erything below this line as your message.\n\n----- DROP-IN PROMPT -----\nR
+ un the PCS Oahu daily publishing cycle. Repo: github.com/camelweaver-stack
+ /Anthropic-claude-code\, branch claude/pcs-oahu-daily-publishing-1289q3 (h
+ olds the generator + editorial system). First read editorial/DAILY_RUN.md\
+ , editorial/EDITORIAL_CALENDAR.md\, editorial/AUDIT_LOG.md\, and editorial
+ /staleness-scan.md (or the "Daily Publishing Driver" doc in my Google Driv
+ e folder "Anastasia RE - Aledo Opportunity Engine")\, then execute:\n\n1) 
+ Run the staleness scan\; if a stale/incorrect existing page outranks a new
+  one\, fix it instead.\n2) Pick the highest-utility item from the scored b
+ acklog\; keep cluster balance\; never publish filler to hit a quota.\n3) R
+ esearch with authoritative sources (gov/military -> state/county -> distri
+ cts -> first-party). Never invent prices\, dates\, hours\, phone numbers\,
+  addresses\, policies\, quotes\, or reviews\; if it can't be verified\, om
+ it it or label it preliminary/reported.\n4) Author in gen/pages_*.py using
+  page()\, lead_form()\, faq_ld(): direct answer up top\, Oahu + military c
+ ontext\, who it applies to\, next steps\, inline sources\, a visible verif
+ ied date\, hub-and-spoke links (link the hub AND add a reciprocal link fro
+ m an existing page)\, a page-matched CTA\, and Article/FAQ JSON-LD. Publis
+ her voice\; no brokerage/service language.\n5) Build + gate: cd gen && pyt
+ hon3 build.py && python3 gate.py -- must print GATE PASSED. No green\, no 
+ ship.\n6) SAFEGUARDS - do NOT auto-publish (draft + flag NEEDS REVIEW inst
+ ead): political advocacy\; individualized legal/financial advice\; allegat
+ ions against identifiable people/businesses\; unverified safety/crime clai
+ ms\; crisis/casualty/crime\; active legal disputes\; changes to brokerage/
+ licensing/referral/privacy/terms/consent disclosures\; paid/sponsored cont
+ ent\; material redesigns\; destructive code\; deleting major pages\; domai
+ n/DNS/billing/account changes.\n7) Deploy site/ to Netlify project pcsoahu
+ \, siteId fb996baa-0dc1-4dc2-aa63-a366d9e1fc78\, via the Netlify deploy-si
+ te connector (run the returned npx @netlify/mcp command from the repo root
+  with --no-wait\; poll until state=ready). netlify.toml publishes site/.\n
+ 8) Verify live: new/updated URL returns 200\; a nonexistent path returns 4
+ 04\; the URL is in https://pcsoahu.com/sitemap.xml\; canonical is the apex
+  URL.\n9) IndexNow: POST the changed URLs to https://api.indexnow.org/inde
+ xnow with host pcsoahu.com and key 12ef30fd51aefc63524ab6eb41e58f99.\n10) 
+ Record: append a structured entry to editorial/AUDIT_LOG.md and mark the i
+ tem LIVE in editorial/EDITORIAL_CALENDAR.md. Commit all changes and push t
+ o claude/pcs-oahu-daily-publishing-1289q3 (git push -u origin <branch>\, r
+ etry with backoff). Do NOT open a PR. If deploy fails\, preserve the prior
+  version\, don't force\, diagnose\, record the error\, and leave a clean r
+ ecovery path. End with a one-paragraph summary of what published (or why n
+ othing did).
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:PCS Oahu daily cycle
+TRIGGER:PT0S
+END:VALARM
+END:VEVENT
+END:VCALENDAR
