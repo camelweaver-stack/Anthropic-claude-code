@@ -502,6 +502,132 @@ checklist itself.</p>
                 "test, waiting period, Direct Airport Release — and the three classic failures.",
                 body, "/guides/", jsonld=faq_ld(qas))
 
+def household_goods():
+    qas = [
+      ("How does shipping household goods to Hawaii work on a PCS?",
+       "A move to Oahu is an OCONUS shipment, which splits your belongings into streams booked "
+       "through the Defense Personal Property System (DPS): unaccompanied baggage that ships "
+       "expedited so it arrives soon after you do, your main household goods that move by sea and "
+       "can take weeks to months, and anything you leave behind in non-temporary storage for the "
+       "tour. You build every shipment in DPS after uploading your orders; your local "
+       "transportation office and the DoD call center (833-MIL-MOVE) are the authoritative help "
+       "desk for entitlements."),
+      ("Does professional gear count against my weight allowance for Hawaii?",
+       "No. Professional books, papers, and equipment needed for your job (PBP&E, or pro-gear) "
+       "are shipped separately and do not count against your household-goods weight limit — "
+       "separate and clearly mark those boxes. A spouse's professional gear can be authorized up "
+       "to 500 pounds when approved. Source: Military OneSource, verified August 2026; confirm "
+       "your specifics with your transportation office."),
+      ("Can Hawaii's weight allowance be lower than the mainland?",
+       "It can. Household-goods weight allowances are set by grade and dependency status in the "
+       "Joint Travel Regulations, but selected OCONUS duty stations carry administratively reduced "
+       "allowances (DTMO publishes the list), and government-furnished or partly furnished on-base "
+       "housing can make a full shipment impractical even when it's allowed. Confirm your exact "
+       "allowance in DPS and with your transportation office before you decide what ships."),
+    ]
+    body = f'''
+<div class="hero"><div class="wrap">
+<p class="eyebrow">PCS logistics · the third shipping decision</p>
+<h1>Household goods to Hawaii: the OCONUS move, in order</h1>
+<p class="lede">Getting your things to Oahu isn't one shipment — it's three decisions made at once:
+what flies with you as unaccompanied baggage, what crosses the Pacific by sea as household goods,
+and what stays behind in storage for the tour. Book them together in DPS the week orders drop, and
+plan for the weeks-to-months gap before the sea shipment lands.</p>
+</div></div>
+<div class="wrap">
+<h2>The direct answer</h2>
+<p style="max-width:46rem">A move to Oahu is an <strong>OCONUS</strong> shipment (the same category
+as Alaska and overseas). In the Defense Personal Property System — <strong>DPS</strong>, where you
+upload orders and create every shipment — your belongings split into streams:</p>
+<ul style="max-width:46rem">
+<li><strong>Unaccompanied baggage (UB).</strong> The part of your allowance shipped by an
+expedited mode so it arrives soon after you do — seasonal clothing, essential kitchen items, and
+gear for dependents. It is meant to bridge the gap before the main shipment.</li>
+<li><strong>Household goods (HHG).</strong> The main shipment, which moves by sea and, per Military
+OneSource, "can take weeks to months to be delivered." This is the one you plan the gap around.</li>
+<li><strong>Non-temporary storage (NTS).</strong> What you deliberately leave behind — stored for
+the duration of the tour rather than shipped to a small, expensive island market.</li>
+</ul>
+<div class="warn"><strong>One clock, booked once.</strong> All three streams are created in DPS
+after your orders upload. Book early — Oahu summer PCS season (May–August) is the busy window, and
+capacity, packing dates, and delivery slots tighten exactly when everyone needs them.</div>
+<h2>What doesn't count against your weight</h2>
+<p style="max-width:46rem"><strong>Pro-gear.</strong> Professional books, papers, and equipment you
+need for your job (PBP&amp;E) ship separately and do <em>not</em> count against your household-goods
+weight limit — separate them and mark the boxes clearly. A spouse's professional gear can be
+authorized up to <strong>500 pounds</strong> when approved. That distinction matters most for
+service members and spouses whose tools or reference materials are heavy.</p>
+<h2>The weight-allowance reality on Oahu</h2>
+<p style="max-width:46rem">Your household-goods allowance is set by <strong>pay grade and dependency
+status</strong> in the Joint Travel Regulations, and DPS shows your exact figure once orders are
+loaded — pull it from there rather than a forum table. Two Hawaii-specific wrinkles:</p>
+<p style="max-width:46rem"><strong>OCONUS administrative reductions.</strong> Selected overseas duty
+stations carry administratively reduced HHG allowances; DTMO publishes the location list, so check
+whether your specific installation appears before you assume the mainland number. <strong>Furnished
+housing.</strong> On-base housing that arrives furnished or partly furnished — appliances, sometimes
+more — can make shipping a full household impractical even when the weight is technically allowed.
+Decide what to ship <em>after</em> you know your housing plan, not before.</p>
+<h2>The consumables allowance — verify, don't assume</h2>
+<p style="max-width:46rem">Some remote OCONUS assignments authorize a separate <strong>consumables
+allowance</strong> — up to 1,250 pounds per 12-month tour (1,875 for an 18-month tour) for suitable
+consumable goods — but it applies only to duty stations on the Authorized Consumable Goods Allowance
+list. Do not assume an Oahu assignment qualifies; whether it does is exactly the kind of detail your
+transportation office confirms in a two-minute call. Ask rather than pack on a guess.</p>
+<h2>Plan for the gap</h2>
+<p style="max-width:46rem">Because HHG travels by sea, there is a real window — often weeks, sometimes
+months — between wheels-down and delivery. Your UB is meant to cover the essentials in that window,
+but it is deliberately light. Build a survival layer around it: an air-checked-bag kit, an inflatable
+bed or two, a few kitchen basics, and the documents packet you'll need for a
+rental application and <a href="/guides/school-transition.html">school enrollment</a>. This gap is also why your
+<a href="/tla/">interim-housing (TLA) plan</a> and your neighborhood shortlist should be settled
+before you fly — you may be living out of UB in temporary lodging while the sea shipment crosses.</p>
+<h2>The Oahu mechanics</h2>
+<p style="max-width:46rem"><strong>Book in DPS; call when it's not obvious.</strong> Upload orders,
+create HHG + UB + any NTS/PPM shipments, and lean on the DoD personal-property call center at
+<strong>833-MIL-MOVE (833-645-6683)</strong> or your installation's transportation office for
+entitlement questions. For soldiers reporting to Schofield Barracks or Fort Shafter, the outbound
+transportation office is at the Soldier Support Center, 673 Ayers Avenue, Bldg 750, Rm 140,
+Schofield Barracks — reachable at 808-787-0868 (verified against the installation's MilitaryINSTALLATIONS
+listing, August 2026; hours and contacts change, so confirm before you drive out).</p>
+<p style="max-width:46rem"><strong>Personally procured moves (PPM).</strong> You can move some or all
+of your goods yourself for an incentive payment, booked in DPS like any other shipment — but the
+OCONUS math is different from a mainland PPM, so price it carefully with your TO. <strong>Agricultural
+inspection.</strong> Hawaii enforces agricultural rules on what enters the state; ask your TO and check
+the Hawaii Department of Agriculture for current restrictions rather than learning about them at the
+pier.</p>
+<div class="warn"><strong>Honest limits.</strong> Weight allowances, entitlements, and reimbursement
+rules vary by grade, service, and the exact language on your orders, and they change. This guide is
+orientation compiled from Military OneSource, Move.mil/DPS, and DTMO/JTR references and verified
+August 5, 2026 — <strong>DPS and your transportation office are the authoritative source</strong> for
+your move. Nothing here is a substitute for your official counseling.</div>
+<p style="max-width:46rem">Two companion shipping decisions sit next to this one: the
+<a href="/vehicle-shipping/">one-POV vehicle shipment and the gap-car math</a>, and the
+<a href="/guides/pets-to-hawaii.html">pet quarantine clock</a> — both start on the same day orders
+drop. Work the whole <a href="/pcs-checklist/">PCS timeline checklist</a> so none of the three clocks
+starts late.</p>
+{lead_form("HHG", "pcs-renter",
+  heading="Building your shipment plan?",
+  blurb="Join the list and the arrival brief pairs the household-goods, vehicle, and pet timelines "
+        "against your report window, so the three shipping clocks all start on time.")}
+</div>'''
+    p = "/guides/household-goods.html"
+    ld = {"@context": "https://schema.org", "@graph": [
+        {"@type": "Article",
+         "headline": "Household goods to Hawaii: the OCONUS move, in order",
+         "description": "How a military OCONUS household-goods move to Oahu works — unaccompanied "
+                        "baggage, the sea shipment, non-temporary storage, pro-gear, weight "
+                        "allowances, and the DPS booking process.",
+         "datePublished": "2026-08-05", "dateModified": "2026-08-05",
+         "author": {"@type": "Organization", "name": "PCS Oahu"},
+         "publisher": {"@type": "Organization", "name": "PCS Oahu"},
+         "mainEntityOfPage": DOMAIN + p},
+        faq_ld(qas)]}
+    return p, page(p, "Shipping Household Goods to Hawaii on PCS Orders: UB, HHG, Storage | PCS Oahu",
+                "How the OCONUS household-goods move to Oahu works — unaccompanied baggage that "
+                "lands first, the sea shipment, storage, pro-gear, weight allowances, and DPS "
+                "booking. Sourced and dated.",
+                body, "/guides/", jsonld=ld)
+
 def guides_hub():
     body = f'''
 <div class="hero"><div class="wrap">
@@ -534,6 +660,9 @@ Hawaii PCS that paperwork alone doesn't cover.</p>
     <h3><a href="/vehicle-shipping/">Vehicle shipping, end to end</a></h3>
     <p>The one-POV entitlement, PCSmyPOV, the real timeline, the gap-car math, and the 10-day registration clock.</p></div>
   <div class="card"><span class="tag">Arriving</span>
+    <h3><a href="/guides/household-goods.html">Household goods to Hawaii</a></h3>
+    <p>The OCONUS move in order: unaccompanied baggage first, the sea shipment, storage, pro-gear, and the DPS booking clock.</p></div>
+  <div class="card"><span class="tag">Arriving</span>
     <h3><a href="/tla/field-notes.html">TLA lodging field notes</a></h3>
     <p>Base lodging by installation, the Hale Koa option, and the off-base filters that matter.</p></div>
   <div class="card"><span class="tag">Arriving</span>
@@ -564,7 +693,7 @@ def build():
         "/tla/index.html": tla(),
         "/guides/index.html": guides_hub(),
     }
-    for fn in (spouse, school_transition, pets):
+    for fn in (spouse, school_transition, pets, household_goods):
         p, h = fn()
         out[p] = h
     return out

@@ -44,6 +44,9 @@ one place, dated mid-2026, with every step pointed at its official source.</p>
 </div></div>
 <div class="wrap">
 
+<p style="max-width:46rem">Your car is one of three shipping decisions that start the day orders
+drop — the other two are your <a href="/guides/household-goods.html">household goods</a> and, if an
+animal is coming, the <a href="/guides/pets-to-hawaii.html">pet quarantine clock</a>.</p>
 <h2>First, the decision: ship, sell, or one-car it</h2>
 <p style="max-width:46rem">Before any booking, decide what's actually crossing the ocean. The
 government pays for <strong>one</strong> vehicle. For a second, you're a retail customer of the

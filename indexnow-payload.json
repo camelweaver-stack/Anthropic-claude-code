@@ -1,7 +1,7 @@
 {
   "host": "pcsoahu.com",
-  "key": "12ef30fd51aefc63524ab6eb41e58f99",
-  "keyLocation": "https://pcsoahu.com/12ef30fd51aefc63524ab6eb41e58f99.txt",
+  "key": "REPLACE_WITH_INDEXNOW_KEY",
+  "keyLocation": "https://pcsoahu.com/REPLACE_WITH_INDEXNOW_KEY.txt",
   "urlList": [
     "https://pcsoahu.com/",
     "https://pcsoahu.com/ask/",
@@ -21,6 +21,7 @@
     "https://pcsoahu.com/guides/",
     "https://pcsoahu.com/guides/childcare.html",
     "https://pcsoahu.com/guides/healthcare.html",
+    "https://pcsoahu.com/guides/household-goods.html",
     "https://pcsoahu.com/guides/pets-to-hawaii.html",
     "https://pcsoahu.com/guides/school-transition.html",
     "https://pcsoahu.com/guides/sponsorship.html",
