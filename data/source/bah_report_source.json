@@ -1,0 +1,206 @@
+{
+  "product": "BAH Reality Report \u2014 single source of truth",
+  "edition": "2026.08",
+  "edition_label": "August 2026",
+  "bah_year": "2026",
+  "bah_effective_iso": "2026-01-01",
+  "bah_effective_label": "January 1, 2026",
+  "mha": "Honolulu County, HI (one Military Housing Area covers every Oahu installation)",
+  "date_refreshed_iso": "2026-08-01",
+  "date_refreshed_label": "August 1, 2026",
+  "yoy_change_label": "about 4.4%",
+  "median_single_family": 1275000,
+  "median_condo": 530000,
+  "bah_anchors": {
+    "e5_dep": 3663,
+    "e5_solo": 2856,
+    "e6_dep": 3912,
+    "e6_solo": 3036,
+    "floor": 2598,
+    "ceiling": 5040
+  },
+  "pockets": [
+    {
+      "slug": "aiea",
+      "name": "Aiea",
+      "bands": [
+        [
+          1,
+          1900,
+          2300
+        ],
+        [
+          2,
+          2400,
+          2900
+        ],
+        [
+          3,
+          3200,
+          3800
+        ]
+      ]
+    },
+    {
+      "slug": "pearlcity",
+      "name": "Pearl City",
+      "bands": [
+        [
+          2,
+          2400,
+          2900
+        ],
+        [
+          3,
+          3000,
+          3600
+        ]
+      ]
+    },
+    {
+      "slug": "saltlake",
+      "name": "Salt Lake / Moanalua",
+      "bands": [
+        [
+          1,
+          1800,
+          2300
+        ],
+        [
+          2,
+          2300,
+          2900
+        ]
+      ]
+    },
+    {
+      "slug": "waipahu",
+      "name": "Waipahu",
+      "bands": [
+        [
+          2,
+          2000,
+          2500
+        ],
+        [
+          3,
+          2700,
+          3300
+        ]
+      ]
+    },
+    {
+      "slug": "mililani",
+      "name": "Mililani",
+      "bands": [
+        [
+          2,
+          2500,
+          3000
+        ],
+        [
+          3,
+          3200,
+          3900
+        ]
+      ]
+    },
+    {
+      "slug": "ewa",
+      "name": "Ewa Beach / Kapolei",
+      "bands": [
+        [
+          3,
+          3000,
+          3800
+        ],
+        [
+          4,
+          3800,
+          4500
+        ]
+      ]
+    },
+    {
+      "slug": "wahiawa",
+      "name": "Wahiawa",
+      "bands": [
+        [
+          2,
+          1900,
+          2400
+        ],
+        [
+          3,
+          2600,
+          3200
+        ]
+      ]
+    },
+    {
+      "slug": "kaneohe",
+      "name": "Kaneohe",
+      "bands": [
+        [
+          2,
+          2600,
+          3200
+        ],
+        [
+          3,
+          3400,
+          4200
+        ]
+      ]
+    },
+    {
+      "slug": "kailua",
+      "name": "Kailua",
+      "bands": [
+        [
+          2,
+          3200,
+          4000
+        ],
+        [
+          3,
+          4000,
+          5500
+        ]
+      ]
+    },
+    {
+      "slug": "downtown",
+      "name": "Downtown / Kakaako",
+      "bands": [
+        [
+          1,
+          2000,
+          2600
+        ],
+        [
+          2,
+          2800,
+          3800
+        ]
+      ]
+    },
+    {
+      "slug": "kalihi",
+      "name": "Kalihi",
+      "bands": [
+        [
+          1,
+          1500,
+          2000
+        ],
+        [
+          2,
+          2000,
+          2600
+        ]
+      ]
+    }
+  ],
+  "rent_src_note": "Rent bands compiled from public listing platforms, mid-2026, deliberately rounded. Verify current asking rents directly \u2014 pockets move fast in PCS season (May\u2013August)."
+}

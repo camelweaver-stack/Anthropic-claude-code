@@ -7,12 +7,19 @@ _CREDITS = "; ".join(
     " (" + v["license"] + ")" for v in IMG.values())
 
 DOMAIN = "https://pcsoahu.com"
-BUILD_DATE = "August 2026"
-BAH_YEAR = "2026"
-LAST_REFRESHED = "August 1, 2026"
-REFRESH_ISO = "2026-08-01"   # ISO mirror of LAST_REFRESHED — both move together each refresh
-BAH_EFFECTIVE_ISO = "2026-01-01"
-DATA_EDITION = "2026.08"     # dataset edition tag (YYYY.MM); archived under this on each refresh
+
+# ---- single source of truth: data/source/bah_report_source.json ----
+# A refresh (e.g. the December BAH drop) = edit that file, or run scripts/refresh-bah-edition.py,
+# then rebuild + re-gate. Every BAH figure below is derived from it — no hand-edited anchors.
+_SRC = json.load(open(os.path.join(os.path.dirname(__file__), "..", "data", "source", "bah_report_source.json")))
+_A = _SRC["bah_anchors"]
+def _usd(n): return "$" + format(int(n), ",")
+BUILD_DATE        = _SRC["edition_label"]
+BAH_YEAR          = _SRC["bah_year"]
+LAST_REFRESHED    = _SRC["date_refreshed_label"]
+REFRESH_ISO       = _SRC["date_refreshed_iso"]
+BAH_EFFECTIVE_ISO = _SRC["bah_effective_iso"]
+DATA_EDITION      = _SRC["edition"]
 LICENSE_URL = "https://creativecommons.org/licenses/by/4.0/"
 CITATION = 'PCS Oahu, "The BAH Reality Report," ' + BUILD_DATE + ' edition, pcsoahu.com/bah-report/'
 SMS_NUMBER = ""  # set to E.164 (e.g. +18085551234) and rebuild to enable SMS join buttons
@@ -22,17 +29,17 @@ def sms_button(label="Text to join the list"):
     return (f'<a class="btn ghost" href="sms:{SMS_NUMBER}?&body=Add%20me%20to%20the%20PCS%20Oahu%20'
             f'list!%20Report%20window%3A%20___%20Base%3A%20___">{label}</a>')
 
-# ---- verified data anchors (all figures hedged + dated in copy) ----
+# ---- verified data anchors (all figures hedged + dated in copy); derived from _SRC ----
 BAH = {
-    "effective": "January 1, 2026",
-    "mha": "Honolulu County, HI (one Military Housing Area covers every Oahu installation)",
-    "e5_dep": "$3,663", "e5_solo": "$2,856",
-    "e6_dep": "$3,912", "e6_solo": "$3,036",
-    "floor": "$2,598", "ceiling": "$5,040",
-    "increase": "about 4.4%",
+    "effective": _SRC["bah_effective_label"],
+    "mha": _SRC["mha"],
+    "e5_dep": _usd(_A["e5_dep"]), "e5_solo": _usd(_A["e5_solo"]),
+    "e6_dep": _usd(_A["e6_dep"]), "e6_solo": _usd(_A["e6_solo"]),
+    "floor": _usd(_A["floor"]), "ceiling": _usd(_A["ceiling"]),
+    "increase": _SRC["yoy_change_label"],
 }
-MED_SF = "$1,275,000"   # Oahu median single-family, June 2026
-MED_CONDO = "$530,000"  # Oahu median condo, June 2026
+MED_SF = _usd(_SRC["median_single_family"])   # Oahu median single-family
+MED_CONDO = _usd(_SRC["median_condo"])        # Oahu median condo
 
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
          '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
@@ -405,19 +412,8 @@ def faq_ld(qas):
             "mainEntity": [{"@type": "Question", "name": q,
                             "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in qas]}
 
-# ---- base + neighborhood data ----
-POCKETS = {
-    "aiea":      ("Aiea",               "1BR $1,900–2,300 · 2BR $2,400–2,900 · 3BR $3,200–3,800"),
-    "pearlcity": ("Pearl City",         "2BR $2,400–2,900 · 3BR $3,000–3,600"),
-    "saltlake":  ("Salt Lake / Moanalua","1BR $1,800–2,300 · 2BR $2,300–2,900"),
-    "waipahu":   ("Waipahu",            "2BR $2,000–2,500 · 3BR $2,700–3,300"),
-    "mililani":  ("Mililani",           "2BR $2,500–3,000 · 3BR $3,200–3,900"),
-    "ewa":       ("Ewa Beach / Kapolei","3BR $3,000–3,800 · 4BR $3,800–4,500"),
-    "wahiawa":   ("Wahiawa",            "2BR $1,900–2,400 · 3BR $2,600–3,200"),
-    "kaneohe":   ("Kaneohe",            "2BR $2,600–3,200 · 3BR $3,400–4,200"),
-    "kailua":    ("Kailua",             "2BR $3,200–4,000 · 3BR $4,000–5,500"),
-    "downtown":  ("Downtown / Kakaako", "1BR $2,000–2,600 · 2BR $2,800–3,800"),
-    "kalihi":    ("Kalihi",             "1BR $1,500–2,000 · 2BR $2,000–2,600"),
-}
-RENT_SRC = ("Rent bands compiled from public listing platforms, mid-2026, deliberately rounded. "
-            "Verify current asking rents directly — pockets move fast in PCS season (May–August).")
+# ---- base + neighborhood data (rent bands derived from _SRC["pockets"]; single source) ----
+def _band_str(bands):
+    return " · ".join(f"{br}BR ${lo:,}–{hi:,}" for br, lo, hi in bands)
+POCKETS = {p["slug"]: (p["name"], _band_str(p["bands"])) for p in _SRC["pockets"]}
+RENT_SRC = _SRC["rent_src_note"]
