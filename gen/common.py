@@ -46,6 +46,7 @@ NAV_LINKS = [
     ("/tla/", "TLA & Arrival"),
     ("/guides/", "Guides"),
     ("/tools/", "Tools"),
+    ("/ask/", "Ask"),
 ]
 
 def nav(current=""):

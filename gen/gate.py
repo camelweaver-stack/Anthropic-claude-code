@@ -12,7 +12,7 @@ def fail(msg): FAILS.append(msg)
 html_files = sorted(glob.glob(os.path.join(SITE, "**", "*.html"), recursive=True))
 if not html_files: fail("No HTML files found")
 
-NAV_EXPECTED = 10
+NAV_EXPECTED = 11
 FORBIDDEN = [
     r"\bour agents?\b", r"\bour brokerage\b", r"\bour leasing\b", r"\bconsultation\b",
     r"\bschedule a (?:showing|tour|call)\b", r"\bapartment locat", r"\blist with us\b",

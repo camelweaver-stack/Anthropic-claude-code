@@ -324,7 +324,7 @@ when a question needs a human professional instead.</p>
     return page("/ask/", "Ask PCS Oahu: The Relocation Concierge | PCS Oahu",
         "Ask questions about BAH, pockets, VA buying, HARPTA, or the PCS timeline — answers "
         "come from the site's published guides, with links, and honest limits.",
-        body, "/guides/")
+        body, "/ask/")
 
 def build():
     out = {"/data/index.html": data_hub(), "/my-pcs/index.html": my_pcs(),

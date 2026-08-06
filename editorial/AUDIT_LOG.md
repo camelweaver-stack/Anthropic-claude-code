@@ -4,6 +4,38 @@ Append-only. Newest entry on top. One record per daily run. Template at the bott
 
 ---
 
+## 2026-08-06 (maintenance) — AI concierge investigation + nav discoverability fix
+
+- **Trigger:** User report — "the AI chat widget is missing or not working."
+- **Diagnosis:** The `/ask/` concierge is **not broken**. Live-tested the production
+  function (`/.netlify/functions/concierge`) — HTTP 200 with a genuine Claude answer; the
+  `ANTHROPIC_API_KEY` is set and the model (`claude-sonnet-4-6`) is valid. Root cause of the
+  "missing" perception: `/ask/` was linked only from the footer and the Data Desk card — it was
+  **not** in the fixed 10-item primary nav, so there was no header entry point (and no site-wide
+  floating widget). Also found two content bugs in the concierge's system prompt.
+- **Changes (approved by operator):**
+  1. **Nav:** added `("/ask/", "Ask")` to `NAV_LINKS` (now 11 items); bumped gate
+     `NAV_EXPECTED` 10→11; set the `/ask/` page's active-nav state to `/ask/`. Nav now renders
+     site-wide, so all pages rebuilt.
+  2. **Concierge factual fix:** system-prompt knowledge said Hawaii vehicle registration is due
+     "within 10 days" of arrival — corrected to **30 days** (same error fixed across the site
+     earlier today; verified vs. Honolulu CSD + HRS 286).
+  3. **Concierge guardrail:** added a hard rule forbidding the model from naming third-party
+     listing sites/apps/brokerages (Zillow, Apartments.com, Redfin, Trulia, Realtor.com, Hotpads,
+     etc.) — it had violated the existing "no paid services" rule in a live answer.
+- **Files changed:** `gen/common.py` (NAV_LINKS), `gen/gate.py` (NAV_EXPECTED), `gen/pages_phase_a.py`
+  (ask() current-nav), `netlify/functions/concierge.js` (30-day fix + third-party guardrail). Rebuilt
+  `site/` (50 pages), sitemap (48 URLs).
+- **Build status:** `GATE PASSED — 50 pages, 48 sitemap URLs, all assertions green.`
+- **Deployment status:** DEPLOYED to production. Netlify `pcsoahu`, deploy `6a750adcaf1df642e8626581`,
+  state `ready`, published 2026-08-06T22:30:06Z (16s, context production). 49 pages + concierge
+  function; secret scan clean (126 files). IndexNow POSTed (HTTP 200) for `/` + `/ask/`.
+- **Production verification:** PASS — homepage nav now has 11 links incl. "Ask"; `/`, `/ask/`,
+  `/buy/`, `/guides/rent-vs-buy.html`, `/sitemap.xml` all 200; nonexistent route 404. Live concierge
+  test now answers "30 days" (no "10 day") and declines to name listing platforms.
+
+---
+
 ## 2026-08-06 — Rent vs. buy on Oahu with a VA loan (decision framework)
 
 - **Date/time:** 2026-08-06 (America/Honolulu editorial day).
