@@ -556,6 +556,9 @@ Hawaii PCS that paperwork alone doesn't cover.</p>
     <h3><a href="/guides/pets-to-hawaii.html">Pets to Hawaii: the quarantine clock</a></h3>
     <p>Microchip, OIE-FAVN, the waiting period, Direct Airport Release — dated backward from your report date.</p></div>
   <div class="card"><span class="tag">Arriving</span>
+    <h3><a href="/guides/household-goods.html">Household goods to Hawaii</a></h3>
+    <p>The OCONUS move in three shipments — unaccompanied baggage, the sea shipment, storage, pro-gear, and DPS booking.</p></div>
+  <div class="card"><span class="tag">Arriving</span>
     <h3><a href="/tla/">TLA &amp; interim housing</a></h3>
     <p>The wheels-down-to-keys sequence, including the pet-quarantine timeline.</p></div>
   <div class="card"><span class="tag">Departing</span>
@@ -569,6 +572,16 @@ Hawaii PCS that paperwork alone doesn't cover.</p>
                 "spouse careers, school transitions, interim housing, and the departure decision.",
                 body, "/guides/")
 
+def household_goods():
+    # Body sourced from gen/content/household-goods.body.html (the page's <main>), re-emitted
+    # through page() so it carries the current nav, footer, identity graph, and Ask launcher.
+    body = open(os.path.join(os.path.dirname(__file__), "content", "household-goods.body.html")).read()
+    return page("/guides/household-goods.html",
+        "Shipping Household Goods to Hawaii on PCS Orders: UB, HHG, Storage | PCS Oahu",
+        "How the OCONUS household-goods move to Oahu works — unaccompanied baggage that lands "
+        "first, the sea shipment, storage, pro-gear, weight allowances, and DPS booking. Sourced and dated.",
+        body, "/guides/")
+
 def build():
     out = {
         "/bah-report/index.html": bah_report(),
@@ -579,6 +592,7 @@ def build():
         "/sell/index.html": sell(),
         "/tla/index.html": tla(),
         "/guides/index.html": guides_hub(),
+        "/guides/household-goods.html": household_goods(),
     }
     for fn in (spouse, school_transition, pets):
         p, h = fn()

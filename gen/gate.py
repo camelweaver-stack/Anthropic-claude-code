@@ -12,7 +12,7 @@ def fail(msg): FAILS.append(msg)
 html_files = sorted(glob.glob(os.path.join(SITE, "**", "*.html"), recursive=True))
 if not html_files: fail("No HTML files found")
 
-NAV_EXPECTED = 10
+NAV_EXPECTED = 11
 FORBIDDEN = [
     r"\bour agents?\b", r"\bour brokerage\b", r"\bour leasing\b", r"\bconsultation\b",
     r"\bschedule a (?:showing|tour|call)\b", r"\bapartment locat", r"\blist with us\b",
@@ -162,6 +162,16 @@ else:
 _ep = os.path.join(SITE, "embed", "index.html")
 if os.path.exists(_ep) and 'href="https://pcsoahu.com/bah-report/"' not in open(_ep).read():
     fail('embed: missing caption backlink href="https://pcsoahu.com/bah-report/"')
+
+# 8.5: floating Ask launcher on every page (except /ask/ itself and the noindex embed widget)
+for fp in html_files:
+    rel = os.path.relpath(fp, SITE).replace(os.sep, "/")
+    if rel in ("embed/bah-widget.html", "ask/index.html"):
+        if 'id="pcs-ask-launcher"' in open(fp).read() and rel == "ask/index.html":
+            fail("ask/index.html: launcher should be suppressed on the full chat page")
+        continue
+    if 'id="pcs-ask-launcher"' not in open(fp).read():
+        fail(f"{rel}: missing floating Ask launcher")
 
 if FAILS:
     print(f"GATE FAILED — {len(FAILS)} issue(s):")

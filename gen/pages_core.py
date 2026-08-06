@@ -13,6 +13,13 @@ what to decide before wheels-down.</p>
 <p><a class="btn" href="/bah-report/">Read the BAH Reality Report</a>
 <a class="btn ghost" href="/pcs-checklist/">Start the PCS checklist</a>
 <a class="btn ghost" href="/quiz/">Take the pocket-match quiz</a></p>
+<form class="ask-hero" action="/ask/" method="get" role="search"
+      style="display:flex;gap:.5rem;max-width:38rem;margin-top:.4rem">
+  <input name="q" type="text" aria-label="Ask PCS Oahu a question"
+         placeholder="Ask about your PCS — BAH, pockets, VA, HARPTA, the pet clock…"
+         style="flex:1;min-width:0;padding:.6rem .8rem;border-radius:8px;border:1px solid var(--rule)">
+  <button class="btn" type="submit">Ask PCS Oahu</button>
+</form>
 </div></div>
 <div class="wrap">
 <p class="eyebrow">The one fact that changes your search</p>

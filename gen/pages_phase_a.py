@@ -319,6 +319,8 @@ when a question needs a human professional instead.</p>
  }}
  btn.addEventListener('click',send);
  q.addEventListener('keydown',function(e){{if(e.key==='Enter')send()}});
+ var pf=new URLSearchParams(location.search).get('q');
+ if(pf){{q.value=pf;send();}}
 }})();
 </script>'''
     return page("/ask/", "Ask PCS Oahu: The Relocation Concierge | PCS Oahu",

@@ -20,7 +20,7 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://pcsoahu.com/#org", "name": "PCS Oahu", "url": "https://pcsoahu.com/", "logo": {"@type": "ImageObject", "url": "https://pcsoahu.com/assets/og-card.png"}, "description": "Independent publisher of field guides and data on U.S. military PCS moves to and from Oahu, Hawaii. Not a real estate brokerage."}, {"@type": "WebSite", "@id": "https://pcsoahu.com/#website", "name": "PCS Oahu", "url": "https://pcsoahu.com/", "description": "The independent field guide for military PCS moves to and from Oahu.", "publisher": {"@id": "https://pcsoahu.com/#org"}}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is there a VA loan limit on Oahu in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Not if you have full entitlement \u2014 approval then rests on income, debts, and residual income, not a county cap. With partial entitlement (an active prior VA loan), the county conforming limit drives zero-down math; published 2026 figures for Hawaii cluster around $1.2M\u2013$1.25M with a state ceiling of $1,873,675 \u2014 verify the exact Honolulu County figure on the FHFA map before running numbers."}}, {"@type": "Question", "name": "Can I use a VA loan on an Oahu condo?", "acceptedAnswer": {"@type": "Answer", "text": "Only if the specific project is on the VA's approved condo list or gets approved during escrow. On an island where the median condo ran about $530,000 in June 2026 public data versus $1,275,000 for a single-family home, condo approval is the difference between a real market and a closed one \u2014 check the list before you tour."}}, {"@type": "Question", "name": "What is leasehold property in Hawaii?", "acceptedAnswer": {"@type": "Answer", "text": "Some Hawaii listings sell the building but not the land beneath it \u2014 you lease the land for a term, pay lease rent, and face reversion or renegotiation when it ends. Leasehold prices look like bargains next to fee-simple and are the classic mainland-buyer trap. Confirm tenure on every listing before falling for a price."}}]}</script>
 </head>
 <body>
-<header class="site"><div class="wrap"><a class="brand" href="/"><b>PCS Oahu</b><span>the orders-to-island field guide</span></a></div></header><nav class="main" aria-label="Primary"><ul><li><a href="/bases/">Bases</a></li><li><a href="/bah-report/">BAH Report</a></li><li><a href="/neighborhoods/">Neighborhoods</a></li><li><a href="/schools/">Schools</a></li><li><a href="/buy/" aria-current="page">Buying</a></li><li><a href="/sell/">Selling</a></li><li><a href="/pcs-checklist/">PCS Checklist</a></li><li><a href="/tla/">TLA & Arrival</a></li><li><a href="/guides/">Guides</a></li><li><a href="/tools/">Tools</a></li></ul></nav>
+<header class="site"><div class="wrap"><a class="brand" href="/"><b>PCS Oahu</b><span>the orders-to-island field guide</span></a></div></header><nav class="main" aria-label="Primary"><ul><li><a href="/bases/">Bases</a></li><li><a href="/bah-report/">BAH Report</a></li><li><a href="/neighborhoods/">Neighborhoods</a></li><li><a href="/schools/">Schools</a></li><li><a href="/buy/" aria-current="page">Buying</a></li><li><a href="/sell/">Selling</a></li><li><a href="/pcs-checklist/">PCS Checklist</a></li><li><a href="/tla/">TLA & Arrival</a></li><li><a href="/guides/">Guides</a></li><li><a href="/tools/">Tools</a></li><li><a href="/ask/">Ask</a></li></ul></nav>
 <main>
 
 <div class="hero" style="background:linear-gradient(rgba(13,27,37,.84),rgba(16,34,46,.93)),url('/assets/img/ewa.jpg') center/cover"><div class="wrap">
@@ -128,5 +128,69 @@ lender you choose.</p>
     June 2026 market reports. Rent bands: public listing platforms, mid-2026, deliberately rounded.</p>
   </div>
 </div></footer>
+
+<div id="pcs-ask-launcher">
+  <button type="button" id="pcsAskBtn" aria-expanded="false" aria-controls="pcsAskPanel">💬 Ask PCS Oahu</button>
+  <div id="pcsAskPanel" role="dialog" aria-label="Ask PCS Oahu concierge" hidden>
+    <div class="pcs-ask-head"><strong>Ask PCS Oahu</strong>
+      <a class="pcs-ask-full" href="/ask/">Full page ↗</a>
+      <button type="button" id="pcsAskClose" aria-label="Close">×</button></div>
+    <div id="pcsAskLog"></div>
+    <div class="pcs-ask-row">
+      <input id="pcsAskQ" type="text" aria-label="Your question"
+             placeholder="e.g., Does E-5 BAH cover a 3BR in Mililani?">
+      <button type="button" id="pcsAskSend" class="btn">Ask</button></div>
+    <p class="pcs-ask-fine">Educational answers from this site's guides — not legal, tax, or
+       lending advice, and PCS Oahu isn't a brokerage.</p>
+  </div>
+</div>
+<style>
+#pcs-ask-launcher{position:fixed;right:16px;bottom:16px;z-index:9999}
+#pcsAskBtn{background:#10222e;color:#fff;border:0;border-radius:999px;padding:.7rem 1.1rem;
+  font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.25);font-size:.95rem}
+#pcsAskPanel{position:absolute;right:0;bottom:3.4rem;width:min(360px,calc(100vw - 32px));
+  background:#fff;color:#10222e;border:2px solid #10222e;border-radius:12px;
+  box-shadow:0 8px 30px rgba(0,0,0,.28);padding:.85rem}
+.pcs-ask-head{display:flex;align-items:center;gap:.5rem;border-bottom:1px solid #e2e6e4;
+  padding-bottom:.45rem;margin-bottom:.5rem}
+.pcs-ask-head strong{flex:1}
+.pcs-ask-full{font-size:.8rem;color:#1f5a54;font-weight:700;text-decoration:none}
+#pcsAskClose{background:none;border:0;font-size:1.2rem;line-height:1;cursor:pointer;color:#5b6b73}
+#pcsAskLog{max-height:44vh;overflow-y:auto;font-size:.92rem}
+#pcsAskLog div{padding:.4rem 0;border-top:1px dotted #d8dcd9}
+.pcs-ask-row{display:flex;gap:.4rem;margin-top:.5rem}
+#pcsAskQ{flex:1;min-width:0;padding:.5rem .6rem;border:1px solid #b9c2c0;border-radius:8px;font-size:.92rem}
+#pcsAskSend{padding:.5rem .8rem}
+.pcs-ask-fine{font-size:.72rem;color:#5b6b73;margin:.5rem 0 0}
+@media (prefers-color-scheme:dark){#pcsAskPanel{background:#0f1e28;color:#e8eeec}
+  #pcsAskQ{background:#0b1720;color:#e8eeec;border-color:#2a3b44}}
+</style>
+<script>
+(function(){
+ var b=document.getElementById('pcsAskBtn'),p=document.getElementById('pcsAskPanel'),
+     c=document.getElementById('pcsAskClose'),log=document.getElementById('pcsAskLog'),
+     q=document.getElementById('pcsAskQ'),s=document.getElementById('pcsAskSend'),hist=[];
+ function open(v){p.hidden=!v;b.setAttribute('aria-expanded',v?'true':'false');if(v)q.focus();}
+ b.addEventListener('click',function(){open(p.hidden);});
+ c.addEventListener('click',function(){open(false);});
+ function add(who,text,muted){var d=document.createElement('div');
+   if(muted)d.style.color='#5b6b73';
+   d.innerHTML='<strong>'+who+':</strong> '+text;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+ function send(){var t=q.value.trim();if(!t)return;
+   add('You',t.replace(/</g,'&lt;'));q.value='';s.disabled=true;
+   hist.push({role:'user',content:t});
+   fetch('/.netlify/functions/concierge',{method:'POST',
+     headers:{'Content-Type':'application/json'},
+     body:JSON.stringify({messages:hist.slice(-12)})})
+   .then(function(r){return r.json()})
+   .then(function(d){var a=d.reply||'The concierge is offline — see the <a href="/guides/">guides</a>.';
+     hist.push({role:'assistant',content:a});add('PCS Oahu',a);s.disabled=false;})
+   .catch(function(){add('PCS Oahu','Connection issue — try the <a href="/ask/">full page</a>.',1);s.disabled=false;});
+ }
+ s.addEventListener('click',send);
+ q.addEventListener('keydown',function(e){if(e.key==='Enter')send();});
+})();
+</script>
+
 </body>
 </html>
