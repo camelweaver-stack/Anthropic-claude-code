@@ -1,4 +1,61 @@
 from common import *
+import pages_family as _fam
+
+# Clean pocket->town matches for the NCES school join. The three urban pockets that resolve to
+# city "Honolulu" (Salt Lake, Downtown, Kalihi) are ambiguous, so they link the DOE finder instead.
+POCKET_CITY = {
+    "aiea": ["Aiea"], "pearlcity": ["Pearl City"], "waipahu": ["Waipahu"],
+    "mililani": ["Mililani"], "ewa": ["Ewa Beach", "Kapolei"], "wahiawa": ["Wahiawa"],
+    "kaneohe": ["Kaneohe"], "kailua": ["Kailua"],
+}
+_CC = {c["type"]: c for c in _fam.CCRATES["care_types"]}
+_CC_INFANT = _CC["Center-based infant/toddler care"]
+_CC_CENTER = _CC["Licensed center-based or group child care home"]
+
+def _family_block(key, name):
+    # Schools serving this pocket (city-matched; ambiguous urban pockets link the finder instead)
+    if key in POCKET_CITY:
+        towns = POCKET_CITY[key]
+        sc = [s for s in _fam.SCHOOLS["schools"] if s["city"] in towns]
+        sc.sort(key=lambda s: -s["enrollment"])
+        rows = "".join(f'<tr><td>{s["name"]}{" · charter" if s.get("charter") else ""}</td>'
+                       f'<td class="num">{s["grades"]}</td><td class="num">{s["enrollment"]}</td></tr>'
+                       for s in sc)
+        schools = (f'<table class="data"><thead><tr><th>Public elementary school</th>'
+                   f'<th class="num">Grades</th><th class="num">Enrollment</th></tr></thead>'
+                   f'<tbody>{rows}</tbody></table>'
+                   f'<p class="fine">Public schools in {name} from {_fam.SCHOOLS_SRC} We don\'t rank '
+                   f'schools and never publish attendance boundaries — your zoned school depends on '
+                   f'your address; confirm at the <a href="{_fam.DOE_LOCATOR}" rel="nofollow">DOE '
+                   f'school finder</a> before you sign.</p>') if sc else ""
+    else:
+        schools = (f'<p style="max-width:46rem">{name} sits in urban Honolulu, where several district '
+                   f'boundaries overlap — look your exact address up in the '
+                   f'<a href="{_fam.DOE_LOCATOR}" rel="nofollow">DOE school finder</a> rather than trust '
+                   f'a pocket-level list. The <a href="/family/">family layer</a> maps schools by gate.</p>')
+    # Sourced free-flow commute to the nearest gate (single source: the Commute Reality Grid)
+    grid = _fam.COMMUTE["grid"].get(name, {})
+    commute = ""
+    if grid:
+        g, cell = min(grid.items(), key=lambda kv: kv[1]["freeflow_min"])
+        commute = (f'<p style="max-width:46rem">Free-flow to the nearest installation ({g}): '
+                   f'<strong>{cell["freeflow_min"]} min</strong>. This pocket\'s full row across every '
+                   f'gate is in <a href="/tools/commute-grid/">the Commute Reality Grid</a>.</p>'
+                   f'<p class="fine">Source: {_fam.COMMUTE_SRC}</p>')
+    return f'''
+<h2>For families</h2>
+<h3>Schools</h3>
+{schools}
+<h3>Childcare</h3>
+<p style="max-width:46rem">Licensed full-time care on Oahu runs roughly {_fam._fmt(_CC_CENTER["median"])}/mo
+(median, licensed center or group home) to {_fam._fmt(_CC_INFANT["median"])}/mo (median, center-based
+infant/toddler) — the crossover math is in <a href="/family/childcare/">The Second Paycheck Report</a>.
+Find licensed providers through the <a href="{_fam.DHS_CHILDCARE}" rel="nofollow">Hawaii DHS finder</a>
+or <a href="{_fam.PATCH_URL}" rel="nofollow">PATCH</a> ({_fam.PATCH_LINE}); confirm each provider's
+current license before visiting.</p>
+<p class="fine">Cost source: {_fam.CCRATES["product_source"]}. Pulled {_fam.CCRATES["pulled"]}.</p>
+<h3>Commute, sourced</h3>
+{commute}'''
 
 # per-pocket editorial data: (tag, hero_img_key, bases[(label,drive)], story, trade, buynote)
 PD = {
@@ -133,6 +190,7 @@ def pocket_page(key):
 <h2>The honest trade</h2>
 <p style="max-width:46rem">{trade}</p>
 {buy_html}
+{_family_block(key, name)}
 <p><button class="btn ghost" style="color:#1f5a54;border-color:#9db4ae" id="savep" data-pocket="{key}">Save {name} to My PCS</button></p>
 <p style="max-width:46rem">School boundaries here run street by street — check any exact address
 against the HIDOE lookup before signing (the <a href="/schools/">schools guide</a> explains how
