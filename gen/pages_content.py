@@ -230,9 +230,11 @@ tenure is the first thing to check.</div>
 <h2>The honest close</h2>
 <p style="max-width:46rem">BAH pointed at a mortgage builds equity in one of the country's most
 supply-constrained markets; it also concentrates risk on one island, and PCS orders don't wait for
-market timing — read the <a href="/sell/">PCS-out guide</a> before you buy, because the exit is
-part of the purchase. Numbers here are education, not advice; underwriting is between you and a
-lender you choose.</p>
+market timing. Not sure you should buy at all this tour? Start with the
+<a href="/guides/rent-vs-buy.html">rent-vs-buy framework</a> — the horizon, the BAH-purchasing-power
+math, and the forced-exit risk — then read the <a href="/sell/">PCS-out guide</a> before you buy,
+because the exit is part of the purchase. Numbers here are education, not advice; underwriting is
+between you and a lender you choose.</p>
 {lead_form("BUY", "pcs-buyer",
   heading="Thinking about buying this tour?",
   blurb="Join the list for the buyer-side refresh: entitlement math updates, condo-approval notes, "
@@ -730,6 +732,139 @@ See <a href="/on-base/">on-base housing</a>.</p>
                 "the out-of-state permit (CS-L(MVR)27). Sourced and dated.",
                 body, "/guides/", jsonld=ld)
 
+def rent_vs_buy():
+    qas = [
+      ("Should I buy a house on Oahu as a military member?",
+       "There is no universal yes or no — the honest answer is a three-question framework. First, "
+       "your horizon: buying rarely pays off unless you'll hold the home long enough to earn back "
+       "the transaction costs, and a two-to-three-year tour is short for that. Second, purchasing "
+       "power: at a June 2026 single-family median around $1,275,000 (Honolulu Board of REALTORS® "
+       "data in public reports), even Oahu's top-in-the-force BAH buys a condo more realistically "
+       "than a house for most grades. Third, the exit: PCS orders don't wait for the market, so "
+       "the question isn't only 'can I buy' but 'what happens when I have to leave.' Run all three "
+       "before a listing does the deciding for you."),
+      ("Is BAH enough to buy a house on Oahu?",
+       "It depends on grade and what you're buying. Every Oahu installation shares one BAH rate "
+       "(Honolulu County MHA); 2026 with-dependents anchors run about $3,663 for an E-5 and $3,912 "
+       "for an E-6, with a ceiling near $5,040 (DTMO 2026 tables, effective January 1, 2026). "
+       "Against a $1,275,000 single-family median, that BAH points more comfortably at Oahu's "
+       "$530,000-median condo market than at a house — and a VA loan's no-down-payment, no-PMI "
+       "structure plus BAH being tax-free (Military OneSource) is what makes the math work at all. "
+       "HOA fees and the VA condo-approval list decide whether a given condo is actually reachable."),
+      ("How long do I need to stay for buying to beat renting on Oahu?",
+       "Long enough to earn back what it costs to get in and out — the VA funding fee (unless "
+       "you're exempt for a service-connected disability, per VA.gov), closing costs, and the "
+       "selling costs on the far end. There's no single magic number, but a break-even measured in "
+       "years, not months, is the honest frame, and a standard PCS tour can be shorter than that. "
+       "If orders might move you before you'd clear the round-trip costs, renting and pointing the "
+       "same BAH at a landlord is not the lesser choice — it's often the disciplined one."),
+    ]
+    body = f'''
+<div class="hero"><div class="wrap">
+<p class="eyebrow">Buying · the decision before the decision</p>
+<h1>Rent or buy on Oahu with a VA loan? The honest framework</h1>
+<p class="lede">Oahu hands military buyers a rare combination — the highest BAH in the force pointed
+at a zero-down VA loan — and that combination makes "just buy, you're throwing money away renting"
+sound obvious. On this island it isn't. Three questions decide it, and none of them is the listing
+price.</p>
+</div></div>
+<div class="wrap">
+<h2>The direct answer</h2>
+<p style="max-width:46rem">Buying beats renting when you'll hold long enough to earn back the cost
+of getting in and out, when your BAH actually reaches the kind of home you want at Oahu prices, and
+when you can absorb the exit on someone else's timeline. Miss any one and renting the same BAH is
+frequently the stronger move. Here's each question in island numbers.</p>
+<h2>1 — Your horizon vs. the round-trip cost</h2>
+<p style="max-width:46rem">Buying isn't free to enter or leave. On the way in there's a one-time
+<strong>VA funding fee</strong> (waived if you receive — or are eligible to receive — VA
+compensation for a service-connected disability, per <a href="https://www.va.gov/housing-assistance/home-loans/funding-fee-and-closing-costs/">VA.gov</a>)
+plus ordinary closing costs; on the way out there are selling costs. You earn those back through
+appreciation and principal paydown over <em>years</em>, not months. A standard PCS tour of two to
+three years can be shorter than that break-even — so the first question isn't "can I qualify," it's
+"will I hold this home long enough for the round trip to pay for itself?" If the answer is uncertain
+because orders are uncertain, that uncertainty has a dollar value, and it favors renting.</p>
+<h2>2 — What your BAH actually reaches here</h2>
+<p style="max-width:46rem">Oahu is one BAH market — every installation draws the same Honolulu
+County rate — and it's the top of the national table. But it meets some of the country's highest
+prices:</p>
+{rates([
+  ("Oahu median single-family (June 2026)", MED_SF, True),
+  ("Oahu median condo (June 2026)", MED_CONDO),
+  ("BAH, E-5 with dependents (2026)", BAH["e5_dep"]),
+  ("BAH, E-6 with dependents (2026)", BAH["e6_dep"]),
+  ("BAH ceiling, Honolulu County (2026)", BAH["ceiling"]),
+], "BAH: DTMO 2026 tables, effective January 1, 2026 (one Honolulu County MHA covers every Oahu "
+   "installation). Medians: Honolulu Board of REALTORS® data as republished in public June 2026 "
+   "market reports. Orientation only — verify at source; not a valuation or loan offer.")}
+<p style="max-width:46rem">Two structural advantages tilt the math toward the buy side when the
+horizon is right. A VA-backed purchase loan needs <strong>no down payment</strong> (up to the
+appraised value) and carries <strong>no private mortgage insurance</strong>
+(<a href="https://www.va.gov/housing-assistance/home-loans/loan-types/purchase-loan/">VA.gov</a>) —
+so the BAH you'd otherwise hand a landlord goes straight at principal and interest. And <strong>BAH
+itself is tax-free</strong> — excluded from gross income, not subject to federal or state income
+tax (<a href="https://www.militaryonesource.mil/financial-legal/taxes/military-housing-allowance/">Military
+OneSource</a>) — which quietly raises the housing budget's real purchasing power versus a civilian
+earning the same gross. Against the medians above, that firepower reaches the <a href="/buy/">condo
+market</a> far more readily than the single-family market for most grades.</p>
+<h2>3 — The exit you don't control</h2>
+<div class="warn"><strong>The market won't wait for your orders.</strong> The risk that separates
+Oahu from a mainland duty station isn't buying — it's being <em>forced to sell or rent on a PCS
+timeline</em> into a single, supply-constrained island market. If values dip the quarter your
+orders drop, you sell into that dip or you become a long-distance landlord. Both are legitimate;
+neither is free. Before you buy, read the departure side of this decision — the
+<a href="/sell/">sell-or-rent-when-you-PCS-out guide</a> covers HARPTA withholding for nonresident
+sellers and the accidental-landlord math — because on this island the exit is part of the purchase.</div>
+<h2>Who this applies to</h2>
+<p style="max-width:46rem"><strong>Leaning buy</strong> if you have full VA entitlement, a
+longer-than-usual tour or plans to keep the home as a rental after you leave, and a target in the
+condo band your BAH comfortably covers. <strong>Leaning rent</strong> if your tour is a standard
+two-to-three years with real PCS uncertainty, if partial entitlement pulls the county loan limit
+back into your math, or if the only homes in reach are leasehold or unapproved condos (both covered
+on the <a href="/buy/">VA-loan buyer brief</a>). Renting the same BAH while you learn the island and
+watch a pocket is not a failure to build equity — it's buying flexibility, which on a PCS timeline
+has real value.</p>
+<h2>Next steps</h2>
+<ol style="max-width:46rem">
+<li><strong>Pin your horizon honestly.</strong> How firm is the tour length, and would you keep the
+home as a rental if orders moved you? That answer drives everything below.</li>
+<li><strong>Get a Loan Estimate, not a guess.</strong> Ask a VA-experienced lender for the funding
+fee (or confirm your exemption), the closing costs, and the real monthly payment <em>including HOA
+and insurance</em> before you compare it to rent.</li>
+<li><strong>Check tenure and condo approval early.</strong> Confirm fee-simple vs. leasehold and
+whether the project is on the VA-approved condo list — see the <a href="/buy/">buyer brief</a> —
+before you fall for a price.</li>
+<li><strong>Sanity-check the rent side.</strong> Compare against real asking rents for your pocket
+in the <a href="/bah-report/">BAH Reality Report</a>, and remember on-base housing trades your whole
+BAH for a no-maintenance, no-exit-risk option — see <a href="/on-base/">how on-base housing works</a>.</li>
+</ol>
+<p style="max-width:46rem">This is a framework compiled from VA.gov, Military OneSource, DTMO 2026
+tables, and public Honolulu market reports, and verified <strong>August 6, 2026</strong>. Every
+figure changes and every situation differs — nothing here is a valuation, a loan offer,
+prequalification, or lending, legal, or tax advice. The break-even math is yours to run with a
+lender and, where taxes are involved, a tax professional you choose.</p>
+{lead_form("RENTBUY", "pcs-buyer",
+  heading="Weighing the rent-or-buy call this tour?",
+  blurb="Join the list for the buyer-side refresh: BAH-cycle updates, market medians as they move, "
+        "and the rent-band changes that decide the math. First access when full service opens.")}
+</div>'''
+    p = "/guides/rent-vs-buy.html"
+    ld = {"@context": "https://schema.org", "@graph": [
+        {"@type": "Article",
+         "headline": "Rent or buy on Oahu with a VA loan? The honest framework",
+         "description": "A decision framework for military buyers weighing rent vs. buy on Oahu: the "
+                        "PCS-horizon break-even, what BAH actually reaches at island prices, the "
+                        "no-down-payment/no-PMI VA advantage, tax-free BAH, and the forced-exit risk.",
+         "datePublished": "2026-08-06", "dateModified": "2026-08-06",
+         "author": {"@type": "Organization", "name": "PCS Oahu"},
+         "publisher": {"@type": "Organization", "name": "PCS Oahu"},
+         "mainEntityOfPage": DOMAIN + p},
+        faq_ld(qas)]}
+    return p, page(p, "Rent vs Buy on Oahu with a VA Loan: The Military Framework | PCS Oahu",
+                "Should military families rent or buy on Oahu? The honest framework: the PCS break-even "
+                "horizon, what BAH reaches at a $1.275M median, the no-down-payment VA advantage, "
+                "tax-free BAH, and the forced-exit risk. Sourced and dated.",
+                body, "/buy/", jsonld=ld)
+
 def guides_hub():
     body = f'''
 <div class="hero"><div class="wrap">
@@ -760,7 +895,7 @@ Hawaii PCS that paperwork alone doesn't cover.</p>
     <p>Hawaii runs accompanied-orders and EFMP screening, not foreign-style command sponsorship.</p></div>
   <div class="card"><span class="tag">Arriving</span>
     <h3><a href="/vehicle-shipping/">Vehicle shipping, end to end</a></h3>
-    <p>The one-POV entitlement, PCSmyPOV, the real timeline, the gap-car math, and the 10-day registration clock.</p></div>
+    <p>The one-POV entitlement, PCSmyPOV, the real timeline, the gap-car math, and the 30-day registration clock.</p></div>
   <div class="card"><span class="tag">Arriving</span>
     <h3><a href="/guides/household-goods.html">Household goods to Hawaii</a></h3>
     <p>The OCONUS move in order: unaccompanied baggage first, the sea shipment, storage, pro-gear, and the DPS booking clock.</p></div>
@@ -776,6 +911,9 @@ Hawaii PCS that paperwork alone doesn't cover.</p>
   <div class="card"><span class="tag">Arriving</span>
     <h3><a href="/tla/">TLA &amp; interim housing</a></h3>
     <p>The wheels-down-to-keys sequence, including the pet-quarantine timeline.</p></div>
+  <div class="card"><span class="tag">Buying</span>
+    <h3><a href="/guides/rent-vs-buy.html">Rent or buy with a VA loan?</a></h3>
+    <p>The honest framework: the PCS break-even horizon, what BAH reaches at island prices, and the forced-exit risk.</p></div>
   <div class="card"><span class="tag">Departing</span>
     <h3><a href="/sell/">PCSing out: sell or rent?</a></h3>
     <p>HARPTA, the accidental-landlord napkin, and VA seller notes.</p></div>
@@ -798,7 +936,7 @@ def build():
         "/tla/index.html": tla(),
         "/guides/index.html": guides_hub(),
     }
-    for fn in (spouse, school_transition, pets, household_goods, vehicle_registration):
+    for fn in (spouse, school_transition, pets, household_goods, vehicle_registration, rent_vs_buy):
         p, h = fn()
         out[p] = h
     return out

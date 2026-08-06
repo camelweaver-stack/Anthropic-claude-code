@@ -14,12 +14,13 @@ Legend — Status: `LIVE` shipped · `NEXT` queued · `IDEA` backlog · `HOLD` n
 |---|---|---|---|---|---|---|---|---|---|
 | 2026-08-05 | Household goods to Hawaii (OCONUS HHG: UB, sea shipment, NTS, pro-gear, DPS) | PCS logistics | Inbound PCS families | "shipping household goods to hawaii military" | Verified (MilOneSource, Move.mil/DPS, DTMO) | H | M | LIVE `/guides/household-goods.html` | guides hub, vehicle-shipping, pets, pcs-checklist, school-transition |
 | 2026-08-05 | Registering a car in Hawaii (30-day clock, CS-L(MVR)50 exemption, out-of-state permit) | PCS logistics | Inbound PCS families w/ POV | "register car hawaii military" | Verified (Honolulu CSD, HI DOT, HRS 286) | M | L | LIVE `/guides/vehicle-registration.html` | guides hub, vehicle-shipping, pcs-checklist, on-base |
+| 2026-08-06 | Rent vs. buy on Oahu with a VA loan (BAH purchasing power, PCS break-even, forced-exit risk) | Buying / VA | Inbound buyers weighing rent vs. buy | "should i buy a house in hawaii military" | Verified (VA.gov, Military OneSource, DTMO 2026, HBR June 2026) | H | H | LIVE `/guides/rent-vs-buy.html` | buy hub (reciprocal), sell, bah-report, on-base, guides hub, footer |
 
 ## Backlog — scored, cluster-balanced (draw the daily slot from here, highest utility first)
 
 | # | Topic | Cluster | Audience | Target query | Src status | Traffic | Txn | Status |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Rent-vs-buy on Oahu with a VA loan (BAH purchasing power, the leasehold trap) | Buying / VA | Inbound buyers E-6+/officer | "should i buy a house in hawaii military" | Sourceable (VA, common.py anchors) | H | H | NEXT |
+| 1 | Rent-vs-buy on Oahu with a VA loan (BAH purchasing power, the leasehold trap) | Buying / VA | Inbound buyers E-6+/officer | "should i buy a house in hawaii military" | SHIPPED 2026-08-06 → /guides/rent-vs-buy.html | H | H | LIVE |
 | 2 | HARPTA & the outbound seller's proceeds napkin | Selling / Leaving | Outbound owners | "harpta military selling hawaii" | Sourceable (HI DOTAX) | M | H | NEXT |
 | 3 | Fee simple vs leasehold on Oahu — why it matters more here | Buying | Inbound buyers | "leasehold vs fee simple hawaii condo" | Sourceable (public) | M | H | IDEA |
 | 4 | DoDEA vs Hawaii DOE — the statewide-district reality for PCS kids | Schools | Families w/ kids | "hawaii school district military family" | Sourceable (HIDOE) | H | M | IDEA |

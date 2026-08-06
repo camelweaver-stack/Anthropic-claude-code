@@ -4,6 +4,68 @@ Append-only. Newest entry on top. One record per daily run. Template at the bott
 
 ---
 
+## 2026-08-06 — Rent vs. buy on Oahu with a VA loan (decision framework)
+
+- **Date/time:** 2026-08-06 (America/Honolulu editorial day).
+- **Selected topic:** Backlog #1 — Rent-vs-buy on Oahu with a VA loan (BAH purchasing power, the
+  PCS break-even horizon, the leasehold/forced-exit risk).
+- **Reason for selection:** Highest-utility scored backlog item (H traffic / H transaction, status
+  NEXT; the recommended next topic in both prior audit entries). Cluster balance: the last two
+  ships were both PCS-logistics (household goods, vehicle registration), so a Buying/VA decision
+  page diversifies the mix. Targets a distinct decision-stage query ("should i buy a house in
+  hawaii military") that the existing `/buy/` mechanics page does not serve — `/buy/` assumes the
+  buy decision is made and explains entitlement; this page is the decision *before* that. No filler;
+  a genuine content gap with authoritative, verifiable sources.
+- **Audience:** Inbound service members/families weighing rent vs. buy (all grades); buyer-side CTA
+  (`pcs-buyer`).
+- **Content type:** Evergreen decision-framework guide.
+- **URL:** https://pcsoahu.com/guides/rent-vs-buy.html
+- **Sources used (verified 2026-08-06):**
+  - VA.gov — VA-backed purchase loan benefits: no down payment (up to appraised value), no PMI
+    (va.gov/housing-assistance/home-loans/loan-types/purchase-loan/).
+  - VA.gov — funding-fee exemption for those receiving/eligible for VA compensation for a
+    service-connected disability (va.gov/housing-assistance/home-loans/funding-fee-and-closing-costs/).
+  - Military OneSource — BAH excluded from gross income; not subject to federal/state income tax
+    (militaryonesource.mil/financial-legal/taxes/military-housing-allowance/).
+  - `gen/common.py` anchors — DTMO 2026 BAH (E-5 dep $3,663, E-6 dep $3,912, ceiling $5,040,
+    effective Jan 1 2026; one Honolulu County MHA) and Honolulu Board of REALTORS® June 2026 medians
+    ($1,275,000 SF / $530,000 condo).
+- **Facts requiring future revalidation:** BAH anchors at the next DTMO cycle; June 2026 medians at
+  the next quarterly refresh; VA funding-fee schedule and conforming-limit figures (deliberately
+  described qualitatively / pointed to source rather than asserting a percentage or exact county
+  cap). No specific closing-cost or break-even number was invented — all framed as ranges/"years."
+- **Maintenance fix (staleness pass):** Corrected a lingering factual error on the guides hub — the
+  vehicle-shipping card still read "the 10-day registration clock"; the registration deadline is
+  **30 days** (fixed everywhere else in the 2026-08-05 run-2 pass). Now reads "30-day registration
+  clock." Full staleness scan otherwise clean: no broken internal links, no duplicate titles, no
+  year-drift in copy (2024/2025 matches are image-credit filenames only), anchors current.
+- **Internal links added:** New page → `/buy/` (hub), `/sell/`, `/bah-report/`, `/on-base/`, and the
+  two VA.gov + Military OneSource sources inline. Reciprocal links added FROM: `/buy/` (honest-close
+  paragraph → rent-vs-buy framework), guides hub (new Buying card), site footer (Buying & Selling
+  list).
+- **CTA used:** "Weighing the rent-or-buy call this tour?" → lead form, segment `pcs-buyer`, tag
+  `PCSOAHU-RENTBUY`, context `move_date`.
+- **Files changed:** `gen/pages_content.py` (new `rent_vs_buy()` + build wiring + guides-hub card +
+  `/buy/` reciprocal link + 10→30-day hub fix), `gen/common.py` (footer link). Regenerated `site/`
+  (50 pages), sitemap (48 URLs), `indexnow-payload.json`.
+- **Build status:** `GATE PASSED — 50 pages, 48 sitemap URLs, all assertions green.`
+- **Deployment status:** DEPLOYED to production. Netlify project `pcsoahu`, deploy
+  `6a74bab8bc9c1e2700fb9a03`, state `ready`, published 2026-08-06T16:48:12Z (17s, context
+  production). 50 files + concierge function; secret scan clean (125 files, 0 matches). Deployed via
+  the Netlify deploy-site connector (`npx @netlify/mcp --no-wait`; polled to `ready`).
+  IndexNow POSTed (HTTP 200) for the new page + `/buy/` + `/guides/` (host pcsoahu.com, key file
+  live at /12ef30fd51aefc63524ab6eb41e58f99.txt).
+- **Production verification:** PASS — `/guides/rent-vs-buy.html` HTTP 200 (pretty URL
+  `/guides/rent-vs-buy` also 200); `/buy/`, `/guides/`, `/sell/`, `/bah-report/`, `/`, `/sitemap.xml`
+  all 200; nonexistent route 404; new URL present in live sitemap.xml; canonical =
+  https://pcsoahu.com/guides/rent-vs-buy.html (apex); reciprocal link live on `/buy/`; the 30-day
+  hub fix is live.
+- **Next recommended related topics:** Backlog #5 (on-base housing waitlist mechanics by
+  installation), #4 (DoDEA vs Hawaii DOE for PCS kids), #2 (HARPTA outbound seller's proceeds) —
+  see EDITORIAL_CALENDAR.md. (Rotate clusters: next non-Buying to keep the mix honest.)
+
+---
+
 ## 2026-08-05 (run 2) — Registering a car in Hawaii (vehicle-registration guide)
 
 - **Date/time:** 2026-08-05 — process-verification run against the Daily Publishing Driver.
