@@ -342,7 +342,9 @@ def datacatalog_ld():
             "description": "Named, dated data products on Oahu military housing, refreshed on a "
                            "published cadence. Free to cite with attribution.",
             "publisher": {"@id": DOMAIN + "/#org"},
-            "dataset": [{"@id": DOMAIN + "/bah-report/#dataset"}]}
+            "dataset": [{"@id": DOMAIN + "/bah-report/#dataset"},
+                        {"@id": DOMAIN + "/family/childcare/#dataset"},
+                        {"@id": DOMAIN + "/tools/commute-grid/#dataset"}]}
 
 # ---- machine-readable data distribution (single source: POCKETS + BAH) ----
 def _money_to_int(s):

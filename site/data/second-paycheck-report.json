@@ -1,0 +1,69 @@
+{
+  "dataset": "The Second Paycheck Report",
+  "publisher": "PCS Oahu (pcsoahu.com)",
+  "edition": "2026.08",
+  "date_refreshed": "2026-08-01",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "canonical_url": "https://pcsoahu.com/family/childcare/",
+  "region": "Oahu (Honolulu County)",
+  "rate_type": "full-time monthly, USD",
+  "cost_source": "2023 Hawaii Child Care Market Rate Study (Hawaii DHS, CCDF biennial requirement; prepared by PATCH)",
+  "cost_source_pulled": "2026-08-05",
+  "care_types": [
+    {
+      "type": "Center-based infant/toddler care",
+      "providers": 4,
+      "rates": 17,
+      "median": 1561,
+      "p75": 1650,
+      "min": 895,
+      "max": 1875
+    },
+    {
+      "type": "Accredited (NAEYC/NECPA) center-based care",
+      "providers": 8,
+      "rates": 23,
+      "median": 950,
+      "p75": 1285,
+      "min": 650,
+      "max": 1540
+    },
+    {
+      "type": "Licensed center-based or group child care home",
+      "providers": 31,
+      "rates": 86,
+      "median": 900,
+      "p75": 1200,
+      "min": 500,
+      "max": 1575
+    },
+    {
+      "type": "Registered family child care home \u2014 infant/toddler",
+      "providers": 44,
+      "rates": 136,
+      "median": 825,
+      "p75": 925,
+      "min": 620,
+      "max": 2000
+    },
+    {
+      "type": "Registered family child care home",
+      "providers": 48,
+      "rates": 179,
+      "median": 800,
+      "p75": 900,
+      "min": 600,
+      "max": 2000
+    },
+    {
+      "type": "Licensed before/after-school care",
+      "providers": 1,
+      "rates": 2,
+      "median": 135,
+      "p75": 135,
+      "min": 135,
+      "max": 135
+    }
+  ]
+}

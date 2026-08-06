@@ -1,0 +1,338 @@
+{
+ "product": "Commute Reality Grid",
+ "edition": "baseline 2026-08-06",
+ "pulled": "2026-08-06",
+ "methodology": "Free-flow drive time between pocket and installation reference coordinates via OSRM public routing (no traffic model), rounded to 5 minutes. Peak bands (peak_min) pending traffic-aware sampling per the family-layer spec windows; render as em-dash until sampled. H-3/H-1 incident variance applies; reference coordinates are pocket/installation centroids, not addresses.",
+ "grid": {
+  "Aiea": {
+   "JB Pearl Harbor-Hickam": {
+    "freeflow_min": 5,
+    "peak_min": null
+   },
+   "Schofield Barracks": {
+    "freeflow_min": 25,
+    "peak_min": null
+   },
+   "MCBH Kaneohe Bay": {
+    "freeflow_min": 30,
+    "peak_min": null
+   },
+   "Camp H.M. Smith": {
+    "freeflow_min": 5,
+    "peak_min": null
+   },
+   "Tripler AMC": {
+    "freeflow_min": 10,
+    "peak_min": null
+   },
+   "Fort Shafter": {
+    "freeflow_min": 10,
+    "peak_min": null
+   },
+   "Wheeler AAF": {
+    "freeflow_min": 25,
+    "peak_min": null
+   }
+  },
+  "Pearl City": {
+   "JB Pearl Harbor-Hickam": {
+    "freeflow_min": 10,
+    "peak_min": null
+   },
+   "Schofield Barracks": {
+    "freeflow_min": 20,
+    "peak_min": null
+   },
+   "MCBH Kaneohe Bay": {
+    "freeflow_min": 35,
+    "peak_min": null
+   },
+   "Camp H.M. Smith": {
+    "freeflow_min": 10,
+    "peak_min": null
+   },
+   "Tripler AMC": {
+    "freeflow_min": 15,
+    "peak_min": null
+   },
+   "Fort Shafter": {
+    "freeflow_min": 15,
+    "peak_min": null
+   },
+   "Wheeler AAF": {
+    "freeflow_min": 20,
+    "peak_min": null
+   }
+  },
+  "Salt Lake / Moanalua": {
+   "JB Pearl Harbor-Hickam": {
+    "freeflow_min": 10,
+    "peak_min": null
+   },
+   "Schofield Barracks": {
+    "freeflow_min": 30,
+    "peak_min": null
+   },
+   "MCBH Kaneohe Bay": {
+    "freeflow_min": 30,
+    "peak_min": null
+   },
+   "Camp H.M. Smith": {
+    "freeflow_min": 10,
+    "peak_min": null
+   },
+   "Tripler AMC": {
+    "freeflow_min": 5,
+    "peak_min": null
+   },
+   "Fort Shafter": {
+    "freeflow_min": 5,
+    "peak_min": null
+   },
+   "Wheeler AAF": {
+    "freeflow_min": 30,
+    "peak_min": null
+   }
+  },
+  "Waipahu": {
+   "JB Pearl Harbor-Hickam": {
+    "freeflow_min": 15,
+    "peak_min": null
+   },
+   "Schofield Barracks": {
+    "freeflow_min": 20,
+    "peak_min": null
+   },
+   "MCBH Kaneohe Bay": {
+    "freeflow_min": 35,
+    "peak_min": null
+   },
+   "Camp H.M. Smith": {
+    "freeflow_min": 15,
+    "peak_min": null
+   },
+   "Tripler AMC": {
+    "freeflow_min": 20,
+    "peak_min": null
+   },
+   "Fort Shafter": {
+    "freeflow_min": 20,
+    "peak_min": null
+   },
+   "Wheeler AAF": {
+    "freeflow_min": 20,
+    "peak_min": null
+   }
+  },
+  "Mililani": {
+   "JB Pearl Harbor-Hickam": {
+    "freeflow_min": 20,
+    "peak_min": null
+   },
+   "Schofield Barracks": {
+    "freeflow_min": 15,
+    "peak_min": null
+   },
+   "MCBH Kaneohe Bay": {
+    "freeflow_min": 40,
+    "peak_min": null
+   },
+   "Camp H.M. Smith": {
+    "freeflow_min": 20,
+    "peak_min": null
+   },
+   "Tripler AMC": {
+    "freeflow_min": 25,
+    "peak_min": null
+   },
+   "Fort Shafter": {
+    "freeflow_min": 25,
+    "peak_min": null
+   },
+   "Wheeler AAF": {
+    "freeflow_min": 10,
+    "peak_min": null
+   }
+  },
+  "Ewa Beach / Kapolei": {
+   "JB Pearl Harbor-Hickam": {
+    "freeflow_min": 25,
+    "peak_min": null
+   },
+   "Schofield Barracks": {
+    "freeflow_min": 30,
+    "peak_min": null
+   },
+   "MCBH Kaneohe Bay": {
+    "freeflow_min": 50,
+    "peak_min": null
+   },
+   "Camp H.M. Smith": {
+    "freeflow_min": 30,
+    "peak_min": null
+   },
+   "Tripler AMC": {
+    "freeflow_min": 30,
+    "peak_min": null
+   },
+   "Fort Shafter": {
+    "freeflow_min": 30,
+    "peak_min": null
+   },
+   "Wheeler AAF": {
+    "freeflow_min": 25,
+    "peak_min": null
+   }
+  },
+  "Wahiawa": {
+   "JB Pearl Harbor-Hickam": {
+    "freeflow_min": 25,
+    "peak_min": null
+   },
+   "Schofield Barracks": {
+    "freeflow_min": 10,
+    "peak_min": null
+   },
+   "MCBH Kaneohe Bay": {
+    "freeflow_min": 45,
+    "peak_min": null
+   },
+   "Camp H.M. Smith": {
+    "freeflow_min": 30,
+    "peak_min": null
+   },
+   "Tripler AMC": {
+    "freeflow_min": 30,
+    "peak_min": null
+   },
+   "Fort Shafter": {
+    "freeflow_min": 30,
+    "peak_min": null
+   },
+   "Wheeler AAF": {
+    "freeflow_min": 10,
+    "peak_min": null
+   }
+  },
+  "Kaneohe": {
+   "JB Pearl Harbor-Hickam": {
+    "freeflow_min": 25,
+    "peak_min": null
+   },
+   "Schofield Barracks": {
+    "freeflow_min": 45,
+    "peak_min": null
+   },
+   "MCBH Kaneohe Bay": {
+    "freeflow_min": 15,
+    "peak_min": null
+   },
+   "Camp H.M. Smith": {
+    "freeflow_min": 25,
+    "peak_min": null
+   },
+   "Tripler AMC": {
+    "freeflow_min": 25,
+    "peak_min": null
+   },
+   "Fort Shafter": {
+    "freeflow_min": 20,
+    "peak_min": null
+   },
+   "Wheeler AAF": {
+    "freeflow_min": 40,
+    "peak_min": null
+   }
+  },
+  "Kailua": {
+   "JB Pearl Harbor-Hickam": {
+    "freeflow_min": 30,
+    "peak_min": null
+   },
+   "Schofield Barracks": {
+    "freeflow_min": 50,
+    "peak_min": null
+   },
+   "MCBH Kaneohe Bay": {
+    "freeflow_min": 15,
+    "peak_min": null
+   },
+   "Camp H.M. Smith": {
+    "freeflow_min": 30,
+    "peak_min": null
+   },
+   "Tripler AMC": {
+    "freeflow_min": 30,
+    "peak_min": null
+   },
+   "Fort Shafter": {
+    "freeflow_min": 25,
+    "peak_min": null
+   },
+   "Wheeler AAF": {
+    "freeflow_min": 50,
+    "peak_min": null
+   }
+  },
+  "Downtown / Kakaako": {
+   "JB Pearl Harbor-Hickam": {
+    "freeflow_min": 15,
+    "peak_min": null
+   },
+   "Schofield Barracks": {
+    "freeflow_min": 40,
+    "peak_min": null
+   },
+   "MCBH Kaneohe Bay": {
+    "freeflow_min": 30,
+    "peak_min": null
+   },
+   "Camp H.M. Smith": {
+    "freeflow_min": 20,
+    "peak_min": null
+   },
+   "Tripler AMC": {
+    "freeflow_min": 15,
+    "peak_min": null
+   },
+   "Fort Shafter": {
+    "freeflow_min": 10,
+    "peak_min": null
+   },
+   "Wheeler AAF": {
+    "freeflow_min": 35,
+    "peak_min": null
+   }
+  },
+  "Kalihi": {
+   "JB Pearl Harbor-Hickam": {
+    "freeflow_min": 10,
+    "peak_min": null
+   },
+   "Schofield Barracks": {
+    "freeflow_min": 35,
+    "peak_min": null
+   },
+   "MCBH Kaneohe Bay": {
+    "freeflow_min": 30,
+    "peak_min": null
+   },
+   "Camp H.M. Smith": {
+    "freeflow_min": 15,
+    "peak_min": null
+   },
+   "Tripler AMC": {
+    "freeflow_min": 10,
+    "peak_min": null
+   },
+   "Fort Shafter": {
+    "freeflow_min": 5,
+    "peak_min": null
+   },
+   "Wheeler AAF": {
+    "freeflow_min": 30,
+    "peak_min": null
+   }
+  }
+ }
+}

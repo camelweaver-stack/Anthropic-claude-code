@@ -1,6 +1,6 @@
 import os, json
 from common import DOMAIN
-import pages_core, pages_content, pages_tools, pages_growth, pages_pockets, pages_vehicle, pages_embed, pages_phase_a
+import pages_core, pages_content, pages_tools, pages_growth, pages_pockets, pages_vehicle, pages_embed, pages_phase_a, pages_family
 
 SITE = os.path.join(os.path.dirname(__file__), "..", "site")
 
@@ -13,6 +13,7 @@ pages.update(pages_pockets.build())
 pages.update(pages_vehicle.build())
 pages.update(pages_embed.build())
 pages.update(pages_phase_a.build())
+pages.update(pages_family.build())
 
 # hero image injection (post-process; gate verifies referenced files exist)
 _mf = json.load(open(os.path.join(os.path.dirname(__file__), "img_manifest.json")))
@@ -81,6 +82,9 @@ E-5 w/dep $3,663; range ~$2,598–$5,040; effective Jan 1, 2026.
 ## Primary pages
 - /bah-report/ : The BAH Reality Report — dated BAH-vs-rent data brief (citable, see #cite)
 - /data/bah-reality-report.json : machine-readable BAH-vs-rent data (JSON; CSV also available; CC BY 4.0)
+- /family/ : the family layer — schools, licensed-childcare finders + costs, commute bands, spouse jobs (sourced, dated)
+- /data/second-paycheck-report.json : Oahu licensed-childcare cost data (JSON/CSV; CC BY 4.0)
+- /data/commute-grid.json : Oahu pocket-to-installation drive times (JSON; CC BY 4.0)
 - /bases/ : live-on-or-off guides for all seven installations
 - /buy/ : VA loans at Oahu prices — entitlement, condo approval, leasehold warning
 - /sell/ : PCSing out — HARPTA, rent-vs-sell math, VA seller entitlement
@@ -110,6 +114,28 @@ with open(os.path.join(_adir, f"bah-reality-report-{_ed}.json"), "w") as f:
     json.dump(_data, f, indent=2)
 with open(os.path.join(_adir, f"bah-reality-report-{_ed}.csv"), "w") as f:
     f.write(_csv)
+
+# --- family-layer data products (rendered from data/source, via pages_family) ---
+# Commute Reality Grid: publish the source verbatim (methodology travels with it).
+with open(os.path.join(_ddir, "commute-grid.json"), "w") as f:
+    json.dump(pages_family.COMMUTE, f, indent=2)
+# The Second Paycheck Report: JSON + CSV from the sourced Oahu childcare rates.
+_cc = pages_family.CCRATES
+_spr = {"dataset": "The Second Paycheck Report", "publisher": "PCS Oahu (pcsoahu.com)",
+        "edition": _c.DATA_EDITION, "date_refreshed": _c.REFRESH_ISO,
+        "license": "CC BY 4.0", "license_url": _c.LICENSE_URL,
+        "canonical_url": DOMAIN + "/family/childcare/",
+        "region": "Oahu (Honolulu County)", "rate_type": "full-time monthly, USD",
+        "cost_source": _cc["product_source"], "cost_source_pulled": _cc["pulled"],
+        "care_types": _cc["care_types"]}
+with open(os.path.join(_ddir, "second-paycheck-report.json"), "w") as f:
+    json.dump(_spr, f, indent=2)
+with open(os.path.join(_ddir, "second-paycheck-report.csv"), "w") as f:
+    f.write("# The Second Paycheck Report | " + _cc["product_source"] +
+            " | License: CC BY 4.0 | Region: Oahu | full-time monthly USD | pulled " + _cc["pulled"] + "\n")
+    f.write("care_type,median_usd,p75_usd,min_usd,max_usd,providers\n")
+    for c in _cc["care_types"]:
+        f.write(f'"{c["type"]}",{c["median"]},{c["p75"]},{c["min"]},{c["max"]},{c["providers"]}\n')
 
 print(f"Built {len(pages)} pages, sitemap ({len(urls)} URLs), robots.txt, indexnow-payload.json, "
       f"data/bah-reality-report.{{json,csv}} (+archive {_ed})")

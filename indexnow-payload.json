@@ -18,6 +18,15 @@
     "https://pcsoahu.com/buy/",
     "https://pcsoahu.com/data/",
     "https://pcsoahu.com/embed/",
+    "https://pcsoahu.com/family/",
+    "https://pcsoahu.com/family/camp-smith/",
+    "https://pcsoahu.com/family/childcare/",
+    "https://pcsoahu.com/family/fort-shafter/",
+    "https://pcsoahu.com/family/kaneohe-bay/",
+    "https://pcsoahu.com/family/pearl-harbor-hickam/",
+    "https://pcsoahu.com/family/schofield-wheeler/",
+    "https://pcsoahu.com/family/spouse-jobs/",
+    "https://pcsoahu.com/family/tripler/",
     "https://pcsoahu.com/guides/",
     "https://pcsoahu.com/guides/childcare.html",
     "https://pcsoahu.com/guides/healthcare.html",
@@ -48,8 +57,12 @@
     "https://pcsoahu.com/tla/",
     "https://pcsoahu.com/tla/field-notes.html",
     "https://pcsoahu.com/tools/",
+    "https://pcsoahu.com/tools/commute-grid/",
     "https://pcsoahu.com/vehicle-shipping/",
     "https://pcsoahu.com/data/bah-reality-report.json",
-    "https://pcsoahu.com/data/bah-reality-report.csv"
+    "https://pcsoahu.com/data/bah-reality-report.csv",
+    "https://pcsoahu.com/data/second-paycheck-report.json",
+    "https://pcsoahu.com/data/second-paycheck-report.csv",
+    "https://pcsoahu.com/data/commute-grid.json"
   ]
 }

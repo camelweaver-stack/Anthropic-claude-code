@@ -181,12 +181,21 @@ style="color:#c9d6da">embed</a>.</p>
   <div class="card"><span class="tag">Archive</span>
     <h3><a href="/bah-report/2026-edition/">August 2026 edition (archived)</a></h3>
     <p>Prior editions stay online permanently so citations never break.</p></div>
+  <div class="card"><span class="tag">Family · each PATCH study</span>
+    <h3><a href="/family/childcare/">The Second Paycheck Report</a></h3>
+    <p>Sourced Oahu licensed-childcare costs vs a bring-your-own-wage crossover. JSON + CSV.</p></div>
+  <div class="card"><span class="tag">Tool · quarterly</span>
+    <h3><a href="/tools/commute-grid/">The Commute Reality Grid</a></h3>
+    <p>Every pocket against every installation, in drive-minutes. JSON.</p></div>
 </div>
 <h2>The cadence</h2>
 {rates([
   ("BAH Reality Report", "each December BAH cycle + mid-year band moves"),
   ("Pocket rent bands (sitewide)", "monthly, March–August; quarterly off-season"),
   ("Market medians (buy-side pages)", "with each Honolulu Board of REALTORS® cycle we compile"),
+  ("School &amp; childcare rosters (family layer)", "each semester — January &amp; August"),
+  ("Commute Reality Grid", "quarterly"),
+  ("Second Paycheck Report", "with each PATCH market-rate study"),
 ], "The refresh date on every rates block sitewide is enforced at build time — if a page shows "
    "a date, the number was reviewed on that date.")}
 <h2>In development</h2>

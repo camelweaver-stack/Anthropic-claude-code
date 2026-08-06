@@ -9,6 +9,9 @@ E-5 w/dep $3,663; range ~$2,598–$5,040; effective Jan 1, 2026.
 ## Primary pages
 - /bah-report/ : The BAH Reality Report — dated BAH-vs-rent data brief (citable, see #cite)
 - /data/bah-reality-report.json : machine-readable BAH-vs-rent data (JSON; CSV also available; CC BY 4.0)
+- /family/ : the family layer — schools, licensed-childcare finders + costs, commute bands, spouse jobs (sourced, dated)
+- /data/second-paycheck-report.json : Oahu licensed-childcare cost data (JSON/CSV; CC BY 4.0)
+- /data/commute-grid.json : Oahu pocket-to-installation drive times (JSON; CC BY 4.0)
 - /bases/ : live-on-or-off guides for all seven installations
 - /buy/ : VA loans at Oahu prices — entitlement, condo approval, leasehold warning
 - /sell/ : PCSing out — HARPTA, rent-vs-sell math, VA seller entitlement

@@ -173,6 +173,29 @@ for fp in html_files:
     if 'id="pcs-ask-launcher"' not in open(fp).read():
         fail(f"{rel}: missing floating Ask launcher")
 
+# 8.6: family-layer fair-housing — no authored school rankings / quality or steering language
+# Ranking/quality CLAIMS about schools (not the compliant "no school rankings" disclaimer,
+# which the schools guide uses deliberately — so bare "school rankings" is intentionally not listed).
+FH_FORBIDDEN = [r"best schools?\b", r"top[- ]rated", r"\bgood schools?\b", r"\bbad schools?\b",
+                r"worst schools?\b", r"highest[- ]rated", r"best neighborhoods?\b", r"families prefer"]
+for fp in html_files:
+    rel = os.path.relpath(fp, SITE).replace(os.sep, "/")
+    low = open(fp).read().lower()
+    for pat in FH_FORBIDDEN:
+        if re.search(pat, low):
+            fail(f"{rel}: fair-housing forbidden language /{pat}/")
+
+# 8.7: family base pages (list schools + childcare) must carry the license disclaimer + source date
+for fp in html_files:
+    rel = os.path.relpath(fp, SITE).replace(os.sep, "/")
+    if re.match(r"family/[a-z-]+/index\.html$", rel) and rel not in (
+            "family/index.html", "family/childcare/index.html", "family/spouse-jobs/index.html"):
+        doc = open(fp).read()
+        if "current license status" not in doc:
+            fail(f"{rel}: missing childcare license-verification disclaimer")
+        if "Pulled " not in doc:
+            fail(f"{rel}: missing source-and-date (Pulled …) line")
+
 if FAILS:
     print(f"GATE FAILED — {len(FAILS)} issue(s):")
     [print("  ✗ " + f) for f in FAILS]

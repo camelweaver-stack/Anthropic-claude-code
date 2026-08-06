@@ -1,0 +1,2670 @@
+{
+ "source": "NCES Common Core of Data via Urban Institute Education Data API, 2023-24 directory (latest)",
+ "pulled": "2026-08-06",
+ "scope": "Honolulu County (Oahu) open public schools serving elementary grades (PK/K start, excludes pure middle/high)",
+ "methodology_note": "miles_to_installation is straight-line from installation reference coordinates; verify exact gate coordinates at build; drive times come from the commute grid.",
+ "private_schools_note": "NCES PSS not available via this API; private/parochial list DEFERRED \u2014 ingest from NCES PSS file or HAIS directory in a follow-up cycle.",
+ "count": 133,
+ "schools": [
+  {
+   "name": "Admiral Chester W Nimitz Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "520 Main St, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.34087,
+   "lon": -157.935273,
+   "grades": "PK-6",
+   "enrollment": 583,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 0.5,
+    "Schofield Barracks": 13.3,
+    "MCBH Kaneohe Bay": 13.9,
+    "Camp H.M. Smith": 3.6,
+    "Tripler AMC": 3.3,
+    "Fort Shafter": 3.0,
+    "Wheeler AAF": 11.9
+   }
+  },
+  {
+   "name": "Ahuimanu Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "47-470 Hui Aeko Pl, Kaneohe",
+   "city": "Kaneohe",
+   "lat": 21.434611,
+   "lon": -157.830889,
+   "grades": "PK-6",
+   "enrollment": 276,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 9.3,
+    "Schofield Barracks": 15.3,
+    "MCBH Kaneohe Bay": 5.3,
+    "Camp H.M. Smith": 5.9,
+    "Tripler AMC": 6.3,
+    "Fort Shafter": 7.3,
+    "Wheeler AAF": 13.8
+   }
+  },
+  {
+   "name": "Aiea Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "99-370 Moanalua Rd, Aiea",
+   "city": "Aiea",
+   "lat": 21.375725,
+   "lon": -157.928003,
+   "grades": "PK-6",
+   "enrollment": 288,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 2.1,
+    "Schofield Barracks": 11.8,
+    "MCBH Kaneohe Bay": 12.4,
+    "Camp H.M. Smith": 1.5,
+    "Tripler AMC": 2.7,
+    "Fort Shafter": 3.4,
+    "Wheeler AAF": 10.3
+   }
+  },
+  {
+   "name": "Aikahi Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "281 Ilihau St, Kailua",
+   "city": "Kailua",
+   "lat": 21.425254,
+   "lon": -157.750152,
+   "grades": "PK-6",
+   "enrollment": 483,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 13.3,
+    "Schofield Barracks": 20.5,
+    "MCBH Kaneohe Bay": 1.0,
+    "Camp H.M. Smith": 10.4,
+    "Tripler AMC": 10.0,
+    "Fort Shafter": 10.5,
+    "Wheeler AAF": 19.0
+   }
+  },
+  {
+   "name": "Aina Haina Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "801 W Hind Dr, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.279296,
+   "lon": -157.757053,
+   "grades": "PK-5",
+   "enrollment": 369,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 12.7,
+    "Schofield Barracks": 24.5,
+    "MCBH Kaneohe Bay": 11.1,
+    "Camp H.M. Smith": 12.1,
+    "Tripler AMC": 10.2,
+    "Fort Shafter": 9.5,
+    "Wheeler AAF": 23.0
+   }
+  },
+  {
+   "name": "Ala Wai Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "503 Kamoku St, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.284985,
+   "lon": -157.826931,
+   "grades": "PK-5",
+   "enrollment": 347,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 8.4,
+    "Schofield Barracks": 20.8,
+    "MCBH Kaneohe Bay": 11.9,
+    "Camp H.M. Smith": 8.7,
+    "Tripler AMC": 6.6,
+    "Fort Shafter": 5.7,
+    "Wheeler AAF": 19.3
+   }
+  },
+  {
+   "name": "Aliamanu Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "3265 Salt Lake Blvd, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.342676,
+   "lon": -157.913276,
+   "grades": "PK-6",
+   "enrollment": 643,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 1.7,
+    "Schofield Barracks": 14.1,
+    "MCBH Kaneohe Bay": 12.6,
+    "Camp H.M. Smith": 3.0,
+    "Tripler AMC": 2.0,
+    "Fort Shafter": 1.6,
+    "Wheeler AAF": 12.6
+   }
+  },
+  {
+   "name": "Aliiolani Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "1240 7th Ave, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.286816,
+   "lon": -157.80518,
+   "grades": "PK-5",
+   "enrollment": 228,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 9.6,
+    "Schofield Barracks": 21.7,
+    "MCBH Kaneohe Bay": 11.2,
+    "Camp H.M. Smith": 9.5,
+    "Tripler AMC": 7.4,
+    "Fort Shafter": 6.6,
+    "Wheeler AAF": 20.2
+   }
+  },
+  {
+   "name": "Alvah A Scott Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "98-1230 Moanalua Rd, Aiea",
+   "city": "Aiea",
+   "lat": 21.382363,
+   "lon": -157.9332,
+   "grades": "PK-6",
+   "enrollment": 425,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 2.5,
+    "Schofield Barracks": 11.2,
+    "MCBH Kaneohe Bay": 12.6,
+    "Camp H.M. Smith": 1.7,
+    "Tripler AMC": 3.2,
+    "Fort Shafter": 3.9,
+    "Wheeler AAF": 9.7
+   }
+  },
+  {
+   "name": "Anuenue School",
+   "district": "Hawaii Department of Education",
+   "address": "2528 10th Ave, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.304205,
+   "lon": -157.789977,
+   "grades": "PK-12",
+   "enrollment": 450,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 10.1,
+    "Schofield Barracks": 21.8,
+    "MCBH Kaneohe Bay": 9.8,
+    "Camp H.M. Smith": 9.4,
+    "Tripler AMC": 7.5,
+    "Fort Shafter": 6.9,
+    "Wheeler AAF": 20.2
+   }
+  },
+  {
+   "name": "August Ahrens Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "94-1170 Waipahu St, Waipahu",
+   "city": "Waipahu",
+   "lat": 21.393624,
+   "lon": -158.002345,
+   "grades": "PK-6",
+   "enrollment": 1175,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 5.2,
+    "Schofield Barracks": 7.8,
+    "MCBH Kaneohe Bay": 16.7,
+    "Camp H.M. Smith": 6.2,
+    "Tripler AMC": 7.6,
+    "Fort Shafter": 8.1,
+    "Wheeler AAF": 6.6
+   }
+  },
+  {
+   "name": "Barbers Point Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "3001 Boxer Rd, Kapolei",
+   "city": "Kapolei",
+   "lat": 21.322188,
+   "lon": -158.081968,
+   "grades": "PK-5",
+   "enrollment": 541,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 9.3,
+    "Schofield Barracks": 11.9,
+    "MCBH Kaneohe Bay": 23.0,
+    "Camp H.M. Smith": 12.1,
+    "Tripler AMC": 12.7,
+    "Fort Shafter": 12.6,
+    "Wheeler AAF": 11.4
+   }
+  },
+  {
+   "name": "Blanche Pope Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "41-133 Huli St, Waimanalo",
+   "city": "Waimanalo",
+   "lat": 21.328399,
+   "lon": -157.694802,
+   "grades": "PK-6",
+   "enrollment": 211,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 15.8,
+    "Schofield Barracks": 26.1,
+    "MCBH Kaneohe Bay": 8.4,
+    "Camp H.M. Smith": 14.2,
+    "Tripler AMC": 12.7,
+    "Fort Shafter": 12.5,
+    "Wheeler AAF": 24.6
+   }
+  },
+  {
+   "name": "Daniel K Inouye Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "Waianae & Ayres Ave, Wahiawa",
+   "city": "Wahiawa",
+   "lat": 21.499049,
+   "lon": -158.056543,
+   "grades": "PK-5",
+   "enrollment": 659,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 12.9,
+    "Schofield Barracks": 0.5,
+    "MCBH Kaneohe Bay": 20.3,
+    "Camp H.M. Smith": 12.4,
+    "Tripler AMC": 14.4,
+    "Fort Shafter": 15.2,
+    "Wheeler AAF": 1.6
+   }
+  },
+  {
+   "name": "Enchanted Lake Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "770 Keolu Dr, Kailua",
+   "city": "Kailua",
+   "lat": 21.382886,
+   "lon": -157.732306,
+   "grades": "PK-6",
+   "enrollment": 259,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 13.6,
+    "Schofield Barracks": 22.4,
+    "MCBH Kaneohe Bay": 4.1,
+    "Camp H.M. Smith": 11.2,
+    "Tripler AMC": 10.2,
+    "Fort Shafter": 10.4,
+    "Wheeler AAF": 20.9
+   }
+  },
+  {
+   "name": "Ewa Beach Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "91-740 Papipi Rd, Ewa Beach",
+   "city": "Ewa Beach",
+   "lat": 21.315341,
+   "lon": -158.014845,
+   "grades": "PK-5",
+   "enrollment": 731,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 5.3,
+    "Schofield Barracks": 12.6,
+    "MCBH Kaneohe Bay": 19.2,
+    "Camp H.M. Smith": 8.5,
+    "Tripler AMC": 8.7,
+    "Fort Shafter": 8.4,
+    "Wheeler AAF": 11.7
+   }
+  },
+  {
+   "name": "Ewa Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "91-1280 Renton Rd, Ewa Beach",
+   "city": "Ewa Beach",
+   "lat": 21.344431,
+   "lon": -158.034345,
+   "grades": "PK-5",
+   "enrollment": 1136,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 6.1,
+    "Schofield Barracks": 10.4,
+    "MCBH Kaneohe Bay": 19.6,
+    "Camp H.M. Smith": 8.7,
+    "Tripler AMC": 9.4,
+    "Fort Shafter": 9.4,
+    "Wheeler AAF": 9.6
+   }
+  },
+  {
+   "name": "Gustav H Webling Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "99-370 Paihi St, Aiea",
+   "city": "Aiea",
+   "lat": 21.381169,
+   "lon": -157.920458,
+   "grades": "PK-6",
+   "enrollment": 435,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 2.7,
+    "Schofield Barracks": 11.9,
+    "MCBH Kaneohe Bay": 11.8,
+    "Camp H.M. Smith": 0.9,
+    "Tripler AMC": 2.5,
+    "Fort Shafter": 3.3,
+    "Wheeler AAF": 10.4
+   }
+  },
+  {
+   "name": "Hahaione Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "595 Pepeekeo St, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.296215,
+   "lon": -157.709951,
+   "grades": "PK-5",
+   "enrollment": 511,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 15.2,
+    "Schofield Barracks": 26.3,
+    "MCBH Kaneohe Bay": 10.2,
+    "Camp H.M. Smith": 14.1,
+    "Tripler AMC": 12.4,
+    "Fort Shafter": 11.9,
+    "Wheeler AAF": 24.8
+   }
+  },
+  {
+   "name": "Haleiwa Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "66-505 Haleiwa Rd, Haleiwa",
+   "city": "Haleiwa",
+   "lat": 21.584523,
+   "lon": -158.113912,
+   "grades": "PK-6",
+   "enrollment": 223,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 19.9,
+    "Schofield Barracks": 7.2,
+    "MCBH Kaneohe Bay": 25.6,
+    "Camp H.M. Smith": 19.1,
+    "Tripler AMC": 21.2,
+    "Fort Shafter": 22.1,
+    "Wheeler AAF": 8.5
+   }
+  },
+  {
+   "name": "Hauula Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "54-046 Kamehameha Hwy, Hauula",
+   "city": "Hauula",
+   "lat": 21.606102,
+   "lon": -157.908129,
+   "grades": "PK-6",
+   "enrollment": 398,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 18.0,
+    "Schofield Barracks": 12.5,
+    "MCBH Kaneohe Bay": 15.4,
+    "Camp H.M. Smith": 15.2,
+    "Tripler AMC": 17.0,
+    "Fort Shafter": 18.2,
+    "Wheeler AAF": 12.0
+   }
+  },
+  {
+   "name": "Hawaii School for the Deaf and Blind",
+   "district": "Hawaii Department of Education",
+   "address": "3440 Leahi Ave, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.272619,
+   "lon": -157.814692,
+   "grades": "PK-12",
+   "enrollment": 52,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 9.5,
+    "Schofield Barracks": 22.0,
+    "MCBH Kaneohe Bay": 12.3,
+    "Camp H.M. Smith": 9.8,
+    "Tripler AMC": 7.8,
+    "Fort Shafter": 6.8,
+    "Wheeler AAF": 20.5
+   }
+  },
+  {
+   "name": "Hawaii Technology Academy - PCS",
+   "district": "Hawaii Department of Education",
+   "address": "94-450 Mokuola St, Waipahu",
+   "city": "Waipahu",
+   "lat": 21.387435,
+   "lon": -158.007369,
+   "grades": "K-12",
+   "enrollment": 1605,
+   "charter": true,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 5.2,
+    "Schofield Barracks": 8.1,
+    "MCBH Kaneohe Bay": 17.1,
+    "Camp H.M. Smith": 6.5,
+    "Tripler AMC": 7.8,
+    "Fort Shafter": 8.2,
+    "Wheeler AAF": 6.9
+   }
+  },
+  {
+   "name": "Heeia Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "46-202 Haiku Rd, Kaneohe",
+   "city": "Kaneohe",
+   "lat": 21.418512,
+   "lon": -157.80842,
+   "grades": "PK-6",
+   "enrollment": 375,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 9.8,
+    "Schofield Barracks": 17.0,
+    "MCBH Kaneohe Bay": 4.2,
+    "Camp H.M. Smith": 6.7,
+    "Tripler AMC": 6.5,
+    "Fort Shafter": 7.3,
+    "Wheeler AAF": 15.5
+   }
+  },
+  {
+   "name": "Helemano Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "1001 Ihi Ihi Ave, Wahiawa",
+   "city": "Wahiawa",
+   "lat": 21.51406,
+   "lon": -158.022962,
+   "grades": "PK-5",
+   "enrollment": 435,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 12.7,
+    "Schofield Barracks": 2.8,
+    "MCBH Kaneohe Bay": 18.4,
+    "Camp H.M. Smith": 11.6,
+    "Tripler AMC": 13.6,
+    "Fort Shafter": 14.6,
+    "Wheeler AAF": 2.4
+   }
+  },
+  {
+   "name": "Hokulani Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "2940 Kamakini St, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.291803,
+   "lon": -157.812978,
+   "grades": "PK-5",
+   "enrollment": 250,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 9.0,
+    "Schofield Barracks": 21.1,
+    "MCBH Kaneohe Bay": 11.1,
+    "Camp H.M. Smith": 8.9,
+    "Tripler AMC": 6.8,
+    "Fort Shafter": 6.0,
+    "Wheeler AAF": 19.6
+   }
+  },
+  {
+   "name": "Holomua Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "91-1561 Keaunui Dr, Ewa Beach",
+   "city": "Ewa Beach",
+   "lat": 21.339194,
+   "lon": -158.020032,
+   "grades": "PK-6",
+   "enrollment": 1092,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 5.2,
+    "Schofield Barracks": 11.0,
+    "MCBH Kaneohe Bay": 18.8,
+    "Camp H.M. Smith": 8.0,
+    "Tripler AMC": 8.6,
+    "Fort Shafter": 8.5,
+    "Wheeler AAF": 10.0
+   }
+  },
+  {
+   "name": "Honowai Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "94-600 Honowai St, Waipahu",
+   "city": "Waipahu",
+   "lat": 21.383701,
+   "lon": -158.02611,
+   "grades": "PK-6",
+   "enrollment": 579,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 6.1,
+    "Schofield Barracks": 7.9,
+    "MCBH Kaneohe Bay": 18.3,
+    "Camp H.M. Smith": 7.7,
+    "Tripler AMC": 9.0,
+    "Fort Shafter": 9.3,
+    "Wheeler AAF": 6.9
+   }
+  },
+  {
+   "name": "Hookele Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "91-511 Kunehi St, Kapolei",
+   "city": "Kapolei",
+   "lat": 21.327297,
+   "lon": -158.072383,
+   "grades": "PK-5",
+   "enrollment": 767,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 8.6,
+    "Schofield Barracks": 11.5,
+    "MCBH Kaneohe Bay": 22.3,
+    "Camp H.M. Smith": 11.4,
+    "Tripler AMC": 12.0,
+    "Fort Shafter": 11.9,
+    "Wheeler AAF": 11.0
+   }
+  },
+  {
+   "name": "Iliahi Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "2035 California Ave, Wahiawa",
+   "city": "Wahiawa",
+   "lat": 21.505011,
+   "lon": -157.998743,
+   "grades": "PK-5",
+   "enrollment": 336,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 11.6,
+    "Schofield Barracks": 4.0,
+    "MCBH Kaneohe Bay": 16.7,
+    "Camp H.M. Smith": 10.1,
+    "Tripler AMC": 12.2,
+    "Fort Shafter": 13.2,
+    "Wheeler AAF": 3.0
+   }
+  },
+  {
+   "name": "Iroquois Point Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "5553 Cormorant Ave, Ewa Beach",
+   "city": "Ewa Beach",
+   "lat": 21.320009,
+   "lon": -157.982067,
+   "grades": "PK-6",
+   "enrollment": 573,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 3.3,
+    "Schofield Barracks": 13.0,
+    "MCBH Kaneohe Bay": 17.2,
+    "Camp H.M. Smith": 6.6,
+    "Tripler AMC": 6.6,
+    "Fort Shafter": 6.3,
+    "Wheeler AAF": 11.8
+   }
+  },
+  {
+   "name": "Ka Waihona o ka Naauao - PCS",
+   "district": "Hawaii Department of Education",
+   "address": "89-195 Farrington Hwy, Waianae",
+   "city": "Waianae",
+   "lat": 21.379575,
+   "lon": -158.144202,
+   "grades": "K-8",
+   "enrollment": 626,
+   "charter": true,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 13.4,
+    "Schofield Barracks": 9.5,
+    "MCBH Kaneohe Bay": 25.8,
+    "Camp H.M. Smith": 15.3,
+    "Tripler AMC": 16.5,
+    "Fort Shafter": 16.7,
+    "Wheeler AAF": 9.8
+   }
+  },
+  {
+   "name": "Ka'ohao Public Charter School",
+   "district": "Hawaii Department of Education",
+   "address": "140 Alala Rd, Kailua",
+   "city": "Kailua",
+   "lat": 21.393918,
+   "lon": -157.725855,
+   "grades": "PK-6",
+   "enrollment": 341,
+   "charter": true,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 14.1,
+    "Schofield Barracks": 22.6,
+    "MCBH Kaneohe Bay": 3.5,
+    "Camp H.M. Smith": 11.7,
+    "Tripler AMC": 10.7,
+    "Fort Shafter": 11.0,
+    "Wheeler AAF": 21.1
+   }
+  },
+  {
+   "name": "Kaaawa Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "51-296 Kamehameha Hwy, Kaaawa",
+   "city": "Kaaawa",
+   "lat": 21.547942,
+   "lon": -157.847046,
+   "grades": "PK-6",
+   "enrollment": 114,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 15.1,
+    "Schofield Barracks": 14.2,
+    "MCBH Kaneohe Bay": 9.8,
+    "Camp H.M. Smith": 11.8,
+    "Tripler AMC": 13.2,
+    "Fort Shafter": 14.3,
+    "Wheeler AAF": 13.1
+   }
+  },
+  {
+   "name": "Kaala Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "130 California Ave, Wahiawa",
+   "city": "Wahiawa",
+   "lat": 21.493993,
+   "lon": -158.036618,
+   "grades": "PK-5",
+   "enrollment": 383,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 11.9,
+    "Schofield Barracks": 1.5,
+    "MCBH Kaneohe Bay": 18.9,
+    "Camp H.M. Smith": 11.2,
+    "Tripler AMC": 13.2,
+    "Fort Shafter": 14.1,
+    "Wheeler AAF": 0.8
+   }
+  },
+  {
+   "name": "Kaelepulu Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "530 Keolu Dr, Kailua",
+   "city": "Kailua",
+   "lat": 21.381273,
+   "lon": -157.742515,
+   "grades": "PK-6",
+   "enrollment": 195,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 12.9,
+    "Schofield Barracks": 21.9,
+    "MCBH Kaneohe Bay": 4.1,
+    "Camp H.M. Smith": 10.6,
+    "Tripler AMC": 9.5,
+    "Fort Shafter": 9.7,
+    "Wheeler AAF": 20.3
+   }
+  },
+  {
+   "name": "Kaewai Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "1929 Kamehameha IV Rd, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.344829,
+   "lon": -157.869043,
+   "grades": "PK-5",
+   "enrollment": 258,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 4.5,
+    "Schofield Barracks": 16.0,
+    "MCBH Kaneohe Bay": 10.2,
+    "Camp H.M. Smith": 3.7,
+    "Tripler AMC": 1.7,
+    "Fort Shafter": 1.2,
+    "Wheeler AAF": 14.5
+   }
+  },
+  {
+   "name": "Kahala Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "4559 Kilauea Ave, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.273545,
+   "lon": -157.784563,
+   "grades": "PK-5",
+   "enrollment": 311,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 11.2,
+    "Schofield Barracks": 23.4,
+    "MCBH Kaneohe Bay": 11.7,
+    "Camp H.M. Smith": 11.1,
+    "Tripler AMC": 9.0,
+    "Fort Shafter": 8.2,
+    "Wheeler AAF": 21.9
+   }
+  },
+  {
+   "name": "Kahaluu Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "47-280 Waihee Rd, Kaneohe",
+   "city": "Kaneohe",
+   "lat": 21.457438,
+   "lon": -157.845755,
+   "grades": "PK-6",
+   "enrollment": 240,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 9.7,
+    "Schofield Barracks": 14.0,
+    "MCBH Kaneohe Bay": 6.4,
+    "Camp H.M. Smith": 6.3,
+    "Tripler AMC": 7.2,
+    "Fort Shafter": 8.3,
+    "Wheeler AAF": 12.6
+   }
+  },
+  {
+   "name": "Kahuku Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "56-170 Pualalea St, Kahuku",
+   "city": "Kahuku",
+   "lat": 21.674357,
+   "lon": -157.950775,
+   "grades": "PK-6",
+   "enrollment": 349,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 22.6,
+    "Schofield Barracks": 14.3,
+    "MCBH Kaneohe Bay": 20.8,
+    "Camp H.M. Smith": 20.1,
+    "Tripler AMC": 22.0,
+    "Fort Shafter": 23.2,
+    "Wheeler AAF": 14.4
+   }
+  },
+  {
+   "name": "Kailua Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "315 Kuulei Rd, Kailua",
+   "city": "Kailua",
+   "lat": 21.394847,
+   "lon": -157.741364,
+   "grades": "PK-6",
+   "enrollment": 259,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 13.2,
+    "Schofield Barracks": 21.6,
+    "MCBH Kaneohe Bay": 3.1,
+    "Camp H.M. Smith": 10.7,
+    "Tripler AMC": 9.8,
+    "Fort Shafter": 10.1,
+    "Wheeler AAF": 20.1
+   }
+  },
+  {
+   "name": "Kaimiloa Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "91-1028 Kaunolu St, Ewa Beach",
+   "city": "Ewa Beach",
+   "lat": 21.319369,
+   "lon": -158.008992,
+   "grades": "PK-6",
+   "enrollment": 648,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 4.8,
+    "Schofield Barracks": 12.5,
+    "MCBH Kaneohe Bay": 18.7,
+    "Camp H.M. Smith": 8.0,
+    "Tripler AMC": 8.2,
+    "Fort Shafter": 8.0,
+    "Wheeler AAF": 11.5
+   }
+  },
+  {
+   "name": "Kainalu Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "165 Kaiholu St, Kailua",
+   "city": "Kailua",
+   "lat": 21.412936,
+   "lon": -157.74764,
+   "grades": "PK-6",
+   "enrollment": 542,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 13.2,
+    "Schofield Barracks": 20.9,
+    "MCBH Kaneohe Bay": 1.9,
+    "Camp H.M. Smith": 10.4,
+    "Tripler AMC": 9.8,
+    "Fort Shafter": 10.2,
+    "Wheeler AAF": 19.4
+   }
+  },
+  {
+   "name": "Kaleiopuu Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "94-665 Kaaholo St, Waipahu",
+   "city": "Waipahu",
+   "lat": 21.391344,
+   "lon": -158.027812,
+   "grades": "PK-6",
+   "enrollment": 739,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 6.4,
+    "Schofield Barracks": 7.4,
+    "MCBH Kaneohe Bay": 18.3,
+    "Camp H.M. Smith": 7.8,
+    "Tripler AMC": 9.2,
+    "Fort Shafter": 9.6,
+    "Wheeler AAF": 6.4
+   }
+  },
+  {
+   "name": "Kalihi Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "2471 Kula Kolea Dr, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.352661,
+   "lon": -157.861181,
+   "grades": "PK-5",
+   "enrollment": 183,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 5.1,
+    "Schofield Barracks": 16.1,
+    "MCBH Kaneohe Bay": 9.5,
+    "Camp H.M. Smith": 3.7,
+    "Tripler AMC": 1.9,
+    "Fort Shafter": 1.8,
+    "Wheeler AAF": 14.6
+   }
+  },
+  {
+   "name": "Kalihi Kai Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "626 McNeill St, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.326689,
+   "lon": -157.877832,
+   "grades": "PK-5",
+   "enrollment": 542,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 4.2,
+    "Schofield Barracks": 16.4,
+    "MCBH Kaneohe Bay": 11.4,
+    "Camp H.M. Smith": 4.5,
+    "Tripler AMC": 2.5,
+    "Fort Shafter": 1.4,
+    "Wheeler AAF": 15.0
+   }
+  },
+  {
+   "name": "Kalihi Uka Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "2411 Kalihi St, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.345436,
+   "lon": -157.86203,
+   "grades": "PK-5",
+   "enrollment": 240,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 5.0,
+    "Schofield Barracks": 16.3,
+    "MCBH Kaneohe Bay": 9.8,
+    "Camp H.M. Smith": 4.0,
+    "Tripler AMC": 2.0,
+    "Fort Shafter": 1.7,
+    "Wheeler AAF": 14.8
+   }
+  },
+  {
+   "name": "Kalihi Waena Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "1240 Gulick Ave, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.336013,
+   "lon": -157.87575,
+   "grades": "PK-5",
+   "enrollment": 453,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 4.2,
+    "Schofield Barracks": 16.1,
+    "MCBH Kaneohe Bay": 10.9,
+    "Camp H.M. Smith": 4.0,
+    "Tripler AMC": 1.9,
+    "Fort Shafter": 1.0,
+    "Wheeler AAF": 14.6
+   }
+  },
+  {
+   "name": "Kamaile Academy PCS",
+   "district": "Hawaii Department of Education",
+   "address": "85-180 Ala Akau St, Waianae",
+   "city": "Waianae",
+   "lat": 21.457018,
+   "lon": -158.194873,
+   "grades": "PK-12",
+   "enrollment": 901,
+   "charter": true,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 18.1,
+    "Schofield Barracks": 9.0,
+    "MCBH Kaneohe Bay": 28.8,
+    "Camp H.M. Smith": 19.2,
+    "Tripler AMC": 20.8,
+    "Fort Shafter": 21.2,
+    "Wheeler AAF": 10.2
+   }
+  },
+  {
+   "name": "Kamalani Academy",
+   "district": "Hawaii Department of Education",
+   "address": "1403 California Ave, Wahiawa",
+   "city": "Wahiawa",
+   "lat": 21.50179,
+   "lon": -158.015561,
+   "grades": "PK-8",
+   "enrollment": 112,
+   "charter": true,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 11.8,
+    "Schofield Barracks": 2.9,
+    "MCBH Kaneohe Bay": 17.7,
+    "Camp H.M. Smith": 10.6,
+    "Tripler AMC": 12.7,
+    "Fort Shafter": 13.6,
+    "Wheeler AAF": 2.0
+   }
+  },
+  {
+   "name": "Kamiloiki Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "7788 Hawaii Kai Dr, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.294695,
+   "lon": -157.685247,
+   "grades": "PK-5",
+   "enrollment": 391,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 16.8,
+    "Schofield Barracks": 27.8,
+    "MCBH Kaneohe Bay": 10.8,
+    "Camp H.M. Smith": 15.6,
+    "Tripler AMC": 13.9,
+    "Fort Shafter": 13.5,
+    "Wheeler AAF": 26.2
+   }
+  },
+  {
+   "name": "Kaneohe Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "45-495 Kamehameha Hwy, Kaneohe",
+   "city": "Kaneohe",
+   "lat": 21.395775,
+   "lon": -157.79665,
+   "grades": "PK-6",
+   "enrollment": 526,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 9.8,
+    "Schofield Barracks": 18.2,
+    "MCBH Kaneohe Bay": 4.4,
+    "Camp H.M. Smith": 7.1,
+    "Tripler AMC": 6.4,
+    "Fort Shafter": 6.9,
+    "Wheeler AAF": 16.7
+   }
+  },
+  {
+   "name": "Kanoelani Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "94-1091 Oli Lp, Waipahu",
+   "city": "Waipahu",
+   "lat": 21.416277,
+   "lon": -157.99825,
+   "grades": "PK-6",
+   "enrollment": 742,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 6.1,
+    "Schofield Barracks": 6.7,
+    "MCBH Kaneohe Bay": 16.2,
+    "Camp H.M. Smith": 6.2,
+    "Tripler AMC": 8.0,
+    "Fort Shafter": 8.7,
+    "Wheeler AAF": 5.3
+   }
+  },
+  {
+   "name": "Kapalama Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "1601 North School St, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.334635,
+   "lon": -157.869215,
+   "grades": "PK-5",
+   "enrollment": 510,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 4.6,
+    "Schofield Barracks": 16.5,
+    "MCBH Kaneohe Bay": 10.7,
+    "Camp H.M. Smith": 4.3,
+    "Tripler AMC": 2.2,
+    "Fort Shafter": 1.4,
+    "Wheeler AAF": 15.0
+   }
+  },
+  {
+   "name": "Kapolei Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "91-1119 Kamaaha Lp, Kapolei",
+   "city": "Kapolei",
+   "lat": 21.334239,
+   "lon": -158.064212,
+   "grades": "PK-5",
+   "enrollment": 686,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 8.1,
+    "Schofield Barracks": 11.0,
+    "MCBH Kaneohe Bay": 21.6,
+    "Camp H.M. Smith": 10.7,
+    "Tripler AMC": 11.4,
+    "Fort Shafter": 11.4,
+    "Wheeler AAF": 10.4
+   }
+  },
+  {
+   "name": "Kapunahala Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "45-828 Anoi Rd, Kaneohe",
+   "city": "Kaneohe",
+   "lat": 21.407999,
+   "lon": -157.803742,
+   "grades": "PK-6",
+   "enrollment": 422,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 9.7,
+    "Schofield Barracks": 17.5,
+    "MCBH Kaneohe Bay": 4.2,
+    "Camp H.M. Smith": 6.8,
+    "Tripler AMC": 6.4,
+    "Fort Shafter": 7.0,
+    "Wheeler AAF": 16.0
+   }
+  },
+  {
+   "name": "Kauluwela Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "1486 Aala St, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.31901,
+   "lon": -157.858834,
+   "grades": "PK-5",
+   "enrollment": 446,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 5.5,
+    "Schofield Barracks": 17.7,
+    "MCBH Kaneohe Bay": 11.0,
+    "Camp H.M. Smith": 5.6,
+    "Tripler AMC": 3.5,
+    "Fort Shafter": 2.6,
+    "Wheeler AAF": 16.2
+   }
+  },
+  {
+   "name": "Ke Kula o Samuel M Kamakau - A Laboratory PCS",
+   "district": "Hawaii Department of Education",
+   "address": "46-500 Kuneki St, Kaneohe",
+   "city": "Kaneohe",
+   "lat": 21.405324,
+   "lon": -157.825409,
+   "grades": "PK-12",
+   "enrollment": 140,
+   "charter": true,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 8.4,
+    "Schofield Barracks": 16.3,
+    "MCBH Kaneohe Bay": 5.5,
+    "Camp H.M. Smith": 5.4,
+    "Tripler AMC": 5.1,
+    "Fort Shafter": 5.8,
+    "Wheeler AAF": 14.7
+   }
+  },
+  {
+   "name": "Keolu Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "1416 Keolu Dr, Kailua",
+   "city": "Kailua",
+   "lat": 21.37168,
+   "lon": -157.735455,
+   "grades": "PK-6",
+   "enrollment": 98,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 13.3,
+    "Schofield Barracks": 22.5,
+    "MCBH Kaneohe Bay": 4.8,
+    "Camp H.M. Smith": 11.1,
+    "Tripler AMC": 9.9,
+    "Fort Shafter": 10.0,
+    "Wheeler AAF": 21.0
+   }
+  },
+  {
+   "name": "Keoneula Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "91-970 Kaileolea Dr, Ewa Beach",
+   "city": "Ewa Beach",
+   "lat": 21.323454,
+   "lon": -158.020481,
+   "grades": "PK-5",
+   "enrollment": 878,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 5.4,
+    "Schofield Barracks": 12.0,
+    "MCBH Kaneohe Bay": 19.3,
+    "Camp H.M. Smith": 8.5,
+    "Tripler AMC": 8.9,
+    "Fort Shafter": 8.6,
+    "Wheeler AAF": 11.1
+   }
+  },
+  {
+   "name": "King Liholiho Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "3430 Maunaloa Ave, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.279089,
+   "lon": -157.806466,
+   "grades": "PK-5",
+   "enrollment": 457,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 9.8,
+    "Schofield Barracks": 22.0,
+    "MCBH Kaneohe Bay": 11.7,
+    "Camp H.M. Smith": 9.8,
+    "Tripler AMC": 7.8,
+    "Fort Shafter": 6.9,
+    "Wheeler AAF": 20.6
+   }
+  },
+  {
+   "name": "King William Lunalilo Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "810 Pumehana St, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.292404,
+   "lon": -157.832773,
+   "grades": "PK-5",
+   "enrollment": 268,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 7.8,
+    "Schofield Barracks": 20.2,
+    "MCBH Kaneohe Bay": 11.6,
+    "Camp H.M. Smith": 8.0,
+    "Tripler AMC": 6.0,
+    "Fort Shafter": 5.0,
+    "Wheeler AAF": 18.7
+   }
+  },
+  {
+   "name": "Kipapa Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "95-076 Kipapa Dr, Mililani",
+   "city": "Mililani",
+   "lat": 21.461221,
+   "lon": -158.012469,
+   "grades": "PK-5",
+   "enrollment": 504,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 9.2,
+    "Schofield Barracks": 3.8,
+    "MCBH Kaneohe Bay": 17.1,
+    "Camp H.M. Smith": 8.5,
+    "Tripler AMC": 10.5,
+    "Fort Shafter": 11.4,
+    "Wheeler AAF": 2.3
+   }
+  },
+  {
+   "name": "Koko Head Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "189 Lunalilo Home Rd, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.275057,
+   "lon": -157.704533,
+   "grades": "PK-5",
+   "enrollment": 302,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 15.9,
+    "Schofield Barracks": 27.4,
+    "MCBH Kaneohe Bay": 11.7,
+    "Camp H.M. Smith": 15.1,
+    "Tripler AMC": 13.3,
+    "Fort Shafter": 12.7,
+    "Wheeler AAF": 25.9
+   }
+  },
+  {
+   "name": "Laie Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "55-109 Kulanui St, Laie",
+   "city": "Laie",
+   "lat": 21.649163,
+   "lon": -157.925491,
+   "grades": "PK-6",
+   "enrollment": 685,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 20.9,
+    "Schofield Barracks": 13.8,
+    "MCBH Kaneohe Bay": 18.4,
+    "Camp H.M. Smith": 18.2,
+    "Tripler AMC": 20.0,
+    "Fort Shafter": 21.2,
+    "Wheeler AAF": 13.6
+   }
+  },
+  {
+   "name": "Lanakila Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "717 North Kuakini St, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.326795,
+   "lon": -157.860999,
+   "grades": "PK-5",
+   "enrollment": 317,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 5.3,
+    "Schofield Barracks": 17.2,
+    "MCBH Kaneohe Bay": 10.7,
+    "Camp H.M. Smith": 5.0,
+    "Tripler AMC": 3.0,
+    "Fort Shafter": 2.1,
+    "Wheeler AAF": 15.7
+   }
+  },
+  {
+   "name": "Lehua Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "791 Lehua Ave, Pearl City",
+   "city": "Pearl City",
+   "lat": 21.388977,
+   "lon": -157.971126,
+   "grades": "PK-6",
+   "enrollment": 254,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 3.5,
+    "Schofield Barracks": 9.2,
+    "MCBH Kaneohe Bay": 14.8,
+    "Camp H.M. Smith": 4.1,
+    "Tripler AMC": 5.6,
+    "Fort Shafter": 6.2,
+    "Wheeler AAF": 7.8
+   }
+  },
+  {
+   "name": "Leihoku Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "86-285 Leihoku St, Waianae",
+   "city": "Waianae",
+   "lat": 21.438774,
+   "lon": -158.174393,
+   "grades": "PK-6",
+   "enrollment": 787,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 16.4,
+    "Schofield Barracks": 8.3,
+    "MCBH Kaneohe Bay": 27.4,
+    "Camp H.M. Smith": 17.6,
+    "Tripler AMC": 19.1,
+    "Fort Shafter": 19.6,
+    "Wheeler AAF": 9.2
+   }
+  },
+  {
+   "name": "Linapuni Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "1434 Linapuni St, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.338933,
+   "lon": -157.877258,
+   "grades": "PK-1",
+   "enrollment": 127,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 4.1,
+    "Schofield Barracks": 15.9,
+    "MCBH Kaneohe Bay": 10.9,
+    "Camp H.M. Smith": 3.8,
+    "Tripler AMC": 1.7,
+    "Fort Shafter": 0.8,
+    "Wheeler AAF": 14.4
+   }
+  },
+  {
+   "name": "Lt Col Horrace Meek Hickam Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "Manzelman Cir, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.343244,
+   "lon": -157.963051,
+   "grades": "PK-6",
+   "enrollment": 541,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 1.5,
+    "Schofield Barracks": 12.1,
+    "MCBH Kaneohe Bay": 15.4,
+    "Camp H.M. Smith": 4.7,
+    "Tripler AMC": 4.9,
+    "Fort Shafter": 4.8,
+    "Wheeler AAF": 10.8
+   }
+  },
+  {
+   "name": "Maemae Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "319 Wyllie St, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.328272,
+   "lon": -157.847764,
+   "grades": "PK-5",
+   "enrollment": 664,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 6.1,
+    "Schofield Barracks": 17.8,
+    "MCBH Kaneohe Bay": 10.0,
+    "Camp H.M. Smith": 5.5,
+    "Tripler AMC": 3.5,
+    "Fort Shafter": 2.8,
+    "Wheeler AAF": 16.3
+   }
+  },
+  {
+   "name": "Maili Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "87-360 Kulaaupuni St, Waianae",
+   "city": "Waianae",
+   "lat": 21.419904,
+   "lon": -158.172514,
+   "grades": "PK-6",
+   "enrollment": 605,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 15.8,
+    "Schofield Barracks": 8.8,
+    "MCBH Kaneohe Bay": 27.3,
+    "Camp H.M. Smith": 17.2,
+    "Tripler AMC": 18.7,
+    "Fort Shafter": 19.0,
+    "Wheeler AAF": 9.6
+   }
+  },
+  {
+   "name": "Major General William R Shafter Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "2 Fort Shafter, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.341735,
+   "lon": -157.885057,
+   "grades": "PK-6",
+   "enrollment": 390,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 3.5,
+    "Schofield Barracks": 15.4,
+    "MCBH Kaneohe Bay": 11.1,
+    "Camp H.M. Smith": 3.4,
+    "Tripler AMC": 1.4,
+    "Fort Shafter": 0.2,
+    "Wheeler AAF": 13.9
+   }
+  },
+  {
+   "name": "Major Sheldon Wheeler Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "1 Wheeler Army Airfield, Wahiawa",
+   "city": "Wahiawa",
+   "lat": 21.487,
+   "lon": -158.039,
+   "grades": "PK-5",
+   "enrollment": 628,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 11.6,
+    "Schofield Barracks": 1.4,
+    "MCBH Kaneohe Bay": 19.0,
+    "Camp H.M. Smith": 11.0,
+    "Tripler AMC": 13.0,
+    "Fort Shafter": 13.9,
+    "Wheeler AAF": 0.3
+   }
+  },
+  {
+   "name": "Makaha Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "84-200 Ala Naauao Pl, Waianae",
+   "city": "Waianae",
+   "lat": 21.470602,
+   "lon": -158.212311,
+   "grades": "PK-6",
+   "enrollment": 403,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 19.5,
+    "Schofield Barracks": 9.9,
+    "MCBH Kaneohe Bay": 29.9,
+    "Camp H.M. Smith": 20.5,
+    "Tripler AMC": 22.1,
+    "Fort Shafter": 22.6,
+    "Wheeler AAF": 11.2
+   }
+  },
+  {
+   "name": "Makakilo Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "92-675 Anipeahi St, Kapolei",
+   "city": "Kapolei",
+   "lat": 21.344432,
+   "lon": -158.084966,
+   "grades": "PK-5",
+   "enrollment": 453,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 9.3,
+    "Schofield Barracks": 10.4,
+    "MCBH Kaneohe Bay": 22.7,
+    "Camp H.M. Smith": 11.8,
+    "Tripler AMC": 12.7,
+    "Fort Shafter": 12.7,
+    "Wheeler AAF": 10.0
+   }
+  },
+  {
+   "name": "Makalapa Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "4435 Salt Lake Blvd, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.361413,
+   "lon": -157.928704,
+   "grades": "PK-6",
+   "enrollment": 592,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 1.2,
+    "Schofield Barracks": 12.4,
+    "MCBH Kaneohe Bay": 12.8,
+    "Camp H.M. Smith": 2.2,
+    "Tripler AMC": 2.6,
+    "Fort Shafter": 2.9,
+    "Wheeler AAF": 11.0
+   }
+  },
+  {
+   "name": "Malama Honua Charter School",
+   "district": "Hawaii Department of Education",
+   "address": "41-054 Ehukai St Suite 200, Waimanalo",
+   "city": "Waimanalo",
+   "lat": 21.339034,
+   "lon": -157.702317,
+   "grades": "K-8",
+   "enrollment": 166,
+   "charter": true,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 15.3,
+    "Schofield Barracks": 25.4,
+    "MCBH Kaneohe Bay": 7.6,
+    "Camp H.M. Smith": 13.6,
+    "Tripler AMC": 12.1,
+    "Fort Shafter": 12.0,
+    "Wheeler AAF": 23.8
+   }
+  },
+  {
+   "name": "Manana Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "1147 Kumano St, Pearl City",
+   "city": "Pearl City",
+   "lat": 21.408503,
+   "lon": -157.971536,
+   "grades": "PK-6",
+   "enrollment": 275,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 4.7,
+    "Schofield Barracks": 8.2,
+    "MCBH Kaneohe Bay": 14.5,
+    "Camp H.M. Smith": 4.4,
+    "Tripler AMC": 6.2,
+    "Fort Shafter": 7.0,
+    "Wheeler AAF": 6.7
+   }
+  },
+  {
+   "name": "Manoa Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "3155 Manoa Rd, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.316597,
+   "lon": -157.808685,
+   "grades": "PK-5",
+   "enrollment": 545,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 8.7,
+    "Schofield Barracks": 20.3,
+    "MCBH Kaneohe Bay": 9.4,
+    "Camp H.M. Smith": 7.9,
+    "Tripler AMC": 6.0,
+    "Fort Shafter": 5.4,
+    "Wheeler AAF": 18.8
+   }
+  },
+  {
+   "name": "Mauka Lani Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "92-1300 Panana St, Kapolei",
+   "city": "Kapolei",
+   "lat": 21.358692,
+   "lon": -158.083462,
+   "grades": "PK-5",
+   "enrollment": 538,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 9.3,
+    "Schofield Barracks": 9.4,
+    "MCBH Kaneohe Bay": 22.3,
+    "Camp H.M. Smith": 11.5,
+    "Tripler AMC": 12.5,
+    "Fort Shafter": 12.6,
+    "Wheeler AAF": 9.1
+   }
+  },
+  {
+   "name": "Maunawili Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "1465 Ulupii St, Kailua",
+   "city": "Kailua",
+   "lat": 21.377223,
+   "lon": -157.752124,
+   "grades": "PK-6",
+   "enrollment": 350,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 12.3,
+    "Schofield Barracks": 21.4,
+    "MCBH Kaneohe Bay": 4.3,
+    "Camp H.M. Smith": 10.0,
+    "Tripler AMC": 8.9,
+    "Fort Shafter": 9.0,
+    "Wheeler AAF": 19.8
+   }
+  },
+  {
+   "name": "Mayor John H Wilson Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "4945 Kilauea Ave, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.282109,
+   "lon": -157.784689,
+   "grades": "PK-5",
+   "enrollment": 519,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 10.9,
+    "Schofield Barracks": 23.0,
+    "MCBH Kaneohe Bay": 11.2,
+    "Camp H.M. Smith": 10.7,
+    "Tripler AMC": 8.6,
+    "Fort Shafter": 7.9,
+    "Wheeler AAF": 21.5
+   }
+  },
+  {
+   "name": "Mayor Joseph J Fern Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "1121 Middle St, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.338491,
+   "lon": -157.881811,
+   "grades": "PK-5",
+   "enrollment": 394,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 3.8,
+    "Schofield Barracks": 15.7,
+    "MCBH Kaneohe Bay": 11.1,
+    "Camp H.M. Smith": 3.7,
+    "Tripler AMC": 1.6,
+    "Fort Shafter": 0.6,
+    "Wheeler AAF": 14.2
+   }
+  },
+  {
+   "name": "Mililani Ike Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "95-1330 Lehiwa Dr, Mililani",
+   "city": "Mililani",
+   "lat": 21.479547,
+   "lon": -157.986059,
+   "grades": "PK-5",
+   "enrollment": 459,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 9.6,
+    "Schofield Barracks": 4.9,
+    "MCBH Kaneohe Bay": 15.5,
+    "Camp H.M. Smith": 8.2,
+    "Tripler AMC": 10.3,
+    "Fort Shafter": 11.3,
+    "Wheeler AAF": 3.4
+   }
+  },
+  {
+   "name": "Mililani Mauka Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "95-1111 Makaikai St, Mililani",
+   "city": "Mililani",
+   "lat": 21.47105,
+   "lon": -158.001355,
+   "grades": "PK-5",
+   "enrollment": 652,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 9.5,
+    "Schofield Barracks": 4.1,
+    "MCBH Kaneohe Bay": 16.4,
+    "Camp H.M. Smith": 8.4,
+    "Tripler AMC": 10.5,
+    "Fort Shafter": 11.4,
+    "Wheeler AAF": 2.6
+   }
+  },
+  {
+   "name": "Mililani Uka Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "94-380 Kuahelani Ave, Mililani",
+   "city": "Mililani",
+   "lat": 21.437438,
+   "lon": -158.01505,
+   "grades": "PK-5",
+   "enrollment": 694,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 7.9,
+    "Schofield Barracks": 4.8,
+    "MCBH Kaneohe Bay": 17.2,
+    "Camp H.M. Smith": 7.8,
+    "Tripler AMC": 9.7,
+    "Fort Shafter": 10.4,
+    "Wheeler AAF": 3.5
+   }
+  },
+  {
+   "name": "Mililani Waena Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "95-502 Kipapa Dr, Mililani",
+   "city": "Mililani",
+   "lat": 21.455487,
+   "lon": -158.010535,
+   "grades": "PK-5",
+   "enrollment": 679,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 8.8,
+    "Schofield Barracks": 4.1,
+    "MCBH Kaneohe Bay": 16.9,
+    "Camp H.M. Smith": 8.2,
+    "Tripler AMC": 10.2,
+    "Fort Shafter": 11.0,
+    "Wheeler AAF": 2.6
+   }
+  },
+  {
+   "name": "Moanalua Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "1337 Mahiole St, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.349266,
+   "lon": -157.891695,
+   "grades": "PK-6",
+   "enrollment": 678,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 3.1,
+    "Schofield Barracks": 14.7,
+    "MCBH Kaneohe Bay": 11.2,
+    "Camp H.M. Smith": 2.7,
+    "Tripler AMC": 0.8,
+    "Fort Shafter": 0.4,
+    "Wheeler AAF": 13.2
+   }
+  },
+  {
+   "name": "Mokapu Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "KMCAS Bldg 1193 Mokapu Rd, Kailua",
+   "city": "Kailua",
+   "lat": 21.444898,
+   "lon": -157.749392,
+   "grades": "PK-6",
+   "enrollment": 841,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 14.0,
+    "Schofield Barracks": 20.3,
+    "MCBH Kaneohe Bay": 0.4,
+    "Camp H.M. Smith": 10.9,
+    "Tripler AMC": 10.7,
+    "Fort Shafter": 11.3,
+    "Wheeler AAF": 18.8
+   }
+  },
+  {
+   "name": "Mokulele Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "250 Aupaka St, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.34312,
+   "lon": -157.94107,
+   "grades": "PK-6",
+   "enrollment": 225,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 0.3,
+    "Schofield Barracks": 12.9,
+    "MCBH Kaneohe Bay": 14.1,
+    "Camp H.M. Smith": 3.7,
+    "Tripler AMC": 3.6,
+    "Fort Shafter": 3.4,
+    "Wheeler AAF": 11.5
+   }
+  },
+  {
+   "name": "Momilani Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "2130 Hookiekie St, Pearl City",
+   "city": "Pearl City",
+   "lat": 21.412827,
+   "lon": -157.954726,
+   "grades": "PK-6",
+   "enrollment": 407,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 4.7,
+    "Schofield Barracks": 8.8,
+    "MCBH Kaneohe Bay": 13.4,
+    "Camp H.M. Smith": 3.6,
+    "Tripler AMC": 5.5,
+    "Fort Shafter": 6.4,
+    "Wheeler AAF": 7.3
+   }
+  },
+  {
+   "name": "Myron B. Thompson Academy - New Century PCS",
+   "district": "Hawaii Department of Education",
+   "address": "1040 Richards St Suite 220, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.307678,
+   "lon": -157.859793,
+   "grades": "K-12",
+   "enrollment": 464,
+   "charter": true,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 5.8,
+    "Schofield Barracks": 18.2,
+    "MCBH Kaneohe Bay": 11.6,
+    "Camp H.M. Smith": 6.2,
+    "Tripler AMC": 4.1,
+    "Fort Shafter": 3.1,
+    "Wheeler AAF": 16.7
+   }
+  },
+  {
+   "name": "Nanaikapono Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "89-153 Mano Ave, Waianae",
+   "city": "Waianae",
+   "lat": 21.383128,
+   "lon": -158.143766,
+   "grades": "PK-6",
+   "enrollment": 690,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 13.4,
+    "Schofield Barracks": 9.3,
+    "MCBH Kaneohe Bay": 25.8,
+    "Camp H.M. Smith": 15.2,
+    "Tripler AMC": 16.5,
+    "Fort Shafter": 16.7,
+    "Wheeler AAF": 9.6
+   }
+  },
+  {
+   "name": "Nanakuli Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "89-778 Haleakala Ave, Waianae",
+   "city": "Waianae",
+   "lat": 21.386096,
+   "lon": -158.136049,
+   "grades": "PK-6",
+   "enrollment": 369,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 12.9,
+    "Schofield Barracks": 8.9,
+    "MCBH Kaneohe Bay": 25.2,
+    "Camp H.M. Smith": 14.7,
+    "Tripler AMC": 16.0,
+    "Fort Shafter": 16.2,
+    "Wheeler AAF": 9.2
+   }
+  },
+  {
+   "name": "Noelani Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "2655 Woodlawn Dr, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.305992,
+   "lon": -157.811559,
+   "grades": "PK-5",
+   "enrollment": 419,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 8.7,
+    "Schofield Barracks": 20.6,
+    "MCBH Kaneohe Bay": 10.1,
+    "Camp H.M. Smith": 8.3,
+    "Tripler AMC": 6.3,
+    "Fort Shafter": 5.6,
+    "Wheeler AAF": 19.1
+   }
+  },
+  {
+   "name": "Nuuanu Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "3055 Puiwa Ln, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.335706,
+   "lon": -157.834033,
+   "grades": "PK-5",
+   "enrollment": 307,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 6.8,
+    "Schofield Barracks": 18.2,
+    "MCBH Kaneohe Bay": 9.1,
+    "Camp H.M. Smith": 5.8,
+    "Tripler AMC": 3.9,
+    "Fort Shafter": 3.5,
+    "Wheeler AAF": 16.7
+   }
+  },
+  {
+   "name": "Palisades Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "2306 Auhuhu St, Pearl City",
+   "city": "Pearl City",
+   "lat": 21.425554,
+   "lon": -157.952639,
+   "grades": "PK-6",
+   "enrollment": 386,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 5.5,
+    "Schofield Barracks": 8.4,
+    "MCBH Kaneohe Bay": 13.2,
+    "Camp H.M. Smith": 4.0,
+    "Tripler AMC": 6.1,
+    "Fort Shafter": 7.0,
+    "Wheeler AAF": 6.8
+   }
+  },
+  {
+   "name": "Palolo Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "2106 10th Ave, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.299406,
+   "lon": -157.792489,
+   "grades": "PK-5",
+   "enrollment": 263,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 10.0,
+    "Schofield Barracks": 21.8,
+    "MCBH Kaneohe Bay": 10.1,
+    "Camp H.M. Smith": 9.5,
+    "Tripler AMC": 7.5,
+    "Fort Shafter": 6.9,
+    "Wheeler AAF": 20.3
+   }
+  },
+  {
+   "name": "Pauoa Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "2301 Pauoa Rd, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.318761,
+   "lon": -157.844071,
+   "grades": "PK-5",
+   "enrollment": 357,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 6.5,
+    "Schofield Barracks": 18.4,
+    "MCBH Kaneohe Bay": 10.4,
+    "Camp H.M. Smith": 6.2,
+    "Tripler AMC": 4.1,
+    "Fort Shafter": 3.3,
+    "Wheeler AAF": 16.9
+   }
+  },
+  {
+   "name": "Pearl City Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "1090 Waimano Home Rd, Pearl City",
+   "city": "Pearl City",
+   "lat": 21.395245,
+   "lon": -157.972183,
+   "grades": "PK-6",
+   "enrollment": 405,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 3.9,
+    "Schofield Barracks": 8.8,
+    "MCBH Kaneohe Bay": 14.7,
+    "Camp H.M. Smith": 4.2,
+    "Tripler AMC": 5.9,
+    "Fort Shafter": 6.5,
+    "Wheeler AAF": 7.4
+   }
+  },
+  {
+   "name": "Pearl City Highlands School",
+   "district": "Hawaii Department of Education",
+   "address": "1419 Waimanalo Home Rd, Pearl City",
+   "city": "Pearl City",
+   "lat": 21.403361,
+   "lon": -157.965211,
+   "grades": "PK-6",
+   "enrollment": 551,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 4.2,
+    "Schofield Barracks": 8.7,
+    "MCBH Kaneohe Bay": 14.2,
+    "Camp H.M. Smith": 3.9,
+    "Tripler AMC": 5.7,
+    "Fort Shafter": 6.4,
+    "Wheeler AAF": 7.3
+   }
+  },
+  {
+   "name": "Pearl Harbor Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "1 Moanalua Ridge, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.346549,
+   "lon": -157.930222,
+   "grades": "PK-6",
+   "enrollment": 446,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 0.6,
+    "Schofield Barracks": 13.1,
+    "MCBH Kaneohe Bay": 13.4,
+    "Camp H.M. Smith": 3.1,
+    "Tripler AMC": 2.8,
+    "Fort Shafter": 2.7,
+    "Wheeler AAF": 11.7
+   }
+  },
+  {
+   "name": "Pearl Harbor Kai Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "1 C Ave, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.348813,
+   "lon": -157.937799,
+   "grades": "PK-6",
+   "enrollment": 390,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 0.2,
+    "Schofield Barracks": 12.7,
+    "MCBH Kaneohe Bay": 13.7,
+    "Camp H.M. Smith": 3.2,
+    "Tripler AMC": 3.3,
+    "Fort Shafter": 3.2,
+    "Wheeler AAF": 11.3
+   }
+  },
+  {
+   "name": "Pearl Ridge Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "98-940 Moanalua Rd, Aiea",
+   "city": "Aiea",
+   "lat": 21.388534,
+   "lon": -157.944971,
+   "grades": "PK-6",
+   "enrollment": 404,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 2.9,
+    "Schofield Barracks": 10.4,
+    "MCBH Kaneohe Bay": 13.2,
+    "Camp H.M. Smith": 2.4,
+    "Tripler AMC": 4.1,
+    "Fort Shafter": 4.8,
+    "Wheeler AAF": 8.9
+   }
+  },
+  {
+   "name": "Pohakea Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "91-750 Fort Weaver Rd, Ewa Beach",
+   "city": "Ewa Beach",
+   "lat": 21.314312,
+   "lon": -158.009965,
+   "grades": "PK-6",
+   "enrollment": 499,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 5.1,
+    "Schofield Barracks": 12.8,
+    "MCBH Kaneohe Bay": 19.0,
+    "Camp H.M. Smith": 8.3,
+    "Tripler AMC": 8.4,
+    "Fort Shafter": 8.1,
+    "Wheeler AAF": 11.8
+   }
+  },
+  {
+   "name": "President Abraham Lincoln Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "615 Auwaiolimu St, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.312814,
+   "lon": -157.840574,
+   "grades": "PK-5",
+   "enrollment": 376,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 6.8,
+    "Schofield Barracks": 18.8,
+    "MCBH Kaneohe Bay": 10.6,
+    "Camp H.M. Smith": 6.6,
+    "Tripler AMC": 4.6,
+    "Fort Shafter": 3.7,
+    "Wheeler AAF": 17.4
+   }
+  },
+  {
+   "name": "President Thomas Jefferson Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "324 Kapahulu Ave, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.273181,
+   "lon": -157.818673,
+   "grades": "PK-5",
+   "enrollment": 351,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 9.3,
+    "Schofield Barracks": 21.7,
+    "MCBH Kaneohe Bay": 12.4,
+    "Camp H.M. Smith": 9.6,
+    "Tripler AMC": 7.6,
+    "Fort Shafter": 6.6,
+    "Wheeler AAF": 20.3
+   }
+  },
+  {
+   "name": "Prince Jonah Kuhio Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "2759 South King St, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.289101,
+   "lon": -157.819783,
+   "grades": "PK-5",
+   "enrollment": 187,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 8.7,
+    "Schofield Barracks": 20.9,
+    "MCBH Kaneohe Bay": 11.4,
+    "Camp H.M. Smith": 8.7,
+    "Tripler AMC": 6.7,
+    "Fort Shafter": 5.8,
+    "Wheeler AAF": 19.5
+   }
+  },
+  {
+   "name": "Princess Miriam K Likelike Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "1618 Palama St, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.325119,
+   "lon": -157.863499,
+   "grades": "PK-5",
+   "enrollment": 253,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 5.1,
+    "Schofield Barracks": 17.2,
+    "MCBH Kaneohe Bay": 10.9,
+    "Camp H.M. Smith": 5.1,
+    "Tripler AMC": 3.0,
+    "Fort Shafter": 2.0,
+    "Wheeler AAF": 15.7
+   }
+  },
+  {
+   "name": "Princess Victoria Kaiulani Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "783 North King St, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.321464,
+   "lon": -157.867498,
+   "grades": "PK-5",
+   "enrollment": 256,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 5.0,
+    "Schofield Barracks": 17.2,
+    "MCBH Kaneohe Bay": 11.2,
+    "Camp H.M. Smith": 5.1,
+    "Tripler AMC": 3.1,
+    "Fort Shafter": 2.0,
+    "Wheeler AAF": 15.7
+   }
+  },
+  {
+   "name": "Puohala Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "45-233 Kulauli St, Kaneohe",
+   "city": "Kaneohe",
+   "lat": 21.409798,
+   "lon": -157.791346,
+   "grades": "PK-8",
+   "enrollment": 314,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 10.5,
+    "Schofield Barracks": 18.2,
+    "MCBH Kaneohe Bay": 3.5,
+    "Camp H.M. Smith": 7.6,
+    "Tripler AMC": 7.1,
+    "Fort Shafter": 7.7,
+    "Wheeler AAF": 16.7
+   }
+  },
+  {
+   "name": "Puuhale Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "345 Puuhale Rd, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.327379,
+   "lon": -157.884507,
+   "grades": "PK-5",
+   "enrollment": 249,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 3.8,
+    "Schofield Barracks": 16.1,
+    "MCBH Kaneohe Bay": 11.7,
+    "Camp H.M. Smith": 4.3,
+    "Tripler AMC": 2.3,
+    "Fort Shafter": 1.2,
+    "Wheeler AAF": 14.6
+   }
+  },
+  {
+   "name": "Queen Kaahumanu Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "1141 Kinau St, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.302458,
+   "lon": -157.843795,
+   "grades": "PK-5",
+   "enrollment": 440,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 6.9,
+    "Schofield Barracks": 19.2,
+    "MCBH Kaneohe Bay": 11.3,
+    "Camp H.M. Smith": 7.1,
+    "Tripler AMC": 5.0,
+    "Fort Shafter": 4.0,
+    "Wheeler AAF": 17.7
+   }
+  },
+  {
+   "name": "Red Hill Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "1265 Ala Kula Pl, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.368511,
+   "lon": -157.899505,
+   "grades": "PK-6",
+   "enrollment": 416,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 3.0,
+    "Schofield Barracks": 13.5,
+    "MCBH Kaneohe Bay": 10.9,
+    "Camp H.M. Smith": 1.3,
+    "Tripler AMC": 0.9,
+    "Fort Shafter": 1.8,
+    "Wheeler AAF": 12.0
+   }
+  },
+  {
+   "name": "Reverend Benjamin Parker Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "45-259 Waikalua Rd, Kaneohe",
+   "city": "Kaneohe",
+   "lat": 21.413803,
+   "lon": -157.798556,
+   "grades": "PK-6",
+   "enrollment": 261,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 10.2,
+    "Schofield Barracks": 17.7,
+    "MCBH Kaneohe Bay": 3.7,
+    "Camp H.M. Smith": 7.2,
+    "Tripler AMC": 6.9,
+    "Fort Shafter": 7.5,
+    "Wheeler AAF": 16.2
+   }
+  },
+  {
+   "name": "Royal Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "1519 Queen Emma St, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.311938,
+   "lon": -157.85383,
+   "grades": "PK-5",
+   "enrollment": 313,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 6.0,
+    "Schofield Barracks": 18.3,
+    "MCBH Kaneohe Bay": 11.2,
+    "Camp H.M. Smith": 6.2,
+    "Tripler AMC": 4.1,
+    "Fort Shafter": 3.1,
+    "Wheeler AAF": 16.8
+   }
+  },
+  {
+   "name": "Salt Lake Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "1131 Ala Lilikoi St, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.35164,
+   "lon": -157.911877,
+   "grades": "PK-6",
+   "enrollment": 659,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 1.8,
+    "Schofield Barracks": 13.7,
+    "MCBH Kaneohe Bay": 12.2,
+    "Camp H.M. Smith": 2.4,
+    "Tripler AMC": 1.6,
+    "Fort Shafter": 1.6,
+    "Wheeler AAF": 12.2
+   }
+  },
+  {
+   "name": "Sergeant Samuel K Solomon Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "1 Schofield Barracks, Wahiawa",
+   "city": "Wahiawa",
+   "lat": 21.49026,
+   "lon": -158.072741,
+   "grades": "PK-5",
+   "enrollment": 750,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 13.1,
+    "Schofield Barracks": 0.8,
+    "MCBH Kaneohe Bay": 21.2,
+    "Camp H.M. Smith": 12.9,
+    "Tripler AMC": 14.8,
+    "Fort Shafter": 15.6,
+    "Wheeler AAF": 2.2
+   }
+  },
+  {
+   "name": "Sunset Beach Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "59-360 Kamehameha Hwy, Haleiwa",
+   "city": "Haleiwa",
+   "lat": 21.663428,
+   "lon": -158.050109,
+   "grades": "PK-6",
+   "enrollment": 378,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 23.0,
+    "Schofield Barracks": 11.8,
+    "MCBH Kaneohe Bay": 24.8,
+    "Camp H.M. Smith": 21.3,
+    "Tripler AMC": 23.3,
+    "Fort Shafter": 24.4,
+    "Wheeler AAF": 12.5
+   }
+  },
+  {
+   "name": "University Laboratory School",
+   "district": "Hawaii Department of Education",
+   "address": "1776 University Ave UHS Building 3 Room 121, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.297947,
+   "lon": -157.821646,
+   "grades": "K-12",
+   "enrollment": 446,
+   "charter": true,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 8.3,
+    "Schofield Barracks": 20.4,
+    "MCBH Kaneohe Bay": 10.9,
+    "Camp H.M. Smith": 8.2,
+    "Tripler AMC": 6.1,
+    "Fort Shafter": 5.3,
+    "Wheeler AAF": 18.9
+   }
+  },
+  {
+   "name": "Voyager - A Public Charter School",
+   "district": "Hawaii Department of Education",
+   "address": "2428 Wilder Ave, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.29592,
+   "lon": -157.822901,
+   "grades": "K-8",
+   "enrollment": 258,
+   "charter": true,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 8.3,
+    "Schofield Barracks": 20.5,
+    "MCBH Kaneohe Bay": 11.1,
+    "Camp H.M. Smith": 8.2,
+    "Tripler AMC": 6.2,
+    "Fort Shafter": 5.3,
+    "Wheeler AAF": 19.0
+   }
+  },
+  {
+   "name": "Wahiawa Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "1402 Glen Ave, Wahiawa",
+   "city": "Wahiawa",
+   "lat": 21.504836,
+   "lon": -158.017923,
+   "grades": "PK-5",
+   "enrollment": 425,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 12.0,
+    "Schofield Barracks": 2.8,
+    "MCBH Kaneohe Bay": 17.9,
+    "Camp H.M. Smith": 10.9,
+    "Tripler AMC": 12.9,
+    "Fort Shafter": 13.9,
+    "Wheeler AAF": 2.0
+   }
+  },
+  {
+   "name": "Waiahole Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "48-215 Waiahole Valley Rd, Kaneohe",
+   "city": "Kaneohe",
+   "lat": 21.483061,
+   "lon": -157.852348,
+   "grades": "PK-6",
+   "enrollment": 106,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 11.0,
+    "Schofield Barracks": 13.4,
+    "MCBH Kaneohe Bay": 7.3,
+    "Camp H.M. Smith": 7.6,
+    "Tripler AMC": 8.8,
+    "Fort Shafter": 9.9,
+    "Wheeler AAF": 12.0
+   }
+  },
+  {
+   "name": "Waialae Elementary - PCS",
+   "district": "Hawaii Department of Education",
+   "address": "1045 19th Ave, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.276647,
+   "lon": -157.792207,
+   "grades": "PK-5",
+   "enrollment": 500,
+   "charter": true,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 10.7,
+    "Schofield Barracks": 22.8,
+    "MCBH Kaneohe Bay": 11.6,
+    "Camp H.M. Smith": 10.6,
+    "Tripler AMC": 8.5,
+    "Fort Shafter": 7.7,
+    "Wheeler AAF": 21.3
+   }
+  },
+  {
+   "name": "Waialua Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "67-020 Waialua Beach Rd, Waialua",
+   "city": "Waialua",
+   "lat": 21.575296,
+   "lon": -158.121339,
+   "grades": "PK-6",
+   "enrollment": 435,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 19.6,
+    "Schofield Barracks": 6.9,
+    "MCBH Kaneohe Bay": 25.8,
+    "Camp H.M. Smith": 19.0,
+    "Tripler AMC": 21.0,
+    "Fort Shafter": 21.9,
+    "Wheeler AAF": 8.3
+   }
+  },
+  {
+   "name": "Waianae Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "85-220 McArthur St, Waianae",
+   "city": "Waianae",
+   "lat": 21.446028,
+   "lon": -158.18449,
+   "grades": "PK-6",
+   "enrollment": 412,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 17.2,
+    "Schofield Barracks": 8.6,
+    "MCBH Kaneohe Bay": 28.1,
+    "Camp H.M. Smith": 18.3,
+    "Tripler AMC": 19.9,
+    "Fort Shafter": 20.3,
+    "Wheeler AAF": 9.7
+   }
+  },
+  {
+   "name": "Waiau Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "98-450 Hookanike St, Pearl City",
+   "city": "Pearl City",
+   "lat": 21.398551,
+   "lon": -157.953693,
+   "grades": "PK-6",
+   "enrollment": 479,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 3.7,
+    "Schofield Barracks": 9.5,
+    "MCBH Kaneohe Bay": 13.5,
+    "Camp H.M. Smith": 3.1,
+    "Tripler AMC": 4.9,
+    "Fort Shafter": 5.7,
+    "Wheeler AAF": 8.0
+   }
+  },
+  {
+   "name": "Waikele Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "94-1035 Kukula St, Waipahu",
+   "city": "Waipahu",
+   "lat": 21.402519,
+   "lon": -158.012706,
+   "grades": "PK-6",
+   "enrollment": 515,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 6.1,
+    "Schofield Barracks": 7.0,
+    "MCBH Kaneohe Bay": 17.2,
+    "Camp H.M. Smith": 6.9,
+    "Tripler AMC": 8.5,
+    "Fort Shafter": 9.0,
+    "Wheeler AAF": 5.8
+   }
+  },
+  {
+   "name": "Waikiki Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "3710 Leahi Ave, Honolulu",
+   "city": "Honolulu",
+   "lat": 21.26817,
+   "lon": -157.814399,
+   "grades": "PK-5",
+   "enrollment": 571,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 9.7,
+    "Schofield Barracks": 22.2,
+    "MCBH Kaneohe Bay": 12.6,
+    "Camp H.M. Smith": 10.1,
+    "Tripler AMC": 8.0,
+    "Fort Shafter": 7.1,
+    "Wheeler AAF": 20.7
+   }
+  },
+  {
+   "name": "Waimalu Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "98-825 Moanalua Rd, Aiea",
+   "city": "Aiea",
+   "lat": 21.390305,
+   "lon": -157.950086,
+   "grades": "PK-6",
+   "enrollment": 342,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 3.1,
+    "Schofield Barracks": 10.0,
+    "MCBH Kaneohe Bay": 13.4,
+    "Camp H.M. Smith": 2.8,
+    "Tripler AMC": 4.4,
+    "Fort Shafter": 5.1,
+    "Wheeler AAF": 8.6
+   }
+  },
+  {
+   "name": "Waimanalo Elementary & Intermediate School",
+   "district": "Hawaii Department of Education",
+   "address": "41-1330 Kalanianaole Hwy, Waimanalo",
+   "city": "Waimanalo",
+   "lat": 21.346174,
+   "lon": -157.71482,
+   "grades": "PK-8",
+   "enrollment": 357,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 14.5,
+    "Schofield Barracks": 24.4,
+    "MCBH Kaneohe Bay": 6.8,
+    "Camp H.M. Smith": 12.7,
+    "Tripler AMC": 11.3,
+    "Fort Shafter": 11.1,
+    "Wheeler AAF": 22.9
+   }
+  },
+  {
+   "name": "Waipahu Elementary School",
+   "district": "Hawaii Department of Education",
+   "address": "94-465 Waipahu St, Waipahu",
+   "city": "Waipahu",
+   "lat": 21.384715,
+   "lon": -158.015618,
+   "grades": "PK-6",
+   "enrollment": 853,
+   "charter": false,
+   "miles_to_installation": {
+    "JB Pearl Harbor-Hickam": 5.5,
+    "Schofield Barracks": 8.0,
+    "MCBH Kaneohe Bay": 17.6,
+    "Camp H.M. Smith": 7.0,
+    "Tripler AMC": 8.3,
+    "Fort Shafter": 8.7,
+    "Wheeler AAF": 7.0
+   }
+  }
+ ]
+}

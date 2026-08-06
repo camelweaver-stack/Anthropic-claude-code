@@ -1,0 +1,8 @@
+# The Second Paycheck Report | 2023 Hawaii Child Care Market Rate Study (Hawaii DHS, CCDF biennial requirement; prepared by PATCH) | License: CC BY 4.0 | Region: Oahu | full-time monthly USD | pulled 2026-08-05
+care_type,median_usd,p75_usd,min_usd,max_usd,providers
+"Center-based infant/toddler care",1561,1650,895,1875,4
+"Accredited (NAEYC/NECPA) center-based care",950,1285,650,1540,8
+"Licensed center-based or group child care home",900,1200,500,1575,31
+"Registered family child care home — infant/toddler",825,925,620,2000,44
+"Registered family child care home",800,900,600,2000,48
+"Licensed before/after-school care",135,135,135,135,1
