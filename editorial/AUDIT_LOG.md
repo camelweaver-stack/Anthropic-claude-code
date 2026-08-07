@@ -4,6 +4,42 @@ Append-only. Newest entry on top. One record per daily run. Template at the bott
 
 ---
 
+## 2026-08-06 (maintenance) — Restore the site-wide floating "Ask" launcher (regression)
+
+- **Trigger:** User — "It used to be a floating input box. Now it's not there."
+- **Root cause (branch divergence I introduced):** The site-wide floating concierge launcher
+  (`#pcs-ask-launcher`, a fixed bottom-right button + slide-up chat panel on every page) was built
+  on the `claude/pcs-oahu-deploy-dd373n` line (commit `fd8a201`, "Surface the AI concierge … sitewide
+  floating launcher"; carried through the family-layer work). Production/Netlify is tied to that
+  branch alias, so the live site had the launcher. The publishing branch I was told to deploy from,
+  `claude/pcs-oahu-daily-publishing-1289q3`, forked from `2881533` **before** `fd8a201` and never had
+  it. My deploys earlier today (rent-vs-buy, then the nav/concierge fix) shipped `1289q3`'s `site/`
+  over production — an atomic snapshot — which removed the floating launcher. The earlier "add Ask to
+  nav" change added a header link but not the floating box the user was actually describing.
+- **Fix:** Ported the original launcher verbatim from `dd373n` (`345f10c:gen/common.py`) into
+  `1289q3`: `CHAT_LAUNCHER` constant in `gen/common.py`, injected by `page()` on every page except
+  `/ask/` (which is the full chat) and the standalone noindex `embed/bah-widget.html` iframe.
+  Restored the gate's regression guard so the launcher can never silently disappear again
+  (`gen/gate.py`: require `id="pcs-ask-launcher"` on all pages except those two; fail if present on
+  `/ask/`). Same `/.netlify/functions/concierge` endpoint; dark-mode styles included.
+- **Files changed:** `gen/common.py` (CHAT_LAUNCHER + page() injection), `gen/gate.py` (launcher
+  regression check). Rebuilt `site/` (50 pages) — launcher now on 48 pages (all but `/ask/` and the
+  raw embed iframe).
+- **Build status:** `GATE PASSED — 50 pages, 48 sitemap URLs, all assertions green.`
+- **Deployment status:** DEPLOYED to production. Netlify `pcsoahu`, deploy `6a752f2d899b5dd12de94ef8`,
+  state `ready`, published 2026-08-07T01:04:57Z (10s, context production). 49 pages + concierge
+  function; secret scan clean (126 files). One transient 502 on the first connector call; succeeded on
+  retry after backoff. IndexNow POSTed (HTTP 200) for `/`.
+- **Production verification:** PASS — floating launcher + input box (`#pcs-ask-launcher` / `#pcsAskQ`)
+  live on `/`, `/buy/`, `/bases/tripler.html`, `/guides/rent-vs-buy.html`; suppressed on `/ask/`;
+  `/` and `/ask/` 200, nonexistent route 404.
+- **Follow-up / known divergence:** `dd373n` also carries a `site/family/…` layer that `1289q3` does
+  not. Deploying `1289q3` means those family pages are not in the current production snapshot. Not
+  addressed here (out of scope for this request) — flagged for the operator to decide whether to
+  reconcile the two branches.
+
+---
+
 ## 2026-08-06 (maintenance) — AI concierge investigation + nav discoverability fix
 
 - **Trigger:** User report — "the AI chat widget is missing or not working."

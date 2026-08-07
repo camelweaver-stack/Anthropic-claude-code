@@ -113,6 +113,20 @@ rep = open(os.path.join(SITE, "bah-report", "index.html")).read()
 if "Cite this report" not in rep: fail("bah-report: missing cite block")
 if '"@type": "Dataset"' not in rep: fail("bah-report: missing Dataset schema")
 
+# sitewide floating Ask launcher on every page (except /ask/ itself, which IS the full chat,
+# and the standalone noindex embed iframe). Regression guard: it must never silently disappear.
+for fp in html_files:
+    rel = os.path.relpath(fp, SITE).replace(os.sep, "/")
+    doc = open(fp).read()
+    if rel == "ask/index.html":
+        if 'id="pcs-ask-launcher"' in doc:
+            fail("ask/index.html: launcher should be suppressed on the full chat page")
+        continue
+    if rel == "embed/bah-widget.html":
+        continue
+    if 'id="pcs-ask-launcher"' not in doc:
+        fail(f"{rel}: missing floating Ask launcher")
+
 if FAILS:
     print(f"GATE FAILED — {len(FAILS)} issue(s):")
     [print("  ✗ " + f) for f in FAILS]

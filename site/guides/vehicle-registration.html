@@ -145,5 +145,69 @@ See <a href="/on-base/">on-base housing</a>.</p>
     June 2026 market reports. Rent bands: public listing platforms, mid-2026, deliberately rounded.</p>
   </div>
 </div></footer>
+
+<div id="pcs-ask-launcher">
+  <button type="button" id="pcsAskBtn" aria-expanded="false" aria-controls="pcsAskPanel">💬 Ask PCS Oahu</button>
+  <div id="pcsAskPanel" role="dialog" aria-label="Ask PCS Oahu concierge" hidden>
+    <div class="pcs-ask-head"><strong>Ask PCS Oahu</strong>
+      <a class="pcs-ask-full" href="/ask/">Full page ↗</a>
+      <button type="button" id="pcsAskClose" aria-label="Close">×</button></div>
+    <div id="pcsAskLog"></div>
+    <div class="pcs-ask-row">
+      <input id="pcsAskQ" type="text" aria-label="Your question"
+             placeholder="e.g., Does E-5 BAH cover a 3BR in Mililani?">
+      <button type="button" id="pcsAskSend" class="btn">Ask</button></div>
+    <p class="pcs-ask-fine">Educational answers from this site's guides — not legal, tax, or
+       lending advice, and PCS Oahu isn't a brokerage.</p>
+  </div>
+</div>
+<style>
+#pcs-ask-launcher{position:fixed;right:16px;bottom:16px;z-index:9999}
+#pcsAskBtn{background:#10222e;color:#fff;border:0;border-radius:999px;padding:.7rem 1.1rem;
+  font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.25);font-size:.95rem}
+#pcsAskPanel{position:absolute;right:0;bottom:3.4rem;width:min(360px,calc(100vw - 32px));
+  background:#fff;color:#10222e;border:2px solid #10222e;border-radius:12px;
+  box-shadow:0 8px 30px rgba(0,0,0,.28);padding:.85rem}
+.pcs-ask-head{display:flex;align-items:center;gap:.5rem;border-bottom:1px solid #e2e6e4;
+  padding-bottom:.45rem;margin-bottom:.5rem}
+.pcs-ask-head strong{flex:1}
+.pcs-ask-full{font-size:.8rem;color:#1f5a54;font-weight:700;text-decoration:none}
+#pcsAskClose{background:none;border:0;font-size:1.2rem;line-height:1;cursor:pointer;color:#5b6b73}
+#pcsAskLog{max-height:44vh;overflow-y:auto;font-size:.92rem}
+#pcsAskLog div{padding:.4rem 0;border-top:1px dotted #d8dcd9}
+.pcs-ask-row{display:flex;gap:.4rem;margin-top:.5rem}
+#pcsAskQ{flex:1;min-width:0;padding:.5rem .6rem;border:1px solid #b9c2c0;border-radius:8px;font-size:.92rem}
+#pcsAskSend{padding:.5rem .8rem}
+.pcs-ask-fine{font-size:.72rem;color:#5b6b73;margin:.5rem 0 0}
+@media (prefers-color-scheme:dark){#pcsAskPanel{background:#0f1e28;color:#e8eeec}
+  #pcsAskQ{background:#0b1720;color:#e8eeec;border-color:#2a3b44}}
+</style>
+<script>
+(function(){
+ var b=document.getElementById('pcsAskBtn'),p=document.getElementById('pcsAskPanel'),
+     c=document.getElementById('pcsAskClose'),log=document.getElementById('pcsAskLog'),
+     q=document.getElementById('pcsAskQ'),s=document.getElementById('pcsAskSend'),hist=[];
+ function open(v){p.hidden=!v;b.setAttribute('aria-expanded',v?'true':'false');if(v)q.focus();}
+ b.addEventListener('click',function(){open(p.hidden);});
+ c.addEventListener('click',function(){open(false);});
+ function add(who,text,muted){var d=document.createElement('div');
+   if(muted)d.style.color='#5b6b73';
+   d.innerHTML='<strong>'+who+':</strong> '+text;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+ function send(){var t=q.value.trim();if(!t)return;
+   add('You',t.replace(/</g,'&lt;'));q.value='';s.disabled=true;
+   hist.push({role:'user',content:t});
+   fetch('/.netlify/functions/concierge',{method:'POST',
+     headers:{'Content-Type':'application/json'},
+     body:JSON.stringify({messages:hist.slice(-12)})})
+   .then(function(r){return r.json()})
+   .then(function(d){var a=d.reply||'The concierge is offline — see the <a href="/guides/">guides</a>.';
+     hist.push({role:'assistant',content:a});add('PCS Oahu',a);s.disabled=false;})
+   .catch(function(){add('PCS Oahu','Connection issue — try the <a href="/ask/">full page</a>.',1);s.disabled=false;});
+ }
+ s.addEventListener('click',send);
+ q.addEventListener('keydown',function(e){if(e.key==='Enter')send();});
+})();
+</script>
+
 </body>
 </html>
