@@ -16,13 +16,29 @@
 [[headers]]
   for = "/*"
   [headers.values]
+    Strict-Transport-Security = "max-age=31536000"
     X-Frame-Options = "SAMEORIGIN"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+    # CSP starts in Report-Only: the site uses inline scripts (UTM capture,
+    # chat widget, GA4 once wired), so 'unsafe-inline' is required until those
+    # move to nonces. Watch reports for a week, then promote to enforced
+    # Content-Security-Policy.
+    Content-Security-Policy-Report-Only = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; connect-src 'self' https://www.google-analytics.com https://formsubmit.co; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; form-action 'self' https://formsubmit.co; frame-ancestors 'self'"
 
 # Long-lived caching for the stylesheet (safe: content-hashed via redeploys)
 [[headers]]
   for = "/styles.css"
   [headers.values]
     Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/thanks.html"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
+[[headers]]
+  for = "/es/gracias.html"
+  [headers.values]
+    X-Robots-Tag = "noindex"
