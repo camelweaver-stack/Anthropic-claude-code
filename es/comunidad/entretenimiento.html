@@ -36,8 +36,8 @@
 </section><section class="tint" style="border-radius:14px;padding:34px 28px">
   <h2>El archivo por correo</h2>
   <p>El circuito de entretenimiento como hoja imprimible, más el calendario mensual.</p>
-  <form class="lead" action="https://formsubmit.co/leads@anastasiaweaver.com" method="POST">
-    <input type="hidden" name="_subject" value="COMM-ES-ENT lead — West FW Living">
+  <form data-aw-hardened="2" class="lead" action="https://formsubmit.co/c86195fac91694c985b7fc55c96e4f77" method="POST"><input type="text" name="_honey" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;height:0;overflow:hidden;" aria-hidden="true"><input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="utm_term"><input type="hidden" name="utm_content"><input type="hidden" name="referrer"><input type="hidden" name="landing_page"><input type="hidden" name="page_url"><input type="hidden" name="consent_ts">
+    <input type="hidden" name="_subject" value="WFL — /es/comunidad/entretenimiento.html">
     <input type="hidden" name="_next" value="https://westfwliving.com/es/gracias.html">
     <input type="hidden" name="audience" value="community">
     <input type="hidden" name="idioma" value="es">
@@ -45,7 +45,7 @@
     <label for="cCOMM-ES-ENTe">Correo electrónico</label><input id="cCOMM-ES-ENTe" name="email" type="email" required autocomplete="email">
     <label for="cCOMM-ES-ENTexp">Teléfono</label><input id="cCOMM-ES-ENTexp" name="phone" type="tel" required autocomplete="tel">
     <label for="cCOMM-ES-ENTexd">¿Para cuándo planea mudarse? (opcional)</label><input id="cCOMM-ES-ENTexd" name="move_date" placeholder="p. ej., primavera 2027">
-    <button class="btn" type="submit">Envíamelo</button>
+    <label class="aw-consent" style="display:flex;gap:.5rem;align-items:flex-start;font-size:.85rem;margin:.75rem 0;"><input type="checkbox" name="consent" value="agreed" required style="margin-top:.2rem;"><span>Acepto ser contactado sobre mi consulta por correo o tel&eacute;fono y acepto la <a href="/es/privacidad/">pol&iacute;tica de privacidad</a>. Sin spam &mdash; puede darse de baja en cualquier momento.</span></label><button class="btn" type="submit">Envíamelo</button>
   </form>
 </section>
 </div></main>
@@ -61,5 +61,30 @@
 </div></footer>
 <div class="textbar"><a href="sms:+16822331426?&body=Env%C3%ADenme%20la%20gu%C3%ADa%20del%20oeste%20de%20Fort%20Worth">Texto para la Guía</a></div>
   <script src="/assets/concierge.js" defer></script>
-</body>
+<!-- aw-utm-capture --><script>
+(function(){
+  function qs(s){try{return new URLSearchParams(s)}catch(e){return null}}
+  var K=["utm_source","utm_medium","utm_campaign","utm_term","utm_content"];
+  var p=qs(location.search), store={};
+  try{store=JSON.parse(sessionStorage.getItem("aw_ft")||"{}")}catch(e){}
+  if(!store.landing_page){
+    store.landing_page=location.pathname;
+    store.referrer=document.referrer||"";
+    if(p) K.forEach(function(k){var v=p.get(k); if(v) store[k]=v;});
+    try{sessionStorage.setItem("aw_ft",JSON.stringify(store))}catch(e){}
+  }
+  document.querySelectorAll("form[data-aw-hardened]").forEach(function(f){
+    K.concat(["referrer","landing_page"]).forEach(function(k){
+      var el=f.querySelector('input[name="'+k+'"]');
+      if(el && store[k]) el.value=store[k];
+    });
+    var pu=f.querySelector('input[name="page_url"]');
+    if(pu) pu.value=location.pathname;
+    f.addEventListener("submit",function(){
+      var ts=f.querySelector('input[name="consent_ts"]');
+      if(ts) ts.value=new Date().toISOString();
+    });
+  });
+})();
+</script></body>
 </html>
