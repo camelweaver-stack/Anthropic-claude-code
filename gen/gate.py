@@ -62,10 +62,20 @@ for fp in html_files:
     for pat in FORBIDDEN:
         if re.search(pat, low): fail(f"{rel}: forbidden language matches /{pat}/")
 
+    # 5b. lead-routing email must never appear in cleartext anywhere on the page (not just
+    # inside a <form> tag) — defense in depth against a stray hand-rolled form bypassing the
+    # shared lead_form() template in common.py.
+    if "formsubmit.co/leads@" in doc:
+        fail(f"{rel}: cleartext FormSubmit endpoint present — must use the hashed endpoint")
+
     # 6. form assertions (every form on page)
     for form in re.findall(r"<form class=\"lead\".*?</form>", doc, re.S):
-        if 'action="https://formsubmit.co/leads@anastasiaweaver.com"' not in form:
-            fail(f"{rel}: form action wrong")
+        if 'action="https://formsubmit.co/c86195fac91694c985b7fc55c96e4f77"' not in form:
+            fail(f"{rel}: form action wrong (must use hashed FormSubmit endpoint, not a cleartext email)")
+        if 'name="_honey"' not in form:
+            fail(f"{rel}: form missing honeypot field")
+        if not re.search(r'name="consent" value="agreed" required', form):
+            fail(f"{rel}: form missing required consent checkbox")
         m = re.search(r'name="_subject" value="(PCSOAHU-[A-Z]+)"', form)
         if not m: fail(f"{rel}: form missing PCSOAHU-* _subject")
         if 'name="audience" value="referral-hi-oahu-pcs"' not in form:

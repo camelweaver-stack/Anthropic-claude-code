@@ -86,7 +86,8 @@ def lead_form(tag, segment, context="move", heading="Get the arrival brief", blu
                       "refreshes, and first word when full service opens. No spam. Leave anytime.")
     return f'''
 <section id="list"><h2>{heading}</h2><p style="max-width:44rem">{blurb}</p>
-<form class="lead" action="https://formsubmit.co/leads@anastasiaweaver.com" method="POST">
+<form class="lead" action="https://formsubmit.co/c86195fac91694c985b7fc55c96e4f77" method="POST">
+  <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;height:0;overflow:hidden;" aria-hidden="true">
   <input type="hidden" name="_subject" value="PCSOAHU-{tag}">
   <input type="hidden" name="audience" value="referral-hi-oahu-pcs">
   <input type="hidden" name="segment" value="{segment}">
@@ -97,6 +98,7 @@ def lead_form(tag, segment, context="move", heading="Get the arrival brief", blu
   <label for="phone">Phone</label>
   <input id="phone" name="phone" type="tel" required autocomplete="tel">
   {ctx}
+  <label class="consent" style="display:flex;gap:.5rem;align-items:flex-start;font-size:.85rem;margin:.75rem 0;"><input type="checkbox" name="consent" value="agreed" required style="margin-top:.2rem;"><span>I agree to be contacted about my inquiry by email or phone. No spam — unsubscribe anytime.</span></label>
   <button class="btn" type="submit">Join the list</button> {sms_button()}
   <p class="fine">Two required fields plus your phone. We never sell your info.</p>
 </form></section>'''
