@@ -4,6 +4,53 @@ Append-only. Newest entry on top. One record per daily run. Template at the bott
 
 ---
 
+## 2026-08-10 — Lead-form security fix (Session 1, Where In DFW Acceleration Plan)
+
+- **Trigger:** Explicit task from the operator's Acceleration Plan (Drive doc 21): "PCS Oahu form
+  fix — carried forward as the first item of Session 1," itself carried forward from a gap flagged
+  in the Phase 0 current-state audit (F1: cleartext lead-routing email harvestable from every
+  page's HTML, no spam/consent protections).
+- **Fix:** `gen/common.py`'s `lead_form()` (single-sourced, every form on the site calls it):
+  switched `action` from cleartext `formsubmit.co/leads@anastasiaweaver.com` to the hashed
+  `formsubmit.co/c86195fac91694c985b7fc55c96e4f77` (WFL's already-activated hash for the same
+  destination email — FormSubmit's hash is a privacy proxy for the address, not domain-locked, so
+  reuse is safe); added an off-screen `_honey` honeypot field; added a required `consent`
+  checkbox. Worded the consent copy without a privacy-policy link, since the WFL pattern this
+  mirrors links to a `/privacy/` page that doesn't actually exist on either site yet.
+- **Files changed:** `gen/common.py` (form template), `gen/gate.py` (three new/updated
+  assertions: hashed endpoint required, honeypot required, consent checkbox required, plus a
+  page-wide defense-in-depth check that the cleartext endpoint never appears anywhere). Regenerated
+  all of `site/` (50 pages).
+- **Build status:** `GATE PASSED — 50 pages, 48 sitemap URLs, all assertions green.` (verified the
+  new assertions actually run, not just that the old one was removed).
+- **Deployment status:** DEPLOYED to production. Netlify project `pcsoahu`, deploy
+  `6a7939b617469016cf4a8405`, state `ready`, published 2026-08-10T02:38:56Z (8s, context
+  production, alias pcsoahu.com). Secret scan clean (0 matches, 193 files scanned).
+- **Production verification:** PASS — full `CLAUDE_CODE_DEPLOY.md` §3 checklist run: all 13 listed
+  routes 200, nonexistent route 404, canonical on `/buy/` correct. Rendered check (not grep) of
+  the live homepage form confirms the new markup byte-for-byte. Did **not** test-submit the form
+  per `CLAUDE_CODE_DEPLOY.md` §5 — that's reserved for the operator's one deliberate test.
+- **Anomaly found (pre-existing, not caused by this change, not fixed here):** deployed from
+  `claude/pcs-oahu-daily-publishing-1289q3` (the branch this asset's driver-doc entry names as the
+  working branch). That branch is missing 9 pages that exist on `claude/pcs-oahu-deploy-dd373n`
+  (the "production-source" branch) — the whole `/family/` section (8 pages) and
+  `/tools/commute-grid/` — not referenced anywhere in `1289q3`'s generator, nav, or sitemap.
+  Checked post-deploy: all 9 are **still live** (200, confirmed fresh from origin, not a cache
+  artifact) — Netlify's deploy here does not wholesale-replace the published directory, so no
+  content was lost. But this means those 9 pages are now orphaned relative to `1289q3`'s own
+  bookkeeping (invisible to its sitemap/gate) and their presence in production silently depends on
+  a Netlify deploy-retention behavior rather than being tracked by any branch's `site/`. Same class
+  of branch-divergence risk as the 2026-08-06 floating-launcher regression above — that incident
+  ported content forward once; this drift (family layer + commute-grid) hasn't been. Flagging for
+  the operator rather than reconciling here — out of scope for a targeted form-security fix on a
+  live site.
+- **Next recommended action:** either port `/family/` + `/tools/commute-grid/` forward into
+  `1289q3` (mirroring the 2026-08-06 fix pattern) so they're tracked and gated, or formally retire
+  `dd373n` as a concept and treat `1289q3` as the sole source of truth — the two-branch setup is an
+  ongoing regression risk as long as they keep diverging silently.
+
+---
+
 ## 2026-08-06 (maintenance) — Restore the site-wide floating "Ask" launcher (regression)
 
 - **Trigger:** User — "It used to be a floating input box. Now it's not there."
