@@ -248,11 +248,14 @@ between you and a lender you choose.</p>
 def sell():
     qas = [
       ("Does HARPTA apply to military sellers in Hawaii?",
-       "HARPTA is Hawaii's withholding on real-estate sales by non-residents — currently 7.25% "
-       "of the gross sale price per the Hawaii Department of Taxation. It does not apply to "
-       "Hawaii residents at closing. Service members who kept a mainland state of legal "
-       "residence under SCRA are typically non-residents for HARPTA purposes even after years "
-       "on island — confirm your status with a tax professional before listing."),
+       "Yes — HARPTA applies to the disposition of Hawaii real property whoever sells it. The "
+       "Hawaii Department of Taxation calls it a common misperception that HARPTA doesn't apply "
+       "when the seller is a Hawaii resident: it does apply, and the buyer must withhold 7.25% of "
+       "the amount realized unless the seller gives the buyer Form N-289 certifying an exemption. "
+       "Whether you qualify as a Hawaii resident person turns on domicile and the purpose of your "
+       "presence in the State, so a mainland state of legal residence doesn't settle it by itself. "
+       "See the full HARPTA guide, and confirm your status with the Department or a tax "
+       "professional before listing."),
       ("Should I sell or rent my Oahu house when I PCS out?",
        "Run five lines: likely market rent, PITI plus HOA plus GET on rental income, remote "
        "property management (commonly around 8–12% of rent), an honest vacancy and maintenance "
@@ -277,16 +280,18 @@ the paperwork, without a listing pitch.</p>
 </div></div>
 <div class="wrap">
 <h2>The HARPTA facts, straight</h2>
-<p style="max-width:46rem">HARPTA is Hawaii's withholding law on real-estate sales by
-<em>non-residents</em> — currently a 7.25% withholding on the gross sale price, per the Hawaii
-Department of Taxation (verify the current rate and forms there; it's withholding against
-potential tax, not the tax itself, and refunds of over-withholding run through state filings).
-The part that matters for military sellers: <strong>if you're a Hawaii resident at closing,
-HARPTA doesn't apply.</strong> Residency for this purpose is a tax status, not a feeling — service
-members who kept a mainland state of legal residence under SCRA protections are typically
-non-residents for HARPTA even after three years on island. Timing your sale relative to your
-departure and your residency status is a real-money question for a tax professional, not a
-listing agent.</p>
+<p style="max-width:46rem">HARPTA is Hawaii's withholding law on sales of Hawaii real property —
+a 7.25% withholding on the <em>amount realized</em>, per the Hawaii Department of Taxation. It's
+withholding against potential tax, not the tax itself; refunds of over-withholding run through
+state filings. The part that trips up military sellers: <strong>being a Hawaii resident does not
+switch it off by itself.</strong> The Department names that as a common misperception — HARPTA
+applies even when the seller is a resident, and the buyer must withhold unless the seller
+<em>gives the buyer Form N-289</em> certifying an exemption. Residency for this purpose is a tax
+status determined by domicile and the purpose of your presence in the State, so keeping a mainland
+state of legal residence doesn't resolve it in either direction on its own. Timing your sale
+against your residency status and the N-288B filing deadline is a real-money question for a tax
+professional, not a listing agent — the mechanics are laid out in the
+<a href="/guides/harpta.html">full HARPTA guide</a>.</p>
 <h2>Rent-vs-sell, on one napkin</h2>
 <p style="max-width:46rem">The accidental-landlord math has five lines. Run them before any
 emotional attachment votes:</p>
@@ -812,8 +817,9 @@ Oahu from a mainland duty station isn't buying — it's being <em>forced to sell
 timeline</em> into a single, supply-constrained island market. If values dip the quarter your
 orders drop, you sell into that dip or you become a long-distance landlord. Both are legitimate;
 neither is free. Before you buy, read the departure side of this decision — the
-<a href="/sell/">sell-or-rent-when-you-PCS-out guide</a> covers HARPTA withholding for nonresident
-sellers and the accidental-landlord math — because on this island the exit is part of the purchase.</div>
+<a href="/sell/">sell-or-rent-when-you-PCS-out guide</a> covers the accidental-landlord math, and the
+<a href="/guides/harpta.html">HARPTA guide</a> covers the 7.25% withholding that comes out of an
+Oahu sale at closing — because on this island the exit is part of the purchase.</div>
 <h2>Who this applies to</h2>
 <p style="max-width:46rem"><strong>Leaning buy</strong> if you have full VA entitlement, a
 longer-than-usual tour or plans to keep the home as a rental after you leave, and a target in the
@@ -864,6 +870,238 @@ lender and, where taxes are involved, a tax professional you choose.</p>
                 "horizon, what BAH reaches at a $1.275M median, the no-down-payment VA advantage, "
                 "tax-free BAH, and the forced-exit risk. Sourced and dated.",
                 body, "/buy/", jsonld=ld)
+
+def harpta():
+    qas = [
+      ("Does HARPTA apply to me if I'm military selling a house on Oahu?",
+       "Almost certainly yes — HARPTA applies to the disposition of Hawaii real property regardless "
+       "of who sells it. The Hawaii Department of Taxation is explicit that a common misperception "
+       "is that HARPTA doesn't apply when the seller is a Hawaii resident: it does apply, and the "
+       "buyer must withhold 7.25% of the amount realized unless the seller hands the buyer Form "
+       "N-289 certifying an exemption. So the question for a military seller is never 'does HARPTA "
+       "apply' — it's 'which exemption or withholding certificate do I qualify for, and did I file "
+       "it in time.' Your residency status for this purpose turns on domicile and the purpose of "
+       "your presence in Hawaii under TIR 97-1, which is a tax question for the Department or a tax "
+       "professional, not something a duty station decides by itself."),
+      ("How much is withheld under HARPTA and when is it due?",
+       "The buyer withholds 7.25% of the amount realized — not of your equity, and not necessarily "
+       "of the sticker price. The amount realized is generally the sales price, but it also includes "
+       "the fair market value of any property you receive and any liability the buyer assumes. The "
+       "buyer must send the withheld amount to the Department with Forms N-288 and N-288A by the "
+       "20th day after the transfer date, which is the day the sale closes and title passes. "
+       "Because it's withheld from proceeds at closing, an Oahu-sized sale can tie up a very large "
+       "number for months — on a $1,275,000 sale, 7.25% is about $92,400."),
+      ("Can I avoid HARPTA withholding by using the $300,000 principal-residence exemption?",
+       "On Oahu, usually not. One of the three exemptions certified on Form N-289 covers property "
+       "used as the seller's principal residence in the year preceding the transfer where the amount "
+       "realized does not exceed $300,000. Oahu prices sit well above that threshold — the June 2026 "
+       "medians were about $1,275,000 for a single-family home and $530,000 for a condo — so the "
+       "$300,000 ceiling rarely reaches an Oahu sale. The lever that does tend to matter here is "
+       "Form N-288B, the application for a withholding certificate, which must reach the Department "
+       "no later than 10 working days before the transfer date."),
+      ("Does the military capital-gains exception help with HARPTA?",
+       "It can, indirectly, but the timing is the whole game. Hawaii conforms to IRC section 121, "
+       "which excludes up to $250,000 of gain on a principal residence ($500,000 on a joint return) "
+       "if you meet the two-of-five-year ownership and use tests. Members of the uniformed services "
+       "on qualified official extended duty can elect to suspend that five-year period for up to 10 "
+       "years, which is what keeps the exclusion reachable across a PCS. But an exclusion doesn't "
+       "stop the withholding by itself: to eliminate the withholding you file Form N-288B, and if "
+       "any gain remains after applying the exclusion, Form N-288B can't be used and the buyer "
+       "withholds the full 7.25%."),
+    ]
+    body = f'''
+<div class="hero"><div class="wrap">
+<p class="eyebrow">Leaving Hawaii · the number that surprises outbound sellers</p>
+<h1>HARPTA when you PCS out: the 7.25% withholding, Form N-289, and the 10-day clock</h1>
+<p class="lede">You sell the Oahu house, you clear escrow, and 7.25% of the sale doesn't come with
+you. HARPTA isn't a penalty and it isn't a tax — it's a withholding against tax you may not owe.
+But it's withheld at closing, it's sized to an Oahu price, and the paperwork that reduces it has a
+deadline that falls <em>before</em> your closing date, not after.</p>
+</div></div>
+<div class="wrap">
+<h2>The direct answer</h2>
+<p style="max-width:46rem">Under HARPTA — the Hawaii Real Property Tax Act, section 235-68, Hawaii
+Revised Statutes — <strong>every buyer of Hawaii real property must withhold 7.25% of the amount
+realized and pay it to the Hawaii Department of Taxation</strong>, unless the seller gives the buyer
+a Form N-289 certifying an exemption. It is not a tax. The Department is explicit: the amount
+withheld is an <em>estimated tax payment made for the seller</em>, credited against what you
+actually owe when you file a Hawaii income tax return for the year of the sale. Over-withhold and
+you get it back — eventually. The whole game for an outbound military seller is reducing the
+withholding <em>before</em> closing rather than waiting a year to reclaim it.
+(<a href="https://files.hawaii.gov/tax/legal/taxfacts/tf2025-2010-1.pdf">Hawaii DOTAX Tax Facts
+2010-1, rev. April 2025</a>.)</p>
+
+<h2>What 7.25% actually means at Oahu prices</h2>
+<p style="max-width:46rem">The withholding is 7.25% of the <strong>amount realized</strong>, which
+is not the same thing as your equity and not always the sticker price. Generally it's the sales
+price, but the Department includes the fair market value of any property you receive and any
+liability the buyer assumes. Critically, it's calculated on the <em>whole</em> amount realized —
+so a seller with modest equity, or none, can still see a large sum withheld from proceeds:</p>
+{rates([
+  ("Oahu median single-family (June 2026)", MED_SF),
+  ("HARPTA withheld on that amount realized", "≈ $92,400", True),
+  ("Oahu median condo (June 2026)", MED_CONDO),
+  ("HARPTA withheld on that amount realized", "≈ $38,400"),
+  ("N-289 principal-residence exemption ceiling", "$300,000"),
+], "Withholding rate 7.25% of the amount realized per HRS §235-68 and Hawaii DOTAX Tax Facts 2010-1 "
+   "(rev. April 2025); withheld figures are arithmetic on this site's published medians, rounded, "
+   "for scale only — not a quote, valuation, or tax computation. Medians: Honolulu Board of "
+   "REALTORS® data as republished in public June 2026 market reports.")}
+<p style="max-width:46rem">Note what the last line does to the most-cited exemption. The
+principal-residence exemption on Form N-289 applies where the amount realized <strong>does not
+exceed $300,000</strong> — a ceiling that sits below both Oahu medians. On this island that
+exemption is largely theoretical for a typical sale, which is why Oahu sellers end up at Form
+N-288B instead.</p>
+
+<h2>Who this applies to — including the resident misperception</h2>
+<div class="warn"><strong>Being a Hawaii resident does not switch HARPTA off by itself.</strong>
+The Department names this as a common misperception: HARPTA <em>does</em> apply when the seller is
+a Hawaii resident — the buyer simply isn't required to withhold if the seller <strong>gives the
+buyer Form N-289</strong> stating that the seller is a Hawaii resident. If you don't provide the
+form, the buyer must withhold even if the buyer knows you're a resident, and a buyer who fails to
+withhold is personally liable for the amount. The form is the mechanism; residency alone isn't.</div>
+<p style="max-width:46rem">For a service member the residency question itself is genuinely
+fact-specific and worth getting right rather than assuming. The Department defines a resident
+person as an individual domiciled in Hawaii <em>or</em> one who resides in the State for other than
+a temporary or transitory purpose, and points to <a href="https://files.hawaii.gov/tax/legal/tir/tir97-01.pdf">TIR
+97-1, "Determination of Residence Status,"</a> for how that's decided. Keeping a mainland state of
+legal residence through a tour here doesn't automatically resolve it in either direction, and
+neither does length of time on island. This is the one question on this page worth taking to the
+Department or to a tax professional you choose before you list — the answer determines whether
+you're filing an N-289 or an N-288B.</p>
+
+<h2>The three N-289 exemptions</h2>
+<p style="max-width:46rem">Withholding isn't required if the seller gives the buyer Form N-289
+stating the seller's taxpayer identification number and one of the following:</p>
+<ol style="max-width:46rem">
+<li><strong>The seller is a Hawaii resident person.</strong> See the residency note above.</li>
+<li><strong>No gain or loss is recognized</strong> under a nonrecognition provision of the Internal
+Revenue Code that Hawaii conforms to, or under a U.S. treaty. Common ones: a section 1031 like-kind
+exchange, transfers by gift, transfers by bequest, and transfers incident to divorce. You must
+describe the transfer and summarize the law and facts supporting the claim — and if <em>any</em>
+gain is recognized in a 1031 exchange, Form N-289 can't be used for it.</li>
+<li><strong>Principal residence under $300,000.</strong> The property was used by the seller as a
+principal residence for the year preceding the transfer <em>and</em> the amount realized does not
+exceed $300,000. As shown above, this rarely reaches an Oahu sale. Note this differs from federal
+FIRPTA, where the $300,000 test looks at the <em>buyer's</em> intended use.</li>
+</ol>
+
+<h2>The lever that usually matters here: Form N-288B and the 10-working-day clock</h2>
+<p style="max-width:46rem">If you don't qualify for an N-289 exemption but you won't owe anywhere
+near 7.25% of the sale, the instrument is <strong>Form N-288B</strong>, the Application for
+Withholding Certificate, which asks the Department to reduce or eliminate the withholding up front.
+It's used where the seller will realize no gain, where the gain is fully covered by the
+capital-gains exclusion, or where sale proceeds are insufficient to pay the withholding in full.</p>
+<div class="warn"><strong>The deadline falls before closing, and it is hard.</strong> Form N-288B
+must be filed with the Department <strong>no later than 10 working days prior to the date of
+transfer</strong>. The Department's own instructions state that applications filed later than that
+will not be accepted and will be returned to the seller, and that it will not approve a Form N-288B
+after the transfer date has passed. Working days, not calendar days — and counted backward from
+closing, which means the decision to file lands in the middle of your PCS, not after it.
+(<a href="https://files.hawaii.gov/tax/forms/current/n288b_i.pdf">Form N-288B instructions, rev.
+2025</a>.)</div>
+<p style="max-width:46rem">One trap worth stating plainly: if you're relying on the
+principal-residence gain exclusion and <strong>any</strong> amount of gain remains after applying
+it, Form N-288B cannot be used, and the buyer is required to withhold the full 7.25% of the amount
+realized. Partial relief through N-288B is not available for a partially-excluded gain. And even
+when a withholding certificate is issued, you must still file a Hawaii income tax return for the
+year of the sale.</p>
+
+<h2>The capital-gains exclusion and the military suspension</h2>
+<p style="max-width:46rem">Hawaii conforms to IRC section 121, which lets a seller exclude up to
+<strong>$250,000</strong> of gain on a principal residence — <strong>$500,000</strong> on a joint
+return — if the seller owned the home at least two years of the five-year period ending on the sale
+date, lived in it as a principal residence for at least two of those years, didn't acquire it
+through a 1031 exchange in the past five years, and hasn't excluded gain on another home in the two
+years before this sale.</p>
+<p style="max-width:46rem">The two-of-five-year test is exactly what a PCS breaks — which is why
+the military provision exists. Under the federal rules, a member of the uniformed services on
+<strong>qualified official extended duty</strong> may elect to suspend that five-year period for up
+to <strong>10 years</strong>. Extended duty qualifies when you're serving at a duty station at
+least <strong>50 miles</strong> from the home, under a call or order to active duty for an
+indefinite period or a definite period of <strong>more than 90 days</strong>
+(<a href="https://www.irs.gov/publications/p523">IRS Publication 523</a>). A partial exclusion may
+also be available where the sale is due to a change in workplace location, health, or an
+unforeseeable event — the category most PCS-driven sales are argued under.</p>
+<p style="max-width:46rem">Two cautions. The suspension is a <em>federal</em> election described in
+IRS guidance; Hawaii's conformity to section 121 is stated by the Department in Tax Facts 2010-1,
+but how the election applies to your Hawaii return is a question to confirm with the Department or
+a tax professional rather than assume from this page. And the exclusion is about the tax — it only
+touches the withholding through a timely, approved Form N-288B.</p>
+
+<h2>Getting money back if too much was withheld</h2>
+<p style="max-width:46rem">Two routes, per the Department. First, file your Hawaii income tax
+return after the end of the year; the withholding is credited against the tax and the excess is
+refunded. Second, if the return for the year of sale isn't available yet — the usual case for a
+summer PCS-season closing — you can apply for a tentative refund on <strong>Form N-288C</strong>.
+Either way you must still file a Hawaii return for the year of the sale to report the sale and any
+other Hawaii income. One detail worth knowing before you ask your escrow company to fix an error:
+<strong>escrow cannot apply for the refund</strong>. Once payment reaches the Department it's
+credited to the seller's account, and only the seller can request it back.</p>
+
+<h2>Next steps</h2>
+<ol style="max-width:46rem">
+<li><strong>Settle your residency status first.</strong> Domicile and the purpose of your presence
+under TIR 97-1 decide whether you're on the N-289 path or the N-288B path. Do this before you list,
+not during escrow.</li>
+<li><strong>Estimate the gain, not the equity.</strong> The Department is blunt that people confuse
+the two: you can have no equity and still have taxable gain, particularly after refinancing or
+depreciation on a rental period. Depreciation allowed <em>or allowable</em> reduces basis whether or
+not you claimed it.</li>
+<li><strong>Count 10 working days backward from your target closing.</strong> If Form N-288B is your
+route, that date — not closing — is your real deadline. Put it on the PCS calendar alongside the
+other clocks in the <a href="/pcs-checklist/">PCS timeline checklist</a>.</li>
+<li><strong>Decide sell-vs-rent with the withholding in the math.</strong> A 7.25% hold on proceeds
+changes what a sale actually frees up this year. Run it against the accidental-landlord numbers in
+the <a href="/sell/">sell-or-rent departure brief</a>.</li>
+<li><strong>Take the return itself to a professional.</strong> Forms and current rates are on the
+Department's site; its technical section is reachable at 808-587-1577, and forms by phone at
+808-587-4242 or toll-free 1-800-222-3229. For deeper background the Department points to TIR
+2017-01.</li>
+</ol>
+
+<h2>Sources</h2>
+<ul style="max-width:46rem">
+<li><a href="https://files.hawaii.gov/tax/legal/taxfacts/tf2025-2010-1.pdf">Hawaii Department of
+Taxation, Tax Facts 2010-1, "Understanding HARPTA" (rev. April 2025)</a> — the 7.25% rate, amount
+realized, the resident misperception, the N-289 exemptions, the 20th-day payment deadline, N-288C
+refunds, and section 121 conformity.</li>
+<li><a href="https://files.hawaii.gov/tax/forms/current/n288b_i.pdf">Hawaii DOTAX, Instructions for
+Form N-288B (rev. 2025)</a> — the 10-working-day filing deadline and what happens to late
+applications.</li>
+<li><a href="https://files.hawaii.gov/tax/legal/tir/tir97-01.pdf">Hawaii DOTAX, TIR 97-1,
+"Determination of Residence Status"</a> — how residency is determined.</li>
+<li><a href="https://www.irs.gov/publications/p523">IRS Publication 523, "Selling Your Home"</a> —
+the section 121 exclusion amounts and the uniformed-services suspension of the five-year test.</li>
+</ul>
+<p style="max-width:46rem">Compiled from the sources above and verified <strong>August 16, 2026</strong>.
+Rates, thresholds, and forms change; the Department's published forms and Tax Facts
+govern, not this page. Nothing here is tax, legal, or accounting advice, an opinion on your
+residency status, or a computation of what you will owe — those are for the Department of Taxation
+or a tax professional you choose.</p>
+{lead_form("HARPTA", "pcs-seller", context="sell",
+  heading="Selling the Oahu house on this set of orders?",
+  blurb="Join the list for the seller-side brief: HARPTA and residency notes as the Department "
+        "updates them, market medians as they move, and first access when full service opens.")}
+</div>'''
+    p = "/guides/harpta.html"
+    ld = {"@context": "https://schema.org", "@graph": [
+        {"@type": "Article",
+         "headline": "HARPTA when you PCS out of Hawaii: the 7.25% withholding, Form N-289, and the 10-day clock",
+         "description": "How Hawaii's HARPTA withholding works for outbound military sellers on Oahu: "
+                        "7.25% of the amount realized, why residency alone doesn't exempt you, the three "
+                        "Form N-289 exemptions, the Form N-288B 10-working-day deadline, and the "
+                        "uniformed-services suspension of the section 121 five-year test.",
+         "datePublished": "2026-08-16", "dateModified": "2026-08-16",
+         "author": {"@type": "Organization", "name": "PCS Oahu"},
+         "publisher": {"@type": "Organization", "name": "PCS Oahu"},
+         "mainEntityOfPage": DOMAIN + p},
+        faq_ld(qas)]}
+    return p, page(p, "HARPTA for Military Sellers on Oahu: 7.25% Withholding, N-289, N-288B | PCS Oahu",
+                "HARPTA explained for outbound military sellers on Oahu: the 7.25% withholding on the "
+                "amount realized, why being a Hawaii resident doesn't exempt you without Form N-289, "
+                "the $300,000 ceiling that rarely fits Oahu, and the Form N-288B 10-working-day clock.",
+                body, "/sell/", jsonld=ld)
 
 def guides_hub():
     body = f'''
@@ -917,6 +1155,9 @@ Hawaii PCS that paperwork alone doesn't cover.</p>
   <div class="card"><span class="tag">Departing</span>
     <h3><a href="/sell/">PCSing out: sell or rent?</a></h3>
     <p>HARPTA, the accidental-landlord napkin, and VA seller notes.</p></div>
+  <div class="card"><span class="tag">Departing</span>
+    <h3><a href="/guides/harpta.html">HARPTA, in detail</a></h3>
+    <p>The 7.25% withholding on the amount realized, why residency alone doesn't exempt you, and the Form N-288B 10-working-day clock.</p></div>
 </div>
 {lead_form("GUIDES", "pcs-renter")}
 </div>'''
@@ -936,7 +1177,8 @@ def build():
         "/tla/index.html": tla(),
         "/guides/index.html": guides_hub(),
     }
-    for fn in (spouse, school_transition, pets, household_goods, vehicle_registration, rent_vs_buy):
+    for fn in (spouse, school_transition, pets, household_goods, vehicle_registration, rent_vs_buy,
+               harpta):
         p, h = fn()
         out[p] = h
     return out

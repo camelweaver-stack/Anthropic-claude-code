@@ -4,6 +4,142 @@ Append-only. Newest entry on top. One record per daily run. Template at the bott
 
 ---
 
+## 2026-08-16 — HARPTA for outbound military sellers (BUILT + GATE-GREEN, **NOT DEPLOYED — NEEDS REVIEW**)
+
+- **Date/time:** 2026-08-16 (America/Honolulu editorial day)
+- **Selected topic:** HARPTA — Hawaii's 7.25% withholding on dispositions of Hawaii real property,
+  written for outbound military sellers on Oahu. Backlog #2, the standing `NEXT` item.
+- **Reason for selection:** Highest-utility unshipped backlog item (Traffic M / Transaction H) and
+  the correct cluster rotation — the last three ships were PCS logistics, PCS logistics, and
+  Buying/VA, so Selling/Leaving Hawaii was the balanced draw. It also absorbed a real staleness
+  finding (below): the `/sell/` hub carried two materially wrong HARPTA statements, so the
+  fix-an-existing-page path and the new-page path were the same piece of work.
+- **Audience:** Outbound service members and families selling an Oahu home on PCS orders.
+- **Content type:** Evergreen tax-process explainer (publisher mode; explicitly not tax advice).
+- **URL:** `/guides/harpta.html` — **built and gate-green locally, not live.**
+
+### Staleness scan (all six checks in `editorial/staleness-scan.md`)
+1. **Data freshness** — `LAST_REFRESHED` August 1, 2026; `BUILD_DATE` August 2026; `BAH_YEAR` 2026;
+   medians June 2026. All inside cadence (rent-band refresh next due 2026-09-01; medians quarterly;
+   BAH on the December DTMO cycle). No action.
+2. **Date/edition drift** — 51 `2024|2025` matches, all inside the shared photo-credit block
+   ("2025 Pearl Harbor 02" is a Wikimedia filename). No visible-copy drift. No action.
+3. **Expired/time-bound content** — none; site is still evergreen. No action.
+4. **Broken / orphan / duplicate** — internal-link target check clean (0 missing); duplicate-title
+   check clean; only orphans are `/404.html` and the noindex `embed/bah-widget.html`, both
+   intentional. No action.
+5. **Sitemap parity + gate** — baseline `GATE PASSED — 50 pages, 48 sitemap URLs` before changes.
+6. **Sourcing weakness — TWO DEFECTS FOUND AND FIXED** on `/sell/` (see below).
+
+### Corrections made to an existing page (`/sell/`)
+Both checked against Hawaii DOTAX Tax Facts 2010-1 (rev. April 2025), the Department's own guidance:
+- **"7.25% of the gross sale price" → "7.25% of the amount realized."** The statute withholds on the
+  *amount realized*, which the Department explicitly distinguishes from the sales price (it also
+  includes the fair market value of property received and any liability the buyer assumes). Appeared
+  twice in copy plus once in the FAQ JSON-LD.
+- **"It does not apply to Hawaii residents at closing" → corrected.** The Department names this by
+  name as a common misperception: HARPTA *does* apply when the seller is a Hawaii resident; the buyer
+  is simply not required to withhold *if the seller gives the buyer Form N-289*. A resident seller who
+  never hands over the form gets 7.25% withheld anyway, and a buyer who fails to withhold is
+  personally liable. This was the more consequential of the two — it told resident sellers they were
+  automatically safe.
+- Also softened "service members … are typically non-residents for HARPTA purposes" to match what the
+  source actually supports: residency turns on domicile *and* the purpose of presence under TIR 97-1,
+  and a mainland state of legal residence does not settle it in either direction.
+
+### Sources used (verified 2026-08-16)
+- **Hawaii DOTAX, Tax Facts 2010-1, "Understanding HARPTA" (rev. April 2025)** —
+  `https://files.hawaii.gov/tax/legal/taxfacts/tf2025-2010-1.pdf`. HRS §235-68; 7.25% of the amount
+  realized; withholding is an estimated tax payment, not a tax; the resident misperception (Q2); the
+  three Form N-289 exemptions incl. the $300,000 principal-residence ceiling (Q31); Forms N-288/N-288A
+  due the 20th day after the transfer date (Q9); Form N-288C tentative refund and escrow's inability
+  to claim it (Q7, Q26); Hawaii's conformity to IRC §121 and the rule that N-288B is unavailable if
+  any gain remains after the exclusion (Q21); resident/nonresident definitions and the TIR 97-1
+  pointer (Q4); DOTAX phone numbers (p.8).
+- **Hawaii DOTAX, Instructions for Form N-288B (rev. 2025)** —
+  `https://files.hawaii.gov/tax/forms/current/n288b_i.pdf`. The 10-working-day pre-transfer filing
+  deadline, verbatim, plus the consequence for late filings.
+- **Hawaii DOTAX, TIR 97-1, "Determination of Residence Status"** — cited for residency determination.
+- **IRS Publication 523, "Selling Your Home"** — `https://www.irs.gov/publications/p523`. §121
+  exclusion $250,000 / $500,000 MFJ; uniformed-services suspension of the five-year test capped at
+  **10 years**; qualified official extended duty = duty station ≥ **50 miles** from the home under
+  orders for an indefinite period or a definite period of **more than 90 days**.
+- Arithmetic disclosure: the two "HARPTA withheld" figures (≈$92,400 and ≈$38,400) are 7.25% of this
+  site's own published June 2026 medians ($1,275,000 → $92,437.50; $530,000 → $38,425), rounded and
+  labelled in the source line as scale-only, not a quote or tax computation.
+- **Nothing was asserted that a source did not carry.** The one place the honest answer was "it
+  depends" — whether a given service member is a Hawaii "resident person" — is written as
+  fact-specific and routed to DOTAX/TIR 97-1 rather than resolved on the page. The §121 military
+  suspension is labelled as a *federal* election with Hawaii treatment to be confirmed, because Tax
+  Facts states conformity to §121 generally but does not address §121(d)(9) specifically.
+- **Facts requiring future revalidation:** the 7.25% rate (statutory, last changed 2018); the $300,000
+  N-289 ceiling; the 10-working-day N-288B deadline (recheck at each form revision); §121 exclusion
+  amounts; DOTAX phone numbers; the June 2026 medians when the quarterly refresh lands.
+- **Internal links added:** New page → `/sell/`, `/pcs-checklist/`, plus nav/footer. Reciprocal links
+  added **FROM** `/sell/` (hub, in-body), `/guides/` (hub, new Departing card), and
+  `/guides/rent-vs-buy.html` (existing page, forced-exit callout), plus the shared footer
+  ("Buying & Selling" list) which puts it on all 50 other pages.
+- **CTA used:** "Selling the Oahu house on this set of orders?" → lead form, segment `pcs-seller`,
+  context `sell` (so `sell_timeline`, per the gate's seller-form rule), tag `PCSOAHU-HARPTA`.
+- **Files changed:** `gen/pages_content.py` (new `harpta()`, wired into `build()`; guides-hub card;
+  `/sell/` corrections; `/guides/rent-vs-buy.html` reciprocal), `gen/common.py` (footer link).
+  Regenerated `site/` (51 pages), `site/sitemap.xml` (49 URLs), `indexnow-payload.json`.
+- **Build status:** `GATE PASSED — 51 pages, 49 sitemap URLs, all assertions green.`
+
+### Deployment status: **NOT DEPLOYED — held under safeguard (deleting major pages / material redesign)**
+
+Deploying this branch's `site/` today would have been destructive to production. Evidence gathered
+before attempting any deploy:
+
+- The currently published Netlify deploy is **`6a81d76309294fc3d42c8fe5`**, state `ready`, published
+  **2026-08-16T15:30:11Z — roughly 25 minutes before this run started** — from branch
+  **`claude/pcs-oahu-deploy-dd373n`**, titled *"SEO: canonical unification, 2026 BAH table, orphan
+  rescue (draft v2)"*, `manual_deploy: true`, context `deploy-preview`.
+- Production's live sitemap carries **59 URLs**; this branch builds **49**. Diffing the two
+  (normalizing the `.html` suffix) shows **production is a strict superset** — every page this branch
+  builds is already live, and **11 live URLs exist only in production**:
+  `/family/` + its 8 children, `/tools/commute-grid/`, and `/bah-report/2026-rates/`.
+- Separately, **29 pages would change URL form**: production serves extensionless canonicals
+  (`/guides/rent-vs-buy`), this branch emits `.html` canonicals. Deploying would flip the canonical
+  tag on 29 already-indexed pages and reintroduce `.html` into the sitemap.
+- Net effect of a deploy: **delete 11 live pages, churn 29 canonicals, roll back a 25-minute-old
+  deploy** from another workstream that was explicitly about canonical unification and orphan rescue.
+
+That lands squarely on two items in the do-not-auto-publish list in `DAILY_RUN.md` — *deletion of
+major pages* and *material redesigns* — so per the runbook the correct action was to build, gate, and
+**stop**. No deploy was attempted; no force; production is untouched and still serving the dd373n
+build. This is the same branch-divergence risk flagged in the 2026-08-10 entry, now materially worse:
+it is no longer 9 untracked pages, it is a full URL-convention fork plus a live deploy from the other
+branch.
+
+- **IndexNow:** **not submitted.** Nothing changed in production, so pinging would have been a false
+  freshness signal. `indexnow-payload.json` is regenerated in the repo and ready for the operator.
+- **Production verification:** N/A — nothing deployed. Confirmed production is unchanged and healthy
+  after this run: `/` 200, `/sell/` 200, `/family/` 200, `/tools/commute-grid/` 200, `/sitemap.xml`
+  200 (still 59 URLs), nonexistent path 404, `/guides/rent-vs-buy.html` 301 → the extensionless
+  canonical (expected under production's current convention).
+
+### Recovery path / what the operator needs to decide
+The last green `site/` for this branch is committed on
+`claude/pcs-oahu-daily-publishing-1289q3`; nothing is lost and nothing is half-applied. Publishing
+`/guides/harpta.html` needs one of:
+1. **Treat `dd373n` as production source** — port `harpta()` and the `/sell/` corrections into that
+   branch and deploy from there. Fastest path to getting today's item live; leaves the fork in place.
+2. **Reconcile onto `1289q3`** — port `/family/` (9 URLs), `/tools/commute-grid/`, and
+   `/bah-report/2026-rates/` into this generator *and* switch `page()` to extensionless canonicals so
+   the build matches what is already indexed, then deploy. This is the durable fix and would let the
+   daily engine run unblocked, but it is a material change to every canonical on the site and wants an
+   explicit go-ahead.
+3. Retire one branch outright.
+Until one of those happens, **the daily cycle cannot deploy from `1289q3` without destroying live
+pages** — this is now a hard blocker on the engine, not a background risk.
+
+- **Next recommended related topics:** Backlog #3 (fee simple vs leasehold) pairs naturally with this
+  one on the Buying/Selling axis; #5 (on-base waitlist mechanics) and #4 (DoDEA vs Hawaii DOE) remain
+  the highest-utility unshipped items in other clusters.
+
+---
+
 ## 2026-08-10 — Lead-form security fix (Session 1, Where In DFW Acceleration Plan)
 
 - **Trigger:** Explicit task from the operator's Acceleration Plan (Drive doc 21): "PCS Oahu form
