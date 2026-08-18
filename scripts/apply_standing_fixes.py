@@ -33,10 +33,10 @@ CHECK_ONLY = "--check" in sys.argv
 NOINDEX = {"thanks.html", "es/gracias.html"}
 
 # ---------------------------------------------------------------- nav specs
-# hrefs are the targets' own canonical URL forms, so fix_nav and
-# fix_internal_links agree and the pass stays idempotent.
+# hrefs are the targets' own canonical URL forms (see url_for/canonical_path),
+# so fix_nav and fix_internal_links agree and the pass stays idempotent.
 NAV_EN_LINKS = [
-    ("/specials.html", "Specials"), ("/deals.html", "Best Deals"),
+    ("/specials", "Specials"), ("/deals", "Best Deals"),
     ("/neighborhoods/", "Neighborhoods"), ("/schools/", "Schools"),
     ("/buy/", "Buying"), ("/sell/", "Selling"), ("/relocate/", "Relocate"),
     ("/guides/", "Guides"), ("/tools/", "Tools"),
@@ -47,9 +47,9 @@ NAV_EN_COUNT = 10
 
 NAV_ES_LINKS = [
     ("/es/", "Inicio"), ("/es/comprar/", "Comprar"), ("/es/vender/", "Vender"),
-    ("/es/especiales.html", "Especiales"),
-    ("/es/segunda-oportunidad.html", "Segunda Oportunidad"),
-    ("/es/relocate/", "Mudanza"), ("/es/calculadora.html", "Calculadora"),
+    ("/es/especiales", "Especiales"),
+    ("/es/segunda-oportunidad", "Segunda Oportunidad"),
+    ("/es/relocate/", "Mudanza"), ("/es/calculadora", "Calculadora"),
 ]
 NAV_ES_HEAD = "".join(f"<a href='{h}'>{t}</a>" for h, t in NAV_ES_LINKS)
 NAV_ES_COUNT = 8
@@ -130,12 +130,24 @@ def html_files():
 
 
 def url_for(rel):
-    """Site-absolute URL path for a file, matching the site's existing convention:
-    index.html -> directory URL with trailing slash; everything else keeps .html."""
+    """Site-absolute URL path for a file, matching the URL Netlify actually serves.
+
+    Netlify's Pretty URLs post-processing rewrites every <a href="x.html"> to
+    <a href="x"> on every deploy, regardless of what the source HTML says — this
+    is a platform-level rewrite, not a site convention, and it cannot be turned
+    off from here. So the "real" URL for a .html file is the extensionless form;
+    treating .html as canonical (an earlier version of this script did) fights
+    the platform and loses every time, since Netlify serves the extensionless
+    href on every rendered page regardless. index.html files keep their
+    directory URL with trailing slash, matching Netlify's existing behavior
+    for those (unaffected by Pretty URLs, which only touches the .html suffix).
+    """
     if rel == "index.html":
         return "/"
     if rel.endswith("/index.html"):
         return "/" + rel[: -len("index.html")]
+    if rel.endswith(".html"):
+        return "/" + rel[: -len(".html")]
     return "/" + rel
 
 
@@ -166,12 +178,10 @@ def context_for(rel, doc):
 
 
 def canonical_path(doc, rel):
-    """The page's declared canonical path, if it validly resolves to this file.
-
-    The site uses three equivalent apex spellings (/x.html, /x, and /dir/ for
-    index files) and the existing sitemap matches whatever each page declares.
-    We accept any spelling that maps back to this file rather than rewriting 24
-    live canonicals into a different form.
+    """The page's declared canonical path, if it equals url_for(rel) — the one
+    correct form, since Netlify's Pretty URLs rewrite every rendered <a href>
+    to the extensionless form regardless of source, so a canonical in any other
+    form silently disagrees with what real links on the page resolve to.
     """
     m = re.search(r'<link rel="canonical" href="([^"]+)"', doc)
     if not m:
@@ -180,13 +190,7 @@ def canonical_path(doc, rel):
     if not got.startswith(DOMAIN):
         return None
     path = got[len(DOMAIN):] or "/"
-    default = url_for(rel)
-    accepted = {default}
-    if default.endswith(".html"):
-        accepted.add(default[:-5])
-    if path in accepted:
-        return path
-    return None
+    return path if path == url_for(rel) else None
 
 
 # ---------------------------------------------------------------- fixes
@@ -211,8 +215,8 @@ def fix_canonical(doc, rel):
     want = f'<link rel="canonical" href="{DOMAIN}{url_for(rel)}">'
     m = re.search(r'<link rel="canonical"[^>]*>', doc)
     if m:
-        # Only correct a canonical that does not resolve to this file; an existing
-        # valid apex spelling is left exactly as-is (see canonical_path).
+        # Only correct a canonical that is not exactly url_for(rel) — the single
+        # correct form (see canonical_path).
         if canonical_path(doc, rel) is not None:
             return doc
         note(f"canonical {rel} (corrected — did not resolve to this file)")
@@ -336,6 +340,39 @@ def _split(href):
     """href -> (path, suffix) where suffix keeps any #fragment or ?query."""
     m = re.match(r"([^#?]*)(.*)", href)
     return m.group(1), m.group(2)
+
+
+HREFLANG_RE = re.compile(
+    r'(<link rel="alternate" hreflang="[a-z-]+" href=")([^"]+)(")')
+
+
+def fix_hreflang(doc, rel, cmap):
+    """Point every hreflang alternate at its target's own canonical URL.
+
+    hreflang hrefs are absolute (https://westfwliving.com/...), so Netlify's
+    Pretty URLs rewrite (which only touches path-relative <a href> attributes)
+    never touches them — they drift independently and need their own fix.
+    """
+    changed = [0]
+
+    def repl(m):
+        pre, href, post = m.groups()
+        if not href.startswith(DOMAIN):
+            return m.group(0)
+        path = href[len(DOMAIN):] or "/"
+        tgt = resolve(path)
+        if tgt is None or tgt not in cmap:
+            return m.group(0)
+        want = DOMAIN + cmap[tgt]
+        if href == want:
+            return m.group(0)
+        changed[0] += 1
+        return pre + want + post
+
+    new = HREFLANG_RE.sub(repl, doc)
+    if changed[0]:
+        note(f"hreflang  {rel} ({changed[0]} -> canonical form)")
+    return new
 
 
 def fix_internal_links(doc, rel, cmap):
@@ -529,10 +566,11 @@ def main():
 
     cmap = canonical_map(files, docs)
 
-    # Pass 2 — canonicalize internal links, then write anything that changed.
+    # Pass 2 — canonicalize internal links + hreflang, then write anything changed.
     if not CHECK_ONLY:
         for rel in files:
             docs[rel] = fix_internal_links(docs[rel], rel, cmap)
+            docs[rel] = fix_hreflang(docs[rel], rel, cmap)
             if docs[rel] != originals[rel]:
                 with open(rel, "w", encoding="utf-8") as fh:
                     fh.write(docs[rel])

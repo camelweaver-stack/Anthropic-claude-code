@@ -14,8 +14,8 @@ idempotent normalization + gate pass over *every* page, generated or not.
 DOMAIN = "https://westfwliving.com"
 
 # ---------------------------------------------------------------- nav (10-link spec)
-NAV_EN = ("<a href='/specials.html'>Specials</a>"
-          "<a href='/deals.html'>Best Deals</a>"
+NAV_EN = ("<a href='/specials'>Specials</a>"
+          "<a href='/deals'>Best Deals</a>"
           "<a href='/neighborhoods/'>Neighborhoods</a>"
           "<a href='/schools/'>Schools</a>"
           "<a href='/buy/'>Buying</a>"
@@ -30,10 +30,10 @@ NAV_EN = ("<a href='/specials.html'>Specials</a>"
 NAV_ES = ("<a href='/es/'>Inicio</a>"
           "<a href='/es/comprar/'>Comprar</a>"
           "<a href='/es/vender/'>Vender</a>"
-          "<a href='/es/especiales.html'>Especiales</a>"
-          "<a href='/es/segunda-oportunidad.html'>Segunda Oportunidad</a>"
+          "<a href='/es/especiales'>Especiales</a>"
+          "<a href='/es/segunda-oportunidad'>Segunda Oportunidad</a>"
           "<a href='/es/relocate/'>Mudanza</a>"
-          "<a href='/es/calculadora.html'>Calculadora</a>"
+          "<a href='/es/calculadora'>Calculadora</a>"
           "<a href='{en}' style='font-weight:600'>English</a>")
 
 FONTS = ("<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n"
@@ -66,19 +66,19 @@ DISCLAIM_ES = (
 
 FGRID_EN = """<div class="fgrid">
     <div><h4>West FW Living</h4><p>An independent field guide to renting and buying on Fort Worth's west side — Aledo, Willow Park, Hudson Oaks, Walsh, Benbrook and the Chisholm Trail corridor. Full service is coming soon; <a href='/#list'>the early list hears first</a>.</p></div>
-    <div><h4>Renting</h4><ul><li><a href='/specials.html'>This Month's Specials</a></li><li><a href='/deals.html'>Best Deals, Ranked</a></li><li><a href='/rentals/'>Browse by Feature</a></li><li><a href='/second-chance.html'>Second Chance Renting</a></li><li><a href='/rent-to-own.html'>Rent-to-Own Reality</a></li><li><a href='/areas.html'>Areas We Cover</a></li></ul></div>
+    <div><h4>Renting</h4><ul><li><a href='/specials'>This Month's Specials</a></li><li><a href='/deals'>Best Deals, Ranked</a></li><li><a href='/rentals/'>Browse by Feature</a></li><li><a href='/second-chance'>Second Chance Renting</a></li><li><a href='/rent-to-own'>Rent-to-Own Reality</a></li><li><a href='/areas'>Areas We Cover</a></li></ul></div>
     <div><h4>Explore West FW</h4><ul><li><a href='/neighborhoods/'>Neighborhoods</a></li><li><a href='/schools/'>Schools &amp; ISDs</a></li><li><a href='/compare/'>Compare Places</a></li><li><a href='/relocate/'>Relocating Here</a></li><li><a href='/move/'>Move Checklist</a></li><li><a href='/community/'>Community &amp; Local Life</a></li><li><a href='/military/'>Military &amp; BAH</a></li><li><a href='/guides/'>All Guides</a></li></ul></div>
-    <div><h4>Buying</h4><ul><li><a href='/buy/'>Buy the West Side</a></li><li><a href='/calculator.html'>Rent vs. Buy Math</a></li><li><a href='/quiz.html'>Rent-or-Buy Quiz</a></li><li><a href='/es/'>En Español</a></li></ul></div>
+    <div><h4>Buying</h4><ul><li><a href='/buy/'>Buy the West Side</a></li><li><a href='/calculator'>Rent vs. Buy Math</a></li><li><a href='/quiz'>Rent-or-Buy Quiz</a></li><li><a href='/es/'>En Español</a></li></ul></div>
     <div><h4>Selling</h4><ul><li><a href='/sell/'>Sell Your Home</a></li><li><a href='/sell/home-value'>What's My Home Worth</a></li><li><a href='/sell/equity-report'>The Equity Report</a></li><li><a href='/sell/sell-before-buying'>Sell Before You Buy</a></li></ul></div>
-    <div><h4>Data &amp; Tools</h4><ul><li><a href='/tools/'>Renter Tools</a></li><li><a href='/data/'>Rent Data &amp; Reports</a></li><li><a href='/rent-report/august-2026.html'>Latest Rent Report</a></li><li><a href='/resources/'>Resources</a></li></ul></div>
+    <div><h4>Data &amp; Tools</h4><ul><li><a href='/tools/'>Renter Tools</a></li><li><a href='/data/'>Rent Data &amp; Reports</a></li><li><a href='/rent-report/august-2026'>Latest Rent Report</a></li><li><a href='/resources/'>Resources</a></li></ul></div>
   </div>"""
 
 FGRID_ES = """<div class="fgrid">
     <div><h4>West FW Living</h4><p>Una guía independiente para rentar y comprar en el oeste de Fort Worth. El servicio completo llega pronto; <a href='/es/#lista'>la lista se entera primero</a>.</p></div>
-    <div><h4>Rentar</h4><ul><li><a href='/es/especiales.html'>Especiales del Mes</a></li><li><a href='/deals.html'>Mejores Ofertas</a></li><li><a href='/es/segunda-oportunidad.html'>Segunda Oportunidad</a></li><li><a href='/es/semanas-gratis.html'>Semanas Gratis</a></li><li><a href='/es/romper-contrato.html'>Romper el Contrato</a></li></ul></div>
-    <div><h4>Comprar</h4><ul><li><a href='/es/comprar/'>Comprar Casa</a></li><li><a href='/es/comprar/renta-o-compra.html'>Renta o Compra</a></li><li><a href='/es/comprar/primera-vivienda-texas.html'>Primera Vivienda</a></li><li><a href='/es/comprar/asistencia-enganche.html'>Ayuda con el Enganche</a></li></ul></div>
+    <div><h4>Rentar</h4><ul><li><a href='/es/especiales'>Especiales del Mes</a></li><li><a href='/deals'>Mejores Ofertas</a></li><li><a href='/es/segunda-oportunidad'>Segunda Oportunidad</a></li><li><a href='/es/semanas-gratis'>Semanas Gratis</a></li><li><a href='/es/romper-contrato'>Romper el Contrato</a></li></ul></div>
+    <div><h4>Comprar</h4><ul><li><a href='/es/comprar/'>Comprar Casa</a></li><li><a href='/es/comprar/renta-o-compra'>Renta o Compra</a></li><li><a href='/es/comprar/primera-vivienda-texas'>Primera Vivienda</a></li><li><a href='/es/comprar/asistencia-enganche'>Ayuda con el Enganche</a></li></ul></div>
     <div><h4>Vender</h4><ul><li><a href='/es/vender/'>Vender tu Casa</a></li><li><a href='/es/vender/valor-de-tu-casa'>Valor de tu Casa</a></li><li><a href='/es/vender/reporte-de-plusvalia'>Reporte de Plusvalía</a></li></ul></div>
-    <div><h4>Recursos</h4><ul><li><a href='/es/calculadora.html'>Calculadora</a></li><li><a href='/es/puntaje-credito.html'>Puntaje de Crédito</a></li><li><a href='/es/relocate/'>Mudanza</a></li><li><a href='/es/comunidad/'>Comunidad</a></li><li><a href='/'>English site</a></li></ul></div>
+    <div><h4>Recursos</h4><ul><li><a href='/es/calculadora'>Calculadora</a></li><li><a href='/es/puntaje-credito'>Puntaje de Crédito</a></li><li><a href='/es/relocate/'>Mudanza</a></li><li><a href='/es/comunidad/'>Comunidad</a></li><li><a href='/'>English site</a></li></ul></div>
   </div>"""
 
 # ---------------------------------------------------------------- lead form
@@ -170,6 +170,24 @@ UTM_SCRIPT = """<!-- aw-utm-capture --><script>
 </script>"""
 
 
+def _url(path):
+    """File path -> the URL Netlify actually serves for it.
+
+    Netlify's Pretty URLs post-processing rewrites every <a href="x.html"> to
+    <a href="x"> on every deploy regardless of source, so the real URL for a
+    .html file is the extensionless form (mirrors url_for() in
+    scripts/apply_standing_fixes.py — kept in sync by hand since the two
+    modules aren't shared). index.html files keep their trailing-slash form.
+    """
+    if not path or path == "/":
+        return path
+    if path.endswith("/index.html"):
+        return path[: -len("index.html")]
+    if path.endswith(".html"):
+        return path[: -len(".html")]
+    return path
+
+
 def page(*, path, title, description, h1, eyebrow, lede, body, crumb,
          verified, es=False, alt_path=None, ld=(), extra_css=()):
     """Assemble a complete page.
@@ -179,18 +197,18 @@ def page(*, path, title, description, h1, eyebrow, lede, body, crumb,
     verified  visible "verified" date, ISO yyyy-mm-dd — rendered into the page body
     ld        iterable of JSON-LD <script> strings (use article_ld/faq_ld)
     """
-    canonical = DOMAIN + path
+    canonical = DOMAIN + _url(path)
     lang = "es" if es else "en"
     en_path = alt_path if es else path
     es_path = path if es else alt_path
 
     hreflang = ""
     if alt_path:
-        hreflang = (f'<link rel="alternate" hreflang="en" href="{DOMAIN}{en_path}">\n'
-                    f'<link rel="alternate" hreflang="es" href="{DOMAIN}{es_path}">\n'
-                    f'<link rel="alternate" hreflang="x-default" href="{DOMAIN}{en_path}">')
+        hreflang = (f'<link rel="alternate" hreflang="en" href="{DOMAIN}{_url(en_path)}">\n'
+                    f'<link rel="alternate" hreflang="es" href="{DOMAIN}{_url(es_path)}">\n'
+                    f'<link rel="alternate" hreflang="x-default" href="{DOMAIN}{_url(en_path)}">')
 
-    nav = NAV_ES.format(en=en_path or "/") if es else NAV_EN
+    nav = NAV_ES.format(en=_url(en_path) or "/") if es else NAV_EN
     brand_href = "/es/" if es else "/"
     brand_tag = "la guía del oeste de Fort Worth" if es else "the west side field guide"
     fgrid = FGRID_ES if es else FGRID_EN

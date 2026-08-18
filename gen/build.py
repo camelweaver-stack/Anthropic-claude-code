@@ -26,7 +26,7 @@ RECIPROCAL = [
         "schools/index.html",
         "/schools/tea-ratings-2026",
         "<section><h2>This year's ratings</h2><div class=\"grid cols2\">"
-        "<div class='card'><h3><a href='/schools/tea-ratings-2026.html'>2026 TEA ratings, corridor-wide</a></h3>"
+        "<div class='card'><h3><a href='/schools/tea-ratings-2026'>2026 TEA ratings, corridor-wide</a></h3>"
         "<p>Every west-side district and campus in TEA's August 2026 release &mdash; and the three "
         "limits that keep a letter grade from being a housing decision.</p></div></div></section>\n",
         "<section><h2>Districts</h2>",
@@ -35,7 +35,7 @@ RECIPROCAL = [
         "es/escuelas/index.html",
         "/es/escuelas/calificaciones-tea-2026",
         "<section><h2>Las calificaciones de este a&ntilde;o</h2><div class=\"grid cols2\">"
-        "<div class='card'><h3><a href='/es/escuelas/calificaciones-tea-2026.html'>Calificaciones TEA 2026</a></h3>"
+        "<div class='card'><h3><a href='/es/escuelas/calificaciones-tea-2026'>Calificaciones TEA 2026</a></h3>"
         "<p>Cada distrito y plantel del lado oeste en la publicaci&oacute;n de agosto de 2026 de la TEA.</p>"
         "</div></div></section>\n",
         "<section><h2>Distritos</h2>",
