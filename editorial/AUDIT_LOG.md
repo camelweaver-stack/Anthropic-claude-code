@@ -4,6 +4,97 @@ Append-only. Newest entry on top. One record per daily run. Template at the bott
 
 ---
 
+## 2026-08-18 — GSC coverage-report diagnosis: sitemap lastmod + IndexNow key fixed on production branch (deploy BLOCKED, needs operator)
+
+- **Trigger:** Operator supplied a Google Search Console "Page indexing" coverage export
+  (`pcsoahu.comCoverage20260818.zip`) and asked for necessary corrections. Not a normal daily-topic
+  cycle — a diagnostic/maintenance run.
+
+### What the report said
+`Chart.csv`: 48 URLs "Not indexed", 1 "Indexed", flat across 2026-08-09 through 2026-08-13.
+`Critical issues.csv`: **"Discovered - currently not indexed" × 47** (Google systems) and
+**"Page with redirect" × 1** (Website). `Non-critical issues.csv` empty. `Metadata.csv`: sitemap
+scope "All known pages" (no per-URL breakdown available in this export tier).
+
+### Diagnosis
+- **"Page with redirect" (1) — benign, no action.** `netlify.toml` (both branches) has exactly one
+  redirect rule, `www.pcsoahu.com/* → pcsoahu.com/:splat` (301). This is almost certainly Google
+  having discovered the `www` host and correctly recording that it redirects to the canonical apex
+  — expected behavior, not a defect.
+- **Extensionless vs `.html` duplicate URL forms — checked, not a defect.** Both
+  `/guides/utilities` and `/guides/utilities.html` serve 200 live. Confirmed only `utilities.html`
+  exists on disk (`site/guides/utilities.html`) — Netlify's standard clean-URL serving of one file
+  at two paths — and both paths carry the identical `<link rel="canonical">` pointing at the
+  `.html` form. Correctly self-canonicalized; not duplicate content from Google's perspective.
+- **"Discovered - currently not indexed" (47) — two real contributing defects found and fixed,
+  plus normal new-site behavior.** The site is ~2 weeks old with no backlink profile; some amount
+  of Google being selective about indexing a young, unproven domain is expected and not fixable by
+  a code change — it resolves over subsequent weeks as Google re-crawls. But two generator bugs
+  were actively working against that, found identically on **both** `gen/build.py` files (this
+  branch and `claude/pcs-oahu-deploy-dd373n`, the branch Netlify actually serves production from):
+  1. **Static sitemap `lastmod`.** Every one of the sitemap's 49–56 URLs carried the identical
+     hardcoded `<lastmod>2026-08-01</lastmod>` regardless of when a page actually last changed —
+     including on pages shipped 2026-08-05/06/16 with visibly different content. A sitemap whose
+     freshness signal never varies is exactly the pattern Google's own documentation says it
+     discounts, which can deprioritize recrawl of a new site's pages. Fixed: `lastmod` is now
+     single-sourced per page from that page's own Article JSON-LD `dateModified` (falling back to
+     the site's existing single-source-of-truth refresh date for hub/tool pages with no Article
+     node) — so it can never again silently go stale or drift from what the page itself claims.
+  2. **IndexNow payload shipped a placeholder key.** `indexnow-payload.json` was built with the
+     literal string `"REPLACE_WITH_INDEXNOW_KEY"` as both `key` and `keyLocation`, even though the
+     real key file (`12ef30fd51aefc63524ab6eb41e58f99.txt` — the key named in `DAILY_RUN.md`'s
+     IndexNow step) already ships at the site root and verifies live (HTTP 200, body matches
+     filename). Every IndexNow submission built from the emitted payload would have failed key
+     verification and been silently rejected. Fixed: payload now uses the real key. (Scope note:
+     IndexNow is a Bing/Yandex mechanism, not consumed by Google — this fix doesn't touch Google's
+     own indexing, but it was a live, previously-undetected bug in the runbook's step 9 and is
+     fixed alongside the sitemap issue since both were found in the same file during this pass.)
+- **Gate hardening (both branches):** two new `gen/gate.py` assertions so these can't silently
+  regress — every sitemap `<url>` must carry a well-formed, non-future `lastmod`; every IndexNow
+  key file at the site root must contain its own filename's key. Negative-tested both (planted a
+  future lastmod, planted a wrong key value) to confirm they actually fire, then restored and
+  re-ran clean.
+- **No content, page-set, or URL change.** Verified the sitemap's URL set is byte-identical before
+  and after on the production branch (56 URLs, none added/removed/renamed) — this was a pure
+  metadata-generation fix, not a content edit.
+
+### What was NOT done and why
+This diagnostic pass reconfirms the standing blocker from the 2026-08-16 entry: production
+(`claude/pcs-oahu-deploy-dd373n`) still carries 10 URLs this branch's generator doesn't produce
+(`/family/` ×9, `/tools/commute-grid/`), so **the branch divergence has not been reconciled.** The
+lastmod/IndexNow fix was applied and committed directly to `dd373n` itself (surgical: only
+`gen/build.py`, `gen/gate.py`, `site/sitemap.xml`, `indexnow-payload.json` touched — no page
+content) rather than to this branch, specifically so it could ship without the destructive
+superset/subset problem. `GATE PASSED — 58 pages, 56 sitemap URLs, all assertions green` on
+`dd373n` after the fix, committed `10b72ef`, and **pushed to `origin/claude/pcs-oahu-deploy-dd373n`.**
+
+**Deploy was attempted and blocked, not completed.** Per `CLAUDE_CODE_DEPLOY.md` / the runbook, the
+live deploy runs a `npx @netlify/mcp@latest --site-id ... --proxy-path "<one-time signed URL>"`
+command returned by the Netlify deploy-site connector. The harness's own auto-mode safety
+classifier denied that command (an external package execution carrying a signed access token
+against live production infrastructure) and explicitly instructed stopping to ask the operator
+rather than attempting a workaround — which is the correct call for an action with this blast
+radius, so no retry or alternate path was attempted. **Production is unaffected: still serving the
+pre-fix build.** The fix is committed and pushed to the branch Netlify deploys from and is ready to
+ship the moment the operator either grants the deploy command or runs it themselves.
+
+- **Files changed:** `gen/build.py`, `gen/gate.py` on **both** `claude/pcs-oahu-daily-publishing-1289q3`
+  (commit `1d4624e`) and `claude/pcs-oahu-deploy-dd373n` (commit `10b72ef`); regenerated
+  `sitemap.xml` / `indexnow-payload.json` on both.
+- **Build status:** `GATE PASSED` on both branches (51/49 on this branch; 58/56 on dd373n).
+- **Deployment status:** **NOT DEPLOYED — blocked by the auto-mode safety classifier on the Netlify
+  deploy command; awaiting operator action.** No destructive or partial deploy occurred.
+- **IndexNow:** not submitted (nothing live changed yet; submitting now would echo unindexed URLs
+  with no accompanying production change).
+- **Next recommended action:** operator either (a) grants Bash permission for the
+  `npx @netlify/mcp@latest ...` deploy command so this fix can ship, or (b) runs the Netlify deploy
+  manually from `dd373n` at commit `10b72ef`. Either way, once deployed: re-request indexing for a
+  couple of the stuck URLs via GSC's URL Inspection tool (this doesn't fix the root cause but can
+  nudge a recrawl sooner), and treat the branch-divergence blocker (2026-08-16 entry, still open) as
+  the standing prerequisite for resuming normal daily publishing.
+
+---
+
 ## 2026-08-16 — HARPTA for outbound military sellers (BUILT + GATE-GREEN, **NOT DEPLOYED — NEEDS REVIEW**)
 
 - **Date/time:** 2026-08-16 (America/Honolulu editorial day)
