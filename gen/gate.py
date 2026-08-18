@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """PCS Oahu QA gate battery. Run from anywhere: python3 gate.py [site_dir]
 Exits nonzero on any failure. Ship this with the package; run before every deploy."""
-import os, re, sys, glob, json
+import os, re, sys, glob, json, datetime
 
 SITE = sys.argv[1] if len(sys.argv) > 1 else os.path.join(os.path.dirname(__file__), "..", "site")
 DOMAIN = "https://pcsoahu.com"
@@ -108,6 +108,29 @@ for fp in html_files:
     expected.add(DOMAIN + (rel[:-len("index.html")] if rel.endswith("/index.html") else rel))
 if locs != expected:
     fail(f"sitemap parity: only-in-sitemap={sorted(locs-expected)} missing={sorted(expected-locs)}")
+
+# 7b. sitemap lastmod hygiene: every URL must carry a lastmod, none may be in the future
+#     (a future or missing lastmod is a wasted or distrusted recrawl signal).
+sm_entries = re.findall(r"<url><loc>(.*?)</loc><lastmod>(.*?)</lastmod></url>", sm)
+if len(sm_entries) != len(locs):
+    fail(f"sitemap: {len(locs)} <loc> but {len(sm_entries)} well-formed <url> entries with lastmod")
+_today = datetime.date.today().isoformat()
+for _u, _lmv in sm_entries:
+    if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", _lmv):
+        fail(f"sitemap: {_u} has malformed lastmod {_lmv!r}")
+    elif _lmv > _today:
+        fail(f"sitemap: {_u} has future lastmod {_lmv} (today {_today})")
+
+# 7c. IndexNow: every key file shipped at the site root must contain its own filename's key,
+#     otherwise submissions built from it fail key verification silently.
+_keys = [f for f in os.listdir(SITE) if re.fullmatch(r"[0-9a-f]{32}\.txt", f)]
+if not _keys:
+    fail("IndexNow: no key file (expected a 32-hex-char .txt at the site root)")
+for _k in _keys:
+    _want = _k[:-4]
+    _got = open(os.path.join(SITE, _k)).read().strip()
+    if _got != _want:
+        fail(f"IndexNow: {_k} contains {_got!r}, must contain its own key {_want!r}")
 
 rep = open(os.path.join(SITE, "bah-report", "index.html")).read()
 if "Cite this report" not in rep: fail("bah-report: missing cite block")

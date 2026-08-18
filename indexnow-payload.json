@@ -1,7 +1,7 @@
 {
   "host": "pcsoahu.com",
-  "key": "26a14273b45a7783390b8eeeefe2906d",
-  "keyLocation": "https://pcsoahu.com/26a14273b45a7783390b8eeeefe2906d.txt",
+  "key": "12ef30fd51aefc63524ab6eb41e58f99",
+  "keyLocation": "https://pcsoahu.com/12ef30fd51aefc63524ab6eb41e58f99.txt",
   "urlList": [
     "https://pcsoahu.com/",
     "https://pcsoahu.com/ask/",
@@ -58,8 +58,6 @@
     "https://pcsoahu.com/tla/field-notes.html",
     "https://pcsoahu.com/tools/",
     "https://pcsoahu.com/tools/commute-grid/",
-    "https://pcsoahu.com/vehicle-shipping/",
-    "https://pcsoahu.com/data/second-paycheck-report.json",
-    "https://pcsoahu.com/data/commute-grid.json"
+    "https://pcsoahu.com/vehicle-shipping/"
   ]
 }

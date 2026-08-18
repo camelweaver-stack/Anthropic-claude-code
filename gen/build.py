@@ -1,5 +1,5 @@
-import os, json
-from common import DOMAIN
+import os, json, re
+from common import DOMAIN, REFRESH_ISO
 import pages_core, pages_content, pages_tools, pages_growth, pages_pockets, pages_vehicle, pages_embed, pages_phase_a, pages_family
 
 SITE = os.path.join(os.path.dirname(__file__), "..", "site")
@@ -53,21 +53,33 @@ def url_for(path):
         return DOMAIN + path[:-len("index.html")]
     return DOMAIN + path
 
-urls = sorted(url_for(p) for p in pages if p not in ("/404.html", "/embed/bah-widget.html"))
+# lastmod is single-sourced from each page's own Article JSON-LD dateModified, so the sitemap
+# can never drift from the date the page itself publishes. Pages with no Article node (hubs,
+# tools, family index/category pages) fall back to REFRESH_ISO, the same single source of truth
+# common.py derives BUILD_DATE/LAST_REFRESHED from.
+def lastmod_for(path):
+    m = re.search(r'"dateModified":\s*"(\d{4}-\d{2}-\d{2})"', pages[path])
+    return m.group(1) if m else REFRESH_ISO
+
+entries = sorted((url_for(p), lastmod_for(p))
+                 for p in pages if p not in ("/404.html", "/embed/bah-widget.html"))
+urls = [u for u, _ in entries]
 
 with open(os.path.join(SITE, "sitemap.xml"), "w") as f:
     f.write('<?xml version="1.0" encoding="UTF-8"?>\n'
             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
-    for u in urls:
-        f.write(f"  <url><loc>{u}</loc><lastmod>2026-08-01</lastmod></url>\n")
+    for u, lm in entries:
+        f.write(f"  <url><loc>{u}</loc><lastmod>{lm}</lastmod></url>\n")
     f.write("</urlset>\n")
 
 with open(os.path.join(SITE, "robots.txt"), "w") as f:
     f.write(f"User-agent: *\nAllow: /\nSitemap: {DOMAIN}/sitemap.xml\n")
 
-# IndexNow payload (key placeholder — Chris drops the real key file at deploy)
-payload = {"host": "pcsoahu.com", "key": "REPLACE_WITH_INDEXNOW_KEY",
-           "keyLocation": f"{DOMAIN}/REPLACE_WITH_INDEXNOW_KEY.txt", "urlList": urls}
+# IndexNow payload. The key file ships in site/ and is verified by the gate, so the emitted
+# payload is directly POSTable to https://api.indexnow.org/indexnow with no hand-editing.
+INDEXNOW_KEY = "12ef30fd51aefc63524ab6eb41e58f99"
+payload = {"host": "pcsoahu.com", "key": INDEXNOW_KEY,
+           "keyLocation": f"{DOMAIN}/{INDEXNOW_KEY}.txt", "urlList": urls}
 with open(os.path.join(SITE, "..", "indexnow-payload.json"), "w") as f:
     json.dump(payload, f, indent=2)
 
