@@ -13,7 +13,7 @@ Exits nonzero if any gate fails — no green, no ship.
   FIXES   nav (10-link EN spec / 8-link ES spec) · canonical · context-aware
           lead-form date field · sitemap derived fresh from disk
   GATES   nav-assert · form-assert · canonical-assert · hreflang-assert ·
-          internal-link-assert · sitemap-assert · cleartext-endpoint-assert
+          internal-link-assert · link-canonical-assert · sitemap-assert · cleartext-endpoint-assert
 
 --check runs the gates without writing anything.
 """
@@ -33,8 +33,10 @@ CHECK_ONLY = "--check" in sys.argv
 NOINDEX = {"thanks.html", "es/gracias.html"}
 
 # ---------------------------------------------------------------- nav specs
+# hrefs are the targets' own canonical URL forms, so fix_nav and
+# fix_internal_links agree and the pass stays idempotent.
 NAV_EN_LINKS = [
-    ("/specials", "Specials"), ("/deals", "Best Deals"),
+    ("/specials.html", "Specials"), ("/deals.html", "Best Deals"),
     ("/neighborhoods/", "Neighborhoods"), ("/schools/", "Schools"),
     ("/buy/", "Buying"), ("/sell/", "Selling"), ("/relocate/", "Relocate"),
     ("/guides/", "Guides"), ("/tools/", "Tools"),
@@ -45,8 +47,9 @@ NAV_EN_COUNT = 10
 
 NAV_ES_LINKS = [
     ("/es/", "Inicio"), ("/es/comprar/", "Comprar"), ("/es/vender/", "Vender"),
-    ("/es/especiales", "Especiales"), ("/es/segunda-oportunidad", "Segunda Oportunidad"),
-    ("/es/relocate/", "Mudanza"), ("/es/calculadora", "Calculadora"),
+    ("/es/especiales.html", "Especiales"),
+    ("/es/segunda-oportunidad.html", "Segunda Oportunidad"),
+    ("/es/relocate/", "Mudanza"), ("/es/calculadora.html", "Calculadora"),
 ]
 NAV_ES_HEAD = "".join(f"<a href='{h}'>{t}</a>" for h, t in NAV_ES_LINKS)
 NAV_ES_COUNT = 8
@@ -320,6 +323,67 @@ def build_sitemap(files, docs):
             f"{body}\n</urlset>\n"), [u for u, _ in rows]
 
 
+
+LINK_RE = re.compile(r"""(href=["'])(/[^"'>]*)(["'])""")
+
+
+def canonical_map(files, docs):
+    """file -> the URL form that file's own canonical declares."""
+    return {rel: (canonical_path(docs[rel], rel) or url_for(rel)) for rel in files}
+
+
+def _split(href):
+    """href -> (path, suffix) where suffix keeps any #fragment or ?query."""
+    m = re.match(r"([^#?]*)(.*)", href)
+    return m.group(1), m.group(2)
+
+
+def fix_internal_links(doc, rel, cmap):
+    """Point every internal link at the target page's own canonical URL form.
+
+    The site serves /x, /x.html and /dir/ all as 200 with identical bytes, so a
+    link to a non-canonical form creates a shadow URL that Google crawls and then
+    files as "Alternate page with proper canonical tag" — 63 such pages in the
+    2026-08-18 Search Console coverage report. Linking only to canonical forms
+    removes the shadow set at the source.
+    """
+    changed = [0]
+
+    def repl(m):
+        pre, href, post = m.groups()
+        path, suffix = _split(href)
+        tgt = resolve(path)
+        if tgt is None or tgt not in cmap:
+            return m.group(0)
+        want = cmap[tgt]
+        if path == want:
+            return m.group(0)
+        changed[0] += 1
+        return pre + want + suffix + post
+
+    new = LINK_RE.sub(repl, doc)
+    if changed[0]:
+        note(f"links     {rel} ({changed[0]} -> canonical form)")
+    return new
+
+
+def gate_internal_links_canonical(docs, cmap):
+    bad = 0
+    for rel, doc in docs.items():
+        for _pre, href, _post in LINK_RE.findall(doc):
+            path, _suffix = _split(href)
+            tgt = resolve(path)
+            if tgt is None or tgt not in cmap:
+                continue
+            if path != cmap[tgt]:
+                bad += 1
+                if bad <= 5:
+                    fail(f"{rel}: link-canonical-assert — links to {path}, "
+                         f"canonical is {cmap[tgt]}")
+    if bad > 5:
+        fail(f"link-canonical-assert — {bad} non-canonical internal links in total")
+
+
 # ---------------------------------------------------------------- gates
 def gate_nav(doc, rel):
     m = re.search(r"<nav>(.*?)</nav>", doc, re.S)
@@ -449,18 +513,29 @@ def main():
     files = html_files()
     docs = {}
 
+    originals = {}
+    # Pass 1 — per-page fixes. Canonicals must all be settled before links are
+    # rewritten, so nothing is written to disk until pass 2.
     for rel in files:
         with open(rel, encoding="utf-8") as fh:
             orig = fh.read()
+        originals[rel] = orig
         doc = orig
         if not CHECK_ONLY:
             doc = fix_nav(doc, rel)
             doc = fix_canonical(doc, rel)
             doc = fix_form_field(doc, rel)
-            if doc != orig:
-                with open(rel, "w", encoding="utf-8") as fh:
-                    fh.write(doc)
         docs[rel] = doc
+
+    cmap = canonical_map(files, docs)
+
+    # Pass 2 — canonicalize internal links, then write anything that changed.
+    if not CHECK_ONLY:
+        for rel in files:
+            docs[rel] = fix_internal_links(docs[rel], rel, cmap)
+            if docs[rel] != originals[rel]:
+                with open(rel, "w", encoding="utf-8") as fh:
+                    fh.write(docs[rel])
 
     sitemap, present_urls = build_sitemap(files, docs)
     if not CHECK_ONLY:
@@ -479,6 +554,7 @@ def main():
         gate_canonical(doc, rel)
     gate_hreflang(docs)
     gate_links(docs)
+    gate_internal_links_canonical(docs, cmap)
 
     # sitemap-assert: parity between the indexable file set and the derived sitemap.
     expect = {canonical_path(docs[r], r) or url_for(r) for r in files if r not in NOINDEX}
@@ -510,7 +586,7 @@ def main():
             print(f"  … and {len(FAILS) - 80} more")
         return 1
     print("\nGATE PASSED — nav-assert, form-assert, canonical-assert, "
-          "hreflang-assert, link-assert, sitemap-assert all green.")
+          "hreflang-assert, link-assert, link-canonical-assert, sitemap-assert all green.")
     return 0
 
 

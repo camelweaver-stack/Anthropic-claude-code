@@ -225,7 +225,7 @@ def build_en():
   <ol>
     <li>Look up the exact address on <a href="{SRC_LOOKUP}" rel="nofollow">TXschools.gov</a>, which maps ratings to campuses and lets you search by address.</li>
     <li>Confirm the zoned campus in writing with the district itself &mdash; that is the only answer that binds.</li>
-    <li>If you are renting, read <a href="/schools/willow-park-school-zones">Willow Park school zones, decoded for renters</a> before you sign; the split-district problem is real in that pocket.</li>
+    <li>If you are renting, read <a href="/schools/willow-park-school-zones.html">Willow Park school zones, decoded for renters</a> before you sign; the split-district problem is real in that pocket.</li>
     <li>If you are buying, pair this with the district hubs: <a href="/schools/aledo-isd/">Aledo ISD</a>, <a href="/schools/weatherford-isd/">Weatherford ISD</a>, <a href="/schools/brock-isd/">Brock ISD</a>.</li>
   </ol>
 </section>
@@ -242,7 +242,7 @@ def build_en():
 
 <section>
   <h2>Keep reading</h2>
-  <p><a href="/schools/">the schools hub</a> &middot; <a href="/neighborhoods/">neighborhoods</a> &middot; <a href="/relocate/">the relocation hub</a> &middot; <a href="/buy/">the buyer's guide</a> &middot; <a href="/guides/living-in-aledo">living in Aledo</a> &middot; <a href="/guides/living-in-walsh">living in Walsh</a></p>
+  <p><a href="/schools/">the schools hub</a> &middot; <a href="/neighborhoods/">neighborhoods</a> &middot; <a href="/relocate/">the relocation hub</a> &middot; <a href="/buy/">the buyer's guide</a> &middot; <a href="/guides/living-in-aledo.html">living in Aledo</a> &middot; <a href="/guides/living-in-walsh.html">living in Walsh</a></p>
   <p><a href="{ES_PATH}" hreflang="es">Lee esta p&aacute;gina en espa&ntilde;ol &mdash; Calificaciones TEA 2026</a></p>
 </section>
 
@@ -342,7 +342,7 @@ def build_es():
   <ol>
     <li>Busca la direcci&oacute;n exacta en <a href="{SRC_LOOKUP}" rel="nofollow">TXschools.gov</a>.</li>
     <li>Confirma por escrito el plantel asignado con el distrito &mdash; esa es la &uacute;nica respuesta que obliga.</li>
-    <li>Si rentas, lee <a href="/schools/willow-park-school-zones">las zonas escolares de Willow Park</a> antes de firmar.</li>
+    <li>Si rentas, lee <a href="/schools/willow-park-school-zones.html">las zonas escolares de Willow Park</a> antes de firmar.</li>
     <li>Si compras, usa los centros de distrito: <a href="/schools/aledo-isd/">Aledo ISD</a>, <a href="/schools/weatherford-isd/">Weatherford ISD</a>, <a href="/schools/brock-isd/">Brock ISD</a>.</li>
   </ol>
 </section>
