@@ -17,12 +17,8 @@ is authored and green but undeployed is `BUILT`.
 
 | Date | Topic | Cluster | Audience | Target query | Src | Traffic | Txn | Status | Links |
 |---|---|---|---|---|---|---|---|---|---|
-| 2026-08-16 | 2026 TEA A–F ratings for every west-corridor district + campus (Aledo holds A 92; Weatherford C→B 80; Benbrook Middle/High B→A 90; FWISD C 77) | Schools | Buyers, renters & relocating families choosing by zone | "aledo isd rating 2026", "tea ratings west fort worth" | Verified (TEA release + TEA 2026 multi-year ratings file) | H | H | **BUILT — gate green, deploy blocked** `/schools/tea-ratings-2026.html` + ES `/es/escuelas/calificaciones-tea-2026.html` | schools hub (reciprocal), willow-park-school-zones, aledo-isd, weatherford-isd, brock-isd, neighborhoods, relocate, buy, living-in-aledo, living-in-walsh |
+| 2026-08-16 | 2026 TEA A–F ratings for every west-corridor district + campus (Aledo holds A 92; Weatherford C→B 80; Benbrook Middle/High B→A 90; FWISD C 77) | Schools | Buyers, renters & relocating families choosing by zone | "aledo isd rating 2026", "tea ratings west fort worth" | Verified (TEA release + TEA 2026 multi-year ratings file) | H | H | LIVE `/schools/tea-ratings-2026` + ES `/es/escuelas/calificaciones-tea-2026` (deployed 2026-08-18) | schools hub (reciprocal), willow-park-school-zones, aledo-isd, weatherford-isd, brock-isd, neighborhoods, relocate, buy, living-in-aledo, living-in-walsh |
 
-> **Open:** the 2026-08-16 item is authored, gated green and committed, but **not deployed** —
-> the Netlify connector's tools were not loaded in the run's session and no `NETLIFY_AUTH_TOKEN`
-> was available. Production is intact and unchanged. Flip this row to `LIVE` once the deploy
-> and live verification in `AUDIT_LOG.md` → "Recovery path" are done.
 
 ## Backlog — scored, cluster-balanced (draw the daily slot from here, highest utility first)
 

@@ -4,7 +4,94 @@ Append-only. Newest entry on top. One record per daily run. Template at the bott
 
 ---
 
-## 2026-08-16 — Bootstrap run + 2026 TEA ratings page (BUILT & GATED — **DEPLOY BLOCKED**)
+## 2026-08-18 — Search Console coverage fix: canonical form flip (extensionless), deployed
+
+- **Trigger:** Operator uploaded a Search Console coverage export
+  (`westfwliving.comCoverage20260818.zip`): 68 pages not indexed — 63 "Alternate page with
+  proper canonical tag," 3 "Page with redirect," 2 "Duplicate without user-selected canonical."
+  `Chart.csv` shows not-indexed jumping 25→68 on 2026-08-07 while indexed fell 189→146.
+
+### Diagnosis
+1. Exactly 68 pages in the then-live commit (`4a9f74f`) had no `<link rel="canonical">` — 43 EN
+   + 25 ES, matching the report's counts and its Aug-7 step precisely. (Canonicals for these
+   were already added in the 2026-08-16 commit but never deployed — see that entry's "Deployment
+   status: BLOCKED.")
+2. The deeper cause: Netlify's Pretty URLs post-processing rewrites every rendered
+   `<a href="x.html">` to `<a href="x">` on **every deploy**, platform-side, regardless of
+   source content. 3,682 internal link instances across the site pointed at a URL form (mostly
+   extensionless, matching the original nav/footer templates) different from what ~186 pages'
+   canonical tags declared (mostly `.html`). Google crawled both forms, found byte-identical
+   200s, and filed the mismatch as "alternate page with proper canonical tag."
+
+### First attempt (WRONG DIRECTION — corrected same session)
+Initially made `.html` the canonical form and rewrote all internal links to match. Deployed,
+then verified against the **deploy's own permalink** (not just local/GitHub content) and found
+the fix had been silently undone: 0 of the `.html` hrefs survived publish. Isolated this with a
+diagnostic marker (an HTML comment appended to `index.html`, committed, pushed, deployed) — the
+marker survived while the href rewrites did not, proving the reversion was a platform-level
+transform of `<a href>` specifically, not a stale-content/caching bug. Four deploy attempts were
+burned confirming this (cache clears, `--no-wait` and waited variants, fresh proxy tokens each
+time) before the mechanism was identified.
+
+### Corrected fix
+Flipped the policy: **extensionless is the one correct canonical form**, since that's what
+Netlify actually serves via links regardless of source, and it matches the site's original
+(pre-session) nav/footer convention. `url_for()` / `canonical_path()` in
+`scripts/apply_standing_fixes.py` now derive and enforce this; a `.html`-form canonical is
+actively corrected, not passively accepted (the earlier "don't rewrite existing valid
+canonicals" design was itself a symptom of the wrong initial assumption). Added `fix_hreflang()`
+— hreflang `<link>` hrefs are absolute URLs untouched by Pretty URLs, so they drift
+independently and needed their own normalization pass. `gen/common.py`'s nav/footer constants
+and `gen/pages_schools_ratings.py`'s links were reverted to extensionless, and a `_url()` helper
+added to `gen/common.py` so generator output already matches the final form on first build —
+verified idempotent (two full `build.py` + `apply_standing_fixes.py` passes produce identical
+output, second run reports zero changes).
+
+### Build + gate
+`GATE PASSED — nav-assert, form-assert, canonical-assert, hreflang-assert, link-assert,
+link-canonical-assert, sitemap-assert all green.` 300 pages, 298 sitemap URLs. Confirmed
+sitewide: 0 non-canonical `<a href>`, 0 non-canonical hreflang, all 300 pages carry a matching
+canonical.
+
+### Deployment
+Deploy `6a849186b1c07328330aeb3c` — **ready**, production. Verified against the deploy's own
+permalink *before* trusting production (lesson from the four failed attempts above): nav hrefs
+extensionless, canonical extensionless, matches source exactly.
+
+### Production verification
+- `/schools/tea-ratings-2026` → 200, `/es/escuelas/calificaciones-tea-2026` → 200, nonexistent
+  path → 404.
+- Canonical on `/`, `/specials`, `/deals`, `/schools/tea-ratings-2026`,
+  `/es/escuelas/calificaciones-tea-2026`, `/sell/aledo` all confirmed extensionless (or their
+  correct form for `/sell/`, which was already extensionless and untouched).
+- Both URLs present in `https://westfwliving.com/sitemap.xml`, itself now fully extensionless
+  (298 URLs).
+- ES hreflang resolves both directions live; the visible cross-language link renders with the
+  extensionless href.
+- Rendered-DOM verification via headless Chromium was attempted against the live domain but
+  blocked by this session's outbound proxy config (Playwright couldn't reach the public
+  westfwliving.com domain; curl could). Substituted with the equivalent curl-based checks above
+  plus an earlier local-server Chromium screenshot of the page structure (2026-08-16 entry).
+
+### IndexNow
+Submitted all 298 sitemap URLs (now extensionless) to `https://api.indexnow.org/indexnow` — 
+HTTP 200. A second batch was also submitted earlier in this run for the (subsequently corrected)
+`.html`-form URL set; that submission is superseded by this one and is expected to be
+self-correcting once Google recrawls and sees the canonical tag.
+
+### What was NOT touched
+No safeguarded-category content. No new pages beyond what the 2026-08-16 run already produced.
+The `/privacy/` gap remains open (backlog #1, unchanged).
+
+### Lesson recorded for future runs
+Local disk / GitHub content matching what you intend to ship is necessary but **not
+sufficient** — this host's Pretty URLs post-processing means the only way to confirm a link/URL
+form fix actually took effect is to check the **deploy's own permalink** (or production) after
+the fact, not just the source. Added this as a standing note to `DAILY_RUN.md`.
+
+---
+
+## 2026-08-16 — Bootstrap run + 2026 TEA ratings page (built & gated; deployed 2026-08-18, see entry above)
 
 - **Trigger:** Operator — "Run the West FW Living daily publishing cycle." First WFL run; the
   Drive driver doc listed WFL as "not yet onboarded … no generator/gate or editorial log."
@@ -177,3 +264,6 @@ the taxing units adopt in September.
 ### IndexNow                  (URLs submitted, HTTP status — or why not)
 ### Next recommended action
 ```
+
+---
+

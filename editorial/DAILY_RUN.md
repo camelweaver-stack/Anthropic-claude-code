@@ -49,10 +49,15 @@ second time. It exits nonzero if any gate fails. **No green, no ship.**
 - **nav** — the 10-link EN spec (Specials · Best Deals · Neighborhoods · Schools · Buying ·
   Selling · Relocate · Guides · Tools · Español) and the 8-link ES spec, whose last slot is
   the English-mirror link and is preserved per page.
-- **canonical** — added where missing, pointing at the apex URL. An existing canonical is
-  left alone if it already resolves to that file: the site uses three equivalent apex
-  spellings (`/x.html`, `/x`, `/dir/`) and rewriting live canonicals into one form would
-  churn indexing for no gain.
+- **canonical** — enforced as the single correct URL form, which is **extensionless** for
+  `.html` files (`/specials`, not `/specials.html`) and trailing-slash for directory index
+  files. This is not a style choice: Netlify's Pretty URLs post-processing rewrites every
+  rendered `<a href="x.html">` to `<a href="x">` on every deploy regardless of source, so
+  extensionless is the only form that actually matches what real links resolve to. A
+  `.html`-form (or otherwise non-matching) canonical is actively corrected, not left alone —
+  see "Netlify platform behavior" below before changing this policy.
+- **internal `<a href>` and hreflang `<link>` targets** — canonicalized to the same
+  extensionless form as the pages they point to.
 - **lead-form date field** — context-aware, see below.
 - **sitemap.xml** — derived fresh from the files actually present on disk. The prior sitemap
   is never read; `lastmod` comes from git history. A deleted page cannot survive and a new
@@ -150,6 +155,25 @@ anything touching an active legal dispute · changes to brokerage/licensing/refe
 terms/consent disclosures · paid or sponsored content · material redesigns · destructive code ·
 deleting major pages · domain/DNS/billing/account changes.
 For any of these: write the draft, log it `NEEDS REVIEW`, deploy nothing.
+
+## Netlify platform behavior — read before touching internal link forms
+
+**westfwliving.com's canonical URL form for .html pages is extensionless** (`/specials`, not
+`/specials.html`). This is enforced by Netlify's Pretty URLs post-processing, which rewrites
+every rendered `<a href="x.html">` to `<a href="x">` on **every deploy**, platform-side,
+regardless of what the source HTML contains. `scripts/apply_standing_fixes.py`'s `url_for()` /
+`canonical_path()` already encode this — don't flip it back to `.html` without re-reading
+`editorial/AUDIT_LOG.md`'s 2026-08-18 entry, which documents four burned deploy attempts from
+getting this backwards once already.
+
+**Verifying a link/URL-form fix requires checking the deploy itself, not just local disk or
+GitHub.** Local content and the committed GitHub branch matching what you intend to ship is
+necessary but not sufficient — confirm the fix survived Netlify's post-processing by checking
+**the deploy's own permalink** (`https://<deployId>--anastasiaweaver.netlify.app/...`, returned
+by `get-deploy-for-site`) immediately after it reaches `state=ready`, before trusting production.
+A quick isolation technique if something looks reverted: append a unique HTML comment to a file,
+commit, push, deploy, and check whether the comment survived — if it did but a link/href change
+in the same file did not, that's Pretty URLs, not a stale-content bug.
 
 ## Deploy-failure protocol
 Preserve the prior production version. Do not repeatedly force deploys. Diagnose, record the
