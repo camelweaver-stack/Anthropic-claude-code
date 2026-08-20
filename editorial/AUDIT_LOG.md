@@ -4,6 +4,36 @@ Append-only. Newest entry on top. One record per daily run. Template at the bott
 
 ---
 
+## 2026-08-20 — IndexNow submission (post-fix) + second GSC export reviewed (too early to read)
+
+- **Trigger:** Operator supplied a second GSC coverage export (`pcsoahu.comCoverage20260820.zip`)
+  and asked whether a recrawl could be instigated.
+- **GSC export review:** `Chart.csv` extends only through **2026-08-16** — two days *before* the
+  2026-08-18 16:50 UTC fix deploy (commit `10b72ef`, see 2026-08-18 entry). Numbers unchanged
+  (48 not-indexed / 1 indexed) because the report cannot yet reflect a fix that postdates its data
+  window — GSC's coverage report runs 2-4 days behind live. Re-verified production is still healthy
+  and the fix hasn't regressed: `sitemap.xml` lastmod values still vary (55×2026-08-01, 1×2026-08-06),
+  key file `12ef30fd51aefc63524ab6eb41e58f99.txt` still 200s. No code action needed this pass —
+  recommended the operator wait for an export with data past 08-18 before reading signal either way.
+- **Recrawl options given:** GSC URL Inspection → Request Indexing (manual, per-URL, small daily
+  quota) and Sitemaps → resubmit `sitemap.xml`, both operator-side (no Search Console API access in
+  this session). Declined to suggest Google's Indexing API — officially scoped to JobPosting/
+  BroadcastEvent content only, would violate terms and not work for this site.
+- **Action taken:** operator approved submitting IndexNow now that the key is fixed. POSTed the
+  current `indexnow-payload.json` (56 URLs, host `pcsoahu.com`, key
+  `12ef30fd51aefc63524ab6eb41e58f99`, matching what's actually live post the 08-18 deploy) to
+  `https://api.indexnow.org/indexnow`. **Response: HTTP 200**, accepted.
+- **Scope note (repeated for the record):** IndexNow is a Bing/Yandex mechanism only — Google does
+  not consume it. This submission has no bearing on the GSC numbers above; it's separate hygiene now
+  that the payload is no longer broken.
+- **Files changed:** none (payload sourced from the already-built, already-deployed `dd373n`
+  worktree; no new commit needed).
+- **Next recommended action:** re-pull a GSC coverage export in 4-5 days (data window must clear
+  08-18 to mean anything); operator to run URL Inspection "Request Indexing" on `/`, `/bah-report/`,
+  and 2-3 top guides in the meantime.
+
+---
+
 ## 2026-08-18 — GSC coverage-report diagnosis: sitemap lastmod + IndexNow key fixed on production branch (deploy BLOCKED, needs operator)
 
 - **Trigger:** Operator supplied a Google Search Console "Page indexing" coverage export
