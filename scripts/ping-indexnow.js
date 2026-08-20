@@ -13,7 +13,7 @@
 const fs = require('fs');
 
 const KEY = 'f61db218770282944b56755e36b90509';
-const HOST = 'dallastowers.com';
+const HOST = 'westfwliving.com';
 const ENDPOINT = 'https://api.indexnow.org/indexnow';
 
 (async () => {

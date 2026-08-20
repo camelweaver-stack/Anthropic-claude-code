@@ -1,4 +1,4 @@
-# Netlify configuration for dallastowers.com
+# Netlify configuration for westfwliving.com
 # Static site — no compile step; publish the repository root as-is.
 # The build command only pings IndexNow after each deploy (fail-safe: `|| true`
 # guarantees a ping error can never fail the deploy).
