@@ -17,6 +17,7 @@ is authored and green but undeployed is `BUILT`.
 
 | Date | Topic | Cluster | Audience | Target query | Src | Traffic | Txn | Status | Links |
 |---|---|---|---|---|---|---|---|---|---|
+| 2026-08-21 | Living in Benbrook: the value play (published Benbrook-vs-Aledo bands, A-rated middle/high inside FWISD's C, lake/daily-life, decision layer) | Neighborhoods | Priced-out Aledo buyers; renters-first households | "is benbrook a good place to live" | Verified (on-site published bands summer 2026 + TEA 2026 file) | H | H | LIVE `/guides/living-in-benbrook` + ES `/es/guias/vivir-en-benbrook` | guides hub (reciprocal card), es/guias hub, areas/benbrook, tea-ratings-2026, living-in-aledo, living-in-walsh, compare/benbrook-vs-white-settlement |
 | 2026-08-16 | 2026 TEA A–F ratings for every west-corridor district + campus (Aledo holds A 92; Weatherford C→B 80; Benbrook Middle/High B→A 90; FWISD C 77) | Schools | Buyers, renters & relocating families choosing by zone | "aledo isd rating 2026", "tea ratings west fort worth" | Verified (TEA release + TEA 2026 multi-year ratings file) | H | H | LIVE `/schools/tea-ratings-2026` + ES `/es/escuelas/calificaciones-tea-2026` (deployed 2026-08-18) | schools hub (reciprocal), willow-park-school-zones, aledo-isd, weatherford-isd, brock-isd, neighborhoods, relocate, buy, living-in-aledo, living-in-walsh |
 
 
@@ -31,7 +32,7 @@ is authored and green but undeployed is `BUILT`.
 | 5 | Seller's net-proceeds napkin for a $450K Willow Park sale | Sellers | Move-up sellers | "cost to sell a house texas" | Sourceable (title co. rate guides, TREC) | M | H | IDEA |
 | 6 | The I-30 vs I-20 commute decision, timed by corridor and hour | Relocation | Inbound commuters | "commute fort worth from aledo" | Have (commutes/) — needs a re-timing pass | H | M | UPDATE |
 | 7 | Renters insurance after a hail year: what changed at renewal | Renters | All renters | "renters insurance texas hail deductible" | Sourceable (TDI) | M | L | IDEA |
-| 8 | Benbrook as the value play — FWISD zoning, an A-rated middle/high, and the price gap to Aledo | Neighborhoods | Priced-out Aledo buyers | "is benbrook a good place to live" | Have (TEA data now on file) | H | H | NEXT |
+| 8 | Benbrook as the value play — FWISD zoning, an A-rated middle/high, and the price gap to Aledo | Neighborhoods | Priced-out Aledo buyers | "is benbrook a good place to live" | SHIPPED 2026-08-21 → /guides/living-in-benbrook | H | H | LIVE |
 | 9 | Weatherford College housing + the student-renter market | Renters | Students, parents | "weatherford college housing" | Have — needs refresh | M | L | UPDATE |
 | 10 | Property tax protest walkthrough for Parker vs Tarrant (deadlines differ) | Data & Tools | Owners | "protest property taxes parker county" | Sourceable (PCAD, TAD) — May deadline | H | M | HOLD (spring) |
 | 11 | BAH 2027 refresh for NAS JRB Fort Worth | Military/BAH | Military renters | "nas jrb fort worth bah 2027" | Scheduled (DTMO, mid-December) | M | M | HOLD (Dec) |
@@ -48,5 +49,6 @@ is authored and green but undeployed is `BUILT`.
 
 ## Balance check (keep the mix honest across any ~2-week span)
 Schools · Buyers · Sellers · Renters · Relocation · Neighborhoods · Data. Do not ship two
-near-duplicate pages in a row. Last shipped cluster: **Schools** (2026-08-16) — prefer a
-non-Schools slot next, with Benbrook (#8, Neighborhoods) and the tax work (#2, Data) leading.
+near-duplicate pages in a row. Last shipped clusters: Schools (2026-08-16), **Neighborhoods**
+(2026-08-21) — prefer Buyers or Data next: #4 (homestead exemption) is the strongest interim
+pick until #2 (property tax) unlocks on ~September adoption.

@@ -4,6 +4,74 @@ Append-only. Newest entry on top. One record per daily run. Template at the bott
 
 ---
 
+## 2026-08-21 — Daily cycle: Living in Benbrook value-play guide (EN + ES) — LIVE
+
+- **Trigger:** Operator — "Run the West FW Living daily publishing cycle."
+
+### Staleness scan
+Gate `--check` green (300 pages pre-run) with only the two tracked `/privacy/` warnings.
+August time-bound pages (specials, rent report, builder report) still in-month; nothing
+outranked a new page. Noted in passing: the guides hub linked neither living-in flagship
+(fixed as a side effect of this run's reciprocal wiring pattern — the new card sits beside
+where they should be; adding aledo/walsh cards is a one-line future RECIPROCAL entry each).
+
+### Selection
+Backlog **#8 — Benbrook as the value play** (Neighborhoods, H/H). Calendar balance called
+for non-Schools after 08-16; tax item (#2) still holds until ~September adoption. Authored
+as `/guides/living-in-benbrook` in the living-in-aledo/walsh flagship pattern — target query
+"is benbrook a good place to live" had no existing page; the renter-oriented
+`/areas/benbrook` remains distinct (no cannibalization; each links the other).
+
+### Research + verification (no new facts invented)
+Every figure reused from already-published, sourced site data or the verified TEA file:
+- Sale bands/$-sqft/days: `/sell/benbrook` ($300K–$420K; $165–$205; 35–65d) vs `/sell/aledo`
+  ($520K–$750K; $210–$260; 45–75d) — public listings, summer 2026. Gap stated as arithmetic
+  between published bands, never as a valuation.
+- Rents + platform-trend-conflict caveat: `/areas/benbrook` (May–Jul 2026), caveat carried
+  forward verbatim in spirit (platforms disagree on trend direction → get written quotes).
+- Schools: TEA 2026 spreadsheet (verified 2026-08-16): FWISD C 77; Benbrook M/HS A 90 (↑B),
+  Westpark A 92, Benbrook El B 89 (↓A), Luella Merrett B 84, Ridglea Hills C 79,
+  Waverly Park C 74 (↓B), Western Hills HS C 74 (↑D). Counterweights stated on-page.
+
+### Safeguards
+None triggered. No crime/safety claims, no individualized advice, publisher voice, email
+capture only, no lender placement.
+
+### Produced
+- `/guides/living-in-benbrook` + ES mirror `/es/guias/vivir-en-benbrook` — direct answer up
+  top, money/schools/daily-life/decision layers, next steps, inline sources, visible
+  verified date 2026-08-20, Article + FAQPage JSON-LD, move_date form context (both langs
+  to spec). Bidirectional hreflang + humanly visible cross-language links, **verified by
+  rendered Chromium screenshot** both directions.
+- Reciprocal links (all idempotent via `RECIPROCAL` or module edit): guides hub card,
+  es/guias hub card, keep-reading link on `/areas/benbrook`, and a link from the TEA
+  ratings page's Benbrook section.
+
+### Build + gate
+`GATE PASSED` — all seven asserts green. **302 pages, 300 sitemap URLs.** Second
+build+fix run a clean no-op.
+
+### Deployment
+Two 502s from the connector gateway (retryable, per its own guidance) → backed off 60s/130s,
+third attempt succeeded. Pushed to GitHub **before** deploying per the 08-18 platform lesson.
+Deploy `6a8807e293e2753087e69883` — ready, production. Verified the deploy's own permalink
+before production.
+
+### Production verification
+EN + ES → 200 with correct extensionless canonicals · nonexistent path → 404 · both URLs in
+live sitemap.xml · hreflang resolves both directions live.
+
+### IndexNow
+6 changed URLs (2 new pages, 2 hubs, areas/benbrook, TEA page) → HTTP 200. The deploy's
+build command also auto-pinged the full sitemap.
+
+### Next recommended action
+Backlog #1 (`/privacy/`, human review) remains the standing highest-severity item. Next
+content slot: cluster balance now suggests Buyers or Data — #2 (property tax) unlocks on
+~September adoption; #4 (homestead exemption after Prop 13) is the strongest interim pick.
+
+---
+
 ## 2026-08-18 — Search Console coverage fix: canonical form flip (extensionless), deployed
 
 - **Trigger:** Operator uploaded a Search Console coverage export
