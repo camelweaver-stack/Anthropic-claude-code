@@ -194,7 +194,7 @@ def build_en():
   <h2>Benbrook and the Fort Worth ISD side</h2>
   <p>Benbrook is served by Fort Worth ISD, which is why its schools often get read through a district-level C that does not describe them. Benbrook Middle/High School rated an <strong>A (90)</strong> in 2026, up from a B.</p>
   {_ctable(BENBROOK_CAMPUSES)}
-  <p>Fort Worth ISD as a district scored 77 (a C), up from 73 in 2025. Two independent reports of the release put the district's improvement in the same place (<a href="https://www.fox4news.com/news/texas-school-ratings-2026" rel="nofollow">FOX 4</a>). For a Benbrook address, the campus rows above describe the schools far better than the district letter does.</p>
+  <p>For the full Benbrook picture &mdash; the price gap to Aledo these campuses anchor &mdash; see <a href="/guides/living-in-benbrook">Living in Benbrook: the value play</a>. Fort Worth ISD as a district scored 77 (a C), up from 73 in 2025. Two independent reports of the release put the district's improvement in the same place (<a href="https://www.fox4news.com/news/texas-school-ratings-2026" rel="nofollow">FOX 4</a>). For a Benbrook address, the campus rows above describe the schools far better than the district letter does.</p>
 </section>
 
 <section>

@@ -16,12 +16,37 @@ ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 
 import pages_schools_ratings  # noqa: E402
+import pages_guides_benbrook  # noqa: E402
 
-MODULES = [pages_schools_ratings]
+MODULES = [pages_schools_ratings, pages_guides_benbrook]
 
 # Reciprocal links: (hub file, anchor that must exist, HTML block, insertion marker).
 # Each entry is applied only when the anchor is absent, so the build is idempotent.
 RECIPROCAL = [
+    (
+        "guides/index.html",
+        "/guides/living-in-benbrook",
+        "<div class=\"card\"><span class=\"kicker\">Definitive Guide &middot; Benbrook</span>"
+        "<h3><a href='/guides/living-in-benbrook'>Living in Benbrook: the value play, by the numbers</a></h3>"
+        "<p>The published $200K gap to Aledo, an A-rated middle/high inside a C-rated district, "
+        "and who the trade actually fits.</p></div>",
+        "<div class=\"card\"><span class=\"kicker\">Pillar \u00b7 Family Relocation</span>",
+    ),
+    (
+        "es/guias/index.html",
+        "/es/guias/vivir-en-benbrook",
+        "<div class=\"card\"><span class=\"kicker\">Gu\u00eda Definitiva \u00b7 Benbrook</span>"
+        "<h3><a href='/es/guias/vivir-en-benbrook'>Vivir en Benbrook: la jugada de valor</a></h3>"
+        "<p>La brecha publicada de $200K con Aledo, una secundaria con A dentro de un distrito con C, "
+        "y a qui\u00e9n le conviene.</p></div>",
+        "<div class=\"card\"><span class=\"kicker\">Gu\u00eda Definitiva \u00b7 Aledo</span>",
+    ),
+    (
+        "areas/benbrook.html",
+        "/guides/living-in-benbrook",
+        "<a href=\"/guides/living-in-benbrook\">the definitive Benbrook guide</a> \u00b7 ",
+        "<a href=\"/neighborhoods/\">the neighborhood library</a>",
+    ),
     (
         "schools/index.html",
         "/schools/tea-ratings-2026",
