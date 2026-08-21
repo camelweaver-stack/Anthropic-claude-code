@@ -4,6 +4,80 @@ Append-only. Newest entry on top. One record per daily run. Template at the bott
 
 ---
 
+## 2026-08-21 — HARPTA for outbound military sellers: SHIPPED (unblocked after 3 cycles)
+
+- **Date/time:** 2026-08-21 (daily publishing cycle)
+- **Selected topic:** Backlog #2, HARPTA for outbound military sellers — the same content authored
+  and gate-verified 2026-08-16, blocked from deploy for three consecutive daily cycles by the
+  standing branch-divergence issue (2026-08-16 entry).
+- **Reason for selection:** Staleness scan (all 6 checks) came back clean — no drift, no broken
+  links, no unsourced claims, nothing outranking a new topic. With the scan clean, the highest-
+  utility action available was not a new page: it was finally shipping the one fully-authored,
+  fully-sourced, gate-green backlog item that had been sitting dead in production for five days
+  purely on a procedural blocker. Writing something new while that sat unshipped would have been
+  exactly the "filler to hit a quota" the runbook says not to publish.
+- **Resolution approach:** Rather than resolve the full branch reconciliation (a material decision
+  reserved for the operator per the 2026-08-16/18 entries), ported the same surgical-addition
+  pattern already used for the sitemap-lastmod/IndexNow fix: applied the identical `harpta()`
+  function and the two `/sell/` corrections directly onto `claude/pcs-oahu-deploy-dd373n` (the
+  branch Netlify actually serves), matching that branch's exact idiom. Verified byte-for-byte that
+  its `/sell/` page carried the identical two errors as the original 1289q3 pre-fix state, so the
+  same correction text applied cleanly.
+- **Audience / content:** unchanged from the 2026-08-16 entry — see that record for full source
+  list (HI DOTAX Tax Facts 2010-1 rev. 4/2025, Form N-288B instructions rev. 2025, TIR 97-1, IRS
+  Pub 523) and fact-by-fact sourcing. `dateModified` preserved as 2026-08-16 (the actual date the
+  research and verification happened), not backdated to today's deploy date.
+- **Build hiccup (caught before shipping):** first attempt at the port introduced a bad escape
+  sequence in a scripted edit (an escaped triple-quote left in the f-string body instead of a bare
+  triple-quote) — `build.py` raised `SyntaxError` immediately, and `gate.py` printed a misleading
+  `GATE PASSED` against the *stale, unmodified* `site/` output because the broken build never
+  regenerated it. Caught by rereading the build output rather than trusting the gate line in
+  isolation. Fixed the escaping directly, rebuilt clean: `Built 59 pages, sitemap (57 URLs)`.
+- **Verified additive-only before shipping:** diffed the sitemap URL set — 56 → 57, exactly
+  `/guides/harpta.html` added, nothing removed or renamed. No repeat of the destructive-deploy risk
+  this same divergence caused on 2026-08-16.
+- **Internal links added:** `/sell/` hub (reciprocal, in-body correction paragraph + new card),
+  `/guides/` hub (new card), sitewide footer "Buying & Selling" list (reciprocal on every page).
+- **Files changed:** `gen/pages_content.py`, `gen/common.py` on `claude/pcs-oahu-deploy-dd373n`
+  only (commit `e22ce5f`) — this branch (`1289q3`) is unchanged content-wise; this entry documents
+  the cross-branch action for the record.
+- **Build status:** `GATE PASSED — 59 pages, 57 sitemap URLs, all assertions green` on `dd373n`.
+- **Deployment status:** DEPLOYED to production. Netlify auto-triggered a deploy from the
+  `git push` to `dd373n` (continuous deployment on the tracked branch) — deploy
+  `6a8806a502ccb10008b461c2`, commit `e22ce5f`, state `ready`, published
+  `2026-08-21T08:05:03.903Z` (9s, context production, alias pcsoahu.com). Secret scan clean (0
+  matches, 119 files). Separately, the explicit `npx @netlify/mcp` deploy command run moments later
+  from a git worktree checkout **failed** (deploy `6a8806da...`, error: `fatal: not a git
+  repository` against the worktree's internal git-dir) — harmless, since the auto-deploy had
+  already shipped the correct build; noting for the record that the manual deploy path doesn't
+  work from a linked worktree and needs a real checkout if used again.
+- **Production verification:** PASS — `/guides/harpta.html` 200; nonexistent path 404; URL present
+  in live `sitemap.xml` (57 URLs) with correct `lastmod` (2026-08-16, sourced from the page's own
+  `dateModified`); canonical = `https://pcsoahu.com/guides/harpta.html`. Confirmed both URL forms
+  resolve (`/guides/harpta.html` and the extensionless `/guides/harpta`, the latter canonicalizing
+  back to the former) — traced this to Netlify's own post-processing on this site, which rewrites
+  internal `.html` hrefs to the extensionless pretty-URL form and normalizes quote style during
+  deploy; explains part of the `.html`-vs-extensionless pattern noted in earlier entries, though
+  earlier "Page with redirect"/GSC diagnoses aren't being revised on this observation alone.
+  Reciprocal links verified live at all three intended locations (`/sell/` ×2, `/guides/` ×2,
+  sitewide footer ×1) after confirming the correct deploy had propagated (first live check landed
+  in a brief post-publish CDN propagation window and showed the old content).
+- **IndexNow:** POSTed the current 57-URL payload (host `pcsoahu.com`, key
+  `12ef30fd51aefc63524ab6eb41e58f99`) to `https://api.indexnow.org/indexnow`. **Response: HTTP
+  200.**
+- **This branch (1289q3):** no content changes this cycle (HARPTA was already committed here on
+  2026-08-16); this audit entry and the calendar update are the only changes, committed and pushed
+  here per the runbook's record-keeping step.
+- **Standing blocker status:** still open — this ships item #2 without resolving the underlying
+  branch divergence. `dd373n` now has 57 tracked URLs vs. this branch's 49; the 11-page gap
+  (`/family/` ×9, `/tools/commute-grid/`, `/bah-report/2026-rates/`) is unchanged. A wholesale
+  deploy from `1289q3` would still be destructive. See 2026-08-16 entry for the three resolution
+  options; still awaiting operator direction.
+- **Next recommended related topics:** backlog #3 (fee simple vs leasehold), #5 (on-base waitlist
+  mechanics), #4 (DoDEA vs Hawaii DOE) — see `EDITORIAL_CALENDAR.md`.
+
+---
+
 ## 2026-08-20 — IndexNow submission (post-fix) + second GSC export reviewed (too early to read)
 
 - **Trigger:** Operator supplied a second GSC coverage export (`pcsoahu.comCoverage20260820.zip`)

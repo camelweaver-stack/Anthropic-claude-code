@@ -8,15 +8,16 @@ status · Traffic potential · Transaction relevance · Status · Internal-link 
 Legend — Status: `LIVE` shipped · `NEXT` queued · `IDEA` backlog · `HOLD` needs review/source ·
 `UPDATE` maintenance pass. Potential/Transaction: H/M/L.
 
-> **⛔ ENGINE BLOCKER (opened 2026-08-16) — read before running a daily cycle.**
-> Deploying `site/` from `claude/pcs-oahu-daily-publishing-1289q3` is currently **destructive**.
-> Production (Netlify `pcsoahu`) is served from `claude/pcs-oahu-deploy-dd373n` and is a strict
-> superset of this branch: 59 live sitemap URLs vs. 49 here, with 11 pages that exist only in
-> production (`/family/` ×9, `/tools/commute-grid/`, `/bah-report/2026-rates/`) and a different
-> canonical convention (extensionless in production, `.html` here — a 29-page delta). A deploy from
-> this branch would delete those 11 pages and churn 29 canonicals. **Build and gate as normal, but do
-> not deploy until the operator reconciles the branches.** Full diagnosis and the three resolution
-> options are in `editorial/AUDIT_LOG.md`, entry 2026-08-16.
+> **⛔ ENGINE BLOCKER (opened 2026-08-16, still open as of 2026-08-21) — read before running a
+> daily cycle.** Deploying `site/` from `claude/pcs-oahu-daily-publishing-1289q3` is currently
+> **destructive**. Production (Netlify `pcsoahu`) is served from `claude/pcs-oahu-deploy-dd373n` and
+> is a strict superset of this branch: 57 live sitemap URLs vs. 49 here, with 11 pages that exist
+> only in production (`/family/` ×9, `/tools/commute-grid/`, `/bah-report/2026-rates/`) and a
+> different canonical convention. A deploy from this branch would delete those 11 pages. **Build and
+> gate as normal here; if the highest-utility item is already authored on this branch, port it onto
+> `dd373n` directly (surgical addition, verify additive-only) rather than deploying this branch
+> wholesale** — see the 2026-08-21 entry for the working pattern. Full diagnosis and the three
+> permanent-resolution options are in `editorial/AUDIT_LOG.md`, entry 2026-08-16.
 
 ## Shipped / scheduled
 
@@ -25,14 +26,14 @@ Legend — Status: `LIVE` shipped · `NEXT` queued · `IDEA` backlog · `HOLD` n
 | 2026-08-05 | Household goods to Hawaii (OCONUS HHG: UB, sea shipment, NTS, pro-gear, DPS) | PCS logistics | Inbound PCS families | "shipping household goods to hawaii military" | Verified (MilOneSource, Move.mil/DPS, DTMO) | H | M | LIVE `/guides/household-goods.html` | guides hub, vehicle-shipping, pets, pcs-checklist, school-transition |
 | 2026-08-05 | Registering a car in Hawaii (30-day clock, CS-L(MVR)50 exemption, out-of-state permit) | PCS logistics | Inbound PCS families w/ POV | "register car hawaii military" | Verified (Honolulu CSD, HI DOT, HRS 286) | M | L | LIVE `/guides/vehicle-registration.html` | guides hub, vehicle-shipping, pcs-checklist, on-base |
 | 2026-08-06 | Rent vs. buy on Oahu with a VA loan (BAH purchasing power, PCS break-even, forced-exit risk) | Buying / VA | Inbound buyers weighing rent vs. buy | "should i buy a house in hawaii military" | Verified (VA.gov, Military OneSource, DTMO 2026, HBR June 2026) | H | H | LIVE `/guides/rent-vs-buy.html` | buy hub (reciprocal), sell, bah-report, on-base, guides hub, footer |
-| 2026-08-16 | HARPTA for outbound military sellers (7.25% of amount realized, N-289 exemptions, N-288B 10-working-day clock, §121 military suspension) | Selling / Leaving | Outbound owners on PCS orders | "harpta military selling hawaii" | Verified (HI DOTAX Tax Facts 2010-1 rev. 4/2025, Form N-288B instr. rev. 2025, TIR 97-1, IRS Pub 523) | M | H | **BUILT, GATE-GREEN, NOT DEPLOYED** `/guides/harpta.html` — blocked by branch/production divergence, see AUDIT_LOG 2026-08-16 | sell hub (reciprocal), guides hub, rent-vs-buy (reciprocal), pcs-checklist, footer |
+| 2026-08-16 | HARPTA for outbound military sellers (7.25% of amount realized, N-289 exemptions, N-288B 10-working-day clock, §121 military suspension) | Selling / Leaving | Outbound owners on PCS orders | "harpta military selling hawaii" | Verified (HI DOTAX Tax Facts 2010-1 rev. 4/2025, Form N-288B instr. rev. 2025, TIR 97-1, IRS Pub 523) | M | H | LIVE `/guides/harpta.html` — shipped 2026-08-21 (ported directly onto dd373n, see AUDIT_LOG 2026-08-21) | sell hub (reciprocal), guides hub, footer |
 
 ## Backlog — scored, cluster-balanced (draw the daily slot from here, highest utility first)
 
 | # | Topic | Cluster | Audience | Target query | Src status | Traffic | Txn | Status |
 |---|---|---|---|---|---|---|---|---|
 | 1 | Rent-vs-buy on Oahu with a VA loan (BAH purchasing power, the leasehold trap) | Buying / VA | Inbound buyers E-6+/officer | "should i buy a house in hawaii military" | SHIPPED 2026-08-06 → /guides/rent-vs-buy.html | H | H | LIVE |
-| 2 | HARPTA & the outbound seller's proceeds napkin | Selling / Leaving | Outbound owners | "harpta military selling hawaii" | AUTHORED 2026-08-16 → /guides/harpta.html (gate-green, awaiting deploy unblock) | M | H | HOLD (deploy blocked) |
+| 2 | HARPTA & the outbound seller's proceeds napkin | Selling / Leaving | Outbound owners | "harpta military selling hawaii" | SHIPPED 2026-08-21 → /guides/harpta.html | M | H | LIVE |
 | 3 | Fee simple vs leasehold on Oahu — why it matters more here | Buying | Inbound buyers | "leasehold vs fee simple hawaii condo" | Sourceable (public) | M | H | IDEA |
 | 4 | DoDEA vs Hawaii DOE — the statewide-district reality for PCS kids | Schools | Families w/ kids | "hawaii school district military family" | Sourceable (HIDOE) | H | M | IDEA |
 | 5 | On-base housing waitlist mechanics by installation (join day-one, costs nothing) | Renting / On-base | All inbound | "oahu military housing waitlist" | Sourceable (housing offices) | H | M | IDEA |
