@@ -4,6 +4,86 @@ Append-only. Newest entry on top. One record per daily run. Template at the bott
 
 ---
 
+## 2026-08-22 — Does Hawaii have DoDEA schools? (backlog #4, shipped same-day)
+
+- **Date/time:** 2026-08-22 (daily publishing cycle)
+- **Selected topic:** Backlog #4 — DoDEA vs Hawaii DOE, the statewide-district reality for PCS
+  kids. Reframed during authoring around the sharper, more search-natural question families
+  actually ask: "Does Hawaii have DoDEA schools?"
+- **Reason for selection:** Staleness scan (all 6 checks) came back clean — no drift, no broken
+  links, nothing outranking a new topic (data anchors in cadence, no unaddressed stale content).
+  With HARPTA shipped yesterday, #4 was the next-highest-scored unshipped item (H traffic / M
+  transaction) and it diversifies today's cluster into Schools/Family after three straight
+  Buying/Selling-adjacent ships (rent-vs-buy, HARPTA). Genuine content gap: the existing `/schools/`
+  hub explains the statewide-district and GE mechanics but never addressed the specific, recurring
+  misconception that Hawaii has DoDEA-run schools like true OCONUS or select CONUS installations
+  (Fort Campbell, Fort Bragg, Fort Knox, West Point, etc.).
+- **Audience:** Inbound PCS families with kids, especially those coming from OCONUS tours or CONUS
+  DoDEA installations who expect the same setup here.
+- **Content type:** Evergreen myth-correction + directory guide.
+- **URL:** https://pcsoahu.com/guides/dodea-schools.html
+- **Sources used (verified 2026-08-22):**
+  - Hawaii State Department of Education, Military Families page
+    (`hawaiipublicschools.org/enrolling-in-school/military-families/`) — direct FAQ quote: "There
+    are no DOD schools in Hawaiʻi, including those on military installations. All public schools
+    are part of the Hawaiʻi State Department of Education." Also sourced: the "school your child
+    can attend will be dependent on where you will live" enrollment-timing note; current School
+    Liaison Officer names and phone numbers for Navy/Air Force/Space Force, Army, Marine Corps,
+    Coast Guard, and Hawaiʻi National Guard; Transition Centers; Federal Impact Aid description;
+    military-impacted-school and Purple Star designation concepts.
+  - DoDEA, "DoDEA Schools Worldwide" (`dodea.edu/about/about-dodea/dodea-schools-worldwide`) —
+    cross-check from the other direction: DoDEA's domestic (Americas) footprint is Alabama,
+    Georgia, Kentucky, New York, North Carolina, South Carolina, Virginia, Puerto Rico, and Cuba —
+    Hawaii independently confirmed absent from DoDEA's own list.
+  - Nothing asserted beyond what these two first-party sources state. Liaison names/numbers are
+    explicitly flagged in-page as staffing-dependent and pointed back to the HIDOE source rather
+    than presented as permanent facts.
+- **Facts requiring future revalidation:** School Liaison Officer names and phone numbers (staffing
+  turnover); the specific list of DoDEA's domestic states if its footprint changes; Federal Impact
+  Aid survey-date specifics (deliberately not over-cited — described conceptually, not tied to a
+  single year's deadline).
+- **Internal links added:** New page → `/schools/` hub, `/guides/school-transition.html`. Reciprocal
+  links added **FROM**: `/schools/` (new "No, there's no DoDEA school waiting for you" section),
+  `/guides/school-transition.html` (in-body mention), `/guides/` hub (new Family card).
+- **CTA used:** "PCSing in with kids?" → lead form, segment `pcs-renter`, context `move`, tag
+  `PCSOAHU-DODEASCHOOLS`.
+- **Files changed (this branch, 1289q3):** `gen/pages_content.py` (new `dodea_schools()`, wired
+  into `build()`; `schools()` and `school_transition()` reciprocal-link edits; `guides_hub()` card).
+  Regenerated `site/` (52 pages), `site/sitemap.xml` (50 URLs), `indexnow-payload.json`.
+- **Build status (this branch):** `GATE PASSED — 52 pages, 50 sitemap URLs, all assertions green.`
+  Clean on the first attempt — verified `python3 -c "import ast; ast.parse(...)"` on the ported copy
+  before building, avoiding a repeat of the 2026-08-21 escaping mistake.
+- **Production port:** Same pattern as 2026-08-21 — identical `dodea_schools()` function and the
+  same three reciprocal-link edits applied directly onto `claude/pcs-oahu-deploy-dd373n` (confirmed
+  byte-identical `schools()`/`school_transition()` bodies before patching, so the edit applied
+  cleanly). Verified additive-only before shipping: sitemap URL set 57 → 58, exactly
+  `/guides/dodea-schools.html` added, nothing removed. `GATE PASSED — 60 pages, 58 sitemap URLs,
+  all assertions green` on `dd373n`, commit `140988f`.
+- **Deployment status:** DEPLOYED to production. Netlify's continuous-deployment auto-trigger fired
+  on the `git push` to `dd373n` (same behavior as the prior two cycles) — deploy
+  `6a8999e69ec8b3000856f848`, state `ready`. (The Netlify deploy-services-reader tool returned a
+  transient 502 from Anthropic's own tool-calling infrastructure when polling for deploy detail —
+  unrelated to Netlify or this site; verified the deploy directly against the live site instead.)
+- **Production verification:** PASS — `/guides/dodea-schools.html` 200 (first check hit a brief
+  post-publish connection blip returning no response; immediate retry succeeded — same propagation
+  pattern noted on 2026-08-21); nonexistent path 404 (also needed one retry past a transient blip);
+  URL present in live `sitemap.xml` (58 URLs) with `lastmod` 2026-08-22; canonical =
+  `https://pcsoahu.com/guides/dodea-schools.html`; live content spot-checked (verbatim HIDOE quote
+  and all six phone numbers present); reciprocal links confirmed live at all three intended
+  locations (`/schools/`, `/guides/school-transition.html`, `/guides/`).
+- **IndexNow:** POSTed the current 58-URL payload (host `pcsoahu.com`, key
+  `12ef30fd51aefc63524ab6eb41e58f99`) to `https://api.indexnow.org/indexnow`. **Response: HTTP
+  200.**
+- **Standing blocker status:** still open, unchanged in kind — `dd373n` (58 URLs) remains ahead of
+  this branch (50 URLs) by the same 11-page gap (`/family/` ×9, `/tools/commute-grid/`,
+  `/bah-report/2026-rates/`) documented since 2026-08-16. The port-instead-of-deploy pattern is now
+  a two-cycle-proven working process; still awaiting operator direction on permanent reconciliation.
+- **Next recommended related topics:** backlog #5 (on-base waitlist mechanics), #3 (fee simple vs
+  leasehold — note `/buy/` already covers this briefly in-body, so a dedicated page should add real
+  depth beyond that paragraph rather than duplicate it), #6 (commute-first neighborhood decision).
+
+---
+
 ## 2026-08-21 — HARPTA for outbound military sellers: SHIPPED (unblocked after 3 cycles)
 
 - **Date/time:** 2026-08-21 (daily publishing cycle)
