@@ -4,6 +4,72 @@ Append-only. Newest entry on top. One record per daily run. Template at the bott
 
 ---
 
+## 2026-08-22 — Daily cycle: homestead exemption in dollars (EN + ES) — LIVE
+
+- **Trigger:** Operator — "Run the West FW Living daily publishing cycle."
+
+### Staleness scan
+Gate `--check` green (302 pages) with only the two tracked `/privacy/` warnings. August
+time-bound pages still in-month (they roll on Sept 1 — next run should check the monthly
+specials/rent-report/builder-report set). Nothing outranked a new page.
+
+### Selection
+Backlog **#4 — homestead exemption after Prop 13** (Buyers, H/H), per the balance note
+(Schools 08-16, Neighborhoods 08-21 → Buyers/Data next; #2 property tax still holds for
+September adoption). New page `/buy/homestead-exemption` + ES `/es/comprar/exencion-homestead`.
+No cannibalization: `/buy/property-taxes-for-buyers` covers three levers broadly; this page is
+the deep dive on one lever with per-district dollar arithmetic, and each links the other.
+
+### Research + verification
+- **Prop 13 (Nov 2025):** general school homestead exemption $100K→$140K, applying beginning
+  with tax year 2025; **Prop 11:** additional 65+/disabled exemption to $60K ($200K total).
+  Consistent with the site's existing claims on `/buy/property-taxes-for-buyers`.
+- **Adopted 2025 school rates**, each from primary or official-county sources this run:
+  Aledo ISD **$1.1942** (district news; seventh consecutive cut, −$0.0110) · Weatherford ISD
+  **$1.0342** (district news, adopted 8/26/2025; M&O $0.7552 + I&S $0.2790, unchanged YoY) ·
+  Fort Worth ISD **$1.0291** (board adoption 8/26/2025; **cross-checked against the county
+  Form 50-859 worksheet** — extracted from the raw PDF streams after two search-engine
+  summaries returned contradictory figures ($1.3754 vs $1.0624); the worksheet showed 2024
+  adopted $1.0624 and 2025 voter-approval $1.0291, matching the adoption) · White Settlement
+  ISD **$1.2069** (official Tarrant County truth-in-taxation database).
+- Dollar values are arithmetic (exemption × rate), asserted in-session against the table:
+  $1,441 / $1,448 / $1,672 / $1,690 per year; $2,058–$2,414 at 65+/disabled; the Prop-13
+  increment alone ≈ $410–$480/yr. Stated as "≈" throughout.
+- Deliberately omitted (unverified): city/county optional-exemption percentages; PCAD URL.
+  Page says "check your appraisal district" instead.
+
+### Safeguards
+General educational tax content with an explicit not-tax-advice line — same category as the
+existing property-tax page; not individualized advice. None triggered.
+
+### Produced
+Direct answer up top · per-district worth table · free-filing mechanics (Form 50-114, TAD/PCAD,
+"never pay a filing service") · 10% appraisal cap · **September-2026 rate-adoption timing
+note** (ties to calendar anchor; page refreshes each cycle) · sources with rates and dates ·
+visible verified date 2026-08-22 · Article + FAQPage JSON-LD · move_date form context both
+languages · bidirectional hreflang + visible cross-language links **verified by rendered
+Chromium screenshot**. Reciprocal: buy hub card, es/comprar hub card, keep-reading link from
+`/buy/property-taxes-for-buyers`.
+
+### Build + gate
+`GATE PASSED` — all seven asserts green. **304 pages, 302 sitemap URLs.** Second run a
+clean no-op.
+
+### Deployment + verification
+Pushed before deploying. Deploy `6a899e25ceda1ce4259baa1e` — ready, production; deploy's own
+permalink verified first. Live: EN + ES → 200 with extensionless canonicals · 404 check ok ·
+both URLs in live sitemap · hreflang resolves both directions.
+
+### IndexNow
+5 changed URLs (2 new, buy hub, es/comprar hub, property-tax playbook) → HTTP 200.
+
+### Next recommended action
+`/privacy/` (backlog #1) still awaits human review. **September window opens next week:**
+month-roll of specials/rent-report/builder-report on ~Sept 1, then #2 (2026 property-tax
+rates) as districts adopt — this page and `data/property-tax.html` refresh together then.
+
+---
+
 ## 2026-08-21 — Daily cycle: Living in Benbrook value-play guide (EN + ES) — LIVE
 
 - **Trigger:** Operator — "Run the West FW Living daily publishing cycle."
