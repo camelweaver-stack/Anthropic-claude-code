@@ -17,12 +17,35 @@ sys.path.insert(0, HERE)
 
 import pages_schools_ratings  # noqa: E402
 import pages_guides_benbrook  # noqa: E402
+import pages_buy_homestead  # noqa: E402
 
-MODULES = [pages_schools_ratings, pages_guides_benbrook]
+MODULES = [pages_schools_ratings, pages_guides_benbrook, pages_buy_homestead]
 
 # Reciprocal links: (hub file, anchor that must exist, HTML block, insertion marker).
 # Each entry is applied only when the anchor is absent, so the build is idempotent.
 RECIPROCAL = [
+    (
+        "buy/index.html",
+        "/buy/homestead-exemption",
+        "<div class=\"card\"><h3><a href=\"/buy/homestead-exemption\">The homestead exemption, in dollars</a></h3>"
+        "<p>What the $140K exemption is actually worth in each corridor district at adopted 2025 "
+        "rates \u2014 and the 10% cap it switches on.</p></div>",
+        "<div class=\"card\"><h3><a href=\"/buy/property-taxes-for-buyers\">",
+    ),
+    (
+        "es/comprar/index.html",
+        "/es/comprar/exencion-homestead",
+        "<div class=\"card\"><h3><a href=\"/es/comprar/exencion-homestead\">La exenci\u00f3n homestead, en d\u00f3lares</a></h3>"
+        "<p>Cu\u00e1nto vale la exenci\u00f3n de $140K en cada distrito del corredor con las tasas "
+        "adoptadas de 2025.</p></div>",
+        "<div class=\"card\"><h3><a href=\"/es/comprar/renta-o-compra",
+    ),
+    (
+        "buy/property-taxes-for-buyers.html",
+        "/buy/homestead-exemption",
+        "<a href=\"/buy/homestead-exemption\">the exemption in dollars, district by district</a> \u00b7 ",
+        "<a href=\"/buy/\">the buyer's guide</a>",
+    ),
     (
         "guides/index.html",
         "/guides/living-in-benbrook",
