@@ -133,6 +133,12 @@ school-level geographic boundaries, and moving between schools runs through a fo
 Exception (GE) process rather than a district transfer.</p>
 </div></div>
 <div class="wrap">
+<h2>No, there's no DoDEA school waiting for you</h2>
+<p style="max-width:46rem">If your last move was OCONUS or to a CONUS DoDEA installation, reset
+that expectation now: Hawaii has zero Department of Defense-run schools. Every military-connected
+child here attends a HIDOE public school, the same statewide system every civilian family uses —
+see the <a href="/guides/dodea-schools.html">full explainer</a> for why, plus School Liaison
+Officer contacts by service branch.</p>
 <h2>What actually determines your school</h2>
 <p style="max-width:46rem">Your address maps to a specific home school through the Hawaii
 Department of Education's school-finder boundaries. Before signing any lease or contract, run the
@@ -422,7 +428,9 @@ run them in order.</p>
 <h2>The sequence</h2>
 <p style="max-width:46rem"><strong>Orders in hand:</strong> request records from the losing school
 and connect with the school liaison officer at the gaining installation — every Oahu base has
-one. <strong>Before housing:</strong> run candidate addresses through the HIDOE school finder;
+one (see the <a href="/guides/dodea-schools.html">contacts by service branch</a> if you don't
+already have a name and number). <strong>Before housing:</strong> run candidate addresses through
+the HIDOE school finder;
 the address decides the home school (see the <a href="/schools/">schools guide</a> for how
 Geographic Exceptions work). <strong>On arrival:</strong> enroll with orders, proof of address,
 health records (Hawaii enforces its immunization and TB-clearance requirements at enrollment —
@@ -1103,6 +1111,158 @@ or a tax professional you choose.</p>
                 "the $300,000 ceiling that rarely fits Oahu, and the Form N-288B 10-working-day clock.",
                 body, "/sell/", jsonld=ld)
 
+def dodea_schools():
+    qas = [
+      ("Does Hawaii have DoDEA (Department of Defense) schools?",
+       "No. The Hawaii State Department of Education is explicit on this: 'There are no DOD "
+       "schools in Hawaiʻi, including those on military installations. All public schools are "
+       "part of the Hawaiʻi State Department of Education.' Every military-connected child on "
+       "Oahu, Kauai, or Hawaii Island attends a HIDOE public school — the same statewide system "
+       "every civilian family uses. DoDEA's own domestic footprint confirms the same thing from "
+       "the other direction: its Americas region runs schools in Alabama, Georgia, Kentucky, New "
+       "York, North Carolina, South Carolina, Virginia, Puerto Rico, and Cuba — not Hawaii."),
+      ("Why do so many incoming families assume Hawaii has DoDEA schools?",
+       "Because a real subset of military moves does land on a DoDEA campus — installations like "
+       "Fort Campbell, Fort Bragg, Fort Knox, West Point, and Guantanamo Bay all have "
+       "Defense-run schools, and every OCONUS tour does too. Hawaii looks like it should belong "
+       "in that group — bases, high military density, its own culture — but it's a U.S. state, "
+       "and Hawaii is also the only state in the country with a single statewide school district. "
+       "Both facts point away from a DoD-run system: state schools serve everyone, DoDEA schools "
+       "don't operate here at all."),
+      ("Who do I contact about Hawaii schools before I PCS in?",
+       "Your service's School Liaison Officer, not a school directly and not HIDOE's general "
+       "line — they exist specifically to walk incoming military families through enrollment, "
+       "and which one you contact depends on your service and which installation you're assigned "
+       "to. Contacts for every branch are below. HIDOE is direct about the limits of "
+       "pre-arrival planning too: 'the school your child can attend will be dependent on where "
+       "you will live,' so the liaison officer is who can actually orient you before you have an "
+       "address."),
+      ("What is Federal Impact Aid and why does it matter for military families?",
+       "It's a federal program that reimburses local school districts for the property-tax "
+       "revenue they lose to tax-exempt federal land — military bases chief among them — and for "
+       "educating children whose parents serve in the uniformed services or work on federal "
+       "property. Hawaii's Department of Education says Impact Aid statewide 'helps offset costs "
+       "for school materials and resources, substitute teachers, student transportation, school "
+       "utilities such as electricity, and other services,' funded specifically because of how "
+       "many military-connected students the state educates. It's part of why HIDOE actively "
+       "tracks and supports military-impacted schools rather than treating military enrollment as "
+       "incidental."),
+    ]
+    body = f'''
+<div class="hero"><div class="wrap">
+<p class="eyebrow">Schools · the question every incoming family asks</p>
+<h1>Does Hawaii have DoDEA schools? No — here's what that actually means</h1>
+<p class="lede">If your last PCS was OCONUS, or to Fort Bragg, Fort Campbell, Fort Knox, or West
+Point, you got used to Defense-run schools on or near base. Hawaii doesn't work that way. Every
+military kid here attends a Hawaii public school — which is a bigger structural difference than it
+sounds, and it changes what you do before you sign a lease.</p>
+</div></div>
+<div class="wrap">
+<h2>The direct answer</h2>
+<p style="max-width:46rem">Hawaii has zero DoDEA schools. The Hawaii State Department of
+Education's own military-families page answers this exact question in its FAQ: <strong>"Are there
+any Department of Defense (DOD) schools in Hawaiʻi? There are no DOD schools in Hawaiʻi, including
+those on military installations. All public schools are part of the Hawaiʻi State Department of
+Education."</strong> DoDEA's own site confirms it from the other side — its domestic (Americas)
+schools sit in Alabama, Georgia, Kentucky, New York, North Carolina, South Carolina, Virginia,
+Puerto Rico, and Cuba. Hawaii isn't on that list, and it isn't a gap in DoDEA's coverage — the
+state's public system serves every child here, military or not.
+(<a href="https://hawaiipublicschools.org/enrolling-in-school/military-families/">Hawaii DOE,
+Military Families</a>; <a href="https://www.dodea.edu/about/about-dodea/dodea-schools-worldwide">DoDEA
+Schools Worldwide</a>.)</p>
+
+<h2>Who this applies to</h2>
+<p style="max-width:46rem">Anyone PCSing to Oahu, Kauai (Pacific Missile Range Facility), or Hawaii
+Island (Pōhakuloa) with kids — but it matters most if your prior assumption came from real
+experience with a DoDEA system: OCONUS tours, or CONUS DoDEA installations like Fort Campbell,
+Fort Bragg, Fort Jackson, Fort Stewart, Fort Rucker, or West Point. The adjustment isn't just
+paperwork — DoDEA schools are federally operated and built around a transient military population
+by design; HIDOE is a state system built for everyone, with its own calendar, culture, and process
+(see the <a href="/schools/">Hawaii schools guide</a> for how the statewide-district structure and
+Geographic Exceptions actually work once you have an address).</p>
+
+<h2>Why Hawaii ended up this way</h2>
+<p style="max-width:46rem">Two facts explain it, and they reinforce each other. First, Hawaii is
+the only state with a single statewide public school district — there's no county or city district
+line to have DoDEA carve a niche around, the way it can at a single installation inside a mainland
+county system. Second, Hawaii's military-connected student population is large enough, and
+geographically embedded enough across Oahu especially, that the state built its own
+military-family-support infrastructure into HIDOE directly rather than a separate federal system
+sitting alongside it — transition centers, a named military liaison, and School Liaison Officer
+coordination by service branch, covered below.</p>
+
+<h2>Who to actually contact — by service</h2>
+<p style="max-width:46rem">HIDOE is direct about this: <strong>"the school your child can attend
+will be dependent on where you will live"</strong> — there's no pre-enrollment before you have an
+address. What you <em>can</em> do before then is contact your service's School Liaison Officer,
+whose job is exactly this transition:</p>
+{rates([
+  ("Navy / Air Force / Space Force (JBPHH, PMRF)", "Cherise Yamasaki (elem.), Kimberly Meyer (middle/high) · 808-306-9247"),
+  ("Army (Tripler, Shafter, Schofield, Wheeler, Pōhakuloa)", "Tamsin Keone, Jin Castiglione · 808-787-5644"),
+  ("Marine Corps (MCBH, Camp Smith)", "Seon Lecher · 808-496-2019"),
+  ("Coast Guard (Base Honolulu, Sand Island)", "Stacey Sawyer · 808-842-2089"),
+  ("Hawaiʻi National Guard (HIARNG / HIANG)", "LTC Natalie Hayes · 808-672-1315 / CMSgt Maryann Martin · 808-789-1672", True),
+], "Hawaii DOE, Military Families page (accessed August 2026) — verify current names and numbers "
+   "there before calling, since liaison staffing changes.")}
+
+<h2>What HIDOE builds in for military families</h2>
+<p style="max-width:46rem">Two things worth knowing exist, beyond the liaison network. Hawaii
+schools that carry a large military-connected population are formally designated
+<strong>military-impacted schools</strong>, and a subset earn <strong>Purple Star</strong>
+recognition for supporting incoming and transitioning military students specifically — HIDOE
+publishes the current list on the same military-families page. Separately, <strong>Federal Impact
+Aid</strong> reimburses Hawaii schools for the property-tax base they lose to tax-exempt federal
+land (bases) and for educating children of service members and federal employees — HIDOE describes
+it as helping cover "school materials and resources, substitute teachers, student transportation,
+school utilities such as electricity, and other services at schools statewide." Neither of these
+changes which school your child attends, but they're a useful signal that Hawaii's system is built
+around military families rather than treating them as an afterthought.</p>
+
+<h2>Next steps</h2>
+<ol style="max-width:46rem">
+<li><strong>Call your service's School Liaison Officer</strong> from the table above as soon as
+orders are in hand — before you have an address, they can still orient you on the process and
+timing.</li>
+<li><strong>Don't shop schools before housing.</strong> Assignment runs through your home address,
+not the installation you report to — see the <a href="/schools/">Hawaii schools guide</a> for the
+HIDOE address lookup and the Geographic Exception process if you want a different school.</li>
+<li><strong>Start records and health paperwork mainland-side.</strong> The <a
+href="/guides/school-transition.html">school transition guide</a> covers the enrollment sequence
+in order, including Hawaii's immunization and TB-clearance requirements.</li>
+<li><strong>Ask your gaining installation about a transition center</strong> if your child is
+changing schools mid-year — HIDOE runs these specifically to support military-connected and other
+transient students.</li>
+</ol>
+
+<p style="max-width:46rem">Sourced from the Hawaii State Department of Education's Military
+Families page and DoDEA's own school-location pages, verified <strong>August 22, 2026</strong>.
+Liaison names and phone numbers change with staffing — confirm current contacts at the HIDOE link
+above before relying on any number here.</p>
+{lead_form("DODEASCHOOLS", "pcs-renter",
+  heading="PCSing in with kids?",
+  blurb="Join the list for the family-side brief: school-liaison updates, enrollment timing "
+        "notes, and first access when full service opens.")}
+</div>'''
+    p = "/guides/dodea-schools.html"
+    ld = {"@context": "https://schema.org", "@graph": [
+        {"@type": "Article",
+         "headline": "Does Hawaii have DoDEA schools? No — here's what that actually means",
+         "description": "Hawaii has zero Department of Defense schools — every military-connected "
+                        "child attends the statewide Hawaii DOE public system. What that means for "
+                        "incoming families, who to contact by service branch, and how Impact Aid "
+                        "and Purple Star designations fit in.",
+         "datePublished": "2026-08-22", "dateModified": "2026-08-22",
+         "author": {"@type": "Organization", "name": "PCS Oahu"},
+         "publisher": {"@type": "Organization", "name": "PCS Oahu"},
+         "mainEntityOfPage": DOMAIN + p},
+        faq_ld(qas)]}
+    return p, page(p, "Does Hawaii Have DoDEA Schools? The Answer for Military Families | PCS Oahu",
+                "Hawaii has no DoDEA schools — every military child attends the statewide Hawaii "
+                "DOE system. School Liaison Officer contacts by service branch, why Hawaii differs "
+                "from OCONUS and CONUS DoDEA installations, and how Impact Aid fits in. Sourced "
+                "and dated.",
+                body, "/schools/", jsonld=ld)
+
 def guides_hub():
     body = f'''
 <div class="hero"><div class="wrap">
@@ -1119,6 +1279,9 @@ Hawaii PCS that paperwork alone doesn't cover.</p>
   <div class="card"><span class="tag">Family</span>
     <h3><a href="/guides/school-transition.html">The school transition, managed</a></h3>
     <p>Records, enrollment, the early calendar, and the Interstate Compact — in the order that works.</p></div>
+  <div class="card"><span class="tag">Family</span>
+    <h3><a href="/guides/dodea-schools.html">Does Hawaii have DoDEA schools?</a></h3>
+    <p>No — every military kid attends the statewide Hawaii DOE system. School Liaison Officer contacts by service branch.</p></div>
   <div class="card"><span class="tag">Settling</span>
     <h3><a href="/guides/utilities.html">Utilities, honestly</a></h3>
     <p>The highest electric rates in the country, the AC question, and the two internet providers.</p></div>
@@ -1178,7 +1341,7 @@ def build():
         "/guides/index.html": guides_hub(),
     }
     for fn in (spouse, school_transition, pets, household_goods, vehicle_registration, rent_vs_buy,
-               harpta):
+               harpta, dodea_schools):
         p, h = fn()
         out[p] = h
     return out
