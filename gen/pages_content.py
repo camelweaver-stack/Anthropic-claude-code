@@ -1263,6 +1263,167 @@ above before relying on any number here.</p>
                 "and dated.",
                 body, "/schools/", jsonld=ld)
 
+def onbase_waitlist():
+    qas = [
+      ("How do I get on the on-base housing waitlist for Oahu before I arrive?",
+       "It depends on which side of the island's system your orders point at. On the Navy side "
+       "(Joint Base Pearl Harbor-Hickam), start with the Housing Early Assistance Tool (HEAT) on "
+       "the Navy's CNIC site — it opens your file and a Housing Service Center counselor contacts "
+       "you within one business day — but know its stated limit: HEAT does not place you on a "
+       "wait list and cannot improve your position on one. The waitlist itself is managed by the "
+       "JBPHH Housing Service Center, which takes appointments up to 30 days before arrival. On "
+       "the Army side, you apply to Island Palm Communities directly, and their posted guidelines "
+       "contain the single most valuable mechanic on this page: an inbound soldier's eligibility "
+       "date is backdated to the date they departed their last duty station — if they apply "
+       "within 7 days of arriving. Miss that window and your date is just your application date."),
+      ("Does joining an on-base housing waitlist on Oahu cost anything or commit me to living on base?",
+       "No and no. Applying costs nothing on any Oahu installation, and holding a waitlist spot "
+       "doesn't obligate you to accept a home — you can shop off-base pockets the whole time. The "
+       "commitments start when a home is offered: under Island Palm Communities' posted "
+       "guidelines, declining an adequate offer moves you to the bottom of the list with your "
+       "eligibility date reset to the day you declined. So the free option is real, but understand "
+       "what an offer does to it before one arrives."),
+      ("Who actually runs the on-base family housing waitlists on Oahu?",
+       "Family housing is privatized, so there are two layers: the private partner that owns and "
+       "leases the homes, and the military housing office that manages eligibility and, on the "
+       "Navy side, the waitlist itself. Per the DoD's MilitaryINSTALLATIONS directory: at JBPHH, "
+       "Ohana Military Communities (a Hunt Companies partnership) manages the Navy-side homes and "
+       "Hickam Communities the Air Force side, with the Navy Housing Service Center managing the "
+       "waitlist; across the Army footprint (Schofield, Wheeler, Helemano, Fort Shafter, Tripler, "
+       "AMR, Red Hill) it's Island Palm Communities, which runs its own two regional lists; at "
+       "Marine Corps Base Hawaii it's Ohana Military Communities' Marine housing operation. "
+       "Operators and terms change — the housing office at your gaining installation is always "
+       "the source of record."),
+      ("What determines my position on an Oahu housing waitlist?",
+       "Eligibility date plus priority category, not first-come-first-served alone. Island Palm "
+       "Communities' posted guidelines show the shape: position runs by eligibility date within "
+       "priority categories (accompanied personnel assigned to the installation sit high; key-and-"
+       "essential billets and certain medical cases move ahead), your bedroom eligibility comes "
+       "from command-sponsored dependents on your orders, you can be on only one IPC regional "
+       "list at a time, and an assignment requires at least twelve months remaining on your tour. "
+       "On the Navy side, MilitaryINSTALLATIONS states waitlist priority is determined by local "
+       "business agreements, with EFMP status potentially conferring higher priority. The rules "
+       "differ by service and change over time — ask your housing office for the current written "
+       "rules for your exact situation."),
+    ]
+    body = f'''
+<div class="hero"><div class="wrap">
+<p class="eyebrow">Renting · the free option most families set up too late</p>
+<h1>The Oahu on-base housing waitlist: apply the day orders drop</h1>
+<p class="lede">Every Oahu housing decision runs better with a waitlist position you're free to
+use or ignore. Joining costs nothing, commits you to nothing — and on the Army side, applying
+promptly can backdate your position to the day you left your last duty station. Here's how the
+lists actually work, installation by installation, from the operators' own published rules.</p>
+</div></div>
+<div class="wrap">
+<h2>The direct answer</h2>
+<p style="max-width:46rem">Get on the list the day orders drop, even if you expect to live off
+base. It's free, it holds while you shop <a href="/neighborhoods/">off-base pockets</a>, and
+position compounds: the earlier your eligibility date, the earlier the offer. The mechanics that
+follow are the parts most families learn too late — the tool that <em>doesn't</em> put you on the
+list, the seven-day window that backdates your position, and what declining an offer costs.</p>
+
+<h2>Navy side (JBPHH): HEAT starts the file — it does not hold your place</h2>
+<p style="max-width:46rem">The Navy's <strong>Housing Early Assistance Tool (HEAT)</strong> is the
+right first move and the most misunderstood one. Per the Navy's own CNIC housing site, HEAT lets
+you start the housing process online before or after orders, and "someone from the Navy HSC will
+contact you within one business day." But the same page is explicit about its limit: HEAT
+<strong>"does not place you on a wait list and cannot improve your position on a housing wait
+list."</strong> The waitlist itself runs through the <strong>JBPHH Housing Service Center</strong>,
+which — per the DoD's MilitaryINSTALLATIONS directory — takes appointments up to 30 days before
+arrival (808-474-1820/1821) and expects a DD Form 1746 application with a copy of your PCS orders
+and dependency documentation. The homes themselves are run by Ohana Military Communities on the
+Navy side and Hickam Communities on the Air Force side; the HSC manages the waitlist, and
+priority "is determined by local Business Agreements," with EFMP families potentially entitled to
+higher assignment priority.
+(<a href="https://ffr.cnic.navy.mil/Navy-Housing/HEAT/">CNIC, Navy Housing — HEAT</a>;
+<a href="https://installations.militaryonesource.mil/military-installation/joint-base-pearl-harbor-hickam/housing/government-housing">MilitaryINSTALLATIONS,
+JBPHH housing</a>.)</p>
+
+<h2>Army side (Island Palm Communities): the seven-day backdating rule</h2>
+<p style="max-width:46rem">Island Palm Communities runs two regional lists — <strong>North</strong>
+(Helemano, Schofield Barracks, Wheeler) and <strong>South</strong> (Aliamanu, Fort Shafter,
+Tripler, Red Hill) — and you can be on only one at a time. The mechanic worth planning around, from
+IPC's own posted waitlist guidelines: <strong>an inbound soldier's eligibility date is the date
+they departed their last duty station, as long as they apply for housing within 7 days of
+arrival.</strong> Apply inside that window and your position reflects your whole transit; apply
+later, or from an off-post lease, and your eligibility date is simply your application date. The
+same document sets the other rules families trip on: assignment requires at least twelve months
+remaining on your tour, bedroom eligibility follows command-sponsored dependents on orders, and
+<strong>declining an adequate offer moves you to the bottom of the list with your eligibility date
+reset to the declination date</strong>. One caution on that document: the version IPC posts is
+dated 2016, so treat it as the shape of the system and confirm current terms at the leasing
+office before you rely on any line of it.
+(<a href="https://www.islandpalmcommunities.com/">Island Palm Communities</a> and its posted
+<a href="https://medialibrarycf.entrata.com/12710/MLv3/2023/08/22/012503/64e50b8fd25e7748.pdf">Guidelines
+for Waitlist and Housing Assignment</a>.)</p>
+
+<h2>Marine Corps side (MCBH): Ohana's Marine housing operation</h2>
+<p style="max-width:46rem">Family housing at Marine Corps Base Hawaii runs through Ohana Military
+Communities' Marine housing arm — the same Hunt Companies partnership as the Navy side, operating
+separately for MCBH with communities concentrated around Kaneohe Bay and leeward Oahu. Application
+runs through <a href="https://www.ohanamarinefamilyhousing.com/">Ohana's Marine family housing
+site</a> and the MCBH housing office; as everywhere on this page, apply with orders in hand and
+ask the office for the current written waitlist rules rather than relying on a forum thread.</p>
+
+<h2>Who this applies to</h2>
+<p style="max-width:46rem">Every inbound accompanied family, whichever way you're leaning. If
+you're <strong>set on living on base</strong>, the eligibility-date mechanics above are the whole
+game — apply immediately and protect your date. If you're <strong>leaning off base</strong>, the
+free list position is your hedge against a brutal pocket search — many families bridge on
+<a href="/tla/">TLA</a> while holding a list spot and let the better option win. If you're
+<strong>undecided</strong>, the <a href="/on-base/">on-base housing guide</a> walks the
+BAH-allotment trade in full: on base you spend exactly your allowance; off base, if your grade's
+rate beats your pocket's band in the <a href="/bah-report/">BAH Reality Report</a>, the difference
+is yours.</p>
+
+<h2>Next steps</h2>
+<ol style="max-width:46rem">
+<li><strong>Orders in hand → apply the same week.</strong> Navy/Air Force: submit HEAT, then book
+the HSC appointment (up to 30 days pre-arrival). Army: apply to the correct IPC regional list.
+Marines: start with Ohana's Marine housing site and the MCBH housing office.</li>
+<li><strong>Army families: calendar the 7-day window.</strong> Applying within 7 days of arrival
+backdates your eligibility to your departure date — it's the cheapest position upgrade in the
+entire system.</li>
+<li><strong>Get the decline rules in writing</strong> before an offer comes. Ask: what counts as
+an adequate offer, what happens to my date if I decline, and how long do I have to answer.</li>
+<li><strong>Tell the office about EFMP status at application</strong> — on both the Navy and Army
+sides, documented EFMP status can change priority or the type of home offered, and the review has
+its own timeline.</li>
+<li><strong>Run the off-base comparison in parallel.</strong> The <a href="/on-base/">on-base
+guide</a> and the <a href="/neighborhoods/">pocket table</a> are the two halves of that
+decision.</li>
+</ol>
+
+<p style="max-width:46rem">Compiled from the Navy's CNIC housing pages, the DoD's
+MilitaryINSTALLATIONS directory, and Island Palm Communities' published guidelines, and verified
+<strong>August 23, 2026</strong>. Waitlist rules, operators, and phone numbers change — the
+housing office at your gaining installation is the source of record, and nothing here is a promise
+of housing or a timeline.</p>
+{lead_form("WAITLIST", "pcs-renter",
+  heading="Working the on-vs-off decision?",
+  blurb="Join the list and the arrival brief pairs the current on-base wait picture with the "
+        "off-base rent bands for your gaining installation.")}
+</div>'''
+    p = "/guides/on-base-waitlist.html"
+    ld = {"@context": "https://schema.org", "@graph": [
+        {"@type": "Article",
+         "headline": "The Oahu on-base housing waitlist: apply the day orders drop",
+         "description": "How Oahu's privatized-housing waitlists actually work, installation by "
+                        "installation: HEAT's real role on the Navy side, Island Palm Communities' "
+                        "7-day eligibility-backdating rule on the Army side, decline consequences, "
+                        "and EFMP priority — from the operators' own published rules.",
+         "datePublished": "2026-08-23", "dateModified": "2026-08-23",
+         "author": {"@type": "Organization", "name": "PCS Oahu"},
+         "publisher": {"@type": "Organization", "name": "PCS Oahu"},
+         "mainEntityOfPage": DOMAIN + p},
+        faq_ld(qas)]}
+    return p, page(p, "Oahu On-Base Housing Waitlists: HEAT, the 7-Day Rule, Decline Costs | PCS Oahu",
+                "How Oahu military housing waitlists really work: HEAT starts your file but holds "
+                "no place, Island Palm's 7-day rule backdates Army positions to your departure "
+                "date, and declining an offer resets your date. Sourced and dated.",
+                body, "/bases/", jsonld=ld)
+
 def guides_hub():
     body = f'''
 <div class="hero"><div class="wrap">
@@ -1312,6 +1473,9 @@ Hawaii PCS that paperwork alone doesn't cover.</p>
   <div class="card"><span class="tag">Arriving</span>
     <h3><a href="/tla/">TLA &amp; interim housing</a></h3>
     <p>The wheels-down-to-keys sequence, including the pet-quarantine timeline.</p></div>
+  <div class="card"><span class="tag">Arriving</span>
+    <h3><a href="/guides/on-base-waitlist.html">The on-base waitlist, decoded</a></h3>
+    <p>HEAT's real role, Island Palm's 7-day backdating rule, and what declining an offer costs your position.</p></div>
   <div class="card"><span class="tag">Buying</span>
     <h3><a href="/guides/rent-vs-buy.html">Rent or buy with a VA loan?</a></h3>
     <p>The honest framework: the PCS break-even horizon, what BAH reaches at island prices, and the forced-exit risk.</p></div>
@@ -1341,7 +1505,7 @@ def build():
         "/guides/index.html": guides_hub(),
     }
     for fn in (spouse, school_transition, pets, household_goods, vehicle_registration, rent_vs_buy,
-               harpta, dodea_schools):
+               harpta, dodea_schools, onbase_waitlist):
         p, h = fn()
         out[p] = h
     return out
