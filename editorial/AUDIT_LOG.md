@@ -4,6 +4,71 @@ Append-only. Newest entry on top. One record per daily run. Template at the bott
 
 ---
 
+## 2026-08-23 — Daily cycle: seller net-proceeds napkin (EN + ES) — LIVE
+
+- **Trigger:** Operator — "Run the West FW Living daily publishing cycle."
+
+### Staleness scan
+Gate `--check` green (304 pages), only the two tracked `/privacy/` warnings. Month-roll
+(specials / rent report / builder report) not yet ripe on 08-23; 2026 tax-rate adoption
+(#2) likewise. Nothing outranked a new page.
+
+### Selection
+Backlog **#5 — seller's net-proceeds napkin** (Sellers, M/H): the only core cluster untouched
+(Schools 08-16, Neighborhoods 08-21, Buyers 08-22). New page `/sell/net-proceeds` + ES
+`/es/vender/ganancias-netas`. No cannibalization: `/sell/capital-gains` covers taxes on the
+gain; this covers the closing-cost ledger, and each links the other as the two halves.
+
+### Research + verification
+- **Owner's title policy at $450,000 = $2,509** — TDI basic premium schedule **effective
+  2026-03-01**, fetched from tdi.texas.gov this run: $780 at $100K; (face − $100K) × 0.00494
+  + $780 for $100,001–$1M; arithmetic computed in-session ((350,000 × 0.00494) + 780 = 2,509).
+- **$0 transfer tax** — real-estate transfer taxes constitutionally prohibited in Texas
+  (statewide Prop 1, approved 2015, in effect since 2016) — so stated as no state *or local*
+  transfer tax.
+- **$450K example price** — sits inside the site's published Willow Park band ($430K–$600K,
+  public listings, summer 2026, per `/sell/willow-park`).
+- **Everything else deliberately number-free**: escrow fees ("varies by company — get the fee
+  sheet"), HOA resale package ("itemized, in writing"), payoff (mechanics only), tax proration
+  (mechanics only: paid in arrears, credit Jan 1 → closing), and **agent compensation stated
+  as negotiable with no percentages** — both the never-invent rule and the publisher posture
+  point the same way. Earlier-remembered figures (e.g. a statutory HOA resale-cert cap) were
+  omitted rather than stated unverified.
+
+### Safeguards
+Educational mechanics with an explicit not-advice line; no individualized advice, no
+percentages that could read as steering compensation norms. None triggered.
+
+### Produced
+Napkin table (two hard lines + labeled blanks) · the three documents that fill the blanks ·
+who it applies to · next steps · sources with the TDI formula spelled out · visible verified
+date 2026-08-23 · Article + FAQPage JSON-LD · **sell_timeline form context both languages** —
+`lead_form()` gained a `selling=True` variant emitting the same field/label the 26 existing
+sell pages carry, so form-assert's selling rule passes natively · bidirectional hreflang +
+visible cross-language links **verified by rendered Chromium screenshot**. Reciprocals:
+sell hub card, es/vender hub card, in-body link from `/sell/capital-gains`.
+
+### Build + gate
+`GATE PASSED` — all seven asserts green. **306 pages, 304 sitemap URLs.** Second run a
+clean no-op.
+
+### Deployment + verification
+One 502 from the connector gateway → 75s backoff, second attempt clean. Pushed before
+deploying. Deploy `6a8b258f1dbe3417f989eeb8` — ready, production; deploy permalink verified
+first. Live: EN + ES → 200, extensionless canonicals, 404 ok, both URLs in the live sitemap
+(re-fetched after one flaky 000 response from the sandbox proxy — first sitemap read falsely
+showed 0 matches; retry showed 304 URLs incl. both new pages), hreflang both directions.
+
+### IndexNow
+5 changed URLs (2 new, sell hub, es/vender hub, capital-gains) → HTTP 200.
+
+### Next recommended action
+`/privacy/` (backlog #1) still awaits human review. **Sept 1 month-roll is next** (specials /
+rent report / builder report), then #2 (2026 tax rates) as districts adopt. After the Data
+work, #6/#7 (Relocation/Renters) are the remaining balance gaps.
+
+---
+
 ## 2026-08-22 — Daily cycle: homestead exemption in dollars (EN + ES) — LIVE
 
 - **Trigger:** Operator — "Run the West FW Living daily publishing cycle."
