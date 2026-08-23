@@ -156,7 +156,10 @@ Run your grade against the <a href="/neighborhoods/">pocket table</a> before dec
 allowance question is already answered.</p>
 <h2>Waitlist tactics that cost nothing</h2>
 <p style="max-width:46rem">Get on the list the day orders drop — position rules vary by service
-but the option is free and holds while you search off base. Ask for the current realistic wait
+but the option is free and holds while you search off base. The
+<a href="/guides/on-base-waitlist.html">waitlist mechanics guide</a> has the per-installation
+rules from the operators' own documents, including the Army side's 7-day eligibility-backdating
+window and what declining an offer does to your position. Ask for the current realistic wait
 for your grade and bedroom count (not the brochure answer), and whether accepting or declining
 an offer affects your position. Arriving families commonly bridge with <a href="/tla/">TLA</a>
 while the list moves.</p>
