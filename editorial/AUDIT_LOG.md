@@ -4,6 +4,85 @@ Append-only. Newest entry on top. One record per daily run. Template at the bott
 
 ---
 
+## 2026-08-23 — On-base housing waitlist mechanics (backlog #5, shipped same-day)
+
+- **Date/time:** 2026-08-23 (daily publishing cycle)
+- **Selected topic:** Backlog #5 — on-base housing waitlist mechanics by installation. The
+  deepening spoke the `/on-base/` hub deliberately deferred ("position rules vary by service").
+- **Reason for selection:** Staleness scan (all 6 checks) clean — no drift, no broken links,
+  data anchors in cadence (rent-band refresh next due 2026-09-01). #5 was the highest-scored
+  unshipped item (H traffic / M txn) and Renting/On-base was the one core cluster with no ship
+  yet — the last five ships were PCS logistics ×2, Buying, Selling, Schools. Checked the existing
+  `/on-base/` hub first to deepen rather than duplicate: the hub covers the system shape, money,
+  and tenant rights, and explicitly hand-waves waitlist position rules — exactly the gap.
+- **Audience:** All inbound accompanied families; renter-leaning CTA (`pcs-renter`).
+- **Content type:** Evergreen process/mechanics guide, per-installation.
+- **URL:** https://pcsoahu.com/guides/on-base-waitlist.html
+- **Sources used (verified 2026-08-23):**
+  - **CNIC Navy Housing — HEAT page** (`ffr.cnic.navy.mil/Navy-Housing/HEAT/`): HEAT lets you
+    start the process before or after orders; "someone from the Navy HSC will contact you within
+    one business day"; and the limitation quoted verbatim on the page — HEAT "does not place you
+    on a wait list and cannot improve your position on a housing wait list." This correction of a
+    common assumption is the page's Navy-side centerpiece.
+  - **MilitaryINSTALLATIONS (DoD), JBPHH government-housing page**: Ohana Military Communities
+    (Hunt) manages Navy-side homes, Hickam Communities the Air Force side; the Navy HSC "manages
+    the waitlist"; appointments up to 30 days before arrival (808-474-1820/1821); DD Form 1746 +
+    PCS orders + dependency documentation; priority "determined by local Business Agreements";
+    EFMP may confer higher priority.
+  - **Island Palm Communities' posted "Guidelines for Waitlist and Housing Assignment"** (PDF
+    served from IPC's own media library; extracted full text): two regional lists (North =
+    Helemano/Schofield/Wheeler, South = Aliamanu/Shafter/Tripler/Red Hill), one list at a time;
+    inbound eligibility date = date departed last duty station **if applied within 7 days of
+    arrival** (the page's Army-side centerpiece); decline of an adequate offer → bottom of list,
+    eligibility date reset to declination date; 12 months tour remaining required; bedroom count
+    from command-sponsored dependents; priority categories. **Document is dated 3/9/2016 — flagged
+    verbatim in-page** ("the version IPC posts is dated 2016... confirm current terms at the
+    leasing office") rather than presented as current policy.
+  - **MCBH**: kept deliberately light — identified Ohana Military Communities' Marine housing
+    operation and linked its first-party site; declined to assert phone numbers or waitlist
+    specifics that only surfaced through secondary sources (MyBaseGuide etc.).
+  - Deliberately omitted as too volatile/lease-level: IPC pet fees/breed lists, TLA-forfeiture
+    consequences of declining while on TLA, loaner-furniture rules, accent-wall policy.
+- **Facts requiring future revalidation:** JBPHH HSC phone numbers; whether IPC posts an updated
+  guidelines document (current one dated 2016 — recheck each cycle it's cited); operator names
+  (Ohana/Hunt, Hickam Communities, IPC/Lendlease) at any MHPI contract change; HEAT scope.
+- **Internal links added:** New page → `/on-base/` (hub), `/neighborhoods/`, `/tla/`,
+  `/bah-report/`. Reciprocal **FROM**: `/on-base/` ("Waitlist tactics" section now points to the
+  new page), `/guides/` hub (new Arriving card).
+- **CTA used:** "Working the on-vs-off decision?" → lead form, segment `pcs-renter`, context
+  `move`, tag `PCSOAHU-WAITLIST`.
+- **Files changed (this branch, 1289q3):** `gen/pages_content.py` (new `onbase_waitlist()`, wired
+  into `build()`, guides-hub card), `gen/pages_growth.py` (`on_base()` reciprocal). Regenerated
+  `site/` (53 pages), `sitemap.xml` (51 URLs), `indexnow-payload.json`. Commit `f504580`.
+- **Build status (this branch):** `GATE PASSED — 53 pages, 51 sitemap URLs, all assertions green.`
+  Syntax-checked via `ast.parse` before both builds; clean first-try on both branches.
+- **Production port:** established pattern, third consecutive cycle — same function + same two
+  reciprocal edits applied onto `claude/pcs-oahu-deploy-dd373n` (anchors verified present before
+  patching). Verified additive-only: live sitemap 58 → 59, exactly `/guides/on-base-waitlist.html`
+  added, nothing removed. `GATE PASSED — 61 pages, 59 sitemap URLs` on `dd373n`, commit `00c7188`.
+- **Deployment status:** DEPLOYED to production. Netlify continuous deployment auto-triggered on
+  the push — deploy `6a8b24abb8aea30008585e58`, state `ready`, published 2026-08-23T16:49:58Z
+  (9s, context production). Secret scan clean (121 files, 0 matches). Deploy summary confirms
+  exactly the intended change surface: 3 generated pages (`guides/index.html`,
+  `on-base/index.html`, `guides/on-base-waitlist.html`) + 1 asset.
+- **Production verification:** PASS — new URL 200 (first poll hit the usual brief propagation
+  blip, 200 on retry ~10s later); bogus path 404; URL in live sitemap (59 URLs, lastmod
+  2026-08-23); canonical = `https://pcsoahu.com/guides/on-base-waitlist.html`; live content
+  spot-checked (HEAT limitation quote ×2, 7-day rule ×3, the "dated 2016" flag, HSC phone);
+  reciprocal links live on `/on-base/` and `/guides/` (served extensionless per Netlify's
+  pretty-URL rewrite, as established).
+- **IndexNow:** POSTed the fresh 59-URL payload (host `pcsoahu.com`, key
+  `12ef30fd51aefc63524ab6eb41e58f99`). **HTTP 200.**
+- **Standing blocker status:** unchanged — `dd373n` (59 URLs) vs this branch (51), same 11-page
+  gap (`/family/` ×9, `/tools/commute-grid/`, `/bah-report/2026-rates/`). Port pattern now
+  three-cycle-proven; permanent reconciliation still awaiting operator direction.
+- **Next recommended related topics:** #6 (commute-first neighborhood decision — in-house POCKETS
+  data, no external sourcing risk), #9 (VA condo approval — pairs with /buy/), #3 (fee simple vs
+  leasehold — must add depth beyond /buy/'s existing in-body coverage). Also note the 2026-09-01
+  rent-band refresh lands within the week and takes precedence as a calendar anchor.
+
+---
+
 ## 2026-08-22 — Does Hawaii have DoDEA schools? (backlog #4, shipped same-day)
 
 - **Date/time:** 2026-08-22 (daily publishing cycle)
