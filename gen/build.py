@@ -18,12 +18,38 @@ sys.path.insert(0, HERE)
 import pages_schools_ratings  # noqa: E402
 import pages_guides_benbrook  # noqa: E402
 import pages_buy_homestead  # noqa: E402
+import pages_sell_net_proceeds  # noqa: E402
 
-MODULES = [pages_schools_ratings, pages_guides_benbrook, pages_buy_homestead]
+MODULES = [pages_schools_ratings, pages_guides_benbrook, pages_buy_homestead, pages_sell_net_proceeds]
 
 # Reciprocal links: (hub file, anchor that must exist, HTML block, insertion marker).
 # Each entry is applied only when the anchor is absent, so the build is idempotent.
 RECIPROCAL = [
+    (
+        "sell/index.html",
+        "/sell/net-proceeds",
+        "<a href='/sell/net-proceeds'><h3>The net-proceeds napkin</h3>"
+        "<p>What selling actually costs, worked at $450K: the state-set title premium, the $0 "
+        "transfer tax, and the blanks only your documents can fill.</p></a> ",
+        "<a href='/sell/capital-gains'><h3>",
+    ),
+    (
+        "es/vender/index.html",
+        "/es/vender/ganancias-netas",
+        "<a href='/es/vender/ganancias-netas'><h3>Las cuentas netas del cierre</h3>"
+        "<p>Lo que vender cuesta de verdad, a $450K: la prima de t\u00edtulo fijada por el estado, "
+        "el impuesto de transferencia de $0, y los espacios que llenan sus documentos.</p></a> ",
+        "<a href='/es/vender/impuestos-ganancias'><h3>",
+    ),
+    (
+        "sell/capital-gains.html",
+        "/sell/net-proceeds",
+        "<section><div class=\"prose\"><p>Taxes on the gain are only half the ledger \u2014 "
+        "<a href=\"/sell/net-proceeds\">the net-proceeds napkin</a> works the other half: title "
+        "premium, prorations, and the negotiated blanks, line by line.</p></div></section>\n"
+        "<div class=\"leadbox\"><h2>Get your area's sale data</h2>",
+        "<div class=\"leadbox\"><h2>Get your area's sale data</h2>",
+    ),
     (
         "buy/index.html",
         "/buy/homestead-exemption",

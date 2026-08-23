@@ -92,6 +92,11 @@ FIELD_LEASE_EN = ("When does your current lease end?", "lease_end", "e.g., Novem
 FIELD_MOVE_EN = ("When are you planning to move? (optional)", "move_date", "e.g., spring 2027")
 FIELD_LEASE_ES = ("¿Cuándo vence tu contrato actual?", "lease_end", "ej., noviembre 2026")
 FIELD_MOVE_ES = ("¿Para cuándo planea mudarse? (opcional)", "move_date", "ej., primavera 2027")
+# Selling context — matches the field the 26 existing sell/ and es/vender/ pages carry.
+FIELD_SELL_EN = ("When are you thinking of selling? (optional)", "sell_timeline",
+                 "e.g., spring 2027 · just curious")
+FIELD_SELL_ES = ("¿Para cuándo piensa vender? (opcional)", "sell_timeline",
+                 "p. ej., primavera 2027 · solo curiosidad")
 
 CONSENT_EN = ("I agree to be contacted about my inquiry by email or phone and accept the "
               "<a href=\"/privacy/\">privacy policy</a>. No spam — unsubscribe anytime.")
@@ -99,10 +104,13 @@ CONSENT_ES = ("Acepto ser contactado sobre mi consulta por correo o teléfono y 
               "<a href=\"/es/privacidad/\">política de privacidad</a>. Sin spam — cancela cuando quieras.")
 
 
-def lead_form(path, heading_cta, renting=False, es=False, uid="lf"):
+def lead_form(path, heading_cta, renting=False, es=False, selling=False, uid="lf"):
     """Render the hardened lead form with the context-appropriate date field."""
-    label, name, ph = (FIELD_LEASE_ES if renting else FIELD_MOVE_ES) if es else \
-                      (FIELD_LEASE_EN if renting else FIELD_MOVE_EN)
+    if selling:
+        label, name, ph = FIELD_SELL_ES if es else FIELD_SELL_EN
+    else:
+        label, name, ph = (FIELD_LEASE_ES if renting else FIELD_MOVE_ES) if es else \
+                          (FIELD_LEASE_EN if renting else FIELD_MOVE_EN)
     consent = CONSENT_ES if es else CONSENT_EN
     thanks = f"{DOMAIN}/es/gracias.html" if es else f"{DOMAIN}/thanks.html"
     l_name, l_mail, l_phone = ("Nombre", "Correo", "Teléfono") if es else ("Name", "Email", "Phone")
