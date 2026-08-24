@@ -1,0 +1,24 @@
+{
+  "baseline_date": "2026-08-24",
+  "description": "Seasoning cohort: the pages Google began testing in the site's first exposure window (export 2026-08-24, 'Last 3 months', first impressions 2026-08-13). Future exports are compared against these exact URLs. Positions/impressions here are denormalized from the baseline export for quick reference; the CSVs in 2026-08-24/ are the record.",
+  "cohorts": [
+    { "label": "MUD/PID explained (EN)",      "url": "https://northfwliving.com/buy/mud-pid-explained/",      "baseline_position": 69.77, "baseline_impressions": 44 },
+    { "label": "Homestead exemption guide",   "url": "https://northfwliving.com/guides/homestead-exemption/", "baseline_position": 80.25, "baseline_impressions": 16 },
+    { "label": "Schools hub",                 "url": "https://northfwliving.com/schools/",                    "baseline_position": 30.6,  "baseline_impressions": 15 },
+    { "label": "School boundary guide",       "url": "https://northfwliving.com/schools/boundary-guide/",     "baseline_position": 18.38, "baseline_impressions": 8 },
+    { "label": "Northwest ISD fact sheet",    "url": "https://northfwliving.com/schools/northwest-isd/",      "baseline_position": 29.0,  "baseline_impressions": 7 },
+    { "label": "Northlake neighborhood",      "url": "https://northfwliving.com/neighborhoods/northlake/",    "baseline_position": 49.88, "baseline_impressions": 8 },
+    { "label": "Build-to-Rent (EN)",          "url": "https://northfwliving.com/renting/build-to-rent/",      "baseline_position": 64.75, "baseline_impressions": 4, "note": "site's first organic click (query: 'build to rent')" },
+    { "label": "Net-effective rent tool",     "url": "https://northfwliving.com/tools/net-effective-rent/",   "baseline_position": 89.5,  "baseline_impressions": 6 },
+    { "label": "Build-to-Rent (ES)",          "url": "https://northfwliving.com/es/renting/build-to-rent/",   "baseline_position": 31.0,  "baseline_impressions": 5 },
+    { "label": "MUD/PID (ES)",                "url": "https://northfwliving.com/es/buy/mud-pid-explained/",   "baseline_position": 5.75,  "baseline_impressions": 4 },
+    { "label": "Neighborhoods hub (ES)",      "url": "https://northfwliving.com/es/neighborhoods/",           "baseline_position": 4.5,   "baseline_impressions": 2 },
+    { "label": "Buy hub (ES)",                "url": "https://northfwliving.com/es/buy/",                     "baseline_position": 2.0,   "baseline_impressions": 1 },
+    { "label": "Neighborhoods hub (EN)",      "url": "https://northfwliving.com/neighborhoods/",              "baseline_position": 15.25, "baseline_impressions": 4 }
+  ],
+  "notes": [
+    "No employer page received impressions in the baseline export; employer URLs join the cohort file if/when they first appear.",
+    "Task-prompt rounded values for reference: school boundary ~18.4, Northwest ISD ~29, Northlake ~49.9, MUD/PID ~69.8 — actual imported values used above.",
+    "Baseline sitewide: 24 pages with impressions, 137 impressions, 1 click, 43 distinct queries, first impression 2026-08-13."
+  ]
+}
