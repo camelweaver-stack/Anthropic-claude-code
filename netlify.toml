@@ -42,3 +42,13 @@
   for = "/es/gracias.html"
   [headers.values]
     X-Robots-Tag = "noindex"
+
+[[headers]]
+  for = "/tv.html"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
+[[headers]]
+  for = "/poster.html"
+  [headers.values]
+    X-Robots-Tag = "noindex"
