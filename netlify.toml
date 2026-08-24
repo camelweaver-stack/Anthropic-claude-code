@@ -1,12 +1,14 @@
 # Netlify configuration for westfwliving.com
 # Static site — no compile step; publish the repository root as-is.
-# The build command only pings IndexNow after each deploy (fail-safe: `|| true`
-# guarantees a ping error can never fail the deploy).
+# The build command FIRST validates the deployable HTML against
+# scripts/prohibited-content.json (placeholder/editorial/simulated-firsthand
+# strings) and FAILS the deploy on any hit — this runs in Netlify's build, so
+# it cannot be skipped by deploying without the local gates. Only then does it
+# ping IndexNow (fail-safe: `|| true` so a ping error can never fail a deploy).
 
 [build]
   publish = "."
-  # `timeout 30` is a hard cap so a hung ping can never stall the build; `|| true` so a ping error never fails it.
-  command = "timeout 30 node scripts/ping-indexnow.js || true"
+  command = "node scripts/validate-production.js && (timeout 30 node scripts/ping-indexnow.js || true)"
 
 [build.environment]
   # Node 20 for a stable global fetch() in the ping script.

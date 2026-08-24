@@ -114,7 +114,7 @@ RECIPROCAL = [
         "<div class=\"card\"><span class=\"kicker\">Buying &middot; Lockheed</span>"
         "<h3><a href='/guides/buying-a-home-near-lockheed-martin-fort-worth'>Buying a home near Lockheed Martin: the west-side ladder</a></h3>"
         "<p>White Settlement at the gate to Aledo ISD at 30 minutes &mdash; published sale bands, "
-        "shift-honest drives, and the 2026 TEA ratings that price each rung.</p></div>",
+        "estimated drives, and the 2026 TEA ratings that price each rung.</p></div>",
         "<div class=\"card\"><span class=\"kicker\">Commutes</span>",
     ),
     (
@@ -123,7 +123,7 @@ RECIPROCAL = [
         "<div class=\"card\"><span class=\"kicker\">Comprar &middot; Lockheed</span>"
         "<h3><a href='/es/guias/comprar-casa-cerca-de-lockheed-martin-fort-worth'>Comprar casa cerca de Lockheed Martin: la escalera del oeste</a></h3>"
         "<p>De White Settlement junto a la planta hasta Aledo ISD a 30 minutos &mdash; bandas de venta "
-        "publicadas, manejos honestos por turno, y las calificaciones TEA 2026 de cada distrito.</p></div>",
+        "publicadas, manejos estimados, y las calificaciones TEA 2026 de cada distrito.</p></div>",
         "<div class=\"card\"><span class=\"kicker\">Traslados</span>",
     ),
     (
@@ -196,7 +196,7 @@ RECIPROCAL = [
         "<p><strong>Relocating to work at the plant &mdash; not just apartment hunting?</strong> "
         "<a href=\"/relocate/working-at-lockheed-martin-fort-worth\">The Lockheed relocation hub</a> "
         "organizes the whole decision: rent vs buy, the pocket map, schools, the NAS JRB crossover, "
-        "and the move checklist.</p>\n\n<h2>Shift math:",
+        "and the move checklist.</p>\n\n",
         "<h2>Shift math:",
     ),
     (

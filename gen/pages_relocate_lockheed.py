@@ -61,9 +61,9 @@ FAQ_EN = [
      "Military households add two layers: BAH math and the jet-noise contours - both have "
      "dedicated guides on this site."),
     ("What do the commutes actually look like at shift times?",
-     "Plant schedules miss the worst of the metro rush - early starts make even the Parker "
-     "County drive about 20 clean minutes, while standard office hours take the full "
-     "I-30/820 interchange hit. Drive your real route at your real report time once before "
+     "Commute times are estimates and vary substantially by departure hour: very early starts "
+     "generally see lighter traffic than the metro peak, while standard office hours face the "
+     "full I-30/820 interchange. Drive your real route at your real report time once before "
      "signing anything."),
 ]
 
@@ -110,7 +110,7 @@ def build_en():
   <h2>Path one: rent near the plant</h2>
   <p>Best when you're new to the area, on a start date, or running a deliberate scout year.
   <a href="/guides/apartments-near-lockheed-martin-fort-worth">The apartments guide</a> maps every
-  pocket with shift-honest drive times; <a href="/rentals/apartments-76108">the 76108 file</a> covers
+  pocket with estimated off-peak drive times; <a href="/rentals/apartments-76108">the 76108 file</a> covers
   the closest-to-gate ZIP, and the named communities people ask about have full field files &mdash;
   <a href="/complexes/westpoint-at-scenic-vista">Westpoint at Scenic Vista</a> and
   <a href="/complexes/chapel-creek-cottages">Chapel Creek Cottages</a> on the west side.
@@ -131,8 +131,9 @@ def build_en():
 
 <section>
   <h2>Path three: the commute decides the pocket</h2>
-  <p>Plant schedules are kinder than downtown rush &mdash; early shifts make Parker County a clean
-  ~20 minutes, while standard office hours take the full I-30/820 hit.
+  <p>The hour you drive matters as much as the miles: mapping estimates for very early starts put
+  even the Parker County runs well under their rush-hour worst case, while standard office hours
+  face the full I-30/820 interchange &mdash; these are estimates, not measurements.
   <a href="/guides/apartments-near-lockheed-martin-fort-worth">The shift-math section of the renter's
   guide</a> works this in detail, and every tracked community has its own drive-time file (e.g.
   <a href="/commutes/westpoint-at-scenic-vista">from Westpoint</a>,
@@ -238,7 +239,7 @@ def build_es():
   <h2>Camino uno: rentar cerca de la planta</h2>
   <p>Ideal si eres nuevo en el &aacute;rea o corres un a&ntilde;o de exploraci&oacute;n.
   <a href="/es/guias/apartamentos-cerca-de-lockheed-martin-fort-worth">La gu&iacute;a de
-  apartamentos</a> mapea cada zona con tiempos honestos por turno, y
+  apartamentos</a> mapea cada zona con tiempos estimados fuera de hora pico, y
   <a href="/es/especiales">los especiales verificados de este mes</a> incluyen 6&ndash;8 semanas
   gratis en varias comunidades del corredor.</p>
 </section>

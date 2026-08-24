@@ -1,0 +1,19 @@
+{
+  "_doc": "Single source of truth for content that must NEVER appear in deployable HTML. Consumed by (1) scripts/validate-production.js — runs inside the Netlify build command and FAILS the deploy, and (2) the placeholder-assert gate in scripts/apply_standing_fixes.py — fails the local build. Patterns are case-insensitive regexes kept compatible with both JavaScript and Python. Keep them narrow: legitimate brackets, Spanish 'todo:', and reader-directed 'you tour' prose must never match. Test with: python3 scripts/test_credibility_gate.py",
+  "patterns": [
+    {"re": "FIRST-HAND FIELD NOTE", "label": "placeholder field note"},
+    {"re": "\\[FIELD NOTE", "label": "placeholder field note"},
+    {"re": "\\[FIRST-HAND", "label": "placeholder field note"},
+    {"re": "\\[PLACEHOLDER", "label": "placeholder marker"},
+    {"re": "FIELD PHOTOS? — added", "label": "placeholder photo slot"},
+    {"re": "FIELD PHOTOS? - added", "label": "placeholder photo slot"},
+    {"re": "added after (an )?in-person visit", "label": "simulated visit claim"},
+    {"re": "compiled after in-person visits", "label": "simulated visit claim"},
+    {"re": "field[- ]checked|field[- ]tested", "label": "simulated field-verification claim"},
+    {"re": "\\bwe (visited|toured|drove out|walked the|verified in person)\\b", "label": "simulated visit claim"},
+    {"re": "\\blocals (report|say|tell us)\\b", "label": "unsupported local-sentiment claim"},
+    {"re": "\\[(TODO|TK|DRAFT|FIXME|XXX)[\\]:\\s]", "label": "editorial TODO marker"},
+    {"re": "\\[(add |insert |verify |replace |photo of |image of |add photo|to come)", "label": "bracketed editorial instruction"},
+    {"re": "lorem ipsum", "label": "lorem ipsum"}
+  ]
+}

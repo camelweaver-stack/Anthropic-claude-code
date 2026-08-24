@@ -45,6 +45,14 @@ def run_gate():
     return r.returncode, r.stdout + r.stderr
 
 
+def run_deploy_validator():
+    """The Netlify-build validator (scripts/validate-production.js) must agree
+    with the local gate — both read scripts/prohibited-content.json."""
+    r = subprocess.run(["node", "scripts/validate-production.js"],
+                       capture_output=True, text=True)
+    return r.returncode, r.stdout + r.stderr
+
+
 def seed(text):
     with open(TMP, "w", encoding="utf-8") as f:
         f.write(f"<html><head><title>t</title></head><body><p>{text}</p></body></html>")
@@ -57,24 +65,33 @@ def main():
             seed(v)
             code, out = run_gate()
             if code == 0 or "placeholder-assert" not in out:
-                failures.append(f"NOT CAUGHT: {v!r}")
-            else:
-                print(f"  caught   {v[:58]!r}")
+                failures.append(f"NOT CAUGHT (local gate): {v!r}")
+            dcode, dout = run_deploy_validator()
+            if dcode == 0:
+                failures.append(f"NOT CAUGHT (deploy validator): {v!r}")
+            if code != 0 and dcode != 0:
+                print(f"  caught by both gates   {v[:52]!r}")
         for ok_text in LEGITIMATE:
             seed(ok_text)
             code, out = run_gate()
             if "placeholder-assert" in out and TMP in out:
-                failures.append(f"FALSE POSITIVE: {ok_text!r}")
-            else:
+                failures.append(f"FALSE POSITIVE (local gate): {ok_text!r}")
+            dcode, dout = run_deploy_validator()
+            if dcode != 0 and TMP in dout:
+                failures.append(f"FALSE POSITIVE (deploy validator): {ok_text!r}")
+            if "placeholder-assert" not in out or TMP not in out:
                 print(f"  allowed  {ok_text[:58]!r}")
     finally:
         if os.path.exists(TMP):
             os.remove(TMP)
     code, out = run_gate()
     if code != 0:
-        failures.append("clean tree does not pass the gate:\n" + out[-600:])
-    else:
-        print("  clean tree passes")
+        failures.append("clean tree does not pass the local gate:\n" + out[-600:])
+    dcode, dout = run_deploy_validator()
+    if dcode != 0:
+        failures.append("clean tree does not pass the deploy validator:\n" + dout[-600:])
+    if code == 0 and dcode == 0:
+        print("  clean tree passes both gates")
     if failures:
         print("\nGATE TEST FAILED:")
         for f in failures:

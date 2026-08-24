@@ -62,8 +62,9 @@ FAQ_EN = [
      "your decision."),
     ("Should I rent or buy near the plant?",
      "Run the actual numbers rather than a rule of thumb: the rent-vs-buy calculator compares "
-     "a 12-month all-in rent total against ownership costs at current bands. Aerospace "
-     "stability helps on the mortgage side; the homestead exemption (worth roughly "
+     "a 12-month all-in rent total against ownership costs at current bands. Relocating for a "
+     "new job? Discuss employment-history and income-documentation requirements with your "
+     "lender early. The homestead exemption (worth roughly "
      "$1,441-$1,690 a year across these districts at adopted 2025 rates) narrows the gap "
      "after closing."),
     ("Do VA loans work here?",
@@ -98,7 +99,7 @@ def build_en():
 <section>
   <h2>The buyer's ladder, west from the gate</h2>
   {_ladder(LADDER)}
-  <p>Three notes. Drive times are the same shift-honest estimates as <a href="/guides/apartments-near-lockheed-martin-fort-worth">the renter's guide</a> &mdash; plant schedules miss the worst of the metro's rush. School attendance is address-specific everywhere on this table, and Willow Park/Hudson Oaks genuinely split between districts; verify the zoned campus with the district before money moves (<a href="/schools/tea-ratings-2026">the 2026 TEA page</a> maps every campus). And each rung has a full seller-side file with days-to-contract: <a href="/sell/white-settlement">White Settlement</a>, <a href="/sell/benbrook">Benbrook</a>, <a href="/sell/willow-park">Willow Park</a>, <a href="/sell/aledo">Aledo</a>.</p>
+  <p>Three notes. Drive times are off-peak mapping estimates (same basis as <a href="/guides/apartments-near-lockheed-martin-fort-worth">the renter's guide</a>) and vary with departure time, traffic, and gate &mdash; test your route at your real commute hour. School attendance is address-specific everywhere on this table, and Willow Park/Hudson Oaks genuinely split between districts; verify the zoned campus with the district before money moves (<a href="/schools/tea-ratings-2026">the 2026 TEA page</a> maps every campus). And each rung has a full seller-side file with days-to-contract: <a href="/sell/white-settlement">White Settlement</a>, <a href="/sell/benbrook">Benbrook</a>, <a href="/sell/willow-park">Willow Park</a>, <a href="/sell/aledo">Aledo</a>.</p>
 </section>
 
 <section>
@@ -122,7 +123,7 @@ def build_en():
     <li>Sale bands and $/sqft &mdash; compiled from public listing data, summer 2026, as published on the corridor's sell-side files (linked per rung above).</li>
     <li>School ratings &mdash; TEA 2026 A&ndash;F release (2026-08-14), per-campus figures verified 2026-08-16; see <a href="/schools/tea-ratings-2026">the corridor ratings page</a>.</li>
     <li>Homestead arithmetic &mdash; adopted 2025 district rates, verified 2026-08-22, on <a href="/buy/homestead-exemption">the exemption page</a>.</li>
-    <li>Drive times &mdash; the shift-honest estimates published on the renter's hub; drive your actual route at your report time once before committing.</li>
+    <li>Drive times &mdash; off-peak mapping estimates as published on the renter's hub; drive your actual route at your report time once before committing.</li>
   </ul>
   <p><strong>Verified {VERIFIED}.</strong> Bands are typical ranges, change without notice, and are not a valuation of any property. West FW Living has no affiliation with Lockheed Martin.</p>
 </section>
@@ -148,7 +149,7 @@ def build_en():
         h1="Buying a home near Lockheed Martin Fort Worth",
         eyebrow="THE BUYER'S LADDER &middot; BANDS, DRIVES &amp; DISTRICTS, WEST FROM THE GATE",
         lede=("The plant is west, and so is every rung of the buyer's ladder: $230K White Settlement "
-              "at the gate to Aledo ISD at 30 minutes &mdash; published bands, shift-honest drives, "
+              "at the gate to Aledo ISD at 30 minutes &mdash; published bands, estimated drives, "
               "and the 2026 school ratings that price the rungs."),
         crumb="<a href='/'>Home</a> / <a href='/guides/'>Guides</a> / Buying Near Lockheed Martin",
         verified=VERIFIED,
