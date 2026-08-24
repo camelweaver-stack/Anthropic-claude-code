@@ -4,6 +4,33 @@ Append-only. Newest entry on top. One record per daily run. Template at the bott
 
 ---
 
+## 2026-08-24 (fifth run) — Surgical correction: Olympus report + guard hardening — LIVE
+
+- **Trigger:** Operator — live placeholder reported on /complexes/olympus-willow-park;
+  three Lockheed assertions reported still present. Verify, fix, stop.
+- **Finding:** live Olympus, source, and all six historical problem pages verified clean at
+  time of investigation (0 prohibited hits). Olympus was removed in the same commit as
+  Canvas/Westpoint (8a6f583, 12:16 UTC) and deployed with them at 12:24 UTC; the report
+  matches pre-12:24 production or an immutable old deploy permalink, same as the earlier
+  Canvas report. The three Lockheed claims were replaced in the fourth run; fragment scan
+  ("plant-shift timing", "plant's stability", "lenders comfortable", "offer letters satisfy",
+  "nearly everywhere") = zero production matches after this run.
+- **Hardening anyway:** denylist gains unhyphenated variants (FIRST HAND FIELD NOTE,
+  [FIRST HAND) + explicit [ADD PHOTO; fieldnotes content-state rule now build-enforced
+  (non-verified record carrying text/photos fails placeholder-assert); test suite extended to
+  14 violation classes across BOTH gates plus Tests E (planned+content must fail) and F
+  (verified+content must pass) — all green. One analogous claim fixed:
+  credit-score guide's "approved nearly everywhere on score alone" → per-property criteria
+  framing.
+- **Verify:** GATE PASSED ×8; deploy validator 310 files / 0 placeholder / 0 editorial
+  matches (deploy dir = repo root per netlify.toml publish="."); linkaudit + sitemap gates
+  green. Deploy **6a8c560e** through the validating build (commit 21cd16b). Live: all six
+  URLs 200 / 0 placeholders; Lockheed live HTML: plant-shift 0, lender-comfort 0,
+  offer-letter-everywhere 0, replacement language present ×3. Site enters structural
+  stability; next intervention on new GSC evidence only.
+
+---
+
 ## 2026-08-24 (fourth run) — Corrective pass: deploy-pipeline guard + claim tightening — LIVE
 
 - **Trigger:** Operator — placeholder observed on live /complexes/canvas-at-willow-park;
