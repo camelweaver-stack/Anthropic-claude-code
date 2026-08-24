@@ -1,0 +1,6 @@
+{
+  "snapshot_date": "2026-08-24",
+  "compiled_by": "quality-and-seasoning pass",
+  "notes": "Architecture-establishing snapshot. Zero per-builder records: no offer had been verified against an official builder source as of this date, and this Ledger never records unverified or invented offers. The public /builder-ledger/ page continues to publish its type-level table until verified records accumulate here.",
+  "records": []
+}

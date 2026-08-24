@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://northfwliving.com/schemas/neighborhood-pocket.json",
+  "title": "Neighborhood / pocket record",
+  "description": "Structured data for one corridor pocket (city, town, master-planned community, or named area). This is infrastructure for FUTURE verified enrichment: every field except name and geographic_type may be null, and null always means 'unknown — do not guess'. Values must never be LLM-invented; see northfwliving-data/PROVENANCE.md. Fields whose real-world values are mutable or contestable (tax_rate, price_band, commute_estimates, MUD, PID, HOA, school_district, major_builders, new_construction_status) take a provenance envelope, not a bare scalar.",
+  "$defs": {
+    "provenanced": {
+      "type": ["object", "null"],
+      "required": ["value"],
+      "additionalProperties": false,
+      "properties": {
+        "value":           {},
+        "source":          { "type": ["string", "null"] },
+        "source_url":      { "type": ["string", "null"] },
+        "verified_date":   { "type": ["string", "null"], "format": "date" },
+        "effective_date":  { "type": ["string", "null"], "format": "date" },
+        "expiration_date": { "type": ["string", "null"], "format": "date" },
+        "confidence":      { "type": ["string", "null"], "enum": ["verified", "reported", "estimated", null] },
+        "notes":           { "type": ["string", "null"] }
+      }
+    }
+  },
+  "type": "object",
+  "required": ["name", "geographic_type"],
+  "additionalProperties": false,
+  "properties": {
+    "name":                     { "type": "string", "minLength": 1 },
+    "slug":                     { "type": ["string", "null"], "description": "URL slug under /neighborhoods/." },
+    "geographic_type":          { "type": "string", "enum": ["city", "town", "master_planned_community", "named_area", "neighborhood"] },
+    "city":                     { "type": ["string", "null"], "description": "Containing city, when the pocket is not itself a city." },
+    "county":                   { "$ref": "#/$defs/provenanced", "description": "County or counties; pockets can span county lines — record what the source shows, or null." },
+    "coordinates":              { "$ref": "#/$defs/provenanced", "description": "value: {lat, lon} of a representative center point." },
+    "school_district":          { "$ref": "#/$defs/provenanced", "description": "value: list of ISDs serving addresses in the pocket. Address-specific assignment is NEVER derivable from this field — it exists to say which districts are in play." },
+    "major_road_access":        { "$ref": "#/$defs/provenanced", "description": "value: list of highways/arterials." },
+    "employment_relationships": { "$ref": "#/$defs/provenanced", "description": "value: list of employer slugs (/employers/...) for which this pocket is commonly considered." },
+    "housing_mix":              { "$ref": "#/$defs/provenanced", "description": "value: e.g. {single_family, townhome, apartment, build_to_rent} presence flags or shares." },
+    "new_construction_status":  { "$ref": "#/$defs/provenanced", "description": "value: e.g. 'active phases', 'built out', 'mixed'." },
+    "major_builders":           { "$ref": "#/$defs/provenanced", "description": "value: list of builders with active communities. Populate only from official builder/community sources." },
+    "price_band":               { "$ref": "#/$defs/provenanced", "description": "value: {min, max, currency, as_of} for typical new/resale pricing. Modeled or compiled — say which in confidence/notes." },
+    "tax_rate":                 { "$ref": "#/$defs/provenanced", "description": "value: combined property tax rate in percent. Lot-specific rates vary; this is pocket-typical only and must cite the county/CAD source." },
+    "MUD":                      { "$ref": "#/$defs/provenanced", "description": "value: true/false/'varies' — whether MUD districts are present in the pocket." },
+    "PID":                      { "$ref": "#/$defs/provenanced", "description": "value: true/false/'varies'." },
+    "HOA":                      { "$ref": "#/$defs/provenanced", "description": "value: true/false/'varies', with typical dues in notes only if sourced." },
+    "commute_estimates":        { "$ref": "#/$defs/provenanced", "description": "value: map of employer slug -> qualitative band ('short'|'moderate'|'longer'). The site deliberately avoids fake-precise minute counts; keep that discipline here." },
+    "source":                   { "type": ["string", "null"], "description": "Record-level default source when field-level provenance is absent." },
+    "verified_date":            { "type": ["string", "null"], "format": "date" },
+    "notes":                    { "type": ["string", "null"] },
+    "history":                  { "type": "array", "items": { "type": "object" }, "description": "Superseded field values, appended when a provenanced field is updated: {field, old, replaced_date}.", "default": [] }
+  }
+}

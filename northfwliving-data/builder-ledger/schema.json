@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://northfwliving.com/schemas/builder-ledger-record.json",
+  "title": "Builder Ledger record",
+  "description": "One verified observation of one builder incentive offer at one community on one date. Records live in dated snapshot directories (northfwliving-data/builder-ledger/<YYYY-MM-DD>/records.json) and are append-only: a later observation of the same offer is a NEW record in a NEW snapshot, never an edit of an old one. Every field except builder, source, source_url and verified_date may be null, and null always means 'unknown' — never guess, never invent an expiration.",
+  "type": "object",
+  "required": ["builder", "source", "source_url", "verified_date"],
+  "additionalProperties": false,
+  "properties": {
+    "builder":             { "type": "string", "minLength": 1, "description": "Builder name as published by the builder." },
+    "community":           { "type": ["string", "null"], "description": "Community/subdivision the offer applies to; null if builder-wide or unknown." },
+    "city":                { "type": ["string", "null"] },
+    "offer_type":          { "type": ["string", "null"], "enum": ["flex_cash", "permanent_buydown", "temporary_buydown_2_1", "closing_cost_credit", "design_center_credit", "price_reduction", "quick_move_in", "other", null] },
+    "offer_summary":       { "type": ["string", "null"], "description": "Plain-English one-liner of the advertised offer, quoting the builder's own wording where possible." },
+    "advertised_rate":     { "type": ["number", "null"], "description": "Advertised interest rate in percent (e.g. 4.99). Null if the offer is not a rate offer or the rate is unpublished." },
+    "rate_conditions":     { "type": ["string", "null"], "description": "Published conditions on the rate: preferred lender, select inventory, lock length, etc." },
+    "closing_cost_credit": { "type": ["number", "null"], "description": "Dollar amount of advertised closing-cost credit." },
+    "design_center_credit":{ "type": ["number", "null"] },
+    "flex_cash":           { "type": ["number", "null"], "description": "Dollar amount of advertised flexible credit." },
+    "price_reduction":     { "type": ["number", "null"] },
+    "eligible_inventory":  { "type": ["string", "null"], "description": "Published scope: e.g. 'select quick move-in homes', specific plans/phases." },
+    "effective_date":      { "type": ["string", "null"], "format": "date", "description": "Date the offer took effect, if published." },
+    "expiration_date":     { "type": ["string", "null"], "format": "date", "description": "Published expiration. If the builder does not publish one, this stays null and notes should say 'expiration unpublished'." },
+    "source":              { "type": "string", "minLength": 1, "description": "Where the offer was observed. Official builder website/community page preferred; third-party summaries are not acceptable when an official source exists." },
+    "source_url":          { "type": "string", "format": "uri" },
+    "verified_date":       { "type": "string", "format": "date", "description": "Date this record was checked against the source." },
+    "confidence":          { "type": ["string", "null"], "enum": ["verified", "reported", null], "description": "'verified' = read from the official builder source on verified_date." },
+    "previous_value":      { "type": ["string", "null"], "description": "Optional pointer/summary of what the same offer looked like in the prior snapshot, to make direction-of-change auditable." },
+    "notes":               { "type": ["string", "null"] }
+  }
+}
