@@ -4,6 +4,61 @@ Append-only. Newest entry on top. One record per daily run. Template at the bott
 
 ---
 
+## 2026-08-24 — SEO growth system build + Lockheed cluster expansion — LIVE
+
+- **Trigger:** Operator — evolve WFL into a closed-loop local SEO system (18-phase brief),
+  GSC performance export of 2026-08-23 attached as the authoritative prioritization source.
+
+### System built (see `docs/SEO_GROWTH_SYSTEM.md` for the full spec)
+- `scripts/seo_engine.py` (stdlib-only): `ingest` (immutable snapshots to `data/gsc/YYYY-MM-DD/`,
+  refuses overwrite) · `report` (URL-form merging, tier A–D, commercial-intent 0–3, CTR-gap,
+  cannibalization, deltas, weighted opportunity queue → `reports/seo/`) · `linkaudit` (orphans,
+  contextual inbound, depth, broken) · `log-event` (→ `data/seo/events.jsonl` with before-metrics
+  and 7/28/90-day after-checkpoints).
+- `data/seo/config.json` (weights/allocation/priority clusters), `data/communities.json`
+  (null-tolerant structured community data, every value with source + verified date).
+- Snapshots ingested: 2026-08-23 (121 pages / 197 queries) + partial 2026-08-20.
+- `DAILY_RUN.md` SELECT step now reads the opportunity queue first (40/25/20/10/5 allocation,
+  seven-question new-page gate); calendar backlog re-scored on GSC evidence.
+
+### GSC-driven work shipped this run
+1. **Lockheed hub retitled + enriched** (`/guides/apartments-near-lockheed-martin-fort-worth`,
+   opportunity #1 at score 19.85: 285 imp @ pos 10.7, CTR 0.35%, ~140 imp of "apartments near
+   lockheed martin" queries vs the old "Where to live…" title). New "communities people search
+   by name" section links the named complex notes and de-orphans `/rentals/apartments-76108`.
+2. **New buyer spoke** `/guides/buying-a-home-near-lockheed-martin-fort-worth` + ES mirror
+   `/es/guias/comprar-casa-cerca-de-lockheed-martin-fort-worth` — four-pocket ladder built
+   entirely from on-site verified data (published sale bands 08-23, TEA 2026 ratings 08-16,
+   adopted 2025 ISD rates 08-22, shift-honest drives). Distinct buyer intent vs the renter hub;
+   passed the seven-question gate; hub↔spoke linked both directions in both languages;
+   cross-language links verified by rendered Chromium screenshots.
+3. **De-orphaning pass** (orphans 25 → 10): guides hub gained Aledo/Walsh definitive-guide
+   cards + a lease-law/Weatherford section (5 EN guides reconnected); es/guias gained a
+   tenant-rights/insurance section (7 ES guides); rentals hub gained the three ZIP pages;
+   the buyer spoke links both rent-or-buy pocket pages. Remaining 10 orphans are intentional
+   utility/alt pages (thanks, gracias, poster, tv, newsletter, for-leasing-teams, field-guide,
+   relocate/guide, donde-vivir, screening-signals) — operator may wire or retire.
+4. Three change events logged to `data/seo/events.jsonl` for before/after measurement.
+
+### Explicitly NOT created (anti-permutation rule)
+Per-suburb "X to Lockheed commute" pages (pocket table covers the intent), a second
+"where to live near Lockheed" variant (would cannibalize the hub), generic credit-score/
+closing-costs variants (pos 68–100 = Google testing, low intent).
+
+### Build, deploy, verify
+`gen/build.py` + `apply_standing_fixes.py` → **GATE PASSED**, 308 pages / 306 sitemap URLs,
+idempotent on re-run; only the two tracked `/privacy/` warnings. Deploy **6a8bc23f** (pushed
+first, permalink verified before production): new EN/ES pages 200 on permalink and apex,
+bogus path 404, 4 lockheed URLs in live sitemap, canonical + hreflang resolve both directions,
+live hub `<title>` confirmed retitled. IndexNow POST 200 for 7 changed URLs. One Netlify
+connector 502 on first deploy call — retried after 70s per protocol, succeeded.
+
+### Standing
+`/privacy/` + `/es/privacidad/` remain drafted, safeguarded, **NEEDS REVIEW** (backlog #1).
+Next GSC export: `ingest` → `report` → compare the Lockheed retitle's checkpoints.
+
+---
+
 ## 2026-08-23 — Daily cycle: seller net-proceeds napkin (EN + ES) — LIVE
 
 - **Trigger:** Operator — "Run the West FW Living daily publishing cycle."
