@@ -89,8 +89,9 @@ function calc(){var r=v('rent'),i=v('income');var x=i/r;out('Your income is '+x.
 
 <section class="formbox" id="list">
 <h2>Get the Ledger before the incentives change.</h2><p>Early-list members get each Alliance Builder Ledger update first, plus a heads-up when corridor incentive conditions shift. First access when full service opens. Zero spam. Leave anytime.</p>
-<form action="https://formsubmit.co/c86195fac91694c985b7fc55c96e4f77" method="POST">
+<form data-nfw-attrib="1" action="https://formsubmit.co/c86195fac91694c985b7fc55c96e4f77" method="POST">
 <input type="hidden" name="_subject" value="NFW-TOOL-INCOMEREQUIREM">
+<input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="utm_term"><input type="hidden" name="utm_content"><input type="hidden" name="referrer"><input type="hidden" name="landing_page"><input type="hidden" name="page_url">
 <div style="position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden" aria-hidden="true"><label>Leave this field empty<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>
 <input type="hidden" name="audience" value="nfw-buyer">
 <input type="hidden" name="_captcha" value="false">
@@ -117,5 +118,26 @@ function calc(){var r=v('rent'),i=v('income');var x=i/r;out('Your income is '+x.
 </div>
 <div class="legal"><p>North FW Living is an independent publisher. It is not a real estate brokerage and does not currently offer brokerage, leasing, or apartment-locating services; full service is coming soon. All rent figures, prices, incentives, boundaries, and program details on this site are compiled from public listings, public agencies, and published sources; they change without notice and should be verified independently with the property, builder, school district, or agency before you act. Payment examples are educational arithmetic only — not a valuation, loan offer, prequalification, or lending advice. Equal Housing Opportunity.</p></div>
 </div></footer>
+<!-- nfw-attribution --><script>
+(function(){
+  var K=["utm_source","utm_medium","utm_campaign","utm_term","utm_content"];
+  var store={};
+  try{store=JSON.parse(sessionStorage.getItem("nfw_ft")||"{}")}catch(e){}
+  if(!store.landing_page){
+    store.landing_page=location.pathname;
+    store.referrer=document.referrer||"";
+    try{var p=new URLSearchParams(location.search);K.forEach(function(k){var v=p.get(k);if(v)store[k]=v;})}catch(e){}
+    try{sessionStorage.setItem("nfw_ft",JSON.stringify(store))}catch(e){}
+  }
+  document.querySelectorAll('form[data-nfw-attrib]').forEach(function(f){
+    K.concat(["referrer","landing_page"]).forEach(function(k){
+      var el=f.querySelector('input[name="'+k+'"]');
+      if(el&&store[k])el.value=store[k];
+    });
+    var pu=f.querySelector('input[name="page_url"]');
+    if(pu)pu.value=location.pathname;
+  });
+})();
+</script>
 </body>
 </html>

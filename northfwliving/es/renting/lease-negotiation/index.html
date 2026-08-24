@@ -95,8 +95,9 @@ ul.plain li{margin-bottom:.45em}
 
 <section class="formbox" id="list">
 <h2>Que la renovación no lo tome por sorpresa.</h2><p>Los miembros de la lista reciben el panorama de especiales del corredor antes de publicarse, según la fecha en que termina <em>su</em> contrato. Acceso primero cuando abra el servicio completo. Cero spam.</p>
-<form action="https://formsubmit.co/c86195fac91694c985b7fc55c96e4f77" method="POST">
+<form data-nfw-attrib="1" action="https://formsubmit.co/c86195fac91694c985b7fc55c96e4f77" method="POST">
 <input type="hidden" name="_subject" value="NFW-ES-LEASE-NEG">
+<input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="utm_term"><input type="hidden" name="utm_content"><input type="hidden" name="referrer"><input type="hidden" name="landing_page"><input type="hidden" name="page_url">
 <div style="position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden" aria-hidden="true"><label>Leave this field empty<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>
 <input type="hidden" name="audience" value="nfw-renter">
 <input type="hidden" name="_captcha" value="false">
@@ -123,5 +124,26 @@ ul.plain li{margin-bottom:.45em}
 </div>
 <div class="legal"><p>North FW Living es una publicación independiente. No es una correduría de bienes raíces y actualmente no ofrece servicios de corretaje, arrendamiento ni localización de apartamentos; el servicio completo llega pronto. Todas las cifras de renta, precios, incentivos, límites escolares y detalles de programas se compilan de listados y fuentes públicas; cambian sin previo aviso y deben verificarse de forma independiente con la propiedad, el constructor, el distrito escolar o la agencia antes de actuar. Los ejemplos de pagos son aritmética educativa — no una valuación, oferta de préstamo, precalificación ni asesoría crediticia. Igualdad de Oportunidades de Vivienda.</p></div>
 </div></footer>
+<!-- nfw-attribution --><script>
+(function(){
+  var K=["utm_source","utm_medium","utm_campaign","utm_term","utm_content"];
+  var store={};
+  try{store=JSON.parse(sessionStorage.getItem("nfw_ft")||"{}")}catch(e){}
+  if(!store.landing_page){
+    store.landing_page=location.pathname;
+    store.referrer=document.referrer||"";
+    try{var p=new URLSearchParams(location.search);K.forEach(function(k){var v=p.get(k);if(v)store[k]=v;})}catch(e){}
+    try{sessionStorage.setItem("nfw_ft",JSON.stringify(store))}catch(e){}
+  }
+  document.querySelectorAll('form[data-nfw-attrib]').forEach(function(f){
+    K.concat(["referrer","landing_page"]).forEach(function(k){
+      var el=f.querySelector('input[name="'+k+'"]');
+      if(el&&store[k])el.value=store[k];
+    });
+    var pu=f.querySelector('input[name="page_url"]');
+    if(pu)pu.value=location.pathname;
+  });
+})();
+</script>
 </body>
 </html>
