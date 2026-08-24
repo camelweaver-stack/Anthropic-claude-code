@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rent-vs-Buy Napkin | North FW Living</title>
-<meta name="description" content="The Texas napkin: every $850/month of housing payment supports roughly $100,000 of house, taxes and insurance included. See what your rent maps to.">
+<meta name="description" content="One labeled scenario — assumptions stated on the page: at roughly a 6.5% 30-year rate, a small down payment, and corridor-typical taxes and insurance, $850/month supports roughly $100,000 of house. See what your rent maps to.">
 <link rel="canonical" href="https://northfwliving.com/tools/rent-vs-buy/">
 <link rel="alternate" hreflang="en" href="https://northfwliving.com/tools/rent-vs-buy/">
 <link rel="alternate" hreflang="es" href="https://northfwliving.com/es/tools/rent-vs-buy/">
@@ -75,7 +75,7 @@ ul.plain li{margin-bottom:.45em}
 <div class="hero"><div class="wrap">
 <p class="kicker">The toolbox</p>
 <h1>Rent-vs-Buy Napkin</h1><p style="font-size:.8rem;color:#666;border-bottom:1px dashed #ccc;padding:0 0 8px;margin:6px 0 14px">Published by <strong>Anastasia Weaver Media</strong> · Independent local research, no listings, no pay-for-placement · Updated August 16, 2026 · <a href="/about/" style="color:#666">Methodology &amp; corrections</a></p>
-<p class="lede">The Texas napkin: every $850/month of housing payment supports roughly $100,000 of house, taxes and insurance included. See what your rent maps to.</p></div></div>
+<p class="lede">One labeled scenario, not a universal rule: at roughly a 6.5% 30-year rate, a small down payment, and corridor-typical taxes and insurance (MUD/PID included), every $850/month of housing payment supports roughly $100,000 of house. See what your rent maps to under those assumptions — and what moves the line.</p></div></div>
 <main><div class="wrap">
 <div class="callout"><div id="calc"><label class="mono" style="display:block;margin:.5rem 0 .15rem;font-size:.85rem" for="rent">Your current monthly rent ($)</label><input id="rent" type="number" step="any" value="1700" style="width:100%;max-width:320px;padding:.5rem;border:1px solid var(--line);border-radius:4px;font-size:1rem">
 <button class="mono" style="margin-top:.8rem;background:var(--signal);color:#fff;border:0;padding:.6rem 1.2rem;border-radius:4px;font-size:1rem;cursor:pointer" onclick="calc()">Calculate</button>
@@ -83,8 +83,17 @@ ul.plain li{margin-bottom:.45em}
 <script>
 function v(id){return parseFloat(document.getElementById(id).value)||0}
 function out(s){document.getElementById('out').textContent=s}
-function calc(){var r=v('rent');var h=r/850*100000;out('Your $'+r.toFixed(0)+'/mo supports roughly $'+Math.round(h/5000)*5000+' of house (rough Texas arithmetic, taxes & insurance included). Over 12 months you pay $'+(r*12).toFixed(0)+' in rent.');}
+function calc(){var r=v('rent');var h=r/850*100000;out('Under the scenario stated below, your $'+r.toFixed(0)+'/mo supports roughly $'+Math.round(h/5000)*5000+' of house. Over 12 months you pay $'+(r*12).toFixed(0)+' in rent.');}
 </script>
+<h2>The assumptions, stated</h2>
+<ul class="plain">
+<li><strong>Rate &amp; term:</strong> 30-year fixed at roughly 6.5% — a builder buydown or a market move changes this materially.</li>
+<li><strong>Down payment:</strong> small (~5%); a larger down payment stretches what the same monthly number supports.</li>
+<li><strong>Property taxes:</strong> a combined rate near 2.4%, including school taxes and any MUD/PID assessment — verify the lot's actual total rate; it varies street by street.</li>
+<li><strong>Insurance:</strong> a typical corridor homeowners premium; roof age and hail history move it.</li>
+<li><strong>Not modeled:</strong> PMI, HOA dues, and maintenance — each shrinks what the same payment supports.</li>
+</ul>
+<p>This is one modeled scenario, not a universal rule — your real numbers come from your own Loan Estimate and the county's tax record. <a href="/tools/mud-pid-impact/">The MUD/PID impact tool</a> shows why the tax line deserves its own check.</p>
 <p>Runs entirely in your browser — nothing you type is sent anywhere. Educational arithmetic only, not a quote, valuation, or lending advice. Assumptions are simplified on purpose; your real numbers come from your own quotes. Compiled August 2026.</p><p><a href="/tools/">← All tools</a></p>
 
 <section class="formbox" id="list">

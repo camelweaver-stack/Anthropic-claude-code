@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Servilleta Rentar-vs-Comprar | North FW Living</title>
-<meta name="description" content="La servilleta de Texas: cada $850/mes de pago de vivienda sostiene aproximadamente $100,000 de casa, impuestos y seguro incluidos. Vea a qué equivale su renta.">
+<meta name="description" content="Un escenario etiquetado — con supuestos declarados en la página: con tasa fija a 30 años de ~6.5%, enganche pequeño e impuestos y seguro típicos del corredor, $850/mes sostiene aproximadamente $100,000 de casa. Vea a qué equivale su renta.">
 <link rel="canonical" href="https://northfwliving.com/es/tools/rent-vs-buy/">
 <link rel="alternate" hreflang="en" href="https://northfwliving.com/tools/rent-vs-buy/">
 <link rel="alternate" hreflang="es" href="https://northfwliving.com/es/tools/rent-vs-buy/">
@@ -75,7 +75,7 @@ ul.plain li{margin-bottom:.45em}
 <div class="hero"><div class="wrap">
 <p class="kicker">Caja de herramientas</p>
 <h1>Servilleta Rentar-vs-Comprar</h1><p style="font-size:.8rem;color:#666;border-bottom:1px dashed #ccc;padding:0 0 8px;margin:6px 0 14px">Publicado por <strong>Anastasia Weaver Media</strong> · Investigación local independiente, sin listados ni publicidad pagada · Actualizado 16 de agosto de 2026</p>
-<p class="lede">La servilleta de Texas: cada $850/mes de pago de vivienda sostiene aproximadamente $100,000 de casa, impuestos y seguro incluidos. Vea a qué equivale su renta.</p></div></div>
+<p class="lede">Un escenario etiquetado, no una regla universal: con una tasa fija a 30 años de aproximadamente 6.5%, un enganche pequeño e impuestos y seguro típicos del corredor (MUD/PID incluido), cada $850/mes de pago de vivienda sostiene aproximadamente $100,000 de casa. Vea a qué equivale su renta bajo esos supuestos — y qué mueve la línea.</p></div></div>
 <main><div class="wrap">
 <div class="callout"><div id="calc"><label class="mono" style="display:block;margin:.5rem 0 .15rem;font-size:.85rem" for="rent">Su renta mensual actual ($)</label><input id="rent" type="number" step="any" value="1700" style="width:100%;max-width:320px;padding:.5rem;border:1px solid var(--line);border-radius:4px;font-size:1rem">
 <button class="mono" style="margin-top:.8rem;background:var(--signal);color:#fff;border:0;padding:.6rem 1.2rem;border-radius:4px;font-size:1rem;cursor:pointer" onclick="calc()">Calcular</button>
@@ -83,8 +83,17 @@ ul.plain li{margin-bottom:.45em}
 <script>
 function v(id){return parseFloat(document.getElementById(id).value)||0}
 function out(s){document.getElementById('out').textContent=s}
-function calc(){var r=v('rent');var h=r/850*100000;out('Your $'+r.toFixed(0)+'/mo supports roughly $'+Math.round(h/5000)*5000+' of house (rough Texas arithmetic, taxes & insurance included). Over 12 months you pay $'+(r*12).toFixed(0)+' in rent.');}
+function calc(){var r=v('rent');var h=r/850*100000;out('Bajo el escenario declarado abajo, sus $'+r.toFixed(0)+'/mes sostienen aproximadamente $'+Math.round(h/5000)*5000+' de casa. En 12 meses usted paga $'+(r*12).toFixed(0)+' de renta.');}
 </script>
+<h2>Los supuestos, declarados</h2>
+<ul class="plain">
+<li><strong>Tasa y plazo:</strong> fija a 30 años a aproximadamente 6.5% — un subsidio de tasa del constructor o un movimiento del mercado cambia esto materialmente.</li>
+<li><strong>Enganche:</strong> pequeño (~5%); un enganche mayor estira lo que sostiene el mismo número mensual.</li>
+<li><strong>Impuestos de propiedad:</strong> una tasa combinada cercana al 2.4%, incluyendo impuestos escolares y cualquier cargo MUD/PID — verifique la tasa total real del lote; varía calle por calle.</li>
+<li><strong>Seguro:</strong> una prima típica del corredor; la edad del techo y el historial de granizo la mueven.</li>
+<li><strong>No modelado:</strong> PMI, cuotas de HOA y mantenimiento — cada uno reduce lo que sostiene el mismo pago.</li>
+</ul>
+<p>Es un escenario modelado, no una regla universal — sus números reales salen de su propio Loan Estimate y del registro fiscal del condado. <a href="/es/tools/mud-pid-impact/">La herramienta de impacto MUD/PID</a> muestra por qué la línea de impuestos merece su propia revisión.</p>
 <p>Corre completamente en su navegador — nada de lo que escribe se envía a ningún lado. Aritmética educativa solamente; no es cotización, valuación ni asesoría crediticia. Los supuestos se simplifican a propósito; sus números reales vienen de sus propias cotizaciones. Compilado agosto de 2026.</p><p><a href="/es/tools/">← Todas las herramientas</a></p>
 
 <section class="formbox" id="list">
