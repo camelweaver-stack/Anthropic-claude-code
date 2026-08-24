@@ -125,6 +125,33 @@ for f, s in site_pages.items():
             if f'"@type": "{t}"' in blob or f'"@type":"{t}"' in blob:
                 fails.append(f"[jsonld] {f}: fabricated-risk type {t}")
 
+# --- 8. source-of-truth reconciliation gate ---
+import subprocess
+r = subprocess.run([sys.executable, os.path.join(os.path.dirname(os.path.abspath(__file__)), "reconcile-audit.py")],
+                   capture_output=True, text=True)
+import csv as _csv
+recon_csv = os.path.join(os.path.dirname(ROOT), "reports", "source-of-truth", "contradictions.csv")
+if os.path.exists(recon_csv):
+    for row in _csv.DictReader(open(recon_csv)):
+        if row["severity"] in ("critical", "high"):
+            fails.append(f"[source-of-truth] {row['building']}: {row['category']} ({row['severity']}) — {row['assertion'][:100]!r}")
+
+# --- 9. count consistency: public count claims must match the canonical dataset ---
+import json as _json
+_data = _json.load(open(os.path.join(ROOT, "dallastowers-data.json")))["buildings"]
+N = len(_data)
+DAL = sum(1 for b in _data if b["city"] == "DAL"); FW = sum(1 for b in _data if b["city"] == "FW")
+BEY = sum(1 for b in _data if b["city"] == "BEY"); CTY = sum(1 for b in _data if b.get("county_2026"))
+for f, s in site_pages.items():
+    vt = visible_text(s)
+    for m in re.finditer(r"(\d+) (?:published )?building files", vt):
+        if int(m.group(1)) != N: fails.append(f"[counts] {f}: claims {m.group(1)} building files, dataset has {N}")
+    for m in re.finditer(r"(\d+) Dallas, (\d+) Fort Worth, (\d+) beyond", vt):
+        if (int(m.group(1)), int(m.group(2)), int(m.group(3))) != (DAL, FW, BEY):
+            fails.append(f"[counts] {f}: claims {m.group(0)}, dataset says {DAL}/{FW}/{BEY}")
+    for m in re.finditer(r"(\d+) county-filed building", vt):
+        if int(m.group(1)) != CTY: fails.append(f"[counts] {f}: claims {m.group(1)} county-filed, dataset has {CTY}")
+
 # --- 7. duplicate titles ---
 titles = {}
 for f, s in site_pages.items():
