@@ -20,9 +20,10 @@ import pages_guides_benbrook  # noqa: E402
 import pages_buy_homestead  # noqa: E402
 import pages_sell_net_proceeds  # noqa: E402
 import pages_guides_lockheed_buying  # noqa: E402
+import pages_relocate_lockheed  # noqa: E402
 
 MODULES = [pages_schools_ratings, pages_guides_benbrook, pages_buy_homestead, pages_sell_net_proceeds,
-           pages_guides_lockheed_buying]
+           pages_guides_lockheed_buying, pages_relocate_lockheed]
 
 # Reciprocal links: (hub file, anchor that must exist, HTML block, insertion marker).
 # Each entry is applied only when the anchor is absent, so the build is idempotent.
@@ -188,6 +189,50 @@ RECIPROCAL = [
         "<a href=\"/es/guias/el-seguro-de-inquilino-cubre-el-granizo-texas\">¿El seguro cubre el granizo?</a> · "
         "<a href=\"/es/guias/apartamentos-de-renta-limitada-weatherford\">Renta limitada en Weatherford</a></p></div></section>\n",
         "</main>",
+    ),
+    (
+        "guides/apartments-near-lockheed-martin-fort-worth.html",
+        "/relocate/working-at-lockheed-martin-fort-worth",
+        "<p><strong>Relocating to work at the plant &mdash; not just apartment hunting?</strong> "
+        "<a href=\"/relocate/working-at-lockheed-martin-fort-worth\">The Lockheed relocation hub</a> "
+        "organizes the whole decision: rent vs buy, the pocket map, schools, the NAS JRB crossover, "
+        "and the move checklist.</p>\n\n<h2>Shift math:",
+        "<h2>Shift math:",
+    ),
+    (
+        "es/guias/apartamentos-cerca-de-lockheed-martin-fort-worth.html",
+        "/es/relocate/trabajar-en-lockheed-martin-fort-worth",
+        "<p><strong>&iquest;Te mudas para trabajar en la planta &mdash; no solo buscas apartamento?</strong> "
+        "<a href=\"/es/relocate/trabajar-en-lockheed-martin-fort-worth\">El centro de reubicaci&oacute;n "
+        "Lockheed</a> organiza toda la decisi&oacute;n: rentar o comprar, el mapa de zonas, escuelas y "
+        "el cruce con NAS JRB.</p>\n\n  ",
+        "<h2>Preguntas comunes</h2>",
+    ),
+    (
+        "guides/apartments-near-nas-jrb-fort-worth.html",
+        "/relocate/working-at-lockheed-martin-fort-worth",
+        "<p><strong>Civilian side of the fence line?</strong> The plant next door has its own "
+        "relocation system &mdash; <a href=\"/relocate/working-at-lockheed-martin-fort-worth\">Working "
+        "at Lockheed Martin Fort Worth: where to live</a> maps the same pockets for buyers and "
+        "renters without BAH in the equation.</p>\n",
+        "<h2>Making BAH work harder this year</h2>",
+    ),
+    (
+        "es/relocate/index.html",
+        "/es/relocate/trabajar-en-lockheed-martin-fort-worth",
+        "<section>\n  <h2>&iquest;Llega a trabajar en Lockheed Martin?</h2>\n  "
+        "<p>La planta est&aacute; en el lado oeste &mdash; <a href=\"/es/relocate/trabajar-en-lockheed-martin-fort-worth\">"
+        "la gu&iacute;a de vivienda y reubicaci&oacute;n para Lockheed Martin</a> organiza rentar o "
+        "comprar, las zonas por trayecto y las escuelas en una sola p&aacute;gina.</p>\n</section>\n",
+        "<section class=\"tint\" style=\"border-radius:14px;padding:34px 28px\">\n  <h2>La guía de mudanza por correo</h2>",
+    ),
+    (
+        "military/index.html",
+        "/relocate/working-at-lockheed-martin-fort-worth",
+        "<p><strong>Leaving the service for the plant &mdash; or a civilian household moving for "
+        "Lockheed?</strong> <a href=\"/relocate/working-at-lockheed-martin-fort-worth\">The Lockheed "
+        "relocation hub</a> runs the same west-side housing map without the BAH layer.</p>\n",
+        "<p>Renting sight-unseen from your current duty station?",
     ),
     (
         "es/escuelas/index.html",

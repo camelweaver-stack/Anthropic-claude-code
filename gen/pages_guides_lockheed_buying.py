@@ -129,7 +129,7 @@ def build_en():
 
 <section>
   <h2>Keep reading</h2>
-  <p><a href="/guides/apartments-near-lockheed-martin-fort-worth">apartments near Lockheed Martin</a> &middot; <a href="/guides/apartments-near-nas-jrb-fort-worth">the NAS JRB guide</a> &middot; <a href="/buy/">the buyer's guide</a> &middot; <a href="/schools/tea-ratings-2026">2026 TEA ratings</a> &middot; <a href="/guides/living-in-benbrook">living in Benbrook</a></p>
+  <p><a href="/relocate/working-at-lockheed-martin-fort-worth">the Lockheed relocation hub</a> &middot; <a href="/guides/apartments-near-lockheed-martin-fort-worth">apartments near Lockheed Martin</a> &middot; <a href="/guides/apartments-near-nas-jrb-fort-worth">the NAS JRB guide</a> &middot; <a href="/buy/">the buyer's guide</a> &middot; <a href="/schools/tea-ratings-2026">2026 TEA ratings</a> &middot; <a href="/guides/living-in-benbrook">living in Benbrook</a></p>
   <p><a href="{_url(ES_PATH)}" hreflang="es">Lee esta p&aacute;gina en espa&ntilde;ol &mdash; Comprar casa cerca de Lockheed Martin</a></p>
 </section>
 
@@ -198,7 +198,7 @@ def build_es():
 
 <section>
   <h2>Sigue leyendo</h2>
-  <p><a href="/es/guias/apartamentos-cerca-de-lockheed-martin-fort-worth">apartamentos cerca de Lockheed Martin</a> &middot; <a href="/es/comprar/">comprar casa</a> &middot; <a href="/es/escuelas/calificaciones-tea-2026">calificaciones TEA 2026</a> &middot; <a href="/es/guias/vivir-en-benbrook">vivir en Benbrook</a></p>
+  <p><a href="/es/relocate/trabajar-en-lockheed-martin-fort-worth">el centro de reubicaci&oacute;n Lockheed</a> &middot; <a href="/es/guias/apartamentos-cerca-de-lockheed-martin-fort-worth">apartamentos cerca de Lockheed Martin</a> &middot; <a href="/es/comprar/">comprar casa</a> &middot; <a href="/es/escuelas/calificaciones-tea-2026">calificaciones TEA 2026</a> &middot; <a href="/es/guias/vivir-en-benbrook">vivir en Benbrook</a></p>
   <p><a href="{_url(EN_PATH)}" hreflang="en">Read this page in English &mdash; Buying near Lockheed Martin</a></p>
 </section>
 
