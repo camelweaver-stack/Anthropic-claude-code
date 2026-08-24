@@ -2,6 +2,13 @@
 // Verified from public listings July 31, 2026. EDIT MONTHLY; append to histories.
 window.WFL = {
  "verified": "July 31, 2026",
+ "provenance": {
+  "source": "public listings and property websites",
+  "verified_date": "2026-07-31",
+  "refresh_due": "2026-09-01",
+  "confidence": "point-in-time; rents/concessions/fees change without notice",
+  "scope": "advertised rent, weeks-free concessions, application/admin/pet fees, lease terms for all tracked communities in this file"
+ },
  "reportMonth": "August 2026",
  "index": {
   "current": 7.5,
@@ -21,6 +28,11 @@ window.WFL = {
  "bah": {
   "effective": "January 1, 2026",
   "mha": "Fort Worth, TX",
+  "primary_source": "DoD/DTMO BAH tables (authoritative)",
+  "source_url": "https://www.travel.dod.mil/Allowances/Basic-Allowance-for-Housing/BAH-Rate-Lookup/",
+  "compiled_from": "public republications of the DTMO 2026 tables",
+  "verified_against_primary": false,
+  "provenance_note": "OPERATOR: re-check anchors against the DTMO lookup (blocked from build environment 2026-08-24); never extrapolate unlisted grades",
   "anchors": [
    {
     "grade": "E-1\u2013E-4",
