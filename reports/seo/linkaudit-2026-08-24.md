@@ -1,6 +1,6 @@
 # Internal link audit — 2026-08-24
 
-Pages: 308 · orphans (unreachable from home): 10 · broken internal hrefs: 247
+Pages: 310 · orphans (unreachable from home): 10 · broken internal hrefs: 249
 
 ## Orphans
 - buy/field-guide.html
@@ -32,43 +32,28 @@ Pages: 308 · orphans (unreachable from home): 10 · broken internal hrefs: 247
 -  1 ← community/entertainment.html
 -  1 ← community/vibes/hudson-oaks.html
 -  1 ← compare/aledo-isd-vs-brock-isd.html
--  1 ← compare/aledo-vs-willow-park.html
 -  1 ← compare/montrachet-vs-montserrat.html
--  1 ← compare/walsh-vs-morningstar.html
--  1 ← compare/walsh-vs-parks-of-aledo.html
 -  1 ← es/comunidad/entretenimiento.html
 -  1 ← es/comunidad/ninos.html
--  1 ← es/guias/apartamentos-cerca-de-nas-jrb-fort-worth.html
 -  1 ← es/guias/apartamentos-de-renta-limitada-weatherford.html
+-  1 ← es/guias/el-seguro-de-inquilino-cubre-el-granizo-texas.html
+-  1 ← es/guias/glosario-del-inquilino.html
+-  1 ← es/guias/hoja-de-trucos-para-negociar.html
+-  1 ← es/guias/mudarse-a-fort-worth-que-lado.html
 
 ## Heaviest outbound pages
 -  43 → guides/index.html
--  36 → relocate/index.html
+-  38 → relocate/index.html
 -  33 → neighborhoods/index.html
 -  33 → es/guias/index.html
+-  30 → relocate/working-at-lockheed-martin-fort-worth.html
 -  30 → move/index.html
+-  29 → index.html
 -  29 → es/vecindarios/index.html
--  24 → index.html
 -  24 → buy/index.html
 -  23 → relocate/international.html
--  22 → relocate/guide.html
 
 ## Depth ≥ 4 from homepage
-- depth 5: es/guias/reubicacion-familiar-oeste-fort-worth.html
-- depth 5: es/guias/rentar-con-contrato-roto-fort-worth.html
-- depth 5: es/guias/renta-con-opcion-a-compra-texas-2026.html
-- depth 5: es/guias/reglas-de-subarriendo-en-texas.html
-- depth 5: es/guias/regla-de-30-dias-deposito-texas.html
-- depth 5: es/guias/puede-el-propietario-subir-la-renta-a-mitad-de-contrato.html
-- depth 5: es/guias/negociar-renovacion-de-apartamento-fort-worth.html
-- depth 5: es/guias/mudarse-a-fort-worth-que-lado.html
-- depth 5: es/guias/hoja-de-trucos-para-negociar.html
-- depth 5: es/guias/glosario-del-inquilino.html
-- depth 5: es/guias/el-seguro-de-inquilino-cubre-el-granizo-texas.html
-- depth 5: es/guias/costo-del-seguro-de-inquilino-texas.html
-- depth 5: es/guias/casas-de-renta-aledo-isd.html
-- depth 5: es/guias/apartamentos-de-renta-limitada-weatherford.html
-- depth 5: es/guias/apartamentos-cerca-de-nas-jrb-fort-worth.html
 - depth 4: verify/willow-crossing-townhomes.html
 - depth 4: verify/westpoint-at-scenic-vista.html
 - depth 4: verify/preserve-at-willow-park.html
@@ -81,10 +66,19 @@ Pages: 308 · orphans (unreachable from home): 10 · broken internal hrefs: 247
 - depth 4: verify/canvas-at-willow-park.html
 - depth 4: verify/birchway-hudson-oaks.html
 - depth 4: es/vecindarios/index.html
-- depth 4: es/guias/vivir-en-walsh.html
-- depth 4: es/guias/vivir-en-aledo.html
-- depth 4: es/guias/index.html
-- depth 4: es/guias/apartamentos-cerca-de-lockheed-martin-fort-worth.html
+- depth 4: es/guias/rentar-con-contrato-roto-fort-worth.html
+- depth 4: es/guias/renta-con-opcion-a-compra-texas-2026.html
+- depth 4: es/guias/reglas-de-subarriendo-en-texas.html
+- depth 4: es/guias/regla-de-30-dias-deposito-texas.html
+- depth 4: es/guias/puede-el-propietario-subir-la-renta-a-mitad-de-contrato.html
+- depth 4: es/guias/negociar-renovacion-de-apartamento-fort-worth.html
+- depth 4: es/guias/mudarse-a-fort-worth-que-lado.html
+- depth 4: es/guias/hoja-de-trucos-para-negociar.html
+- depth 4: es/guias/glosario-del-inquilino.html
+- depth 4: es/guias/el-seguro-de-inquilino-cubre-el-granizo-texas.html
+- depth 4: es/guias/costo-del-seguro-de-inquilino-texas.html
+- depth 4: es/guias/casas-de-renta-aledo-isd.html
+- depth 4: es/guias/apartamentos-de-renta-limitada-weatherford.html
 - depth 4: es/escuelas/index.html
 
 ## Broken internal links
@@ -196,6 +190,7 @@ Pages: 308 · orphans (unreachable from home): 10 · broken internal hrefs: 247
 - es/guias/vivir-en-walsh.html: /es/privacidad/
 - es/relocate/index.html: /es/privacidad/
 - es/relocate/international.html: /es/privacidad/
+- es/relocate/trabajar-en-lockheed-martin-fort-worth.html: /es/privacidad/
 - es/vecindarios/index.html: /es/privacidad/
 - es/vender/aledo.html: /es/privacidad/
 - es/vender/benbrook.html: /es/privacidad/
@@ -268,6 +263,7 @@ Pages: 308 · orphans (unreachable from home): 10 · broken internal hrefs: 247
 - relocate/from-washington.html: /privacy/
 - relocate/index.html: /privacy/
 - relocate/international.html: /privacy/
+- relocate/working-at-lockheed-martin-fort-worth.html: /privacy/
 - rent-to-own.html: /privacy/
 - rentals/apartments-76086.html: /privacy/
 - rentals/apartments-76087.html: /privacy/

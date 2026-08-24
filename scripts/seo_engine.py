@@ -51,7 +51,7 @@ DEFAULT_CONFIG = {
     "priority_clusters": ["lockheed", "aledo", "walsh", "benbrook", "willow-park",
                           "hudson-oaks", "white-settlement", "property-tax", "isd",
                           "new-construction", "compare"],
-    "allocation": {"expand_winners": 0.40, "push_6_20": 0.25,
+    "allocation": {"expand_winners": 0.35, "push_6_20": 0.30,
                    "new_high_intent": 0.20, "maintain_factual": 0.10,
                    "exploratory": 0.05},
     "expected_ctr_by_position": [[1, 0.28], [2, 0.15], [3, 0.10], [4, 0.07],
@@ -509,6 +509,86 @@ def cmd_report(args):
 
 
 # ---------------------------------------------------------------- event log
+def cmd_reinforce(args):
+    """Weekly winner-reinforcement report: for each page with evidence, one
+    recommended action — and the default action is often 'leave alone'.
+    Optimization churn is the failure mode this report exists to prevent."""
+    cfg = load_config()
+    snaps = snapshots()
+    if not snaps:
+        print("no snapshots ingested"); return 1
+    snap = args.snapshot or snaps[-1]
+    prev = snaps[-2] if len(snaps) >= 2 and snap == snaps[-1] else None
+    cur = read_pages(snap)
+    old = read_pages(prev) if prev else {}
+    _, _, inbound, _, depth = build_graph()
+    fset = {f for f in site_files()}
+    today = date.today().isoformat()
+
+    rows = []
+    for path, m in cur.items():
+        if m["impressions"] < cfg["min_evidence_impressions"]:
+            continue
+        rel = file_of(path, fset)
+        inb = len(inbound.get(rel, ())) if rel else None
+        pos, imp, ctr = m["position"], m["impressions"], m["ctr"]
+        it = intent_score(path)
+        d_imp = imp - old.get(path, {}).get("impressions", 0) if prev else None
+        improving = prev and d_imp is not None and d_imp >= 3 and d_imp >= 0.2 * max(imp - d_imp, 1)
+        gap = imp >= 20 and pos <= 12 and ctr < 0.5 * expected_ctr(pos, cfg)
+        cluster = any(c in path for c in cfg["priority_clusters"])
+
+        actions = []
+        if pos <= 5:
+            if inb is not None and inb < 2:
+                actions.append("strengthen internal links (defend a ranking asset)")
+            else:
+                actions.append("leave alone")
+        elif pos <= 20:
+            if it >= 2:
+                if gap:
+                    actions.append("improve title/snippet (CTR below half expected)")
+                if inb is not None and inb < 3:
+                    actions.append("strengthen internal links")
+                if improving:
+                    actions.append("expand cluster (impressions rising)")
+                if not actions:
+                    actions.append("deepen content for the ranking queries")
+            else:
+                actions.append("improve snippet only" if imp >= 30 else "leave alone (low intent)")
+        elif pos <= 30 and it >= 2 and imp >= 10:
+            actions.append("selective improve (add missing local data)")
+        else:
+            actions.append("leave alone (observe; let it season)")
+
+        prio = (2.0 if 6 <= pos <= 20 else 0.5) * (1 + it) * (1 + min(imp, 300) / 100.0) \
+            * (1.5 if cluster else 1.0) * (1.5 if improving else 1.0)
+        rows.append((prio, path, pos, imp, round(ctr * 100, 2), it, inb,
+                     "+%d" % d_imp if improving else "", "; ".join(actions)))
+
+    rows.sort(reverse=True)
+    os.makedirs(REPORT_DIR, exist_ok=True)
+    out = os.path.join(REPORT_DIR, f"winner-reinforcement-{today}.md")
+    leave = sum(1 for r in rows if r[8].startswith("leave alone"))
+    with open(out, "w") as f:
+        f.write(f"# Winner reinforcement — {today} (snapshot {snap}"
+                + (f", deltas vs {prev}" if prev else ", no prior snapshot for deltas") + ")\n\n")
+        f.write("One recommended action per evidenced page, highest priority first. "
+                f"{leave}/{len(rows)} pages get **leave alone** — that is the intended default; "
+                "do not manufacture churn.\n\n")
+        f.write("| Path | Pos | Impr | CTR% | Intent | Inbound | Rising | Action |\n")
+        f.write("|---|---|---|---|---|---|---|---|\n")
+        for _, path, pos, imp, ctr, it, inb, rising, action in rows:
+            f.write(f"| {path} | {pos} | {imp} | {ctr} | {intent_label(it)} | "
+                    f"{'?' if inb is None else inb} | {rising} | {action} |\n")
+        f.write("\nAllocation (data/seo/config.json): "
+                + " · ".join(f"{k} {v:.0%}" for k, v in cfg["allocation"].items()) + "\n")
+    print(f"wrote {out} — {len(rows)} evidenced pages, {leave} leave-alone")
+    for _, path, pos, imp, *_rest, action in [r for r in rows[:8]]:
+        print(f"  {path}  pos {pos}  imp {imp}  → {action}")
+    return 0
+
+
 def cmd_log_event(args):
     snaps = snapshots()
     before = {}
@@ -540,6 +620,9 @@ def main():
     p.set_defaults(fn=cmd_report)
     p = sub.add_parser("linkaudit")
     p.set_defaults(fn=cmd_linkaudit)
+    p = sub.add_parser("reinforce")
+    p.add_argument("--snapshot")
+    p.set_defaults(fn=cmd_reinforce)
     p = sub.add_parser("log-event")
     p.add_argument("--url", required=True)
     p.add_argument("--reason", required=True)

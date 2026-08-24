@@ -120,8 +120,12 @@ but new publishing skews high-intent local.
 
 The daily cycle's SELECT step now reads the latest opportunity queue first. Target mix over
 any rolling ~2 weeks (configurable in `data/seo/config.json → allocation`):
-40% expand demonstrated winners + their clusters · 25% improve pages ranking 6–20 ·
+35% expand demonstrated winners + their clusters · 30% improve pages ranking 6–20 ·
 20% new high-intent local topics · 10% maintain factual pages · 5% exploratory.
+(Rebalanced 2026-08-24: optimization of existing assets now outweighs net-new publishing —
+"concentrate authority before expanding surface area." The weekly
+`python3 scripts/seo_engine.py reinforce` report recommends one action per evidenced page,
+and its default action is deliberately *leave alone*.)
 
 Before any new page, answer the seven-question gate (existing intent coverage? cannibalization?
 distinct intent? locally relevant? genuine information? commercial cluster? linkable?). Any

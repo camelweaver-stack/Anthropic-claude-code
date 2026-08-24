@@ -23,8 +23,8 @@
   "compare"
  ],
  "allocation": {
-  "expand_winners": 0.4,
-  "push_6_20": 0.25,
+  "expand_winners": 0.35,
+  "push_6_20": 0.3,
   "new_high_intent": 0.2,
   "maintain_factual": 0.1,
   "exploratory": 0.05

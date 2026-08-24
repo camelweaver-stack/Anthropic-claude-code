@@ -1,6 +1,6 @@
 {
  "date": "2026-08-24",
- "pages": 308,
+ "pages": 310,
  "orphans": [
   "buy/field-guide.html",
   "es/donde-vivir.html",
@@ -83,19 +83,7 @@
    "inbound_contextual": 1
   },
   {
-   "file": "compare/aledo-vs-willow-park.html",
-   "inbound_contextual": 1
-  },
-  {
    "file": "compare/montrachet-vs-montserrat.html",
-   "inbound_contextual": 1
-  },
-  {
-   "file": "compare/walsh-vs-morningstar.html",
-   "inbound_contextual": 1
-  },
-  {
-   "file": "compare/walsh-vs-parks-of-aledo.html",
    "inbound_contextual": 1
   },
   {
@@ -104,10 +92,6 @@
   },
   {
    "file": "es/comunidad/ninos.html",
-   "inbound_contextual": 1
-  },
-  {
-   "file": "es/guias/apartamentos-cerca-de-nas-jrb-fort-worth.html",
    "inbound_contextual": 1
   },
   {
@@ -148,10 +132,6 @@
   },
   {
    "file": "es/guias/rentar-con-contrato-roto-fort-worth.html",
-   "inbound_contextual": 1
-  },
-  {
-   "file": "es/guias/reubicacion-familiar-oeste-fort-worth.html",
    "inbound_contextual": 1
   },
   {
@@ -173,6 +153,26 @@
   {
    "file": "es/vender/weatherford.html",
    "inbound_contextual": 1
+  },
+  {
+   "file": "guides/can-landlord-raise-rent-mid-lease-texas.html",
+   "inbound_contextual": 1
+  },
+  {
+   "file": "guides/divvy-vs-pathway-homes.html",
+   "inbound_contextual": 1
+  },
+  {
+   "file": "guides/income-restricted-apartments-weatherford.html",
+   "inbound_contextual": 1
+  },
+  {
+   "file": "guides/olympus-willow-park-vs-olympus-hudson-oaks.html",
+   "inbound_contextual": 1
+  },
+  {
+   "file": "guides/renting-near-weatherford-college.html",
+   "inbound_contextual": 1
   }
  ],
  "heaviest_outbound": [
@@ -182,7 +182,7 @@
   },
   {
    "file": "relocate/index.html",
-   "outbound": 36
+   "outbound": 38
   },
   {
    "file": "neighborhoods/index.html",
@@ -193,16 +193,20 @@
    "outbound": 33
   },
   {
+   "file": "relocate/working-at-lockheed-martin-fort-worth.html",
+   "outbound": 30
+  },
+  {
    "file": "move/index.html",
    "outbound": 30
   },
   {
-   "file": "es/vecindarios/index.html",
+   "file": "index.html",
    "outbound": 29
   },
   {
-   "file": "index.html",
-   "outbound": 24
+   "file": "es/vecindarios/index.html",
+   "outbound": 29
   },
   {
    "file": "buy/index.html",
@@ -213,6 +217,10 @@
    "outbound": 23
   },
   {
+   "file": "schools/aledo-isd/index.html",
+   "outbound": 22
+  },
+  {
    "file": "relocate/guide.html",
    "outbound": 22
   },
@@ -221,83 +229,15 @@
    "outbound": 20
   },
   {
-   "file": "schools/aledo-isd/index.html",
-   "outbound": 19
+   "file": "guides/apartments-near-lockheed-martin-fort-worth.html",
+   "outbound": 20
   },
   {
    "file": "relocate/from-hawaii.html",
    "outbound": 19
-  },
-  {
-   "file": "relocate/from-florida.html",
-   "outbound": 19
-  },
-  {
-   "file": "relocate/from-colorado.html",
-   "outbound": 19
   }
  ],
  "depth_ge_4": [
-  {
-   "file": "es/guias/reubicacion-familiar-oeste-fort-worth.html",
-   "depth": 5
-  },
-  {
-   "file": "es/guias/rentar-con-contrato-roto-fort-worth.html",
-   "depth": 5
-  },
-  {
-   "file": "es/guias/renta-con-opcion-a-compra-texas-2026.html",
-   "depth": 5
-  },
-  {
-   "file": "es/guias/reglas-de-subarriendo-en-texas.html",
-   "depth": 5
-  },
-  {
-   "file": "es/guias/regla-de-30-dias-deposito-texas.html",
-   "depth": 5
-  },
-  {
-   "file": "es/guias/puede-el-propietario-subir-la-renta-a-mitad-de-contrato.html",
-   "depth": 5
-  },
-  {
-   "file": "es/guias/negociar-renovacion-de-apartamento-fort-worth.html",
-   "depth": 5
-  },
-  {
-   "file": "es/guias/mudarse-a-fort-worth-que-lado.html",
-   "depth": 5
-  },
-  {
-   "file": "es/guias/hoja-de-trucos-para-negociar.html",
-   "depth": 5
-  },
-  {
-   "file": "es/guias/glosario-del-inquilino.html",
-   "depth": 5
-  },
-  {
-   "file": "es/guias/el-seguro-de-inquilino-cubre-el-granizo-texas.html",
-   "depth": 5
-  },
-  {
-   "file": "es/guias/costo-del-seguro-de-inquilino-texas.html",
-   "depth": 5
-  },
-  {
-   "file": "es/guias/casas-de-renta-aledo-isd.html",
-   "depth": 5
-  },
-  {
-   "file": "es/guias/apartamentos-de-renta-limitada-weatherford.html",
-   "depth": 5
-  },
-  {
-   "file": "es/guias/apartamentos-cerca-de-nas-jrb-fort-worth.html",
-   "depth": 5
-  },
   {
    "file": "verify/willow-crossing-townhomes.html",
    "depth": 4
@@ -347,19 +287,55 @@
    "depth": 4
   },
   {
-   "file": "es/guias/vivir-en-walsh.html",
+   "file": "es/guias/rentar-con-contrato-roto-fort-worth.html",
    "depth": 4
   },
   {
-   "file": "es/guias/vivir-en-aledo.html",
+   "file": "es/guias/renta-con-opcion-a-compra-texas-2026.html",
    "depth": 4
   },
   {
-   "file": "es/guias/index.html",
+   "file": "es/guias/reglas-de-subarriendo-en-texas.html",
    "depth": 4
   },
   {
-   "file": "es/guias/apartamentos-cerca-de-lockheed-martin-fort-worth.html",
+   "file": "es/guias/regla-de-30-dias-deposito-texas.html",
+   "depth": 4
+  },
+  {
+   "file": "es/guias/puede-el-propietario-subir-la-renta-a-mitad-de-contrato.html",
+   "depth": 4
+  },
+  {
+   "file": "es/guias/negociar-renovacion-de-apartamento-fort-worth.html",
+   "depth": 4
+  },
+  {
+   "file": "es/guias/mudarse-a-fort-worth-que-lado.html",
+   "depth": 4
+  },
+  {
+   "file": "es/guias/hoja-de-trucos-para-negociar.html",
+   "depth": 4
+  },
+  {
+   "file": "es/guias/glosario-del-inquilino.html",
+   "depth": 4
+  },
+  {
+   "file": "es/guias/el-seguro-de-inquilino-cubre-el-granizo-texas.html",
+   "depth": 4
+  },
+  {
+   "file": "es/guias/costo-del-seguro-de-inquilino-texas.html",
+   "depth": 4
+  },
+  {
+   "file": "es/guias/casas-de-renta-aledo-isd.html",
+   "depth": 4
+  },
+  {
+   "file": "es/guias/apartamentos-de-renta-limitada-weatherford.html",
    "depth": 4
   },
   {
@@ -692,6 +668,9 @@
   "es/relocate/international.html": [
    "/es/privacidad/"
   ],
+  "es/relocate/trabajar-en-lockheed-martin-fort-worth.html": [
+   "/es/privacidad/"
+  ],
   "es/vecindarios/index.html": [
    "/es/privacidad/"
   ],
@@ -906,6 +885,9 @@
    "/privacy/"
   ],
   "relocate/international.html": [
+   "/privacy/"
+  ],
+  "relocate/working-at-lockheed-martin-fort-worth.html": [
    "/privacy/"
   ],
   "rent-to-own.html": [
