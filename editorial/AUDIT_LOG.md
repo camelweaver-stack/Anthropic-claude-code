@@ -4,6 +4,56 @@ Append-only. Newest entry on top. One record per daily run. Template at the bott
 
 ---
 
+## 2026-08-24 (second run) — Authority concentration pass — LIVE
+
+- **Trigger:** Operator — "concentrate authority before expanding surface area": credibility
+  purge, relocation-first repositioning, Lockheed flagship funnel, winner reinforcement.
+  Full findings + decisions in `docs/AUTHORITY_CONCENTRATION_PLAN.md`.
+
+### Credibility purge (highest priority)
+Removed literal placeholder text simulating in-person visits from **13 production URLs**
+(all 11 /complexes/ pages + /areas/white-settlement + /areas/benbrook): `[FIRST-HAND FIELD
+NOTE — added after an in-person visit.]` paragraphs and `FIELD PHOTO` slots. Nothing renders
+where no genuine observation exists. New content-state model `data/fieldnotes.json`
+(none|planned|verified; all currently none). New **placeholder-assert gate** in
+apply_standing_fixes.py fails the build on any placeholder/visit-claim phrasing —
+negative-tested. A site-wide sweep for subtler simulated-firsthand language found none.
+
+### Repositioning + Lockheed flagship
+Homepage retitled/reworked to relocation-decision-platform framing (renter content retained
+as an explicit branch; no renter URL touched). New flagship hub
+`/relocate/working-at-lockheed-martin-fort-worth` + ES mirror — broad relocation intent,
+distinct from the renter hub (GSC #1) and buyer spoke; organizes rent/buy/commute/family/
+military/decision paths from published data only. Wired: relocate hubs (EN/ES), military hub,
+NAS JRB guide, both Lockheed guides, homepage journey grid.
+
+### Authority concentration
+Renter-to-buyer decision paths added on specials, deals, second-chance, rent-to-own,
+apartments-76108 (soft, page-matched). Contextual links into tier-B winners: walsh→2
+comparisons+tax page, living-in-aledo→2 comparisons+ISD file, olympus-four→willow-park-vs-
+hudson-oaks, rent-or-buy-willow-park→same, aledo-isd→living-in-aledo+ISD-comparison,
+weatherford-isd→ISD-comparison. New `seo_engine.py reinforce` weekly report (first run: 57
+evidenced pages, 43 = leave alone). Allocation rebalanced to 35/30/20/10/5 — improvement now
+outweighs net-new publishing. Dilution: tv.html + poster.html noindexed (display artifacts,
+0 impressions); generic national guides retained + de-emphasized; **no deletions, no URL
+changes, no redirects**. Fixed `&amp;amp;` entity in /compare/ title.
+
+### Build, deploy, verify
+GATE PASSED (now 8 gates incl. placeholder-assert), idempotent; 310 pages / 306 sitemap URLs
+(thanks, gracias, tv, poster excluded). Deploy **6a8c3809** (pushed first; permalink verified
+before production): hub EN/ES 200, homepage title live, placeholder scan of production output
+= 0 hits, tv.html serves `x-robots-tag: noindex`, sitemap correct, 404s correct, canonical +
+hreflang resolve. IndexNow POST 200 for 36 changed URLs. Netlify connector 502'd three times
+(~7 min outage) before recovering — backoff protocol held; an expired earlier proxy token
+returned 401 (expected).
+
+### Standing
+Orphans intentionally kept: form landings, newsletter, for-leasing-teams, alt-version pages.
+/privacy/ + /es/privacidad/ still NEEDS REVIEW (backlog #1). Next: weekly `reinforce` runs;
+Sept-1 month-roll; #2 tax-rate refresh on adoption (also fixes the data/property-tax CTR gap).
+
+---
+
 ## 2026-08-24 — SEO growth system build + Lockheed cluster expansion — LIVE
 
 - **Trigger:** Operator — evolve WFL into a closed-loop local SEO system (18-phase brief),
