@@ -1,0 +1,2390 @@
+{
+ "snapshot": "2026-08-23",
+ "prev": null,
+ "generated": "2026-08-24",
+ "totals": {
+  "impressions": 1165,
+  "clicks": 6,
+  "pages_with_impressions": 102,
+  "queries": 197
+ },
+ "config": {
+  "weights": {
+   "position_opportunity": 3.0,
+   "impressions": 2.0,
+   "commercial_intent": 3.0,
+   "ctr_gap": 2.0,
+   "cluster_strategic": 1.5,
+   "link_deficit": 1.0,
+   "low_evidence_penalty": -1.0
+  },
+  "min_evidence_impressions": 3,
+  "priority_clusters": [
+   "lockheed",
+   "aledo",
+   "walsh",
+   "benbrook",
+   "willow-park",
+   "hudson-oaks",
+   "white-settlement",
+   "property-tax",
+   "isd",
+   "new-construction",
+   "compare"
+  ],
+  "allocation": {
+   "expand_winners": 0.4,
+   "push_6_20": 0.25,
+   "new_high_intent": 0.2,
+   "maintain_factual": 0.1,
+   "exploratory": 0.05
+  },
+  "expected_ctr_by_position": [
+   [
+    1,
+    0.28
+   ],
+   [
+    2,
+    0.15
+   ],
+   [
+    3,
+    0.1
+   ],
+   [
+    4,
+    0.07
+   ],
+   [
+    5,
+    0.05
+   ],
+   [
+    10,
+    0.03
+   ],
+   [
+    20,
+    0.015
+   ],
+   [
+    100,
+    0.005
+   ]
+  ]
+ },
+ "queue": [
+  {
+   "path": "/guides/apartments-near-lockheed-martin-fort-worth",
+   "tier": "B",
+   "position": 10.69,
+   "impressions": 286,
+   "clicks": 1,
+   "ctr_pct": 0.35,
+   "intent": "very-high",
+   "intent_score": 3,
+   "ctr_gap": true,
+   "cluster": true,
+   "url_forms_seen": 2,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 19.85,
+   "top_queries_heuristic": [
+    "apartments near lockheed martin fort worth texas",
+    "apartments near lockheed martin fort worth",
+    "apartments near lockheed martin fort worth tx",
+    "apartments near lockheed martin in fort worth tx",
+    "apartments near lockheed martin fort worth\u200b"
+   ],
+   "action": "Push: deepen content, satisfy every ranking query, strengthen inbound links, fix title/meta"
+  },
+  {
+   "path": "/compare/willow-park-vs-hudson-oaks",
+   "tier": "B",
+   "position": 7.5,
+   "impressions": 12,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "very-high",
+   "intent_score": 3,
+   "ctr_gap": false,
+   "cluster": true,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 15.23,
+   "top_queries_heuristic": [
+    "canvas at willow park reviews",
+    "olympus willow park reviews",
+    "birchway hudson oaks reviews",
+    "olympus willow park apartments"
+   ],
+   "action": "Push: deepen content, satisfy every ranking query, strengthen inbound links, fix title/meta"
+  },
+  {
+   "path": "/schools/aledo-isd/",
+   "tier": "B",
+   "position": 7.5,
+   "impressions": 6,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "very-high",
+   "intent_score": 3,
+   "ctr_gap": false,
+   "cluster": true,
+   "url_forms_seen": 2,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 14.69,
+   "top_queries_heuristic": [],
+   "action": "Push: deepen content, satisfy every ranking query, strengthen inbound links, fix title/meta"
+  },
+  {
+   "path": "/schools/aledo-isd/daniel-ninth-grade-campus",
+   "tier": "B",
+   "position": 7.6,
+   "impressions": 5,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "very-high",
+   "intent_score": 3,
+   "ctr_gap": false,
+   "cluster": true,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 14.59,
+   "top_queries_heuristic": [],
+   "action": "Push: deepen content, satisfy every ranking query, strengthen inbound links, fix title/meta"
+  },
+  {
+   "path": "/schools/aledo-isd/annetta-elementary",
+   "tier": "B",
+   "position": 9.33,
+   "impressions": 3,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "very-high",
+   "intent_score": 3,
+   "ctr_gap": false,
+   "cluster": true,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 14.59,
+   "top_queries_heuristic": [],
+   "action": "Push: deepen content, satisfy every ranking query, strengthen inbound links, fix title/meta"
+  },
+  {
+   "path": "/guides/olympus-willow-park-vs-olympus-hudson-oaks",
+   "tier": "B",
+   "position": 10.0,
+   "impressions": 3,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "very-high",
+   "intent_score": 3,
+   "ctr_gap": false,
+   "cluster": true,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 14.37,
+   "top_queries_heuristic": [
+    "olympus willow park reviews",
+    "olympus willow park apartments",
+    "canvas at willow park reviews",
+    "birchway hudson oaks reviews",
+    "olympus chandler at the park"
+   ],
+   "action": "Push: deepen content, satisfy every ranking query, strengthen inbound links, fix title/meta"
+  },
+  {
+   "path": "/compare/aledo-vs-weatherford",
+   "tier": "B",
+   "position": 6.5,
+   "impressions": 6,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "very-high",
+   "intent_score": 3,
+   "ctr_gap": false,
+   "cluster": true,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 14.36,
+   "top_queries_heuristic": [],
+   "action": "Push: deepen content, satisfy every ranking query, strengthen inbound links, fix title/meta"
+  },
+  {
+   "path": "/schools/weatherford-isd/",
+   "tier": "B",
+   "position": 11.4,
+   "impressions": 5,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "very-high",
+   "intent_score": 3,
+   "ctr_gap": false,
+   "cluster": true,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 14.26,
+   "top_queries_heuristic": [],
+   "action": "Push: deepen content, satisfy every ranking query, strengthen inbound links, fix title/meta"
+  },
+  {
+   "path": "/compare/aledo-isd-vs-weatherford-isd",
+   "tier": "B",
+   "position": 12.0,
+   "impressions": 5,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "very-high",
+   "intent_score": 3,
+   "ctr_gap": false,
+   "cluster": true,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 14.06,
+   "top_queries_heuristic": [],
+   "action": "Push: deepen content, satisfy every ranking query, strengthen inbound links, fix title/meta"
+  },
+  {
+   "path": "/compare/aledo-vs-willow-park",
+   "tier": "C",
+   "position": 16.5,
+   "impressions": 4,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "very-high",
+   "intent_score": 3,
+   "ctr_gap": false,
+   "cluster": true,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 13.4,
+   "top_queries_heuristic": [
+    "canvas at willow park reviews",
+    "olympus willow park reviews",
+    "olympus willow park apartments"
+   ],
+   "action": "Selective: improve only if impressions/intent justify; find missing subtopics"
+  },
+  {
+   "path": "/buy/new-construction/walsh",
+   "tier": "A",
+   "position": 4.67,
+   "impressions": 3,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "very-high",
+   "intent_score": 3,
+   "ctr_gap": false,
+   "cluster": true,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 13.26,
+   "top_queries_heuristic": [
+    "76008 new construction communities"
+   ],
+   "action": "Defend: keep facts fresh, tighten conversion, add contextual links; no rewrites"
+  },
+  {
+   "path": "/data/property-tax",
+   "tier": "B",
+   "position": 8.63,
+   "impressions": 38,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "medium",
+   "intent_score": 1,
+   "ctr_gap": true,
+   "cluster": true,
+   "url_forms_seen": 2,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 12.56,
+   "top_queries_heuristic": [
+    "weatherford property tax rate",
+    "aledo property tax rate"
+   ],
+   "action": "Push: deepen content, satisfy every ranking query, strengthen inbound links, fix title/meta"
+  },
+  {
+   "path": "/compare/aledo-isd-vs-brock-isd",
+   "tier": "A",
+   "position": 3.0,
+   "impressions": 2,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "very-high",
+   "intent_score": 3,
+   "ctr_gap": false,
+   "cluster": true,
+   "url_forms_seen": 2,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 12.45,
+   "top_queries_heuristic": [],
+   "action": "Defend: keep facts fresh, tighten conversion, add contextual links; no rewrites"
+  },
+  {
+   "path": "/guides/living-in-aledo",
+   "tier": "C",
+   "position": 24.5,
+   "impressions": 6,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "very-high",
+   "intent_score": 3,
+   "ctr_gap": false,
+   "cluster": true,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 12.19,
+   "top_queries_heuristic": [
+    "new homes for sale in aledo",
+    "new homes in aledo tx"
+   ],
+   "action": "Selective: improve only if impressions/intent justify; find missing subtopics"
+  },
+  {
+   "path": "/compare/walsh-vs-parks-of-aledo",
+   "tier": "A",
+   "position": 3.0,
+   "impressions": 1,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "very-high",
+   "intent_score": 3,
+   "ctr_gap": false,
+   "cluster": true,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 12.1,
+   "top_queries_heuristic": [],
+   "action": "Defend: keep facts fresh, tighten conversion, add contextual links; no rewrites"
+  },
+  {
+   "path": "/guides/aledo-isd-rental-houses",
+   "tier": "D",
+   "position": 44.4,
+   "impressions": 5,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "very-high",
+   "intent_score": 3,
+   "ctr_gap": false,
+   "cluster": true,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 12.06,
+   "top_queries_heuristic": [],
+   "action": "Observe: let it season; revisit if impressions rise"
+  },
+  {
+   "path": "/buy/new-construction/aledo",
+   "tier": "D",
+   "position": 50.2,
+   "impressions": 5,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "very-high",
+   "intent_score": 3,
+   "ctr_gap": false,
+   "cluster": true,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 12.06,
+   "top_queries_heuristic": [
+    "new homes for sale in aledo",
+    "76008 new construction communities",
+    "new homes in aledo tx"
+   ],
+   "action": "Observe: let it season; revisit if impressions rise"
+  },
+  {
+   "path": "/complexes/canvas-at-willow-park",
+   "tier": "B",
+   "position": 10.12,
+   "impressions": 8,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "high",
+   "intent_score": 2,
+   "ctr_gap": false,
+   "cluster": true,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 12.04,
+   "top_queries_heuristic": [
+    "canvas at willow park reviews",
+    "olympus willow park reviews",
+    "olympus willow park apartments",
+    "olympus chandler at the park"
+   ],
+   "action": "Push: deepen content, satisfy every ranking query, strengthen inbound links, fix title/meta"
+  },
+  {
+   "path": "/guides/olympus-vs-gates-vs-canvas-willow-park",
+   "tier": "A",
+   "position": 4.0,
+   "impressions": 2,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "very-high",
+   "intent_score": 3,
+   "ctr_gap": false,
+   "cluster": true,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 11.79,
+   "top_queries_heuristic": [
+    "canvas at willow park reviews",
+    "olympus willow park reviews",
+    "olympus willow park apartments",
+    "olympus chandler at the park"
+   ],
+   "action": "Defend: keep facts fresh, tighten conversion, add contextual links; no rewrites"
+  },
+  {
+   "path": "/compare/walsh-vs-morningstar",
+   "tier": "A",
+   "position": 2.0,
+   "impressions": 1,
+   "clicks": 1,
+   "ctr_pct": 100.0,
+   "intent": "very-high",
+   "intent_score": 3,
+   "ctr_gap": false,
+   "cluster": true,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 11.77,
+   "top_queries_heuristic": [],
+   "action": "Defend: keep facts fresh, tighten conversion, add contextual links; no rewrites"
+  },
+  {
+   "path": "/guides/living-in-walsh",
+   "tier": "C",
+   "position": 23.67,
+   "impressions": 3,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "very-high",
+   "intent_score": 3,
+   "ctr_gap": false,
+   "cluster": true,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 11.7,
+   "top_queries_heuristic": [],
+   "action": "Selective: improve only if impressions/intent justify; find missing subtopics"
+  },
+  {
+   "path": "/guides/moving-to-fort-worth-which-side",
+   "tier": "B",
+   "position": 10.5,
+   "impressions": 2,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "very-high",
+   "intent_score": 3,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 11.45,
+   "top_queries_heuristic": [
+    "rent to own homes fort worth",
+    "rent to own homes in fort worth",
+    "lease to own homes in fort worth tx",
+    "lease to own homes fort worth tx",
+    "rent to own homes fort worth tx"
+   ],
+   "action": "Push: deepen content, satisfy every ranking query, strengthen inbound links, fix title/meta"
+  },
+  {
+   "path": "/commutes/oxford-at-weatherford",
+   "tier": "B",
+   "position": 11.0,
+   "impressions": 1,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "very-high",
+   "intent_score": 3,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 10.94,
+   "top_queries_heuristic": [],
+   "action": "Push: deepen content, satisfy every ranking query, strengthen inbound links, fix title/meta"
+  },
+  {
+   "path": "/guides/apartments-near-nas-jrb-fort-worth",
+   "tier": "C",
+   "position": 28.33,
+   "impressions": 6,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "very-high",
+   "intent_score": 3,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 10.69,
+   "top_queries_heuristic": [
+    "apartments near nas jrb fort worth",
+    "apartments near lockheed martin fort worth texas",
+    "apartments near lockheed martin fort worth",
+    "apartments near lockheed martin fort worth tx",
+    "nas jrb fort worth housing"
+   ],
+   "action": "Selective: improve only if impressions/intent justify; find missing subtopics"
+  },
+  {
+   "path": "/guides/relocating-to-west-fort-worth-family-guide",
+   "tier": "D",
+   "position": 39.17,
+   "impressions": 6,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "very-high",
+   "intent_score": 3,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 10.69,
+   "top_queries_heuristic": [
+    "rent to own homes fort worth",
+    "rent to own homes in fort worth",
+    "lease to own homes in fort worth tx",
+    "lease to own homes fort worth tx",
+    "rent to own homes fort worth tx"
+   ],
+   "action": "Observe: let it season; revisit if impressions rise"
+  },
+  {
+   "path": "/commutes/canvas-at-willow-park",
+   "tier": "D",
+   "position": 32.5,
+   "impressions": 2,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "very-high",
+   "intent_score": 3,
+   "ctr_gap": false,
+   "cluster": true,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 10.45,
+   "top_queries_heuristic": [
+    "canvas at willow park reviews",
+    "olympus willow park reviews",
+    "olympus willow park apartments",
+    "olympus chandler at the park"
+   ],
+   "action": "Observe: let it season; revisit if impressions rise"
+  },
+  {
+   "path": "/buy/schools/aledo-isd",
+   "tier": "A",
+   "position": 1.0,
+   "impressions": 1,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "very-high",
+   "intent_score": 3,
+   "ctr_gap": false,
+   "cluster": true,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 10.44,
+   "top_queries_heuristic": [],
+   "action": "Defend: keep facts fresh, tighten conversion, add contextual links; no rewrites"
+  },
+  {
+   "path": "/guides/free-rent-specials-fine-print",
+   "tier": "B",
+   "position": 7.36,
+   "impressions": 25,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "medium",
+   "intent_score": 1,
+   "ctr_gap": true,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 10.28,
+   "top_queries_heuristic": [],
+   "action": "Push: deepen content, satisfy every ranking query, strengthen inbound links, fix title/meta"
+  },
+  {
+   "path": "/complexes/olympus-hudson-oaks",
+   "tier": "B",
+   "position": 9.0,
+   "impressions": 1,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "high",
+   "intent_score": 2,
+   "ctr_gap": false,
+   "cluster": true,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 10.1,
+   "top_queries_heuristic": [
+    "birchway hudson oaks reviews"
+   ],
+   "action": "Push: deepen content, satisfy every ranking query, strengthen inbound links, fix title/meta"
+  },
+  {
+   "path": "/schools/brock-isd/",
+   "tier": "D",
+   "position": 37.0,
+   "impressions": 1,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "very-high",
+   "intent_score": 3,
+   "ctr_gap": false,
+   "cluster": true,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 10.1,
+   "top_queries_heuristic": [],
+   "action": "Observe: let it season; revisit if impressions rise"
+  },
+  {
+   "path": "/neighborhoods/parks-of-aledo",
+   "tier": "D",
+   "position": 58.0,
+   "impressions": 1,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "very-high",
+   "intent_score": 3,
+   "ctr_gap": false,
+   "cluster": true,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 10.1,
+   "top_queries_heuristic": [],
+   "action": "Observe: let it season; revisit if impressions rise"
+  },
+  {
+   "path": "/complexes/olympus-willow-park",
+   "tier": "D",
+   "position": 37.75,
+   "impressions": 12,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "high",
+   "intent_score": 2,
+   "ctr_gap": false,
+   "cluster": true,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 9.73,
+   "top_queries_heuristic": [
+    "olympus willow park reviews",
+    "olympus willow park apartments",
+    "canvas at willow park reviews",
+    "olympus chandler at the park"
+   ],
+   "action": "Observe: let it season; revisit if impressions rise"
+  },
+  {
+   "path": "/es/guias/vivir-en-aledo",
+   "tier": "B",
+   "position": 7.0,
+   "impressions": 1,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "high",
+   "intent_score": 2,
+   "ctr_gap": false,
+   "cluster": true,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 9.44,
+   "top_queries_heuristic": [],
+   "action": "Push: deepen content, satisfy every ranking query, strengthen inbound links, fix title/meta"
+  },
+  {
+   "path": "/buy/va-loans-fort-worth",
+   "tier": "D",
+   "position": 92.92,
+   "impressions": 13,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "high",
+   "intent_score": 2,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 8.29,
+   "top_queries_heuristic": [
+    "va loans fort worth",
+    "fort worth va loan",
+    "va loan fort worth",
+    "apartments near lockheed martin fort worth texas",
+    "apartments near lockheed martin fort worth"
+   ],
+   "action": "Observe: let it season; revisit if impressions rise"
+  },
+  {
+   "path": "/compare/montrachet-vs-montserrat",
+   "tier": "B",
+   "position": 8.5,
+   "impressions": 2,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "medium",
+   "intent_score": 1,
+   "ctr_gap": false,
+   "cluster": true,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 8.29,
+   "top_queries_heuristic": [],
+   "action": "Push: deepen content, satisfy every ranking query, strengthen inbound links, fix title/meta"
+  },
+  {
+   "path": "/guides/divvy-homes-review-2026",
+   "tier": "B",
+   "position": 6.97,
+   "impressions": 39,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "low",
+   "intent_score": 0,
+   "ctr_gap": true,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 7.53,
+   "top_queries_heuristic": [
+    "divvy homes contact number",
+    "companies like divvy homes"
+   ],
+   "action": "Push: deepen content, satisfy every ranking query, strengthen inbound links, fix title/meta"
+  },
+  {
+   "path": "/rent-report/august-2026",
+   "tier": "B",
+   "position": 5.94,
+   "impressions": 16,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "medium",
+   "intent_score": 1,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 7.44,
+   "top_queries_heuristic": [],
+   "action": "Push: deepen content, satisfy every ranking query, strengthen inbound links, fix title/meta"
+  },
+  {
+   "path": "/complexes/college-park-weatherford",
+   "tier": "D",
+   "position": 34.0,
+   "impressions": 4,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "high",
+   "intent_score": 2,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 7.4,
+   "top_queries_heuristic": [
+    "college park apartments weatherford tx"
+   ],
+   "action": "Observe: let it season; revisit if impressions rise"
+  },
+  {
+   "path": "/military/bah-fort-worth",
+   "tier": "C",
+   "position": 19.25,
+   "impressions": 4,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "high",
+   "intent_score": 2,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 2,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 7.4,
+   "top_queries_heuristic": [
+    "fort worth military housing",
+    "apartments near lockheed martin fort worth texas",
+    "apartments near lockheed martin fort worth",
+    "fort worth rent out my home",
+    "second chance apartments in fort worth"
+   ],
+   "action": "Selective: improve only if impressions/intent justify; find missing subtopics"
+  },
+  {
+   "path": "/complexes/birchway-hudson-oaks",
+   "tier": "D",
+   "position": 37.0,
+   "impressions": 1,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "high",
+   "intent_score": 2,
+   "ctr_gap": false,
+   "cluster": true,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 7.1,
+   "top_queries_heuristic": [
+    "birchway hudson oaks reviews"
+   ],
+   "action": "Observe: let it season; revisit if impressions rise"
+  },
+  {
+   "path": "/buy/closing-costs-texas",
+   "tier": "D",
+   "position": 89.46,
+   "impressions": 33,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "medium",
+   "intent_score": 1,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 2,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 7.06,
+   "top_queries_heuristic": [
+    "closing costs texas",
+    "closing costs in texas",
+    "seller closing costs in texas",
+    "average closing costs in texas",
+    "how much is closing costs in texas"
+   ],
+   "action": "Observe: let it season; revisit if impressions rise"
+  },
+  {
+   "path": "/schools/private-schools-west-fort-worth",
+   "tier": "C",
+   "position": 25.15,
+   "impressions": 47,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "medium",
+   "intent_score": 1,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 6.36,
+   "top_queries_heuristic": [
+    "fort worth private school",
+    "christian schools fort worth",
+    "apartments near lockheed martin fort worth texas",
+    "apartments near lockheed martin fort worth",
+    "fort worth rent out my home"
+   ],
+   "action": "Selective: improve only if impressions/intent justify; find missing subtopics"
+  },
+  {
+   "path": "/complexes/oxford-at-weatherford",
+   "tier": "A",
+   "position": 2.0,
+   "impressions": 1,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "high",
+   "intent_score": 2,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 6.27,
+   "top_queries_heuristic": [],
+   "action": "Defend: keep facts fresh, tighten conversion, add contextual links; no rewrites"
+  },
+  {
+   "path": "/neighborhoods/the-grasslands",
+   "tier": "B",
+   "position": 9.0,
+   "impressions": 2,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "medium",
+   "intent_score": 1,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 5.95,
+   "top_queries_heuristic": [],
+   "action": "Push: deepen content, satisfy every ranking query, strengthen inbound links, fix title/meta"
+  },
+  {
+   "path": "/guides/apartments-broken-lease-fort-worth",
+   "tier": "B",
+   "position": 15.0,
+   "impressions": 5,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "medium",
+   "intent_score": 1,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 5.56,
+   "top_queries_heuristic": [
+    "apartments near lockheed martin fort worth texas",
+    "apartments near lockheed martin fort worth",
+    "second chance apartments in fort worth",
+    "second chance apartments fort worth",
+    "apartments near lockheed martin fort worth tx"
+   ],
+   "action": "Push: deepen content, satisfy every ranking query, strengthen inbound links, fix title/meta"
+  },
+  {
+   "path": "/builder-report/2026-08",
+   "tier": "A",
+   "position": 3.33,
+   "impressions": 3,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "medium",
+   "intent_score": 1,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 2,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 5.31,
+   "top_queries_heuristic": [],
+   "action": "Defend: keep facts fresh, tighten conversion, add contextual links; no rewrites"
+  },
+  {
+   "path": "/neighborhoods/montserrat",
+   "tier": "B",
+   "position": 11.0,
+   "impressions": 2,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "medium",
+   "intent_score": 1,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 5.29,
+   "top_queries_heuristic": [],
+   "action": "Push: deepen content, satisfy every ranking query, strengthen inbound links, fix title/meta"
+  },
+  {
+   "path": "/neighborhoods/silverado-on-the-brazos",
+   "tier": "B",
+   "position": 10.0,
+   "impressions": 1,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "medium",
+   "intent_score": 1,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 5.27,
+   "top_queries_heuristic": [],
+   "action": "Push: deepen content, satisfy every ranking query, strengthen inbound links, fix title/meta"
+  },
+  {
+   "path": "/guides/rent-to-own-programs-texas-2026",
+   "tier": "B",
+   "position": 8.09,
+   "impressions": 11,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "low",
+   "intent_score": 0,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 2,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 4.86,
+   "top_queries_heuristic": [
+    "rent to own homes in fort worth texas",
+    "rent to own homes dallas fort worth texas",
+    "rent to own homes fort worth",
+    "rent to own homes in fort worth",
+    "rent to own homes"
+   ],
+   "action": "Push: deepen content, satisfy every ranking query, strengthen inbound links, fix title/meta"
+  },
+  {
+   "path": "/buy/property-taxes-for-buyers",
+   "tier": "A",
+   "position": 2.0,
+   "impressions": 1,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "medium",
+   "intent_score": 1,
+   "ctr_gap": false,
+   "cluster": true,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 4.77,
+   "top_queries_heuristic": [],
+   "action": "Defend: keep facts fresh, tighten conversion, add contextual links; no rewrites"
+  },
+  {
+   "path": "/complexes/westpoint-at-scenic-vista",
+   "tier": "B",
+   "position": 7.46,
+   "impressions": 11,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "low",
+   "intent_score": 0,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 2,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 4.65,
+   "top_queries_heuristic": [
+    "westpoint at scenic vista apartments",
+    "westpoint at scenic vista"
+   ],
+   "action": "Push: deepen content, satisfy every ranking query, strengthen inbound links, fix title/meta"
+  },
+  {
+   "path": "/commutes/westpoint-at-scenic-vista",
+   "tier": "B",
+   "position": 6.0,
+   "impressions": 1,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "medium",
+   "intent_score": 1,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 4.6,
+   "top_queries_heuristic": [
+    "westpoint at scenic vista apartments",
+    "westpoint at scenic vista"
+   ],
+   "action": "Push: deepen content, satisfy every ranking query, strengthen inbound links, fix title/meta"
+  },
+  {
+   "path": "/move/",
+   "tier": "B",
+   "position": 11.27,
+   "impressions": 11,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "low",
+   "intent_score": 0,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 2,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 4.4,
+   "top_queries_heuristic": [
+    "why move to fort worth"
+   ],
+   "action": "Push: deepen content, satisfy every ranking query, strengthen inbound links, fix title/meta"
+  },
+  {
+   "path": "/buy/first-time-buyer-texas",
+   "tier": "D",
+   "position": 33.67,
+   "impressions": 3,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "medium",
+   "intent_score": 1,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 4.2,
+   "top_queries_heuristic": [
+    "first time home buyer texas what to know",
+    "texas closing cost calculator for buyer"
+   ],
+   "action": "Observe: let it season; revisit if impressions rise"
+  },
+  {
+   "path": "/buy/new-construction/",
+   "tier": "D",
+   "position": 36.0,
+   "impressions": 1,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "medium",
+   "intent_score": 1,
+   "ctr_gap": false,
+   "cluster": true,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 4.1,
+   "top_queries_heuristic": [
+    "76008 new construction communities"
+   ],
+   "action": "Observe: let it season; revisit if impressions rise"
+  },
+  {
+   "path": "/es/comunidad/eventos",
+   "tier": "B",
+   "position": 7.4,
+   "impressions": 5,
+   "clicks": 1,
+   "ctr_pct": 20.0,
+   "intent": "low",
+   "intent_score": 0,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 2,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 4.02,
+   "top_queries_heuristic": [],
+   "action": "Push: deepen content, satisfy every ranking query, strengthen inbound links, fix title/meta"
+  },
+  {
+   "path": "/guides/credit-score-to-rent-texas",
+   "tier": "D",
+   "position": 68.09,
+   "impressions": 99,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "low",
+   "intent_score": 0,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 4.0,
+   "top_queries_heuristic": [
+    "what credit score is needed to rent an apartment",
+    "what credit score do i need to rent an apartment",
+    "minimum credit score to rent apartment",
+    "what credit score is needed to rent",
+    "what credit score should i have to rent an apartment"
+   ],
+   "action": "Observe: let it season; revisit if impressions rise"
+  },
+  {
+   "path": "/es/",
+   "tier": "B",
+   "position": 7.75,
+   "impressions": 4,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "low",
+   "intent_score": 0,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 3.98,
+   "top_queries_heuristic": [],
+   "action": "Push: deepen content, satisfy every ranking query, strengthen inbound links, fix title/meta"
+  },
+  {
+   "path": "/relocate/from-california",
+   "tier": "A",
+   "position": 4.0,
+   "impressions": 1,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "medium",
+   "intent_score": 1,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 3.94,
+   "top_queries_heuristic": [],
+   "action": "Defend: keep facts fresh, tighten conversion, add contextual links; no rewrites"
+  },
+  {
+   "path": "/rent-to-own",
+   "tier": "D",
+   "position": 55.3,
+   "impressions": 71,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "low",
+   "intent_score": 0,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 3.71,
+   "top_queries_heuristic": [
+    "rent to own homes fort worth",
+    "rent to own homes in fort worth",
+    "rent to own homes",
+    "rent to own homes fort worth tx",
+    "zillow rent to own homes"
+   ],
+   "action": "Observe: let it season; revisit if impressions rise"
+  },
+  {
+   "path": "/",
+   "tier": "B",
+   "position": 6.2,
+   "impressions": 5,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "low",
+   "intent_score": 0,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 3.62,
+   "top_queries_heuristic": [],
+   "action": "Push: deepen content, satisfy every ranking query, strengthen inbound links, fix title/meta"
+  },
+  {
+   "path": "/relocate/from-hawaii",
+   "tier": "A",
+   "position": 3.0,
+   "impressions": 1,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "medium",
+   "intent_score": 1,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 3.6,
+   "top_queries_heuristic": [],
+   "action": "Defend: keep facts fresh, tighten conversion, add contextual links; no rewrites"
+  },
+  {
+   "path": "/guides/breaking-a-lease-in-texas-cost",
+   "tier": "D",
+   "position": 40.3,
+   "impressions": 60,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "low",
+   "intent_score": 0,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 2,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 3.57,
+   "top_queries_heuristic": [
+    "breaking a lease in texas due to job relocation",
+    "breaking a lease in texas",
+    "what is the penalty for breaking a lease in texas",
+    "how can you break a lease in texas",
+    "how much is it to break a lease in texas"
+   ],
+   "action": "Observe: let it season; revisit if impressions rise"
+  },
+  {
+   "path": "/compare/",
+   "tier": "C",
+   "position": 18.0,
+   "impressions": 9,
+   "clicks": 1,
+   "ctr_pct": 11.11,
+   "intent": "low",
+   "intent_score": 0,
+   "ctr_gap": false,
+   "cluster": true,
+   "url_forms_seen": 2,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 3.5,
+   "top_queries_heuristic": [],
+   "action": "Selective: improve only if impressions/intent justify; find missing subtopics"
+  },
+  {
+   "path": "/second-chance",
+   "tier": "D",
+   "position": 31.95,
+   "impressions": 45,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "low",
+   "intent_score": 0,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 2,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 3.33,
+   "top_queries_heuristic": [
+    "second chance apartments in fort worth",
+    "second chance apartments fort worth",
+    "second chance apartments fort worth under $1000 no credit check",
+    "second chance apartments",
+    "second chance apartment tips"
+   ],
+   "action": "Observe: let it season; revisit if impressions rise"
+  },
+  {
+   "path": "/buy/",
+   "tier": "B",
+   "position": 6.33,
+   "impressions": 3,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "low",
+   "intent_score": 0,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 3.31,
+   "top_queries_heuristic": [],
+   "action": "Push: deepen content, satisfy every ranking query, strengthen inbound links, fix title/meta"
+  },
+  {
+   "path": "/es/romper-contrato",
+   "tier": "B",
+   "position": 6.33,
+   "impressions": 3,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "low",
+   "intent_score": 0,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 3.31,
+   "top_queries_heuristic": [],
+   "action": "Push: deepen content, satisfy every ranking query, strengthen inbound links, fix title/meta"
+  },
+  {
+   "path": "/areas",
+   "tier": "D",
+   "position": 33.78,
+   "impressions": 32,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "low",
+   "intent_score": 0,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 3.04,
+   "top_queries_heuristic": [],
+   "action": "Observe: let it season; revisit if impressions rise"
+  },
+  {
+   "path": "/community/best-bbq",
+   "tier": "B",
+   "position": 9.0,
+   "impressions": 2,
+   "clicks": 1,
+   "ctr_pct": 50.0,
+   "intent": "low",
+   "intent_score": 0,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 2.95,
+   "top_queries_heuristic": [],
+   "action": "Push: deepen content, satisfy every ranking query, strengthen inbound links, fix title/meta"
+  },
+  {
+   "path": "/where-to-live",
+   "tier": "B",
+   "position": 9.0,
+   "impressions": 2,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "low",
+   "intent_score": 0,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 2.95,
+   "top_queries_heuristic": [],
+   "action": "Push: deepen content, satisfy every ranking query, strengthen inbound links, fix title/meta"
+  },
+  {
+   "path": "/neighborhoods/summit-ranch",
+   "tier": "D",
+   "position": 31.5,
+   "impressions": 2,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "medium",
+   "intent_score": 1,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 2.95,
+   "top_queries_heuristic": [
+    "summit ranch aledo tx",
+    "summit ranch aledo"
+   ],
+   "action": "Observe: let it season; revisit if impressions rise"
+  },
+  {
+   "path": "/community/",
+   "tier": "A",
+   "position": 4.5,
+   "impressions": 4,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "low",
+   "intent_score": 0,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 2.9,
+   "top_queries_heuristic": [
+    "arbordale community"
+   ],
+   "action": "Defend: keep facts fresh, tighten conversion, add contextual links; no rewrites"
+  },
+  {
+   "path": "/military/jrb-noise",
+   "tier": "B",
+   "position": 14.5,
+   "impressions": 6,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "low",
+   "intent_score": 0,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 2,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 2.86,
+   "top_queries_heuristic": [],
+   "action": "Push: deepen content, satisfy every ranking query, strengthen inbound links, fix title/meta"
+  },
+  {
+   "path": "/es/semanas-gratis",
+   "tier": "A",
+   "position": 4.33,
+   "impressions": 3,
+   "clicks": 1,
+   "ctr_pct": 33.33,
+   "intent": "low",
+   "intent_score": 0,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 2.65,
+   "top_queries_heuristic": [],
+   "action": "Defend: keep facts fresh, tighten conversion, add contextual links; no rewrites"
+  },
+  {
+   "path": "/guides/renters-insurance-cost-texas",
+   "tier": "D",
+   "position": 82.55,
+   "impressions": 20,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "low",
+   "intent_score": 0,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 2,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 2.64,
+   "top_queries_heuristic": [
+    "average cost of renters insurance in texas",
+    "how much does renters insurance cost in texas",
+    "how much is renters insurance in texas",
+    "closing cost calculator texas",
+    "closing cost in texas"
+   ],
+   "action": "Observe: let it season; revisit if impressions rise"
+  },
+  {
+   "path": "/buy/inspection-option-period",
+   "tier": "B",
+   "position": 8.0,
+   "impressions": 2,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "low",
+   "intent_score": 0,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 2.62,
+   "top_queries_heuristic": [],
+   "action": "Push: deepen content, satisfy every ranking query, strengthen inbound links, fix title/meta"
+  },
+  {
+   "path": "/military/",
+   "tier": "B",
+   "position": 8.0,
+   "impressions": 2,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "low",
+   "intent_score": 0,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 2.62,
+   "top_queries_heuristic": [
+    "fort worth military housing"
+   ],
+   "action": "Push: deepen content, satisfy every ranking query, strengthen inbound links, fix title/meta"
+  },
+  {
+   "path": "/schools/",
+   "tier": "D",
+   "position": 56.05,
+   "impressions": 19,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "low",
+   "intent_score": 0,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 2.6,
+   "top_queries_heuristic": [
+    "christian schools fort worth"
+   ],
+   "action": "Observe: let it season; revisit if impressions rise"
+  },
+  {
+   "path": "/es/comprar/primera-vivienda-texas",
+   "tier": "B",
+   "position": 9.0,
+   "impressions": 1,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "low",
+   "intent_score": 0,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 2.6,
+   "top_queries_heuristic": [],
+   "action": "Push: deepen content, satisfy every ranking query, strengthen inbound links, fix title/meta"
+  },
+  {
+   "path": "/tools/move-in-cost-calculator",
+   "tier": "B",
+   "position": 9.0,
+   "impressions": 1,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "low",
+   "intent_score": 0,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 2.6,
+   "top_queries_heuristic": [
+    "average cost of renters insurance in texas",
+    "closing cost calculator texas",
+    "how much does renters insurance cost in texas",
+    "closing cost in texas",
+    "texas closing cost calculator for buyer"
+   ],
+   "action": "Push: deepen content, satisfy every ranking query, strengthen inbound links, fix title/meta"
+  },
+  {
+   "path": "/es/relocate/international",
+   "tier": "D",
+   "position": 94.0,
+   "impressions": 1,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "medium",
+   "intent_score": 1,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 2.6,
+   "top_queries_heuristic": [],
+   "action": "Observe: let it season; revisit if impressions rise"
+  },
+  {
+   "path": "/quiz",
+   "tier": "C",
+   "position": 24.53,
+   "impressions": 17,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "low",
+   "intent_score": 0,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 2.51,
+   "top_queries_heuristic": [],
+   "action": "Selective: improve only if impressions/intent justify; find missing subtopics"
+  },
+  {
+   "path": "/neighborhoods/",
+   "tier": "D",
+   "position": 50.93,
+   "impressions": 14,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "low",
+   "intent_score": 0,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 2,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 2.35,
+   "top_queries_heuristic": [],
+   "action": "Observe: let it season; revisit if impressions rise"
+  },
+  {
+   "path": "/community/kids",
+   "tier": "B",
+   "position": 8.0,
+   "impressions": 1,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "low",
+   "intent_score": 0,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 2.27,
+   "top_queries_heuristic": [
+    "arbordale community"
+   ],
+   "action": "Push: deepen content, satisfy every ranking query, strengthen inbound links, fix title/meta"
+  },
+  {
+   "path": "/es/comunidad/mejor-bbq",
+   "tier": "B",
+   "position": 10.0,
+   "impressions": 1,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "low",
+   "intent_score": 0,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 2.27,
+   "top_queries_heuristic": [],
+   "action": "Push: deepen content, satisfy every ranking query, strengthen inbound links, fix title/meta"
+  },
+  {
+   "path": "/es/segunda-oportunidad",
+   "tier": "B",
+   "position": 10.0,
+   "impressions": 1,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "low",
+   "intent_score": 0,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 2.27,
+   "top_queries_heuristic": [],
+   "action": "Push: deepen content, satisfy every ranking query, strengthen inbound links, fix title/meta"
+  },
+  {
+   "path": "/complexes/chapel-creek-cottages",
+   "tier": "D",
+   "position": 48.27,
+   "impressions": 11,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "low",
+   "intent_score": 0,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 2,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 2.16,
+   "top_queries_heuristic": [
+    "the cottages at chapel creek"
+   ],
+   "action": "Observe: let it season; revisit if impressions rise"
+  },
+  {
+   "path": "/guides/subletting-in-texas-rules",
+   "tier": "D",
+   "position": 64.55,
+   "impressions": 9,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "low",
+   "intent_score": 0,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 2,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 2.0,
+   "top_queries_heuristic": [
+    "how much is renters insurance in texas",
+    "average cost of renters insurance in texas",
+    "closing costs in texas",
+    "closing cots in texas",
+    "seller closing costs in texas"
+   ],
+   "action": "Observe: let it season; revisit if impressions rise"
+  },
+  {
+   "path": "/guides/renters-insurance-hail-texas",
+   "tier": "B",
+   "position": 11.0,
+   "impressions": 1,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "low",
+   "intent_score": 0,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 1.94,
+   "top_queries_heuristic": [
+    "how much is renters insurance in texas",
+    "average cost of renters insurance in texas",
+    "how much does renters insurance cost in texas"
+   ],
+   "action": "Push: deepen content, satisfy every ranking query, strengthen inbound links, fix title/meta"
+  },
+  {
+   "path": "/es/puntaje-credito",
+   "tier": "A",
+   "position": 5.0,
+   "impressions": 2,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "low",
+   "intent_score": 0,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 1.62,
+   "top_queries_heuristic": [],
+   "action": "Defend: keep facts fresh, tighten conversion, add contextual links; no rewrites"
+  },
+  {
+   "path": "/es/comunidad/",
+   "tier": "B",
+   "position": 6.0,
+   "impressions": 1,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "low",
+   "intent_score": 0,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 1.6,
+   "top_queries_heuristic": [],
+   "action": "Push: deepen content, satisfy every ranking query, strengthen inbound links, fix title/meta"
+  },
+  {
+   "path": "/resources/home-services",
+   "tier": "B",
+   "position": 6.0,
+   "impressions": 1,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "low",
+   "intent_score": 0,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 1.6,
+   "top_queries_heuristic": [],
+   "action": "Push: deepen content, satisfy every ranking query, strengthen inbound links, fix title/meta"
+  },
+  {
+   "path": "/deals",
+   "tier": "D",
+   "position": 39.2,
+   "impressions": 5,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "low",
+   "intent_score": 0,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 1.56,
+   "top_queries_heuristic": [],
+   "action": "Observe: let it season; revisit if impressions rise"
+  },
+  {
+   "path": "/data/",
+   "tier": "D",
+   "position": 43.6,
+   "impressions": 5,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "low",
+   "intent_score": 0,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 1.56,
+   "top_queries_heuristic": [],
+   "action": "Observe: let it season; revisit if impressions rise"
+  },
+  {
+   "path": "/es/guias/renta-con-opcion-a-compra-texas-2026",
+   "tier": "A",
+   "position": 2.0,
+   "impressions": 1,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "low",
+   "intent_score": 0,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 1.27,
+   "top_queries_heuristic": [
+    "breaking a lease in texas due to job relocation",
+    "how can you break a lease in texas",
+    "how much is it to break a lease in texas",
+    "how to break a lease in texas",
+    "breaking a lease in texas"
+   ],
+   "action": "Defend: keep facts fresh, tighten conversion, add contextual links; no rewrites"
+  },
+  {
+   "path": "/buy/affordability-calculator",
+   "tier": "D",
+   "position": 38.67,
+   "impressions": 3,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "low",
+   "intent_score": 0,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": 1.2,
+   "top_queries_heuristic": [
+    "home affordability calculator texas"
+   ],
+   "action": "Observe: let it season; revisit if impressions rise"
+  },
+  {
+   "path": "/community/sports",
+   "tier": "C",
+   "position": 20.0,
+   "impressions": 2,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "low",
+   "intent_score": 0,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": -0.05,
+   "top_queries_heuristic": [
+    "arbordale community"
+   ],
+   "action": "Selective: improve only if impressions/intent justify; find missing subtopics"
+  },
+  {
+   "path": "/complexes/willow-crossing-townhomes",
+   "tier": "C",
+   "position": 25.0,
+   "impressions": 2,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "low",
+   "intent_score": 0,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": -0.05,
+   "top_queries_heuristic": [],
+   "action": "Selective: improve only if impressions/intent justify; find missing subtopics"
+  },
+  {
+   "path": "/neighborhoods/clearfork",
+   "tier": "D",
+   "position": 42.5,
+   "impressions": 2,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "low",
+   "intent_score": 0,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": -0.05,
+   "top_queries_heuristic": [
+    "shops at clearfork apartments"
+   ],
+   "action": "Observe: let it season; revisit if impressions rise"
+  },
+  {
+   "path": "/neighborhoods/collections/waterfront-lake",
+   "tier": "C",
+   "position": 18.0,
+   "impressions": 1,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "low",
+   "intent_score": 0,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": -0.4,
+   "top_queries_heuristic": [],
+   "action": "Selective: improve only if impressions/intent justify; find missing subtopics"
+  },
+  {
+   "path": "/es/comprar/asistencia-enganche",
+   "tier": "D",
+   "position": 85.0,
+   "impressions": 1,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "low",
+   "intent_score": 0,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": -0.4,
+   "top_queries_heuristic": [],
+   "action": "Observe: let it season; revisit if impressions rise"
+  },
+  {
+   "path": "/es/especiales",
+   "tier": "D",
+   "position": 93.0,
+   "impressions": 1,
+   "clicks": 0,
+   "ctr_pct": 0.0,
+   "intent": "low",
+   "intent_score": 0,
+   "ctr_gap": false,
+   "cluster": false,
+   "url_forms_seen": 1,
+   "delta_impressions": null,
+   "delta_position": null,
+   "opportunity": -0.4,
+   "top_queries_heuristic": [],
+   "action": "Observe: let it season; revisit if impressions rise"
+  }
+ ],
+ "cannibalization": {
+  "url_form_splits": [
+   "/guides/apartments-near-lockheed-martin-fort-worth",
+   "/schools/aledo-isd/",
+   "/data/property-tax",
+   "/compare/aledo-isd-vs-brock-isd",
+   "/military/bah-fort-worth",
+   "/buy/closing-costs-texas",
+   "/builder-report/2026-08",
+   "/guides/rent-to-own-programs-texas-2026",
+   "/complexes/westpoint-at-scenic-vista",
+   "/move/",
+   "/es/comunidad/eventos",
+   "/guides/breaking-a-lease-in-texas-cost",
+   "/compare/",
+   "/second-chance",
+   "/military/jrb-noise",
+   "/guides/renters-insurance-cost-texas",
+   "/neighborhoods/",
+   "/complexes/chapel-creek-cottages",
+   "/guides/subletting-in-texas-rules"
+  ],
+  "slug_siblings": {
+   "apartments fort worth": [
+    [
+     "/guides/apartments-near-lockheed-martin-fort-worth",
+     "/guides/apartments-broken-lease-fort-worth"
+    ],
+    [
+     "/guides/apartments-near-nas-jrb-fort-worth",
+     "/guides/apartments-broken-lease-fort-worth"
+    ]
+   ],
+   "compare park vs willow": [
+    [
+     "/compare/willow-park-vs-hudson-oaks",
+     "/compare/aledo-vs-willow-park"
+    ]
+   ],
+   "aledo isd schools": [
+    [
+     "/schools/aledo-isd/",
+     "/buy/schools/aledo-isd"
+    ],
+    [
+     "/schools/aledo-isd/daniel-ninth-grade-campus",
+     "/schools/aledo-isd/"
+    ],
+    [
+     "/schools/aledo-isd/daniel-ninth-grade-campus",
+     "/schools/aledo-isd/annetta-elementary"
+    ],
+    [
+     "/schools/aledo-isd/daniel-ninth-grade-campus",
+     "/buy/schools/aledo-isd"
+    ],
+    [
+     "/schools/aledo-isd/annetta-elementary",
+     "/schools/aledo-isd/"
+    ],
+    [
+     "/schools/aledo-isd/annetta-elementary",
+     "/buy/schools/aledo-isd"
+    ]
+   ],
+   "hudson oaks park vs willow": [
+    [
+     "/guides/olympus-willow-park-vs-olympus-hudson-oaks",
+     "/compare/willow-park-vs-hudson-oaks"
+    ]
+   ],
+   "park vs willow": [
+    [
+     "/guides/olympus-willow-park-vs-olympus-hudson-oaks",
+     "/compare/aledo-vs-willow-park"
+    ],
+    [
+     "/guides/olympus-vs-gates-vs-canvas-willow-park",
+     "/compare/willow-park-vs-hudson-oaks"
+    ],
+    [
+     "/guides/olympus-vs-gates-vs-canvas-willow-park",
+     "/compare/aledo-vs-willow-park"
+    ]
+   ],
+   "olympus park vs willow": [
+    [
+     "/guides/olympus-willow-park-vs-olympus-hudson-oaks",
+     "/guides/olympus-vs-gates-vs-canvas-willow-park"
+    ]
+   ],
+   "hudson oaks olympus": [
+    [
+     "/guides/olympus-willow-park-vs-olympus-hudson-oaks",
+     "/complexes/olympus-hudson-oaks"
+    ]
+   ],
+   "olympus park willow": [
+    [
+     "/guides/olympus-willow-park-vs-olympus-hudson-oaks",
+     "/complexes/olympus-willow-park"
+    ],
+    [
+     "/guides/olympus-vs-gates-vs-canvas-willow-park",
+     "/complexes/olympus-willow-park"
+    ]
+   ],
+   "aledo compare vs weatherford": [
+    [
+     "/compare/aledo-vs-weatherford",
+     "/compare/aledo-isd-vs-weatherford-isd"
+    ]
+   ],
+   "aledo compare vs": [
+    [
+     "/compare/aledo-vs-weatherford",
+     "/compare/aledo-isd-vs-brock-isd"
+    ],
+    [
+     "/compare/aledo-vs-willow-park",
+     "/compare/aledo-vs-weatherford"
+    ],
+    [
+     "/compare/aledo-vs-willow-park",
+     "/compare/aledo-isd-vs-weatherford-isd"
+    ],
+    [
+     "/compare/aledo-vs-willow-park",
+     "/compare/aledo-isd-vs-brock-isd"
+    ],
+    [
+     "/compare/walsh-vs-parks-of-aledo",
+     "/compare/aledo-vs-weatherford"
+    ],
+    [
+     "/compare/walsh-vs-parks-of-aledo",
+     "/compare/aledo-isd-vs-weatherford-isd"
+    ],
+    [
+     "/compare/walsh-vs-parks-of-aledo",
+     "/compare/aledo-vs-willow-park"
+    ],
+    [
+     "/compare/walsh-vs-parks-of-aledo",
+     "/compare/aledo-isd-vs-brock-isd"
+    ]
+   ],
+   "aledo compare isd vs": [
+    [
+     "/compare/aledo-isd-vs-weatherford-isd",
+     "/compare/aledo-isd-vs-brock-isd"
+    ]
+   ],
+   "buy construction new": [
+    [
+     "/buy/new-construction/walsh",
+     "/buy/new-construction/aledo"
+    ],
+    [
+     "/buy/new-construction/walsh",
+     "/buy/new-construction/"
+    ],
+    [
+     "/buy/new-construction/aledo",
+     "/buy/new-construction/"
+    ]
+   ],
+   "compare vs walsh": [
+    [
+     "/compare/walsh-vs-parks-of-aledo",
+     "/compare/walsh-vs-morningstar"
+    ]
+   ],
+   "at canvas park willow": [
+    [
+     "/complexes/canvas-at-willow-park",
+     "/commutes/canvas-at-willow-park"
+    ]
+   ],
+   "canvas park willow": [
+    [
+     "/guides/olympus-vs-gates-vs-canvas-willow-park",
+     "/complexes/canvas-at-willow-park"
+    ],
+    [
+     "/guides/olympus-vs-gates-vs-canvas-willow-park",
+     "/commutes/canvas-at-willow-park"
+    ]
+   ],
+   "apartments fort near worth": [
+    [
+     "/guides/apartments-near-nas-jrb-fort-worth",
+     "/guides/apartments-near-lockheed-martin-fort-worth"
+    ]
+   ],
+   "fort to worth": [
+    [
+     "/guides/relocating-to-west-fort-worth-family-guide",
+     "/guides/moving-to-fort-worth-which-side"
+    ]
+   ],
+   "complexes hudson oaks": [
+    [
+     "/complexes/olympus-hudson-oaks",
+     "/complexes/birchway-hudson-oaks"
+    ]
+   ],
+   "aledo of parks": [
+    [
+     "/neighborhoods/parks-of-aledo",
+     "/compare/walsh-vs-parks-of-aledo"
+    ]
+   ],
+   "complexes park willow": [
+    [
+     "/complexes/olympus-willow-park",
+     "/complexes/canvas-at-willow-park"
+    ]
+   ],
+   "fort west worth": [
+    [
+     "/schools/private-schools-west-fort-worth",
+     "/guides/relocating-to-west-fort-worth-family-guide"
+    ]
+   ],
+   "at oxford weatherford": [
+    [
+     "/complexes/oxford-at-weatherford",
+     "/commutes/oxford-at-weatherford"
+    ]
+   ],
+   "rent texas to": [
+    [
+     "/guides/rent-to-own-programs-texas-2026",
+     "/guides/credit-score-to-rent-texas"
+    ]
+   ],
+   "at scenic vista westpoint": [
+    [
+     "/complexes/westpoint-at-scenic-vista",
+     "/commutes/westpoint-at-scenic-vista"
+    ]
+   ],
+   "own rent to": [
+    [
+     "/rent-to-own",
+     "/guides/rent-to-own-programs-texas-2026"
+    ]
+   ],
+   "insurance renters texas": [
+    [
+     "/guides/renters-insurance-hail-texas",
+     "/guides/renters-insurance-cost-texas"
+    ]
+   ]
+  }
+ },
+ "query_classes": {
+  "very-high": {
+   "impressions": 165,
+   "avg_position": 16.8
+  },
+  "medium": {
+   "impressions": 108,
+   "avg_position": 66.5
+  },
+  "low": {
+   "impressions": 199,
+   "avg_position": 66.4
+  },
+  "high": {
+   "impressions": 49,
+   "avg_position": 43.7
+  }
+ }
+}

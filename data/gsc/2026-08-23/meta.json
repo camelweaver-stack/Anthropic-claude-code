@@ -1,0 +1,7 @@
+{
+ "snapshot_date": "2026-08-23",
+ "source": "GSC export westfwliving.com-Performance-on-Search-2026-08-23 (via Drive sheet 1CKL-X3PK...)",
+ "window": "Last 3 months (cumulative)",
+ "ingested": "2026-08-23",
+ "note": "Full export: pages+queries+chart+devices+countries. Query totals: clicks not broken out per query in source (all-zero except aggregate 6). Per-query clicks unavailable at this volume."
+}

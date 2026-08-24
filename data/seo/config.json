@@ -1,0 +1,66 @@
+{
+ "weights": {
+  "position_opportunity": 3.0,
+  "impressions": 2.0,
+  "commercial_intent": 3.0,
+  "ctr_gap": 2.0,
+  "cluster_strategic": 1.5,
+  "link_deficit": 1.0,
+  "low_evidence_penalty": -1.0
+ },
+ "min_evidence_impressions": 3,
+ "priority_clusters": [
+  "lockheed",
+  "aledo",
+  "walsh",
+  "benbrook",
+  "willow-park",
+  "hudson-oaks",
+  "white-settlement",
+  "property-tax",
+  "isd",
+  "new-construction",
+  "compare"
+ ],
+ "allocation": {
+  "expand_winners": 0.4,
+  "push_6_20": 0.25,
+  "new_high_intent": 0.2,
+  "maintain_factual": 0.1,
+  "exploratory": 0.05
+ },
+ "expected_ctr_by_position": [
+  [
+   1,
+   0.28
+  ],
+  [
+   2,
+   0.15
+  ],
+  [
+   3,
+   0.1
+  ],
+  [
+   4,
+   0.07
+  ],
+  [
+   5,
+   0.05
+  ],
+  [
+   10,
+   0.03
+  ],
+  [
+   20,
+   0.015
+  ],
+  [
+   100,
+   0.005
+  ]
+ ]
+}
