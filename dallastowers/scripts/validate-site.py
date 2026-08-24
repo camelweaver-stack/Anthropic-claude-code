@@ -62,6 +62,16 @@ for f, s in site_pages.items():
         if "assessed" not in ctx and "/sf/mo" not in ctx:
             fails.append(f"[value-semantics] {f}: unqualified card figure {m.group(0)!r} — must read 'assessed $N/sf'")
 
+# --- 1b. literal regression strings (hard fail, no exemptions) ---
+LITERAL_REGRESSIONS = ["15% rental cap", "12-month minimum lease", "35 pounds", "$500 move fee",
+    "$1,000 deposit", "no special assessments since 2019", "protected view", "nothing can be built",
+    "41 of 41", "real sales data", "closed-sale data", "Document set on file"]
+for f, s in site_pages.items():
+    vt = visible_text(s)
+    for lit in LITERAL_REGRESSIONS:
+        if lit.lower() in vt.lower():
+            fails.append(f"[literal-regression] {f}: contains {lit!r}")
+
 # --- 2. placeholders ---
 PLACEHOLDERS = ["FIRST-HAND FIELD NOTE","FIELD PHOTO","TODO:","FIXME:","[PLACEHOLDER","[INSERT","[ADD PHOTO","HOA TBD","FLOOR PLAN TBD","VERIFY HOA","VERIFY PET POLICY"]
 for f, s in site_pages.items():
