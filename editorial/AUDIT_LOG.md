@@ -48,7 +48,10 @@ publishing cadence (change-class rule added to DAILY_RUN instead).
 GATE PASSED ×8 + gate test; 310 pages / 306 sitemap URLs; no duplicate titles or
 descriptions; all JSON-LD valid; named pages (homepage, 4 complexes, Lockheed guide,
 commutes, BAH, family guide, /move/, /compare/) each: 1 title, 1 canonical, 0 placeholder
-hits. Deploy + live production scan recorded below on deploy.
+hits. **Deploy 6a8c42aa** (pushed first; permalink verified before production). Live
+production scan: crawled all 306 sitemap URLs of the deployed site — 0 placeholder/first-hand
+hits, all 200, single canonicals (4 transient proxy timeouts re-verified clean). IndexNow 200
+for 24 changed URLs.
 
 ---
 
