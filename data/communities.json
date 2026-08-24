@@ -1,0 +1,130 @@
+{
+  "_about": "West FW Living structured community data. Null-tolerant: a null means 'not verified yet', never a guess. Every non-null value carries source + verified date. Seeded 2026-08-24 exclusively from facts already published on this site with their own verification trail; extend by adding fields with provenance, never by estimating.",
+  "_schema": {
+    "fields": {
+      "county": "string | null",
+      "school_districts": "array of {name, tea_rating_2026:{value,source,verified}} — district serving most of the community; attendance is always address-specific",
+      "sale_band_usd": "{value:[low,high], source, verified} — typical published range, not a valuation",
+      "price_per_sqft_usd": "{value:[low,high], source, verified}",
+      "rent_band_1br_usd": "{value:[low,high]|null, source, verified, note?}",
+      "isd_tax_rate_2025_adopted": "{value, source, verified} — ISD component only, per $100 valuation",
+      "lockheed_drive_min": "{value:[low,high], source, verified} — shift-honest estimates, not guarantees",
+      "special_assessments": "{value, source, verified} | null — PID/MUD/HOA regimes worth flagging"
+    }
+  },
+  "updated": "2026-08-24",
+  "communities": {
+    "white-settlement": {
+      "name": "White Settlement",
+      "county": "Tarrant",
+      "school_districts": [
+        {
+          "name": "White Settlement ISD",
+          "tea_rating_2026": { "value": "C (75); Brewer High B (82)", "source": "TEA 2026 A-F release via /schools/tea-ratings-2026", "verified": "2026-08-16" }
+        }
+      ],
+      "sale_band_usd": { "value": [230000, 320000], "source": "public listings summer 2026 via /sell/white-settlement", "verified": "2026-08-23" },
+      "price_per_sqft_usd": { "value": [150, 190], "source": "public listings summer 2026 via /sell/white-settlement", "verified": "2026-08-23" },
+      "rent_band_1br_usd": { "value": [900, 1200], "source": "public listings July 2026 via /guides/apartments-near-lockheed-martin-fort-worth", "verified": "2026-08-24" },
+      "isd_tax_rate_2025_adopted": { "value": 1.2069, "source": "adopted 2025 rate via /buy/homestead-exemption", "verified": "2026-08-22" },
+      "lockheed_drive_min": { "value": [5, 12], "source": "/guides/apartments-near-lockheed-martin-fort-worth", "verified": "2026-08-24" },
+      "special_assessments": null
+    },
+    "benbrook": {
+      "name": "Benbrook",
+      "county": "Tarrant",
+      "school_districts": [
+        {
+          "name": "Fort Worth ISD",
+          "tea_rating_2026": { "value": "C (77); Benbrook Middle/High A (90)", "source": "TEA 2026 A-F release via /schools/tea-ratings-2026", "verified": "2026-08-16" }
+        }
+      ],
+      "sale_band_usd": { "value": [300000, 420000], "source": "public listings summer 2026 via /sell/benbrook", "verified": "2026-08-23" },
+      "price_per_sqft_usd": { "value": [165, 205], "source": "public listings summer 2026 via /sell/benbrook", "verified": "2026-08-23" },
+      "rent_band_1br_usd": { "value": [1100, 1400], "source": "public listings July 2026 via /guides/apartments-near-lockheed-martin-fort-worth", "verified": "2026-08-24" },
+      "isd_tax_rate_2025_adopted": { "value": 1.0291, "source": "adopted 2025 FWISD rate via /buy/homestead-exemption", "verified": "2026-08-22" },
+      "lockheed_drive_min": { "value": [12, 20], "source": "/guides/apartments-near-lockheed-martin-fort-worth", "verified": "2026-08-24" },
+      "special_assessments": null
+    },
+    "willow-park": {
+      "name": "Willow Park",
+      "county": "Parker",
+      "school_districts": [
+        {
+          "name": "Aledo ISD / Weatherford ISD (split, address-specific)",
+          "tea_rating_2026": { "value": "Aledo ISD A (92); Weatherford ISD B (80)", "source": "TEA 2026 A-F release via /schools/tea-ratings-2026", "verified": "2026-08-16" }
+        }
+      ],
+      "sale_band_usd": { "value": [430000, 600000], "source": "public listings summer 2026 via /sell/willow-park", "verified": "2026-08-23" },
+      "price_per_sqft_usd": { "value": [195, 240], "source": "public listings summer 2026 via /sell/willow-park", "verified": "2026-08-23" },
+      "rent_band_1br_usd": { "value": [1150, 1500], "source": "public listings July 2026 via /guides/apartments-near-lockheed-martin-fort-worth", "verified": "2026-08-24", "note": "before concessions; 6-8-weeks-free specials materially change effective rent" },
+      "isd_tax_rate_2025_adopted": null,
+      "lockheed_drive_min": { "value": [20, 30], "source": "/guides/apartments-near-lockheed-martin-fort-worth", "verified": "2026-08-24" },
+      "special_assessments": null
+    },
+    "hudson-oaks": {
+      "name": "Hudson Oaks",
+      "county": "Parker",
+      "school_districts": [
+        {
+          "name": "Weatherford ISD (most addresses; verify)",
+          "tea_rating_2026": { "value": "B (80)", "source": "TEA 2026 A-F release via /schools/tea-ratings-2026", "verified": "2026-08-16" }
+        }
+      ],
+      "sale_band_usd": null,
+      "price_per_sqft_usd": null,
+      "rent_band_1br_usd": { "value": [1150, 1500], "source": "public listings July 2026 via /guides/apartments-near-lockheed-martin-fort-worth (Willow Park/Hudson Oaks pooled)", "verified": "2026-08-24" },
+      "isd_tax_rate_2025_adopted": { "value": 1.0342, "source": "adopted 2025 Weatherford ISD rate via /buy/homestead-exemption", "verified": "2026-08-22" },
+      "lockheed_drive_min": { "value": [20, 30], "source": "/guides/apartments-near-lockheed-martin-fort-worth", "verified": "2026-08-24" },
+      "special_assessments": null
+    },
+    "aledo": {
+      "name": "Aledo",
+      "county": "Parker",
+      "school_districts": [
+        {
+          "name": "Aledo ISD",
+          "tea_rating_2026": { "value": "A (92); every campus A or B", "source": "TEA 2026 A-F release via /schools/tea-ratings-2026", "verified": "2026-08-16" }
+        }
+      ],
+      "sale_band_usd": { "value": [520000, 750000], "source": "public listings summer 2026 via /sell/aledo", "verified": "2026-08-23" },
+      "price_per_sqft_usd": { "value": [210, 260], "source": "public listings summer 2026 via /sell/aledo", "verified": "2026-08-23" },
+      "rent_band_1br_usd": { "value": null, "note": "rental market is houses ($1,400-$1,900 typical, July 2026), not complexes — see /guides/aledo-isd-rental-houses" },
+      "isd_tax_rate_2025_adopted": { "value": 1.1942, "source": "adopted 2025 rate via /buy/homestead-exemption", "verified": "2026-08-22" },
+      "lockheed_drive_min": { "value": [25, 35], "source": "/guides/apartments-near-lockheed-martin-fort-worth", "verified": "2026-08-24" },
+      "special_assessments": null
+    },
+    "walsh": {
+      "name": "Walsh",
+      "county": "Parker/Tarrant line",
+      "school_districts": [
+        {
+          "name": "Aledo ISD (Walsh Elementary in-community)",
+          "tea_rating_2026": { "value": "A (92)", "source": "TEA 2026 A-F release via /schools/tea-ratings-2026", "verified": "2026-08-16" }
+        }
+      ],
+      "sale_band_usd": null,
+      "price_per_sqft_usd": null,
+      "rent_band_1br_usd": null,
+      "isd_tax_rate_2025_adopted": { "value": 1.1942, "source": "adopted 2025 Aledo ISD rate via /buy/homestead-exemption", "verified": "2026-08-22" },
+      "lockheed_drive_min": null,
+      "special_assessments": { "value": "PID; total effective rate ~2.689% varies by planning area", "source": "/guides/living-in-walsh", "verified": "2026-08-21" }
+    },
+    "weatherford": {
+      "name": "Weatherford",
+      "county": "Parker",
+      "school_districts": [
+        {
+          "name": "Weatherford ISD",
+          "tea_rating_2026": { "value": "B (80), up from C", "source": "TEA 2026 A-F release via /schools/tea-ratings-2026", "verified": "2026-08-16" }
+        }
+      ],
+      "sale_band_usd": null,
+      "price_per_sqft_usd": null,
+      "rent_band_1br_usd": null,
+      "isd_tax_rate_2025_adopted": { "value": 1.0342, "source": "adopted 2025 rate via /buy/homestead-exemption", "verified": "2026-08-22" },
+      "lockheed_drive_min": null,
+      "special_assessments": null
+    }
+  }
+}

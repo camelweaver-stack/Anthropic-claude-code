@@ -17,6 +17,7 @@ is authored and green but undeployed is `BUILT`.
 
 | Date | Topic | Cluster | Audience | Target query | Src | Traffic | Txn | Status | Links |
 |---|---|---|---|---|---|---|---|---|---|
+| 2026-08-24 | Buying a home near Lockheed Martin: the west-side ladder (four-pocket table: published bands × TEA 2026 × shift-honest drives) + Lockheed hub retitle/enrichment + sitewide de-orphaning pass | Buyers / Commutes | Plant hires & employees stepping up; dual-income west-side households | "buying a home near lockheed martin fort worth" (cluster spoke off the site's #1 GSC signal, 285 imp) | Verified (all bands/ratings from on-site verified files) | H | H | BUILT `/guides/buying-a-home-near-lockheed-martin-fort-worth` + ES `/es/guias/comprar-casa-cerca-de-lockheed-martin-fort-worth` | Lockheed hub (both directions), guides hub + es/guias hub cards, sell-side files ×4, homestead, rent-vs-buy, rent-or-buy WS/WP (de-orphaned), TEA page, VA loans, jrb-noise |
 | 2026-08-23 | Seller net-proceeds napkin ($2,509 TDI title premium at $450K, $0 transfer tax, proration mechanics, negotiated blanks) | Sellers | Move-up sellers; owners comparing offers | "cost to sell a house texas" | Verified (TDI 2026 schedule + TX constitutional ban; example in published Willow Park band) | M | H | LIVE `/sell/net-proceeds` + ES `/es/vender/ganancias-netas` | sell hub (reciprocal card), es/vender hub, capital-gains (in-body), sell-before-buying, equity-report, home-value, homestead-exemption |
 | 2026-08-22 | Homestead exemption in dollars, district by district ($140K × adopted 2025 ISD rates; Prop 13/11; filing mechanics; 10% cap) | Buyers | New buyers, 65+/disabled owners, renters running buy math | "texas homestead exemption 2026 amount" | Verified (Comptroller framework + first-party ISD adoptions + Tarrant TnT DB) | H | H | LIVE `/buy/homestead-exemption` + ES `/es/comprar/exencion-homestead` | buy hub (reciprocal card), es/comprar hub, property-taxes-for-buyers, data/property-tax, calculator, rent-vs-buy, living-in-benbrook |
 | 2026-08-21 | Living in Benbrook: the value play (published Benbrook-vs-Aledo bands, A-rated middle/high inside FWISD's C, lake/daily-life, decision layer) | Neighborhoods | Priced-out Aledo buyers; renters-first households | "is benbrook a good place to live" | Verified (on-site published bands summer 2026 + TEA 2026 file) | H | H | LIVE `/guides/living-in-benbrook` + ES `/es/guias/vivir-en-benbrook` | guides hub (reciprocal card), es/guias hub, areas/benbrook, tea-ratings-2026, living-in-aledo, living-in-walsh, compare/benbrook-vs-white-settlement |
@@ -33,7 +34,10 @@ is authored and green but undeployed is `BUILT`.
 | 4 | What the homestead exemption is actually worth on a west-side house after Prop 13 | Buyers | New owners | "texas homestead exemption 2026 amount" | SHIPPED 2026-08-22 → /buy/homestead-exemption | H | H | LIVE |
 | 5 | Seller's net-proceeds napkin for a $450K Willow Park sale | Sellers | Move-up sellers | "cost to sell a house texas" | SHIPPED 2026-08-23 → /sell/net-proceeds | M | H | LIVE |
 | 6 | The I-30 vs I-20 commute decision, timed by corridor and hour | Relocation | Inbound commuters | "commute fort worth from aledo" | Have (commutes/) — needs a re-timing pass | H | M | UPDATE |
-| 7 | Renters insurance after a hail year: what changed at renewal | Renters | All renters | "renters insurance texas hail deductible" | Sourceable (TDI) | M | L | IDEA |
+| 7 | Renters insurance after a hail year: what changed at renewal | Renters | All renters | "renters insurance texas hail deductible" | Sourceable (TDI) | M | L | IDEA — **demoted** (GSC 08-23: generic renter queries sit at pos 68–100 = Google testing, not ranking; existing insurance pages cover the intent) |
+| 13 | **Private-school tuition, west corridor** — enrich `/schools/private-schools-west-fort-worth` with verified tuition/admissions data | Schools | Buyers weighing private vs Aledo ISD premium | "trinity valley school" (GSC pos 3.25!), "private schools fort worth tuition" | Sourceable (school sites — first-party) | M | H | NEXT — GSC evidence: page at pos ~25 on 25 imp with named-school queries already ranking |
+| 14 | **Lockheed cluster round 2** — watch the retitle/spoke in the next GSC export; extend only where new queries appear (NO per-suburb commute permutations) | Buyers / Commutes | Plant workforce | per next export | GSC-gated | H | H | HOLD (next GSC ingest) |
+| 15 | Comparison-page push — `/compare/willow-park-vs-hudson-oaks` (pos 2), `/compare/aledo-vs-weatherford` (pos 8.5): freshness pass + inbound links, no rewrites | Neighborhoods | Movers choosing between towns | already-ranking comparison queries | Have (data layer) | M | H | IDEA — Tier A/B defend-and-push |
 | 8 | Benbrook as the value play — FWISD zoning, an A-rated middle/high, and the price gap to Aledo | Neighborhoods | Priced-out Aledo buyers | "is benbrook a good place to live" | SHIPPED 2026-08-21 → /guides/living-in-benbrook | H | H | LIVE |
 | 9 | Weatherford College housing + the student-renter market | Renters | Students, parents | "weatherford college housing" | Have — needs refresh | M | L | UPDATE |
 | 10 | Property tax protest walkthrough for Parker vs Tarrant (deadlines differ) | Data & Tools | Owners | "protest property taxes parker county" | Sourceable (PCAD, TAD) — May deadline | H | M | HOLD (spring) |
@@ -52,6 +56,9 @@ is authored and green but undeployed is `BUILT`.
 ## Balance check (keep the mix honest across any ~2-week span)
 Schools · Buyers · Sellers · Renters · Relocation · Neighborhoods · Data. Do not ship two
 near-duplicate pages in a row. All five core clusters now touched: Schools (08-16),
-Neighborhoods (08-21), Buyers (08-22), **Sellers** (08-23). Next: the **~Sept 1 month-roll**
-(specials / rent report / builder report), then #2 (2026 property-tax rates) as districts
-adopt; #6/#7 (Relocation/Renters) are the remaining balance gaps after the Data work.
+Neighborhoods (08-21), Buyers (08-22), **Sellers** (08-23), Buyers/Commutes (08-24, GSC-driven).
+Selection now starts from the GSC opportunity queue (`reports/seo/`, see
+`docs/SEO_GROWTH_SYSTEM.md`) — the calendar keeps the balance honest, the queue picks the work.
+Next: the **~Sept 1 month-roll** (specials / rent report / builder report), then #2 (2026
+property-tax rates) as districts adopt, with #13 (private-school tuition — live GSC signal)
+the strongest new-content candidate; #6 (Relocation) is the remaining balance gap.

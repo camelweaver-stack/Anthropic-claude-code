@@ -93,9 +93,17 @@ link fails the gate, so a new regression can't hide behind them.
 ## The daily loop
 1. **Review** — `find . -name '*.html' -not -path './.git/*' | wc -l`; skim the calendar.
 2. **Maintain** — run `editorial/staleness-scan.md`. If a fix outranks a new page, do the fix.
-3. **Select** — highest-utility item from the scored backlog in `EDITORIAL_CALENDAR.md`.
-   Keep cluster balance across buyers, sellers, renters, relocation, neighborhoods, schools.
-   Never ship two near-duplicate pages in a row.
+3. **Select** — read the latest opportunity queue in `reports/seo/` **first** (see
+   `docs/SEO_GROWTH_SYSTEM.md`), then the scored backlog in `EDITORIAL_CALENDAR.md`.
+   GSC evidence outranks editorial hunch: expand demonstrated winners and push pages
+   ranking 6–15 before starting fresh topics. Target mix over any ~2 weeks (tunable in
+   `data/seo/config.json → allocation`): 40% expand winners / 25% improve pos-6–20 pages /
+   20% new high-intent local / 10% maintain facts / 5% exploratory. Any brand-new page must
+   pass the seven-question gate in the growth-system doc. Keep cluster balance across
+   buyers, sellers, renters, relocation, neighborhoods, schools. Never ship two
+   near-duplicate pages in a row.
+   *When a fresh GSC export arrives:* `python3 scripts/seo_engine.py ingest <zip>` then
+   `report`; run `linkaudit` monthly. Log every meaningful SEO change with `log-event`.
 4. **Research** — source hierarchy below. Record every source URL + the date verified.
 5. **Produce** — author in `gen/pages_*.py`. Every page needs: direct answer up top, west
    Fort Worth corridor context (Willow Park, Hudson Oaks, Weatherford, Aledo, Benbrook, White
