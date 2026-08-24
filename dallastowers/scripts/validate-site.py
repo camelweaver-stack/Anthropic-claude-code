@@ -65,7 +65,8 @@ for f, s in site_pages.items():
 # --- 1b. literal regression strings (hard fail, no exemptions) ---
 LITERAL_REGRESSIONS = ["15% rental cap", "12-month minimum lease", "35 pounds", "$500 move fee",
     "$1,000 deposit", "no special assessments since 2019", "protected view", "nothing can be built",
-    "41 of 41", "real sales data", "closed-sale data", "Document set on file"]
+    "41 of 41", "real sales data", "closed-sale data", "Document set on file",
+    "Generally available", "treat this building as warrantable"]
 for f, s in site_pages.items():
     vt = visible_text(s)
     for lit in LITERAL_REGRESSIONS:
@@ -188,6 +189,18 @@ for f, s in site_pages.items():
     m=_re.search(r"Unit accounts\s*(\d+)\s*\(roll\)", vt)
     if m and _b.get("county_2026") and int(m.group(1))!=_b["county_2026"]["acct"]:
         fails.append(f"[units-consistency] {f}: register shows {m.group(1)} accounts, roll has {_b['county_2026']['acct']}")
+
+# --- 11. count semantics: roll account counts must not be labeled as physical units/residences ---
+for f, s in site_pages.items():
+    _b=_by_page.get(f)
+    if not _b or not _b.get("county_2026"): continue
+    acct=_b["county_2026"]["acct"]
+    for m in _re.finditer(r'class="kk">(Residences|Units)</div><div class="kvv">(\d+)</div>', s):
+        if int(m.group(2))==acct:
+            fails.append(f"[count-semantics] {f}: roll account count {acct} labeled '{m.group(1)}' — label it as roll/matched accounts")
+    for m in _re.finditer(r'>(Units|Residences)</span><span class="v">(\d+)</span>', s):
+        if int(m.group(2))==acct:
+            fails.append(f"[count-semantics] {f}: roll account count {acct} labeled '{m.group(1)}'")
 
 # --- 7. duplicate titles ---
 titles = {}
