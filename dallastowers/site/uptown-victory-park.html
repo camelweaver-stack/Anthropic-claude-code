@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uptown &amp; Victory Park Condos — Neighborhood File | Dallas Towers</title><meta name="description" content="The Uptown and Victory Park district file: every condo building on file, from the W and the House to 1999 McKinney."><link rel="canonical" href="https://dallastowers.com/uptown-victory-park.html"><link rel="icon" type="image/svg+xml" href="favicon.svg"><meta property="og:title" content="Uptown & Victory Park District File — Dallas Towers"><meta property="og:type" content="website"><meta property="og:url" content="https://dallastowers.com/uptown-victory-park.html"><meta property="og:image" content="https://dallastowers.com/og-card.png"><meta property="og:description" content="The district file."><meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --overcast:#F1F3F2; --paper:#FAFBFA; --ink:#1C2B33; --ink-soft:#46565E;
+    --line:#C9CFCC; --dallas:#2F5D7C; --dallas-tint:#E3EBF1; --fw:#8A5F1D; --fw-tint:#F3EADA;
+    --display:'Big Shoulders Display',sans-serif; --body:'Source Serif 4',serif; --mono:'IBM Plex Mono',monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--overcast);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.65}
+  a{color:inherit;text-decoration:none}
+  a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--dallas);outline-offset:3px}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  header{border-bottom:1px solid var(--line);background:var(--overcast);position:sticky;top:0;z-index:50}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-family:var(--display);font-weight:700;font-size:26px;letter-spacing:.04em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+  .logo .mark{display:inline-block;width:18px;height:26px;background:
+    linear-gradient(var(--ink),var(--ink)) left/6px 100% no-repeat,
+    linear-gradient(var(--dallas),var(--dallas)) center/4px 70% no-repeat,
+    linear-gradient(var(--fw),var(--fw)) right/5px 85% no-repeat}
+  .navlinks{display:flex;gap:28px;font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase}
+  .navlinks a{color:var(--ink-soft)} .navlinks a:hover{color:var(--ink)}
+  .nav-cta{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;border:1.5px solid var(--ink);padding:9px 16px}
+  .nav-cta:hover{background:var(--ink);color:var(--paper)}
+  @media(max-width:860px){.navlinks{display:none}}
+
+  .crumb{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);padding:26px 0 0}
+  .hoodhead{padding:16px 0 0}
+  .citytag{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;display:inline-block;padding:5px 10px;background:var(--dallas);color:var(--paper);margin-bottom:16px}
+  h1{font-family:var(--display);font-weight:600;font-size:clamp(42px,6.5vw,80px);text-transform:uppercase;line-height:.98;max-width:14ch}
+  .hoodhead .lede{color:var(--ink-soft);margin-top:16px;max-width:62ch;font-size:18.5px}
+  .hoodhead .lede strong{color:var(--ink)}
+
+  .stripe{margin-top:32px;background:var(--paper);border:1px solid var(--line);display:grid;grid-template-columns:repeat(5,1fr)}
+  .stripe div{padding:16px;border-right:1px solid var(--line)}
+  .stripe div:last-child{border-right:0}
+  .stripe .k{font-family:var(--mono);font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-soft)}
+  .stripe .v{font-family:var(--display);font-size:30px;font-weight:600;margin-top:4px}
+  .stripe .d{font-size:12.5px;color:var(--ink-soft)}
+  @media(max-width:860px){.stripe{grid-template-columns:1fr 1fr}.stripe div:nth-child(2n){border-right:0}.stripe div{border-bottom:1px solid var(--line)}}
+
+  /* Plan-view map */
+  .mapblock{margin-top:48px;background:var(--paper);border:1px solid var(--line);position:relative;overflow:hidden}
+  .mapcap{position:absolute;top:16px;left:20px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+  .mapreadout{position:absolute;top:16px;right:20px;text-align:right;font-family:var(--mono);font-size:12px;min-height:34px}
+  .mapreadout .bn{font-family:var(--display);font-size:19px;font-weight:700;text-transform:uppercase;display:block}
+  .mapreadout .bs{color:var(--ink-soft);font-size:11px}
+  svg .street{stroke:var(--line);stroke-width:8;fill:none;stroke-linecap:round}
+  svg .street.major{stroke-width:14}
+  svg .stname{font-family:var(--mono);font-size:10px;fill:var(--ink-soft);letter-spacing:.08em;text-transform:uppercase}
+  svg .fp{fill:var(--dallas-tint);stroke:var(--dallas);stroke-width:1.4;cursor:pointer;transition:fill .15s}
+  svg .fp:hover,svg .fp.hot{fill:var(--dallas)}
+  svg .fpnum{font-family:var(--mono);font-size:11px;fill:var(--ink);font-weight:500;pointer-events:none}
+  svg .fp:hover+.fpnum{fill:var(--paper)}
+  svg .park{fill:#E4EBE2;stroke:#B9C8B4;stroke-width:1}
+  svg .parkname{font-family:var(--mono);font-size:9.5px;fill:#7d8f78;letter-spacing:.06em;text-transform:uppercase}
+
+  section.f{margin:56px 0}
+  section.f h2{font-family:var(--display);font-size:clamp(26px,3vw,38px);font-weight:600;text-transform:uppercase;padding-bottom:12px;border-bottom:2px solid var(--ink);margin-bottom:22px;display:flex;justify-content:space-between;align-items:baseline}
+  section.f h2 .sn{font-family:var(--mono);font-size:11px;color:var(--ink-soft);letter-spacing:.1em;font-weight:400}
+  section.f>p{color:var(--ink-soft);max-width:68ch;margin-bottom:14px}
+  section.f>p strong{color:var(--ink)}
+
+  /* Building roster rows */
+  .roster{background:var(--paper);border:1px solid var(--line)}
+  .ros{display:grid;grid-template-columns:44px 1.8fr 1fr 1fr 1fr 1fr .8fr;align-items:center;border-bottom:1px solid var(--line);transition:background .12s}
+  .ros:last-child{border-bottom:0}
+  .ros:hover{background:var(--dallas-tint)}
+  .ros>div{padding:15px 14px;font-size:14.5px}
+  .ros .num{font-family:var(--mono);font-size:12px;color:var(--ink-soft)}
+  .ros .bn{font-family:var(--display);font-size:20px;font-weight:700;text-transform:uppercase}
+  .ros .sub{font-size:13px;color:var(--ink-soft)}
+  .ros .m{font-family:var(--mono);font-size:13px}
+  .ros .k{font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);display:block;margin-bottom:2px}
+  .ros .filelink{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;border-bottom:1.5px solid var(--ink);padding-bottom:1px}
+  @media(max-width:860px){
+    .ros{grid-template-columns:44px 1fr 1fr}
+    .ros>div:nth-child(4),.ros>div:nth-child(5),.ros>div:nth-child(6){display:none}
+  }
+
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  @media(max-width:760px){.twocol{grid-template-columns:1fr}}
+  .panel{background:var(--paper);border:1px solid var(--line);padding:22px 24px}
+  .panel h3{font-family:var(--display);font-size:21px;font-weight:700;text-transform:uppercase;margin-bottom:10px}
+  .panel p{color:var(--ink-soft);font-size:15.5px;margin-bottom:10px}
+  .panel p strong{color:var(--ink)}
+  .kv{list-style:none}
+  .kv li{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-top:1px solid var(--line);font-size:15px}
+  .kv li .k{color:var(--ink-soft)} .kv li .v{font-family:var(--mono);font-size:13.5px;text-align:right}
+
+  details{background:var(--paper);border:1px solid var(--line);margin-bottom:-1px}
+  summary{cursor:pointer;padding:16px 18px;font-weight:600;font-size:16px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+  summary::after{content:"+";font-family:var(--mono);color:var(--ink-soft)}
+  details[open] summary::after{content:"–"}
+  details p{padding:0 18px 16px;color:var(--ink-soft);max-width:68ch}
+
+  .alerts{background:var(--ink);color:var(--paper);padding:34px 32px 38px}
+  .alerts h3{font-family:var(--display);font-size:26px;font-weight:600;text-transform:uppercase}
+  .alerts p{color:#B9C4C2;font-size:15px;margin-top:8px;max-width:60ch}
+  .alerts form{margin-top:18px;display:flex;gap:10px;max-width:520px}
+  .alerts input{flex:1;background:transparent;border:1px solid #4b5a61;color:var(--paper);padding:13px 14px;font-family:var(--body);font-size:15px}
+  .alerts input::placeholder{color:#8b9793}
+  .alerts button{background:var(--paper);color:var(--ink);border:0;padding:0 22px;font-family:var(--mono);font-size:12.5px;letter-spacing:.07em;text-transform:uppercase;cursor:pointer}
+  .alerts .fine{font-family:var(--mono);font-size:10.5px;color:#7e8c8a;margin-top:12px}
+  @media(max-width:600px){.alerts form{flex-direction:column}.alerts button{padding:13px}}
+
+  footer{border-top:1px solid var(--line);padding:36px 0 56px}
+  .foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.05em;color:var(--ink-soft);text-transform:uppercase}
+.alerts p{color:#D8DEDC!important}.alerts label{color:#B7C2BF}.fine{color:#B7C2BF!important}.tscroll{overflow-x:auto;background:var(--paper);border:1px solid var(--line)}.ctable{width:100%;border-collapse:collapse;min-width:680px}.ctable th{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);background:var(--overcast)}.ctable td{padding:8px 10px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:12.5px;white-space:nowrap}.ctable tr:last-child td{border-bottom:0}.ctable td:first-child{font-family:var(--body);font-size:14.5px;white-space:normal}.ctable td:first-child a{border-bottom:1px solid var(--line)}.tnote{font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);margin-top:8px}</style>
+<!-- PIXEL-SLOT: paste retargeting snippet here --><!-- ANALYTICS-SLOT: paste analytics snippet here --><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Anastasia Weaver Media", "url": "https://dallastowers.com/", "description": "Independent publisher of sourced local housing research."}</script></head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class='logo' href='/'><span class="mark" aria-hidden="true"></span>Dallas Towers</a>
+    <nav class="navlinks" aria-label="Primary">
+      <a href='/dallas'>Dallas</a><a href='/fort-worth'>Fort Worth</a><a href='/buildings'>Buildings</a><a href='/neighborhoods'>Neighborhoods</a><a href='/market-data'>Market Data</a><a href='/community'>Community</a>
+    </nav>
+    <a class='nav-cta' href='/new-developments'>New developments</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <p class="crumb"><a href='/neighborhoods'>Neighborhoods</a> / <a href='/dallas'>Dallas</a> / Uptown &amp; Victory Park</p>
+
+  <div class="hoodhead">
+    <span class="citytag">Dallas</span>
+    <h1>Uptown &amp; Victory Park</h1><p style="font-size:.8rem;color:#666;border-bottom:1px dashed #ccc;padding:0 0 8px;margin:6px 0 14px">Published by <strong>Anastasia Weaver Media</strong> · Independent local research, no listings, no pay-for-placement · Updated August 24, 2026</p>
+    <p class="lede"><strong>The deepest condo market in Texas.</strong> Thirty-one named buildings in under two square miles — from 1980s Turtle Creek–adjacent classics to the glass towers of Harwood and the arena district. Walkable to Katy Trail, McKinney Avenue, and the American Airlines Center.</p>
+  </div>
+
+  <div class="stripe" aria-label="Neighborhood snapshot">
+    <div><span class="k">Buildings</span><span class="v">31</span><span class="d">named condo towers</span></div>
+    <div><span class="k">Median price</span><span class="v">$612K</span><span class="d">trailing 90 days</span></div>
+    <div><span class="k">Avg $/SF</span><span class="v">$574</span><span class="d">closed resales</span></div>
+    <div><span class="k">Avg dues</span><span class="v">$1.16</span><span class="d">per sf / month</span></div>
+    <div><span class="k">Days on mkt</span><span class="v">49</span><span class="d">high-rise resale</span></div>
+  </div>
+
+  <!-- Signature: plan-view map -->
+  <div class="mapblock">
+    <p class="mapcap">Fig. 02 — Uptown &amp; Victory Park, building footprints marked</p>
+    <div class="mapreadout" id="mr" aria-live="polite"><span class="bn">The district</span><span class="bs">hover or tap a footprint</span></div>
+    <svg viewBox="0 0 1180 420" width="100%" role="img" aria-label="Drawn plan map of Uptown and Victory Park with condo building footprints marked">
+      <!-- park -->
+      <path class="park" d="M20,40 L300,20 L560,55 L560,95 L290,70 L20,85 Z"/>
+      <text class="parkname" x="150" y="55">Katy Trail</text>
+      <path class="park" d="M950,300 L1160,290 L1160,400 L940,400 Z"/>
+      <text class="parkname" x="1010" y="352">Klyde Warren</text>
+      <!-- streets -->
+      <path class="street major" d="M0,150 C300,130 700,160 1180,140"/>
+      <text class="stname" x="520" y="136">McKinney Ave</text>
+      <path class="street" d="M0,250 C350,235 750,260 1180,240"/>
+      <text class="stname" x="500" y="232">Cedar Springs Rd</text>
+      <path class="street major" d="M160,0 C175,150 150,300 170,420"/>
+      <text class="stname" x="182" y="330" transform="rotate(88 182 330)">Harwood St</text>
+      <path class="street" d="M420,0 C430,140 415,300 428,420"/>
+      <text class="stname" x="442" y="320" transform="rotate(88 442 320)">Olive St</text>
+      <path class="street" d="M700,0 C712,150 695,300 708,420"/>
+      <text class="stname" x="722" y="316" transform="rotate(88 722 316)">Houston St</text>
+      <path class="street major" d="M0,360 C400,345 800,370 1180,352"/>
+      <text class="stname" x="330" y="342">Woodall Rodgers Fwy</text>
+      <!-- footprints -->
+      <g id="fps">
+        <rect class="fp" tabindex="0" x="210" y="90" width="46" height="34" data-n="Azure" data-s="2007 · 31 fl · $1.18/sf"/>
+        <text class="fpnum" x="226" y="112">01</text>
+        <rect class="fp" tabindex="0" x="290" y="170" width="42" height="42" data-n="Bleu Ciel" data-s="2017 · 33 fl · $1.28/sf"/>
+        <text class="fpnum" x="304" y="196">02</text>
+        <rect class="fp" tabindex="0" x="560" y="190" width="40" height="34" data-n="The McKinney" data-s="2021 · 20 fl · $1.22/sf"/>
+        <text class="fpnum" x="573" y="212">03</text>
+        <rect class="fp" tabindex="0" x="740" y="270" width="46" height="40" data-n="The House" data-s="2008 · 28 fl · $1.10/sf"/>
+        <text class="fpnum" x="756" y="295">04</text>
+        <rect class="fp" tabindex="0" x="820" y="180" width="44" height="36" data-n="W Residences" data-s="2006 · 33 fl · $1.35/sf"/>
+        <text class="fpnum" x="835" y="203">05</text>
+        <rect class="fp" tabindex="0" x="905" y="255" width="38" height="34" data-n="One Uptown" data-s="2017 · 20 fl · rentals + condos"/>
+        <text class="fpnum" x="917" y="277">06</text>
+      </g>
+    </svg>
+  </div>
+
+  <section class="f" id="roster">
+    <h2>The buildings <span class="sn">§ 01 · 6 of 31 shown</span></h2>
+    <div class="roster">
+      <div class="ros"><div class="num">01</div><div><a class="bn" href="w-dallas-residences.html"Azure</a><p class="sub">2900 McKinnon St · Harwood</p></div>
+        <div><span class="k">Built / Fl</span><span class="m">2007 · 31</span></div><div><span class="k">Units</span><span class="m">114</span></div>
+        <div><span class="k">Dues $/sf</span><span class="m">$1.18</span></div><div><span class="k">Avg $/sf</span><span class="m">$602</span></div>
+        <div><span class="m" style="color:var(--ink-soft)">—</span></div></div>
+      <div class="ros"><div class="num">02</div><div><a class='bn' href='/bleu-ciel'>Bleu Ciel</a><p class="sub">3130 N Harwood St · Harwood</p></div>
+        <div><span class="k">Built / Fl</span><span class="m">2017 · 33</span></div><div><span class="k">Units</span><span class="m">158</span></div>
+        <div><span class="k">Dues $/sf</span><span class="m">$1.28</span></div><div><span class="k">Avg $/sf</span><span class="m">$721</span></div>
+        <div><a class='filelink' href='/bleu-ciel'>File →</a></div></div>
+      <div class="ros"><div class="num">03</div><div><span>The McKinney</span><p class="sub">3232 McKinney Ave</p></div>
+        <div><span class="k">Built / Fl</span><span class="m">2021 · 20</span></div><div><span class="k">Units</span><span class="m">68</span></div>
+        <div><span class="k">Dues $/sf</span><span class="m">$1.22</span></div><div><span class="k">Avg $/sf</span><span class="m">$688</span></div>
+        <div><span class="m" style="color:var(--ink-soft)">Rental tower — outside registry scope</span></div></div>
+      <div class="ros"><div class="num">04</div><div><a class='bn' href='/the-house'>The House</a><p class="sub">2200 Victory Ave · Victory Park</p></div>
+        <div><span class="k">Built / Fl</span><span class="m">2008 · 28</span></div><div><span class="k">Units</span><span class="m">143</span></div>
+        <div><span class="k">Dues $/sf</span><span class="m">$1.10</span></div><div><span class="k">Avg $/sf</span><span class="m">$548</span></div>
+        <div><a class='filelink' href='/the-house'>File →</a></div></div>
+      <div class="ros"><div class="num">05</div><div><a class='bn' href='/w-dallas-residences'>W Residences</a><p class="sub">2430 Victory Park Ln</p></div>
+        <div><span class="k">Built / Fl</span><span class="m">2006 · 33</span></div><div><span class="k">Units</span><span class="m">144</span></div>
+        <div><span class="k">Dues $/sf</span><span class="m">$1.35</span></div><div><span class="k">Avg $/sf</span><span class="m">$571</span></div>
+        <div><a class='filelink' href='/the-house'>File →</a></div></div>
+      <div class="ros"><div class="num">06</div><div><span>One Uptown</span><p class="sub">2619 McKinney Ave</p></div>
+        <div><span class="k">Built / Fl</span><span class="m">2017 · 20</span></div><div><span class="k">Units</span><span class="m">198</span></div>
+        <div><span class="k">Dues $/sf</span><span class="m">—</span></div><div><span class="k">Avg $/sf</span><span class="m">—</span></div>
+        <div><span class="m" style="color:var(--ink-soft)">Rental tower — outside registry scope</span></div></div>
+    </div>
+  </section>
+
+  <section class="f"><h2>The county file <span class="sn">&sect; CR</span></h2><p>The district&rsquo;s registry buildings &mdash; Uptown, Victory Park, and the Harwood blocks &mdash; against the 2026 certified roll.</p><div class="tscroll"><table class="ctable"><thead><tr><th>Building</th><th>District</th><th>Era</th><th>Fl</th><th>Units</th><th>Own-occ</th><th>Median SF</th><th>Median assessed</th><th>$/SF med</th><th>Deeds 12&nbsp;mo</th></tr></thead><tbody><tr><td><a href='/parkside-condominiums'>Parkside Condominiums</a></td><td>Uptown</td><td>1983</td><td>&mdash;</td><td>75</td><td>71%</td><td>890</td><td>$218,500</td><td>$235</td><td>2</td></tr><tr><td><a href='/mercer-square'>Mercer Square</a></td><td>Uptown</td><td>2006</td><td>&mdash;</td><td>75</td><td>64%</td><td>1,027</td><td>$369,000</td><td>$350</td><td>&mdash;</td></tr><tr><td><a href='/588-lofts'>588 Lofts</a></td><td>Uptown</td><td>1998</td><td>5</td><td>104</td><td>64%</td><td>1,073</td><td>$429,200</td><td>$375</td><td>7</td></tr><tr><td><a href='/victory-park-terrace'>Victory Park Terrace</a></td><td>Victory Park</td><td>2005</td><td>&mdash;</td><td>81</td><td>75%</td><td>1,206</td><td>$447,300</td><td>$359</td><td>2</td></tr><tr><td><a href='/la-tour'>La Tour</a></td><td>Uptown</td><td>1981</td><td>24</td><td>95</td><td>76%</td><td>1,353</td><td>$595,320</td><td>$415</td><td>11</td></tr><tr><td><a href='/the-house'>The House</a></td><td>Victory Park</td><td>2010</td><td>28</td><td>117</td><td>80%</td><td>1,702</td><td>$807,760</td><td>$503</td><td>7</td></tr><tr><td><a href='/w-dallas-residences'>W Dallas Residences</a></td><td>Victory Park</td><td>2006</td><td>33</td><td>131</td><td>60%</td><td>1,652</td><td>$874,260</td><td>$540</td><td>10</td></tr><tr><td><a href='/1999-mckinney'>1999 McKinney</a></td><td>Uptown</td><td>2000</td><td>18</td><td>57</td><td>81%</td><td>2,421</td><td>$900,990</td><td>$355</td><td>8</td></tr><tr><td><a href='/azure'>Azure</a></td><td>Harwood</td><td>2007</td><td>31</td><td>138</td><td>77%</td><td>1,512</td><td>$975,430</td><td>$601</td><td>21</td></tr><tr><td><a href='/2011-cedar-springs-lofts'>2011 Cedar Springs Lofts</a></td><td>Uptown</td><td>1999</td><td>&mdash;</td><td>42</td><td>81%</td><td>2,354</td><td>$1,045,310</td><td>$445</td><td>3</td></tr><tr><td><a href='/bleu-ciel'>Bleu Ciel</a></td><td>Harwood</td><td>2017</td><td>33</td><td>133</td><td>66%</td><td>1,766</td><td>$1,375,000</td><td>$740</td><td>36</td></tr><tr><td><a href='/the-tower-residences-ritz-carlton'>The Tower Residences (Ritz-Carlton)</a></td><td>Uptown</td><td>2007–09</td><td>23</td><td>92</td><td>71%</td><td>2,164</td><td>$2,179,630</td><td>$990</td><td>8</td></tr><tr><td><a href='/residences-at-the-ritz-carlton-i'>Residences at The Ritz-Carlton I</a></td><td>Uptown</td><td>2007</td><td>21</td><td>66</td><td>62%</td><td>2,614</td><td>$2,930,805</td><td>$1,050</td><td>9</td></tr><tr><td><a href='/the-residences-at-the-stoneleigh'>The Residences at the Stoneleigh</a></td><td>Uptown</td><td>2009</td><td>22</td><td>64</td><td>86%</td><td>3,368</td><td>$3,594,710</td><td>$914</td><td>4</td></tr><tr><td><a href='/metropolitan-club-at-hotel-zaza'>Metropolitan Club at Hotel ZaZa</a></td><td>Uptown</td><td>2000s</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td></tr><tr><td><a href='/the-belvedere'>The Belvedere</a></td><td>Uptown / Arts District edge</td><td>1999</td><td>3</td><td>102</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td></tr></tbody></table></div><p class="tnote">Source: Dallas Towers registry + 2026 certified county rolls, ordered by median assessed value. Own-occ = owner-occupied share of unit accounts; deeds = trailing-12-month recorded transfers. &mdash; = not on file.</p><p>Across the 14 buildings here with certified county files &mdash; 1,270 unit accounts &mdash; median assessed values run $218,500 (Parkside Condominiums) to $3,594,710 (The Residences at the Stoneleigh). Owner-occupancy spans 60&ndash;86%. The group recorded 128 deed transfers in the trailing twelve months.</p><p>Against the full registry &mdash; 61 county-filed buildings, median assessed $552,530, median unit 1,646 sf, median owner-occupancy 77% &mdash; this set sits above on value with a larger typical unit at 1,677 sf.</p><p>County files are pending for Metropolitan Club at Hotel ZaZa, The Belvedere.</p></section>
+<section class="f">
+    <h2>Reading this market <span class="sn">§ 02</span></h2>
+    <div class="twocol">
+      <div class="panel">
+        <h3>What moves price here</h3>
+        <p><strong>Trail and park adjacency is the premium.</strong> Katy Trail–facing units clear $75–$120/sf above identical plans across the street, and Klyde Warren proximity does the same at the district's south end.</p>
+        <p>Vintage matters less than management: several 1980s Turtle Creek–edge buildings with strong reserves outperform 2000s towers with dues creep.</p>
+      </div>
+      <div class="panel">
+        <h3>What to check before you commit</h3>
+        <ul class="kv">
+          <li><span class="k">Leasing caps</span><span class="v">9 of 31 buildings restrict</span></li>
+          <li><span class="k">Dues spread</span><span class="v">$0.68 – $1.42 /sf</span></li>
+          <li><span class="k">Special assessments (5 yr)</span><span class="v">6 buildings on record</span></li>
+          <li><span class="k">Right of first refusal</span><span class="v">2 buildings retain it</span></li>
+          <li><span class="k">New supply</span><span class="v">2 towers u/c nearby</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="f">
+    <h2>District FAQ <span class="sn">§ 03</span></h2>
+    <details><summary>Is Uptown or Victory Park better for resale?</summary><p>Uptown's McKinney corridor has the longer track record and deeper buyer pool; Victory Park is newer, more event-driven, and more volatile — units there swing more with the arena calendar and new supply. Trail-adjacent Uptown has been the steadiest appreciation in the district.</p></details>
+    <details><summary>What do HOA dues run in Uptown high-rises?</summary><p>The district spread is roughly $0.68–$1.42 per square foot monthly. Full-service towers with valet and concierge cluster at $1.10+; boutique and mid-rise buildings run under $1.00.</p></details>
+    <details><summary>Can I buy a condo here and rent it out?</summary><p>In most buildings yes, but nine of the thirty-one restrict leasing with caps or minimum terms — check the building file before writing an offer if rental flexibility matters to you.</p></details>
+  </section>
+
+  <section class="f">
+    <h2>Community &amp; everyday life <span class="sn">§ 04</span></h2>
+    <p><strong>This district runs on its parks.</strong> Klyde Warren Park anchors the south end with free year-round programming — fitness classes, food trucks, live music, watch parties — and its free off-leash dog zone, My Best Friend's Park. The Katy Trail forms the 3.5-mile spine north to Knox and Mockingbird (leashed dogs welcome), Griggs Park adds 8 historic acres in the heart of Uptown, and Mutts Canine Cantina pairs membership off-leash parks with a bar for the humans. Full details, the annual events calendar, and how to plug into HOA and district meetings live in the <a href='/community' style='border-bottom:1.5px solid var(--ink)'>community file</a>.</p>
+  </section>
+
+  <section class="f" id="alerts">
+    <div class="alerts">
+      <h3>Track Uptown &amp; Victory Park</h3>
+      <p>One email a month: every recorded transfer, new listing, dues change, and construction update across all 31 buildings in the district.</p>
+      <form data-netlify="true" action='/thanks' method='POST' name='registry-updates'><input type="hidden" name="form-name" value="registry-updates"><input type="hidden" name="landing_url" value=""><input type="hidden" name="referrer" value=""><input type="hidden" name="utm_source" value=""><input type="hidden" name="utm_medium" value=""><input type="hidden" name="utm_campaign" value=""><input type="hidden" name="source" value="uptown-victory-park.html"><p style="display:none"><label>Leave blank<input name="bot-field"></label></p>
+        <input type="email" name="email" required placeholder="Email address" aria-label="Email address">
+        <button type="submit">Track this district</button>
+      </form>
+      <p class="fine">One email a month. Unsubscribe anytime.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Dallas Towers · Independent building research</span>
+    <span>Dallas — Fort Worth, Texas</span>
+  </div>
+</footer>
+
+<script>
+  const mr=document.getElementById('mr');
+  const idle=()=>{mr.innerHTML='<span class="bn">The district</span><span class="bs">hover or tap a footprint</span>'};
+  document.querySelectorAll('.fp').forEach(f=>{
+    const show=()=>{f.classList.add('hot');mr.innerHTML='<span class="bn">'+f.dataset.n+'</span><span class="bs">'+f.dataset.s+'</span>'};
+    const hide=()=>{f.classList.remove('hot');idle()};
+    f.addEventListener('mouseenter',show);f.addEventListener('focus',show);
+    f.addEventListener('mouseleave',hide);f.addEventListener('blur',hide);
+    f.addEventListener('click',show);
+  });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VLBFHWJ3NX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VLBFHWJ3NX');
+</script><script>(function(){try{var ss=sessionStorage,q=new URLSearchParams(location.search);if(!ss.getItem('dt_land')){ss.setItem('dt_land',location.pathname+location.search);ss.setItem('dt_ref',document.referrer||'');['utm_source','utm_medium','utm_campaign'].forEach(function(k){if(q.get(k))ss.setItem('dt_'+k,q.get(k));});}document.querySelectorAll('form[method="POST"]').forEach(function(f){function st(n,v){var i=f.querySelector('input[name="'+n+'"]');if(i&&v)i.value=v;}st('landing_url',ss.getItem('dt_land'));st('referrer',ss.getItem('dt_ref'));st('utm_source',ss.getItem('dt_utm_source'));st('utm_medium',ss.getItem('dt_utm_medium'));st('utm_campaign',ss.getItem('dt_utm_campaign'));});}catch(e){}})();</script></body>
+</html>

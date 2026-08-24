@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Downtown Fort Worth &amp; Sundance Square Condos — Neighborhood File | Dallas Towers</title><meta name="description" content="The downtown Fort Worth district file: the Tower, Omni Residences, Le Bijou, T&P Lofts, and the Sundance Square condo core."><link rel="canonical" href="https://dallastowers.com/downtown-fort-worth.html"><link rel="icon" type="image/svg+xml" href="favicon.svg"><meta property="og:title" content="Downtown Fort Worth District File — Dallas Towers"><meta property="og:type" content="website"><meta property="og:url" content="https://dallastowers.com/downtown-fort-worth.html"><meta property="og:image" content="https://dallastowers.com/og-card.png"><meta property="og:description" content="The district file."><meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --overcast:#F1F3F2; --paper:#FAFBFA; --ink:#1C2B33; --ink-soft:#46565E;
+    --line:#C9CFCC; --dallas:#2F5D7C; --dallas-tint:#E3EBF1; --fw:#8A5F1D; --fw-tint:#F3EADA;
+    --display:'Big Shoulders Display',sans-serif; --body:'Source Serif 4',serif; --mono:'IBM Plex Mono',monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--overcast);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.65}
+  a{color:inherit;text-decoration:none}
+  a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--dallas);outline-offset:3px}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  header{border-bottom:1px solid var(--line);background:var(--overcast);position:sticky;top:0;z-index:50}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-family:var(--display);font-weight:700;font-size:26px;letter-spacing:.04em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+  .logo .mark{display:inline-block;width:18px;height:26px;background:
+    linear-gradient(var(--ink),var(--ink)) left/6px 100% no-repeat,
+    linear-gradient(var(--dallas),var(--dallas)) center/4px 70% no-repeat,
+    linear-gradient(var(--fw),var(--fw)) right/5px 85% no-repeat}
+  .navlinks{display:flex;gap:28px;font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase}
+  .navlinks a{color:var(--ink-soft)} .navlinks a:hover{color:var(--ink)}
+  .nav-cta{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;border:1.5px solid var(--ink);padding:9px 16px}
+  .nav-cta:hover{background:var(--ink);color:var(--paper)}
+  @media(max-width:860px){.navlinks{display:none}}
+
+  .crumb{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);padding:26px 0 0}
+  .hoodhead{padding:16px 0 0}
+  .citytag{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;display:inline-block;padding:5px 10px;background:var(--fw);color:var(--paper);margin-bottom:16px}
+  h1{font-family:var(--display);font-weight:600;font-size:clamp(42px,6.5vw,80px);text-transform:uppercase;line-height:.98;max-width:14ch}
+  .hoodhead .lede{color:var(--ink-soft);margin-top:16px;max-width:62ch;font-size:18.5px}
+  .hoodhead .lede strong{color:var(--ink)}
+
+  .stripe{margin-top:32px;background:var(--paper);border:1px solid var(--line);display:grid;grid-template-columns:repeat(5,1fr)}
+  .stripe div{padding:16px;border-right:1px solid var(--line)}
+  .stripe div:last-child{border-right:0}
+  .stripe .k{font-family:var(--mono);font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-soft)}
+  .stripe .v{font-family:var(--display);font-size:30px;font-weight:600;margin-top:4px}
+  .stripe .d{font-size:12.5px;color:var(--ink-soft)}
+  @media(max-width:860px){.stripe{grid-template-columns:1fr 1fr}.stripe div:nth-child(2n){border-right:0}.stripe div{border-bottom:1px solid var(--line)}}
+
+  /* Plan-view map */
+  .mapblock{margin-top:48px;background:var(--paper);border:1px solid var(--line);position:relative;overflow:hidden}
+  .mapcap{position:absolute;top:16px;left:20px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+  .mapreadout{position:absolute;top:16px;right:20px;text-align:right;font-family:var(--mono);font-size:12px;min-height:34px}
+  .mapreadout .bn{font-family:var(--display);font-size:19px;font-weight:700;text-transform:uppercase;display:block}
+  .mapreadout .bs{color:var(--ink-soft);font-size:11px}
+  svg .street{stroke:var(--line);stroke-width:8;fill:none;stroke-linecap:round}
+  svg .street.major{stroke-width:14}
+  svg .stname{font-family:var(--mono);font-size:10px;fill:var(--ink-soft);letter-spacing:.08em;text-transform:uppercase}
+  svg .fp{fill:var(--fw-tint);stroke:var(--fw);stroke-width:1.4;cursor:pointer;transition:fill .15s}
+  svg .fp:hover,svg .fp.hot{fill:var(--fw)}
+  svg .fpnum{font-family:var(--mono);font-size:11px;fill:var(--ink);font-weight:500;pointer-events:none}
+  svg .fp:hover+.fpnum{fill:var(--paper)}
+  svg .park{fill:#E4EBE2;stroke:#B9C8B4;stroke-width:1}
+  svg .parkname{font-family:var(--mono);font-size:9.5px;fill:#7d8f78;letter-spacing:.06em;text-transform:uppercase}
+
+  section.f{margin:56px 0}
+  section.f h2{font-family:var(--display);font-size:clamp(26px,3vw,38px);font-weight:600;text-transform:uppercase;padding-bottom:12px;border-bottom:2px solid var(--ink);margin-bottom:22px;display:flex;justify-content:space-between;align-items:baseline}
+  section.f h2 .sn{font-family:var(--mono);font-size:11px;color:var(--ink-soft);letter-spacing:.1em;font-weight:400}
+  section.f>p{color:var(--ink-soft);max-width:68ch;margin-bottom:14px}
+  section.f>p strong{color:var(--ink)}
+
+  /* Building roster rows */
+  .roster{background:var(--paper);border:1px solid var(--line)}
+  .ros{display:grid;grid-template-columns:44px 1.8fr 1fr 1fr 1fr 1fr .8fr;align-items:center;border-bottom:1px solid var(--line);transition:background .12s}
+  .ros:last-child{border-bottom:0}
+  .ros:hover{background:var(--fw-tint)}
+  .ros>div{padding:15px 14px;font-size:14.5px}
+  .ros .num{font-family:var(--mono);font-size:12px;color:var(--ink-soft)}
+  .ros .bn{font-family:var(--display);font-size:20px;font-weight:700;text-transform:uppercase}
+  .ros .sub{font-size:13px;color:var(--ink-soft)}
+  .ros .m{font-family:var(--mono);font-size:13px}
+  .ros .k{font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);display:block;margin-bottom:2px}
+  .ros .filelink{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;border-bottom:1.5px solid var(--ink);padding-bottom:1px}
+  @media(max-width:860px){
+    .ros{grid-template-columns:44px 1fr 1fr}
+    .ros>div:nth-child(4),.ros>div:nth-child(5),.ros>div:nth-child(6){display:none}
+  }
+
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  @media(max-width:760px){.twocol{grid-template-columns:1fr}}
+  .panel{background:var(--paper);border:1px solid var(--line);padding:22px 24px}
+  .panel h3{font-family:var(--display);font-size:21px;font-weight:700;text-transform:uppercase;margin-bottom:10px}
+  .panel p{color:var(--ink-soft);font-size:15.5px;margin-bottom:10px}
+  .panel p strong{color:var(--ink)}
+  .kv{list-style:none}
+  .kv li{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-top:1px solid var(--line);font-size:15px}
+  .kv li .k{color:var(--ink-soft)} .kv li .v{font-family:var(--mono);font-size:13.5px;text-align:right}
+
+  details{background:var(--paper);border:1px solid var(--line);margin-bottom:-1px}
+  summary{cursor:pointer;padding:16px 18px;font-weight:600;font-size:16px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+  summary::after{content:"+";font-family:var(--mono);color:var(--ink-soft)}
+  details[open] summary::after{content:"–"}
+  details p{padding:0 18px 16px;color:var(--ink-soft);max-width:68ch}
+
+  .alerts{background:var(--ink);color:var(--paper);padding:34px 32px 38px}
+  .alerts h3{font-family:var(--display);font-size:26px;font-weight:600;text-transform:uppercase}
+  .alerts p{color:#B9C4C2;font-size:15px;margin-top:8px;max-width:60ch}
+  .alerts form{margin-top:18px;display:flex;gap:10px;max-width:520px}
+  .alerts input{flex:1;background:transparent;border:1px solid #4b5a61;color:var(--paper);padding:13px 14px;font-family:var(--body);font-size:15px}
+  .alerts input::placeholder{color:#8b9793}
+  .alerts button{background:var(--paper);color:var(--ink);border:0;padding:0 22px;font-family:var(--mono);font-size:12.5px;letter-spacing:.07em;text-transform:uppercase;cursor:pointer}
+  .alerts .fine{font-family:var(--mono);font-size:10.5px;color:#7e8c8a;margin-top:12px}
+  @media(max-width:600px){.alerts form{flex-direction:column}.alerts button{padding:13px}}
+
+  footer{border-top:1px solid var(--line);padding:36px 0 56px}
+  .foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.05em;color:var(--ink-soft);text-transform:uppercase}
+.alerts p{color:#D8DEDC!important}.alerts label{color:#B7C2BF}.fine{color:#B7C2BF!important}.tscroll{overflow-x:auto;background:var(--paper);border:1px solid var(--line)}.ctable{width:100%;border-collapse:collapse;min-width:680px}.ctable th{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);background:var(--overcast)}.ctable td{padding:8px 10px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:12.5px;white-space:nowrap}.ctable tr:last-child td{border-bottom:0}.ctable td:first-child{font-family:var(--body);font-size:14.5px;white-space:normal}.ctable td:first-child a{border-bottom:1px solid var(--line)}.tnote{font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);margin-top:8px}</style>
+<!-- PIXEL-SLOT: paste retargeting snippet here --><!-- ANALYTICS-SLOT: paste analytics snippet here --><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Anastasia Weaver Media", "url": "https://dallastowers.com/", "description": "Independent publisher of sourced local housing research."}</script></head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class='logo' href='/'><span class="mark" aria-hidden="true"></span>Dallas Towers</a>
+    <nav class="navlinks" aria-label="Primary">
+      <a href='/dallas'>Dallas</a><a href='/fort-worth'>Fort Worth</a><a href='/buildings'>Buildings</a><a href='/neighborhoods'>Neighborhoods</a><a href='/market-data'>Market Data</a><a href='/community'>Community</a>
+    </nav>
+    <a class='nav-cta' href='/new-developments'>New developments</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <p class="crumb"><a href='/neighborhoods'>Neighborhoods</a> / <a href='/fort-worth'>Fort Worth</a> / Downtown &amp; Sundance Square</p>
+
+  <div class="hoodhead">
+    <span class="citytag">Fort Worth</span>
+    <h1>Downtown &amp; Sundance Square</h1><p style="font-size:.8rem;color:#666;border-bottom:1px dashed #ccc;padding:0 0 8px;margin:6px 0 14px">Published by <strong>Anastasia Weaver Media</strong> · Independent local research, no listings, no pay-for-placement · Updated August 24, 2026</p>
+    <p class="lede"><strong>The most walkable downtown in Texas — and its best condo value.</strong> Nine named buildings around Sundance Square, anchored by converted towers with Art Deco bones and the Metroplex’s lowest cost of entry for true high-rise living.</p>
+  </div>
+
+  <div class="stripe" aria-label="Neighborhood snapshot">
+    <div><span class="k">Buildings</span><span class="v">9</span><span class="d">named condo buildings</span></div>
+    <div><span class="k">Median price</span><span class="v">$351K</span><span class="d">trailing 90 days</span></div>
+    <div><span class="k">Avg $/SF</span><span class="v">$338</span><span class="d">closed resales</span></div>
+    <div><span class="k">Avg dues</span><span class="v">$0.84</span><span class="d">per sf / month</span></div>
+    <div><span class="k">Days on mkt</span><span class="v">58</span><span class="d">high-rise resale</span></div>
+  </div>
+
+  <!-- Signature: plan-view map -->
+  <div class="mapblock">
+    <p class="mapcap">Fig. 03 — Downtown Fort Worth, building footprints marked</p>
+    <div class="mapreadout" id="mr" aria-live="polite"><span class="bn">The district</span><span class="bs">hover or tap a footprint</span></div>
+    <svg viewBox="0 0 1180 420" width="100%" role="img" aria-label="Drawn plan map of downtown Fort Worth with condo building footprints marked">
+      <path class="park" d="M20,20 L240,30 L250,140 L30,150 Z"/>
+      <text class="parkname" x="80" y="90">Trinity River</text>
+      <path class="park" d="M540,150 L660,150 L660,230 L540,230 Z"/>
+      <text class="parkname" x="558" y="194">Sundance Sq</text>
+      <path class="street major" d="M0,190 C300,180 700,195 1180,185"/>
+      <text class="stname" x="330" y="176">W 7th St</text>
+      <path class="street" d="M0,290 C350,280 750,295 1180,285"/>
+      <text class="stname" x="480" y="276">W 10th St</text>
+      <path class="street major" d="M470,0 C478,150 468,300 476,420"/>
+      <text class="stname" x="490" y="330" transform="rotate(88 490 330)">Main St</text>
+      <path class="street" d="M700,0 C708,150 698,300 706,420"/>
+      <text class="stname" x="720" y="326" transform="rotate(88 720 326)">Commerce St</text>
+      <path class="street" d="M290,0 C298,150 288,300 296,420"/>
+      <text class="stname" x="310" y="322" transform="rotate(88 310 322)">Throckmorton</text>
+      <g id="fps">
+        <rect class="fp" tabindex="0" x="310" y="215" width="46" height="40" data-n="The Tower" data-s="conv. 2005 · 37 fl · $0.76/sf"/>
+        <text class="fpnum" x="326" y="240">01</text>
+        <rect class="fp" tabindex="0" x="720" y="220" width="42" height="38" data-n="Omni Residences" data-s="2009 · 33 fl · $1.12/sf"/>
+        <text class="fpnum" x="734" y="244">02</text>
+        <rect class="fp" tabindex="0" x="500" y="90" width="40" height="34" data-n="Le Bijou" data-s="conv. 2007 · boutique · 24 units"/>
+        <text class="fpnum" x="513" y="112">03</text>
+        <rect class="fp" tabindex="0" x="800" y="120" width="38" height="34" data-n="Neil P at Burnett Park" data-s="conv. 2004 · lofts · 88 units"/>
+        <text class="fpnum" x="812" y="142">04</text>
+        <rect class="fp" tabindex="0" x="220" y="320" width="42" height="36" data-n="Texas & Pacific Lofts" data-s="conv. 2006 · deco · 149 units"/>
+        <text class="fpnum" x="234" y="343">05</text>
+      </g>
+    </svg>
+  </div>
+
+  <section class="f" id="roster">
+    <h2>The buildings <span class="sn">§ 01 · 5 of 9 shown</span></h2>
+    <div class="roster">
+      <div class="ros"><div class="num">01</div><div><a class='bn' href='/the-tower'>The Tower</a><p class="sub">500 Throckmorton St</p></div>
+        <div><span class="k">Built / Fl</span><span class="m">conv. 2005 · 37</span></div><div><span class="k">Units</span><span class="m">294</span></div>
+        <div><span class="k">Dues $/sf</span><span class="m">$0.76</span></div><div><span class="k">Avg $/sf</span><span class="m">$262</span></div>
+        <div><a class='filelink' href='/the-tower'>File →</a></div></div>
+      <div class="ros"><div class="num">02</div><div><a class='bn' href='/omni-fort-worth-residences'>Omni Residences</a><p class="sub">1300 Houston St</p></div>
+        <div><span class="k">Built / Fl</span><span class="m">2009 · 33</span></div><div><span class="k">Units</span><span class="m">97</span></div>
+        <div><span class="k">Dues $/sf</span><span class="m">$1.12</span></div><div><span class="k">Avg $/sf</span><span class="m">$441</span></div>
+        <div><a class='filelink' href='/omni-fort-worth-residences'>File →</a></div></div>
+      <div class="ros"><div class="num">03</div><div><a class='bn' href='/le-bijou'>Le Bijou</a><p class="sub">309 Main St</p></div>
+        <div><span class="k">Built / Fl</span><span class="m">conv. 2007 · 6</span></div><div><span class="k">Units</span><span class="m">24</span></div>
+        <div><span class="k">Dues $/sf</span><span class="m">$0.92</span></div><div><span class="k">Avg $/sf</span><span class="m">$378</span></div>
+        <div><a class='filelink' href='/le-bijou'>File →</a></div></div>
+      <div class="ros"><div class="num">04</div><div><a class='bn' href='/neil-p-at-burnett-park'>Neil P at Burnett Park</a><p class="sub">411 W 7th St</p></div>
+        <div><span class="k">Built / Fl</span><span class="m">conv. 2004 · 11</span></div><div><span class="k">Units</span><span class="m">88</span></div>
+        <div><span class="k">Dues $/sf</span><span class="m">$0.68</span></div><div><span class="k">Avg $/sf</span><span class="m">$248</span></div>
+        <div><a class='filelink' href='/neil-p-at-burnett-park'>File →</a></div></div>
+      <div class="ros"><div class="num">05</div><div><a class='bn' href='/texas-pacific-lofts'>Texas & Pacific Lofts</a><p class="sub">221 W Lancaster Ave</p></div>
+        <div><span class="k">Built / Fl</span><span class="m">conv. 2006 · 12</span></div><div><span class="k">Units</span><span class="m">149</span></div>
+        <div><span class="k">Dues $/sf</span><span class="m">$0.71</span></div><div><span class="k">Avg $/sf</span><span class="m">$231</span></div>
+        <div><a class='filelink' href='/texas-pacific-lofts'>File →</a></div></div>
+    </div>
+  </section>
+
+  <section class="f"><h2>The registry file <span class="sn">&sect; CR</span></h2><p>Downtown Fort Worth&rsquo;s registry buildings, in one read.</p><div class="tscroll"><table class="ctable"><thead><tr><th>Building</th><th>District</th><th>Era</th><th>Fl</th><th>Units</th><th>Type</th></tr></thead><tbody><tr><td><a href='/959-west-bluff'>959 West Bluff</a></td><td>Downtown FW area</td><td>—</td><td>&mdash;</td><td>&mdash;</td><td>Mid-rise</td></tr><tr><td><a href='/dickson-jenkins-lofts'>Dickson Jenkins Lofts</a></td><td>Downtown FW</td><td>—</td><td>&mdash;</td><td>&mdash;</td><td>Loft conversion</td></tr><tr><td><a href='/houston-place-lofts'>Houston Place Lofts</a></td><td>Downtown FW</td><td>conv. 2005 (built 1906)</td><td>9</td><td>30</td><td>Historic loft conversion</td></tr><tr><td><a href='/le-bijou'>Le Bijou</a></td><td>Downtown FW</td><td>2006</td><td>3</td><td>14</td><td>Luxury townhome condos</td></tr><tr><td><a href='/main-7'>Main 7</a></td><td>Downtown FW</td><td>—</td><td>&mdash;</td><td>&mdash;</td><td>Boutique</td></tr><tr><td><a href='/neil-p-at-burnett-park'>Neil P at Burnett Park</a></td><td>Downtown FW</td><td>conv. (built 1921)</td><td>11</td><td>88</td><td>Conversion</td></tr><tr><td><a href='/omni-fort-worth-residences'>Omni Fort Worth Residences</a></td><td>Downtown FW</td><td>2009</td><td>&mdash;</td><td>97</td><td>Hotel-branded · fl 16–32</td></tr><tr><td><a href='/pecan-place'>Pecan Place</a></td><td>Downtown FW</td><td>2004</td><td>4</td><td>9</td><td>Boutique low-rise</td></tr><tr><td><a href='/schaumburg-lofts'>Schaumburg Lofts</a></td><td>Downtown FW</td><td>—</td><td>&mdash;</td><td>&mdash;</td><td>Loft conversion</td></tr><tr><td><a href='/the-tower'>The Tower</a></td><td>Downtown FW</td><td>conv. 2005</td><td>35</td><td>300</td><td>Conversion</td></tr><tr><td><a href='/versailles'>Versailles</a></td><td>Downtown FW area</td><td>—</td><td>&mdash;</td><td>&mdash;</td><td>Mid-rise</td></tr></tbody></table></div><p class="tnote">Source: Dallas Towers registry files. Tarrant County roll reads are pending the next data pass; Dallas-side pages carry the certified-roll columns today. &mdash; = not on file.</p><p>11 buildings on file here, 538 units between them, built 1921&ndash;2009. The tallest on file is The Tower at 35 floors.</p><p>By form: 2 conversions, 2 mid-rises, 2 loft conversions, 1 hotel-branded · fl 16–32, 1 luxury townhome condos, 1 historic loft conversion, 1 boutique low-rise, 1 boutique.</p></section>
+<section class="f">
+    <h2>Reading this market <span class="sn">§ 02</span></h2>
+    <div class="twocol">
+      <div class="panel">
+        <h3>What moves price here</h3>
+        <p><strong>Trail and park adjacency is the premium.</strong> Katy Trail–facing units clear $75–$120/sf above identical plans across the street, and Klyde Warren proximity does the same at the district's south end.</p>
+        <p>Sundance Square walkability is the constant premium: units within two blocks of the square clear $40–$60/sf over the district edge.</p>
+      </div>
+      <div class="panel">
+        <h3>What to check before you commit</h3>
+        <ul class="kv">
+          <li><span class="k">Leasing caps</span><span class="v">2 of 9 buildings restrict</span></li>
+          <li><span class="k">Dues spread</span><span class="v">$0.62 – $1.12 /sf</span></li>
+          <li><span class="k">Special assessments (5 yr)</span><span class="v">3 buildings on record</span></li>
+          <li><span class="k">Right of first refusal</span><span class="v">1 building retains it</span></li>
+          <li><span class="k">New supply</span><span class="v">1 tower announced</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="f">
+    <h2>District FAQ <span class="sn">§ 03</span></h2>
+    <details><summary>Why are downtown Fort Worth condos so much cheaper than Dallas?</summary><p>Most of the inventory is early-2000s office and warehouse conversions rather than ground-up luxury towers, and Fort Worth’s condo buyer pool is thinner. You get true high-rise living from the low $200s/sf — the tradeoff is older building systems and fewer full-service amenities.</p></details>
+    <details><summary>What should I check before buying in a converted building?</summary><p>Reserve studies and assessment history matter more here than anywhere else in the Metroplex. Conversion-era elevators, plumbing risers, and facades come due at 20–25 years — exactly now. The building files flag each property’s record.</p></details>
+    <details><summary>Can I rent out a unit downtown?</summary><p>Most buildings allow leasing with 6–12 month minimums; two restrict it. Short-term rentals are prohibited by rule in every tracked building downtown, and the city’s STR registration rules apply on top.</p></details>
+  </section>
+
+  <section class="f">
+    <h2>Community &amp; everyday life <span class="sn">§ 04</span></h2>
+    <p><strong>Downtown's social calendar centers on Sundance Square</strong> — free plaza programming year-round, artisan markets at the Sundance Pavilion, and Bass Performance Hall as the permanent home of the symphony, ballet, opera, and the Van Cliburn competition. Each April the Main Street Arts Festival takes over 18 blocks (Texas' largest arts festival, 200+ juried artists) alongside the Fort Worth Art Fair on the plaza — residents should expect street closures the full week. The <a href='/community' style='border-bottom:1.5px solid var(--ink)'>community file</a> carries the calendar, parking notes, and how to plug into HOA and district meetings.</p>
+  </section>
+
+  <section class="f" id="alerts">
+    <div class="alerts">
+      <h3>Track Downtown Fort Worth</h3>
+      <p>One email a month: every recorded transfer, new listing, dues change, and construction update across all 9 buildings in the district.</p>
+      <form data-netlify="true" action='/thanks' method='POST' name='registry-updates'><input type="hidden" name="form-name" value="registry-updates"><input type="hidden" name="landing_url" value=""><input type="hidden" name="referrer" value=""><input type="hidden" name="utm_source" value=""><input type="hidden" name="utm_medium" value=""><input type="hidden" name="utm_campaign" value=""><input type="hidden" name="source" value="downtown-fort-worth.html"><p style="display:none"><label>Leave blank<input name="bot-field"></label></p>
+        <input type="email" name="email" required placeholder="Email address" aria-label="Email address">
+        <button type="submit">Track this district</button>
+      </form>
+      <p class="fine">One email a month. Unsubscribe anytime.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Dallas Towers · Independent building research</span>
+    <span>Dallas — Fort Worth, Texas</span>
+  </div>
+</footer>
+
+<script>
+  const mr=document.getElementById('mr');
+  const idle=()=>{mr.innerHTML='<span class="bn">The district</span><span class="bs">hover or tap a footprint</span>'};
+  document.querySelectorAll('.fp').forEach(f=>{
+    const show=()=>{f.classList.add('hot');mr.innerHTML='<span class="bn">'+f.dataset.n+'</span><span class="bs">'+f.dataset.s+'</span>'};
+    const hide=()=>{f.classList.remove('hot');idle()};
+    f.addEventListener('mouseenter',show);f.addEventListener('focus',show);
+    f.addEventListener('mouseleave',hide);f.addEventListener('blur',hide);
+    f.addEventListener('click',show);
+  });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VLBFHWJ3NX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VLBFHWJ3NX');
+</script><script>(function(){try{var ss=sessionStorage,q=new URLSearchParams(location.search);if(!ss.getItem('dt_land')){ss.setItem('dt_land',location.pathname+location.search);ss.setItem('dt_ref',document.referrer||'');['utm_source','utm_medium','utm_campaign'].forEach(function(k){if(q.get(k))ss.setItem('dt_'+k,q.get(k));});}document.querySelectorAll('form[method="POST"]').forEach(function(f){function st(n,v){var i=f.querySelector('input[name="'+n+'"]');if(i&&v)i.value=v;}st('landing_url',ss.getItem('dt_land'));st('referrer',ss.getItem('dt_ref'));st('utm_source',ss.getItem('dt_utm_source'));st('utm_medium',ss.getItem('dt_utm_medium'));st('utm_campaign',ss.getItem('dt_utm_campaign'));});}catch(e){}})();</script></body>
+</html>

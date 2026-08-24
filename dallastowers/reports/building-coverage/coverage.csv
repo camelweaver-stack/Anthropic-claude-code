@@ -1,0 +1,90 @@
+building,slug,city,district,verified,tier,units,floors,year,hoa_dues_psf_mo,plans,rules,county_roll,ooc_proxy_pct,t12,assessed_median,gaps,value_score,priority
+The Renaissance on Turtle Creek,the-renaissance-on-turtle-creek,DAL,Turtle Creek,v,partial,482,16,1998,,,,Y,70,42,386590,hoa_dues,3.508,2.455
+Twenty-One Turtle Creek,twenty-one-turtle-creek,DAL,Turtle Creek,v,partial,310,22,1963,,,,Y,76,34,249980,hoa_dues,2.664,1.865
+Plaza at Turtle Creek II,plaza-at-turtle-creek-ii,DAL,Turtle Creek,v,partial,96,,1980s,,,,Y,82,13,931515,floors;hoa_dues,1.752,1.577
+Main 7,main-7,FW,Downtown FW,p,skeletal,,,—,,,,,,,,address;floors;units;hoa_dues;county_roll,1.0,1.5
+Metropolitan Club at Hotel ZaZa,metropolitan-club-at-hotel-zaza,DAL,Uptown,p,skeletal,,,2000s,,,,,,,,address;floors;units;hoa_dues;county_roll,1.0,1.5
+Schaumburg Lofts,schaumburg-lofts,FW,Downtown FW,p,skeletal,,,—,,,,,,,,address;floors;units;hoa_dues;county_roll,1.0,1.5
+Dickson Jenkins Lofts,dickson-jenkins-lofts,FW,Downtown FW,p,skeletal,,,—,,,,,,,,address;floors;units;hoa_dues;county_roll,1.0,1.5
+The Vendome,the-vendome,DAL,Turtle Creek,v,partial,109,20,2000,,,,Y,80,13,1904860,hoa_dues,2.101,1.471
+Turtle Creek North,turtle-creek-north,DAL,Turtle Creek,v,partial,98,,1962,,,,Y,85,14,343390,floors;hoa_dues,1.628,1.466
+The Tower Residences (Ritz-Carlton),the-tower-residences-ritz-carlton,DAL,Uptown,v,partial,92,23,2007–09,,,,Y,71,8,2179630,hoa_dues,1.928,1.349
+Bleu Ciel,bleu-ciel,DAL,Harwood,v,complete,133,33,2017,1.28,,,Y,66,36,1375000,,2.631,1.316
+LTD Edition 2505,ltd-edition-2505,DAL,Turtle Creek,p,skeletal,,,2010s,,,,,,,,floors;units;hoa_dues;county_roll,1.0,1.3
+Park Plaza,park-plaza,DAL,Turtle Creek,p,skeletal,,,—,,,,,,,,floors;units;hoa_dues;county_roll,1.0,1.3
+The Residences at the Stoneleigh,the-residences-at-the-stoneleigh,DAL,Uptown,v,partial,64,22,2009,,,,Y,86,4,3594710,hoa_dues,1.855,1.298
+The Mayfair,the-mayfair,DAL,Turtle Creek,v,partial,132,24,1998,,,,Y,86,9,910360,hoa_dues,1.816,1.271
+Museum Tower,museum-tower,DAL,Arts District,v,complete,104,42,2013,1.42,,,Y,82,13,3528775,,2.525,1.263
+Hall Arts Residences,hall-arts-residences,DAL,Arts District,v,partial,48,28,2020,,,,Y,56,7,3578465,hoa_dues,1.734,1.214
+Victory Park Terrace,victory-park-terrace,DAL,Victory Park,v,partial,81,,2005,,,,Y,75,2,447300,floors;hoa_dues,1.314,1.183
+2011 Cedar Springs Lofts,2011-cedar-springs-lofts,DAL,Uptown,v,partial,42,,1999,,,,Y,81,3,1045310,floors;hoa_dues,1.278,1.15
+The Tower,the-tower,FW,Downtown FW,v,partial,300,35,conv. 2005,0.76,,,,,,,county_roll,1.622,1.136
+La Tour,la-tour,DAL,Uptown,v,partial,95,24,1981,,,,Y,76,11,595320,hoa_dues,1.613,1.129
+Parkside Condominiums,parkside-condominiums,DAL,Uptown,v,partial,75,,1983,,,,Y,71,2,218500,floors;hoa_dues,1.248,1.123
+Mercer Square,mercer-square,DAL,Uptown,v,partial,75,,2006,,,,Y,64,,369000,floors;hoa_dues,1.231,1.108
+The Terminal at Katy Trail,the-terminal-at-katy-trail,DAL,Knox / Katy Trail,v,partial,16,,2022,,,,Y,62,,4524200,floors;hoa_dues,1.23,1.107
+Colonnade at Turtle Creek,colonnade-at-turtle-creek,DAL,Turtle Creek,v,partial,47,,1982,,,,Y,,4,290690,floors;hoa_dues,1.23,1.107
+The Travis at Katy Trail,the-travis-at-katy-trail,DAL,Knox / Katy Trail,v,partial,52,,2000,,,,Y,62,,754915,floors;hoa_dues,1.215,1.093
+Omni Fort Worth Residences,omni-fort-worth-residences,FW,Downtown FW,v,partial,97,,2009,1.12,Y,,,,,,floors;county_roll,1.201,1.081
+The Wyndemere at Turtle Creek,the-wyndemere-at-turtle-creek,DAL,Turtle Creek,v,partial,101,4,—,,,,Y,74,10,351380,hoa_dues,1.544,1.081
+Azure,azure,DAL,Harwood,v,complete,138,31,2007,1.18,,,Y,77,21,975430,,2.153,1.077
+Beverly on Turtle Creek,beverly-on-turtle-creek,DAL,Turtle Creek,v,partial,37,,1981,,,,Y,81,2,540260,floors;hoa_dues,1.179,1.061
+588 Lofts,588-lofts,DAL,Uptown,v,partial,104,5,1998,,,,Y,64,7,429200,hoa_dues,1.504,1.053
+One Arts Plaza,one-arts-plaza,DAL,Arts District,v,partial,61,24,2007,,,,,,,,hoa_dues;county_roll,1.127,1.014
+1999 McKinney,1999-mckinney,DAL,Uptown,v,partial,57,18,2000,,,,Y,81,8,900990,hoa_dues,1.449,1.014
+3525 Turtle Creek,3525-turtle-creek,DAL,Turtle Creek,v,partial,78,21,1957,,,,Y,86,7,552530,hoa_dues,1.446,1.012
+The Bonaventure,the-bonaventure,BEY,North Dallas,v,complete,285,12,1981,,Y,,Y,87,22,419180,hoa_dues,1.441,1.008
+Gold Crest,gold-crest,DAL,Turtle Creek,v,partial,49,11,1962–64,,,,Y,92,7,1220940,hoa_dues,1.431,1.002
+The Grand at Turtle Creek,the-grand-at-turtle-creek,DAL,Turtle Creek,v,partial,22,,2001,,,,Y,86,,628230,floors;hoa_dues,1.083,0.975
+Rosewood Residences Turtle Creek,rosewood-residences-turtle-creek,DAL,Turtle Creek,v,partial,33,17,2026 (u/c),,,,,,,,hoa_dues;county_roll,1.068,0.962
+Houston Place Lofts,houston-place-lofts,FW,Downtown FW,v,partial,30,9,conv. 2005 (built 1906),,,,,,,,hoa_dues;county_roll,1.062,0.956
+Plaza at Turtle Creek I,plaza-at-turtle-creek-i,DAL,Turtle Creek,v,partial,47,7,1980s,,,,Y,77,5,1063790,hoa_dues,1.353,0.947
+Residences at The Ritz-Carlton I,residences-at-the-ritz-carlton-i,DAL,Uptown,v,complete,66,21,2007,1.75,,,Y,62,9,2930805,,1.878,0.939
+Mansion Residences,mansion-residences,DAL,Turtle Creek,v,partial,24,12,1992–94,,,,Y,67,2,3700000,hoa_dues,1.339,0.938
+The Residence at Turtle Creek,the-residence-at-turtle-creek,DAL,Turtle Creek,v,partial,6,,2011,,,,Y,83,,804500,floors;hoa_dues,1.026,0.923
+Pecan Place,pecan-place,FW,Downtown FW,v,partial,9,4,2004,,,,,,,,hoa_dues;county_roll,1.019,0.917
+W Dallas Residences,w-dallas-residences,DAL,Victory Park,v,complete,131,33,2006,1.35,,,Y,60,10,874260,,1.822,0.911
+Piazza Siena,piazza-siena,DAL,Oak Lawn,v,partial,227,,2001,,,,Y,69,15,246710,floors;hoa_dues,0.981,0.883
+The Warrington,the-warrington,DAL,Turtle Creek,v,complete,125,24,1981,1.05,,,Y,86,9,815150,,1.751,0.876
+Preston Tower,preston-tower,DAL,Preston Ctr & NW Hwy,v,partial,261,29,1966,,,,Y,74,21,284250,hoa_dues,1.244,0.871
+The House,the-house,DAL,Victory Park,v,complete,117,28,2010,1.1,,,Y,80,7,807760,,1.667,0.833
+Neil P at Burnett Park,neil-p-at-burnett-park,FW,Downtown FW,v,partial,88,11,conv. (built 1921),0.68,,,,,,,county_roll,1.183,0.828
+The Claridge,the-claridge,DAL,Turtle Creek,v,complete,82,18,1983–84,0.98,,,Y,84,5,1204950,,1.558,0.779
+Le Bijou,le-bijou,FW,Downtown FW,v,complete,14,3,2006,0.92,Y,,,,,,county_roll,1.029,0.72
+The Grand Treviso,the-grand-treviso,BEY,Las Colinas · Irving,v,partial,205,17,2001,,,,Y,,18,272360,hoa_dues,1.006,0.704
+The Metropolitan,the-metropolitan,DAL,Downtown,v,complete,223,26,conv. ~2005 (built 1974),0.72,,,Y,76,22,344860,,1.196,0.598
+The Athena,the-athena,DAL,Preston Ctr & NW Hwy,v,complete,120,22,1966,,Y,,Y,85,14,435885,hoa_dues,0.725,0.507
+Crestpark in Highland Park,crestpark-in-highland-park,DAL,Highland Park area,v,partial,126,10,1950,,,,Y,79,11,551150,hoa_dues,0.713,0.499
+SoCo Urban Lofts,soco-urban-lofts,DAL,Downtown,v,partial,164,11,conv. 2004 (built 1925),,,,Y,76,10,277160,hoa_dues,0.702,0.492
+The Sorrento,the-sorrento,DAL,Preston Hollow,v,partial,84,,2006,,,,Y,80,11,425040,floors;hoa_dues,0.533,0.48
+One Montgomery Plaza Residences,one-montgomery-plaza-residences,FW,West 7th,v,partial,240,8,conv. 2007 (built 1928),,Y,,,,,,hoa_dues;county_roll,0.498,0.448
+The Shelton,the-shelton,DAL,Preston Ctr & NW Hwy,v,partial,100,21,1983,,,,Y,70,8,699250,hoa_dues,0.588,0.412
+Park Towers,park-towers,DAL,Oak Lawn,v,partial,80,20,1964,,,,Y,89,11,642040,hoa_dues,0.568,0.397
+M Central Residences (The Highland),m-central-residences-the-highland,DAL,Mockingbird / SMU,v,partial,55,,2000s,,,,Y,73,8,789600,floors;hoa_dues,0.423,0.381
+Live Oak Lofts,live-oak-lofts,DAL,Deep Ellum edge · Old East Dallas,v,complete,92,4,1998,,Y,,Y,73,7,250665,hoa_dues,0.42,0.294
+1505 Elm,1505-elm,DAL,Downtown,v,partial,67,16,conv. 2002 (built 1957),,,,Y,76,7,288990,hoa_dues,0.358,0.251
+Centrum Tower,centrum-tower,DAL,Oak Lawn,v,partial,30,,1985,,,,Y,77,5,807540,floors;hoa_dues,0.247,0.223
+Texas & Pacific Lofts,texas-pacific-lofts,FW,Lancaster Corridor,v,partial,149,12,conv. 2005–06 (built 1931),0.71,,,,,,,county_roll,0.309,0.216
+Park Highlander,park-highlander,DAL,Oak Lawn,v,partial,44,,2004,,,,Y,98,,1164745,floors;hoa_dues,0.231,0.208
+The Beat at South Side Station,the-beat-at-south-side-station,DAL,The Cedars,v,partial,66,8,2007,,,,Y,80,3,394120,hoa_dues,0.279,0.195
+The Belvedere,the-belvedere,DAL,Uptown / Arts District edge,v,partial,102,3,1999,,,,,,,,hoa_dues;county_roll,0.212,0.19
+Thirty Thirty Bryan Condos,thirty-thirty-bryan-condos,DAL,Bryan Place,v,partial,30,,2005,,,,Y,93,4,559640,floors;hoa_dues,0.203,0.183
+2220 Canton Lofts,2220-canton-lofts,DAL,Farmers Market / Deep Ellum,v,partial,39,,conv. (built 1925),,,,Y,79,2,466350,floors;hoa_dues,0.178,0.16
+Lone Star Tower,lone-star-tower,FW,Texas Motor Speedway,v,partial,76,10,1997–98,,,,,,,,hoa_dues;county_roll,0.158,0.142
+509 Elm Place Lofts,509-elm-place-lofts,DAL,Downtown,v,partial,25,,conv. (built 1930),,,,Y,80,3,343750,floors;hoa_dues,0.147,0.132
+Lake Cliff Tower,lake-cliff-tower,DAL,Oak Cliff,v,partial,49,11,conv. 2006 (built 1929),,,,Y,16,2,228000,hoa_dues,0.18,0.126
+Bryan Street Station,bryan-street-station,DAL,Bryan Place,v,partial,47,,2006,,,,Y,83,,293460,floors;hoa_dues,0.135,0.122
+Art House at So7,art-house-at-so7,FW,Cultural District · So7,v,partial,63,5,late 2000s,,,,,,,,hoa_dues;county_roll,0.131,0.118
+The Knox Residences (Auberge),the-knox-residences-auberge,DAL,Knox / Henderson,v,skeletal,48,,2026–27 (u/c),,,,,,,,floors;hoa_dues;county_roll,0.1,0.11
+Buzz Condos,buzz-condos,DAL,The Cedars,v,partial,39,,2006,,,,Y,72,,277670,floors;hoa_dues,0.11,0.099
+One Museum Place Residences,one-museum-place-residences,FW,Cultural District,v,skeletal,36,,2008,,,,,,,,address;floors;hoa_dues;county_roll,0.075,0.097
+Woodshire Court,woodshire-court,DAL,Uptown · Knox,v,partial,29,,1985,,,,Y,79,,393250,floors;hoa_dues,0.091,0.082
+Forest Park Tower,forest-park-tower,FW,Forest Park · South Side,v,partial,36,12,1927–30,,Y,,,,,,hoa_dues;county_roll,0.075,0.067
+Alix Condos,alix-condos,DAL,Oak Lawn,v,partial,18,,2008,,,,Y,72,,394050,floors;hoa_dues,0.057,0.051
+Avanti on Avondale,avanti-on-avondale,DAL,Oak Lawn,v,partial,14,,2004,,,,Y,79,,354250,floors;hoa_dues,0.043,0.038
+Villa de Leon,villa-de-leon,FW,Trinity Bluff · Samuels Ave,v,partial,24,12,2008,1.02,,,,,,,county_roll,0.05,0.035
+The Lakeside Tower,the-lakeside-tower,BEY,Lakeside DFW · Flower Mound,p,skeletal,,,—,,,,,,,,address;floors;units;hoa_dues;county_roll,0.0,0.0
+Westview,westview,FW,West Fort Worth,p,skeletal,,,—,,,,,,,,address;floors;units;hoa_dues;county_roll,0.0,0.0
+Versailles,versailles,FW,Downtown FW area,p,skeletal,,,—,,,,,,,,address;floors;units;hoa_dues;county_roll,0.0,0.0
+Royale Orleans,royale-orleans,FW,TCU / Tanglewood,p,skeletal,,,—,,,,,,,,address;floors;units;hoa_dues;county_roll,0.0,0.0
+959 West Bluff,959-west-bluff,FW,Downtown FW area,p,skeletal,,,—,,,,,,,,floors;units;hoa_dues;county_roll,0.0,0.0

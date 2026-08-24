@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dallas Towers — The DFW High-Rise &amp; Condo Guide</title><meta name="description" content="The independent Dallas–Fort Worth condominium registry: 89 building files with county-certified data, dues, floor plans, policies, and sales tempo."><link rel="canonical" href="https://dallastowers.com/"><link rel="icon" type="image/svg+xml" href="favicon.svg"><meta property="og:title" content="Dallas Towers — The Dallas–Fort Worth Condominium Registry"><meta property="og:type" content="website"><meta property="og:url" content="https://dallastowers.com/"><meta property="og:image" content="https://dallastowers.com/og-card.png"><meta property="og:description" content="The independent registry of DFW condo buildings: county-certified data, dues, floor plans, documents."><meta name="twitter:card" content="summary_large_image"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Dallas Towers", "url": "https://dallastowers.com", "logo": "https://dallastowers.com/favicon.svg", "description": "Independent Dallas\u2013Fort Worth condominium building registry."}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Dallas Towers", "url": "https://dallastowers.com"}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --overcast:#F1F3F2;
+    --paper:#FAFBFA;
+    --ink:#1C2B33;
+    --ink-soft:#46565E;
+    --line:#C9CFCC;
+    --dallas:#2F5D7C;
+    --dallas-tint:#E3EBF1;
+    --fw:#8A5F1D;
+    --fw-tint:#F3EADA;
+    --display:'Big Shoulders Display',sans-serif;
+    --body:'Source Serif 4',serif;
+    --mono:'IBM Plex Mono',monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation:none!important;transition:none!important}
+  }
+  body{background:var(--overcast);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6}
+  a{color:inherit;text-decoration:none}
+  a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--dallas);outline-offset:3px}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+
+  /* ---------- Nav ---------- */
+  header{border-bottom:1px solid var(--line);background:var(--overcast);position:sticky;top:0;z-index:50}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-family:var(--display);font-weight:700;font-size:26px;letter-spacing:.04em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+  .logo .mark{display:inline-block;width:18px;height:26px;background:
+    linear-gradient(var(--ink),var(--ink)) left/6px 100% no-repeat,
+    linear-gradient(var(--dallas),var(--dallas)) center/4px 70% no-repeat,
+    linear-gradient(var(--fw),var(--fw)) right/5px 85% no-repeat}
+  .navlinks{display:flex;gap:28px;font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase}
+  .navlinks a{color:var(--ink-soft)}
+  .navlinks a:hover{color:var(--ink)}
+  .nav-cta{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;border:1.5px solid var(--ink);padding:9px 16px;transition:background .15s,color .15s}
+  .nav-cta:hover{background:var(--ink);color:var(--paper)}
+  @media(max-width:860px){.navlinks{display:none}}
+
+  /* ---------- Hero ---------- */
+  .hero{padding:64px 0 0}
+  .eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:18px}
+  .eyebrow em{font-style:normal;color:var(--dallas)}
+  .eyebrow em.f{color:var(--fw)}
+  h1{font-family:var(--display);font-weight:600;font-size:clamp(46px,7.5vw,92px);line-height:.98;text-transform:uppercase;letter-spacing:.005em;max-width:15ch}
+  .hero p.lede{max-width:52ch;margin-top:22px;font-size:19px;color:var(--ink-soft)}
+  .hero p.lede strong{color:var(--ink);font-weight:600}
+
+  /* search bar */
+  .search{margin-top:34px;display:flex;max-width:640px;border:1.5px solid var(--ink);background:var(--paper)}
+  .search input{flex:1;border:0;background:transparent;padding:16px 18px;font-family:var(--body);font-size:16px;color:var(--ink)}
+  .search input::placeholder{color:#8b9793}
+  .search button{border:0;background:var(--ink);color:var(--paper);font-family:var(--mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase;padding:0 26px;cursor:pointer}
+  .search button:hover{background:var(--dallas)}
+  .search-hint{font-family:var(--mono);font-size:11.5px;color:var(--ink-soft);margin-top:10px;letter-spacing:.03em}
+
+  /* ---------- Annotated skyline (signature) ---------- */
+  .skyline-block{margin-top:56px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper);overflow:hidden}
+  .skyline-inner{position:relative}
+  .skyline-caption{position:absolute;top:18px;left:24px;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+  .skyline-readout{position:absolute;top:18px;right:24px;text-align:right;font-family:var(--mono);font-size:12px;color:var(--ink);min-height:34px}
+  .skyline-readout .bname{font-family:var(--display);font-size:20px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;display:block}
+  .skyline-readout .bspec{color:var(--ink-soft);font-size:11px;letter-spacing:.04em}
+  svg .tower{fill:var(--overcast);stroke:var(--ink);stroke-width:1.4;cursor:pointer;transition:fill .18s}
+  svg .tower:hover,svg .tower.hot{fill:var(--dallas-tint)}
+  svg .tower.fwb:hover,svg .tower.fwb.hot{fill:var(--fw-tint)}
+  svg .civic{fill:none;stroke:var(--line);stroke-width:1.2}
+  svg .ground{stroke:var(--ink);stroke-width:1.6}
+  svg .leader{stroke:var(--ink-soft);stroke-width:.8;stroke-dasharray:3 3}
+  svg .tag{font-family:var(--mono);font-size:10.5px;fill:var(--ink-soft);letter-spacing:.06em;text-transform:uppercase}
+  svg .tagnum{font-family:var(--mono);font-size:10.5px;fill:var(--ink);font-weight:500}
+
+  /* ---------- Two-city hubs ---------- */
+  .hubs{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid var(--line)}
+  .hub{padding:56px 40px 60px;position:relative}
+  .hub+.hub{border-left:1px solid var(--line)}
+  .hub .city-tag{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;display:inline-block;padding:5px 10px;margin-bottom:20px;color:var(--paper)}
+  .hub.dal .city-tag{background:var(--dallas)}
+  .hub.fw .city-tag{background:var(--fw)}
+  .hub h2{font-family:var(--display);font-size:clamp(30px,3.6vw,44px);font-weight:600;text-transform:uppercase;line-height:1.02}
+  .hub p{margin-top:14px;color:var(--ink-soft);max-width:44ch}
+  .hub ul{margin-top:22px;list-style:none}
+  .hub li{border-top:1px solid var(--line);padding:11px 2px;display:flex;justify-content:space-between;align-items:baseline;font-size:16px}
+  .hub li:last-child{border-bottom:1px solid var(--line)}
+  .hub li .n{font-family:var(--mono);font-size:11.5px;color:var(--ink-soft)}
+  .hub li a:hover{text-decoration:underline;text-underline-offset:3px}
+  .hub .all{display:inline-block;margin-top:22px;font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;border-bottom:1.5px solid currentColor;padding-bottom:2px}
+  .hub.dal .all{color:var(--dallas)}
+  .hub.fw .all{color:var(--fw)}
+  @media(max-width:760px){.hubs{grid-template-columns:1fr}.hub+.hub{border-left:0;border-top:1px solid var(--line)}.hub{padding:44px 24px}}
+
+  /* ---------- Registry cards ---------- */
+  .registry{padding:72px 0 80px}
+  .sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:20px;margin-bottom:36px;flex-wrap:wrap}
+  .sec-head h2{font-family:var(--display);font-size:clamp(30px,4vw,48px);font-weight:600;text-transform:uppercase}
+  .sec-head .note{font-family:var(--mono);font-size:12px;color:var(--ink-soft);letter-spacing:.05em}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .card{background:var(--paper);border:1px solid var(--line);display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+  .card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(28,43,51,.08)}
+  .card .elev{height:150px;border-bottom:1px solid var(--line);display:flex;align-items:flex-end;justify-content:center;background:
+    repeating-linear-gradient(to top,transparent 0 23px,rgba(28,43,51,.045) 23px 24px)}
+  .card .elev svg{display:block}
+  .card .body{padding:20px 22px 24px;display:flex;flex-direction:column;flex:1}
+  .card .cityline{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+  .card .cityline.d{color:var(--dallas)} .card .cityline.f{color:var(--fw)}
+  .card h3{font-family:var(--display);font-size:26px;font-weight:700;text-transform:uppercase;letter-spacing:.02em}
+  .card .addr{font-size:14.5px;color:var(--ink-soft);margin-top:4px}
+  .specs{margin-top:16px;display:grid;grid-template-columns:1fr 1fr 1fr;border-top:1px solid var(--line)}
+  .specs div{padding:10px 0 2px;border-right:1px solid var(--line);padding-right:10px}
+  .specs div:last-child{border-right:0}
+  .specs div+div{padding-left:10px}
+  .specs .k{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)}
+  .specs .v{font-family:var(--mono);font-size:15px;margin-top:2px}
+  .card .cta-row{margin-top:auto;padding-top:18px;display:flex;justify-content:space-between;align-items:center}
+  .card .price{font-size:15px;color:var(--ink-soft)}
+  .card .price strong{color:var(--ink);font-weight:600}
+  .card .go{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;border-bottom:1.5px solid var(--ink);padding-bottom:1px}
+  @media(max-width:900px){.cards{grid-template-columns:1fr 1fr}}
+  @media(max-width:620px){.cards{grid-template-columns:1fr}}
+
+  /* ---------- Market strip ---------- */
+  .strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper)}
+  .strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);}
+  .stat{padding:30px 24px;border-right:1px solid var(--line)}
+  .stat:first-child{padding-left:0}
+  .stat:last-child{border-right:0}
+  .stat .k{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+  .stat .v{font-family:var(--display);font-size:40px;font-weight:600;margin-top:6px;line-height:1}
+  .stat .d{font-size:13.5px;color:var(--ink-soft);margin-top:6px}
+  @media(max-width:760px){.strip .wrap{grid-template-columns:1fr 1fr}.stat{padding:22px 18px}.stat:nth-child(2){border-right:0}.stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid var(--line)}}
+
+  /* ---------- About / lead ---------- */
+  .about{padding:80px 0;display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:start}
+  .about h2{font-family:var(--display);font-size:clamp(30px,4vw,48px);font-weight:600;text-transform:uppercase;line-height:1.03}
+  .about p{margin-top:18px;color:var(--ink-soft);max-width:56ch}
+  .about p strong{color:var(--ink)}
+  .lead{background:var(--ink);color:var(--paper);padding:34px 32px 38px}
+  .lead h3{font-family:var(--display);font-size:28px;font-weight:600;text-transform:uppercase;letter-spacing:.02em}
+  .lead p{font-size:15px;color:#B9C4C2;margin-top:8px}
+  .lead form{margin-top:22px;display:flex;flex-direction:column;gap:12px}
+  .lead input,.lead select{background:transparent;border:1px solid #4b5a61;color:var(--paper);padding:13px 14px;font-family:var(--body);font-size:15px}
+  .lead select{appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><path d='M0 0l5 6 5-6z' fill='%23FAFBFA'/></svg>");background-repeat:no-repeat;background-position:right 14px center}
+  .lead input::placeholder{color:#8b9793}
+  .lead button{background:var(--paper);color:var(--ink);border:0;padding:14px;font-family:var(--mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;margin-top:4px}
+  .lead button:hover{background:var(--fw-tint)}
+  .lead .fine{font-family:var(--mono);font-size:10.5px;color:#7e8c8a;margin-top:12px;letter-spacing:.03em}
+  @media(max-width:860px){.about{grid-template-columns:1fr;gap:44px}}
+
+  /* ---------- Footer ---------- */
+  footer{border-top:1px solid var(--line);padding:40px 0 56px;background:var(--overcast)}
+  .foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;color:var(--ink-soft);text-transform:uppercase}
+  .foot a:hover{color:var(--ink)}
+.fine{color:#B7C2BF!important}.alerts p{color:#D8DEDC!important}</style>
+<!-- PIXEL-SLOT: paste retargeting snippet here --><!-- ANALYTICS-SLOT: paste analytics snippet here --><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Anastasia Weaver Media", "url": "https://dallastowers.com/", "description": "Independent publisher of sourced local housing research."}</script></head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class='logo' href='/'><span class="mark" aria-hidden="true"></span>Dallas Towers</a>
+    <nav class="navlinks" aria-label="Primary">
+      <a href='/dallas'>Dallas</a><a href='/fort-worth'>Fort Worth</a><a href='/buildings'>Buildings</a><a href='/neighborhoods'>Neighborhoods</a><a href='/market-data'>Market Data</a><a href='/community'>Community</a>
+    </nav>
+    <a class='nav-cta' href='/new-developments'>New developments</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero wrap">
+    <p class="eyebrow">The high-rise &amp; condo registry for <em>Dallas</em> · <em class="f">Fort Worth</em></p>
+    <h1>The DFW<br>condo &amp; high-rise<br>registry.</h1><p style="font-size:.8rem;color:#666;border-bottom:1px dashed #ccc;padding:0 0 8px;margin:6px 0 14px">Published by <strong>Anastasia Weaver Media</strong> · Independent local research, no listings, no pay-for-placement · Updated August 24, 2026</p>
+    <p class="lede">Dallas Towers profiles <strong>the Metroplex&rsquo;s condominium towers, building by building</strong> — 89 files and counting: HOA dues, pet rules, floor plans where verified, and county-record economics — so you can research a building the way an appraiser would, before you ever tour a unit.</p>
+    <form class="search" role="search" method="GET" action="buildings.html">
+      <div style="position:relative;flex:1">
+      <input type="search" name="q" id="hq" autocomplete="off" aria-label="Search buildings and neighborhoods" aria-expanded="false" role="combobox" aria-controls="sugg" placeholder="Search a building or neighborhood — “Museum Tower,” “Uptown”…">
+      <ul id="sugg" role="listbox" style="display:none;position:absolute;left:0;right:0;top:100%;z-index:40;background:var(--paper);border:1px solid var(--ink);max-height:340px;overflow:auto;list-style:none;margin:0;padding:0"></ul>
+      </div>
+      <button type="submit">Search</button>
+    </form>
+    <script>
+    const SDATA=/*SEARCH-DATA*/[{"n": "Museum Tower", "m": "Arts District", "h": "museum-tower.html"}, {"n": "Hall Arts Residences", "m": "Arts District", "h": "hall-arts-residences.html"}, {"n": "One Arts Plaza", "m": "Arts District", "h": "one-arts-plaza.html"}, {"n": "Bleu Ciel", "m": "Harwood", "h": "bleu-ciel.html"}, {"n": "Azure", "m": "Harwood", "h": "azure.html"}, {"n": "The House", "m": "Victory Park", "h": "the-house.html"}, {"n": "W Dallas Residences", "m": "Victory Park", "h": "w-dallas-residences.html"}, {"n": "The Residences at the Stoneleigh", "m": "Uptown", "h": "the-residences-at-the-stoneleigh.html"}, {"n": "Residences at The Ritz-Carlton I", "m": "Uptown", "h": "residences-at-the-ritz-carlton-i.html"}, {"n": "The Tower Residences (Ritz-Carlton)", "m": "Uptown", "h": "the-tower-residences-ritz-carlton.html"}, {"n": "La Tour", "m": "Uptown", "h": "la-tour.html"}, {"n": "The Claridge", "m": "Turtle Creek", "h": "the-claridge.html"}, {"n": "The Warrington", "m": "Turtle Creek", "h": "the-warrington.html"}, {"n": "The Vendome", "m": "Turtle Creek", "h": "the-vendome.html"}, {"n": "3525 Turtle Creek", "m": "Turtle Creek", "h": "3525-turtle-creek.html"}, {"n": "Twenty-One Turtle Creek", "m": "Turtle Creek", "h": "twenty-one-turtle-creek.html"}, {"n": "Gold Crest", "m": "Turtle Creek", "h": "gold-crest.html"}, {"n": "The Renaissance on Turtle Creek", "m": "Turtle Creek", "h": "the-renaissance-on-turtle-creek.html"}, {"n": "The Mayfair", "m": "Turtle Creek", "h": "the-mayfair.html"}, {"n": "Park Towers", "m": "Oak Lawn", "h": "park-towers.html"}, {"n": "The Metropolitan", "m": "Downtown", "h": "the-metropolitan.html"}, {"n": "SoCo Urban Lofts", "m": "Downtown", "h": "soco-urban-lofts.html"}, {"n": "The Beat at South Side Station", "m": "The Cedars", "h": "the-beat-at-south-side-station.html"}, {"n": "The Travis at Katy Trail", "m": "Knox / Katy Trail", "h": "the-travis-at-katy-trail.html"}, {"n": "Preston Tower", "m": "Preston Ctr & NW Hwy", "h": "preston-tower.html"}, {"n": "The Athena", "m": "Preston Ctr & NW Hwy", "h": "the-athena.html"}, {"n": "The Shelton", "m": "Preston Ctr & NW Hwy", "h": "the-shelton.html"}, {"n": "The Tower", "m": "Downtown FW", "h": "the-tower.html"}, {"n": "Omni Fort Worth Residences", "m": "Downtown FW", "h": "omni-fort-worth-residences.html"}, {"n": "Neil P at Burnett Park", "m": "Downtown FW", "h": "neil-p-at-burnett-park.html"}, {"n": "Texas & Pacific Lofts", "m": "Lancaster Corridor", "h": "texas-pacific-lofts.html"}, {"n": "One Montgomery Plaza Residences", "m": "West 7th", "h": "one-montgomery-plaza-residences.html"}, {"n": "Villa de Leon", "m": "Trinity Bluff \u00b7 Samuels Ave", "h": "villa-de-leon.html"}, {"n": "Le Bijou", "m": "Downtown FW", "h": "le-bijou.html"}, {"n": "The Grand Treviso", "m": "Las Colinas \u00b7 Irving", "h": "the-grand-treviso.html"}, {"n": "The Bonaventure", "m": "North Dallas", "h": "the-bonaventure.html"}, {"n": "Plaza at Turtle Creek I", "m": "Turtle Creek", "h": "plaza-at-turtle-creek-i.html"}, {"n": "Plaza at Turtle Creek II", "m": "Turtle Creek", "h": "plaza-at-turtle-creek-ii.html"}, {"n": "Beverly on Turtle Creek", "m": "Turtle Creek", "h": "beverly-on-turtle-creek.html"}, {"n": "LTD Edition 2505", "m": "Turtle Creek", "h": "ltd-edition-2505.html"}, {"n": "Mansion Residences", "m": "Turtle Creek", "h": "mansion-residences.html"}, {"n": "Turtle Creek North", "m": "Turtle Creek", "h": "turtle-creek-north.html"}, {"n": "Centrum Tower", "m": "Oak Lawn", "h": "centrum-tower.html"}, {"n": "509 Elm Place Lofts", "m": "Downtown", "h": "509-elm-place-lofts.html"}, {"n": "Thirty Thirty Bryan Condos", "m": "Bryan Place", "h": "thirty-thirty-bryan-condos.html"}, {"n": "Art House at So7", "m": "Cultural District \u00b7 So7", "h": "art-house-at-so7.html"}, {"n": "Forest Park Tower", "m": "Forest Park \u00b7 South Side", "h": "forest-park-tower.html"}, {"n": "Houston Place Lofts", "m": "Downtown FW", "h": "houston-place-lofts.html"}, {"n": "The Lakeside Tower", "m": "Lakeside DFW \u00b7 Flower Mound", "h": "the-lakeside-tower.html"}, {"n": "Lone Star Tower", "m": "Texas Motor Speedway", "h": "lone-star-tower.html"}, {"n": "One Museum Place Residences", "m": "Cultural District", "h": "one-museum-place-residences.html"}, {"n": "Pecan Place", "m": "Downtown FW", "h": "pecan-place.html"}, {"n": "Westview", "m": "West Fort Worth", "h": "westview.html"}, {"n": "Rosewood Residences Turtle Creek", "m": "Turtle Creek", "h": "rosewood-residences-turtle-creek.html"}, {"n": "The Knox Residences (Auberge)", "m": "Knox / Henderson", "h": "the-knox-residences-auberge.html"}, {"n": "1505 Elm", "m": "Downtown", "h": "1505-elm.html"}, {"n": "588 Lofts", "m": "Uptown", "h": "588-lofts.html"}, {"n": "2220 Canton Lofts", "m": "Farmers Market / Deep Ellum", "h": "2220-canton-lofts.html"}, {"n": "Victory Park Terrace", "m": "Victory Park", "h": "victory-park-terrace.html"}, {"n": "Main 7", "m": "Downtown FW", "h": "main-7.html"}, {"n": "Versailles", "m": "Downtown FW area", "h": "versailles.html"}, {"n": "Royale Orleans", "m": "TCU / Tanglewood", "h": "royale-orleans.html"}, {"n": "1999 McKinney", "m": "Uptown", "h": "1999-mckinney.html"}, {"n": "2011 Cedar Springs Lofts", "m": "Uptown", "h": "2011-cedar-springs-lofts.html"}, {"n": "Crestpark in Highland Park", "m": "Highland Park area", "h": "crestpark-in-highland-park.html"}, {"n": "Metropolitan Club at Hotel ZaZa", "m": "Uptown", "h": "metropolitan-club-at-hotel-zaza.html"}, {"n": "Park Plaza", "m": "Turtle Creek", "h": "park-plaza.html"}, {"n": "Parkside Condominiums", "m": "Uptown", "h": "parkside-condominiums.html"}, {"n": "The Residence at Turtle Creek", "m": "Turtle Creek", "h": "the-residence-at-turtle-creek.html"}, {"n": "The Terminal at Katy Trail", "m": "Knox / Katy Trail", "h": "the-terminal-at-katy-trail.html"}, {"n": "The Wyndemere at Turtle Creek", "m": "Turtle Creek", "h": "the-wyndemere-at-turtle-creek.html"}, {"n": "The Grand at Turtle Creek", "m": "Turtle Creek", "h": "the-grand-at-turtle-creek.html"}, {"n": "Mercer Square", "m": "Uptown", "h": "mercer-square.html"}, {"n": "The Belvedere", "m": "Uptown / Arts District edge", "h": "the-belvedere.html"}, {"n": "Bryan Street Station", "m": "Bryan Place", "h": "bryan-street-station.html"}, {"n": "Live Oak Lofts", "m": "Deep Ellum edge \u00b7 Old East Dallas", "h": "live-oak-lofts.html"}, {"n": "The Sorrento", "m": "Preston Hollow", "h": "the-sorrento.html"}, {"n": "Avanti on Avondale", "m": "Oak Lawn", "h": "avanti-on-avondale.html"}, {"n": "Alix Condos", "m": "Oak Lawn", "h": "alix-condos.html"}, {"n": "Woodshire Court", "m": "Uptown \u00b7 Knox", "h": "woodshire-court.html"}, {"n": "Colonnade at Turtle Creek", "m": "Turtle Creek", "h": "colonnade-at-turtle-creek.html"}, {"n": "Schaumburg Lofts", "m": "Downtown FW", "h": "schaumburg-lofts.html"}, {"n": "Dickson Jenkins Lofts", "m": "Downtown FW", "h": "dickson-jenkins-lofts.html"}, {"n": "959 West Bluff", "m": "Downtown FW area", "h": "959-west-bluff.html"}, {"n": "Piazza Siena", "m": "Oak Lawn", "h": "piazza-siena.html"}, {"n": "Lake Cliff Tower", "m": "Oak Cliff", "h": "lake-cliff-tower.html"}, {"n": "M Central Residences (The Highland)", "m": "Mockingbird / SMU", "h": "m-central-residences-the-highland.html"}, {"n": "Park Highlander", "m": "Oak Lawn", "h": "park-highlander.html"}, {"n": "Buzz Condos", "m": "The Cedars", "h": "buzz-condos.html"}, {"n": "Turtle Creek (district)", "m": "26 buildings", "h": "turtle-creek.html"}, {"n": "Uptown & Victory Park (district)", "m": "district file", "h": "uptown-victory-park.html"}, {"n": "Downtown Fort Worth (district)", "m": "district file", "h": "downtown-fort-worth.html"}, {"n": "Market data & rankings", "m": "county roll", "h": "market-data.html"}, {"n": "Compare buildings", "m": "tool", "h": "compare.html"}, {"n": "Collections", "m": "browse by attribute", "h": "collections.html"}];
+    (function(){
+      const inp=document.getElementById('hq'), box=document.getElementById('sugg');
+      let items=[], sel=-1;
+      function render(){
+        box.innerHTML=items.map((it,i)=>`<li role="option" aria-selected="${i===sel}" data-h="${it.h}" style="padding:10px 14px;cursor:pointer;border-bottom:1px solid var(--line);${i===sel?'background:var(--overcast)':''}"><span style="font-family:var(--display);letter-spacing:.03em;text-transform:uppercase">${it.n}</span> <span style="font-family:var(--mono);font-size:10.5px;color:var(--ink-soft)">${it.m}</span></li>`).join('');
+        box.style.display=items.length?'block':'none';
+        inp.setAttribute('aria-expanded', items.length?'true':'false');
+      }
+      inp.addEventListener('input',()=>{
+        const v=inp.value.trim().toLowerCase(); sel=-1;
+        items=v.length<2?[]:SDATA.filter(d=>d.n.toLowerCase().includes(v)||d.m.toLowerCase().includes(v)).slice(0,8);
+        render();
+      });
+      inp.addEventListener('keydown',e=>{
+        if(!items.length) return;
+        if(e.key==='ArrowDown'){sel=Math.min(sel+1,items.length-1);render();e.preventDefault();}
+        else if(e.key==='ArrowUp'){sel=Math.max(sel-1,-1);render();e.preventDefault();}
+        else if(e.key==='Enter'&&sel>-1){location.href=items[sel].h;e.preventDefault();}
+        else if(e.key==='Escape'){items=[];render();}
+      });
+      box.addEventListener('mousedown',e=>{
+        const li=e.target.closest('li'); if(li){location.href=li.dataset.h;}
+      });
+      document.addEventListener('click',e=>{if(!box.contains(e.target)&&e.target!==inp){items=[];render();}});
+    })();
+    </script>
+    <p class="search-hint">89 building files · 34 districts · updated monthly</p>
+  </section>
+
+  <!-- Signature: annotated skyline elevation -->
+  <section class="skyline-block" aria-label="Annotated Metroplex skyline">
+    <div class="wrap skyline-inner">
+      <span class="skyline-caption">Fig. 01 — Metroplex elevation, residential towers marked</span>
+      <div class="skyline-readout" id="readout" aria-live="polite">
+        <span class="bname">Explore the skyline</span>
+        <span class="bspec">hover or tap a marked tower</span>
+      </div>
+      <svg viewBox="0 0 1180 340" width="100%" role="img" aria-label="Line drawing of the Dallas and Fort Worth skylines with residential towers highlighted">
+        <!-- ground -->
+        <line class="ground" x1="0" y1="300" x2="1180" y2="300"/>
+        <!-- civic background buildings (unlabeled, hairline) -->
+        <polyline class="civic" points="60,300 60,180 75,180 75,140 95,140 95,300"/>
+        <rect class="civic" x="120" y="200" width="40" height="100"/>
+        <polyline class="civic" points="330,300 330,120 345,100 360,120 360,300"/>
+        <rect class="civic" x="390" y="160" width="34" height="140"/>
+        <polyline class="civic" points="560,300 560,190 600,170 600,300"/>
+        <rect class="civic" x="700" y="210" width="30" height="90"/>
+        <rect class="civic" x="960" y="220" width="36" height="80"/>
+        <polyline class="civic" points="1080,300 1080,190 1096,178 1112,190 1112,300"/>
+
+        <!-- Reunion Tower (civic, iconic) -->
+        <line class="civic" x1="205" y1="300" x2="205" y2="120"/>
+        <circle class="civic" cx="205" cy="105" r="16"/>
+
+        <!-- 1: Museum Tower (Dallas) -->
+        <path id="t1" class="tower" tabindex="0" data-name="Museum Tower" data-spec="Arts District · 42 fl · 115 units · 2013"
+          d="M250,300 L250,90 Q262,74 274,90 L274,300 Z"/>
+        <!-- 2: Bleu Ciel (Dallas) -->
+        <path id="t2" class="tower" tabindex="0" data-name="Bleu Ciel" data-spec="Harwood · 33 fl · 158 units · 2017"
+          d="M450,300 L450,130 L466,116 L482,130 L482,300 Z"/>
+        <!-- 3: The House (Dallas) -->
+        <rect id="t3" class="tower" tabindex="0" data-name="The House" data-spec="Victory Park · 28 fl · 143 units · 2008"
+          x="510" y="150" width="30" height="150"/>
+        <!-- 4: Azure (Dallas) -->
+        <path id="t4" class="tower" tabindex="0" data-name="Azure" data-spec="Harwood · 31 fl · 114 units · 2007"
+          d="M636,300 L636,140 L652,140 L652,124 L668,124 L668,300 Z"/>
+
+        <!-- gap marker between cities -->
+        <text class="tag" x="770" y="292">← 32 mi →</text>
+
+        <!-- 5: The Tower (Fort Worth) -->
+        <rect id="t5" class="tower fwb" tabindex="0" data-name="The Tower" data-spec="Downtown FW · 37 fl · 294 units · conv. 2005"
+          x="840" y="110" width="34" height="190"/>
+        <!-- 6: Omni Residences (Fort Worth) -->
+        <path id="t6" class="tower fwb" tabindex="0" data-name="Omni Residences" data-spec="Downtown FW · 33 fl · 97 units · 2009"
+          d="M900,300 L900,150 L916,136 L932,150 L932,300 Z"/>
+
+        <!-- leader lines + tags -->
+        <line class="leader" x1="262" y1="86" x2="262" y2="52"/>
+        <text class="tagnum" x="256" y="42">01</text><text class="tag" x="276" y="42">Museum Tower</text>
+        <line class="leader" x1="466" y1="112" x2="466" y2="76"/>
+        <text class="tagnum" x="460" y="66">02</text><text class="tag" x="480" y="66">Bleu Ciel</text>
+        <line class="leader" x1="525" y1="146" x2="525" y2="228"/>
+        <line class="leader" x1="652" y1="120" x2="652" y2="86"/>
+        <text class="tagnum" x="646" y="76">04</text><text class="tag" x="666" y="76">Azure</text>
+        <text class="tagnum" x="497" y="248">03</text><text class="tag" x="517" y="248" style="display:none">The House</text>
+        <line class="leader" x1="857" y1="106" x2="857" y2="70"/>
+        <text class="tagnum" x="851" y="60">05</text><text class="tag" x="871" y="60">The Tower</text>
+        <line class="leader" x1="916" y1="132" x2="916" y2="96"/>
+        <text class="tagnum" x="910" y="86">06</text><text class="tag" x="930" y="86">Omni Residences</text>
+        <text class="tag" x="503" y="264">The House</text>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Two-city hubs -->
+  <section class="hubs wrap" style="padding-left:0;padding-right:0">
+    <div class="hub dal" id="dallas">
+      <span class="city-tag">Dallas</span>
+      <h2>The glass city</h2>
+      <p>66 named buildings on file, Uptown to the Arts District — each verified against county records or named sources. Start with a neighborhood, or go straight to a building.</p>
+      <ul>
+        <li><a href='/uptown-victory-park'>Uptown &amp; Victory Park</a><span class="n">17 bldgs</span></li>
+        <li><a href='/turtle-creek'>Turtle Creek &amp; Oak Lawn</a><span class="n">26 bldgs</span></li>
+        <li><a href='/dallas'>Downtown &amp; Arts District</a><span class="n">14 bldgs</span></li>
+        <li><a href='/dallas'>Knox / Henderson &amp; Preston Center</a><span class="n">11 bldgs</span></li>
+      </ul>
+      <a class='all' href='/dallas'>All Dallas buildings →</a>
+    </div>
+    <div class="hub fw" id="fortworth">
+      <span class="city-tag">Fort Worth</span>
+      <h2>The deco city</h2>
+      <p>A tighter, character-rich market — converted deco towers downtown, new builds near the Cultural District, lofts on the Near Southside.</p>
+      <ul>
+        <li><a href='/downtown-fort-worth'>Downtown &amp; Sundance Square</a><span class="n">13 bldgs</span></li>
+        <li><a href='/fort-worth'>Cultural District &amp; West 7th</a><span class="n">3 bldgs</span></li>
+        <li><a href='/fort-worth'>Near Southside &amp; Magnolia</a><span class="n">1 bldgs</span></li>
+        
+      </ul>
+      <a class='all' href='/fort-worth'>All Fort Worth buildings →</a>
+    </div>
+  </section>
+
+  <!-- Registry cards -->
+  <section class="registry wrap" id="registry">
+    <div class="sec-head">
+      <h2>From the registry</h2>
+      <span class="note">Building files — updated Jul 2026</span>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="elev"><svg width="70" height="130" viewBox="0 0 70 130"><path d="M15,130 L15,14 Q35,0 55,14 L55,130" fill="none" stroke="#2F5D7C" stroke-width="1.6"/><line x1="15" y1="40" x2="55" y2="40" stroke="#C9CFCC"/><line x1="15" y1="70" x2="55" y2="70" stroke="#C9CFCC"/><line x1="15" y1="100" x2="55" y2="100" stroke="#C9CFCC"/></svg></div>
+        <div class="body">
+          <p class="cityline d">Dallas · Arts District</p>
+          <h3>Museum Tower</h3>
+          <p class="addr">1918 Olive Street, 75201</p>
+          <div class="specs">
+            <div><span class="k">Floors</span><span class="v">42</span></div>
+            <div><span class="k">Units</span><span class="v">115</span></div>
+            <div><span class="k">Built</span><span class="v">2013</span></div>
+          </div>
+          <div class="cta-row">
+            <span class="price">From <strong>$1.2M</strong></span>
+            <a class='go' href='/museum-tower'>Building file →</a>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="elev"><svg width="70" height="130" viewBox="0 0 70 130"><path d="M18,130 L18,26 L35,10 L52,26 L52,130" fill="none" stroke="#2F5D7C" stroke-width="1.6"/><line x1="18" y1="55" x2="52" y2="55" stroke="#C9CFCC"/><line x1="18" y1="85" x2="52" y2="85" stroke="#C9CFCC"/></svg></div>
+        <div class="body">
+          <p class="cityline d">Dallas · Harwood</p>
+          <h3>Bleu Ciel</h3>
+          <p class="addr">3130 N Harwood Street, 75201</p>
+          <div class="specs">
+            <div><span class="k">Floors</span><span class="v">33</span></div>
+            <div><span class="k">Units</span><span class="v">158</span></div>
+            <div><span class="k">Built</span><span class="v">2017</span></div>
+          </div>
+          <div class="cta-row">
+            <span class="price">From <strong>$795K</strong></span>
+            <a class='go' href='/bleu-ciel'>Building file →</a>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="elev"><svg width="70" height="130" viewBox="0 0 70 130"><rect x="16" y="18" width="38" height="112" fill="none" stroke="#8A5F1D" stroke-width="1.6"/><line x1="16" y1="18" x2="35" y2="6" stroke="#8A5F1D" stroke-width="1.6"/><line x1="54" y1="18" x2="35" y2="6" stroke="#8A5F1D" stroke-width="1.6"/><line x1="16" y1="50" x2="54" y2="50" stroke="#C9CFCC"/><line x1="16" y1="90" x2="54" y2="90" stroke="#C9CFCC"/></svg></div>
+        <div class="body">
+          <p class="cityline f">Fort Worth · Downtown</p>
+          <h3>The Tower</h3>
+          <p class="addr">500 Throckmorton Street, 76102</p>
+          <div class="specs">
+            <div><span class="k">Floors</span><span class="v">37</span></div>
+            <div><span class="k">Units</span><span class="v">294</span></div>
+            <div><span class="k">Conv.</span><span class="v">2005</span></div>
+          </div>
+          <div class="cta-row">
+            <span class="price">From <strong>$310K</strong></span>
+            <a class='go' href='/the-tower-residences-ritz-carlton'>Building file →</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Market strip -->
+  <section class="strip" aria-label="Market snapshot">
+    <div class="wrap">
+      <div class="stat"><span class="k">Median condo price — DAL</span><span class="v">$486K</span><span class="d">Uptown core, trailing 90 days</span></div>
+      <div class="stat"><span class="k">Median condo price — FW</span><span class="v">$342K</span><span class="d">Downtown &amp; Cultural, 90 days</span></div>
+      <div class="stat"><span class="k">Avg days on market</span><span class="v">54</span><span class="d">High-rise resale, Metroplex</span></div>
+      <div class="stat"><span class="k">New towers tracked</span><span class="v">7</span><span class="d">Under construction or announced</span></div>
+    </div>
+  </section>
+
+  <!-- About + lead capture -->
+  <section class="about wrap" id="alerts">
+    <div>
+      <h2>A registry, not a portal</h2>
+      <p>The big listing sites can show you what's for sale today. They can't tell you <strong>which stack in the building has the protected view</strong>, why two identical floor plans are $90K apart, what the bylaws say about leasing, or how a tower's HOA dues have moved over five years.</p>
+      <p>Dallas Towers compiles that record building by building — from HOA documents, county appraisal rolls, and recorded deed transfers — and keeps it current monthly. Free to read, always.</p>
+    </div>
+    <aside class="lead">
+      <h3>Track the market</h3>
+      <p>Pick a building or a neighborhood and get one email a month: new listings, recorded transfers, dues changes, and new tower announcements.</p>
+      <form data-netlify="true" action='/thanks' method='POST' name='registry-updates'><input type="hidden" name="form-name" value="registry-updates"><input type="hidden" name="landing_url" value=""><input type="hidden" name="referrer" value=""><input type="hidden" name="utm_source" value=""><input type="hidden" name="utm_medium" value=""><input type="hidden" name="utm_campaign" value=""><input type="hidden" name="source" value="index.html"><p style="display:none"><label>Leave blank<input name="bot-field"></label></p>
+        <input type="email" name="email" required placeholder="Email address" aria-label="Email">
+        <select aria-label="What to track">
+          <option>Track a building</option>
+          <option>Track a neighborhood</option>
+          <option>All Dallas high-rises</option>
+          <option>All Fort Worth high-rises</option>
+        </select>
+        <button type="submit">Start tracking</button>
+      </form>
+      <p class="fine">One email a month. No listings spam. Unsubscribe anytime.</p>
+    </aside>
+  </section>
+<section class="f"><h2>Fresh from the county roll <span class="sn">§ NOW</span></h2>
+<div class="twocol"><div class="panel"><h3>Most liquid building</h3><p>The Renaissance on Turtle Creek: 42 deed transfers in 12 months — the metroplex’s fastest condo market. <a href='/market-data' style='border-bottom:1.5px solid var(--ink)'>All rankings →</a></p></div>
+<div class="panel"><h3>Latest correction</h3><p>Eighteen published corrections and counting — the registry shows its work. <a href='/changelog' style='border-bottom:1.5px solid var(--ink)'>Changelog →</a></p></div></div></section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Dallas Towers · Independent building research</span>
+    <span><a href='/about'>About</a> · <a href='/open-data'>Data sources</a> · <a href='/about'>Contact</a></span>
+    <span>Dallas — Fort Worth, Texas</span>
+  </div>
+</footer>
+
+<script>
+  const readout=document.getElementById('readout');
+  const idle=()=>{readout.innerHTML='<span class="bname">Explore the skyline</span><span class="bspec">hover or tap a marked tower</span>'};
+  document.querySelectorAll('svg .tower').forEach(t=>{
+    const show=()=>{t.classList.add('hot');readout.innerHTML='<span class="bname">'+t.dataset.name+'</span><span class="bspec">'+t.dataset.spec+'</span>'};
+    const hide=()=>{t.classList.remove('hot');idle()};
+    t.addEventListener('mouseenter',show);t.addEventListener('focus',show);
+    t.addEventListener('mouseleave',hide);t.addEventListener('blur',hide);
+    t.addEventListener('click',show);
+  });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VLBFHWJ3NX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VLBFHWJ3NX');
+</script><script>(function(){try{var ss=sessionStorage,q=new URLSearchParams(location.search);if(!ss.getItem('dt_land')){ss.setItem('dt_land',location.pathname+location.search);ss.setItem('dt_ref',document.referrer||'');['utm_source','utm_medium','utm_campaign'].forEach(function(k){if(q.get(k))ss.setItem('dt_'+k,q.get(k));});}document.querySelectorAll('form[method="POST"]').forEach(function(f){function st(n,v){var i=f.querySelector('input[name="'+n+'"]');if(i&&v)i.value=v;}st('landing_url',ss.getItem('dt_land'));st('referrer',ss.getItem('dt_ref'));st('utm_source',ss.getItem('dt_utm_source'));st('utm_medium',ss.getItem('dt_utm_medium'));st('utm_campaign',ss.getItem('dt_utm_campaign'));});}catch(e){}})();</script></body>
+</html>
