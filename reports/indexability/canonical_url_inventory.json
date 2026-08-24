@@ -1,0 +1,637 @@
+{
+ "generated_from": "branch claude/pcs-oahu-deploy-dd373n post-audit-fixes",
+ "domain": "https://pcsoahu.com",
+ "sitemap_urls": 61,
+ "pages": [
+  {
+   "url": "https://pcsoahu.com/404.html",
+   "path": "/404.html",
+   "expected": "non-public",
+   "canonical": "https://pcsoahu.com/404.html",
+   "self_canonical": true,
+   "in_sitemap": false,
+   "meta_noindex": false,
+   "visible_words": 516
+  },
+  {
+   "url": "https://pcsoahu.com/ask/",
+   "path": "/ask/index.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/ask/",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 541
+  },
+  {
+   "url": "https://pcsoahu.com/bah-report/2026-edition/",
+   "path": "/bah-report/2026-edition/index.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/bah-report/2026-edition/",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 988
+  },
+  {
+   "url": "https://pcsoahu.com/bah-report/",
+   "path": "/bah-report/index.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/bah-report/",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 968
+  },
+  {
+   "url": "https://pcsoahu.com/bases/camp-smith.html",
+   "path": "/bases/camp-smith.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/bases/camp-smith.html",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 815
+  },
+  {
+   "url": "https://pcsoahu.com/bases/coast-guard-honolulu.html",
+   "path": "/bases/coast-guard-honolulu.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/bases/coast-guard-honolulu.html",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 821
+  },
+  {
+   "url": "https://pcsoahu.com/bases/fort-shafter.html",
+   "path": "/bases/fort-shafter.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/bases/fort-shafter.html",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 867
+  },
+  {
+   "url": "https://pcsoahu.com/bases/",
+   "path": "/bases/index.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/bases/",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 781
+  },
+  {
+   "url": "https://pcsoahu.com/bases/kaneohe-bay.html",
+   "path": "/bases/kaneohe-bay.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/bases/kaneohe-bay.html",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 828
+  },
+  {
+   "url": "https://pcsoahu.com/bases/pearl-harbor-hickam.html",
+   "path": "/bases/pearl-harbor-hickam.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/bases/pearl-harbor-hickam.html",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 902
+  },
+  {
+   "url": "https://pcsoahu.com/bases/schofield-wheeler.html",
+   "path": "/bases/schofield-wheeler.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/bases/schofield-wheeler.html",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 861
+  },
+  {
+   "url": "https://pcsoahu.com/bases/tripler.html",
+   "path": "/bases/tripler.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/bases/tripler.html",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 821
+  },
+  {
+   "url": "https://pcsoahu.com/buy/",
+   "path": "/buy/index.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/buy/",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 1041
+  },
+  {
+   "url": "https://pcsoahu.com/data/",
+   "path": "/data/index.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/data/",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 758
+  },
+  {
+   "url": "https://pcsoahu.com/embed/bah-widget.html",
+   "path": "/embed/bah-widget.html",
+   "expected": "intentional_noindex",
+   "canonical": "https://pcsoahu.com/bah-report/",
+   "self_canonical": false,
+   "in_sitemap": false,
+   "meta_noindex": true,
+   "visible_words": 106
+  },
+  {
+   "url": "https://pcsoahu.com/embed/",
+   "path": "/embed/index.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/embed/",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 643
+  },
+  {
+   "url": "https://pcsoahu.com/family/camp-smith/",
+   "path": "/family/camp-smith/index.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/family/camp-smith/",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 1084
+  },
+  {
+   "url": "https://pcsoahu.com/family/childcare/",
+   "path": "/family/childcare/index.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/family/childcare/",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 945
+  },
+  {
+   "url": "https://pcsoahu.com/family/fort-shafter/",
+   "path": "/family/fort-shafter/index.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/family/fort-shafter/",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 1086
+  },
+  {
+   "url": "https://pcsoahu.com/family/",
+   "path": "/family/index.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/family/",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 738
+  },
+  {
+   "url": "https://pcsoahu.com/family/kaneohe-bay/",
+   "path": "/family/kaneohe-bay/index.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/family/kaneohe-bay/",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 1083
+  },
+  {
+   "url": "https://pcsoahu.com/family/pearl-harbor-hickam/",
+   "path": "/family/pearl-harbor-hickam/index.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/family/pearl-harbor-hickam/",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 1091
+  },
+  {
+   "url": "https://pcsoahu.com/family/schofield-wheeler/",
+   "path": "/family/schofield-wheeler/index.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/family/schofield-wheeler/",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 1088
+  },
+  {
+   "url": "https://pcsoahu.com/family/spouse-jobs/",
+   "path": "/family/spouse-jobs/index.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/family/spouse-jobs/",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 721
+  },
+  {
+   "url": "https://pcsoahu.com/family/tripler/",
+   "path": "/family/tripler/index.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/family/tripler/",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 1083
+  },
+  {
+   "url": "https://pcsoahu.com/guides/childcare.html",
+   "path": "/guides/childcare.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/guides/childcare.html",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 746
+  },
+  {
+   "url": "https://pcsoahu.com/guides/dodea-schools.html",
+   "path": "/guides/dodea-schools.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/guides/dodea-schools.html",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 1359
+  },
+  {
+   "url": "https://pcsoahu.com/guides/harpta.html",
+   "path": "/guides/harpta.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/guides/harpta.html",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 2364
+  },
+  {
+   "url": "https://pcsoahu.com/guides/healthcare.html",
+   "path": "/guides/healthcare.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/guides/healthcare.html",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 756
+  },
+  {
+   "url": "https://pcsoahu.com/guides/household-goods.html",
+   "path": "/guides/household-goods.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/guides/household-goods.html",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 1386
+  },
+  {
+   "url": "https://pcsoahu.com/guides/",
+   "path": "/guides/index.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/guides/",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 837
+  },
+  {
+   "url": "https://pcsoahu.com/guides/on-base-waitlist.html",
+   "path": "/guides/on-base-waitlist.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/guides/on-base-waitlist.html",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 1451
+  },
+  {
+   "url": "https://pcsoahu.com/guides/pets-to-hawaii.html",
+   "path": "/guides/pets-to-hawaii.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/guides/pets-to-hawaii.html",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 794
+  },
+  {
+   "url": "https://pcsoahu.com/guides/rent-vs-buy.html",
+   "path": "/guides/rent-vs-buy.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/guides/rent-vs-buy.html",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 1425
+  },
+  {
+   "url": "https://pcsoahu.com/guides/school-transition.html",
+   "path": "/guides/school-transition.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/guides/school-transition.html",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 732
+  },
+  {
+   "url": "https://pcsoahu.com/guides/sponsorship.html",
+   "path": "/guides/sponsorship.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/guides/sponsorship.html",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 760
+  },
+  {
+   "url": "https://pcsoahu.com/guides/spouse-employment.html",
+   "path": "/guides/spouse-employment.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/guides/spouse-employment.html",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 742
+  },
+  {
+   "url": "https://pcsoahu.com/guides/utilities.html",
+   "path": "/guides/utilities.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/guides/utilities.html",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 815
+  },
+  {
+   "url": "https://pcsoahu.com/guides/vehicle-registration.html",
+   "path": "/guides/vehicle-registration.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/guides/vehicle-registration.html",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 1090
+  },
+  {
+   "url": "https://pcsoahu.com/",
+   "path": "/index.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 937
+  },
+  {
+   "url": "https://pcsoahu.com/my-pcs/",
+   "path": "/my-pcs/index.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/my-pcs/",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 551
+  },
+  {
+   "url": "https://pcsoahu.com/neighborhoods/aiea.html",
+   "path": "/neighborhoods/aiea.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/neighborhoods/aiea.html",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 949
+  },
+  {
+   "url": "https://pcsoahu.com/neighborhoods/downtown.html",
+   "path": "/neighborhoods/downtown.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/neighborhoods/downtown.html",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 901
+  },
+  {
+   "url": "https://pcsoahu.com/neighborhoods/ewa.html",
+   "path": "/neighborhoods/ewa.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/neighborhoods/ewa.html",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 1014
+  },
+  {
+   "url": "https://pcsoahu.com/neighborhoods/",
+   "path": "/neighborhoods/index.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/neighborhoods/",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 733
+  },
+  {
+   "url": "https://pcsoahu.com/neighborhoods/kailua.html",
+   "path": "/neighborhoods/kailua.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/neighborhoods/kailua.html",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 921
+  },
+  {
+   "url": "https://pcsoahu.com/neighborhoods/kalihi.html",
+   "path": "/neighborhoods/kalihi.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/neighborhoods/kalihi.html",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 861
+  },
+  {
+   "url": "https://pcsoahu.com/neighborhoods/kaneohe.html",
+   "path": "/neighborhoods/kaneohe.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/neighborhoods/kaneohe.html",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 954
+  },
+  {
+   "url": "https://pcsoahu.com/neighborhoods/mililani.html",
+   "path": "/neighborhoods/mililani.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/neighborhoods/mililani.html",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 929
+  },
+  {
+   "url": "https://pcsoahu.com/neighborhoods/pearlcity.html",
+   "path": "/neighborhoods/pearlcity.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/neighborhoods/pearlcity.html",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 942
+  },
+  {
+   "url": "https://pcsoahu.com/neighborhoods/saltlake.html",
+   "path": "/neighborhoods/saltlake.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/neighborhoods/saltlake.html",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 903
+  },
+  {
+   "url": "https://pcsoahu.com/neighborhoods/wahiawa.html",
+   "path": "/neighborhoods/wahiawa.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/neighborhoods/wahiawa.html",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 922
+  },
+  {
+   "url": "https://pcsoahu.com/neighborhoods/waipahu.html",
+   "path": "/neighborhoods/waipahu.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/neighborhoods/waipahu.html",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 912
+  },
+  {
+   "url": "https://pcsoahu.com/on-base/",
+   "path": "/on-base/index.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/on-base/",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 941
+  },
+  {
+   "url": "https://pcsoahu.com/pcs-checklist/",
+   "path": "/pcs-checklist/index.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/pcs-checklist/",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 895
+  },
+  {
+   "url": "https://pcsoahu.com/quiz/",
+   "path": "/quiz/index.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/quiz/",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 640
+  },
+  {
+   "url": "https://pcsoahu.com/schools/",
+   "path": "/schools/index.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/schools/",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 846
+  },
+  {
+   "url": "https://pcsoahu.com/sell/",
+   "path": "/sell/index.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/sell/",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 976
+  },
+  {
+   "url": "https://pcsoahu.com/tla/field-notes.html",
+   "path": "/tla/field-notes.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/tla/field-notes.html",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 928
+  },
+  {
+   "url": "https://pcsoahu.com/tla/",
+   "path": "/tla/index.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/tla/",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 788
+  },
+  {
+   "url": "https://pcsoahu.com/tools/commute-grid/",
+   "path": "/tools/commute-grid/index.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/tools/commute-grid/",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 896
+  },
+  {
+   "url": "https://pcsoahu.com/tools/",
+   "path": "/tools/index.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/tools/",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 892
+  },
+  {
+   "url": "https://pcsoahu.com/vehicle-shipping/",
+   "path": "/vehicle-shipping/index.html",
+   "expected": "indexable",
+   "canonical": "https://pcsoahu.com/vehicle-shipping/",
+   "self_canonical": true,
+   "in_sitemap": true,
+   "meta_noindex": false,
+   "visible_words": 1801
+  }
+ ]
+}

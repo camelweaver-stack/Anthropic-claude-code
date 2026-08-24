@@ -4,6 +4,54 @@ Append-only. Newest entry on top. One record per daily run. Template at the bott
 
 ---
 
+## 2026-08-24 — Technical indexability forensic audit (fixes deployed; site otherwise clean)
+
+- **Trigger:** Operator-directed forensic audit — prove discoverability/crawlability/canonicals/
+  indexability/internal reachability of production; fix only demonstrated defects; no content
+  expansion. Full deliverables in `reports/indexability/` (inventory + JSON, sitemap audit, link
+  graph, indexability matrix, GSC priority list).
+- **What was audited (all against live production):** all 59 sitemap URLs (status, redirects,
+  content-type, X-Robots-Tag, canonicals, meta robots, hreflang, static content); all 30
+  extensionless Netlify twins; 4 host/protocol variants; robots.txt; 404/soft-404 behavior;
+  uppercase and trailing-slash variants; a rendered-link BFS crawl from the homepage (59 nodes,
+  2,386 edges); structured data; static-vs-JS rendering; thin-page diagnostics; a narrow
+  credibility sweep. Verdict detail in `reports/indexability/INDEXABILITY_MATRIX.md`.
+- **Overwhelmingly clean:** every sitemap URL 200 + self-canonical + no noindex anywhere (only the
+  gate-enforced widget noindex); robots.txt correct; hard 404s (no soft-404/redirect-to-home);
+  http→https and www→apex 301s clean; zero orphans, max depth 4; every page's content fully
+  server-rendered (thinnest indexable page ≈530 static words); per-page honest lastmod; no
+  forbidden schema types; no hreflang; no unattributed measured-fact claims found.
+- **Defect 1 (FIXED): unsupported FAQPage structured data.** 9 live pages emitted FAQPage JSON-LD
+  whose Q&A text is not visible on the page (violates Google's FAQ content guidelines). Removed
+  FAQPage from all emitters on `dd373n` (and mirrored to this branch's 12 call sites). No visible
+  content changed; Article/Dataset schema retained; `qas` data kept in source for a future
+  visible-FAQ rendering.
+- **Defect 2 (FIXED): stale-route 404 regressions.** `/guides/rent-vs-buy.html` and
+  `/guides/vehicle-registration.html` — published + production-verified 2026-08-05/06, silently
+  dropped by the 2026-08-16 branch-divergence overwrite, 404 live ever since despite being in
+  Google's discovery set. Restored verbatim onto `dd373n` from this branch (FAQPage stripped),
+  wired into build(), guides hub, footer, and buy()'s in-body reference. lastmod preserves true
+  content dates (2026-08-06/05). Additive-only verified: live sitemap 59 → 61.
+- **Noted, not fixed (outside proven-defect authority):** base pages carry exactly 1 unique
+  inbound link each (their hub, depth 2) and `/family/*` pages sit at depth 4 with 1 inbound —
+  reachable, not orphaned; recommended future natural cross-links (neighborhood→base,
+  base↔family). Rendering FAQs visibly to reinstate FAQPage markup is a future editorial option.
+- **Deployment:** commit `8de2f0c` on `claude/pcs-oahu-deploy-dd373n`, Netlify auto-deploy
+  `6a8ccdb160a9e3000881352e` state `ready`. Live-verified: restored pages 200, 61-URL sitemap
+  live, FAQPage absent from live HTML, canonicals self-consistent, robots/sitemap 200.
+  IndexNow POSTed (61 URLs, HTTP 200).
+- **GSC manual actions for the operator (not performed by tooling):** verify sitemap as property
+  `https://pcsoahu.com` → Sitemaps → enter `sitemap.xml` (path only); then URL-Inspection
+  "Request Indexing" per `reports/indexability/GSC_PRIORITY_URLS.md` (10 URLs, homepage/BAH
+  report/checklist/hubs/JBPHH/Schofield/rent-vs-buy/MCBH/HARPTA).
+- **Diagnosis classification:** **B — no catastrophic block; discovery architecture had fixable
+  weaknesses** (invisible-FAQ schema, two 404'd known URLs — both corrected). With these fixed
+  the site is technically clean; remaining non-indexation is consistent with young-domain
+  index selection. Per the audit brief's stop condition: no further technical rebuilds — measure
+  participating-page count over the coming weeks before any next investigation.
+
+---
+
 ## 2026-08-23 — On-base housing waitlist mechanics (backlog #5, shipped same-day)
 
 - **Date/time:** 2026-08-23 (daily publishing cycle)

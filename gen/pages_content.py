@@ -72,7 +72,7 @@ scarcity moves them. This report is a compass, not a valuation.</div>
                 "Oahu pocket — where the allowance clears the market and where the gap opens.",
                 body, "/bah-report/",
                 jsonld={"@context": "https://schema.org",
-                        "@graph": [dataset_ld(), faq_ld(qas)]})
+                        "@graph": [dataset_ld()]})
 
 def bah_report_2026_archive():
     import re as _re
@@ -249,7 +249,7 @@ between you and a lender you choose.</p>
     return page("/buy/", "VA Loans on Oahu 2026: Entitlement Math, Condo Approval, Leasehold | PCS Oahu",
                 "The flagship VA buyer brief for Oahu: full vs partial entitlement at island "
                 "prices, the condo-approval reality at a $530K median, and the leasehold trap.",
-                body, "/buy/", jsonld=faq_ld(qas))
+                body, "/buy/")
 
 def sell():
     qas = [
@@ -333,7 +333,7 @@ assuming buyer substitutes their own. Know both facts before negotiating.</p>
                 jsonld={"@context": "https://schema.org",
                         "@graph": [article_ld("/sell/",
                                    "PCSing out: sell or rent your Oahu home?",
-                                   "HARPTA, rent-vs-sell math, and VA seller notes."), faq_ld(qas)]})
+                                   "HARPTA, rent-vs-sell math, and VA seller notes.")]})
 
 def tla():
     body = f'''
@@ -515,7 +515,7 @@ checklist itself.</p>
     return p, page(p, "Pets to Hawaii on PCS Orders: Quarantine, Direct Airport Release | PCS Oahu",
                 "The Hawaii pet quarantine sequence for military moves — microchip, OIE-FAVN "
                 "test, waiting period, Direct Airport Release — and the three classic failures.",
-                body, "/guides/", jsonld=faq_ld(qas))
+                body, "/guides/")
 
 def household_goods():
     qas = [
@@ -635,8 +635,7 @@ starts late.</p>
          "datePublished": "2026-08-05", "dateModified": "2026-08-05",
          "author": {"@type": "Organization", "name": "PCS Oahu"},
          "publisher": {"@type": "Organization", "name": "PCS Oahu"},
-         "mainEntityOfPage": DOMAIN + p},
-        faq_ld(qas)]}
+         "mainEntityOfPage": DOMAIN + p}]}
     return p, page(p, "Shipping Household Goods to Hawaii on PCS Orders: UB, HHG, Storage | PCS Oahu",
                 "How the OCONUS household-goods move to Oahu works — unaccompanied baggage that "
                 "lands first, the sea shipment, storage, pro-gear, weight allowances, and DPS "
@@ -737,8 +736,7 @@ See <a href="/on-base/">on-base housing</a>.</p>
          "datePublished": "2026-08-05", "dateModified": "2026-08-05",
          "author": {"@type": "Organization", "name": "PCS Oahu"},
          "publisher": {"@type": "Organization", "name": "PCS Oahu"},
-         "mainEntityOfPage": DOMAIN + p},
-        faq_ld(qas)]}
+         "mainEntityOfPage": DOMAIN + p}]}
     return p, page(p, "Registering a Car in Hawaii on PCS Orders: Forms, Weight Tax, Inspection | PCS Oahu",
                 "How military families register an imported vehicle on Oahu: the safety-inspection "
                 "sequence and 30-day clock, the nonresident weight-tax exemption (CS-L(MVR)50), and "
@@ -871,8 +869,7 @@ lender and, where taxes are involved, a tax professional you choose.</p>
          "datePublished": "2026-08-06", "dateModified": "2026-08-06",
          "author": {"@type": "Organization", "name": "PCS Oahu"},
          "publisher": {"@type": "Organization", "name": "PCS Oahu"},
-         "mainEntityOfPage": DOMAIN + p},
-        faq_ld(qas)]}
+         "mainEntityOfPage": DOMAIN + p}]}
     return p, page(p, "Rent vs Buy on Oahu with a VA Loan: The Military Framework | PCS Oahu",
                 "Should military families rent or buy on Oahu? The honest framework: the PCS break-even "
                 "horizon, what BAH reaches at a $1.275M median, the no-down-payment VA advantage, "
@@ -1103,8 +1100,7 @@ or a tax professional you choose.</p>
          "datePublished": "2026-08-16", "dateModified": "2026-08-16",
          "author": {"@type": "Organization", "name": "PCS Oahu"},
          "publisher": {"@type": "Organization", "name": "PCS Oahu"},
-         "mainEntityOfPage": DOMAIN + p},
-        faq_ld(qas)]}
+         "mainEntityOfPage": DOMAIN + p}]}
     return p, page(p, "HARPTA for Military Sellers on Oahu: 7.25% Withholding, N-289, N-288B | PCS Oahu",
                 "HARPTA explained for outbound military sellers on Oahu: the 7.25% withholding on the "
                 "amount realized, why being a Hawaii resident doesn't exempt you without Form N-289, "
@@ -1254,8 +1250,7 @@ above before relying on any number here.</p>
          "datePublished": "2026-08-22", "dateModified": "2026-08-22",
          "author": {"@type": "Organization", "name": "PCS Oahu"},
          "publisher": {"@type": "Organization", "name": "PCS Oahu"},
-         "mainEntityOfPage": DOMAIN + p},
-        faq_ld(qas)]}
+         "mainEntityOfPage": DOMAIN + p}]}
     return p, page(p, "Does Hawaii Have DoDEA Schools? The Answer for Military Families | PCS Oahu",
                 "Hawaii has no DoDEA schools — every military child attends the statewide Hawaii "
                 "DOE system. School Liaison Officer contacts by service branch, why Hawaii differs "
@@ -1416,8 +1411,7 @@ of housing or a timeline.</p>
          "datePublished": "2026-08-23", "dateModified": "2026-08-23",
          "author": {"@type": "Organization", "name": "PCS Oahu"},
          "publisher": {"@type": "Organization", "name": "PCS Oahu"},
-         "mainEntityOfPage": DOMAIN + p},
-        faq_ld(qas)]}
+         "mainEntityOfPage": DOMAIN + p}]}
     return p, page(p, "Oahu On-Base Housing Waitlists: HEAT, the 7-Day Rule, Decline Costs | PCS Oahu",
                 "How Oahu military housing waitlists really work: HEAT starts your file but holds "
                 "no place, Island Palm's 7-day rule backdates Army positions to your departure "
