@@ -1,9 +1,9 @@
 {
  "dataset": "Dallas Towers - DFW Condominium Registry",
- "version": "2026-08.3",
+ "version": "2026-08.4",
  "license": "CC BY 4.0 - attribution: Dallas Towers (dallastowers.com)",
  "record_count": 89,
- "notes": "County fields aggregate Dallas CAD 2026 certified roll unit accounts. Texas is a non-disclosure state; no sale prices. Verify before transacting. v2026-08.2: removed the legacy 'psf' field (an unsourced per-sf estimate inconsistent with non-disclosure sourcing); assessed $/sf lives in county_2026.psf_med with certified-roll provenance. v2026-08.3: Museum Tower dues corrected 1.42 -> 1.34 $/sf/mo per a 2026 listing disclosure (single-disclosure basis; the prior figure carried no provenance).",
+ "notes": "County fields aggregate Dallas CAD 2026 certified roll unit accounts. Texas is a non-disclosure state; no sale prices. Verify before transacting. v2026-08.2: removed the legacy 'psf' field (an unsourced per-sf estimate inconsistent with non-disclosure sourcing); assessed $/sf lives in county_2026.psf_med with certified-roll provenance. v2026-08.3: Museum Tower dues corrected 1.42 -> 1.34 $/sf/mo per a 2026 listing disclosure (single-disclosure basis; the prior figure carried no provenance). v2026-08.4: The Claridge dues corrected 0.98 -> 1.15 $/sf/mo per the 2026 listing disclosure cited on its building file (the prior figure carried no provenance).",
  "buildings": [
   {
    "name": "Museum Tower",
@@ -423,7 +423,7 @@
    "fl": 18,
    "un": 82,
    "type": "Tower",
-   "dues": 0.98,
+   "dues": 1.15,
    "conf": "v",
    "county_2026": {
     "acct": 82,

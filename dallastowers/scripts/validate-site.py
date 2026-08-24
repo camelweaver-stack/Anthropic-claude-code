@@ -152,6 +152,33 @@ for f, s in site_pages.items():
     for m in re.finditer(r"(\d+) county-filed building", vt):
         if int(m.group(1)) != CTY: fails.append(f"[counts] {f}: claims {m.group(1)} county-filed, dataset has {CTY}")
 
+# --- 10. per-building numeric cross-checks (dues + register units vs canonical) ---
+_by_page = {}
+import re as _re
+def _slug(n):
+    x=n.lower().replace("&","and").replace("'","").replace("\u2019","")
+    return _re.sub(r"-+","-",_re.sub(r"[^a-z0-9]+","-",x)).strip("-")
+for _b in _data:
+    _sl=_slug(_b["name"]);
+    if _sl=="texas-and-pacific-lofts": _sl="texas-pacific-lofts"
+    _by_page[_sl+".html"]=_b
+for f, s in site_pages.items():
+    _b=_by_page.get(f)
+    if not _b: continue
+    vt=visible_text(s)
+    for m in _re.finditer(r"\$(\d\.\d{2})\s*/?\s*(?:/|per )?(?:sf|square foot)[ /]*(?:mo|month)", vt):
+        val=float(m.group(1))
+        ctx=vt[max(0,m.start()-160):m.end()+40].lower()
+        if "between roughly" in ctx or "above" in ctx or "below" in ctx or "~$" not in "": pass
+        if _b.get("dues") is not None:
+            if abs(val-_b["dues"])>0.005 and f"${_b['dues']:.2f}" not in m.group(0):
+                # allow cross-references to OTHER buildings' dues in comparison text
+                if any(abs(val-(x.get("dues") or -1))<=0.005 for x in _data): continue
+                fails.append(f"[dues-consistency] {f}: shows ${val}/sf/mo, canonical is ${_b['dues']}")
+    m=_re.search(r"Unit accounts\s*(\d+)\s*\(roll\)", vt)
+    if m and _b.get("county_2026") and int(m.group(1))!=_b["county_2026"]["acct"]:
+        fails.append(f"[units-consistency] {f}: register shows {m.group(1)} accounts, roll has {_b['county_2026']['acct']}")
+
 # --- 7. duplicate titles ---
 titles = {}
 for f, s in site_pages.items():
@@ -162,6 +189,7 @@ for f, s in site_pages.items():
     if t in titles: fails.append(f"[title] duplicate: {f} == {titles[t]} ({t[:60]!r})")
     titles[t] = f
 
+fails = list(dict.fromkeys(fails))
 if fails:
     print(f"FAIL — {len(fails)} finding(s):")
     for x in fails: print("  " + x)

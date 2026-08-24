@@ -39,9 +39,10 @@ CHECKS = [
     ("questionnaire", "critical", r"questionnaire we'?ve reviewed"),
     ("ooc_unproxied", "critical", r"[Oo]wner-occupancy ratio\s*≈?\d{2}%"),
     ("dues_incl2",    "critical", r"included in dues|[Bb]uilding-paid, in dues"),
+    ("txn_stats",     "critical", r"trailing 90 days|closed resales|[Dd]ays on (the )?m(ar)?k(e)?t|[Mm]edian (condo )?price"),
 ]
 # a finding is exempt when the surrounding text explicitly qualifies it
-QUALIFIED = re.compile(r"not yet (verified|observed|recorded)|what to verify|research in progress|publish(es)? only (with|from) (the )?(governing )?document", re.I)
+QUALIFIED = re.compile(r"not yet (verified|observed|recorded)|what to verify|research in progress|publish(es)? only (with|from) (the )?(governing )?document|await(s)? document verificat|documented information|no prices", re.I)
 # provenance markers that legitimize a category on that page
 PROV = {
     "dues_included": r"(listing disclosure|resale certificate dated|per the (declaration|budget) dated)",
@@ -59,12 +60,15 @@ slugs={slugify(b["name"]) for b in data} | {"texas-pacific-lofts"}
 
 rows=[]
 for fn in sorted(os.listdir(ROOT)):
-    if not fn.endswith(".html") or fn[:-5] not in slugs: continue
+    if not fn.endswith(".html"): continue
+    building_page = fn[:-5] in slugs
     vt = visible(open(os.path.join(ROOT, fn), encoding="utf-8").read())
+    SITEWIDE = {"txn_stats","view_protect","documents","assessments","dues_history"}
     for cat, sev, pat in CHECKS:
+        if not building_page and cat not in SITEWIDE: continue
         for m in re.finditer(pat, vt):
             ctx = vt[max(0,m.start()-60):m.end()+60]
-            wide = vt[max(0,m.start()-260):m.end()+260]
+            wide = vt[max(0,m.start()-140):m.end()+140]
             if QUALIFIED.search(wide): continue
             if cat in PROV and re.search(PROV[cat], ctx, re.I): continue
             rows.append({"building": fn[:-5], "category": cat, "severity": sev,
