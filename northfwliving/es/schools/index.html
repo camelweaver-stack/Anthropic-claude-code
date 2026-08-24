@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Escuelas y Distritos del Corredor Alliance — El Mapa Honesto</title>
+<meta name="description" content="Cinco distritos escolares cruzan el corredor North Fort Worth / Alliance, y los límites ignoran los nombres de las ciudades. Los hechos, el método de verificación por dirección, y perfiles honestos de Keller ISD y Northwest ISD.">
+<link rel="canonical" href="https://northfwliving.com/es/schools/">
+<link rel="alternate" hreflang="en" href="https://northfwliving.com/schools/">
+<link rel="alternate" hreflang="es" href="https://northfwliving.com/es/schools/">
+<link rel="alternate" hreflang="x-default" href="https://northfwliving.com/schools/">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#26506B;--blue-d:#1B3B50;--signal:#D97B29;--mist:#E9EEF2;--ink:#141E27;--paper:#FBFCFD;--line:#D5DEE4}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Instrument Sans',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.65;font-size:17px}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;line-height:1.15;color:var(--blue-d)}
+h1{font-size:clamp(1.9rem,5vw,3rem);margin:.4em 0 .5em}
+h2{font-size:clamp(1.4rem,3.5vw,2rem);margin:1.6em 0 .6em}
+h3{font-size:1.15rem;margin:1.2em 0 .4em}
+p{margin:0 0 1em}
+a{color:var(--blue);text-decoration-thickness:1px;text-underline-offset:3px}
+.mono{font-family:'IBM Plex Mono',monospace}
+header.site{border-bottom:3px solid var(--blue);background:#fff}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+.brand{display:flex;align-items:baseline;gap:.5rem;padding:1rem 0 .4rem}
+.brand a{font-family:'Fraunces',serif;font-weight:700;font-size:1.35rem;color:var(--blue-d);text-decoration:none}
+.brand span{font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:var(--signal);letter-spacing:.04em}
+nav.main{display:flex;flex-wrap:wrap;gap:.15rem .95rem;padding:.35rem 0 .8rem;font-size:.92rem}
+nav.main a{text-decoration:none;color:var(--blue-d)}
+nav.main a:hover{color:var(--signal)}
+nav.main a.lang{font-weight:700}
+.hero{background:linear-gradient(160deg,var(--blue-d),var(--blue));color:#fff;padding:3rem 0 2.6rem}
+.hero h1{color:#fff}
+.hero .kicker{font-family:'IBM Plex Mono',monospace;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:#F2C08F}
+.hero p.lede{font-size:1.1rem;max-width:44rem;color:#E4ECF2}
+main{padding:2.2rem 0 3rem}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin:1.4rem 0}
+.stat{background:var(--mist);border-left:4px solid var(--signal);padding:.9rem 1rem;border-radius:4px}
+.stat b{display:block;font-family:'IBM Plex Mono',monospace;font-size:1.35rem;color:var(--blue-d)}
+.stat small{font-size:.8rem;color:#3D4E5C}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.1rem;margin:1.4rem 0}
+.card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:1.1rem 1.2rem}
+.card h3{margin-top:.1em}
+.callout{background:var(--mist);border-radius:6px;padding:1.1rem 1.3rem;margin:1.4rem 0}
+.callout.signal{border-left:5px solid var(--signal)}
+table.data{width:100%;border-collapse:collapse;margin:1.3rem 0;font-size:.92rem}
+table.data th{background:var(--blue-d);color:#fff;text-align:left;padding:.55rem .7rem;font-family:'IBM Plex Mono',monospace;font-size:.78rem;letter-spacing:.03em}
+table.data td{border-bottom:1px solid var(--line);padding:.55rem .7rem;vertical-align:top}
+table.data tr:nth-child(even) td{background:#F3F6F8}
+.formbox{background:var(--blue-d);color:#fff;border-radius:8px;padding:1.6rem 1.5rem;margin:2.2rem 0}
+.formbox h2{color:#fff;margin-top:0}
+.formbox p{color:#DCE6ED;font-size:.95rem}
+.formbox label{display:block;font-size:.85rem;margin:.7rem 0 .2rem;font-family:'IBM Plex Mono',monospace}
+.formbox input{width:100%;padding:.6rem .7rem;border-radius:4px;border:1px solid #4A6A82;font-size:1rem}
+.formbox button{margin-top:1rem;background:var(--signal);color:#fff;border:0;padding:.75rem 1.4rem;border-radius:4px;font-size:1rem;font-weight:600;cursor:pointer}
+.formbox button:hover{background:#B8641D}
+footer.site{background:var(--ink);color:#B9C6D0;font-size:.85rem;padding:2.2rem 0 2.6rem;margin-top:3rem}
+footer.site h4{color:#fff;font-family:'Fraunces',serif;margin:1.2rem 0 .4rem}
+footer.site a{color:#D8E2EA}
+footer.site .legal{margin-top:1.6rem;border-top:1px solid #33414D;padding-top:1.2rem;font-size:.78rem;line-height:1.6;color:#8FA0AD}
+.crumbs{font-size:.8rem;font-family:'IBM Plex Mono',monospace;margin-bottom:1rem;color:#5A6B78}
+.crumbs a{color:#5A6B78}
+ul.plain{margin:0 0 1em 1.2em}
+ul.plain li{margin-bottom:.45em}
+.dateline{font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:var(--signal);letter-spacing:.05em;text-transform:uppercase}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://northfwliving.com/es/"}, {"@type": "ListItem", "position": 2, "name": "Cinco distritos, un corredor, cero atajos.", "item": "https://northfwliving.com/es/schools/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Anastasia Weaver Media", "url": "https://northfwliving.com/", "description": "Independent publisher of sourced local housing research."}</script></head>
+<body>
+<header class="site"><div class="wrap">
+<div class="brand"><a href="/es/">North FW Living</a><span>la guía del corredor Alliance</span></div>
+<nav class="main"><a href="/es/renting/">Rentar</a><a href="/es/buy/">Comprar</a><a href="/es/builder-ledger/">Registro de Incentivos</a><a href="/es/neighborhoods/">Vecindarios</a><a href="/es/employers/">Empleadores</a><a href="/es/schools/">Escuelas</a><a href="/es/sell/">Vender</a><a href="/es/relocate/">Mudarse</a><a href="/es/guides/">Guías</a><a href="/" class="lang">English</a></nav>
+</div></header>
+<div class="hero"><div class="wrap">
+<p class="kicker">Escuelas y distritos</p>
+<h1>Cinco distritos, un corredor, cero atajos.</h1><p style="font-size:.8rem;color:#666;border-bottom:1px dashed #ccc;padding:0 0 8px;margin:6px 0 14px">Publicado por <strong>Anastasia Weaver Media</strong> · Investigación local independiente, sin listados ni publicidad pagada · Actualizado 16 de agosto de 2026</p>
+<p class="lede">La pregunta escolar del corredor tiene una regla de hierro: los distritos siguen sus propios mapas, no los letreros de límite de ciudad. Todo lo demás en estas páginas es detalle.</p></div></div>
+<main><div class="wrap">
+
+<h2>La realidad de distritos del corredor</h2>
+<p>AllianceTexas por sí solo abarca cinco distritos escolares independientes en dos condados — y el corredor residencial a su alrededor está igual de dividido. Una dirección de Fort Worth en la zona casi nunca significa Fort Worth ISD; una dirección de Haslet puede ser Northwest ISD o Eagle Mountain-Saginaw ISD según la calle; Northlake se divide internamente. Esto no es trivia — es el hecho a nivel de dirección más importante para las familias que se mudan aquí.</p>
+<h2>Empiece con el método, luego los perfiles</h2>
+<div class="cards">
+<div class="card"><h3><a href="/es/schools/boundary-guide/">La guía de límites</a></h3><p>El método de verificación por dirección de cinco minutos — y las suposiciones más comunes (y más caras) del corredor, corregidas.</p></div>
+<div class="card"><h3><a href="/es/schools/keller-isd/">Keller ISD</a></h3><p>El distrito ancla del lado oriente: qué sirve, cómo verificar, y lo que más preguntan quienes se mudan.</p></div>
+<div class="card"><h3><a href="/es/schools/northwest-isd/">Northwest ISD</a></h3><p>Uno de los distritos de más rápido crecimiento de Texas, abarcando la zona de crecimiento del corredor — con límites que se mueven mientras construye.</p></div>
+</div>
+<div class="callout signal"><p><strong>Regla de casa:</strong> publicamos hechos de distritos, límites y métodos de verificación — no clasificaciones de escuelas ni consejos de dirección. Los distritos y campus son hechos sobre una dirección; qué le conviene a su familia es decisión suya, tomada con información actual del propio distrito. Igualdad de Oportunidades de Vivienda.</p></div>
+<h2>Más allá de los límites: vida comunitaria por territorio</h2>
+<p>Resuelta la pregunta de la dirección, el distrito también nombra su ritmo comunitario — los viernes por la noche, la identidad de patrón, cómo se conecta el recién llegado. El Escritorio Comunitario lleva una página de vida por territorio: <a href="/es/community/keller-isd-life/">Keller ISD</a>, <a href="/es/community/northwest-isd-life/">Northwest ISD</a>, <a href="/es/community/ems-isd-life/">EMS ISD</a> y <a href="/es/community/argyle-isd-life/">Argyle ISD</a>.</p>
+<p>Información de distritos compilada de fuentes de agencias públicas a agosto de 2026; las zonas de asistencia cambian — siempre verifique con el distrito antes de actuar.</p>
+
+<section class="formbox" id="list">
+<h2>Reciba el Registro antes de que cambien los incentivos.</h2><p>Los miembros de la lista reciben cada edición del Registro de Incentivos primero, con aviso cuando cambian las condiciones del corredor. Cero spam.</p>
+<form action="https://formsubmit.co/c86195fac91694c985b7fc55c96e4f77" method="POST">
+<input type="hidden" name="_subject" value="NFW-ES-SCHOOLS">
+<div style="position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden" aria-hidden="true"><label>Leave this field empty<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>
+<input type="hidden" name="audience" value="nfw-buyer">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_template" value="table">
+<label for="f-name">Nombre</label>
+<input id="f-name" type="text" name="name" autocomplete="name">
+<label for="f-email">Correo electrónico</label>
+<input id="f-email" type="email" name="email" required autocomplete="email">
+<label for="f-phone">Teléfono</label>
+<input id="f-phone" type="tel" name="phone" required autocomplete="tel">
+<label for="f-ctx">¿Para cuándo planea mudarse? (opcional)</label>
+<input id="f-ctx" type="text" name="move_date">
+<div class="consent-line" style="font-size:.82rem;margin:.7rem 0"><label><input type="checkbox" name="consent" value="agreed" required> Acepto ser contactado sobre mi consulta por correo o teléfono y acepto la <a href="/es/privacidad/">política de privacidad</a>. Sin spam — cancele cuando quiera.</label></div>
+<button type="submit">Unirme a la lista</button>
+</form></section>
+</div></main>
+<footer class="site"><div class="wrap">
+
+<div class="cards">
+<div><h4>North FW Living</h4><p>Una guía independiente para rentar y comprar en el corredor North Fort Worth / Alliance. El servicio completo llega pronto; la lista temprana se entera primero.</p><ul class="plain"><li><a href="/es/data/">Datos e Informes</a></li><li><a href="/es/tools/">Herramientas</a></li><li><a href="/es/glossary/">Glosario</a></li><li><a href="/es/faq/">FAQ</a></li></ul></div>
+<div><h4>Rentar</h4><ul class="plain"><li><a href="/es/renting/">Guía del Inquilino</a></li><li><a href="/es/renting/concession-watch/">Vigilancia de Concesiones</a></li><li><a href="/es/renting/renewal-playbook/">Manual de Renovación</a></li><li><a href="/es/renting/build-to-rent/">Build-to-Rent</a></li><li><a href="/es/renting/renter-to-owner/">De Inquilino a Propietario</a></li></ul></div>
+<div><h4>Comprar y Vender</h4><ul class="plain"><li><a href="/es/builder-ledger/">Registro de Incentivos</a></li><li><a href="/es/buy/">Comprar en el Corredor</a></li><li><a href="/es/buy/mud-pid-explained/">MUD y PID</a></li><li><a href="/es/sell/">Vender</a></li><li><a href="/es/compare/">Comparar Zonas</a></li></ul></div>
+<div><h4>Vivir Aquí</h4><ul class="plain"><li><a href="/es/neighborhoods/">Vecindarios</a></li><li><a href="/es/employers/">Guías de Empleadores</a></li><li><a href="/es/schools/">Escuelas</a></li><li><a href="/es/relocate/">Mudarse</a></li><li><a href="/es/community/">Escritorio Comunitario</a></li><li><a href="/">In English</a></li></ul></div>
+</div>
+<div class="legal"><p>North FW Living es una publicación independiente. No es una correduría de bienes raíces y actualmente no ofrece servicios de corretaje, arrendamiento ni localización de apartamentos; el servicio completo llega pronto. Todas las cifras de renta, precios, incentivos, límites escolares y detalles de programas se compilan de listados y fuentes públicas; cambian sin previo aviso y deben verificarse de forma independiente con la propiedad, el constructor, el distrito escolar o la agencia antes de actuar. Los ejemplos de pagos son aritmética educativa — no una valuación, oferta de préstamo, precalificación ni asesoría crediticia. Igualdad de Oportunidades de Vivienda.</p></div>
+</div></footer>
+</body>
+</html>
