@@ -54,9 +54,16 @@ none. The compiled-from-public-listings voice used everywhere else was already h
 `status: none | planned | verified` plus text/photos/verifiedDate/author/source. All current
 records are `none`. Only `verified` content may ever render, and `planned` renders nothing.
 
-**Enforcement:** new `placeholder-assert` gate in `scripts/apply_standing_fixes.py` fails the
-build if placeholder field-note/photo phrasing, visit claims, TODO/TK/DRAFT markers, or lorem
-ipsum reach any production page. Negative-tested (a seeded violation fails the gate).
+**Enforcement:** the `placeholder-assert` gate in `scripts/apply_standing_fixes.py` (always
+the final build step) fails the build if placeholder field-note/photo phrasing, simulated
+visit or field-check claims ("we visited/toured", "field-checked", "locals report"),
+bracketed editorial instructions ("[insert …]", "[TODO: …]"), or lorem ipsum reach any
+production page. The denylist lives in `gate_placeholders()`; it is deliberately narrow so
+legitimate brackets, Spanish "todo:", and reader-directed "you tour" prose never break the
+build. Test suite: `python3 scripts/test_credibility_gate.py` — seeds each violation class
+into a temp page and requires the gate to fail, then proves the clean tree passes
+(2026-08-24: 12 violation classes caught, 0 false positives). Run it whenever the denylist
+or the gate changes.
 
 ## 3 · Homepage repositioning
 

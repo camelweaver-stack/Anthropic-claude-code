@@ -556,10 +556,18 @@ def gate_placeholders(docs):
     """
     patterns = [
         (re.compile(r"FIRST-HAND FIELD NOTE", re.I), "placeholder field note"),
+        (re.compile(r"\[FIELD NOTE", re.I), "placeholder field note"),
+        (re.compile(r"\[PLACEHOLDER", re.I), "placeholder marker"),
         (re.compile(r"FIELD PHOTOS? — added", re.I), "placeholder photo slot"),
         (re.compile(r"added after (an )?in-person visit", re.I), "simulated visit claim"),
         (re.compile(r"compiled after in-person visits", re.I), "simulated visit claim"),
+        (re.compile(r"field[- ]checked|field[- ]tested", re.I), "simulated field-verification claim"),
+        (re.compile(r"\bwe (visited|toured|drove out|walked the|verified in person)\b", re.I),
+         "simulated visit claim"),
+        (re.compile(r"\blocals (report|say|tell us)\b", re.I), "unsupported local-sentiment claim"),
         (re.compile(r"\[(TODO|TK|DRAFT|FIXME|XXX)[\]:\s]", re.I), "editorial TODO marker"),
+        (re.compile(r"\[(add |insert |verify |replace |photo of |image of |to come)", re.I),
+         "bracketed editorial instruction"),
         (re.compile(r"lorem ipsum", re.I), "lorem ipsum"),
     ]
     for rel, doc in docs.items():

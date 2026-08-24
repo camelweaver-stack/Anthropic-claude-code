@@ -4,6 +4,54 @@ Append-only. Newest entry on top. One record per daily run. Template at the bott
 
 ---
 
+## 2026-08-24 (third run) — Credibility & provenance cleanup — LIVE
+
+- **Trigger:** Operator — "clean, verify, strengthen, then stop changing things unnecessarily."
+  No redesign, no expansion; site now seasons for GSC maturation.
+
+### Findings + resolutions
+1. **Explicit placeholders:** none found (08-24 second-run purge held; production scan clean).
+2. **Simulated field-verification:** all 11 /commutes/ pages carried a "FIELD-CHECKED COMMUTE
+   NOTES" eyebrow with no visits behind it → replaced with "COMMUTE NOTES · OFF-PEAK MAPPING
+   ESTIMATES". (The pages' tables already used ranged off-peak estimates with a public-mapping
+   source note and drive-it-yourself advice — the eyebrow was the only violation.)
+3. **Unsupported claims:** family guide's "consistently the smoothest experience locals
+   report" (unsupported sentiment) → removed; willow-crossing "we have seen $65 apps…" →
+   "advertised fees vary across public listings (… appear on some)"; westpoint's "20-minute
+   difference is roughly 160 hours a year" → assumptions made explicit (20 min × 2 × 5 days ×
+   ~48 weeks ≈ 160 h, labeled an estimate).
+4. **BAH page:** source note no longer leans on "republished by base-guide services" — DTMO
+   named as the authoritative source, official rate-lookup linked, unlisted grades explicitly
+   not estimated. Anchors UNCHANGED (DoD site returns 403 from build environment;
+   `verified_against_primary: false` + operator note recorded in wfl-data.js provenance).
+5. **Structured data bug:** 8 pages (sell/ + es/vender/ Aug-1 vintage) shipped JSON-LD with a
+   single-quoted headline — invalid JSON, ignored by parsers → repaired, all blocks re-parse.
+6. **Provenance:** wfl-data.js gained a provenance block (source/verified_date/refresh_due/
+   confidence/scope) covering every mutable rental datapoint; canvas + willow-crossing pages
+   gained the standard visible "verified from public listings July 31, 2026" line (all 11
+   complexes now carry it). School language already met the "district area — verify campus"
+   standard sitewide (audit found zero "will attend" claims).
+
+### Guard hardened + tested
+placeholder-assert denylist extended: field-checked/field-tested, "we visited/toured…",
+"locals report", [FIELD NOTE/[PLACEHOLDER, bracketed editorial instructions. New test suite
+`scripts/test_credibility_gate.py`: 12 violation classes must fail the build, 4 legitimate
+phrasings (Spanish "todo:", reader-directed "you tour", ordinary brackets) must not — PASSED.
+
+### Deliberately unchanged
+Homepage (relocation-first hierarchy verified, no further correction needed), Lockheed
+cluster (hub links all 18 target nodes, 8 inbound — no gaps, no new pages), all ranking URLs
+(zero URL/intent changes; commute-eyebrow + provenance edits are cosmetic/credibility only),
+publishing cadence (change-class rule added to DAILY_RUN instead).
+
+### Verify
+GATE PASSED ×8 + gate test; 310 pages / 306 sitemap URLs; no duplicate titles or
+descriptions; all JSON-LD valid; named pages (homepage, 4 complexes, Lockheed guide,
+commutes, BAH, family guide, /move/, /compare/) each: 1 title, 1 canonical, 0 placeholder
+hits. Deploy + live production scan recorded below on deploy.
+
+---
+
 ## 2026-08-24 (second run) — Authority concentration pass — LIVE
 
 - **Trigger:** Operator — "concentrate authority before expanding surface area": credibility

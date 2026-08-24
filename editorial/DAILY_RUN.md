@@ -102,7 +102,14 @@ link fails the gate, so a new regression can't hide behind them.
    subordinate to optimizing existing assets (2026-08-24 rebalance). Run
    `python3 scripts/seo_engine.py reinforce` weekly for the per-page action list; its
    default recommendation is *leave alone* — don't manufacture churn. Any brand-new page must
-   pass the seven-question gate in the growth-system doc. Keep cluster balance across
+   pass the seven-question gate in the growth-system doc.
+   *Change classes (post-2026-08-24 stability rule):* **Maintenance** (fact corrections,
+   rent/concession updates, link fixes, technical repairs, dates updated only on real
+   verification) is always allowed. **Optimization** (titles, enrichment, link reinforcement,
+   cluster expansion) requires GSC evidence — cite the snapshot in the audit log. **New
+   publishing** continues at the current cadence with strategic justification; do not raise
+   velocity. The site needs ranking maturation more than surface area: pages at pos 10–30 are
+   a live experiment — no wholesale rewrites of pages earning impressions. Keep cluster balance across
    buyers, sellers, renters, relocation, neighborhoods, schools. Never ship two
    near-duplicate pages in a row.
    *When a fresh GSC export arrives:* `python3 scripts/seo_engine.py ingest <zip>` then
