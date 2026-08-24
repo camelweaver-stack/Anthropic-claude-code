@@ -4,6 +4,53 @@ Append-only. Newest entry on top. One record per daily run. Template at the bott
 
 ---
 
+## 2026-08-24 (fourth run) — Corrective pass: deploy-pipeline guard + claim tightening — LIVE
+
+- **Trigger:** Operator — placeholder observed on live /complexes/canvas-at-willow-park;
+  narrow corrective pass, then structural stability for GSC maturation.
+
+### Root cause (why the placeholder survived "the previous cleanup")
+The source purge worked; the failure was **timing plus an unenforced pipeline**. Placeholders
+were removed from source at 12:16 UTC (commit 8a6f583) and reached production with deploy
+6a8c3809 at 12:24 UTC — the day's first deploy (6a8bc23f, 04:02 UTC) predated the purge and
+served placeholders all morning; old deploy permalinks serve them forever. Structurally, the
+placeholder gate lived only in a *manually invoked* script; netlify.toml's build command ran
+zero validation (`ping-indexnow.js || true`), so nothing in the deployment pipeline could
+block dirty HTML. Current repo, current build, and current production scans: 0 hits (all
+file types, both URL forms, apex + netlify subdomain).
+
+### Fixes
+1. **Deploy-time guard (cannot be skipped):** netlify.toml build command is now
+   `node scripts/validate-production.js && (ping || true)` — the validator scans every HTML
+   file in the publish tree against `scripts/prohibited-content.json` and exits nonzero →
+   Netlify build FAILS → deploy blocked. First live run succeeded on deploy 6a8c4ce2.
+2. **Single denylist config:** `scripts/prohibited-content.json` now feeds BOTH the deploy
+   validator and the local placeholder-assert gate (no drift). Test suite extended: each of
+   12 violation classes must fail *both* gates; 4 legitimate phrasings must pass — green.
+3. **Markup bug found & fixed:** doubled `<h2>Shift math:<h2>` on the Lockheed guide (a
+   reciprocal-block marker duplication from the 08-24 second run); build entry corrected so
+   it cannot recur. No other doubled headings sitewide.
+4. **Claim tightening (surgical; URLs/intents/headings preserved):**
+   - Shift-commute: "assume plant-shift timing, friendlier than downtown rush" → estimate
+     framing with test-your-route guidance (pocket-table note, shift-math paragraph, meta
+     "shift-honest"→"estimated", EN+ES pages, both gen modules, guides-hub cards EN+ES).
+   - Offer letters: "satisfy income verification nearly/essentially everywhere" → "vary by
+     property — confirm before paying an application fee" (Lockheed EN+ES ×2 each incl.
+     FAQ JSON-LD, family guide EN+ES). "most offices will slide a lease start" → "some".
+   - Lender comfort: "the plant's stability makes lenders comfortable" / "aerospace
+     stability helps on the mortgage side" → neutral discuss-documentation-with-your-lender
+     guidance (Lockheed EN+ES FAQ + JSON-LD, buying-spoke module).
+
+### Verify
+GATE PASSED ×8 + dual-gate test suite; production validator: 310 files, 0 prohibited;
+linkaudit unchanged (broken = 2 tracked privacy targets). Deploy **6a8c4ce2** (pushed first,
+permalink verified) — first deploy through the validating build. Live checks: Canvas,
+Westpoint, College Park, Chapel Creek, Lockheed guide all 200 with 0 prohibited strings;
+corrected claims confirmed in live HTML; old formulations absent. Site now holds structurally
+stable — next substantive intervention waits for new GSC evidence.
+
+---
+
 ## 2026-08-24 (third run) — Credibility & provenance cleanup — LIVE
 
 - **Trigger:** Operator — "clean, verify, strengthen, then stop changing things unnecessarily."
