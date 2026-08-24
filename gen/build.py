@@ -19,8 +19,10 @@ import pages_schools_ratings  # noqa: E402
 import pages_guides_benbrook  # noqa: E402
 import pages_buy_homestead  # noqa: E402
 import pages_sell_net_proceeds  # noqa: E402
+import pages_guides_lockheed_buying  # noqa: E402
 
-MODULES = [pages_schools_ratings, pages_guides_benbrook, pages_buy_homestead, pages_sell_net_proceeds]
+MODULES = [pages_schools_ratings, pages_guides_benbrook, pages_buy_homestead, pages_sell_net_proceeds,
+           pages_guides_lockheed_buying]
 
 # Reciprocal links: (hub file, anchor that must exist, HTML block, insertion marker).
 # Each entry is applied only when the anchor is absent, so the build is idempotent.
@@ -104,6 +106,88 @@ RECIPROCAL = [
         "<p>Every west-side district and campus in TEA's August 2026 release &mdash; and the three "
         "limits that keep a letter grade from being a housing decision.</p></div></div></section>\n",
         "<section><h2>Districts</h2>",
+    ),
+    (
+        "guides/index.html",
+        "/guides/buying-a-home-near-lockheed-martin-fort-worth",
+        "<div class=\"card\"><span class=\"kicker\">Buying &middot; Lockheed</span>"
+        "<h3><a href='/guides/buying-a-home-near-lockheed-martin-fort-worth'>Buying a home near Lockheed Martin: the west-side ladder</a></h3>"
+        "<p>White Settlement at the gate to Aledo ISD at 30 minutes &mdash; published sale bands, "
+        "shift-honest drives, and the 2026 TEA ratings that price each rung.</p></div>",
+        "<div class=\"card\"><span class=\"kicker\">Commutes</span>",
+    ),
+    (
+        "es/guias/index.html",
+        "/es/guias/comprar-casa-cerca-de-lockheed-martin-fort-worth",
+        "<div class=\"card\"><span class=\"kicker\">Comprar &middot; Lockheed</span>"
+        "<h3><a href='/es/guias/comprar-casa-cerca-de-lockheed-martin-fort-worth'>Comprar casa cerca de Lockheed Martin: la escalera del oeste</a></h3>"
+        "<p>De White Settlement junto a la planta hasta Aledo ISD a 30 minutos &mdash; bandas de venta "
+        "publicadas, manejos honestos por turno, y las calificaciones TEA 2026 de cada distrito.</p></div>",
+        "<div class=\"card\"><span class=\"kicker\">Traslados</span>",
+    ),
+    (
+        "es/guias/apartamentos-cerca-de-lockheed-martin-fort-worth.html",
+        "/es/guias/comprar-casa-cerca-de-lockheed-martin-fort-worth",
+        "<p><strong>&iquest;Pensando en comprar en lugar de rentar?</strong> "
+        "<a href=\"/es/guias/comprar-casa-cerca-de-lockheed-martin-fort-worth\">La gu&iacute;a de compra "
+        "cerca de la planta</a> recorre la escalera de precios zona por zona &mdash; de White Settlement "
+        "a Aledo &mdash; con las calificaciones TEA 2026 de cada distrito en el camino.</p>\n\n  ",
+        "<h2>Preguntas comunes</h2>",
+    ),
+    (
+        "guides/index.html",
+        "/guides/living-in-aledo",
+        "<div class=\"card\"><span class=\"kicker\">Definitive Guide &middot; Aledo</span>"
+        "<h3><a href='/guides/living-in-aledo'>Living in Aledo: the definitive guide</a></h3>"
+        "<p>Taxes, the ISD's campuses, every subdivision from the $300Ks to acreage, and the "
+        "rent-first play.</p></div>",
+        "<div class=\"card\"><span class=\"kicker\">Definitive Guide &middot; Benbrook</span>",
+    ),
+    (
+        "guides/index.html",
+        "/guides/living-in-walsh",
+        "<div class=\"card\"><span class=\"kicker\">Definitive Guide &middot; Walsh</span>"
+        "<h3><a href='/guides/living-in-walsh'>Living in Walsh: the definitive guide</a></h3>"
+        "<p>The PID math by planning area, the school inside the community, and the honest "
+        "comparison with Aledo proper.</p></div>",
+        "<div class=\"card\"><span class=\"kicker\">Definitive Guide &middot; Benbrook</span>",
+    ),
+    (
+        "rentals/index.html",
+        "/rentals/apartments-76108",
+        "<div class=\"card\"><h3><a href=\"/rentals/apartments-76108\">Apartments in 76108 &mdash; closest to Lockheed &amp; NAS JRB</a></h3>"
+        "<p>The closest-to-base ZIP: White Settlement and far-west Fort Worth inventory, minutes from the plant.</p></div>"
+        "<div class=\"card\"><h3><a href=\"/rentals/apartments-76087\">Apartments in 76087 &mdash; south &amp; west Weatherford</a></h3>"
+        "<p>Every tracked community in the 76087 ZIP with current specials.</p></div>"
+        "<div class=\"card\"><h3><a href=\"/rentals/apartments-76086\">Apartments in 76086 &mdash; Weatherford proper</a></h3>"
+        "<p>The county-seat ZIP: every tracked community and what it costs this month.</p></div>",
+        "<div class=\"card\"><h3><a href=\"/military/\">Military &amp; PCS hub</a></h3>",
+    ),
+    (
+        "guides/index.html",
+        "/guides/can-landlord-raise-rent-mid-lease-texas",
+        "<section><div class=\"wrap\"><h2>Lease law &amp; the Weatherford market</h2>"
+        "<p><a href=\"/guides/can-landlord-raise-rent-mid-lease-texas\">Can a landlord raise rent mid-lease?</a> · "
+        "<a href=\"/guides/texas-security-deposit-30-day-rule\">The 30-day deposit rule</a> · "
+        "<a href=\"/guides/subletting-in-texas-rules\">Subletting rules in Texas</a> · "
+        "<a href=\"/guides/income-restricted-apartments-weatherford\">Income-restricted apartments in Weatherford</a> · "
+        "<a href=\"/guides/renting-near-weatherford-college\">Renting near Weatherford College</a> · "
+        "<a href=\"/guides/renters-insurance-cost-texas\">What renters insurance costs</a> · "
+        "<a href=\"/guides/renters-insurance-hail-texas\">Does it cover hail?</a></p></div></section>\n",
+        "</main>",
+    ),
+    (
+        "es/guias/index.html",
+        "/es/guias/regla-de-30-dias-deposito-texas",
+        "<section><div class=\"wrap\"><h2>Derechos del inquilino y seguros</h2>"
+        "<p><a href=\"/es/guias/regla-de-30-dias-deposito-texas\">La regla de 30 días del depósito</a> · "
+        "<a href=\"/es/guias/puede-el-propietario-subir-la-renta-a-mitad-de-contrato\">¿Pueden subir la renta a mitad de contrato?</a> · "
+        "<a href=\"/es/guias/reglas-de-subarriendo-en-texas\">Subarriendo en Texas</a> · "
+        "<a href=\"/es/guias/negociar-renovacion-de-apartamento-fort-worth\">Negociar la renovación</a> · "
+        "<a href=\"/es/guias/costo-del-seguro-de-inquilino-texas\">Costo del seguro de inquilino</a> · "
+        "<a href=\"/es/guias/el-seguro-de-inquilino-cubre-el-granizo-texas\">¿El seguro cubre el granizo?</a> · "
+        "<a href=\"/es/guias/apartamentos-de-renta-limitada-weatherford\">Renta limitada en Weatherford</a></p></div></section>\n",
+        "</main>",
     ),
     (
         "es/escuelas/index.html",
