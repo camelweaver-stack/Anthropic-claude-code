@@ -30,7 +30,8 @@ DOMAIN = "https://westfwliving.com"
 CHECK_ONLY = "--check" in sys.argv
 
 # Pages deliberately excluded from the sitemap (noindex via netlify.toml headers).
-NOINDEX = {"thanks.html", "es/gracias.html"}
+# tv/poster added 2026-08-24: screen/print display artifacts, not search content.
+NOINDEX = {"thanks.html", "es/gracias.html", "tv.html", "poster.html"}
 
 # ---------------------------------------------------------------- nav specs
 # hrefs are the targets' own canonical URL forms (see url_for/canonical_path),
@@ -545,6 +546,29 @@ def gate_links(docs):
             fail(f"link-assert — {msg}")
 
 
+def gate_placeholders(docs):
+    """No placeholder or simulated first-hand content may reach production.
+
+    A page may only claim an in-person visit or original photography when a
+    verified record exists in data/fieldnotes.json (content-state model,
+    2026-08-24). Anything matching these patterns in rendered HTML fails the
+    build outright — there is no warning tier for credibility.
+    """
+    patterns = [
+        (re.compile(r"FIRST-HAND FIELD NOTE", re.I), "placeholder field note"),
+        (re.compile(r"FIELD PHOTOS? — added", re.I), "placeholder photo slot"),
+        (re.compile(r"added after (an )?in-person visit", re.I), "simulated visit claim"),
+        (re.compile(r"compiled after in-person visits", re.I), "simulated visit claim"),
+        (re.compile(r"\[(TODO|TK|DRAFT|FIXME|XXX)[\]:\s]", re.I), "editorial TODO marker"),
+        (re.compile(r"lorem ipsum", re.I), "lorem ipsum"),
+    ]
+    for rel, doc in docs.items():
+        for pat, label in patterns:
+            m = pat.search(doc)
+            if m:
+                fail(f"placeholder-assert — {rel}: {label} ({m.group(0)[:60]!r})")
+
+
 # ---------------------------------------------------------------- main
 def main():
     files = html_files()
@@ -593,6 +617,7 @@ def main():
     gate_hreflang(docs)
     gate_links(docs)
     gate_internal_links_canonical(docs, cmap)
+    gate_placeholders(docs)
 
     # sitemap-assert: parity between the indexable file set and the derived sitemap.
     expect = {canonical_path(docs[r], r) or url_for(r) for r in files if r not in NOINDEX}
@@ -624,7 +649,8 @@ def main():
             print(f"  … and {len(FAILS) - 80} more")
         return 1
     print("\nGATE PASSED — nav-assert, form-assert, canonical-assert, "
-          "hreflang-assert, link-assert, link-canonical-assert, sitemap-assert all green.")
+          "hreflang-assert, link-assert, link-canonical-assert, sitemap-assert, "
+          "placeholder-assert all green.")
     return 0
 
 

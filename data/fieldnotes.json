@@ -1,0 +1,30 @@
+{
+  "_schema": {
+    "description": "Content-state model for first-hand field notes and original photography. A property page may only render a first-hand observation or an original photo when its record here has status 'verified' with real text/asset, author, and verifiedDate. status 'none' or 'planned' renders NOTHING on the page — no placeholder, no promise of a future visit. Enforced by the placeholder-assert gate in scripts/apply_standing_fixes.py, which fails the build if placeholder phrasing reaches any HTML page.",
+    "statuses": ["none", "planned", "verified"],
+    "fields": {
+      "status": "none | planned | verified",
+      "note": "the actual first-hand text (only when verified)",
+      "photos": "list of asset paths (only when verified)",
+      "verifiedDate": "YYYY-MM-DD of the actual visit",
+      "author": "person who made the visit",
+      "source": "how the observation was captured (visit notes, photos, etc.)"
+    },
+    "policy": "Placeholder removal 2026-08-24: all placeholder [FIRST-HAND FIELD NOTE] blocks and FIELD PHOTO slots were removed from production pages. Pages state nothing about visits until a verified record exists here."
+  },
+  "properties": {
+    "complexes/olympus-willow-park": { "status": "none" },
+    "complexes/canvas-at-willow-park": { "status": "none" },
+    "complexes/gates-at-meadow-place": { "status": "none" },
+    "complexes/willow-crossing-townhomes": { "status": "none" },
+    "complexes/olympus-hudson-oaks": { "status": "none" },
+    "complexes/birchway-hudson-oaks": { "status": "none" },
+    "complexes/oxford-at-weatherford": { "status": "none" },
+    "complexes/college-park-weatherford": { "status": "none" },
+    "complexes/preserve-at-willow-park": { "status": "none" },
+    "complexes/chapel-creek-cottages": { "status": "none" },
+    "complexes/westpoint-at-scenic-vista": { "status": "none" },
+    "areas/white-settlement": { "status": "none" },
+    "areas/benbrook": { "status": "none" }
+  }
+}
