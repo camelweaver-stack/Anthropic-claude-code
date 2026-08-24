@@ -1,7 +1,8 @@
 {
   "_schema": {
     "description": "Content-state model for first-hand field notes and original photography. A property page may only render a first-hand observation or an original photo when its record here has status 'verified' with real text/asset, author, and verifiedDate. status 'none' or 'planned' renders NOTHING on the page — no placeholder, no promise of a future visit. Enforced by the placeholder-assert gate in scripts/apply_standing_fixes.py, which fails the build if placeholder phrasing reaches any HTML page.",
-    "statuses": ["none", "planned", "verified"],
+    "statuses": ["none", "planned", "draft", "verified"],
+    "rendering_rule": "none/planned/draft render NOTHING publicly and must not carry text or photos; only verified entries may hold content. Enforced by gate_placeholders() in scripts/apply_standing_fixes.py.",
     "fields": {
       "status": "none | planned | verified",
       "note": "the actual first-hand text (only when verified)",

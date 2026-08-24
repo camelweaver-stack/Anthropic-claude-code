@@ -563,6 +563,20 @@ def gate_placeholders(docs):
     with open(cfg_path, encoding="utf-8") as fh:
         cfg = json.load(fh)
     patterns = [(re.compile(p["re"], re.I), p["label"]) for p in cfg["patterns"]]
+
+    # Content-state invariant: only a *verified* field-note record may carry
+    # content. A non-verified record holding text/photos is exactly the state
+    # that once leaked placeholders into production — fail the build.
+    fn_path = os.path.join("data", "fieldnotes.json")
+    if os.path.exists(fn_path):
+        with open(fn_path, encoding="utf-8") as fh:
+            fieldnotes = json.load(fh)
+        for prop, rec in fieldnotes.get("properties", {}).items():
+            if rec.get("status") != "verified" and (rec.get("note") or rec.get("text")
+                                                    or rec.get("photos")):
+                fail(f"placeholder-assert — data/fieldnotes.json: {prop} has "
+                     f"status={rec.get('status')!r} but carries content; only "
+                     f"'verified' records may hold text/photos")
     for rel, doc in docs.items():
         for pat, label in patterns:
             m = pat.search(doc)

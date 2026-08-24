@@ -28,6 +28,8 @@ VIOLATIONS = [
     "Locals report the pool is crowded.",
     "[TODO: verify the pet fee]",
     "[insert photo of the clubhouse]",
+    "[ADD PHOTO HERE]",
+    "FIRST HAND FIELD NOTE - draft observations go here",
     "Lorem ipsum dolor sit amet.",
 ]
 
@@ -84,6 +86,34 @@ def main():
     finally:
         if os.path.exists(TMP):
             os.remove(TMP)
+    # Tests E/F — content-state model: a non-verified field-note record carrying
+    # content must FAIL the build; a verified record carrying content must PASS.
+    import json
+    fn_path = "data/fieldnotes.json"
+    fn_orig = open(fn_path, encoding="utf-8").read()
+    try:
+        fn = json.loads(fn_orig)
+        fn["properties"]["complexes/olympus-willow-park"] = {
+            "status": "planned", "note": "parking felt tight"}
+        open(fn_path, "w", encoding="utf-8").write(json.dumps(fn))
+        code, out = run_gate()
+        if code == 0 or "placeholder-assert" not in out:
+            failures.append("Test E FAILED: planned record with content passed the gate")
+        else:
+            print("  caught   planned field-note record carrying content (Test E)")
+        fn["properties"]["complexes/olympus-willow-park"] = {
+            "status": "verified", "note": "Genuine verified observation text.",
+            "author": "operator", "verifiedDate": "2026-08-24", "source": "visit notes"}
+        open(fn_path, "w", encoding="utf-8").write(json.dumps(fn))
+        code, out = run_gate()
+        if code != 0:
+            failures.append("Test F FAILED: verified record with content failed the gate:\n"
+                            + out[-400:])
+        else:
+            print("  allowed  verified field-note record carrying content (Test F)")
+    finally:
+        open(fn_path, "w", encoding="utf-8").write(fn_orig)
+
     code, out = run_gate()
     if code != 0:
         failures.append("clean tree does not pass the local gate:\n" + out[-600:])

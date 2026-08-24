@@ -1,9 +1,10 @@
 {
   "_doc": "Single source of truth for content that must NEVER appear in deployable HTML. Consumed by (1) scripts/validate-production.js — runs inside the Netlify build command and FAILS the deploy, and (2) the placeholder-assert gate in scripts/apply_standing_fixes.py — fails the local build. Patterns are case-insensitive regexes kept compatible with both JavaScript and Python. Keep them narrow: legitimate brackets, Spanish 'todo:', and reader-directed 'you tour' prose must never match. Test with: python3 scripts/test_credibility_gate.py",
   "patterns": [
-    {"re": "FIRST-HAND FIELD NOTE", "label": "placeholder field note"},
+    {"re": "FIRST[- ]?HAND FIELD NOTE", "label": "placeholder field note"},
     {"re": "\\[FIELD NOTE", "label": "placeholder field note"},
-    {"re": "\\[FIRST-HAND", "label": "placeholder field note"},
+    {"re": "\\[FIRST[- ]?HAND", "label": "placeholder field note"},
+    {"re": "\\[ADD PHOTO", "label": "bracketed editorial instruction"},
     {"re": "\\[PLACEHOLDER", "label": "placeholder marker"},
     {"re": "FIELD PHOTOS? — added", "label": "placeholder photo slot"},
     {"re": "FIELD PHOTOS? - added", "label": "placeholder photo slot"},
