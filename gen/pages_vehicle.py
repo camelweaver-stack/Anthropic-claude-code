@@ -175,7 +175,7 @@ authority, and this page is the map to them.</p>
                 body, "/guides/",
                 jsonld={"@context": "https://schema.org",
                         "@graph": [article_ld(p, "Shipping your vehicle to Hawaii on PCS orders",
-                                              "The complete end-to-end sequence."), faq_ld(qas)]})
+                                              "The complete end-to-end sequence.")]})
 
 def tla_field_notes():
     body = f'''

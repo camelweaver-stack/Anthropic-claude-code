@@ -178,7 +178,7 @@ adversarial — it's the same paper discipline this site preaches for off-base l
     return page("/on-base/", "On-Base Housing on Oahu: Waitlists, BAH, and the Privatized System | PCS Oahu",
                 "How Oahu's privatized military housing actually works — Island Palm, Ohana, and "
                 "Hickam Communities, waitlist tactics, the BAH allotment math, and tenant rights.",
-                body, "/bases/", jsonld=faq_ld(qas))
+                body, "/bases/")
 
 def notfound():
     body = f'''

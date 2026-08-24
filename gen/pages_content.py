@@ -84,7 +84,7 @@ scarcity moves them. This report is a compass, not a valuation.</div>
                 "Oahu pocket — where the allowance clears the market and where the gap opens.",
                 body, "/bah-report/",
                 jsonld={"@context": "https://schema.org",
-                        "@graph": [dataset_ld(), faq_ld(qas)]})
+                        "@graph": [dataset_ld()]})
 
 def bah_report_2026_archive():
     import re as _re
@@ -252,8 +252,10 @@ tenure is the first thing to check.</div>
 <h2>The honest close</h2>
 <p style="max-width:46rem">BAH pointed at a mortgage builds equity in one of the country's most
 supply-constrained markets; it also concentrates risk on one island, and PCS orders don't wait for
-market timing — read the <a href="/sell/">PCS-out guide</a> before you buy, because the exit is
-part of the purchase. Numbers here are education, not advice; underwriting is between you and a
+market timing. Not sure you should buy at all this tour? Start with the
+<a href="/guides/rent-vs-buy.html">rent-vs-buy framework</a> — the horizon, the BAH-purchasing-power
+math, and the forced-exit risk — then read the <a href="/sell/">PCS-out guide</a> before you buy,
+because the exit is part of the purchase. Numbers here are education, not advice; underwriting is between you and a
 lender you choose.</p>
 {lead_form("BUY", "pcs-buyer",
   heading="Thinking about buying this tour?",
@@ -263,7 +265,7 @@ lender you choose.</p>
     return page("/buy/", "VA Loans on Oahu 2026: Entitlement Math, Condo Approval, Leasehold | PCS Oahu",
                 "The flagship VA buyer brief for Oahu: full vs partial entitlement at island "
                 "prices, the condo-approval reality at a $530K median, and the leasehold trap.",
-                body, "/buy/", jsonld=faq_ld(qas))
+                body, "/buy/")
 
 def sell():
     qas = [
@@ -347,7 +349,7 @@ assuming buyer substitutes their own. Know both facts before negotiating.</p>
                 jsonld={"@context": "https://schema.org",
                         "@graph": [article_ld("/sell/",
                                    "PCSing out: sell or rent your Oahu home?",
-                                   "HARPTA, rent-vs-sell math, and VA seller notes."), faq_ld(qas)]})
+                                   "HARPTA, rent-vs-sell math, and VA seller notes.")]})
 
 def tla():
     body = f'''
@@ -529,7 +531,7 @@ checklist itself.</p>
     return p, page(p, "Pets to Hawaii on PCS Orders: Quarantine, Direct Airport Release | PCS Oahu",
                 "The Hawaii pet quarantine sequence for military moves — microchip, OIE-FAVN "
                 "test, waiting period, Direct Airport Release — and the three classic failures.",
-                body, "/guides/", jsonld=faq_ld(qas))
+                body, "/guides/")
 
 def dodea_schools():
     qas = [
@@ -674,8 +676,7 @@ above before relying on any number here.</p>
          "datePublished": "2026-08-22", "dateModified": "2026-08-22",
          "author": {"@type": "Organization", "name": "PCS Oahu"},
          "publisher": {"@type": "Organization", "name": "PCS Oahu"},
-         "mainEntityOfPage": DOMAIN + p},
-        faq_ld(qas)]}
+         "mainEntityOfPage": DOMAIN + p}]}
     return p, page(p, "Does Hawaii Have DoDEA Schools? The Answer for Military Families | PCS Oahu",
                 "Hawaii has no DoDEA schools — every military child attends the statewide Hawaii "
                 "DOE system. School Liaison Officer contacts by service branch, why Hawaii differs "
@@ -836,13 +837,246 @@ of housing or a timeline.</p>
          "datePublished": "2026-08-23", "dateModified": "2026-08-23",
          "author": {"@type": "Organization", "name": "PCS Oahu"},
          "publisher": {"@type": "Organization", "name": "PCS Oahu"},
-         "mainEntityOfPage": DOMAIN + p},
-        faq_ld(qas)]}
+         "mainEntityOfPage": DOMAIN + p}]}
     return p, page(p, "Oahu On-Base Housing Waitlists: HEAT, the 7-Day Rule, Decline Costs | PCS Oahu",
                 "How Oahu military housing waitlists really work: HEAT starts your file but holds "
                 "no place, Island Palm's 7-day rule backdates Army positions to your departure "
                 "date, and declining an offer resets your date. Sourced and dated.",
                 body, "/bases/", jsonld=ld)
+
+def vehicle_registration():
+    qas = [
+      ("How long do I have to register my car after it arrives in Hawaii?",
+       "Within 30 days of the vehicle's arrival on Oahu you must obtain either a Hawaii "
+       "registration or an out-of-state permit (City & County of Honolulu). The process runs "
+       "through a safety inspection that initially ‘fails’ because the car has no Hawaii "
+       "registration yet — that failed certificate is what lets you register, and you return to "
+       "the inspection station within 30 days of that failed check for the passing sticker once "
+       "you’re registered. Confirm current timelines with Honolulu’s Department of Customer "
+       "Services — forms and windows change."),
+      ("Do active-duty military have to pay Hawaii's vehicle weight tax?",
+       "Nonresident active-duty service members and their spouses are exempt from Honolulu’s "
+       "motor-vehicle weight tax when they submit a properly completed Non-Resident Certificate, "
+       "Form CS-L(MVR)50, with each registration transaction (the county notes the current form is "
+       "dated 04/2026). You can also keep your home-state plates instead, via the out-of-state "
+       "permit, Form CS-L(MVR)27. Verify both forms’ current versions on honolulu.gov."),
+      ("Where do I register a PCS vehicle on Oahu?",
+       "At any Satellite City Hall (City & County of Honolulu, Department of Customer Services), "
+       "with an on-base option at Joint Base Pearl Harbor-Hickam for the initial out-of-state "
+       "registration. Bring your out-of-state title/registration, Hawaii insurance, orders, the "
+       "failed Hawaii safety-inspection certificate, and the applicable form."),
+    ]
+    body = f'''
+<div class="hero"><div class="wrap">
+<p class="eyebrow">PCS logistics · after the car lands</p>
+<h1>Registering your car in Hawaii: the arrival clock</h1>
+<p class="lede">Shipping the car is one process; putting Hawaii plates on it is another. There is no
+one-counter, same-day path — the sequence runs insurance → a safety inspection that deliberately
+‘fails’ first → registration → back for the passing sticker. Active-duty families get a real
+choice and a weight-tax exemption most people don’t know about.</p>
+</div></div>
+<div class="wrap">
+<h2>The direct answer</h2>
+<p style="max-width:46rem">When your POV arrives (see <a href="/vehicle-shipping/">vehicle
+shipping</a> for getting it here), the registration sequence on Oahu is:</p>
+<ol style="max-width:46rem">
+<li><strong>Know the deadline: 30 days.</strong> Per the City &amp; County of Honolulu, within
+30 days of the vehicle's arrival on Oahu you must obtain either a Hawaii registration or an
+out-of-state permit. Start the steps below the week the car lands.</li>
+<li><strong>Get Hawaii auto insurance first.</strong> You need proof of Hawaii insurance to obtain
+a safety inspection, and the inspection is required for every registration transaction.</li>
+<li><strong>Take the car for a Hawaii safety inspection — which ‘fails.’</strong> With no Hawaii
+registration yet, the station issues a <em>failed</em> certificate. That failed certificate is not
+a problem; it is the document that lets you register.</li>
+<li><strong>Register at a Satellite City Hall</strong> (or the Joint Base Pearl Harbor-Hickam option
+for the initial out-of-state registration), choosing plates or an out-of-state permit — see below.</li>
+<li><strong>Return for the passing sticker.</strong> Per the City &amp; County of Honolulu, you go
+back to the inspection station within <strong>30 days</strong> of that original failed check to
+complete the passing inspection once you’re registered.</li>
+</ol>
+<h2>The choice active-duty families have</h2>
+<p style="max-width:46rem">Nonresident active-duty service members (and spouses) don’t have to
+convert to Hawaii plates at all — there are two legitimate paths:</p>
+<p style="max-width:46rem"><strong>Keep your home-state plates</strong> via the out-of-state permit,
+<strong>Form CS-L(MVR)27</strong>. Or <strong>register in Hawaii</strong> with <strong>Form
+CS-L(MVR)50</strong>, the Non-Resident Certificate, which also claims the exemption below. Both are
+recognized options; pick based on your home state’s renewal cost and how long the tour runs.</p>
+<div class="warn"><strong>The weight-tax exemption worth knowing.</strong> Nonresident active-duty
+military and their spouses are <strong>exempt from Honolulu’s motor-vehicle weight tax</strong>
+when they file a properly completed CS-L(MVR)50 with each registration transaction — the county
+notes the current form is dated 04/2026. That exemption is easy to miss and it is not automatic:
+the form has to be submitted every time. (You still pay the standard state registration fee and the
+safety-inspection fee, which the state updated in 2025 — check the current schedule on honolulu.gov.)</div>
+<h2>What to bring</h2>
+<p style="max-width:46rem">Your out-of-state title and current registration, proof of Hawaii
+insurance, a copy of your orders, the <em>failed</em> Hawaii safety-inspection certificate, and the
+applicable form (CS-L(MVR)50 to register in Hawaii with the exemption, or CS-L(MVR)27 for the
+out-of-state permit). If the car came by sea, keep the shipping paperwork from the port with the
+packet — you may need it to prove arrival.</p>
+<div class="warn"><strong>Honest limits.</strong> Forms, fees, inspection rules, and timelines are
+set by the City &amp; County of Honolulu (Department of Customer Services) and the Hawaii Department
+of Transportation, and they change — the county even versions the CS-L(MVR)50 by date. This guide is
+orientation compiled from honolulu.gov and hidot.hawaii.gov and verified <strong>August 5, 2026</strong>;
+confirm the current forms and fees with the county before you go, and use your installation’s
+in-processing brief. Nothing here is legal or tax advice.</p>
+<p style="max-width:46rem">This is the last step of the car’s PCS journey; the first is the
+<a href="/vehicle-shipping/">shipment itself</a>, and the registration deadline is one of the arrival
+tasks tracked on the <a href="/pcs-checklist/">PCS timeline checklist</a>. Setting up on base first?
+See <a href="/on-base/">on-base housing</a>.</p>
+{lead_form("VEHREG", "pcs-renter",
+  heading="Working the arrival checklist?",
+  blurb="Join the list and the arrival brief sequences the registration, inspection, and insurance "
+        "steps against your report window so the safety-inspection clock never catches you late.")}
+</div>'''
+    p = "/guides/vehicle-registration.html"
+    ld = {"@context": "https://schema.org", "@graph": [
+        {"@type": "Article",
+         "headline": "Registering your car in Hawaii: the arrival clock",
+         "description": "How PCS families register an imported vehicle on Oahu — the safety-inspection "
+                        "sequence, the 30-day clock, the nonresident-military weight-tax exemption "
+                        "(Form CS-L(MVR)50), and the out-of-state permit option.",
+         "datePublished": "2026-08-05", "dateModified": "2026-08-05",
+         "author": {"@type": "Organization", "name": "PCS Oahu"},
+         "publisher": {"@type": "Organization", "name": "PCS Oahu"},
+         "mainEntityOfPage": DOMAIN + p}]}
+    return p, page(p, "Registering a Car in Hawaii on PCS Orders: Forms, Weight Tax, Inspection | PCS Oahu",
+                "How military families register an imported vehicle on Oahu: the safety-inspection "
+                "sequence and 30-day clock, the nonresident weight-tax exemption (CS-L(MVR)50), and "
+                "the out-of-state permit (CS-L(MVR)27). Sourced and dated.",
+                body, "/guides/", jsonld=ld)
+
+def rent_vs_buy():
+    qas = [
+      ("Should I buy a house on Oahu as a military member?",
+       "There is no universal yes or no — the honest answer is a three-question framework. First, "
+       "your horizon: buying rarely pays off unless you'll hold the home long enough to earn back "
+       "the transaction costs, and a two-to-three-year tour is short for that. Second, purchasing "
+       "power: at a June 2026 single-family median around $1,275,000 (Honolulu Board of REALTORS® "
+       "data in public reports), even Oahu's top-in-the-force BAH buys a condo more realistically "
+       "than a house for most grades. Third, the exit: PCS orders don't wait for the market, so "
+       "the question isn't only 'can I buy' but 'what happens when I have to leave.' Run all three "
+       "before a listing does the deciding for you."),
+      ("Is BAH enough to buy a house on Oahu?",
+       "It depends on grade and what you're buying. Every Oahu installation shares one BAH rate "
+       "(Honolulu County MHA); 2026 with-dependents anchors run about $3,663 for an E-5 and $3,912 "
+       "for an E-6, with a ceiling near $5,040 (DTMO 2026 tables, effective January 1, 2026). "
+       "Against a $1,275,000 single-family median, that BAH points more comfortably at Oahu's "
+       "$530,000-median condo market than at a house — and a VA loan's no-down-payment, no-PMI "
+       "structure plus BAH being tax-free (Military OneSource) is what makes the math work at all. "
+       "HOA fees and the VA condo-approval list decide whether a given condo is actually reachable."),
+      ("How long do I need to stay for buying to beat renting on Oahu?",
+       "Long enough to earn back what it costs to get in and out — the VA funding fee (unless "
+       "you're exempt for a service-connected disability, per VA.gov), closing costs, and the "
+       "selling costs on the far end. There's no single magic number, but a break-even measured in "
+       "years, not months, is the honest frame, and a standard PCS tour can be shorter than that. "
+       "If orders might move you before you'd clear the round-trip costs, renting and pointing the "
+       "same BAH at a landlord is not the lesser choice — it's often the disciplined one."),
+    ]
+    body = f'''
+<div class="hero"><div class="wrap">
+<p class="eyebrow">Buying · the decision before the decision</p>
+<h1>Rent or buy on Oahu with a VA loan? The honest framework</h1>
+<p class="lede">Oahu hands military buyers a rare combination — the highest BAH in the force pointed
+at a zero-down VA loan — and that combination makes "just buy, you're throwing money away renting"
+sound obvious. On this island it isn't. Three questions decide it, and none of them is the listing
+price.</p>
+</div></div>
+<div class="wrap">
+<h2>The direct answer</h2>
+<p style="max-width:46rem">Buying beats renting when you'll hold long enough to earn back the cost
+of getting in and out, when your BAH actually reaches the kind of home you want at Oahu prices, and
+when you can absorb the exit on someone else's timeline. Miss any one and renting the same BAH is
+frequently the stronger move. Here's each question in island numbers.</p>
+<h2>1 — Your horizon vs. the round-trip cost</h2>
+<p style="max-width:46rem">Buying isn't free to enter or leave. On the way in there's a one-time
+<strong>VA funding fee</strong> (waived if you receive — or are eligible to receive — VA
+compensation for a service-connected disability, per <a href="https://www.va.gov/housing-assistance/home-loans/funding-fee-and-closing-costs/">VA.gov</a>)
+plus ordinary closing costs; on the way out there are selling costs. You earn those back through
+appreciation and principal paydown over <em>years</em>, not months. A standard PCS tour of two to
+three years can be shorter than that break-even — so the first question isn't "can I qualify," it's
+"will I hold this home long enough for the round trip to pay for itself?" If the answer is uncertain
+because orders are uncertain, that uncertainty has a dollar value, and it favors renting.</p>
+<h2>2 — What your BAH actually reaches here</h2>
+<p style="max-width:46rem">Oahu is one BAH market — every installation draws the same Honolulu
+County rate — and it's the top of the national table. But it meets some of the country's highest
+prices:</p>
+{rates([
+  ("Oahu median single-family (June 2026)", MED_SF, True),
+  ("Oahu median condo (June 2026)", MED_CONDO),
+  ("BAH, E-5 with dependents (2026)", BAH["e5_dep"]),
+  ("BAH, E-6 with dependents (2026)", BAH["e6_dep"]),
+  ("BAH ceiling, Honolulu County (2026)", BAH["ceiling"]),
+], "BAH: DTMO 2026 tables, effective January 1, 2026 (one Honolulu County MHA covers every Oahu "
+   "installation). Medians: Honolulu Board of REALTORS® data as republished in public June 2026 "
+   "market reports. Orientation only — verify at source; not a valuation or loan offer.")}
+<p style="max-width:46rem">Two structural advantages tilt the math toward the buy side when the
+horizon is right. A VA-backed purchase loan needs <strong>no down payment</strong> (up to the
+appraised value) and carries <strong>no private mortgage insurance</strong>
+(<a href="https://www.va.gov/housing-assistance/home-loans/loan-types/purchase-loan/">VA.gov</a>) —
+so the BAH you'd otherwise hand a landlord goes straight at principal and interest. And <strong>BAH
+itself is tax-free</strong> — excluded from gross income, not subject to federal or state income
+tax (<a href="https://www.militaryonesource.mil/financial-legal/taxes/military-housing-allowance/">Military
+OneSource</a>) — which quietly raises the housing budget's real purchasing power versus a civilian
+earning the same gross. Against the medians above, that firepower reaches the <a href="/buy/">condo
+market</a> far more readily than the single-family market for most grades.</p>
+<h2>3 — The exit you don't control</h2>
+<div class="warn"><strong>The market won't wait for your orders.</strong> The risk that separates
+Oahu from a mainland duty station isn't buying — it's being <em>forced to sell or rent on a PCS
+timeline</em> into a single, supply-constrained island market. If values dip the quarter your
+orders drop, you sell into that dip or you become a long-distance landlord. Both are legitimate;
+neither is free. Before you buy, read the departure side of this decision — the
+<a href="/sell/">sell-or-rent-when-you-PCS-out guide</a> covers the accidental-landlord math, and the
+<a href="/guides/harpta.html">HARPTA guide</a> covers the 7.25% withholding that comes out of an
+Oahu sale at closing — because on this island the exit is part of the purchase.</div>
+<h2>Who this applies to</h2>
+<p style="max-width:46rem"><strong>Leaning buy</strong> if you have full VA entitlement, a
+longer-than-usual tour or plans to keep the home as a rental after you leave, and a target in the
+condo band your BAH comfortably covers. <strong>Leaning rent</strong> if your tour is a standard
+two-to-three years with real PCS uncertainty, if partial entitlement pulls the county loan limit
+back into your math, or if the only homes in reach are leasehold or unapproved condos (both covered
+on the <a href="/buy/">VA-loan buyer brief</a>). Renting the same BAH while you learn the island and
+watch a pocket is not a failure to build equity — it's buying flexibility, which on a PCS timeline
+has real value.</p>
+<h2>Next steps</h2>
+<ol style="max-width:46rem">
+<li><strong>Pin your horizon honestly.</strong> How firm is the tour length, and would you keep the
+home as a rental if orders moved you? That answer drives everything below.</li>
+<li><strong>Get a Loan Estimate, not a guess.</strong> Ask a VA-experienced lender for the funding
+fee (or confirm your exemption), the closing costs, and the real monthly payment <em>including HOA
+and insurance</em> before you compare it to rent.</li>
+<li><strong>Check tenure and condo approval early.</strong> Confirm fee-simple vs. leasehold and
+whether the project is on the VA-approved condo list — see the <a href="/buy/">buyer brief</a> —
+before you fall for a price.</li>
+<li><strong>Sanity-check the rent side.</strong> Compare against real asking rents for your pocket
+in the <a href="/bah-report/">BAH Reality Report</a>, and remember on-base housing trades your whole
+BAH for a no-maintenance, no-exit-risk option — see <a href="/on-base/">how on-base housing works</a>.</li>
+</ol>
+<p style="max-width:46rem">This is a framework compiled from VA.gov, Military OneSource, DTMO 2026
+tables, and public Honolulu market reports, and verified <strong>August 6, 2026</strong>. Every
+figure changes and every situation differs — nothing here is a valuation, a loan offer,
+prequalification, or lending, legal, or tax advice. The break-even math is yours to run with a
+lender and, where taxes are involved, a tax professional you choose.</p>
+{lead_form("RENTBUY", "pcs-buyer",
+  heading="Weighing the rent-or-buy call this tour?",
+  blurb="Join the list for the buyer-side refresh: BAH-cycle updates, market medians as they move, "
+        "and the rent-band changes that decide the math. First access when full service opens.")}
+</div>'''
+    p = "/guides/rent-vs-buy.html"
+    ld = {"@context": "https://schema.org", "@graph": [
+        {"@type": "Article",
+         "headline": "Rent or buy on Oahu with a VA loan? The honest framework",
+         "description": "A decision framework for military buyers weighing rent vs. buy on Oahu: the "
+                        "PCS-horizon break-even, what BAH actually reaches at island prices, the "
+                        "no-down-payment/no-PMI VA advantage, tax-free BAH, and the forced-exit risk.",
+         "datePublished": "2026-08-06", "dateModified": "2026-08-06",
+         "author": {"@type": "Organization", "name": "PCS Oahu"},
+         "publisher": {"@type": "Organization", "name": "PCS Oahu"},
+         "mainEntityOfPage": DOMAIN + p}]}
+    return p, page(p, "Rent vs Buy on Oahu with a VA Loan: The Military Framework | PCS Oahu",
+                "Should military families rent or buy on Oahu? The honest framework: the PCS break-even "
+                "horizon, what BAH reaches at a $1.275M median, the no-down-payment VA advantage, "
+                "tax-free BAH, and the forced-exit risk. Sourced and dated.",
+                body, "/buy/", jsonld=ld)
 
 def guides_hub():
     body = f'''
@@ -879,6 +1113,9 @@ Hawaii PCS that paperwork alone doesn't cover.</p>
     <h3><a href="/vehicle-shipping/">Vehicle shipping, end to end</a></h3>
     <p>The one-POV entitlement, PCSmyPOV, the real timeline, the gap-car math, and the 10-day registration clock.</p></div>
   <div class="card"><span class="tag">Arriving</span>
+    <h3><a href="/guides/vehicle-registration.html">Registering your car in Hawaii</a></h3>
+    <p>The safety-inspection sequence and 30-day clock, the nonresident weight-tax exemption, and the out-of-state permit option.</p></div>
+  <div class="card"><span class="tag">Arriving</span>
     <h3><a href="/tla/field-notes.html">TLA lodging field notes</a></h3>
     <p>Base lodging by installation, the Hale Koa option, and the off-base filters that matter.</p></div>
   <div class="card"><span class="tag">Arriving</span>
@@ -893,6 +1130,9 @@ Hawaii PCS that paperwork alone doesn't cover.</p>
   <div class="card"><span class="tag">Arriving</span>
     <h3><a href="/guides/on-base-waitlist.html">The on-base waitlist, decoded</a></h3>
     <p>HEAT's real role, Island Palm's 7-day backdating rule, and what declining an offer costs your position.</p></div>
+  <div class="card"><span class="tag">Buying</span>
+    <h3><a href="/guides/rent-vs-buy.html">Rent or buy with a VA loan?</a></h3>
+    <p>The honest framework: the PCS break-even horizon, what BAH reaches at island prices, and the forced-exit risk.</p></div>
   <div class="card"><span class="tag">Departing</span>
     <h3><a href="/sell/">PCSing out: sell or rent?</a></h3>
     <p>HARPTA, the accidental-landlord napkin, and VA seller notes.</p></div>
@@ -1131,8 +1371,7 @@ you choose.</p>
          "datePublished": "2026-08-16", "dateModified": "2026-08-16",
          "author": {"@type": "Organization", "name": "PCS Oahu"},
          "publisher": {"@type": "Organization", "name": "PCS Oahu"},
-         "mainEntityOfPage": DOMAIN + p},
-        faq_ld(qas)]}
+         "mainEntityOfPage": DOMAIN + p}]}
     return p, page(p, "HARPTA for Military Sellers on Oahu: 7.25% Withholding, N-289, N-288B | PCS Oahu",
                 "HARPTA explained for outbound military sellers on Oahu: the 7.25% withholding on the "
                 "amount realized, why being a Hawaii resident doesn't exempt you without Form N-289, "
@@ -1161,7 +1400,8 @@ def build():
         "/guides/index.html": guides_hub(),
         "/guides/household-goods.html": household_goods(),
     }
-    for fn in (spouse, school_transition, pets, harpta, dodea_schools, onbase_waitlist):
+    for fn in (spouse, school_transition, pets, harpta, dodea_schools, onbase_waitlist,
+               vehicle_registration, rent_vs_buy):
         p, h = fn()
         out[p] = h
     return out
