@@ -202,6 +202,40 @@ for f, s in site_pages.items():
         if int(m.group(2))==acct:
             fails.append(f"[count-semantics] {f}: roll account count {acct} labeled '{m.group(1)}'")
 
+# --- 12. redirect map consistency (_redirects: clean -> .html, no chains/loops) ---
+rp=os.path.join(ROOT, "_redirects")
+if os.path.exists(rp):
+    seen=set()
+    for ln in open(rp):
+        ln=ln.strip()
+        if not ln or ln.startswith("#"): continue
+        parts=ln.split()
+        if len(parts)<3: fails.append(f"[redirects] malformed rule: {ln!r}"); continue
+        src,dst,code=parts[0],parts[1],parts[2].rstrip("!")
+        if code!="301": fails.append(f"[redirects] non-301 rule: {ln!r}")
+        if src in seen: fails.append(f"[redirects] duplicate source {src}")
+        seen.add(src)
+        if src=="/thanks": fails.append("[redirects] /thanks must not be redirected (form POST target)")
+        srcfile=src.lstrip("/")
+        if srcfile in files or srcfile+"/index.html" in files and srcfile!="":
+            pass
+        if src.endswith(".html"): fails.append(f"[redirects] source {src} is a file path (would 301 an indexed URL)")
+        dstfile=dst.lstrip("/")
+        if dstfile not in files: fails.append(f"[redirects] target {dst} has no file (would 404)")
+        # chain check: a target may never itself be a redirect source (targets are .html
+        # file paths and no source may be a .html path, enforced above)
+    # every internal .html link target that has a clean twin must have a redirect rule
+    for f2 in sm_files:
+        if f2 in ("index.html",): continue
+        if "/"+f2[:-5] not in seen:
+            fails.append(f"[redirects] sitemap page {f2} missing clean-variant rule /{f2[:-5]}")
+
+# --- 13. internal links must use the canonical .html form (no bare clean hrefs to pages) ---
+for f, s in site_pages.items():
+    for m in re.finditer(r"""href=["']/([a-z0-9-]+)["']""", s):
+        if m.group(1)+".html" in files:
+            fails.append(f"[links-canonical] {f}: clean-form internal link '/{m.group(1)}' — use '/{m.group(1)}.html'")
+
 # --- 7. duplicate titles ---
 titles = {}
 for f, s in site_pages.items():
