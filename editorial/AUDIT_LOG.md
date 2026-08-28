@@ -4,6 +4,25 @@ Append-only. Newest entry on top. One record per daily run. Template at the bott
 
 ---
 
+## 2026-08-28 (second run) — Licensed photography sourcing — LIVE
+
+- **Trigger:** Operator — "scrape sources for photography." Executed within standing rules:
+  no competitor images, no copyrighted material, nothing presented as first-hand. Sourced
+  four properly licensed images via the Wikimedia Commons API (visually verified before
+  publishing; upload host rate-limited the proxy, worked around via the commons thumb.php
+  endpoint): USAF Lockheed Fort Worth facility entrance (PD) → Lockheed apartments guide
+  EN+ES, replacing the generic Stockyards photo; US Navy NAS JRB flightline panorama, 2008,
+  date in caption (PD) → NAS JRB guide; Parker County Courthouse by Michael Barera
+  (CC BY-SA 4.0, credited with linked license) → /compare/aledo-vs-weatherford; USACE
+  Benbrook Lake aerial (PD) → /areas/benbrook, filling the slot where the placeholder was
+  removed. Every image carries a figcaption credit. PHOTO_REQUIREMENTS.md updated (filled
+  vs still-wanting-original-photography). Gates + production validator green; deploy
+  **6a919635** verified live on all five pages including image bytes (200 image/jpeg) and
+  attributions. Still wanted as original photography: complex exteriors, town entry markers,
+  the I-30/I-20 seam.
+
+---
+
 ## 2026-08-24 (fifth run) — Surgical correction: Olympus report + guard hardening — LIVE
 
 - **Trigger:** Operator — live placeholder reported on /complexes/olympus-willow-park;
