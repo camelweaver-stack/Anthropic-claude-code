@@ -1,0 +1,15 @@
+{
+ "snapshot_date": "2026-08-28",
+ "source": "3286b8d5-westfwliving.comPerformanceonSearch20260828.zip",
+ "files": [
+  "chart.csv",
+  "countries.csv",
+  "devices.csv",
+  "filters.csv",
+  "pages.csv",
+  "queries.csv",
+  "search_appearance.csv"
+ ],
+ "ingested": "2026-08-28",
+ "window": "as exported (GSC default: last 3 months, cumulative)"
+}

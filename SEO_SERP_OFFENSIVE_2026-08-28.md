@@ -12,16 +12,15 @@ pages Google already tests at positions ~5–20 → measure movement in subseque
   step (8 gates incl. placeholder-assert); deploy = Netlify connector with validating build
   command (`validate-production.js`); extensionless canonicals; EN↔ES hreflang; sitemap
   derived from disk. All gates green at baseline.
-- **DATA CAVEAT (material to interpretation):** the referenced export
-  `westfwliving.com-Performance-on-Search-2026-08-28.zip` was **not retrievable** — not on
-  the machine, not in the connected Google Drive (newest WFL export there is 2026-08-23),
-  not in Gmail. Baseline metrics below therefore come from the **2026-08-23 snapshot**
-  (`data/gsc/2026-08-23/`, window 2026-08-01→21). This is materially equivalent for target
-  selection: GSC reporting lags ~2–3 days, so even a true 08-28 export would predate the
-  08-24 interventions. **Operator: re-share the 08-28 ZIP and it will be ingested as its own
-  snapshot** (`python3 scripts/seo_engine.py ingest <zip> --date 2026-08-28`).
-- **Baseline GSC totals (08-23 snapshot):** 6 clicks · 1,122 impressions · 121 page rows ·
-  197 query rows. Daily position trend improving: ~55 (Aug 6) → ~16–19 (mid-Aug window).
+- **DATA NOTE:** the 08-28 ZIP arrived mid-session after target selection had begun on the
+  08-23 snapshot; it was then ingested as `data/gsc/2026-08-28/` and **the 08-28 numbers
+  below are the official experiment baseline**. The export fully confirmed the target
+  selection — identical strike-zone queries, modestly higher volume.
+- **Baseline GSC totals (2026-08-28 export):** 8 clicks · 1,420 impressions · 125 page rows
+  · 208 query rows. Lockheed query cluster grew to **~179 impressions across 6 variants at
+  positions 11.2–15** (was ~140 in the 08-23 window) — exposure still climbing pre-
+  intervention. All other cohort baselines within noise of the 08-23 values except as
+  updated in the Phase 15 table.
 
 ## Phase 1–2 — opportunity table (strike zone: pos 5–20, commercial intent weighted)
 
@@ -120,7 +119,7 @@ changed (all already intent-matched; churn avoided) · all baselines from the 08
 
 | URL | Primary query | Secondary | Base impr | Base clicks | Base CTR | Base pos | Main competitors | Their edge | Gap closed | Changes |
 |---|---|---|---|---|---|---|---|---|---|---|
-| /guides/apartments-near-lockheed-martin-fort-worth | apartments near lockheed martin fort worth (texas) | lockheed martin apartments; …tx | ~140 (6 variants) | 0 | 0% | 11.2–15 | equityapartments.com collection; shorttermhousing.com; 6 property doorway pages | brand/domain authority; property exactness | short-term/corporate option now visible; Westworth Village + Lake Worth named | new "Two pockets + short-term option" section |
+| /guides/apartments-near-lockheed-martin-fort-worth | apartments near lockheed martin fort worth (texas) | lockheed martin apartments; …tx | ~179 (6 variants, 08-28) | 0 | 0% | 11.2–15 | equityapartments.com collection; shorttermhousing.com; 6 property doorway pages | brand/domain authority; property exactness | short-term/corporate option now visible; Westworth Village + Lake Worth named | new "Two pockets + short-term option" section |
 | /schools/private-schools-west-fort-worth | fort worth country day tuition | fwcd tuition; trinity valley school (+fw) | 18 (all variants) | 0 | 0% | 3.25–38 | fwcd.org, Niche, Homes.com, US News, FindingSchool | official source; aggregator authority | page now carries the verified 2026-27 answer both query families seek | verified FWCD schedule + 2-school tuition table; corrected stale claim |
 | /data/property-tax | weatherford property tax rate | aledo property tax rate | 7 | 0 | 0% | 7.67–10.5 | Ownwell trend pages ×3; weatherfordtx.gov; aledotx.gov | programmatic scale; official levies | reconciliation of city-only vs median-effective vs combined stack (nobody had it) | new explainer section + homestead link |
 | /compare/willow-park-vs-hudson-oaks | (page-side) willow park vs hudson oaks | — | 12 | 0 | 0% | 7.5 | thin aggregator comparisons | none meaningful | school ratings were absent from a schools-decided comparison | TEA 2026 section (A 92 vs B 80, split-street caveat) + 2 district links |
