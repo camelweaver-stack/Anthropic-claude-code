@@ -1,0 +1,1096 @@
+{
+ "date": "2026-08-28",
+ "pages": 310,
+ "orphans": [
+  "buy/field-guide.html",
+  "es/donde-vivir.html",
+  "es/gracias.html",
+  "for-leasing-teams.html",
+  "newsletter.html",
+  "poster.html",
+  "relocate/guide.html",
+  "second-chance/screening-signals.html",
+  "thanks.html",
+  "tv.html"
+ ],
+ "thin_inbound": [
+  {
+   "file": "buy/field-guide.html",
+   "inbound_contextual": 0
+  },
+  {
+   "file": "data/index.html",
+   "inbound_contextual": 0
+  },
+  {
+   "file": "es/donde-vivir.html",
+   "inbound_contextual": 0
+  },
+  {
+   "file": "for-leasing-teams.html",
+   "inbound_contextual": 0
+  },
+  {
+   "file": "newsletter.html",
+   "inbound_contextual": 0
+  },
+  {
+   "file": "poster.html",
+   "inbound_contextual": 0
+  },
+  {
+   "file": "relocate/guide.html",
+   "inbound_contextual": 0
+  },
+  {
+   "file": "second-chance/screening-signals.html",
+   "inbound_contextual": 0
+  },
+  {
+   "file": "tv.html",
+   "inbound_contextual": 0
+  },
+  {
+   "file": "buy/closing-costs-texas.html",
+   "inbound_contextual": 1
+  },
+  {
+   "file": "buy/new-construction/willow-park-hudson-oaks.html",
+   "inbound_contextual": 1
+  },
+  {
+   "file": "buy/rent-or-buy-benbrook.html",
+   "inbound_contextual": 1
+  },
+  {
+   "file": "buy/rent-or-buy-white-settlement.html",
+   "inbound_contextual": 1
+  },
+  {
+   "file": "buy/rent-or-buy-willow-park.html",
+   "inbound_contextual": 1
+  },
+  {
+   "file": "community/entertainment.html",
+   "inbound_contextual": 1
+  },
+  {
+   "file": "community/vibes/hudson-oaks.html",
+   "inbound_contextual": 1
+  },
+  {
+   "file": "compare/aledo-isd-vs-brock-isd.html",
+   "inbound_contextual": 1
+  },
+  {
+   "file": "compare/montrachet-vs-montserrat.html",
+   "inbound_contextual": 1
+  },
+  {
+   "file": "es/comunidad/entretenimiento.html",
+   "inbound_contextual": 1
+  },
+  {
+   "file": "es/comunidad/ninos.html",
+   "inbound_contextual": 1
+  },
+  {
+   "file": "es/guias/apartamentos-de-renta-limitada-weatherford.html",
+   "inbound_contextual": 1
+  },
+  {
+   "file": "es/guias/el-seguro-de-inquilino-cubre-el-granizo-texas.html",
+   "inbound_contextual": 1
+  },
+  {
+   "file": "es/guias/glosario-del-inquilino.html",
+   "inbound_contextual": 1
+  },
+  {
+   "file": "es/guias/hoja-de-trucos-para-negociar.html",
+   "inbound_contextual": 1
+  },
+  {
+   "file": "es/guias/mudarse-a-fort-worth-que-lado.html",
+   "inbound_contextual": 1
+  },
+  {
+   "file": "es/guias/puede-el-propietario-subir-la-renta-a-mitad-de-contrato.html",
+   "inbound_contextual": 1
+  },
+  {
+   "file": "es/guias/regla-de-30-dias-deposito-texas.html",
+   "inbound_contextual": 1
+  },
+  {
+   "file": "es/guias/reglas-de-subarriendo-en-texas.html",
+   "inbound_contextual": 1
+  },
+  {
+   "file": "es/guias/renta-con-opcion-a-compra-texas-2026.html",
+   "inbound_contextual": 1
+  },
+  {
+   "file": "es/guias/rentar-con-contrato-roto-fort-worth.html",
+   "inbound_contextual": 1
+  },
+  {
+   "file": "es/vecindarios/index.html",
+   "inbound_contextual": 1
+  },
+  {
+   "file": "es/vender/hudson-oaks.html",
+   "inbound_contextual": 1
+  },
+  {
+   "file": "es/vender/index.html",
+   "inbound_contextual": 1
+  },
+  {
+   "file": "es/vender/vender-con-inquilinos.html",
+   "inbound_contextual": 1
+  },
+  {
+   "file": "es/vender/weatherford.html",
+   "inbound_contextual": 1
+  },
+  {
+   "file": "guides/can-landlord-raise-rent-mid-lease-texas.html",
+   "inbound_contextual": 1
+  },
+  {
+   "file": "guides/divvy-vs-pathway-homes.html",
+   "inbound_contextual": 1
+  },
+  {
+   "file": "guides/income-restricted-apartments-weatherford.html",
+   "inbound_contextual": 1
+  },
+  {
+   "file": "guides/olympus-willow-park-vs-olympus-hudson-oaks.html",
+   "inbound_contextual": 1
+  },
+  {
+   "file": "guides/renting-near-weatherford-college.html",
+   "inbound_contextual": 1
+  }
+ ],
+ "heaviest_outbound": [
+  {
+   "file": "guides/index.html",
+   "outbound": 43
+  },
+  {
+   "file": "relocate/index.html",
+   "outbound": 38
+  },
+  {
+   "file": "neighborhoods/index.html",
+   "outbound": 33
+  },
+  {
+   "file": "es/guias/index.html",
+   "outbound": 33
+  },
+  {
+   "file": "relocate/working-at-lockheed-martin-fort-worth.html",
+   "outbound": 30
+  },
+  {
+   "file": "move/index.html",
+   "outbound": 30
+  },
+  {
+   "file": "index.html",
+   "outbound": 29
+  },
+  {
+   "file": "es/vecindarios/index.html",
+   "outbound": 29
+  },
+  {
+   "file": "buy/index.html",
+   "outbound": 24
+  },
+  {
+   "file": "relocate/international.html",
+   "outbound": 23
+  },
+  {
+   "file": "schools/aledo-isd/index.html",
+   "outbound": 22
+  },
+  {
+   "file": "relocate/guide.html",
+   "outbound": 22
+  },
+  {
+   "file": "guides/apartments-near-lockheed-martin-fort-worth.html",
+   "outbound": 21
+  },
+  {
+   "file": "relocate/from-washington.html",
+   "outbound": 20
+  },
+  {
+   "file": "relocate/from-hawaii.html",
+   "outbound": 19
+  }
+ ],
+ "depth_ge_4": [
+  {
+   "file": "verify/willow-crossing-townhomes.html",
+   "depth": 4
+  },
+  {
+   "file": "verify/westpoint-at-scenic-vista.html",
+   "depth": 4
+  },
+  {
+   "file": "verify/preserve-at-willow-park.html",
+   "depth": 4
+  },
+  {
+   "file": "verify/oxford-at-weatherford.html",
+   "depth": 4
+  },
+  {
+   "file": "verify/olympus-willow-park.html",
+   "depth": 4
+  },
+  {
+   "file": "verify/olympus-hudson-oaks.html",
+   "depth": 4
+  },
+  {
+   "file": "verify/gates-at-meadow-place.html",
+   "depth": 4
+  },
+  {
+   "file": "verify/college-park-weatherford.html",
+   "depth": 4
+  },
+  {
+   "file": "verify/chapel-creek-cottages.html",
+   "depth": 4
+  },
+  {
+   "file": "verify/canvas-at-willow-park.html",
+   "depth": 4
+  },
+  {
+   "file": "verify/birchway-hudson-oaks.html",
+   "depth": 4
+  },
+  {
+   "file": "es/vecindarios/index.html",
+   "depth": 4
+  },
+  {
+   "file": "es/guias/rentar-con-contrato-roto-fort-worth.html",
+   "depth": 4
+  },
+  {
+   "file": "es/guias/renta-con-opcion-a-compra-texas-2026.html",
+   "depth": 4
+  },
+  {
+   "file": "es/guias/reglas-de-subarriendo-en-texas.html",
+   "depth": 4
+  },
+  {
+   "file": "es/guias/regla-de-30-dias-deposito-texas.html",
+   "depth": 4
+  },
+  {
+   "file": "es/guias/puede-el-propietario-subir-la-renta-a-mitad-de-contrato.html",
+   "depth": 4
+  },
+  {
+   "file": "es/guias/negociar-renovacion-de-apartamento-fort-worth.html",
+   "depth": 4
+  },
+  {
+   "file": "es/guias/mudarse-a-fort-worth-que-lado.html",
+   "depth": 4
+  },
+  {
+   "file": "es/guias/hoja-de-trucos-para-negociar.html",
+   "depth": 4
+  },
+  {
+   "file": "es/guias/glosario-del-inquilino.html",
+   "depth": 4
+  },
+  {
+   "file": "es/guias/el-seguro-de-inquilino-cubre-el-granizo-texas.html",
+   "depth": 4
+  },
+  {
+   "file": "es/guias/costo-del-seguro-de-inquilino-texas.html",
+   "depth": 4
+  },
+  {
+   "file": "es/guias/casas-de-renta-aledo-isd.html",
+   "depth": 4
+  },
+  {
+   "file": "es/guias/apartamentos-de-renta-limitada-weatherford.html",
+   "depth": 4
+  },
+  {
+   "file": "es/escuelas/index.html",
+   "depth": 4
+  }
+ ],
+ "broken": {
+  "builder-report/2026-08.html": [
+   "/privacy/"
+  ],
+  "buy/affordability-calculator.html": [
+   "/privacy/"
+  ],
+  "buy/closing-costs-texas.html": [
+   "/privacy/"
+  ],
+  "buy/down-payment-assistance.html": [
+   "/privacy/"
+  ],
+  "buy/first-time-buyer-texas.html": [
+   "/privacy/"
+  ],
+  "buy/homestead-exemption.html": [
+   "/privacy/"
+  ],
+  "buy/index.html": [
+   "/privacy/"
+  ],
+  "buy/inspection-option-period.html": [
+   "/privacy/"
+  ],
+  "buy/new-construction/aledo.html": [
+   "/privacy/"
+  ],
+  "buy/new-construction/index.html": [
+   "/privacy/"
+  ],
+  "buy/new-construction/walsh.html": [
+   "/privacy/"
+  ],
+  "buy/new-construction/willow-park-hudson-oaks.html": [
+   "/privacy/"
+  ],
+  "buy/new-vs-resale.html": [
+   "/privacy/"
+  ],
+  "buy/property-taxes-for-buyers.html": [
+   "/privacy/"
+  ],
+  "buy/rent-or-buy-benbrook.html": [
+   "/privacy/"
+  ],
+  "buy/rent-or-buy-weatherford.html": [
+   "/privacy/"
+  ],
+  "buy/rent-or-buy-white-settlement.html": [
+   "/privacy/"
+  ],
+  "buy/rent-or-buy-willow-park.html": [
+   "/privacy/"
+  ],
+  "buy/rent-vs-buy.html": [
+   "/privacy/"
+  ],
+  "buy/schools/aledo-isd.html": [
+   "/privacy/"
+  ],
+  "buy/schools/brock-isd.html": [
+   "/privacy/"
+  ],
+  "buy/schools/weatherford-isd.html": [
+   "/privacy/"
+  ],
+  "buy/va-loans-fort-worth.html": [
+   "/privacy/"
+  ],
+  "calculator.html": [
+   "/privacy/"
+  ],
+  "community/best-bbq.html": [
+   "/privacy/"
+  ],
+  "community/best-coffee.html": [
+   "/privacy/"
+  ],
+  "community/best-gyms.html": [
+   "/privacy/"
+  ],
+  "community/city-services.html": [
+   "/privacy/"
+  ],
+  "community/civic.html": [
+   "/privacy/"
+  ],
+  "community/entertainment.html": [
+   "/privacy/"
+  ],
+  "community/events.html": [
+   "/privacy/"
+  ],
+  "community/index.html": [
+   "/privacy/"
+  ],
+  "community/kids.html": [
+   "/privacy/"
+  ],
+  "community/sports.html": [
+   "/privacy/"
+  ],
+  "community/utilities-setup.html": [
+   "/privacy/"
+  ],
+  "community/vibes/aledo.html": [
+   "/privacy/"
+  ],
+  "community/vibes/benbrook.html": [
+   "/privacy/"
+  ],
+  "community/vibes/hudson-oaks.html": [
+   "/privacy/"
+  ],
+  "community/vibes/weatherford.html": [
+   "/privacy/"
+  ],
+  "community/vibes/white-settlement.html": [
+   "/privacy/"
+  ],
+  "community/vibes/willow-park.html": [
+   "/privacy/"
+  ],
+  "commutes/birchway-hudson-oaks.html": [
+   "/privacy/"
+  ],
+  "commutes/canvas-at-willow-park.html": [
+   "/privacy/"
+  ],
+  "commutes/chapel-creek-cottages.html": [
+   "/privacy/"
+  ],
+  "commutes/college-park-weatherford.html": [
+   "/privacy/"
+  ],
+  "commutes/gates-at-meadow-place.html": [
+   "/privacy/"
+  ],
+  "commutes/olympus-hudson-oaks.html": [
+   "/privacy/"
+  ],
+  "commutes/olympus-willow-park.html": [
+   "/privacy/"
+  ],
+  "commutes/oxford-at-weatherford.html": [
+   "/privacy/"
+  ],
+  "commutes/preserve-at-willow-park.html": [
+   "/privacy/"
+  ],
+  "commutes/westpoint-at-scenic-vista.html": [
+   "/privacy/"
+  ],
+  "commutes/willow-crossing-townhomes.html": [
+   "/privacy/"
+  ],
+  "compare/aledo-isd-vs-brock-isd.html": [
+   "/privacy/"
+  ],
+  "compare/aledo-isd-vs-weatherford-isd.html": [
+   "/privacy/"
+  ],
+  "compare/aledo-vs-weatherford.html": [
+   "/privacy/"
+  ],
+  "compare/aledo-vs-willow-park.html": [
+   "/privacy/"
+  ],
+  "compare/benbrook-vs-white-settlement.html": [
+   "/privacy/"
+  ],
+  "compare/index.html": [
+   "/privacy/"
+  ],
+  "compare/montrachet-vs-montserrat.html": [
+   "/privacy/"
+  ],
+  "compare/walsh-vs-morningstar.html": [
+   "/privacy/"
+  ],
+  "compare/walsh-vs-parks-of-aledo.html": [
+   "/privacy/"
+  ],
+  "compare/willow-park-vs-hudson-oaks.html": [
+   "/privacy/"
+  ],
+  "complexes/birchway-hudson-oaks.html": [
+   "/privacy/"
+  ],
+  "complexes/chapel-creek-cottages.html": [
+   "/privacy/"
+  ],
+  "complexes/college-park-weatherford.html": [
+   "/privacy/"
+  ],
+  "complexes/olympus-hudson-oaks.html": [
+   "/privacy/"
+  ],
+  "complexes/oxford-at-weatherford.html": [
+   "/privacy/"
+  ],
+  "complexes/preserve-at-willow-park.html": [
+   "/privacy/"
+  ],
+  "complexes/westpoint-at-scenic-vista.html": [
+   "/privacy/"
+  ],
+  "data/fee-index.html": [
+   "/privacy/"
+  ],
+  "data/internet.html": [
+   "/privacy/"
+  ],
+  "data/pipeline.html": [
+   "/privacy/"
+  ],
+  "data/property-tax.html": [
+   "/privacy/"
+  ],
+  "data/specials-longevity.html": [
+   "/privacy/"
+  ],
+  "data/true-rent-table.html": [
+   "/privacy/"
+  ],
+  "data/utilities.html": [
+   "/privacy/"
+  ],
+  "deals.html": [
+   "/privacy/"
+  ],
+  "es/calculadora.html": [
+   "/es/privacidad/"
+  ],
+  "es/comprar/asistencia-enganche.html": [
+   "/es/privacidad/"
+  ],
+  "es/comprar/calculadora-asequibilidad.html": [
+   "/es/privacidad/"
+  ],
+  "es/comprar/exencion-homestead.html": [
+   "/es/privacidad/"
+  ],
+  "es/comprar/index.html": [
+   "/es/privacidad/"
+  ],
+  "es/comprar/primera-vivienda-texas.html": [
+   "/es/privacidad/"
+  ],
+  "es/comprar/renta-o-compra.html": [
+   "/es/privacidad/"
+  ],
+  "es/comunidad/ambiente.html": [
+   "/es/privacidad/"
+  ],
+  "es/comunidad/deportes.html": [
+   "/es/privacidad/"
+  ],
+  "es/comunidad/entretenimiento.html": [
+   "/es/privacidad/"
+  ],
+  "es/comunidad/eventos.html": [
+   "/es/privacidad/"
+  ],
+  "es/comunidad/index.html": [
+   "/es/privacidad/"
+  ],
+  "es/comunidad/mejor-bbq.html": [
+   "/es/privacidad/"
+  ],
+  "es/comunidad/mejor-cafe.html": [
+   "/es/privacidad/"
+  ],
+  "es/comunidad/mejores-gimnasios.html": [
+   "/es/privacidad/"
+  ],
+  "es/comunidad/ninos.html": [
+   "/es/privacidad/"
+  ],
+  "es/comunidad/servicios.html": [
+   "/es/privacidad/"
+  ],
+  "es/donde-vivir.html": [
+   "/es/privacidad/"
+  ],
+  "es/escuelas/calificaciones-tea-2026.html": [
+   "/es/privacidad/"
+  ],
+  "es/guias/apartamentos-de-renta-limitada-weatherford.html": [
+   "/es/privacidad/"
+  ],
+  "es/guias/comprar-casa-cerca-de-lockheed-martin-fort-worth.html": [
+   "/es/privacidad/"
+  ],
+  "es/guias/costo-del-seguro-de-inquilino-texas.html": [
+   "/es/privacidad/"
+  ],
+  "es/guias/el-seguro-de-inquilino-cubre-el-granizo-texas.html": [
+   "/es/privacidad/"
+  ],
+  "es/guias/puede-el-propietario-subir-la-renta-a-mitad-de-contrato.html": [
+   "/es/privacidad/"
+  ],
+  "es/guias/regla-de-30-dias-deposito-texas.html": [
+   "/es/privacidad/"
+  ],
+  "es/guias/reglas-de-subarriendo-en-texas.html": [
+   "/es/privacidad/"
+  ],
+  "es/guias/vivir-en-aledo.html": [
+   "/es/privacidad/"
+  ],
+  "es/guias/vivir-en-benbrook.html": [
+   "/es/privacidad/"
+  ],
+  "es/guias/vivir-en-walsh.html": [
+   "/es/privacidad/"
+  ],
+  "es/relocate/index.html": [
+   "/es/privacidad/"
+  ],
+  "es/relocate/international.html": [
+   "/es/privacidad/"
+  ],
+  "es/relocate/trabajar-en-lockheed-martin-fort-worth.html": [
+   "/es/privacidad/"
+  ],
+  "es/vecindarios/index.html": [
+   "/es/privacidad/"
+  ],
+  "es/vender/aledo.html": [
+   "/es/privacidad/"
+  ],
+  "es/vender/benbrook.html": [
+   "/es/privacidad/"
+  ],
+  "es/vender/casa-heredada.html": [
+   "/es/privacidad/"
+  ],
+  "es/vender/ganancias-netas.html": [
+   "/es/privacidad/"
+  ],
+  "es/vender/hudson-oaks.html": [
+   "/es/privacidad/"
+  ],
+  "es/vender/impuestos-ganancias.html": [
+   "/es/privacidad/"
+  ],
+  "es/vender/index.html": [
+   "/es/privacidad/"
+  ],
+  "es/vender/reporte-de-plusvalia.html": [
+   "/es/privacidad/"
+  ],
+  "es/vender/valor-de-tu-casa.html": [
+   "/es/privacidad/"
+  ],
+  "es/vender/vender-antes-de-comprar.html": [
+   "/es/privacidad/"
+  ],
+  "es/vender/vender-con-inquilinos.html": [
+   "/es/privacidad/"
+  ],
+  "es/vender/weatherford.html": [
+   "/es/privacidad/"
+  ],
+  "es/vender/white-settlement.html": [
+   "/es/privacidad/"
+  ],
+  "es/vender/willow-park.html": [
+   "/es/privacidad/"
+  ],
+  "guides/apartments-near-medical-city-weatherford.html": [
+   "/privacy/"
+  ],
+  "guides/buying-a-home-near-lockheed-martin-fort-worth.html": [
+   "/privacy/"
+  ],
+  "guides/can-landlord-raise-rent-mid-lease-texas.html": [
+   "/privacy/"
+  ],
+  "guides/income-restricted-apartments-weatherford.html": [
+   "/privacy/"
+  ],
+  "guides/living-in-aledo.html": [
+   "/privacy/"
+  ],
+  "guides/living-in-benbrook.html": [
+   "/privacy/"
+  ],
+  "guides/living-in-walsh.html": [
+   "/privacy/"
+  ],
+  "guides/luxury-homes-west-fort-worth.html": [
+   "/privacy/"
+  ],
+  "guides/olympus-willow-park-vs-olympus-hudson-oaks.html": [
+   "/privacy/"
+  ],
+  "guides/renters-insurance-cost-texas.html": [
+   "/privacy/"
+  ],
+  "guides/renters-insurance-hail-texas.html": [
+   "/privacy/"
+  ],
+  "guides/renting-near-weatherford-college.html": [
+   "/privacy/"
+  ],
+  "guides/short-term-leases-weatherford-willow-park.html": [
+   "/privacy/"
+  ],
+  "guides/subletting-in-texas-rules.html": [
+   "/privacy/"
+  ],
+  "guides/texas-security-deposit-30-day-rule.html": [
+   "/privacy/"
+  ],
+  "guides/whats-my-home-worth-texas.html": [
+   "/privacy/"
+  ],
+  "index.html": [
+   "/privacy/"
+  ],
+  "military/bah-fort-worth.html": [
+   "/privacy/"
+  ],
+  "military/index.html": [
+   "/privacy/"
+  ],
+  "military/jrb-noise.html": [
+   "/privacy/"
+  ],
+  "move/index.html": [
+   "/privacy/"
+  ],
+  "neighborhoods/aledo-heights.html": [
+   "/privacy/"
+  ],
+  "neighborhoods/bear-creek-ranch.html": [
+   "/privacy/"
+  ],
+  "neighborhoods/bella-flora.html": [
+   "/privacy/"
+  ],
+  "neighborhoods/canyon-west.html": [
+   "/privacy/"
+  ],
+  "neighborhoods/clearfork.html": [
+   "/privacy/"
+  ],
+  "neighborhoods/collections/golf-communities.html": [
+   "/privacy/"
+  ],
+  "neighborhoods/collections/horse-acreage.html": [
+   "/privacy/"
+  ],
+  "neighborhoods/collections/master-planned.html": [
+   "/privacy/"
+  ],
+  "neighborhoods/collections/retirement-55-plus.html": [
+   "/privacy/"
+  ],
+  "neighborhoods/collections/waterfront-lake.html": [
+   "/privacy/"
+  ],
+  "neighborhoods/index.html": [
+   "/privacy/"
+  ],
+  "neighborhoods/la-cantera.html": [
+   "/privacy/"
+  ],
+  "neighborhoods/la-madera.html": [
+   "/privacy/"
+  ],
+  "neighborhoods/mira-vista.html": [
+   "/privacy/"
+  ],
+  "neighborhoods/montrachet.html": [
+   "/privacy/"
+  ],
+  "neighborhoods/montserrat.html": [
+   "/privacy/"
+  ],
+  "neighborhoods/morningstar.html": [
+   "/privacy/"
+  ],
+  "neighborhoods/parks-of-aledo.html": [
+   "/privacy/"
+  ],
+  "neighborhoods/prairie-hill.html": [
+   "/privacy/"
+  ],
+  "neighborhoods/silverado-on-the-brazos.html": [
+   "/privacy/"
+  ],
+  "neighborhoods/summit-ranch.html": [
+   "/privacy/"
+  ],
+  "neighborhoods/the-grasslands.html": [
+   "/privacy/"
+  ],
+  "neighborhoods/walsh.html": [
+   "/privacy/"
+  ],
+  "neighborhoods/westworth-village.html": [
+   "/privacy/"
+  ],
+  "neighborhoods/whitestone-ranch.html": [
+   "/privacy/"
+  ],
+  "newsletter.html": [
+   "/privacy/"
+  ],
+  "quiz.html": [
+   "/privacy/"
+  ],
+  "relocate/from-california.html": [
+   "/privacy/"
+  ],
+  "relocate/from-chicago.html": [
+   "/privacy/"
+  ],
+  "relocate/from-colorado.html": [
+   "/privacy/"
+  ],
+  "relocate/from-florida.html": [
+   "/privacy/"
+  ],
+  "relocate/from-hawaii.html": [
+   "/privacy/"
+  ],
+  "relocate/from-new-york.html": [
+   "/privacy/"
+  ],
+  "relocate/from-washington.html": [
+   "/privacy/"
+  ],
+  "relocate/index.html": [
+   "/privacy/"
+  ],
+  "relocate/international.html": [
+   "/privacy/"
+  ],
+  "relocate/working-at-lockheed-martin-fort-worth.html": [
+   "/privacy/"
+  ],
+  "rent-to-own.html": [
+   "/privacy/"
+  ],
+  "rentals/apartments-76086.html": [
+   "/privacy/"
+  ],
+  "rentals/apartments-76087.html": [
+   "/privacy/"
+  ],
+  "rentals/apartments-76108.html": [
+   "/privacy/"
+  ],
+  "rentals/garages.html": [
+   "/privacy/"
+  ],
+  "rentals/pet-friendly.html": [
+   "/privacy/"
+  ],
+  "rentals/three-bedroom-aledo-isd.html": [
+   "/privacy/"
+  ],
+  "rentals/townhomes-and-houses.html": [
+   "/privacy/"
+  ],
+  "resources/airport-access.html": [
+   "/privacy/"
+  ],
+  "resources/cost-of-living.html": [
+   "/privacy/"
+  ],
+  "resources/hoa-guide.html": [
+   "/privacy/"
+  ],
+  "resources/home-services.html": [
+   "/privacy/"
+  ],
+  "resources/index.html": [
+   "/privacy/"
+  ],
+  "resources/storm-and-roof.html": [
+   "/privacy/"
+  ],
+  "resources/transportation-traffic.html": [
+   "/privacy/"
+  ],
+  "schools/aledo-isd/aledo-high-school.html": [
+   "/privacy/"
+  ],
+  "schools/aledo-isd/aledo-middle-school.html": [
+   "/privacy/"
+  ],
+  "schools/aledo-isd/annetta-elementary.html": [
+   "/privacy/"
+  ],
+  "schools/aledo-isd/coder-elementary.html": [
+   "/privacy/"
+  ],
+  "schools/aledo-isd/daniel-ninth-grade-campus.html": [
+   "/privacy/"
+  ],
+  "schools/aledo-isd/index.html": [
+   "/privacy/"
+  ],
+  "schools/aledo-isd/lynn-mckinney-elementary.html": [
+   "/privacy/"
+  ],
+  "schools/aledo-isd/mcanally-middle-school.html": [
+   "/privacy/"
+  ],
+  "schools/aledo-isd/mccall-elementary.html": [
+   "/privacy/"
+  ],
+  "schools/aledo-isd/stuard-elementary.html": [
+   "/privacy/"
+  ],
+  "schools/aledo-isd/vandagriff-elementary.html": [
+   "/privacy/"
+  ],
+  "schools/aledo-isd/walsh-elementary.html": [
+   "/privacy/"
+  ],
+  "schools/brock-isd/index.html": [
+   "/privacy/"
+  ],
+  "schools/private-schools-west-fort-worth.html": [
+   "/privacy/"
+  ],
+  "schools/tea-ratings-2026.html": [
+   "/privacy/"
+  ],
+  "schools/weatherford-isd/index.html": [
+   "/privacy/"
+  ],
+  "schools/willow-park-school-zones.html": [
+   "/privacy/"
+  ],
+  "second-chance.html": [
+   "/privacy/"
+  ],
+  "second-chance/deposit-alternatives.html": [
+   "/privacy/"
+  ],
+  "second-chance/screening-signals.html": [
+   "/privacy/"
+  ],
+  "sell/aledo.html": [
+   "/privacy/"
+  ],
+  "sell/benbrook.html": [
+   "/privacy/"
+  ],
+  "sell/capital-gains.html": [
+   "/privacy/"
+  ],
+  "sell/equity-report.html": [
+   "/privacy/"
+  ],
+  "sell/home-value.html": [
+   "/privacy/"
+  ],
+  "sell/hudson-oaks.html": [
+   "/privacy/"
+  ],
+  "sell/index.html": [
+   "/privacy/"
+  ],
+  "sell/inherited-house.html": [
+   "/privacy/"
+  ],
+  "sell/net-proceeds.html": [
+   "/privacy/"
+  ],
+  "sell/sell-before-buying.html": [
+   "/privacy/"
+  ],
+  "sell/selling-with-tenants.html": [
+   "/privacy/"
+  ],
+  "sell/weatherford.html": [
+   "/privacy/"
+  ],
+  "sell/white-settlement.html": [
+   "/privacy/"
+  ],
+  "sell/willow-park.html": [
+   "/privacy/"
+  ],
+  "specials.html": [
+   "/privacy/"
+  ],
+  "tools/income-checker.html": [
+   "/privacy/"
+  ],
+  "tools/index.html": [
+   "/privacy/"
+  ],
+  "tools/move-in-cost-calculator.html": [
+   "/privacy/"
+  ],
+  "tools/prorated-rent-calculator.html": [
+   "/privacy/"
+  ],
+  "tools/weeks-free-calculator.html": [
+   "/privacy/"
+  ],
+  "verify/birchway-hudson-oaks.html": [
+   "/privacy/"
+  ],
+  "verify/canvas-at-willow-park.html": [
+   "/privacy/"
+  ],
+  "verify/chapel-creek-cottages.html": [
+   "/privacy/"
+  ],
+  "verify/college-park-weatherford.html": [
+   "/privacy/"
+  ],
+  "verify/gates-at-meadow-place.html": [
+   "/privacy/"
+  ],
+  "verify/olympus-hudson-oaks.html": [
+   "/privacy/"
+  ],
+  "verify/olympus-willow-park.html": [
+   "/privacy/"
+  ],
+  "verify/oxford-at-weatherford.html": [
+   "/privacy/"
+  ],
+  "verify/preserve-at-willow-park.html": [
+   "/privacy/"
+  ],
+  "verify/westpoint-at-scenic-vista.html": [
+   "/privacy/"
+  ],
+  "verify/willow-crossing-townhomes.html": [
+   "/privacy/"
+  ],
+  "where-to-live.html": [
+   "/privacy/"
+  ]
+ },
+ "notes": "inbound counts exclude nav and footer boilerplate; depth uses full document links"
+}
