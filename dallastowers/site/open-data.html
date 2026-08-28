@@ -1,0 +1,80 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Open Data — The Registry Dataset | Dallas Towers</title><link rel="canonical" href="https://dallastowers.com/open-data.html"><meta name="description" content="The full Dallas Towers building dataset, free under CC BY 4.0: unit counts, sizes, values, homestead rates, sales tempo.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet"><link rel="icon" type="image/svg+xml" href="favicon.svg"><meta property="og:type" content="website"><meta property="og:image" content="https://dallastowers.com/og-card.png"><meta property="og:description" content="County-verified condo building file: dues, floor plans, taxes, policies, documents."><meta name="twitter:card" content="summary_large_image"><link rel="icon" type="image/svg+xml" href="favicon.svg"><meta property="og:type" content="website"><meta property="og:image" content="https://dallastowers.com/og-card.png"><meta property="og:description" content="County-verified condo building file: dues, floor plans, taxes, policies, documents."><meta name="twitter:card" content="summary_large_image"><link rel="icon" type="image/svg+xml" href="favicon.svg"><meta property="og:type" content="website"><meta property="og:image" content="https://dallastowers.com/og-card.png"><meta property="og:description" content="County-verified condo building file: dues, floor plans, taxes, policies, documents."><meta name="twitter:card" content="summary_large_image"><link rel="icon" type="image/svg+xml" href="favicon.svg"><meta property="og:type" content="website"><meta property="og:image" content="https://dallastowers.com/og-card.png"><meta property="og:description" content="County-verified condo building file: dues, floor plans, taxes, policies, documents."><meta name="twitter:card" content="summary_large_image"><link rel="icon" type="image/svg+xml" href="favicon.svg"><meta property="og:type" content="website"><meta property="og:image" content="https://dallastowers.com/og-card.png"><meta property="og:description" content="County-verified condo building file: dues, floor plans, taxes, policies, documents."><meta name="twitter:card" content="summary_large_image"><link rel="icon" type="image/svg+xml" href="favicon.svg"><meta property="og:type" content="website"><meta property="og:image" content="https://dallastowers.com/og-card.png"><meta property="og:description" content="County-verified condo building file: dues, floor plans, taxes, policies, documents."><meta name="twitter:card" content="summary_large_image"><link rel="icon" type="image/svg+xml" href="favicon.svg"><meta property="og:type" content="website"><meta property="og:image" content="https://dallastowers.com/og-card.png"><meta property="og:description" content="County-verified condo building file: dues, floor plans, taxes, policies, documents."><meta name="twitter:card" content="summary_large_image"><link rel="icon" type="image/svg+xml" href="favicon.svg"><meta property="og:type" content="website"><meta property="og:image" content="https://dallastowers.com/og-card.png"><meta property="og:description" content="County-verified condo building file: dues, floor plans, taxes, policies, documents."><meta name="twitter:card" content="summary_large_image"><style>
+:root{--overcast:#F1F3F2;--paper:#FAFBFA;--ink:#1C2B33;--ink-soft:#46565E;--line:#C9CFCC;--dallas:#2F5D7C;--dallas-tint:#E3EBF1;--fw:#8A5F1D;--fw-tint:#F3EADA;--display:'Big Shoulders Display',sans-serif;--body:'Source Serif 4',serif;--mono:'IBM Plex Mono',monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--overcast);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.65}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--dallas);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+header{border-bottom:1px solid var(--line);background:var(--overcast);position:sticky;top:0;z-index:50}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:var(--display);font-weight:700;font-size:26px;letter-spacing:.04em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.logo .mark{display:inline-block;width:18px;height:26px;background:linear-gradient(var(--ink),var(--ink)) left/6px 100% no-repeat,linear-gradient(var(--dallas),var(--dallas)) center/4px 70% no-repeat,linear-gradient(var(--fw),var(--fw)) right/5px 85% no-repeat}
+.navlinks{display:flex;gap:28px;font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase}
+.navlinks a{color:var(--ink-soft)}.navlinks a:hover{color:var(--ink)}
+.nav-cta{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;border:1.5px solid var(--ink);padding:9px 16px}
+@media(max-width:860px){.navlinks{display:none}}
+.crumb{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);padding:26px 0 0}
+.filehead{padding:18px 0 0}
+h1{font-family:var(--display);font-weight:600;font-size:clamp(40px,6vw,72px);line-height:.98;text-transform:uppercase}
+.addr{margin-top:10px;color:var(--ink-soft);font-size:17px}
+.badges{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
+.badge{font-family:var(--mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase;padding:5px 10px;border:1px solid var(--line);background:var(--paper)}
+.badge.city{color:var(--paper)}
+.badge.st-v{border-color:#2e6b46;color:#2e6b46;background:#E4EBE2}
+.badge.st-p{color:var(--ink-soft)}
+.register{margin-top:30px;background:var(--paper);border:1px solid var(--line);display:grid;grid-template-columns:repeat(6,1fr)}
+.register div{padding:15px 14px;border-right:1px solid var(--line)}
+.register div:last-child{border-right:0}
+.register .k{font-family:var(--mono);font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-soft);display:block}
+.register .v{font-family:var(--mono);font-size:16px;margin-top:4px;display:block}
+@media(max-width:900px){.register{grid-template-columns:repeat(3,1fr)}.register div:nth-child(3n){border-right:0}.register div:nth-child(-n+3){border-bottom:1px solid var(--line)}}
+section.f{margin:44px 0}
+section.f h2{font-family:var(--display);font-size:clamp(24px,2.8vw,34px);font-weight:600;text-transform:uppercase;padding-bottom:12px;border-bottom:2px solid var(--ink);margin-bottom:20px;display:flex;justify-content:space-between;align-items:baseline}
+section.f h2 .sn{font-family:var(--mono);font-size:11px;color:var(--ink-soft);letter-spacing:.1em;font-weight:400}
+section.f p{color:var(--ink-soft);max-width:68ch;margin-bottom:14px}
+section.f p strong{color:var(--ink)}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:760px){.twocol{grid-template-columns:1fr}}
+.panel{background:var(--paper);border:1px solid var(--line);padding:20px 22px}
+.panel h3{font-family:var(--display);font-size:20px;font-weight:700;text-transform:uppercase;margin-bottom:10px}
+.panel p{font-size:15px;color:var(--ink-soft)}
+.kv{list-style:none}
+.kv li{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-top:1px solid var(--line);font-size:15px}
+.kv li .k{color:var(--ink-soft)}.kv li .v{font-family:var(--mono);font-size:13.5px;text-align:right}
+.alerts{background:var(--ink);color:var(--paper);padding:30px 30px 34px;margin:48px 0}
+.alerts h3{font-family:var(--display);font-size:24px;font-weight:600;text-transform:uppercase}
+.alerts p{color:#B9C4C2;font-size:15px;margin-top:8px;max-width:60ch}
+.alerts form{margin-top:16px;display:flex;gap:10px;max-width:520px}
+.alerts input{flex:1;background:transparent;border:1px solid #4b5a61;color:var(--paper);padding:12px 14px;font-family:var(--body);font-size:15px}
+.alerts input::placeholder{color:#8b9793}
+.alerts button{background:var(--paper);color:var(--ink);border:0;padding:0 20px;font-family:var(--mono);font-size:12px;letter-spacing:.07em;text-transform:uppercase;cursor:pointer}
+.alerts .fine{font-family:var(--mono);font-size:10.5px;color:#7e8c8a;margin-top:10px}
+@media(max-width:600px){.alerts form{flex-direction:column}.alerts button{padding:12px}}
+.pn{display:flex;justify-content:space-between;gap:16px;margin:40px 0 10px;font-family:var(--mono);font-size:12px;letter-spacing:.05em;text-transform:uppercase}
+.pn a{border-bottom:1.5px solid var(--ink);padding-bottom:2px}
+footer{border-top:1px solid var(--line);padding:32px 0 52px}
+.foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.05em;color:var(--ink-soft);text-transform:uppercase}
+.disclaim{font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);max-width:900px;margin-top:14px;line-height:1.8}
+.alerts p{color:#D8DEDC!important}.alerts label{color:#B7C2BF}.fine{color:#B7C2BF!important}</style><!-- PIXEL-SLOT: paste retargeting snippet here --><!-- ANALYTICS-SLOT: paste analytics snippet here --><script type="application/ld+json">{"@context": "https://schema.org","@type": "Dataset","name": "Dallas Towers \u2014 DFW Condominium Registry","description": "Structured registry of 89 Dallas\u2013Fort Worth condominium buildings: districts, eras, unit-account counts, size ranges, assessed-value medians from the 2026 certified county rolls, homestead and owner-occupancy rates, and deed-transfer tempo.","url": "https://dallastowers.com/open-data.html","sameAs": "https://dallastowers.com/market-data.html","version": "2026-08.4","license": "https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree": true,"creator": {"@type": "Organization","name": "Dallas Towers","url": "https://dallastowers.com/"},"publisher": {"@type": "Organization","name": "Anastasia Weaver Media","url": "https://dallastowers.com/"},"spatialCoverage": {"@type": "Place","name": "Dallas\u2013Fort Worth, Texas, United States"},"temporalCoverage": "2026","keywords": ["condominiums","Dallas","Fort Worth","high-rise","HOA dues","assessed value","county roll","real estate data"],"distribution": [{"@type": "DataDownload","encodingFormat": "application/json","contentUrl": "https://dallastowers.com/dallastowers-data.json"}],"variableMeasured": ["unit accounts","median unit size (sf)","median assessed value","owner-occupancy rate","homestead rate","deed transfers trailing 12 months","building era","floor count"]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Anastasia Weaver Media", "url": "https://dallastowers.com/", "description": "Independent publisher of sourced local housing research."}</script></head><body><header><div class="wrap nav">
+<a class='logo' href='/'><span class="mark" aria-hidden="true"></span>Dallas Towers</a>
+<nav class="navlinks" aria-label="Primary"><a href='/dallas.html'>Dallas</a><a href='/fort-worth.html'>Fort Worth</a><a href='/buildings.html'>Buildings</a><a href='/neighborhoods.html'>Neighborhoods</a><a href='/market-data.html'>Market Data</a><a href='/community.html'>Community</a></nav>
+<a class='nav-cta' href='/new-developments.html'>New developments</a></div></header>
+<main class="wrap"><p class="crumb"><a href='/'>Dallas Towers</a> / Open data</p>
+<div class="filehead"><h1>Open<br>data</h1><p style="font-size:.8rem;color:#666;border-bottom:1px dashed #ccc;padding:0 0 8px;margin:6px 0 14px">Published by <strong>Anastasia Weaver Media</strong> · Independent local research, no listings, no pay-for-placement · Updated August 21, 2026</p><p class="addr">The registry dataset, free for reuse</p></div>
+<section class="f"><h2>The dataset <span class="sn">§ 01</span></h2>
+<p>Everything structured on this site — 89 buildings with districts, eras, current unit-account counts, size ranges, assessed-value medians, homestead rates, and deed-transfer tempo — is published as a single JSON file under <strong>CC BY 4.0</strong>. Journalists, researchers, and builders: take it, cite "Dallas Towers" with a link, and tell us what you find.</p>
+<p style="margin-top:14px"><a href="dallastowers-data.json" download style="border-bottom:1.5px solid var(--ink);font-family:var(--mono);font-size:13px">DOWNLOAD DALLAS TOWERS-DATA.JSON →</a></p></section>
+<section class="f"><h2>Provenance &amp; limits <span class="sn">§ 02</span></h2>
+<p>County fields aggregate every residential unit tax account per building from the Dallas CAD 2026 certified roll (certified July 2026); other fields come from named published sources documented on each building's page. Texas is a non-disclosure state, so no sale prices exist in any public dataset — including this one. Assessed values trail market. Errors: tell us and watch the <a href='/changelog.html' style='border-bottom:1.5px solid var(--ink)'>changelog</a>.</p></section>
+</main>
+<footer><div class="wrap"><div class="foot"><span>© 2026 Dallas Towers · Independent building research</span><span><a href='/privacy.html'>Privacy</a> · <a href='/terms.html'>Terms</a> · <a href='/changelog.html'>Changelog</a></span></div></div></footer>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VLBFHWJ3NX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VLBFHWJ3NX');
+</script></body></html>

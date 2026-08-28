@@ -1,0 +1,244 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dallastowers.com/schemas/building.schema.json",
+  "title": "Dallas Towers canonical building-intelligence record",
+  "description": "Architecture target for the registry. Populating any field requires verified information; unknown fields are omitted, never guessed. The live dataset (dallastowers-data.json) is a legacy subset of this schema; migration is additive and never changes public URLs.",
+  "type": "object",
+  "required": ["building_id", "building_name", "city", "verification_status"],
+  "properties": {
+    "building_id": { "type": "string", "description": "Stable slug; equals the public URL slug. Never renamed.", "pattern": "^[a-z0-9-]+$" },
+    "building_name": { "type": "string" },
+    "alternate_names": { "type": "array", "items": { "type": "string" }, "description": "Marketing / legal-condo / phase / historic names. Entity resolution: one physical condominium regime = one record; aliases live here, never as duplicate pages." },
+    "address": { "type": "string" },
+    "coordinates": { "type": "object", "properties": { "lat": { "type": "number" }, "lng": { "type": "number" } } },
+    "city": { "enum": ["DAL", "FW", "BEY"] },
+    "district": { "type": "string" },
+    "year_built": { "$ref": "#/$defs/provenanced" },
+    "developer": { "$ref": "#/$defs/provenanced" },
+    "architect": { "$ref": "#/$defs/provenanced" },
+    "floors": { "$ref": "#/$defs/provenanced" },
+    "units": { "$ref": "#/$defs/provenanced" },
+    "property_type": { "type": "string" },
+
+    "verification_status": {
+      "enum": ["unverified", "partial", "verified", "verified_current"],
+      "description": "unverified: entity exists, identity unconfirmed. partial: identity confirmed (name+address+district+era from a named source) but core facts (floors/units/type) incomplete — maps from legacy conf:'p'. verified: all core identity fields (name, address, city, district, year_built, floors, units, property_type) carry sources — maps from legacy conf:'v' AFTER floors/units/address gaps are closed; legacy 'v' records missing those fields downgrade to partial at migration. verified_current: verified AND every provenanced core field re-checked within 12 months. Name+address+coordinates alone NEVER exceed unverified."
+    },
+    "verification_date": { "type": "string", "format": "date" },
+
+    "unit_architecture": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "unit_number": { "type": "string" },
+          "stack": { "type": "string" },
+          "floor": { "type": "integer" },
+          "bedrooms": { "type": "number" },
+          "bathrooms": { "type": "number" },
+          "interior_sqft": { "type": "integer" },
+          "balcony_sqft": { "type": "integer" },
+          "orientation": { "enum": ["N","NE","E","SE","S","SW","W","NW"] },
+          "floor_plan_id": { "type": "string" },
+          "parking": { "type": "string" },
+          "storage": { "type": "string" }
+        }
+      }
+    },
+
+    "floor_plans": {
+      "type": "array",
+      "description": "Building → floor → stack/unit-type → plan → orientation.",
+      "items": {
+        "type": "object",
+        "required": ["floor_plan_id", "rights_class"],
+        "properties": {
+          "floor_plan_id": { "type": "string" },
+          "plan_name": { "type": "string" },
+          "bedrooms": { "type": "number" },
+          "bathrooms": { "type": "number" },
+          "interior_sqft": { "type": "integer" },
+          "balcony_sqft": { "type": "integer" },
+          "orientation": { "type": "string" },
+          "applicable_floors": { "type": "string" },
+          "applicable_stacks": { "type": "array", "items": { "type": "string" } },
+          "source": { "$ref": "#/$defs/source" },
+          "verification_status": { "enum": ["unverified", "partial", "verified"] },
+          "rights_class": {
+            "enum": ["licensed_official", "public_document", "independent_schematic", "metadata_only", "unknown"],
+            "description": "COPYRIGHT GUARD: licensed_official requires a license record. independent_schematic must be drawn from verified measurements, labeled 'schematic — not to scale' unless truly to scale, and must not trace copyrighted artwork. metadata_only publishes structured facts with no image. unknown never renders an image. Never invent dimensions."
+          },
+          "image": { "type": "string", "description": "Path under site/img/. Absent for metadata_only/unknown." },
+          "notes": { "type": "string" }
+        }
+      }
+    },
+
+    "view_lines": {
+      "type": "array",
+      "description": "No 'protected view' claims without legal/planning evidence. Prefer 'faces southeast toward downtown' over 'permanent unobstructed skyline view'.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "orientation": { "type": "string" },
+          "primary_view_direction": { "type": "string" },
+          "known_adjacent_parcels": { "type": "array", "items": { "type": "string" } },
+          "view_notes": { "type": "string" },
+          "protected_claim_evidence": { "type": "string", "description": "Required before any 'protected'/'permanent' wording appears publicly." },
+          "verification_date": { "type": "string", "format": "date" },
+          "source": { "$ref": "#/$defs/source" }
+        }
+      }
+    },
+
+    "hoa": {
+      "type": "object",
+      "properties": {
+        "observations": {
+          "type": "array",
+          "description": "APPEND-ONLY history. Never overwrite a prior observation; history begins at first verified observation — no reconstructed backfill unless an archived official source is retained as provenance. Dues are never assumed uniform: unit_basis captures per-unit/size/allocation variation.",
+          "items": {
+            "type": "object",
+            "required": ["observed_date", "source"],
+            "properties": {
+              "hoa_amount": { "type": "number" },
+              "hoa_frequency": { "enum": ["monthly", "quarterly", "annual"] },
+              "unit_basis": { "type": "string", "description": "e.g. 'per sqft', 'flat per unit', 'allocation % — varies by unit', with the specific basis" },
+              "per_sqft_equivalent": { "type": "number" },
+              "included_services": { "type": "array", "items": { "type": "string" } },
+              "special_assessment": { "type": "string" },
+              "assessment_date": { "type": "string", "format": "date" },
+              "reserve_information": { "type": "string" },
+              "master_policy_information": { "type": "string" },
+              "effective_date": { "type": "string", "format": "date" },
+              "observed_date": { "type": "string", "format": "date" },
+              "source": { "$ref": "#/$defs/source" }
+            }
+          }
+        }
+      }
+    },
+
+    "rules": {
+      "type": "object",
+      "description": "Every consequential rule needs source + dates. If unknown: omit (renders as 'Not yet verified'). NEVER infer rules from another building.",
+      "properties": {
+        "leasing_allowed": { "$ref": "#/$defs/provenanced" },
+        "minimum_lease_term": { "$ref": "#/$defs/provenanced" },
+        "rental_cap": { "$ref": "#/$defs/provenanced" },
+        "pet_policy": { "$ref": "#/$defs/provenanced" },
+        "pet_limit": { "$ref": "#/$defs/provenanced" },
+        "weight_limit": { "$ref": "#/$defs/provenanced" },
+        "move_in_rules": { "$ref": "#/$defs/provenanced" },
+        "renovation_rules": { "$ref": "#/$defs/provenanced" },
+        "short_term_rental_policy": { "$ref": "#/$defs/provenanced" },
+        "parking": { "$ref": "#/$defs/provenanced" },
+        "storage": { "$ref": "#/$defs/provenanced" }
+      }
+    },
+
+    "physical": {
+      "type": "object",
+      "properties": {
+        "amenities": { "type": "array", "items": { "type": "string" } },
+        "elevators": { "type": "integer" },
+        "parking_type": { "type": "string" },
+        "valet": { "type": "boolean" },
+        "concierge": { "type": "boolean" },
+        "pool": { "type": "boolean" },
+        "fitness": { "type": "boolean" },
+        "common_areas": { "type": "array", "items": { "type": "string" } },
+        "security": { "type": "string" }
+      }
+    },
+
+    "documents": {
+      "type": "array",
+      "description": "Inventory of what exists and what a buyer should request — NOT a channel for restricted materials. public_private gates rendering; never publish private/confidential documents.",
+      "items": {
+        "type": "object",
+        "required": ["document_type", "public_private"],
+        "properties": {
+          "document_type": { "enum": ["declaration", "bylaws", "rules", "resale_certificate", "budget", "reserve_study", "master_insurance_summary", "special_assessment_notice", "meeting_minutes"] },
+          "document_date": { "type": "string", "format": "date" },
+          "source": { "$ref": "#/$defs/source" },
+          "public_private": { "enum": ["public", "private"] },
+          "verified_date": { "type": "string", "format": "date" }
+        }
+      }
+    },
+
+    "public_record": {
+      "type": "object",
+      "description": "STRICT VALUE SEMANTICS — Texas non-disclosure. Only these typed fields may carry dollar values; generic 'price'/'price_per_sqft' fields are forbidden by the validator.",
+      "properties": {
+        "assessed_value": { "type": "number", "description": "Certified-roll value. Public label MUST be 'assessed value' / 'appraisal-district value' / 'certified-roll value' — never 'sale price', 'sold for', 'market sale price'." },
+        "assessed_value_per_sqft": { "type": "number", "description": "Public label MUST be 'assessed $/sf' — never 'sale $/SF'." },
+        "assessed_value_median": { "type": "number" },
+        "assessed_psf_median": { "type": "number" },
+        "assessed_value_dispersion": { "type": "object", "properties": { "p25": {"type":"number"}, "p75": {"type":"number"} } },
+        "recorded_transfers": {
+          "type": "array",
+          "description": "Deed instruments: dates and instrument types only. A transfer count is NEVER represented as a verified arms-length sales count; TX deeds carry no prices.",
+          "items": { "type": "object", "properties": { "recorded_date": { "type": "string", "format": "date" }, "instrument_type": { "type": "string" } } }
+        },
+        "transfers_t12": { "type": "integer" },
+        "transfers_prior12": { "type": "integer" },
+        "latest_recorded_transfer": { "type": "string", "format": "date" },
+        "homestead_exemption_count": { "type": "integer" },
+        "homestead_exemption_share": { "type": "number", "description": "PROXY. Public wording: 'X% of matched units carried a homestead exemption in the certified roll, a rough proxy for owner occupancy.' Never 'X% owner occupied'." },
+        "unit_size_distribution": { "type": "object" },
+        "roll_year": { "type": "integer" },
+        "listing_price": { "type": "number", "description": "Only from a live, cited listing. Distinct type; never mixed with assessed fields." },
+        "verified_sale_price": { "type": "number", "description": "Only from a documented transaction disclosure (e.g. party-provided closing statement) with retained provenance. TX public records can never populate this." }
+      }
+    },
+
+    "media": {
+      "type": "array",
+      "description": "No stock photography presented as the actual tower. Every asset carries rights.",
+      "items": {
+        "type": "object",
+        "required": ["kind", "rights"],
+        "properties": {
+          "kind": { "enum": ["exterior", "lobby", "amenity", "streetscape", "view_orientation", "schematic"] },
+          "path": { "type": "string" },
+          "rights": { "enum": ["owned", "licensed", "public_domain", "permission", "unknown"] },
+          "photographer": { "type": "string" },
+          "date": { "type": "string", "format": "date" },
+          "source": { "$ref": "#/$defs/source" }
+        }
+      }
+    },
+
+    "minimum_file_threshold": {
+      "type": "object",
+      "description": "THIN-BUILDING GUARD for FUTURE publication (existing indexed pages are exempt — recommendations only). A new building page may only be published/indexed when: verification_status >= partial, AND at least 2 of {units, floors, year_built} are provenanced, AND at least 1 of {county public_record data, an hoa observation, a provenanced rule, a verified floor_plan} exists, AND district context prose is specific to the building. Name+address+coordinates alone never publish."
+    }
+  },
+
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": ["source_name", "source_type"],
+      "properties": {
+        "source_name": { "type": "string" },
+        "source_url": { "type": "string" },
+        "source_type": { "enum": ["county_roll", "deed_record", "hoa_document", "developer_document", "governing_document", "site_visit", "party_provided", "news_archive", "permit_filing", "listing", "other"] },
+        "verified_date": { "type": "string", "format": "date" },
+        "effective_date": { "type": "string", "format": "date" },
+        "confidence": { "enum": ["high", "medium", "low"] },
+        "notes": { "type": "string" }
+      }
+    },
+    "provenanced": {
+      "type": "object",
+      "description": "Field-level provenance envelope for mutable/consequential claims. Immutable obvious facts (city, district label) do not need it.",
+      "required": ["value", "source"],
+      "properties": {
+        "value": {},
+        "source": { "$ref": "#/$defs/source" }
+      }
+    }
+  }
+}

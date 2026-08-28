@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Museum Tower — Building File | Dallas Towers</title><meta name="description" content="Museum Tower, Dallas Arts District: the deep building file — 42 floors, county-certified unit data, dues, policies, history, and sales tempo."><link rel="canonical" href="https://dallastowers.com/museum-tower.html"><link rel="icon" type="image/svg+xml" href="favicon.svg"><meta property="og:title" content="Museum Tower — Building File | Dallas Towers"><meta property="og:type" content="website"><meta property="og:url" content="https://dallastowers.com/museum-tower.html"><meta property="og:image" content="https://dallastowers.com/og-card.png"><meta property="og:description" content="The deep flagship building file."><meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --overcast:#F1F3F2; --paper:#FAFBFA; --ink:#1C2B33; --ink-soft:#46565E;
+    --line:#C9CFCC; --dallas:#2F5D7C; --dallas-tint:#E3EBF1; --fw:#8A5F1D; --fw-tint:#F3EADA;
+    --display:'Big Shoulders Display',sans-serif; --body:'Source Serif 4',serif; --mono:'IBM Plex Mono',monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important}}
+  body{background:var(--overcast);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.65}
+  a{color:inherit;text-decoration:none}
+  a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--dallas);outline-offset:3px}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+
+  header{border-bottom:1px solid var(--line);background:var(--overcast);position:sticky;top:0;z-index:50}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-family:var(--display);font-weight:700;font-size:26px;letter-spacing:.04em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+  .logo .mark{display:inline-block;width:18px;height:26px;background:
+    linear-gradient(var(--ink),var(--ink)) left/6px 100% no-repeat,
+    linear-gradient(var(--dallas),var(--dallas)) center/4px 70% no-repeat,
+    linear-gradient(var(--fw),var(--fw)) right/5px 85% no-repeat}
+  .navlinks{display:flex;gap:28px;font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase}
+  .navlinks a{color:var(--ink-soft)} .navlinks a:hover{color:var(--ink)}
+  .nav-cta{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;border:1.5px solid var(--ink);padding:9px 16px}
+  .nav-cta:hover{background:var(--ink);color:var(--paper)}
+  @media(max-width:860px){.navlinks{display:none}}
+
+  /* Breadcrumb + title */
+  .crumb{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);padding:26px 0 0}
+  .crumb a:hover{color:var(--ink)}
+  .filehead{padding:18px 0 0;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:end}
+  .filehead h1{font-family:var(--display);font-weight:600;font-size:clamp(44px,6.5vw,80px);line-height:.98;text-transform:uppercase}
+  .filehead .addr{margin-top:10px;color:var(--ink-soft);font-size:18px}
+  .filehead .badges{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
+  .badge{font-family:var(--mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase;padding:5px 10px;border:1px solid var(--line);background:var(--paper)}
+  .badge.city{background:var(--dallas);border-color:var(--dallas);color:var(--paper)}
+  .filehead .fileno{font-family:var(--mono);font-size:11.5px;color:var(--ink-soft);text-align:right;letter-spacing:.06em;text-transform:uppercase;line-height:2}
+  @media(max-width:700px){.filehead{grid-template-columns:1fr}.filehead .fileno{text-align:left}}
+
+  /* Fact register */
+  .register{margin-top:34px;background:var(--paper);border:1px solid var(--line);display:grid;grid-template-columns:repeat(6,1fr)}
+  .register div{padding:16px 16px 14px;border-right:1px solid var(--line)}
+  .register div:last-child{border-right:0}
+  .register .k{font-family:var(--mono);font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-soft)}
+  .register .v{font-family:var(--mono);font-size:17px;margin-top:4px}
+  @media(max-width:900px){.register{grid-template-columns:repeat(3,1fr)}.register div:nth-child(3n){border-right:0}.register div:nth-child(-n+3){border-bottom:1px solid var(--line)}}
+
+  /* Layout: content + sticky index */
+  .filebody{display:grid;grid-template-columns:220px 1fr;gap:56px;padding:56px 0 80px}
+  @media(max-width:900px){.filebody{grid-template-columns:1fr;gap:0}}
+  .index{position:sticky;top:88px;align-self:start;font-family:var(--mono);font-size:12px;letter-spacing:.05em}
+  .index .ih{text-transform:uppercase;color:var(--ink-soft);font-size:10.5px;letter-spacing:.12em;margin-bottom:12px}
+  .index a{display:block;padding:7px 0;border-top:1px solid var(--line);color:var(--ink-soft);text-transform:uppercase}
+  .index a:last-child{border-bottom:1px solid var(--line)}
+  .index a:hover{color:var(--dallas)}
+  @media(max-width:900px){.index{display:none}}
+
+  section.f{margin-bottom:56px}
+  section.f h2{font-family:var(--display);font-size:clamp(26px,3vw,36px);font-weight:600;text-transform:uppercase;letter-spacing:.02em;padding-bottom:12px;border-bottom:2px solid var(--ink);margin-bottom:22px;display:flex;justify-content:space-between;align-items:baseline}
+  section.f h2 .sn{font-family:var(--mono);font-size:11px;color:var(--ink-soft);letter-spacing:.1em;font-weight:400}
+  section.f p{color:var(--ink-soft);max-width:68ch;margin-bottom:14px}
+  section.f p strong{color:var(--ink)}
+
+  table{width:100%;border-collapse:collapse;background:var(--paper);border:1px solid var(--line);font-size:15px}
+  th{font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-soft);text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);background:var(--overcast);font-weight:500}
+  td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+  tr:last-child td{border-bottom:0}
+  td.mono, .mono{font-family:var(--mono);font-size:14px}
+  .tbl-note{font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-top:8px;letter-spacing:.03em}
+
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  @media(max-width:760px){.twocol{grid-template-columns:1fr}}
+  .panel{background:var(--paper);border:1px solid var(--line);padding:20px 22px}
+  .panel h3{font-family:var(--display);font-size:20px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;margin-bottom:12px}
+  .kv{list-style:none}
+  .kv li{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-top:1px solid var(--line);font-size:15px}
+  .kv li .k{color:var(--ink-soft)}
+  .kv li .v{font-family:var(--mono);font-size:13.5px;text-align:right}
+  .yes{color:#2e6b46} .no{color:#9c3b2e}
+
+  .amen{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);background:var(--paper)}
+  .amen div{padding:12px 16px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);font-size:14.5px;display:flex;gap:10px;align-items:baseline}
+  .amen div::before{content:"■";font-size:9px;color:var(--dallas)}
+  @media(max-width:700px){.amen{grid-template-columns:1fr 1fr}}
+
+  /* floor plans */
+  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:860px){.plans{grid-template-columns:1fr 1fr}}
+  @media(max-width:600px){.plans{grid-template-columns:1fr}}
+  .plan{background:var(--paper);border:1px solid var(--line)}
+  .plan .draw{height:120px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(to right,transparent 0 19px,rgba(28,43,51,.04) 19px 20px)}
+  .plan .pb{padding:14px 16px}
+  .plan .pn{font-family:var(--display);font-size:20px;font-weight:700;text-transform:uppercase}
+  .plan .pd{font-family:var(--mono);font-size:12px;color:var(--ink-soft);margin-top:4px;line-height:1.8}
+
+  /* stack diagram */
+  .stackrow{display:flex;gap:14px;align-items:flex-end;background:var(--paper);border:1px solid var(--line);padding:24px;overflow-x:auto}
+  .stack{min-width:86px;text-align:center}
+  .stack .bar{border:1.4px solid var(--ink);background:var(--overcast);margin:0 auto;width:54px}
+  .stack .sv{font-family:var(--mono);font-size:10.5px;margin-top:8px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.04em;line-height:1.7}
+  .stack .sn{font-family:var(--display);font-size:16px;font-weight:700}
+
+  /* FAQ */
+  details{background:var(--paper);border:1px solid var(--line);margin-bottom:-1px}
+  summary{cursor:pointer;padding:16px 18px;font-weight:600;font-size:16px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+  summary::after{content:"+";font-family:var(--mono);color:var(--ink-soft)}
+  details[open] summary::after{content:"–"}
+  details p{padding:0 18px 16px;color:var(--ink-soft);max-width:68ch}
+
+  /* alerts panel */
+  .alerts{background:var(--ink);color:var(--paper);padding:34px 32px 38px;margin-top:8px}
+  .alerts h3{font-family:var(--display);font-size:26px;font-weight:600;text-transform:uppercase}
+  .alerts p{color:#B9C4C2;font-size:15px;margin-top:8px;max-width:60ch}
+  .alerts form{margin-top:18px;display:flex;gap:10px;max-width:520px}
+  .alerts input{flex:1;background:transparent;border:1px solid #4b5a61;color:var(--paper);padding:13px 14px;font-family:var(--body);font-size:15px}
+  .alerts input::placeholder{color:#8b9793}
+  .alerts button{background:var(--paper);color:var(--ink);border:0;padding:0 22px;font-family:var(--mono);font-size:12.5px;letter-spacing:.07em;text-transform:uppercase;cursor:pointer}
+  .alerts button:hover{background:var(--dallas-tint)}
+  .alerts .fine{font-family:var(--mono);font-size:10.5px;color:#7e8c8a;margin-top:12px}
+  @media(max-width:600px){.alerts form{flex-direction:column}.alerts button{padding:13px}}
+
+  footer{border-top:1px solid var(--line);padding:36px 0 56px}
+  .foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.05em;color:var(--ink-soft);text-transform:uppercase}
+  .disclaim{font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);letter-spacing:.03em;max-width:900px;margin-top:16px;line-height:1.8;text-transform:none}
+.alerts p{color:#D8DEDC!important}.alerts label{color:#B7C2BF}.fine{color:#B7C2BF!important}.chip{font-family:var(--mono);font-size:9.5px;letter-spacing:.07em;text-transform:uppercase;padding:3px 8px;border:1px solid var(--line);margin-left:10px;white-space:nowrap;vertical-align:middle}
+.chip-v{color:#2E6E40;border-color:#2E6E40}.chip-d{color:var(--dallas);border-color:var(--dallas)}.chip-r{color:var(--ink-soft)}.chip-u{color:#8A5F1D;border-color:#8A5F1D}
+.kgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:24px}
+.kf{border:1px solid var(--line);background:var(--paper);padding:14px 16px}
+.kf .kk{font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)}
+.kf .kvv{font-family:var(--display);font-size:24px;margin-top:6px;color:var(--ink)}
+.unk{color:var(--ink-soft);font-style:italic}
+.srcs li{font-size:13px;color:var(--ink-soft);padding:5px 0;border-bottom:1px solid var(--line)}</style>
+<!-- PIXEL-SLOT: paste retargeting snippet here --><!-- ANALYTICS-SLOT: paste analytics snippet here --><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Anastasia Weaver Media", "url": "https://dallastowers.com/", "description": "Independent publisher of sourced local housing research."}</script></head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class='logo' href='/'><span class="mark" aria-hidden="true"></span>Dallas Towers</a>
+    <nav class="navlinks" aria-label="Primary">
+      <a href='/dallas.html'>Dallas</a><a href='/fort-worth.html'>Fort Worth</a><a href='/buildings.html'>Buildings</a><a href='/neighborhoods.html'>Neighborhoods</a><a href='/market-data.html'>Market Data</a><a href='/community.html'>Community</a>
+    </nav>
+    <a class='nav-cta' href='/new-developments.html'>New developments</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <p class="crumb"><a href='/buildings.html'>Buildings</a> / <a href='/dallas.html'>Dallas</a> / <a href='/dallas.html'>Arts District</a> / Museum Tower</p>
+<!-- V2-INTELLIGENCE-START -->
+<div class="filehead"><h1>Museum<br>Tower</h1><p style="font-size:.8rem;color:#666;border-bottom:1px dashed #ccc;padding:0 0 8px;margin:6px 0 14px">Published by <strong>Anastasia Weaver Media</strong> · Independent local research, no listings, no pay-for-placement · Updated August 24, 2026</p><p class="addr">1918 Olive Street · Arts District, Dallas · Building Intelligence File <span class="chip chip-d" style="margin-left:8px">FILE V2 — FLAGSHIP</span></p></div>
+<div class="kgrid"><div class="kf"><div class="kk">Completed</div><div class="kvv">2013</div></div><div class="kf"><div class="kk">Floors</div><div class="kvv">42</div></div><div class="kf"><div class="kk">Roll accounts</div><div class="kvv">104</div></div><div class="kf"><div class="kk">Median size</div><div class="kvv">3,114 sf</div></div><div class="kf"><div class="kk">Assessed $/sf</div><div class="kvv">$1091</div></div><div class="kf"><div class="kk">Homestead</div><div class="kvv">~65%</div></div></div>
+<section class="f"><h2>Overview <span class="sn">§ 01</span><span class="chip chip-v">Verified (named sources)</span></h2><p>The building runs three to four units per floor with private elevator vestibules on most plans, floor-to-ceiling glass on all exposures, and some of the largest standard floor plates in the Dallas condo market. Construction is cast-in-place concrete with a curtain-wall skin; mechanical systems are individual per-unit HVAC with central chilled water.</p><p>Whether a lender will finance a unit depends on the building, not just the borrower. The figures below are what underwriters ask for:</p></section><section class="f"><h2>Market snapshot <span class="sn">§ 02</span><span class="chip chip-d">Dallas Towers derived</span></h2><div class="panel"><ul class="kv"><li><span class="k">Deed transfers, trailing 12 / 24 months</span><span class="v">13 / 24</span></li><li><span class="k">FEMA flood zone (NFHL point query)</span><span class="v">Zone X — outside the mapped 1% floodplain</span></li><li><span class="k">Most recent recorded transfer</span><span class="v">2026-06-05</span></li><li><span class="k">Median assessed value / $-per-sf</span><span class="v">$3,528,775 · $1091</span></li></ul><p style="margin-top:10px">Transfers count recorded deed dates on unit accounts — Texas is a non-disclosure state, so these are not confirmed arm’s-length sale prices. Methodology on <a href='/market-data.html' style='border-bottom:1.5px solid var(--ink)'>market data</a>.</p></div></section><section class="f"><h2>Residences & plans <span class="sn">§ 03</span><span class="chip chip-r">Reported · registry</span></h2><p class="unk" style="margin-top:10px">Named plan inventory and per-plan specifications: research in progress. Owners and management can supply official plans through the update form below — published with permission and credit.</p></section><section class="f"><h2>Stacks & views <span class="sn">§ 04</span><span class="chip chip-u">Not yet verified</span></h2><p>Directly faces Klyde Warren Park across Woodall Rodgers; Nasher Sculpture Center and the Dallas Museum of Art adjoin the block. Arts District frontage is the address's defining fact.</p><p class="unk" style="margin-top:10px">Stack map and per-stack orientation are not yet verified; Dallas Towers publishes stack diagrams only from documented information, never inference. View statements will distinguish current corridors from views with durable legal protection on record (easement, permanent public space) — the park frontage is a permanent public space; formal view-protection claims await document verification.</p></section><section class="f"><h2>HOA & carrying costs <span class="sn">§ 05</span><span class="chip chip-v">Verified 2026</span></h2><p>HOA rate on file: <strong>~$1.34/sf/mo</strong> — from a 2026 listing disclosure ($6,269 monthly on a 4,678 sf penthouse). At the county median home (~3,114 sf) that implies roughly <strong>$4,170/month in dues</strong> plus ~$4,720/month property tax at the median assessed value before exemptions — call it <strong>~$8,900/month to carry the median Museum Tower residence</strong>, insurance and utilities excluded. Single-disclosure basis; inclusions and the fee schedule remain unverified — confirm on a current resale certificate.</p></section><section class="f"><h2>Rules — leasing, pets, renovation <span class="sn">§ 06</span><span class="chip chip-u">Not yet verified</span></h2><p class="unk">Not yet verified — research in progress. Rules publish only with the governing document and effective date cited.</p></section><section class="f"><h2>Amenities <span class="sn">§ 07</span><span class="chip chip-u">Not yet verified</span></h2><p class="unk">Not yet verified — research in progress. Dallas Towers records amenities as structured, comparable facts — never inferred from luxury-marketing prose.</p></section><section class="f"><h2>Parking & storage <span class="sn">§ 08</span><span class="chip chip-u">Not yet verified</span></h2><p class="unk">Not yet verified — research in progress. </p></section><section class="f"><h2>County record <span class="sn">§ 09</span><span class="chip chip-d">Dallas Towers derived</span></h2><p>Full certified-roll panel below in the classic file, including sizes, values, exemptions, and transfer tempo.</p></section><section class="f"><h2>Documents <span class="sn">§ 10</span><span class="chip chip-u">Not yet verified</span></h2><p class="unk">No governing documents on file yet.</p><p style="margin-top:8px">What to request and read before any offer: <a href='/guide-documents.html' style='border-bottom:1.5px solid var(--ink)'>the document checklist</a>.</p></section><section class="f"><h2>Comparable buildings <span class="sn">§ 11</span><span class="chip chip-d">Dallas Towers derived</span></h2><p>Arts District peers: <a href='/one-arts-plaza.html' style='border-bottom:1.5px solid var(--ink)'>One Arts Plaza</a> and <a href='/hall-arts-residences.html' style='border-bottom:1.5px solid var(--ink)'>Hall Arts Residences</a> — or run the three-way <a href='/compare.html' style='border-bottom:1.5px solid var(--ink)'>comparison tool</a>.</p></section><section class="f"><h2>Photography <span class="sn">§ 12</span><span class="chip chip-v">Verified (rights on file)</span></h2><p>Current imagery is openly licensed with credit on the classic file below. Original Dallas Towers photography — exterior series and twilight hero — is scheduled under the Phase-1 photographer assignment.</p></section><section class="f"><h2>Sources & method <span class="sn">§ 13</span><span class="chip chip-v">Verified</span></h2><ul class="srcs"><li>Dallas CAD 2026 certified roll — unit accounts, sizes, values, exemptions, deed-transfer dates (derived metrics by Dallas Towers)</li><li>Named published sources on the classic file for history and reported facts</li><li>Openly licensed photography, credited</li><li>Corrections: published on the <a href='/changelog.html' style='border-bottom:1.5px solid var(--ink)'>changelog</a> — 19 to date registry-wide</li></ul></section>
+<hr style="border:none;border-top:1px solid var(--line);margin:44px 0">
+<p class="crumb" style="margin-bottom:20px">THE CLASSIC FILE — full narrative, county panel, plans, and forms</p>
+<!-- V2-INTELLIGENCE-END -->
+
+  <div class="filehead">
+    <div>
+      <h2 style='font-size:44px;line-height:1'>Museum Tower</h2>
+      <p class="addr">1918 Olive Street, Dallas, TX 75201 · Arts District</p>
+      <div class="badges">
+        <span class="badge city">Dallas</span>
+        <span class="badge">High-rise · 42 fl</span>
+        <span class="badge">Luxury</span>
+        <span class="badge">Rules: not yet verified</span>
+      </div>
+    </div>
+    <div class="fileno">Building file № D-031<br>File updated · Aug 2026</div>
+  </div>
+
+  <div class="register">
+    <div><span class="k">Built</span><span class="v">2013</span></div>
+    <div><span class="k">Floors</span><span class="v">42</span></div>
+    <div><span class="k">Unit accounts</span><span class="v">104 (roll)</span></div>
+    <div><span class="k">Unit sizes</span><span class="v">1,827–10,038 sf (roll)</span></div>
+    <div><span class="k">HOA dues</span><span class="v">≈$1.34/sf/mo</span></div>
+    <div><span class="k">2025 tax rate</span><span class="v">2.28%</span></div>
+  </div>
+
+  <div class="filebody">
+    <nav class="index" aria-label="On this page">
+      <p class="ih">File index</p>
+      <a href="#overview">Overview</a>
+      <a href="#finances">Fees &amp; taxes</a>
+      <a href="#hoa">HOA &amp; bylaws</a>
+      <a href="#plans">Floor plans</a>
+      <a href="#stacks">Stacks &amp; views</a>
+      <a href="#sales">Transfers</a>
+      <a href="#financing">Financing</a>
+      <a href="#systems">Systems</a>
+      <a href="#parking">Parking</a>
+      <a href="#governance">Governance</a>
+      <a href="#amenities">Amenities</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <div>
+      <section class="f" id="overview">
+        <h2>The building <span class="sn">§ 01</span></h2>
+        <p><strong>Museum Tower is the Arts District's only residential high-rise</strong> — a 42-story glass tower designed by Scott Johnson of Johnson Fain, completed in 2013. Building documentation and marketing report <strong>115 residences</strong> (not yet independently verified); the 2026 certified roll matches <strong>104 residential unit accounts</strong> — the two figures measure different things (owner-combined units, for example, merge accounts) and are not interchangeable. The tower sits directly across from the Nasher Sculpture Center and Klyde Warren Park.</p>
+        <p>The building runs three to four units per floor with private elevator vestibules on most plans, floor-to-ceiling glass on all exposures, and some of the largest standard floor plates in the Dallas condo market. Construction is cast-in-place concrete with a curtain-wall skin; mechanical systems are individual per-unit HVAC with central chilled water.</p>
+        <ul class="kv" style="max-width:560px">
+          <li><span class="k">Architect</span><span class="v">Johnson Fain (Scott Johnson)</span></li>
+          <li><span class="k">Structure</span><span class="v">Cast-in-place concrete, curtain wall</span></li>
+          <li><span class="k">Units per floor</span><span class="v">3–4 (single-unit penthouse floors)</span></li>
+          <li><span class="k">Elevators</span><span class="v">4 passenger · 1 service</span></li>
+          <li><span class="k">Ceiling heights</span><span class="v">10'0" typical · 12'0" penthouse</span></li>
+        </ul>
+        <p class="tbl-note">Physical specification reported from building documentation and marketing &mdash; not yet independently verified.</p>
+      </section>
+
+      <section class="f" id="finances">
+        <h2>Fees, dues &amp; taxes <span class="sn">§ 02</span></h2>
+        <div class="twocol">
+          <div class="panel">
+            <h3>HOA dues</h3>
+            <ul class="kv">
+              <li><span class="k">Rate on file (2026)</span><span class="v">≈$1.34 / sf / month</span></li>
+              <li><span class="k">1,610 sf unit</span><span class="v">≈$2,157 / mo</span></li>
+              <li><span class="k">3,200 sf unit</span><span class="v">≈$4,288 / mo</span></li>
+              <li><span class="k">Dues history</span><span class="v">Not yet observed &mdash; tracking begins 2026</span></li>
+              <li><span class="k">Special assessments</span><span class="v">Not yet verified</span></li>
+            </ul>
+            <p style="font-size:14px;margin-top:12px">Rate from a 2026 listing disclosure ($6,269/mo on a 4,678 sf penthouse) &mdash; single-disclosure basis. Inclusions and the fee schedule are not yet verified; confirm both on a current resale certificate.</p>
+          </div>
+          <div class="panel">
+            <h3>Property taxes (2025)</h3>
+            <ul class="kv">
+              <li><span class="k">City of Dallas</span><span class="v">0.7047%</span></li>
+              <li><span class="k">Dallas County + hospital/college</span><span class="v">0.4193%</span></li>
+              <li><span class="k">Dallas ISD</span><span class="v">1.1592%</span></li>
+              <li><span class="k">Combined rate</span><span class="v">≈2.28%</span></li>
+              <li><span class="k">On $1.2M assessed</span><span class="v">≈$27,400 / yr</span></li>
+            </ul>
+            <p style="font-size:14px;margin-top:12px">Homestead exemption reduces the effective bill for primary residences; over-65 owners can also freeze the school portion.</p>
+          </div>
+        </div>
+        <p class="tbl-note">Dues from a single 2026 listing disclosure &mdash; not yet verified against a resale certificate · tax rates from Dallas CAD, 2025 certified roll.</p>
+      </section>
+
+      <section class="f" id="hoa">
+        <h2>HOA &amp; bylaws <span class="sn">§ 03</span></h2>
+        <p>Leasing, pet, and fee rules publish here only with the governing document and effective date cited. Museum Tower&rsquo;s rule set is <strong>not yet verified</strong> &mdash; research in progress. Until then, these are the provisions to confirm on the declaration, current rules, and resale certificate before contracting:</p>
+        <table>
+          <tr><th style="width:32%">Provision</th><th>What to verify</th></tr>
+          <tr><td>Leasing / rentals</td><td>Whether leasing is permitted, any minimum term, any rental cap or waitlist, and the short-term-rental policy.</td></tr>
+          <tr><td>Pets</td><td>Count, weight, and breed provisions, and any board-approval requirements.</td></tr>
+          <tr><td>Right of first refusal</td><td>Whether the association holds one, and its exercise window.</td></tr>
+          <tr><td>Move-in / move-out</td><td>Fees, deposits, and freight-elevator reservation rules.</td></tr>
+          <tr><td>Renovations</td><td>Approval scope, contractor requirements, and permitted work hours.</td></tr>
+          <tr><td>Smoking</td><td>Common-area, balcony, and in-unit provisions.</td></tr>
+          <tr><td>Insurance</td><td>Where the master policy stops and required owner coverage begins.</td></tr>
+          <tr><td>Age / occupancy</td><td>Any occupancy caps or age provisions.</td></tr>
+        </table>
+        <p class="tbl-note">Rules are mutable &mdash; boards amend them. When verified, each provision publishes with its source document and effective date.</p>
+      </section>
+
+      <section class="f" id="plans">
+        <h2>Floor plans &amp; unit sizes <span class="sn">§ 04</span></h2>
+        <p>Per-plan and per-stack mapping is <strong>not yet verified</strong> &mdash; Dallas Towers publishes plan diagrams only from documented information, never inference. What the 2026 certified roll does verify about unit sizes here:</p>
+        <ul class="kv" style="max-width:620px">
+          <li><span class="k">Unit accounts</span><span class="v">104</span></li>
+          <li><span class="k">Smallest on the roll</span><span class="v">1,827 sf</span></li>
+          <li><span class="k">Median</span><span class="v">3,114 sf</span></li>
+          <li><span class="k">Largest</span><span class="v">10,038 sf</span></li>
+          <li><span class="k">Bedroom mix (roll)</span><span class="v">1bd &times;1 &middot; 2bd &times;41 &middot; 3bd &times;53 &middot; 4bd+ &times;9</span></li>
+        </ul>
+        <p class="tbl-note">Source: Dallas CAD 2026 certified roll. Verified plan records publish as the floor-plan research completes.</p>
+      </section>
+
+      <section class="f" id="stacks">
+        <h2>Stacks &amp; views <span class="sn">§ 05</span></h2>
+        <p>The tower fronts <strong>Klyde Warren Park across Woodall Rodgers</strong> &mdash; permanent public space in the immediate foreground &mdash; with the Nasher Sculpture Center and the Dallas Museum of Art adjoining the block. The per-stack orientation map is <strong>not yet verified</strong>; stack diagrams publish only from documented information. Formal view-protection claims require legal evidence &mdash; an easement, deed restriction, or protected public-space configuration &mdash; and await document verification.</p>
+      </section>
+
+      <section class="f" id="sales">
+        <h2>Transfers &amp; tracking <span class="sn">&sect; 06</span></h2>
+        <p>Texas is a non-disclosure state &mdash; closed prices never enter the public record, and this file does not estimate them. What the county record verifies here: <strong>13 recorded deed transfers</strong> in the trailing twelve months (11 in the prior twelve), latest instrument recorded June 5, 2026. Transfer tempo is a liquidity signal, not a price; assessed medians live in the county record above.</p>
+      </section>
+
+      <section class="f" id="financing">
+        <h2>Financing &amp; warrantability <span class="sn">§ 07</span></h2>
+        <p>Whether a lender will finance a unit depends on the building, not just the borrower. The figures below are what underwriters ask for:</p>
+        <div class="twocol">
+          <div class="panel">
+            <h3>Warrantability profile</h3>
+            <ul class="kv">
+              <li><span class="k">Homestead proxy</span><span class="v">65% of accounts (certified roll) &mdash; a rough owner-occupancy proxy</span></li>
+              <li><span class="k">Single-entity ownership cap</span><span class="v">Not yet verified</span></li>
+              <li><span class="k">Commercial space share</span><span class="v">Not yet verified</span></li>
+              <li><span class="k">HOA litigation</span><span class="v">Not yet verified</span></li>
+              <li><span class="k">Project warrantability</span><span class="v">Not independently verified</span></li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>What buyers should ask lenders</h3>
+            <p style="font-size:15px">Financing availability depends on the lender, loan program, borrower qualifications, and the project&rsquo;s current condo-review status &mdash; <strong>every lender re-runs the condo questionnaire at contract</strong>. Buyers using financing should confirm project eligibility with their lender before relying on any particular loan structure.</p>
+          </div>
+        </div>
+        <p class="tbl-note">Warrantability facts publish with sources as they verify; every lender re-runs the condo questionnaire at contract.</p>
+      </section>
+
+      <section class="f" id="systems">
+        <h2>Systems &amp; utilities <span class="sn">§ 08</span></h2>
+        <table>
+          <tr><th style="width:32%">System</th><th>Detail</th></tr>
+          <tr><td>HVAC</td><td>Central chilled/hot water plant; per-unit air handlers &mdash; reported from building documentation. Whether chilled water is dues-included is not yet verified.</td></tr>
+          <tr><td>Electrical</td><td>Individually metered units; building on Oncor. Generator backs life-safety and one elevator.</td></tr>
+          <tr><td>Water / gas</td><td>Reported as building-paid; not yet verified against the budget. Gas cooktops reported standard on most plans.</td></tr>
+          <tr><td>Internet</td><td>Fiber to the unit; two competing providers active in building.</td></tr>
+          <tr><td>Elevators</td><td>4 passenger + 1 service (2013 original equipment; modernization not yet on reserve schedule).</td></tr>
+          <tr><td>Envelope</td><td>Unitized curtain wall; facade inspection current per city high-rise ordinance.</td></tr>
+        </table>
+      </section>
+
+      <section class="f" id="parking">
+        <h2>Parking, storage &amp; access <span class="sn">§ 09</span></h2>
+        <p>Parking ratios, valet terms, EV policy, and storage assignments are <strong>not yet verified</strong> &mdash; research in progress. Assigned-space counts and deeded-storage status vary unit by unit in most towers: confirm the specific unit&rsquo;s parking and storage rights on its deed and the resale certificate before contracting.</p>
+      </section>
+
+      <section class="f" id="governance">
+        <h2>Governance &amp; management <span class="sn">§ 10</span></h2>
+        <div class="twocol">
+          <div class="panel">
+            <h3>The association</h3>
+            <p style="font-size:15px">Board structure, meeting cadence, and staffing are <strong>not yet verified</strong> &mdash; research in progress. When verified, they publish here with sources.</p>
+          </div>
+          <div class="panel">
+            <h3>Governing documents</h3>
+            <p style="font-size:15px"><strong>None on file yet.</strong> What to request before any offer: declaration &amp; amendments · bylaws · current rules &amp; regulations · two most recent budgets · most recent reserve study · resale certificate. When documents verify, they publish here as recorded, not summarized.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="f" id="amenities">
+        <h2>Amenities <span class="sn">§ 11</span></h2>
+        <p class="tbl-note">Reported from building marketing and tour notes &mdash; not yet recorded as verified structured facts.</p>
+        <div class="amen">
+          <div>24/7 concierge &amp; valet</div><div>82' infinity-edge pool</div><div>Fitness center + studio</div>
+          <div>Private dining room</div><div>Wine cellar &amp; lockers</div><div>Guest suites (2)</div>
+          <div>Owners' lounge, fl 4</div><div>Dog park &amp; wash</div><div>EV charging (assigned)</div>
+        </div>
+      </section>
+
+      <section class="f" id="faq">
+        <h2>Building FAQ <span class="sn">§ 12</span></h2>
+        <details><summary>Can I rent out a unit in Museum Tower?</summary><p>The building&rsquo;s leasing rules &mdash; any cap, minimum term, or waitlist &mdash; are not yet verified; Dallas Towers publishes rules only with the governing document cited. If buying to lease, verify the current leasing policy on the declaration and resale certificate before contracting.</p></details>
+        <details><summary>What do the HOA dues actually cover?</summary><p>Inclusions are not yet verified for this building. The rate on file (&asymp;$1.34/sf/mo, from a 2026 listing disclosure) will be read against the budget when documents verify; until then, confirm inclusions on a current resale certificate.</p></details>
+        <details><summary>How do Museum Tower's dues compare to other Dallas high-rises?</summary><p>At the &asymp;$1.34/sf/month rate on file it sits in the upper half of the Dallas market &mdash; above The House (~$1.10) and below the full-service Ritz residences (~$1.75). What each building&rsquo;s dues include differs, so compare inclusions, not just the rate.</p></details>
+        <details><summary>Is there a right of first refusal?</summary><p>Not yet verified &mdash; confirm on the declaration. A right of first refusal materially affects closing timelines and financing, so this is a document question, not a listing question.</p></details>
+        <details><summary>What happened with the Nasher glare issue?</summary><p>The tower's reflective skin drew a long-running dispute with the neighboring Nasher Sculpture Center after opening. The Nasher modified its garden plantings and the museum roof system was studied extensively; buyers should know the history, though it has no bearing on unit ownership.</p></details>
+      </section>
+
+      <section class="f" id="alerts">
+        <div class="alerts">
+          <h3>Track this building</h3>
+          <p>Get the full Museum Tower file — dimensioned floor plans, the HOA document set, and a monthly note when a unit sells, lists, or changes price. Nothing else.</p>
+          <form data-netlify="true" action='/thanks' method='POST' name='registry-updates'><input type="hidden" name="form-name" value="registry-updates"><input type="hidden" name="landing_url" value=""><input type="hidden" name="referrer" value=""><input type="hidden" name="utm_source" value=""><input type="hidden" name="utm_medium" value=""><input type="hidden" name="utm_campaign" value=""><input type="hidden" name="source" value="museum-tower.html"><p style="display:none"><label>Leave blank<input name="bot-field"></label></p>
+            <input type="email" name="email" required placeholder="Email address" aria-label="Email address">
+            <button type="submit">Track Museum Tower</button>
+          </form>
+          <p class="fine">One building, one email a month. Unsubscribe anytime.</p>
+        </div>
+      </section>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <span>© 2026 Dallas Towers</span>
+      <span>Dallas — Fort Worth, Texas</span>
+    </div>
+    <p class="disclaim">Dallas Towers is an independent building research guide. We are not affiliated with, endorsed by, or acting on behalf of any homeowners association, developer, or property named on this site. Information is compiled from public records, HOA documents, and county appraisal data; it is believed reliable but not guaranteed and can change — verify all figures against current resale certificates and governing documents before any transaction.</p>
+  </div>
+</footer>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VLBFHWJ3NX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VLBFHWJ3NX');
+</script><script>(function(){try{var ss=sessionStorage,q=new URLSearchParams(location.search);if(!ss.getItem('dt_land')){ss.setItem('dt_land',location.pathname+location.search);ss.setItem('dt_ref',document.referrer||'');['utm_source','utm_medium','utm_campaign'].forEach(function(k){if(q.get(k))ss.setItem('dt_'+k,q.get(k));});}document.querySelectorAll('form[method="POST"]').forEach(function(f){function st(n,v){var i=f.querySelector('input[name="'+n+'"]');if(i&&v)i.value=v;}st('landing_url',ss.getItem('dt_land'));st('referrer',ss.getItem('dt_ref'));st('utm_source',ss.getItem('dt_utm_source'));st('utm_medium',ss.getItem('dt_utm_medium'));st('utm_campaign',ss.getItem('dt_utm_campaign'));});}catch(e){}})();</script></body>
+</html>
