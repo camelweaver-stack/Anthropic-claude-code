@@ -1,19 +1,40 @@
 # SEO Tower Offensive — experiment ledger (2026-08-28)
 
-## 0. Data caveat — read first
-The GSC export `dallastowers.com-Performance-on-Search-2026-08-28.zip` was **not
-accessible** in this session (not in uploads, Drive, or Gmail). All GSC figures
-below are the brief's reported values, **unvalidated**: ~406 impressions over
-five days from ~Aug 22, ~4 clicks, ~92 URLs with impressions, ~100 impressions/day,
-building pages around positions 5–15. Independently corroborated: the Aug-23
-Coverage export showed the index jump (2 → 90 known URLs, 37 indexed on Aug 17)
-and "Alternate page with proper canonical tag: 5" — Google discovering clean-URL
-duplicates. **Re-run the forensics of §3 of the brief when the export is supplied.**
+## 0. GSC data — VALIDATED (export received 2026-08-28, archived in reports/gsc/2026-08-28/)
 
-Statistical posture: five days of a 3-week-old site is **early Google testing,
-not established rankings**. Impressions at positions 5–15 on low-volume building
-queries are consistent with ordinary new-site discovery given the sitemap
-submission (~Aug 21) and IndexNow pings. Treat as promising, not validated.
+Validated totals (Search type: Web, property to 2026-08-26):
+- **413 impressions · 4 clicks · 0.97% CTR · 92 URLs with impressions · 90 queries**
+- Zero exposure through Aug 21; first impressions **Aug 22** (24), then 89 / 85 / 110 / 98
+  daily — the brief's ~406/~100-a-day figures confirmed.
+- Daily avg position 25.0 → 27.9 (widening query testing, not decline).
+- Devices: mobile pos 12.6 (140 impr) vs desktop 37.2 (264 impr) — Google tests
+  materially better positions on mobile. Countries: US 355/413.
+- Page position bands: **1–5: 5 · 5–10: 21 · 10–20: 16** · 20–40: 17 · 40+: 33.
+- Query bands: 1–5: 2 · 5–10: 19 · 10–20: 11 · 20–40: 21 · 40+: 37.
+- Clicks: the-travis-at-katy-trail ×2 (28 impr @ 9.1, 7.1% CTR),
+  colonnade-at-turtle-creek ×1, the-terminal-at-katy-trail ×1.
+
+Statistical posture unchanged: five days of testing on a 3-week-old site is
+**promising early Google testing, not established rankings**. But the pattern
+is real: 42 URLs already in top-20 territory, essentially all individual
+building entities.
+
+### Duplication, measured (validates the consolidation)
+**17 building pairs received impressions under BOTH URL forms.** By form:
+clean 324 impressions across 65 URLs vs .html 89 across 26. Google's serving
+preference was the clean form (internal links outvoted rel=canonical).
+Direction review with this data: consolidation to .html retained — declared
+canonicals + sitemap have said .html since birth, all signals now agree, and
+301s transfer the clean-form signals; a same-day reversal to clean would
+churn more than it saves. Contingency: if intervention+control positions
+degrade materially at +14d in a way that correlates with redirected URLs,
+the clean-URL flip remains available with a documented 1:1 map.
+
+### Unfulfilled demand signal
+"tower 22 dallas" query cluster: 22 impressions across 4 variants at
+positions 57–67 — matching loosely against our pages. Investigate what
+Tower 22 is (likely a new development) before considering coverage; logged
+in DALLAS_TOWER_COVERAGE_MAP.md.
 
 ## 1. Production state at start
 Branch `claude/indexing-report-corrections-eepkhd` · pre-change HEAD `f7cfcd1` ·
@@ -91,3 +112,24 @@ Exceptional: several intervention pages reach positions 1–5. Strong:
 intervention beats controls on Δposition and Δimpressions. Neutral: cohorts
 move together (conclude content wasn't the constraint). Negative: intervention
 underperforms controls → revert comparables module and reassess.
+
+## 8. Validated cohort baseline (clean+.html combined, Aug 22–26)
+| Cohort | Building | Impr | Clicks | Wtd pos |
+| --- | --- | --- | --- | --- |
+| I | the-travis-at-katy-trail | 28 | 2 | 9.1 |
+| I | the-knox-residences-auberge | 24 | 0 | 12.3 |
+| I | 588-lofts | 10 | 0 | 14.0 |
+| I | park-highlander | 10 | 0 | 8.0 |
+| I | rosewood-residences-turtle-creek | 9 | 0 | 8.8 |
+| I | the-belvedere | 8 | 0 | 9.0 |
+| I | 2011-cedar-springs-lofts | 8 | 0 | 8.9 |
+| I | lone-star-tower | 5 | 0 | 10.6 |
+| I | art-house-at-so7 | 5 | 0 | 7.4 |
+| I | mercer-square | 4 | 0 | 8.5 |
+| C | bleu-ciel | 17 | 0 | 43.3 |
+| C | colonnade-at-turtle-creek | 14 | 1 | 13.5 |
+| C | park-plaza | 5 | 0 | 6.2 |
+
+Intervention totals: 111 impressions, 2 clicks. Compare at +7/+14/+30/+60 days
+(deploy date 2026-08-28); combine URL forms per building when comparing, since
+the consolidation merges them.

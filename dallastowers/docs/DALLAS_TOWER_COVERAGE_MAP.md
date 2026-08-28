@@ -32,6 +32,14 @@ cross-reference; **verify before creating any file**)
 - Historic/former (demolished or converted-away): not currently filed; low
   search value.
 
+## Demand-driven investigation queue (from validated GSC 2026-08-28)
+- **"Tower 22 Dallas"** — 22 impressions across 4 query variants at positions
+  57–67 hitting our pages loosely. Identify the entity (likely a new
+  development or district branding) before any coverage decision.
+- "victory condos for sale" (8 impr @ 57), "downtown fort worth condos for
+  sale" (2 @ 18.5) — transactional district queries our hubs partially match;
+  no action this pass.
+
 ## Recommended next census action (not this pass)
 One-time reconciliation of the census against HAR's Dallas "highrise" index
 and Condo Mania's building list — additions only where the thin-file
