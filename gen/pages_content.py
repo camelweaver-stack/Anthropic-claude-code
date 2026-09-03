@@ -128,7 +128,9 @@ stock and planned-community amenities against longer drives to south-shore gates
 JBPHH, Camp Smith, and Tripler. <strong>The windward premium:</strong> Kaneohe is the practical
 windward option; Kailua is the deliberate one.</p>
 <p style="max-width:46rem">Each <a href="/bases/">base guide</a> pairs these pockets with the
-commute they actually produce. For a family decision, layer in the
+commute they actually produce, and the <a href="/guides/commute-first.html">commute-first
+decision guide</a> walks the full method — gate, corridor, pocket, rent, then the 0630 drive
+test — start to finish. For a family decision, layer in the
 <a href="/schools/">schools guide</a> — Hawaii's statewide district changes how address and school
 connect.</p>
 {lead_form("NEIGHBORHOODS", "pcs-renter")}
@@ -1078,6 +1080,146 @@ lender and, where taxes are involved, a tax professional you choose.</p>
                 "tax-free BAH, and the forced-exit risk. Sourced and dated.",
                 body, "/buy/", jsonld=ld)
 
+def commute_first():
+    qas = [
+      ("How should military families choose an Oahu neighborhood?",
+       "Run the decision in this order: gate first, pockets second, rent last. Start from the "
+       "gate you'll actually report to and shortlist only the pockets whose corridor feeds it; "
+       "then rank that shortlist against the current rent bands and your BAH; then verify the "
+       "one or two finalists by driving the route at your actual report time before you sign "
+       "anything. Mainland instinct runs this backward — pick a neighborhood you like, then "
+       "discover the commute — and Oahu's geography punishes that order, because an island with "
+       "one urban core and a mountain range down its spine gives every pocket a fixed set of "
+       "ways in and out."),
+      ("Can I evaluate an Oahu commute before I arrive?",
+       "You can approximate it, and the approximation is worth doing — just don't sign a lease "
+       "on it. From the mainland, run your candidate address to your gate in a mapping app with "
+       "the departure time set to your report time in Hawaii's time zone, on a weekday, and read "
+       "the range it gives you rather than the single number. Treat that as a screen, not a "
+       "verdict: it shortlists pockets, it doesn't clear them. The verdict comes on island, "
+       "during your TLA window, by driving the actual route at the actual hour."),
+      ("Which Oahu neighborhoods have the best commute?",
+       "There is no island-wide answer — only corridor answers, which is the point of running "
+       "the decision gate-first. Close-in pockets like Salt Lake, Moanalua, and Kalihi are the "
+       "minutes-to-gate play for the Pearl Harbor–Airport cluster of installations; central "
+       "pockets ride the H-2/H-1 corridor toward Schofield and Wheeler; windward pockets reach "
+       "MCBH without crossing the mountains, while anyone windward bound for a leeward gate — "
+       "or the reverse — lives with the Koʻolau crossings every workday. Match the pocket's "
+       "corridor to your gate and the shortlist mostly writes itself; the rent bands and your "
+       "own 0630 test break the ties."),
+    ]
+    body = f'''
+<div class="hero"><div class="wrap">
+<p class="eyebrow">Neighborhoods · the order of operations</p>
+<h1>The commute-first neighborhood decision: gate, pocket, rent — in that order</h1>
+<p class="lede">On the mainland you pick the neighborhood and the commute works itself out. On an
+island with one urban core, a mountain range down its spine, and a fixed set of corridors, the
+commute is the decision. Here's the method, start to finish, from orders-in-hand to a lease you
+won't regret at 0630 on a Tuesday.</p>
+</div></div>
+<div class="wrap">
+<h2>The direct answer</h2>
+<p style="max-width:46rem">Run the decision in this order: <strong>gate → corridor → pockets →
+rent bands → drive test</strong>. Start from the gate you'll report to, keep only the pockets
+whose corridor feeds that gate, rank the survivors against the
+<a href="/neighborhoods/">current rent bands</a> and your BAH, and verify the finalists by
+driving the route at your actual report time during your <a href="/tla/">TLA window</a> —
+before you sign. Every step below is method, not measurement: this site publishes no commute
+times, because the only number that matters is the one your own route produces at your own hour.</p>
+
+<h2>Why Oahu punishes the mainland order of operations</h2>
+<p style="max-width:46rem">Three pieces of fixed geography do the punishing. First, the island has
+<strong>one urban core</strong> — the jobs, the airport, and most of the gates cluster along the
+south shore, so most commutes converge on the same few miles of H-1. Second, the
+<strong>Koʻolau range</strong> splits windward from leeward: living on one side and working on the
+other means crossing it every workday, on one of a small number of routes (H-3, the Pali, the
+Likelike). Third, <strong>corridors are commitments</strong>: central pockets feed down the H-2 to
+the H-1 merge; west-side pockets ride the H-1 east; windward pockets reach the south shore over
+the mountains. A pocket's corridor is permanent — no lease clause changes which roads exist.</p>
+
+<h2>Step one — start from the gate, not the map pin</h2>
+<p style="max-width:46rem">Your installation is not a point; it's a perimeter with gates, and
+which gate your unit actually uses can move a commute between corridors entirely. Before you
+shortlist anything, ask your sponsor two questions: <em>which gate does my unit report through,
+and what time is my report window?</em> Then read your installation's
+<a href="/bases/">base guide</a>, which pairs each gate with the pockets that feed it naturally.</p>
+
+<h2>Step two — the mainland screen</h2>
+<p style="max-width:46rem">From the mainland you can't drive the route, but you can screen it.
+Map each candidate pocket to your gate with the departure time set to your report time
+<em>in Hawaii's time zone</em> on a weekday, and read the range, not the single number. Two rules
+keep the screen honest: treat anything that requires a Koʻolau crossing or the H-1 merge as
+needing on-island verification no matter what the app says, and never let a pretty listing pull a
+pocket back onto the shortlist after its corridor eliminated it. The
+<a href="/quiz/">pocket-match quiz</a> runs this same logic automatically against the current
+rent bands if you want the fast version.</p>
+
+<h2>Step three — let the rent bands break ties</h2>
+<p style="max-width:46rem">With two or three surviving pockets, go to the
+<a href="/neighborhoods/">pocket table</a> and your grade's line in the
+<a href="/bah-report/">BAH Reality Report</a>. The pattern that usually emerges: the closest-in
+pocket costs more per square foot and the farthest costs less — and the difference is what the
+market charges for mornings. That's a real trade with no universal answer; a family optimizing
+for space and a geo-bachelor optimizing for sleep will price the same corridor differently.
+Housing costs vary materially by pocket, bedroom count, and lease timing — which is why the bands
+carry a visible refresh date and deliberate rounding.</p>
+
+<h2>Step four — the 0630 test, before you sign</h2>
+<p style="max-width:46rem">The verdict is empirical. During your TLA window, drive each finalist's
+actual route at your actual report time — not Saturday afternoon, when every pocket on the island
+looks reasonable. Do it once in each direction; the evening leg surprises people more often than
+the morning one. If the drive at 0630 is one you can live with for the length of a tour, sign.
+If it isn't, no listing photo fixes it. Families bridging on <a href="/tla/">TLA</a> have this
+window built in — use it for exactly this.</p>
+
+<h2>Straight answers</h2>
+<h3 style="font-size:1.02rem">How should military families choose an Oahu neighborhood?</h3>
+<p style="max-width:46rem">{qas[0][1]}</p>
+<h3 style="font-size:1.02rem">Can I evaluate an Oahu commute before I arrive?</h3>
+<p style="max-width:46rem">{qas[1][1]}</p>
+<h3 style="font-size:1.02rem">Which Oahu neighborhoods have the best commute?</h3>
+<p style="max-width:46rem">{qas[2][1]}</p>
+
+<h2>Next steps</h2>
+<ol style="max-width:46rem">
+<li><strong>Confirm your gate and report window</strong> with your sponsor before shortlisting
+anything.</li>
+<li><strong>Read your base guide</strong> on the <a href="/bases/">installations hub</a> for the
+gate-to-pocket pairings, then screen candidates from the mainland at the right local hour.</li>
+<li><strong>Price the survivors</strong> against the <a href="/neighborhoods/">pocket table</a>
+and the <a href="/bah-report/">BAH Reality Report</a>.</li>
+<li><strong>Drive the finalists at 0630</strong> during your <a href="/tla/">TLA window</a>,
+both directions, before signing.</li>
+</ol>
+<p style="max-width:46rem">Method compiled from this site's pocket and base data (rent bands carry
+their own refresh date) and verified <strong>September 3, 2026</strong>. Corridor geography —
+which highways serve which side of the island — is fixed public fact; everything about how a
+specific route performs at a specific hour is deliberately left to your own drive test, because
+that's the only measurement that binds.</p>
+{lead_form("COMMUTEFIRST", "pcs-renter",
+  heading="Building your pocket shortlist?",
+  blurb="Join the list and the arrival brief pairs your gaining installation's gate-to-pocket "
+        "pairings with the current rent bands for your grade.")}
+</div>'''
+    p = "/guides/commute-first.html"
+    ld = {"@context": "https://schema.org", "@graph": [
+        {"@type": "Article",
+         "headline": "The commute-first neighborhood decision: gate, pocket, rent — in that order",
+         "description": "The method for choosing an Oahu neighborhood on military orders: start "
+                        "from your gate and its corridor, shortlist pockets that survive it, let "
+                        "the rent bands and BAH break ties, then verify with a 0630 drive test "
+                        "during TLA before signing.",
+         "datePublished": "2026-09-03", "dateModified": "2026-09-03",
+         "author": {"@type": "Organization", "name": "PCS Oahu"},
+         "publisher": {"@type": "Organization", "name": "PCS Oahu"},
+         "mainEntityOfPage": DOMAIN + p},
+        faq_ld(qas)]}
+    return p, page(p, "Choosing an Oahu Neighborhood on Military Orders: Commute First | PCS Oahu",
+                "The commute-first method for Oahu: start from your gate, shortlist pockets by "
+                "corridor, let rent bands and BAH break ties, then verify with a 0630 drive test "
+                "during TLA before you sign. No invented commute times — a method, not a promise.",
+                body, "/neighborhoods/", jsonld=ld)
+
 def guides_hub():
     body = f'''
 <div class="hero"><div class="wrap">
@@ -1130,6 +1272,9 @@ Hawaii PCS that paperwork alone doesn't cover.</p>
   <div class="card"><span class="tag">Arriving</span>
     <h3><a href="/guides/on-base-waitlist.html">The on-base waitlist, decoded</a></h3>
     <p>HEAT's real role, Island Palm's 7-day backdating rule, and what declining an offer costs your position.</p></div>
+  <div class="card"><span class="tag">Arriving</span>
+    <h3><a href="/guides/commute-first.html">The commute-first decision</a></h3>
+    <p>Gate, corridor, pocket, rent — in that order — and the 0630 drive test that settles it.</p></div>
   <div class="card"><span class="tag">Buying</span>
     <h3><a href="/guides/rent-vs-buy.html">Rent or buy with a VA loan?</a></h3>
     <p>The honest framework: the PCS break-even horizon, what BAH reaches at island prices, and the forced-exit risk.</p></div>
@@ -1401,7 +1546,7 @@ def build():
         "/guides/household-goods.html": household_goods(),
     }
     for fn in (spouse, school_transition, pets, harpta, dodea_schools, onbase_waitlist,
-               vehicle_registration, rent_vs_buy):
+               vehicle_registration, rent_vs_buy, commute_first):
         p, h = fn()
         out[p] = h
     return out
