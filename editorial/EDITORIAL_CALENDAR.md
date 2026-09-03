@@ -51,8 +51,10 @@ Legend — Status: `LIVE` shipped · `NEXT` queued · `IDEA` backlog · `HOLD` n
 ## Recurring / data reports (calendar anchors)
 - **BAH Reality Report** — refresh with DTMO cycle (mid-December); archive outgoing edition. See
   `REFRESH_RUNBOOK.md`. Next hard trigger: 2027 rates drop.
-- **Rent-band refresh** — 1st of month, March–August (PCS season); quarterly off-season. Edit
-  `POCKETS` + `LAST_REFRESHED` in `common.py`. Next: 2026-09-01.
+- **Rent-band refresh** — 1st of month, March–August (PCS season); quarterly off-season per
+  `REFRESH_RUNBOOK.md` (1st of quarter). Edit `POCKETS` + `LAST_REFRESHED` in `common.py`.
+  Next: **2026-10-01** (with the quarterly `MED_SF`/`MED_CONDO` medians pull). The previous
+  "Next: 2026-09-01" note contradicted the runbook's off-season cadence — corrected 2026-09-03.
 - **Market medians** (`MED_SF`, `MED_CONDO`) — quarterly from Honolulu Board of REALTORS®.
 
 ## Balance check (keep the mix honest across any ~2-week span)
