@@ -721,8 +721,22 @@ the taxing units adopt in September.
 - `.html` → 301 (5/5 sampled); extensionless 200, no loop; trust layer 25/25 sampled EN+ES; homepage WebSite + Organization JSON-LD.
 ### IndexNow
 - Fires from `netlify.toml` build command on deploy; both changed URLs also POSTed manually → HTTP 200.
+### Repo reconciliation (Claude Code, 2026-09-03)
+- Handoff bundle audited line-by-line before applying (gate-script diff, content diff, patch);
+  premise verified against live production; $1.1775 independently corroborated on aledoisd.org.
+- Source landed as commit 0e1328d; rebuilt tree (GATE PASSED, **ten gates** incl. trust-assert
+  + redirects-assert; --check green on the fixed tree) as commit 3527e27 — 312 files,
+  _redirects created (312 lines). Sanity checks per handoff: one org-jsonld + one byline on
+  index.html; only the two homestead pages carry a September date. Both commits pushed.
+- **Proof deploy 6a99b5f2** (2026-09-03, via the validating Netlify build): summary reads
+  "All files already uploaded by a previous deploy with the same commits" — repo == production,
+  byte-for-byte — with 310 redirect rules processed. Live re-verified: /areas.html → 301
+  /areas; homepage org-jsonld + byline ×1; homestead EN/ES 200 with adoption watch + $1.1775;
+  404 correct; sitemap 306 URLs, homestead lastmod September.
 ### Next recommended action
-- **Commit this tree to `claude/wfl-daily-publishing-i7lmp9`** — the chat session cannot push; until committed, the next Claude Code deploy from a stale checkout would revert all of the above. Then: September month-roll (specials/rent/builder) with per-complex verification; #2 remainder as WISD/FWISD/cities adopt; privacy pages when the operator supplies controller + contact.
+- September month-roll (specials/rent/builder) with per-complex first-party verification;
+  #2 remainder as WISD/FWISD/cities adopt; privacy pages only when the operator supplies the
+  controller legal name + contact email (retention/unsubscribe/sharing already answered).
 
 ---
 
