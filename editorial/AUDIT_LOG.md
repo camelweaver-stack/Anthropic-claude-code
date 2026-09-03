@@ -740,6 +740,72 @@ the taxing units adopt in September.
 
 ---
 
+## 2026-09-03 — September month-roll: Concession Index 7.5→4.0, Rent Report No. 2, sitewide refresh
+
+- **Trigger:** Daily cycle; data engine refresh_due 2026-09-01 overdue; handoff standing rule
+  ("the September month-roll is next, with per-complex first-party verification").
+### Staleness scan
+`assets/wfl-data.js` verified 2026-07-31 (overdue); sitewide "6–8 weeks free" claims, the
+August rent-report footer link (~300 pages), homepage stats, all 11 complex pages, specials
+EN+ES, and the rentals/guide comparison tables all carried August or July figures.
+### Selection
+September month-roll (calendar recurring item, due 1st): re-verify all 11 tracked
+communities, roll the data engine, author Rent Report No. 2, sweep every stale claim.
+### Research + verification (all 2026-09-03)
+ApartmentList price-verified pages (same-day stamps): Olympus Willow Park "2 Weeks Free on
+Select Units", 1BR $1,425 / 2BR $1,579; Olympus Hudson Oaks up to 6 wks, $1,267/$1,594;
+Birchway "Up to 8 Weeks Base Rent Free", $1,378/$1,708; Oxford NO specials, $1,284/$1,647
+(was "2 months free"); College Park no specials, 2BR $1,200 std / $1,300 remodeled, 3.5x
+income, 6–13 mo; Willow Crossing "Up to 4 weeks free", 3BR from $2,475 (range to $2,627).
+Listing search results: Gates 4 wks, from ~$1,412; Canvas up to 6 wks on 13–15 mo leases,
+8 homes $2,299–$2,699; Preserve 55+ "1 Month Free", from $1,255; Chapel Creek Cottages
+"Get Up to 8 Weeks FREE" (NEW — was 0 in Aug), $1,530–$1,999 across 1–3BR. First-party:
+westpointtx.com/specials confirms active offers (details posted as images; 6 wks + no app
+fee per listings, range $1,299–$1,649). Computed: core-4 index (2+4+6+4)/4 = 4.0 (was 7.5);
+expanded 11-community 48.3/11 ≈ 4.4. Conflicting/stale listings (Olympus "8 wks", Willow
+Crossing "8 wks") resolved in favor of dated price-verified quotes and noted on-page.
+### Safeguard decisions
+No safeguarded categories touched. Unverifiable floor plans dropped from `beds` rather than
+carried forward (consumer pages null-check); unit-basis caveats written into specialNotes
+(College Park 2BR basis, Chapel Creek range floor, Westpoint image-only specials page).
+Builder report 2026-09 deferred — no verifiable new builder packages found this cycle;
+September report links the August edition as "latest, September's in verification".
+### Produced
+`/rent-report/september-2026` (Edition No. 2 + Dataset JSON-LD + Sept chart SVG); data
+engine rolled (verified "September 3, 2026", refresh_due 2026-10-01, reportMonth September,
+weeksHistory/priceHistory Sep appends, index 4.0 + expandedCurrent 4.4); specials EN +
+`/es/especiales` September tables; all 11 `/complexes/` pages re-dated with September
+figures and honest-take rewrites; sitewide footer "Latest Rent Report" → September (~300
+pages incl. gen/common.py + scripts/fix-nav.py); stale-claim sweep across homepage EN/ES,
+guides (Lockheed, NAS JRB, Medical City, Weatherford College, renewal, rent-to-own,
+glossary, comparisons), rentals feature/zip pages, buy/rent-or-buy pages; August report and
+Willow Park August guide marked archive with September pointers. No ES mirror of the rent
+report (no ES precedent for the cluster); ES surfaces updated in place.
+### Build + gate
+gen/build.py 12 pages; apply_standing_fixes.py **GATE PASSED** ×2 (idempotent) — all ten
+gates green; 311 pages, sitemap 307 (September report added); trust layer re-dated the
+~256 materially-changed pages to 2026-09-03 (expected for a month-roll). validate-production:
+311 HTML files, 0 prohibited strings. Known non-blocking warnings unchanged (/privacy/ + 
+/es/privacidad/ pending controller name/email — REVIEW).
+### Deployment status
+Commit `9e302e7` pushed; deploy **6a99be6b** (build 6a99be6b0a781d0a85488e86) ready on
+https://westfwliving.com.
+### Production verification
+200: september report (canonical extensionless, core-4 4.0 + expanded 4.4 in body),
+rent-report index (September card), specials EN (Sept 3 verified line) + ES ("3 de
+septiembre"), olympus complex page ("2 WEEKS FREE", "As of September 3, 2026"), Sept chart
+SVG, wfl-data.js (verified/reportMonth/index all September). 404 correct. Sitemap 307 URLs
+incl. september-2026. Homepage serving "9 of 11" / "7.5→4.0" stats.
+### IndexNow
+36 URLs submitted (report + hubs + specials EN/ES + all 11 complex pages + swept guides/
+rentals/buy pages) — HTTP 200.
+### Next recommended action
+- #2 tax-rate refresh as districts adopt (City of Weatherford council vote 09-08).
+- Builder report 2026-09 when verifiable packages publish; Lockheed round 2 on next GSC
+  export; privacy pages still blocked on controller legal name + contact email.
+
+---
+
 ## Entry template
 
 ```
