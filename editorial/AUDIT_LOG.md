@@ -4,6 +4,70 @@ Append-only. Newest entry on top. One record per daily run. Template at the bott
 
 ---
 
+## 2026-09-03 — Commute-first neighborhood decision (backlog #6, shipped same-day)
+
+- **Date/time:** 2026-09-03 (daily publishing cycle)
+- **Selected topic:** Backlog #6 — the Oahu commute-first neighborhood decision. The method spoke
+  under the `/neighborhoods/` hub: the hub owns the framing and the pocket table, the quiz
+  automates matching, and this page walks the manual process — gate → corridor → pockets → rent
+  bands → 0630 drive test during TLA.
+- **Staleness scan:** all 6 checks clean. One planning-doc finding, fixed in place: the calendar's
+  rent-band refresh line said "Next: 2026-09-01," contradicting `REFRESH_RUNBOOK.md`'s off-season
+  cadence (quarterly, 1st of quarter — monthly cadence ran March–August only). Corrected to
+  **Next: 2026-10-01** (with the quarterly `MED_SF`/`MED_CONDO` medians pull). No data refresh was
+  actually due, and none was faked: `LAST_REFRESHED` stays August 1, honestly labeled. Note for
+  the 2026-10-01 refresh: pocket-level rent bands require listing-platform data per the runbook's
+  procedure — if that cycle can't verify bands from 2–3 platforms per pocket, it must flag rather
+  than fabricate.
+- **Reason for selection:** Highest-scored unshipped item (H traffic / M txn), first ship in the
+  Neighborhoods cluster (balance: PCS logistics ×2, Buying, Selling, Schools, Renting so far),
+  source status "Have" — built entirely from in-house POCKETS/base data plus fixed corridor
+  geography (H-1/H-2/H-3, Pali, Likelike, single urban core, the Koʻolau split). Zero external
+  sourcing risk, and it naturally strengthens the neighborhoods↔bases linking the 2026-08-24
+  audit flagged as the graph's weakest layer.
+- **Audience:** All inbound families/members building a pocket shortlist; renter CTA.
+- **Content type:** Evergreen decision-method guide.
+- **URL:** https://pcsoahu.com/guides/commute-first.html
+- **Sources / credibility posture:** In-house pocket table and base guides (which carry their own
+  refresh dates), plus publicly fixed corridor geography. **The page publishes no commute times
+  and no traffic-pattern claims** — every route question is deliberately framed as "test the
+  route at your actual report time," matching the site's credibility rules and the audit's
+  guidance. Verified date on page: September 3, 2026.
+- **Structured data note:** first page since the 2026-08-24 audit to carry FAQPage JSON-LD, and it
+  does so compliantly — the three Q&As render visibly in a "Straight answers" section and are
+  byte-matched against the schema on the built output of BOTH branches (the dd373n check also
+  confirmed its sitewide Organization/WebSite identity block coexists fine in a separate script
+  tag). This is the template for reinstating FAQ markup elsewhere: render visibly, then mark up.
+- **Internal links added:** New page → `/neighborhoods/` (hub), `/bases/`, `/quiz/`,
+  `/bah-report/`, `/tla/`. Reciprocal **FROM**: `/neighborhoods/` hub (in-body method line),
+  `/guides/` hub (new Arriving card).
+- **CTA used:** "Building your pocket shortlist?" → segment `pcs-renter`, context `move`, tag
+  `PCSOAHU-COMMUTEFIRST`.
+- **Files changed (this branch):** `gen/pages_content.py` (new `commute_first()`, build() wiring,
+  guides card, neighborhoods reciprocal), `editorial/EDITORIAL_CALENDAR.md` (cadence correction).
+  Commit `e340916`. `GATE PASSED — 54 pages, 52 sitemap URLs.`
+- **Production port:** established pattern (4th consecutive content cycle) — identical function +
+  same two reciprocal edits onto `claude/pcs-oahu-deploy-dd373n`, anchors verified first. Verified
+  additive-only: live sitemap 61 → 62, exactly `/guides/commute-first.html` added. `GATE PASSED —
+  64 pages, 62 sitemap URLs` on `dd373n`, commit `20b2796`.
+- **Deployment status:** DEPLOYED to production via Netlify continuous-deployment auto-trigger on
+  the push; new page live on poll 2 (~12s propagation, consistent with prior cycles).
+- **Production verification:** PASS — new URL 200; bogus path 404; URL in live sitemap (62 URLs,
+  lastmod 2026-09-03); canonical = `https://pcsoahu.com/guides/commute-first.html`; FAQPage +
+  visible "Straight answers" section confirmed in live HTML; reciprocal links live on
+  `/neighborhoods/` and `/guides/`.
+- **IndexNow:** POSTed the 62-URL payload (host `pcsoahu.com`, key
+  `12ef30fd51aefc63524ab6eb41e58f99`). **HTTP 200.**
+- **Standing blocker status:** unchanged — `dd373n` (62 URLs) vs this branch (52); same 10-URL
+  live-only gap (`/family/` ×9, `/tools/commute-grid/`) plus `/bah-report/2026-rates/`. Port
+  pattern remains the working process; permanent reconciliation still awaiting operator direction.
+- **Next recommended related topics:** #9 (VA condo approval — M/H, pairs with /buy/), #3 (fee
+  simple vs leasehold — must add depth beyond /buy/'s in-body coverage), #7 (spouse licensure).
+  Calendar anchor: **2026-10-01 quarterly rent-band + medians refresh** (needs verifiable
+  listing-platform data — see staleness note above).
+
+---
+
 ## 2026-08-24 — Technical indexability forensic audit (fixes deployed; site otherwise clean)
 
 - **Trigger:** Operator-directed forensic audit — prove discoverability/crawlability/canonicals/
