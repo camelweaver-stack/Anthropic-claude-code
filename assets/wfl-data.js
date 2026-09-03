@@ -1,25 +1,29 @@
 // West FW Living — data engine v2.1 (adds weeksHistory, zip, expanded watchlist).
-// Verified from public listings July 31, 2026. EDIT MONTHLY; append to histories.
+// Verified from public listings September 3, 2026. EDIT MONTHLY; append to histories.
 window.WFL = {
- "verified": "July 31, 2026",
+ "verified": "September 3, 2026",
  "provenance": {
   "source": "public listings and property websites",
-  "verified_date": "2026-07-31",
-  "refresh_due": "2026-09-01",
+  "verified_date": "2026-09-03",
+  "refresh_due": "2026-10-01",
   "confidence": "point-in-time; rents/concessions/fees change without notice",
   "scope": "advertised rent, weeks-free concessions, application/admin/pet fees, lease terms for all tracked communities in this file"
  },
- "reportMonth": "August 2026",
+ "reportMonth": "September 2026",
  "index": {
-  "current": 7.5,
+  "current": 4.0,
   "history": [
    {
     "m": "Aug 2026",
     "v": 7.5
+   },
+   {
+    "m": "Sep 2026",
+    "v": 4.0
    }
   ],
-  "note": "Core-4 Willow Park index. Late-July re-verification shows concessions tightening at Canvas (8\u21926 wks on some sources) and Willow Crossing (8\u21924 wks); September captures the move. Expanded 11-community index debuts with the September report.",
-  "expandedCurrent": 5.6,
+  "note": "Core-4 Willow Park index fell 7.5\u21924.0 in one month \u2014 Olympus cut 8\u21922 weeks, Gates 7\u21924, and Oxford's \u201c2 months free\u201d vanished entirely. The deep offers migrated west: Birchway and Chapel Creek Cottages now carry the 8-week flags. Expanded 11-community index debuts this month at 4.4.",
+  "expandedCurrent": 4.4,
   "expandedN": 11
  },
  "mortgage": {
@@ -108,15 +112,14 @@ window.WFL = {
    "type": "apartment",
    "label": "Apartments",
    "beds": {
-    "1": 1264,
-    "2": 1330,
-    "3": 1843
+    "1": 1425,
+    "2": 1579
    },
    "headline": {
     "bed": "1",
-    "rent": 1264
+    "rent": 1425
    },
-   "weeksFree": 8,
+   "weeksFree": 2,
    "weeksHistory": [
     {
      "m": "Jul 2026",
@@ -125,10 +128,14 @@ window.WFL = {
     {
      "m": "Aug 2026",
      "v": 8
+    },
+    {
+     "m": "Sep 2026",
+     "v": 2
     }
    ],
    "leaseMonths": 12,
-   "specialNote": "Listings simultaneously advertise 2\u20138 weeks free \u2014 offer varies by unit and source; get YOUR quote in writing",
+   "specialNote": "Sept re-verification: \u201c2 Weeks Free on Select Units\u201d on the price-verified listing (Sep 3), while stale search snippets still say \u201cup to 8 weeks\u201d \u2014 the deep-offer era here looks over; get YOUR quote in writing. 3BR pricing not listed this cycle",
    "garage": false,
    "yard": false,
    "gated": false,
@@ -149,6 +156,11 @@ window.WFL = {
      "1": 1264,
      "2": 1330,
      "3": 1843
+    },
+    {
+     "m": "Sep 2026",
+     "1": 1425,
+     "2": 1579
     }
    ]
   },
@@ -164,15 +176,13 @@ window.WFL = {
    "type": "apartment",
    "label": "Apartments",
    "beds": {
-    "1": 1331,
-    "2": 1544,
-    "3": 2005
+    "1": 1412
    },
    "headline": {
     "bed": "1",
-    "rent": 1331
+    "rent": 1412
    },
-   "weeksFree": 7,
+   "weeksFree": 4,
    "weeksHistory": [
     {
      "m": "Jul 2026",
@@ -181,10 +191,14 @@ window.WFL = {
     {
      "m": "Aug 2026",
      "v": 7
+    },
+    {
+     "m": "Sep 2026",
+     "v": 4
     }
    ],
    "leaseMonths": 12,
-   "specialNote": "Advertised at 4\u20137 weeks free depending on listing source \u2014 confirm the live offer",
+   "specialNote": "4 weeks free on select units per current listings (down from 7 in Aug); the property's own site shows no banner \u2014 confirm the live offer. 2\u20133BR pricing not re-verified this cycle",
    "garage": false,
    "yard": false,
    "gated": false,
@@ -204,6 +218,10 @@ window.WFL = {
      "1": 1331,
      "2": 1544,
      "3": 2005
+    },
+    {
+     "m": "Sep 2026",
+     "1": 1412
     }
    ]
   },
@@ -219,13 +237,11 @@ window.WFL = {
    "type": "house",
    "label": "Build-to-rent houses",
    "beds": {
-    "2": 2299,
-    "3": 2321,
-    "4": 2799
+    "2": 2299
    },
    "headline": {
-    "bed": "3",
-    "rent": 2321
+    "bed": "2",
+    "rent": 2299
    },
    "weeksFree": 6,
    "weeksHistory": [
@@ -236,10 +252,14 @@ window.WFL = {
     {
      "m": "Aug 2026",
      "v": 6
+    },
+    {
+     "m": "Sep 2026",
+     "v": 6
     }
    ],
    "leaseMonths": 14,
-   "specialNote": "Now advertising 6 weeks free (down from 8 in July) \u2014 promo rates appear tied to longer leases; verify",
+   "specialNote": "Up to 6 weeks free on 13\u201315 month leases; offers vary by floor plan. 8 homes listed $2,299\u2013$2,699 (2\u20134BR); per-plan pricing beyond the $2,299 start not broken out this cycle",
    "garage": true,
    "yard": true,
    "gated": false,
@@ -263,6 +283,10 @@ window.WFL = {
      "2": 2299,
      "3": 2321,
      "4": 2799
+    },
+    {
+     "m": "Sep 2026",
+     "2": 2299
     }
    ]
   },
@@ -278,12 +302,11 @@ window.WFL = {
    "type": "townhome",
    "label": "Gated townhomes",
    "beds": {
-    "3": 2222,
-    "4": 2302
+    "3": 2475
    },
    "headline": {
     "bed": "3",
-    "rent": 2222
+    "rent": 2475
    },
    "weeksFree": 4,
    "weeksHistory": [
@@ -294,10 +317,14 @@ window.WFL = {
     {
      "m": "Aug 2026",
      "v": 4
+    },
+    {
+     "m": "Sep 2026",
+     "v": 4
     }
    ],
    "leaseMonths": 12,
-   "specialNote": "Now advertising 4 weeks free (down from 8 in July) \u2014 supply-limited offers shrink as units fill; confirm yours",
+   "specialNote": "\u201cUp to 4 weeks free \u2014 restrictions apply\u201d (price-verified Sep 3). Rents jumped: 3BR now from $2,475 vs $2,222 in Aug; one stale listing still shows 8 weeks \u2014 trust the dated quote. Range $2,475\u2013$2,627 across 3\u20134BR",
    "garage": true,
    "yard": false,
    "gated": true,
@@ -319,6 +346,10 @@ window.WFL = {
      "m": "Aug 2026",
      "3": 2222,
      "4": 2302
+    },
+    {
+     "m": "Sep 2026",
+     "3": 2475
     }
    ]
   },
@@ -334,23 +365,26 @@ window.WFL = {
    "type": "apartment",
    "label": "Apartments",
    "beds": {
-    "1": 1162,
-    "2": 1423,
-    "3": 1827
+    "1": 1267,
+    "2": 1594
    },
    "headline": {
     "bed": "1",
-    "rent": 1162
+    "rent": 1267
    },
-   "weeksFree": 8,
+   "weeksFree": 6,
    "weeksHistory": [
     {
      "m": "Aug 2026",
      "v": 8
+    },
+    {
+     "m": "Sep 2026",
+     "v": 6
     }
    ],
    "leaseMonths": 12,
-   "specialNote": "8 weeks free advertised \u2014 active lease-up; sibling community to Olympus Willow Park",
+   "specialNote": "\u201cUp to 6 Weeks Free on Select Units\u201d (down from 8 in Aug), price-verified Sep 3. 3BR pricing not listed this cycle",
    "garage": false,
    "yard": false,
    "gated": false,
@@ -365,6 +399,11 @@ window.WFL = {
      "1": 1162,
      "2": 1423,
      "3": 1827
+    },
+    {
+     "m": "Sep 2026",
+     "1": 1267,
+     "2": 1594
     }
    ]
   },
@@ -380,22 +419,26 @@ window.WFL = {
    "type": "apartment",
    "label": "Apartments",
    "beds": {
-    "1": 1165,
-    "2": 1497
+    "1": 1378,
+    "2": 1708
    },
    "headline": {
     "bed": "1",
-    "rent": 1165
+    "rent": 1378
    },
    "weeksFree": 8,
    "weeksHistory": [
     {
      "m": "Aug 2026",
      "v": 8
+    },
+    {
+     "m": "Sep 2026",
+     "v": 8
     }
    ],
    "leaseMonths": 12,
-   "specialNote": "8 weeks free advertised; listed 1BR pricing ranges $1,165\u2013$1,458 across sources \u2014 a fine-print flag: confirm the rate the special attaches to",
+   "specialNote": "\u201cUp to 8 Weeks Base Rent Free!\u201d \u2014 now the deepest advertised offer we track; price-verified Sep 3. Stickers rose with it ($1,378 1BR / $1,708 2BR vs $1,165/$1,497 in Aug) \u2014 run the effective-rent math, not the banner",
    "garage": false,
    "yard": false,
    "gated": false,
@@ -409,6 +452,11 @@ window.WFL = {
      "m": "Aug 2026",
      "1": 1165,
      "2": 1497
+    },
+    {
+     "m": "Sep 2026",
+     "1": 1378,
+     "2": 1708
     }
    ]
   },
@@ -424,21 +472,26 @@ window.WFL = {
    "type": "apartment",
    "label": "Apartments",
    "beds": {
-    "1": 1115
+    "1": 1284,
+    "2": 1647
    },
    "headline": {
     "bed": "1",
-    "rent": 1115
+    "rent": 1284
    },
-   "weeksFree": 8.7,
+   "weeksFree": 0,
    "weeksHistory": [
     {
      "m": "Aug 2026",
      "v": 8.7
+    },
+    {
+     "m": "Sep 2026",
+     "v": 0
     }
    ],
    "leaseMonths": 12,
-   "specialNote": "\u201c2 months free\u201d advertised \u2014 the deepest headline concession we track; confirm lease-length requirements and which months the free rent lands in",
+   "specialNote": "No rent specials advertised as of Sep 3 \u2014 August's \u201c2 months free\u201d is gone and the 1BR sticker rose $169. If you toured in August, requote everything before signing",
    "garage": false,
    "yard": false,
    "gated": false,
@@ -451,6 +504,11 @@ window.WFL = {
     {
      "m": "Aug 2026",
      "1": 1115
+    },
+    {
+     "m": "Sep 2026",
+     "1": 1284,
+     "2": 1647
     }
    ]
   },
@@ -466,22 +524,25 @@ window.WFL = {
    "type": "apartment",
    "label": "Apartments",
    "beds": {
-    "1": 900,
     "2": 1200
    },
    "headline": {
-    "bed": "1",
-    "rent": 900
+    "bed": "2",
+    "rent": 1200
    },
    "weeksFree": 0,
    "weeksHistory": [
     {
      "m": "Aug 2026",
      "v": 0
+    },
+    {
+     "m": "Sep 2026",
+     "v": 0
     }
    ],
    "leaseMonths": 12,
-   "specialNote": "No weeks-free special advertised \u2014 competes on base rent instead; the lowest advertised 1BR we track",
+   "specialNote": "No specials \u2014 competes on base rent: 2BR from $1,200 standard / $1,300 remodeled (price-verified Sep 3); 1BR pricing not listed this cycle. 3.5x income requirement; 6\u201313 month leases (short terms may carry fees)",
    "garage": false,
    "yard": false,
    "gated": false,
@@ -494,6 +555,10 @@ window.WFL = {
     {
      "m": "Aug 2026",
      "1": 900,
+     "2": 1200
+    },
+    {
+     "m": "Sep 2026",
      "2": 1200
     }
    ]
@@ -510,22 +575,25 @@ window.WFL = {
    "type": "apartment",
    "label": "Active 55+ apartments",
    "beds": {
-    "1": 1444,
-    "2": 2248
+    "1": 1255
    },
    "headline": {
     "bed": "1",
-    "rent": 1444
+    "rent": 1255
    },
-   "weeksFree": 6,
+   "weeksFree": 4.3,
    "weeksHistory": [
     {
      "m": "Aug 2026",
      "v": 6
+    },
+    {
+     "m": "Sep 2026",
+     "v": 4.3
     }
    ],
    "leaseMonths": 12,
-   "specialNote": "6 weeks free advertised \u2014 age-qualified community (55+); the only senior-living option we track in the pocket",
+   "specialNote": "\u201c1 Month Free for eligible applicants\u201d (\u22484.3 wks); units from $1,255 \u2014 listed starting rent down from $1,444 in Aug. Age-qualified 55+ community; 2BR pricing not re-verified this cycle",
    "garage": false,
    "yard": false,
    "gated": false,
@@ -539,6 +607,10 @@ window.WFL = {
      "m": "Aug 2026",
      "1": 1444,
      "2": 2248
+    },
+    {
+     "m": "Sep 2026",
+     "1": 1255
     }
    ]
   },
@@ -554,22 +626,25 @@ window.WFL = {
    "type": "apartment",
    "label": "Apartments",
    "beds": {
-    "1": 1191,
-    "2": 1512
+    "1": 1299
    },
    "headline": {
     "bed": "1",
-    "rent": 1191
+    "rent": 1299
    },
    "weeksFree": 6,
    "weeksHistory": [
     {
      "m": "Aug 2026",
      "v": 6
+    },
+    {
+     "m": "Sep 2026",
+     "v": 6
     }
    ],
    "leaseMonths": 12,
-   "specialNote": "6 weeks free advertised \u2014 1,017 sq ft one-bedrooms are unusually large for the price; minutes from Lockheed and NAS JRB",
+   "specialNote": "6 weeks free PLUS no application fee (one source frames it as a \u201cLook & Lease\u201d prorated on 12-month terms); the property's own specials page confirms active offers Sep 3 but posts details as images \u2014 call for exact terms. Listed range $1,299\u2013$1,649 (1\u20132BR)",
    "garage": false,
    "yard": false,
    "gated": false,
@@ -583,6 +658,10 @@ window.WFL = {
      "m": "Aug 2026",
      "1": 1191,
      "2": 1512
+    },
+    {
+     "m": "Sep 2026",
+     "1": 1299
     }
    ]
   },
@@ -598,22 +677,25 @@ window.WFL = {
    "type": "cottage",
    "label": "Cottage rentals, gated",
    "beds": {
-    "2": 2025,
-    "3": 2285
+    "1": 1530
    },
    "headline": {
-    "bed": "2",
-    "rent": 2025
+    "bed": "1",
+    "rent": 1530
    },
-   "weeksFree": 0,
+   "weeksFree": 8,
    "weeksHistory": [
     {
      "m": "Aug 2026",
      "v": 0
+    },
+    {
+     "m": "Sep 2026",
+     "v": 8
     }
    ],
    "leaseMonths": 12,
-   "specialNote": "No weeks-free special advertised \u2014 gated cottage-style community; the west-FW alternative to the Willow Park build-to-rent products",
+   "specialNote": "NEW: \u201cGet Up to 8 Weeks FREE \u2014 restrictions apply\u201d \u2014 this community advertised no concession in August; the deep-offer cluster has moved west. Listed range $1,530\u2013$1,999 across 1\u20133BR floor plans ($1,530 is the range floor); per-plan pricing not broken out this cycle",
    "garage": false,
    "yard": true,
    "gated": true,
@@ -627,6 +709,10 @@ window.WFL = {
      "m": "Aug 2026",
      "2": 2025,
      "3": 2285
+    },
+    {
+     "m": "Sep 2026",
+     "1": 1530
     }
    ]
   }

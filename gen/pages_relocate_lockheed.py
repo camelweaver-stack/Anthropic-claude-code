@@ -116,7 +116,7 @@ def build_en():
   <a href="/complexes/chapel-creek-cottages">Chapel Creek Cottages</a> on the west side.
   Need a bridge, not a lease? <a href="/guides/short-term-leases-weatherford-willow-park">Short-term
   options</a>. And check <a href="/specials">this month's verified specials</a> before touring &mdash;
-  several corridor communities are running 6&ndash;8 weeks free.</p>
+  several corridor communities are running up to 8 weeks free.</p>
 </section>
 
 <section>

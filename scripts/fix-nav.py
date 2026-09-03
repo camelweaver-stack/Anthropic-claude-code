@@ -35,7 +35,7 @@ FGRID_EN = """<div class="fgrid">
     <div><h4>Explore West FW</h4><ul><li><a href='/neighborhoods/'>Neighborhoods</a></li><li><a href='/schools/'>Schools &amp; ISDs</a></li><li><a href='/compare/'>Compare Places</a></li><li><a href='/relocate/'>Relocating Here</a></li><li><a href='/move/'>Move Checklist</a></li><li><a href='/community/'>Community &amp; Local Life</a></li><li><a href='/military/'>Military &amp; BAH</a></li><li><a href='/guides/'>All Guides</a></li></ul></div>
     <div><h4>Buying</h4><ul><li><a href='/buy/'>Buy the West Side</a></li><li><a href='/calculator'>Rent vs. Buy Math</a></li><li><a href='/quiz'>Rent-or-Buy Quiz</a></li><li><a href='/es/'>En Español</a></li></ul></div>
     <div><h4>Selling</h4><ul><li><a href='/sell/'>Sell Your Home</a></li><li><a href='/sell/home-value'>What's My Home Worth</a></li><li><a href='/sell/equity-report'>The Equity Report</a></li><li><a href='/sell/sell-before-buying'>Sell Before You Buy</a></li></ul></div>
-    <div><h4>Data &amp; Tools</h4><ul><li><a href='/tools/'>Renter Tools</a></li><li><a href='/data/'>Rent Data &amp; Reports</a></li><li><a href='/rent-report/august-2026'>Latest Rent Report</a></li><li><a href='/resources/'>Resources</a></li></ul></div>
+    <div><h4>Data &amp; Tools</h4><ul><li><a href='/tools/'>Renter Tools</a></li><li><a href='/data/'>Rent Data &amp; Reports</a></li><li><a href='/rent-report/september-2026'>Latest Rent Report</a></li><li><a href='/resources/'>Resources</a></li></ul></div>
   </div>"""
 
 FGRID_ES = """<div class="fgrid">
@@ -155,7 +155,7 @@ card('/data/property-tax', 'Property Tax Rates', 'Willow Park vs. Weatherford vs
 card('/data/pipeline', 'The Construction Pipeline', 'New apartments coming to the corridor.') + \
 """</div></section>
 <section><h2>Monthly report</h2><div class="grid cols2">""" + \
-card('/rent-report/august-2026', 'Latest Rent Report', 'The current monthly roundup of specials and moves.') + \
+card('/rent-report/september-2026', 'Latest Rent Report', 'The current monthly roundup of specials and moves.') + \
 """</div></section>"""
 
 os.makedirs('schools', exist_ok=True)
