@@ -695,6 +695,37 @@ the taxing units adopt in September.
 
 ---
 
+## 2026-09-02 — Trust layer + _redirects moved into the build; Aledo ISD 2026–27 rate shipped to the homestead file
+
+- **Trigger:** Daily cycle (chat session, Netlify connector available). Preceded by a portfolio review that found the 2026-08-16 mirror-injected trust layer gone from 0/38 sampled live pages and the 2026-08-23 `_redirects` never live — both overwritten by deploys from this tree.
+### Staleness scan
+- `apply_standing_fixes.py --check`: green. Full on-page audit (310 pages): no missing canonicals/hreflang/alt/viewport/H1, all JSON-LD parses, no dead internal refs beyond the tracked privacy pair. Soft finding: 257 titles >70 chars, 234 descriptions >170 chars (SERP truncation) — editorial batch work, not a script.
+- Time-bound: September month-roll (specials / rent report / builder report) is due and **not done** — requires per-complex first-party verification; not fabricated.
+### Selection
+- Backlog #13 (private-school tuition) found already shipped 2026-08-28 — calendar corrected to LIVE.
+- Chose backlog #2 first tranche: Aledo ISD's 2026–27 adoption is live on the district site; a maintenance update to the homestead file (generated) beats a new page. Other districts not yet adopted → table stays on 2025 rates with an explicit adoption-watch section.
+### Research + verification
+- Aledo ISD 2026–27 adopted rate $1.1775/$100, −$0.0167 from $1.1942, eighth consecutive reduction, budget $138,549,072 — aledoisd.org district news "Aledo ISD Trustees adopt 2026-2027 budget", dated 2026-08-24, verified 2026-09-02.
+- Weatherford ISD: 2026 adoption not found on weatherfordisd.com as of 2026-09-02 (latest is 2025-08-26). City of Weatherford: FY27 *proposed* $0.392246, council consideration 2026-09-08 (weatherfordtx.gov) — proposed only, not used.
+- Arithmetic: $140,000 × 1.1775% = $1,648.50 → "about $1,649"; $200,000 × 1.1775% = $2,355.
+### Safeguard decisions
+- Privacy pages: still REVIEW; operator has the three retention/unsubscribe/sharing answers on file (24 months; reply-STOP + contact address; shared only with a future licensed brokerage affiliate) but declined to finalize this session — controller name + contact address still open. Nothing deployed.
+### Produced
+- `gen/pages_buy_homestead.py`: SRC_ALEDO_2026, "2026 adoption watch" section EN + "Seguimiento de las tasas 2026" ES, sources list updated, VERIFIED → 2026-09-02. Rebuilt `/buy/homestead-exemption` + `/es/comprar/exencion-homestead`.
+- `scripts/apply_standing_fixes.py`: new sitewide fixes `fix_trust_layer` (Organization JSON-LD + org byline with git last-updated date; uncommitted content edits date as today via `_materially_changed`, trust-layer-only diffs do not) and `build_redirects` (one forced `301!` per page, .html → extensionless); new gates `trust-assert`, `redirects-assert`. `styles.css`: `.byline`.
+### Build + gate
+- `gen/build.py` → 12 generated pages; `apply_standing_fixes.py` → GATE PASSED (10 gates); second run idempotent no-op. Pages 310 · sitemap 306 · `_redirects` 310 rules.
+### Deployment status
+- Deploy 6a98e918 (trust layer + redirects) verified live 2026-09-02. Deploy 6a98f1ce (homestead update + audit log) state=ready 2026-09-02; /buy/homestead-exemption 200 with adoption-watch section, ES mirror 200, nonexistent path 404, sitemap lastmod 2026-09-02, .html → 301.
+### Production verification
+- `.html` → 301 (5/5 sampled); extensionless 200, no loop; trust layer 25/25 sampled EN+ES; homepage WebSite + Organization JSON-LD.
+### IndexNow
+- Fires from `netlify.toml` build command on deploy; both changed URLs also POSTed manually → HTTP 200.
+### Next recommended action
+- **Commit this tree to `claude/wfl-daily-publishing-i7lmp9`** — the chat session cannot push; until committed, the next Claude Code deploy from a stale checkout would revert all of the above. Then: September month-roll (specials/rent/builder) with per-complex verification; #2 remainder as WISD/FWISD/cities adopt; privacy pages when the operator supplies controller + contact.
+
+---
+
 ## Entry template
 
 ```

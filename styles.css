@@ -220,3 +220,5 @@ img{max-width:100%;height:auto}
   .page-photo img{max-height:210px;object-position:center 40%}
   figure.photo{border-radius:12px}
 }
+.byline{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.02em;color:#6b6f66;margin:-6px 0 18px}
+.byline a{color:inherit;text-decoration:underline}

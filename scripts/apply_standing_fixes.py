@@ -11,9 +11,18 @@ the sitemap from the files actually present, and then runs the release gates.
 Exits nonzero if any gate fails — no green, no ship.
 
   FIXES   nav (10-link EN spec / 8-link ES spec) · canonical · context-aware
-          lead-form date field · sitemap derived fresh from disk
+          lead-form date field · trust layer (Organization JSON-LD + org byline
+          with git last-updated date) · sitemap derived fresh from disk ·
+          _redirects (forced 301 .html → extensionless, one rule per page)
   GATES   nav-assert · form-assert · canonical-assert · hreflang-assert ·
-          internal-link-assert · link-canonical-assert · sitemap-assert · cleartext-endpoint-assert
+          internal-link-assert · link-canonical-assert · sitemap-assert ·
+          trust-assert · redirects-assert · cleartext-endpoint-assert
+
+  WHY THE TRUST LAYER AND _redirects LIVE HERE: both were first applied to the
+  LIVE site post-deploy (mirror-and-inject 2026-08-16; _redirects 2026-08-23)
+  and both were wiped by the next deploy from this tree (2026-08-18 / 08-24).
+  The tree is the deploy source, so anything sitewide must be emitted by this
+  step or it does not survive.
 
 --check runs the gates without writing anything.
 """
@@ -303,6 +312,21 @@ def git_lastmod():
             cur = line[1:]
         elif line.strip() and cur:
             out.setdefault(line.strip(), cur)
+    # Uncommitted edits are newer than any commit: a modified or untracked file
+    # is dated today, so a build-then-deploy without an intervening commit still
+    # carries the true update date in its byline and sitemap lastmod.
+    try:
+        dirty = subprocess.run(["git", "status", "--porcelain", "--untracked-files=all"],
+                               capture_output=True, text=True, check=True, timeout=60).stdout
+        today = date.today().isoformat()
+        for line in dirty.splitlines():
+            path = line[3:].strip()
+            if " -> " in path:
+                path = path.split(" -> ")[-1]
+            if _materially_changed(path):
+                out[path] = today
+    except Exception:
+        pass
     return out
 
 
@@ -327,6 +351,133 @@ def build_sitemap(files, docs):
     return ('<?xml version="1.0" encoding="UTF-8"?>\n'
             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
             f"{body}\n</urlset>\n"), [u for u, _ in rows]
+
+
+# ---------------------------------------------------------------- trust layer
+# Locked 2026-08-16: org-level byline is the standing interim (person byline for
+# Anastasia deferred to the Nov licensure gate; RealEstateAgent schema deferred
+# to licensure). Idempotent: the byline carries data-trust="v1" and the JSON-LD
+# carries @id "#org"; both are replaced in place, never duplicated.
+ORG_NAME = "West FW Living"
+ORG_PARENT = "Anastasia Weaver Media"
+TRUST_VER = "v1"
+MONTHS_EN = ["January", "February", "March", "April", "May", "June", "July",
+             "August", "September", "October", "November", "December"]
+MONTHS_ES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio",
+             "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
+
+ORG_JSONLD = json.dumps({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": DOMAIN + "/#org",
+    "name": ORG_NAME,
+    "url": DOMAIN + "/",
+    "description": ("Independent renter and buyer field guide for Fort Worth's west side: "
+                    "Aledo, Willow Park, Hudson Oaks, Weatherford, Benbrook and White Settlement. "
+                    "Verified local data; not a brokerage."),
+    "parentOrganization": {"@type": "Organization", "name": ORG_PARENT},
+    "areaServed": [{"@type": "City", "name": c} for c in
+                   ("Fort Worth", "Aledo", "Willow Park", "Hudson Oaks", "Weatherford",
+                    "Benbrook", "White Settlement")],
+    "knowsLanguage": ["en", "es"],
+}, ensure_ascii=False, separators=(",", ":"))
+ORG_TAG = f'<script type="application/ld+json" id="org-jsonld">{ORG_JSONLD}</script>'
+ORG_RE = re.compile(r'<script type="application/ld\+json" id="org-jsonld">.*?</script>\n?', re.S)
+BYLINE_RE = re.compile(r'\n?<p class="byline" data-trust="[^"]*">.*?</p>', re.S)
+
+
+def fmt_date(iso, es):
+    try:
+        y, m, d = (int(x) for x in iso.split("-"))
+    except Exception:
+        return iso
+    return f"{d} de {MONTHS_ES[m-1]} de {y}" if es else f"{MONTHS_EN[m-1]} {d}, {y}"
+
+
+def byline_for(rel, lastmod):
+    iso = lastmod.get(rel, date.today().isoformat())
+    if is_es(rel):
+        text = (f'Publicado por <a href="/es/">{ORG_NAME}</a>, publicación independiente de '
+                f'{ORG_PARENT} · Actualizado <time datetime="{iso}">{fmt_date(iso, True)}</time>')
+    else:
+        text = (f'Published by <a href="/">{ORG_NAME}</a>, an independent publication of '
+                f'{ORG_PARENT} · Updated <time datetime="{iso}">{fmt_date(iso, False)}</time>')
+    return f'<p class="byline" data-trust="{TRUST_VER}">{text}</p>'
+
+
+def fix_trust_layer(doc, rel, lastmod):
+    """Organization JSON-LD before </head>; org byline after the page's first </h1>."""
+    new = doc
+    if ORG_RE.search(new):
+        new = ORG_RE.sub(ORG_TAG + "\n", new, count=1)
+    elif "</head>" in new:
+        new = new.replace("</head>", ORG_TAG + "\n</head>", 1)
+    stripped = BYLINE_RE.sub("", new, count=1)
+    if "</h1>" in stripped:
+        new = stripped.replace("</h1>", "</h1>\n" + byline_for(rel, lastmod), 1)
+    if new != doc:
+        note(f"trust     {rel}")
+    return new
+
+
+def gate_trust(doc, rel):
+    if 'id="org-jsonld"' not in doc:
+        fail(f"trust-assert — {rel}: missing Organization JSON-LD")
+    if f'data-trust="{TRUST_VER}"' not in doc:
+        fail(f"trust-assert — {rel}: missing byline")
+    if doc.count('data-trust="') > 1 or doc.count('id="org-jsonld"') > 1:
+        fail(f"trust-assert — {rel}: duplicate trust layer")
+
+
+# ---------------------------------------------------------------- redirects
+# Netlify serves both /x.html and /x for the same file, and Pretty URLs only
+# rewrites hrefs — it never redirects the .html request. GSC therefore indexed
+# both forms (2026-08-23 finding). One forced 301 per page collapses them onto
+# the canonical extensionless form. `301!` is required because the .html target
+# exists as a file; the extensionless request matches no rule and falls through
+# to Pretty URLs, so there is no loop.
+def build_redirects(files):
+    rows = []
+    for rel in files:
+        src = "/" + rel
+        dst = url_for(rel)
+        if src != dst:
+            rows.append(f"{src}  {dst}  301!")
+    head = ("# Generated by scripts/apply_standing_fixes.py — do not hand-edit.\n"
+            "# Collapses the indexed .html duplicates onto the canonical extensionless URLs.\n")
+    return head + "\n".join(rows) + "\n", len(rows)
+
+
+def gate_redirects(files):
+    if not os.path.exists("_redirects"):
+        fail("redirects-assert — _redirects missing")
+        return
+    with open("_redirects", encoding="utf-8") as fh:
+        body = fh.read()
+    expect = {"/" + r for r in files if "/" + r != url_for(r)}
+    got = {ln.split()[0] for ln in body.splitlines() if ln.strip() and not ln.startswith("#")}
+    if expect != got:
+        fail(f"redirects-assert — rule set out of date ({len(expect ^ got)} diff)")
+
+
+
+def _materially_changed(path):
+    """True if the working copy differs from HEAD beyond the trust layer itself.
+
+    The byline and Organization JSON-LD are emitted by this script, so their
+    presence alone must never re-date a page; only real content edits do.
+    """
+    if not path.endswith(".html") or not os.path.exists(path):
+        return True
+    try:
+        head = subprocess.run(["git", "show", f"HEAD:{path}"], capture_output=True,
+                              text=True, check=True, timeout=30).stdout
+    except Exception:
+        return True  # untracked or unreadable: treat as new
+    with open(path, encoding="utf-8") as fh:
+        cur = fh.read()
+    strip = lambda d: BYLINE_RE.sub("", ORG_RE.sub("", d))
+    return strip(cur) != strip(head)
 
 
 
@@ -588,6 +739,7 @@ def gate_placeholders(docs):
 def main():
     files = html_files()
     docs = {}
+    lastmod = git_lastmod()
 
     originals = {}
     # Pass 1 — per-page fixes. Canonicals must all be settled before links are
@@ -601,6 +753,7 @@ def main():
             doc = fix_nav(doc, rel)
             doc = fix_canonical(doc, rel)
             doc = fix_form_field(doc, rel)
+            doc = fix_trust_layer(doc, rel, lastmod)
         docs[rel] = doc
 
     cmap = canonical_map(files, docs)
@@ -624,11 +777,22 @@ def main():
             with open("sitemap.xml", "w", encoding="utf-8") as fh:
                 fh.write(sitemap)
             note(f"sitemap   rebuilt from disk ({len(present_urls)} URLs)")
+        redirects, nrules = build_redirects(files)
+        prior = ""
+        if os.path.exists("_redirects"):
+            with open("_redirects", encoding="utf-8") as fh:
+                prior = fh.read()
+        if prior != redirects:
+            with open("_redirects", "w", encoding="utf-8") as fh:
+                fh.write(redirects)
+            note(f"redirects rebuilt ({nrules} forced 301 rules)")
 
     for rel, doc in docs.items():
         gate_nav(doc, rel)
         gate_form(doc, rel)
         gate_canonical(doc, rel)
+        gate_trust(doc, rel)
+    gate_redirects(files)
     gate_hreflang(docs)
     gate_links(docs)
     gate_internal_links_canonical(docs, cmap)
@@ -665,7 +829,7 @@ def main():
         return 1
     print("\nGATE PASSED — nav-assert, form-assert, canonical-assert, "
           "hreflang-assert, link-assert, link-canonical-assert, sitemap-assert, "
-          "placeholder-assert all green.")
+          "trust-assert, redirects-assert, placeholder-assert all green.")
     return 0
 
 
