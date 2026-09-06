@@ -12,7 +12,7 @@ def fail(msg): FAILS.append(msg)
 html_files = sorted(glob.glob(os.path.join(SITE, "**", "*.html"), recursive=True))
 if not html_files: fail("No HTML files found")
 
-NAV_EXPECTED = 11
+NAV_EXPECTED = 12
 FORBIDDEN = [
     r"\bour agents?\b", r"\bour brokerage\b", r"\bour leasing\b", r"\bconsultation\b",
     r"\bschedule a (?:showing|tour|call)\b", r"\bapartment locat", r"\blist with us\b",
@@ -74,6 +74,12 @@ for fp in html_files:
             fail(f"{rel}: form action wrong (must use hashed FormSubmit endpoint, not a cleartext email)")
         if 'name="_honey"' not in form:
             fail(f"{rel}: form missing honeypot field")
+        for attr in ("page_path","landing_path","referrer","utm_source","utm_medium",
+                     "utm_campaign","consent_ts"):
+            if f'name="{attr}"' not in form:
+                fail(f"{rel}: form missing attribution field {attr}")
+        if "referred to a licensed Hawaii real-estate" not in form:
+            fail(f"{rel}: form missing referral disclosure")
         if not re.search(r'name="consent" value="agreed" required', form):
             fail(f"{rel}: form missing required consent checkbox")
         m = re.search(r'name="_subject" value="(PCSOAHU-[A-Z]+)"', form)
@@ -160,6 +166,51 @@ for fp in html_files:
         continue
     if 'id="pcs-ask-launcher"' not in doc:
         fail(f"{rel}: missing floating Ask launcher")
+
+# 9. metadata uniqueness across all indexable pages
+_seen = {"title": {}, "desc": {}, "h1": {}}
+for fp in html_files:
+    rel = os.path.relpath(fp, SITE).replace(os.sep, "/")
+    if rel in ("404.html", "embed/bah-widget.html"): continue
+    doc = open(fp).read()
+    t = re.search(r"<title>(.*?)</title>", doc, re.S)
+    d = re.search(r'name="description" content="([^"]*)"', doc)
+    h = re.search(r"<h1[^>]*>(.*?)</h1>", doc, re.S)
+    for kind, m in (("title", t), ("desc", d), ("h1", h)):
+        if not m: fail(f"{rel}: missing {kind}"); continue
+        key = re.sub(r"\s+", " ", m.group(1)).strip()
+        if key in _seen[kind]:
+            fail(f"{rel}: duplicate {kind} (also on {_seen[kind][key]}): {key[:60]}")
+        _seen[kind][key] = rel
+
+# 10. internal-link integrity
+for fp in html_files:
+    rel = os.path.relpath(fp, SITE).replace(os.sep, "/")
+    doc = re.sub(r"(?s)<script.*?</script>", " ", open(fp).read())
+    for href in set(re.findall(r'href="(/[^"#?]*)"', doc)):
+        if href in ("/",) or href.startswith(("/assets/", "/data/")): continue
+        p = href[:-1] if href.endswith("/") and href != "/" else href
+        cand = [os.path.join(SITE, p.lstrip("/")),
+                os.path.join(SITE, p.lstrip("/"), "index.html"),
+                os.path.join(SITE, p.lstrip("/") + ".html")]
+        if not any(os.path.exists(c) for c in cand):
+            fail(f"{rel}: internal link target missing: {href}")
+
+# 11. FAQPage schema must match visible content
+import json as _json
+for fp in html_files:
+    rel = os.path.relpath(fp, SITE).replace(os.sep, "/")
+    doc = open(fp).read()
+    if "FAQPage" not in doc: continue
+    vis = re.sub(r"(?s)<(script|style).*?</\1>", " ", doc)
+    vis = re.sub(r"(?s)<[^>]+>", " ", vis); vis = re.sub(r"\s+", " ", vis)
+    for block in re.findall(r'<script type="application/ld\+json">(.*?)</script>', doc, re.S):
+        data = _json.loads(block)
+        for node in (data.get("@graph") or [data]):
+            if node.get("@type") == "FAQPage":
+                for q in node["mainEntity"]:
+                    if q["name"] not in vis or q["acceptedAnswer"]["text"] not in vis:
+                        fail(f"{rel}: FAQPage Q&A not visible on page: {q['name'][:60]}")
 
 if FAILS:
     print(f"GATE FAILED — {len(FAILS)} issue(s):")

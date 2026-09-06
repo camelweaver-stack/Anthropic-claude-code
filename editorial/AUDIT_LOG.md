@@ -4,6 +4,51 @@ Append-only. Newest entry on top. One record per daily run. Template at the bott
 
 ---
 
+## 2026-09-06 — Indexing-recovery & conversion sprint (operator-directed; production form regression fixed)
+
+- **Trigger:** Operator-directed sprint: GSC shows homepage-only impressions (133 impr. / 4 clicks
+  over ~25 days) despite ~60 clean interior pages. Diagnose, fix demonstrated problems, map proven
+  queries to pages, deploy, verify. Full report: `reports/indexability/SPRINT_2026-09-06.md`;
+  cluster mapping: `reports/indexability/QUERY_PAGE_MAP.md`.
+- **Root cause:** no crawl/index block (re-verified live: all 62 URLs 200/self-canonical/no-noindex,
+  robots clean, hard 404s). The pattern is young-domain index selection amplified by architecture:
+  no master PCS-to-Hawaii page existed for the largest proven query cluster, BAH/TLA intents sat
+  behind brand-led titles, and base pages had exactly one internal inbound link each.
+- **CRITICAL Phase-2 finding (production, non-SEO):** the live lead form posted to the cleartext
+  FormSubmit email endpoint with **no honeypot and no consent checkbox** on every page since
+  2026-08-16 — the 2026-08-10 security fix never reached the deploy branch, whose gate literally
+  asserted the cleartext endpoint. Fixed on `dd373n` (hashed endpoint, honeypot, required consent),
+  plus the hand-baked static form in `gen/content/household-goods.body.html` (also cleartext).
+- **Conversion/attribution added (both branches):** 7 hidden fields (`page_path`, `landing_path`,
+  `referrer`, `utm_source/medium/campaign`, `consent_ts`) filled by a sitewide first-touch
+  sessionStorage script; consent timestamp stamped at submit; referral disclosure line added to
+  every form ("…may be referred to a licensed Hawaii real-estate professional"). **NEEDS REVIEW
+  (operator/legal): no `/privacy/` page exists — deliberately not authored autonomously; the
+  consent copy carries no dead privacy link.** This entry re-flags the standing runbook safeguard
+  on consent/referral disclosures: the wording used is the operator-task-supplied neutral form.
+- **Architecture shipped:** NEW `/pcs-to-hawaii/` master hub (router over existing verified guides;
+  links all 7 base pages); nav now 12 links ("PCS Guide" first); homepage hero/lede + footer route
+  to it; `/bah-report/` gained the `#by-base` one-MHA section linking every base guide; Schofield
+  page gained a data-consistent "Schofield Barracks BAH, in practice" section (only Schofield — no
+  template duplication); `/tla/` retitled around "Temporary lodging"; BAH archive H1
+  differentiated; base commute tables labeled resident-reported with a link to the commute-first
+  method; commute-first's "no commute times" claim scoped to the guide itself.
+- **Gate hardened (both branches, negative-tested):** cleartext-endpoint ban; hashed endpoint +
+  honeypot + consent + attribution + disclosure required on every form; sitewide unique
+  titles/descriptions/H1s; internal-link target integrity; FAQPage-visible-content check; nav=12.
+- **Deployment:** `dd373n` commit `0598f11`, Netlify auto-deploy, live-verified in full (all
+  priority URLs 200; hashed form + honeypot + consent + consent_ts + disclosure in live HTML;
+  cleartext endpoint absent; new hub self-canonical; TLA title live; 63-URL sitemap; additive-only
+  62→63). IndexNow: 63 URLs, HTTP 200. This branch: gate + form + hub + tunes mirrored, `GATE
+  PASSED — 55 pages, 53 sitemap URLs`.
+- **Restraint:** one router hub only; no per-station BAH pages (one MHA — would be 7× duplicates);
+  no vague services page; no title churn on ranking pages; no new-market expansion.
+- **Operator GSC actions:** submit `sitemap.xml` (path only) under `https://pcsoahu.com`; request
+  indexing for the 10 URLs listed in the sprint report; check the 7/14/30/60/90-day metric ladder
+  there. Indexing itself remains Google's call — conditions are now aligned, not guaranteed.
+
+---
+
 ## 2026-09-03 — Commute-first neighborhood decision (backlog #6, shipped same-day)
 
 - **Date/time:** 2026-09-03 (daily publishing cycle)

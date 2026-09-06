@@ -78,10 +78,12 @@ def bah_report_2026_archive():
     import re as _re
     live = bah_report()
     m = _re.search(r"<main>(.*)</main>", live, _re.S)
+    inner = m.group(1).replace("<h1>The BAH Reality Report</h1>",
+                               "<h1>The BAH Reality Report — August 2026 archived edition</h1>", 1)
     body = ('<div class="wrap"><div class="warn" style="margin-top:1.5rem"><strong>Archived '
             'edition (August 2026).</strong> Preserved so citations never break. The current '
             'edition, refreshed with each BAH cycle, lives at '
-            '<a href="/bah-report/">pcsoahu.com/bah-report/</a>.</div></div>' + m.group(1))
+            '<a href="/bah-report/">pcsoahu.com/bah-report/</a>.</div></div>' + inner)
     return page("/bah-report/2026-edition/",
         "The BAH Reality Report — August 2026 Edition (Archived) | PCS Oahu",
         "Archived August 2026 edition of the BAH Reality Report: 2026 Honolulu County BAH "
@@ -341,7 +343,7 @@ def tla():
     body = f'''
 <div class="hero"><div class="wrap">
 <p class="eyebrow">Wheels-down to keys</p>
-<h1>TLA and interim housing, without the panic</h1>
+<h1>Temporary lodging for your Hawaii PCS: TLA, without the panic</h1>
 <p class="lede">The gap between landing and leasing is where Oahu PCS budgets go to die — unless
 you know how Temporary Lodging Allowance works here and stage the search before you fly.</p>
 </div></div>
@@ -373,7 +375,7 @@ mistake — and note that pet-friendly rentals and TLA lodging are both scarcer 
   blurb="Join the list and get the arrival-week brief: current rent bands for your gaining base "
         "and the search-documents checklist, timed to your report window.")}
 </div>'''
-    return page("/tla/", "TLA in Hawaii: Interim Housing Between Wheels-Down and Keys | PCS Oahu",
+    return page("/tla/", "Temporary Lodging for a Hawaii PCS: How TLA & Interim Housing Work | PCS Oahu",
                 "How Temporary Lodging Allowance works for a Hawaii PCS — the 60-day shape, the "
                 "practical search sequence, and the pet-quarantine timeline everyone underestimates.",
                 body, "/tla/",
@@ -1464,7 +1466,7 @@ rent bands → drive test</strong>. Start from the gate you'll report to, keep o
 whose corridor feeds that gate, rank the survivors against the
 <a href="/neighborhoods/">current rent bands</a> and your BAH, and verify the finalists by
 driving the route at your actual report time during your <a href="/tla/">TLA window</a> —
-before you sign. Every step below is method, not measurement: this site publishes no commute
+before you sign. Every step below is method, not measurement: this guide publishes no commute
 times, because the only number that matters is the one your own route produces at your own hour.</p>
 
 <h2>Why Oahu punishes the mainland order of operations</h2>
