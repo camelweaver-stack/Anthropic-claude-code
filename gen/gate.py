@@ -12,7 +12,7 @@ def fail(msg): FAILS.append(msg)
 html_files = sorted(glob.glob(os.path.join(SITE, "**", "*.html"), recursive=True))
 if not html_files: fail("No HTML files found")
 
-NAV_EXPECTED = 11
+NAV_EXPECTED = 12
 FORBIDDEN = [
     r"\bour agents?\b", r"\bour brokerage\b", r"\bour leasing\b", r"\bconsultation\b",
     r"\bschedule a (?:showing|tour|call)\b", r"\bapartment locat", r"\blist with us\b",
@@ -62,10 +62,24 @@ for fp in html_files:
     for pat in FORBIDDEN:
         if re.search(pat, low): fail(f"{rel}: forbidden language matches /{pat}/")
 
+    # 5b. lead-routing email must never appear in cleartext anywhere on the page
+    if "formsubmit.co/leads@" in doc:
+        fail(f"{rel}: cleartext FormSubmit endpoint present — must use the hashed endpoint")
+
     # 6. form assertions (every form on page)
     for form in re.findall(r"<form class=\"lead\".*?</form>", doc, re.S):
-        if 'action="https://formsubmit.co/leads@anastasiaweaver.com"' not in form:
-            fail(f"{rel}: form action wrong")
+        if 'action="https://formsubmit.co/c86195fac91694c985b7fc55c96e4f77"' not in form:
+            fail(f"{rel}: form action wrong (must use hashed FormSubmit endpoint)")
+        if 'name="_honey"' not in form:
+            fail(f"{rel}: form missing honeypot field")
+        if not re.search(r'name="consent" value="agreed" required', form):
+            fail(f"{rel}: form missing required consent checkbox")
+        for attr in ("page_path","landing_path","referrer","utm_source","utm_medium",
+                     "utm_campaign","consent_ts"):
+            if f'name="{attr}"' not in form:
+                fail(f"{rel}: form missing attribution field {attr}")
+        if "referred to a licensed Hawaii real-estate" not in form:
+            fail(f"{rel}: form missing referral disclosure")
         m = re.search(r'name="_subject" value="(PCSOAHU-[A-Z]+)"', form)
         if not m: fail(f"{rel}: form missing PCSOAHU-* _subject")
         if 'name="audience" value="referral-hi-oahu-pcs"' not in form:
@@ -218,6 +232,50 @@ for fp in html_files:
             fail(f"{rel}: missing childcare license-verification disclaimer")
         if "Pulled " not in doc:
             fail(f"{rel}: missing source-and-date (Pulled …) line")
+
+# 9. metadata uniqueness across all indexable pages
+_seen = {"title": {}, "desc": {}, "h1": {}}
+for fp in html_files:
+    rel = os.path.relpath(fp, SITE).replace(os.sep, "/")
+    if rel in ("404.html", "embed/bah-widget.html"): continue
+    doc = open(fp).read()
+    t = re.search(r"<title>(.*?)</title>", doc, re.S)
+    d = re.search(r'name="description" content="([^"]*)"', doc)
+    h = re.search(r"<h1[^>]*>(.*?)</h1>", doc, re.S)
+    for kind, m in (("title", t), ("desc", d), ("h1", h)):
+        if not m: fail(f"{rel}: missing {kind}"); continue
+        key = re.sub(r"\s+", " ", m.group(1)).strip()
+        if key in _seen[kind]:
+            fail(f"{rel}: duplicate {kind} (also on {_seen[kind][key]}): {key[:60]}")
+        _seen[kind][key] = rel
+
+# 10. internal-link integrity: every root-relative href resolves to a built file
+for fp in html_files:
+    rel = os.path.relpath(fp, SITE).replace(os.sep, "/")
+    doc = re.sub(r"(?s)<script.*?</script>", " ", open(fp).read())
+    for href in set(re.findall(r'href="(/[^"#?]*)"', doc)):
+        if href in ("/",) or href.startswith(("/assets/", "/data/")): continue
+        p = href[:-1] if href.endswith("/") and href != "/" else href
+        cand = [os.path.join(SITE, p.lstrip("/")),
+                os.path.join(SITE, p.lstrip("/"), "index.html"),
+                os.path.join(SITE, p.lstrip("/") + ".html")]
+        if not any(os.path.exists(c) for c in cand):
+            fail(f"{rel}: internal link target missing: {href}")
+
+# 11. FAQPage schema must match visible content
+for fp in html_files:
+    rel = os.path.relpath(fp, SITE).replace(os.sep, "/")
+    doc = open(fp).read()
+    if "FAQPage" not in doc: continue
+    vis = re.sub(r"(?s)<(script|style).*?</\1>", " ", doc)
+    vis = re.sub(r"(?s)<[^>]+>", " ", vis); vis = re.sub(r"\s+", " ", vis)
+    for block in re.findall(r'<script type="application/ld\+json">(.*?)</script>', doc, re.S):
+        data = json.loads(block)
+        for node in (data.get("@graph") or [data]):
+            if node.get("@type") == "FAQPage":
+                for q in node["mainEntity"]:
+                    if q["name"] not in vis or q["acceptedAnswer"]["text"] not in vis:
+                        fail(f"{rel}: FAQPage Q&A not visible on page: {q['name'][:60]}")
 
 if FAILS:
     print(f"GATE FAILED — {len(FAILS)} issue(s):")

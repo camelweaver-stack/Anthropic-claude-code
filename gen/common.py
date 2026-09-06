@@ -48,6 +48,7 @@ FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
          '&display=swap" rel="stylesheet">')
 
 NAV_LINKS = [
+    ("/pcs-to-hawaii/", "PCS Guide"),
     ("/bases/", "Bases"),
     ("/bah-report/", "BAH Report"),
     ("/neighborhoods/", "Neighborhoods"),
@@ -98,10 +99,18 @@ def lead_form(tag, segment, context="move", heading="Get the arrival brief", blu
                       "refreshes, and first word when full service opens. No spam. Leave anytime.")
     return f'''
 <section id="list"><h2>{heading}</h2><p style="max-width:44rem">{blurb}</p>
-<form class="lead" action="https://formsubmit.co/leads@anastasiaweaver.com" method="POST">
+<form class="lead" action="https://formsubmit.co/c86195fac91694c985b7fc55c96e4f77" method="POST">
+  <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;height:0;overflow:hidden;" aria-hidden="true">
   <input type="hidden" name="_subject" value="PCSOAHU-{tag}">
   <input type="hidden" name="audience" value="referral-hi-oahu-pcs">
   <input type="hidden" name="segment" value="{segment}">
+  <input type="hidden" name="page_path" value="">
+  <input type="hidden" name="landing_path" value="">
+  <input type="hidden" name="referrer" value="">
+  <input type="hidden" name="utm_source" value="">
+  <input type="hidden" name="utm_medium" value="">
+  <input type="hidden" name="utm_campaign" value="">
+  <input type="hidden" name="consent_ts" value="">
   <label for="name">Name</label>
   <input id="name" name="name" type="text" autocomplete="name">
   <label for="email">Email</label>
@@ -109,8 +118,11 @@ def lead_form(tag, segment, context="move", heading="Get the arrival brief", blu
   <label for="phone">Phone</label>
   <input id="phone" name="phone" type="tel" required autocomplete="tel">
   {ctx}
+  <label class="consent" style="display:flex;gap:.5rem;align-items:flex-start;font-size:.85rem;margin:.75rem 0;"><input type="checkbox" name="consent" value="agreed" required style="margin-top:.2rem;"><span>I agree to be contacted about my inquiry by email or phone. No spam — unsubscribe anytime.</span></label>
   <button class="btn" type="submit">Join the list</button> {sms_button()}
-  <p class="fine">Two required fields plus your phone. We never sell your info.</p>
+  <p class="fine">Two required fields plus your phone. We never sell your info. If you ask for
+  buying or selling help, your inquiry may be referred to a licensed Hawaii real-estate
+  professional.</p>
 </form></section>'''
 
 FOOTER = f'''
@@ -120,6 +132,7 @@ FOOTER = f'''
       <p style="max-width:22rem">An independent field guide for service members and families on
       orders to — and from — Oahu. Educational content and honest math only. Full service coming soon.</p></div>
     <div><h4>Arriving</h4><ul>
+      <li><a href="/pcs-to-hawaii/">PCS to Hawaii: the master guide</a></li>
       <li><a href="/bases/">Base-by-base guides</a></li>
       <li><a href="/bah-report/">The BAH Reality Report</a></li>
       <li><a href="/tla/">TLA &amp; interim housing</a></li>
@@ -164,7 +177,32 @@ FOOTER = f'''
 
 # Sitewide floating concierge launcher (self-contained; injected by page() on every page except
 # /ask/ itself, which IS the full chat). Uses the same /.netlify/functions/concierge endpoint.
+ATTRIB_JS = """
+<script>
+(function(){try{
+  var ss=window.sessionStorage, qs=new URLSearchParams(location.search);
+  if(!ss.getItem("pcs_landing")){
+    ss.setItem("pcs_landing", location.pathname);
+    ss.setItem("pcs_ref", document.referrer||"");
+    ["utm_source","utm_medium","utm_campaign"].forEach(function(k){
+      ss.setItem("pcs_"+k, qs.get(k)||"");});
+  }
+  document.querySelectorAll("form.lead").forEach(function(f){
+    function set(n,v){var el=f.querySelector("[name="+n+"]");if(el&&!el.value)el.value=v||"";}
+    set("page_path", location.pathname);
+    set("landing_path", ss.getItem("pcs_landing"));
+    set("referrer", ss.getItem("pcs_ref"));
+    set("utm_source", ss.getItem("pcs_utm_source"));
+    set("utm_medium", ss.getItem("pcs_utm_medium"));
+    set("utm_campaign", ss.getItem("pcs_utm_campaign"));
+    f.addEventListener("submit",function(){
+      var t=f.querySelector("[name=consent_ts]");if(t)t.value=new Date().toISOString();});
+  });
+}catch(e){}})();
+</script>"""
+
 CHAT_LAUNCHER = """
+
 <div id="pcs-ask-launcher">
   <button type="button" id="pcsAskBtn" aria-expanded="false" aria-controls="pcsAskPanel">\U0001F4AC Ask PCS Oahu</button>
   <div id="pcsAskPanel" role="dialog" aria-label="Ask PCS Oahu concierge" hidden>
@@ -263,6 +301,7 @@ def page(path, title, desc, body, current="", jsonld=None, extra_head=""):
 {body}
 </main>
 {FOOTER}
+{ATTRIB_JS}
 {launcher}
 </body>
 </html>'''

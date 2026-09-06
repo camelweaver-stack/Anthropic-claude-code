@@ -9,10 +9,13 @@ def homepage():
 to Joint Base Pearl Harbor–Hickam, Schofield Barracks, MCBH Kaneohe Bay, Camp Smith, Tripler, or
 Coast Guard Base Honolulu — and for the other half of the cycle, when the orders point back out.
 No hype, no kitsch. Just what housing actually costs, what your allowance actually covers, and
-what to decide before wheels-down.</p>
-<p><a class="btn" href="/bah-report/">Read the BAH Reality Report</a>
-<a class="btn ghost" href="/pcs-checklist/">Start the PCS checklist</a>
-<a class="btn ghost" href="/quiz/">Take the pocket-match quiz</a></p>
+what to decide before wheels-down. New orders? The
+<a href="/pcs-to-hawaii/">complete PCS-to-Hawaii guide</a> walks the whole move in the order the
+decisions actually arrive; temporary lodging lives in the <a href="/tla/">TLA guide</a>.</p>
+<p><a class="btn" href="/pcs-to-hawaii/">Start here: the PCS to Hawaii guide</a>
+<a class="btn ghost" href="/bah-report/">The BAH Reality Report</a>
+<a class="btn ghost" href="/pcs-checklist/">Interactive checklist</a>
+<a class="btn ghost" href="/quiz/">Pocket-match quiz</a></p>
 <form class="ask-hero" action="/ask/" method="get" role="search"
       style="display:flex;gap:.5rem;max-width:38rem;margin-top:.4rem">
   <input name="q" type="text" aria-label="Ask PCS Oahu a question"
@@ -109,6 +112,16 @@ BASES = [
             ("Mililani / Mililani Mauka","10–20 min; the family default, strong amenities"),
             ("Waipio / Waikele / Waipahu","20–30 min; middle path on price and drive"),
             ("Ewa Beach / Kapolei","30–50 min; newer homes, but you fight H-2 and H-1 both ways")],
+   bah_note=("Schofield Barracks BAH, in practice",
+     'There is no separate "Schofield Barracks BAH rate": Schofield and Wheeler draw the same '
+     'Honolulu County MHA rate as every other Oahu installation, set by rank and dependency '
+     'status. What makes Schofield different is what that identical rate <em>buys</em>: per the '
+     'current rent bands, Wahiawa — directly outside the gate — carries some of the lowest '
+     '3-bedroom bands on the island, comfortably inside the E-5 with-dependents anchor, while '
+     'Mililani, the family default up the road, straddles it. Few Oahu gates put the allowance '
+     'this far ahead of the close-in market. Run the island-wide picture in the '
+     '<a href="/bah-report/">BAH Reality Report</a>, then pull your exact grade from the DTMO '
+     'BAH calculator before you budget — the figures here are dated anchors, not your LES.'),
    note="High deployment tempo is a housing fact here, not just a duty fact: many spouses "
         "prioritize Mililani's networks and services over saving a few hundred dollars in a "
         "pocket with less support."),
@@ -178,6 +191,127 @@ BASES = [
         "building — town inventory is where the approval list matters most."),
 ]
 
+def pcs_to_hawaii():
+    body = f'''
+<div class="hero"><div class="wrap">
+<p class="eyebrow">The master guide · orders in hand to wheels-down and beyond</p>
+<h1>PCS to Hawaii: the complete Oahu move, in order</h1>
+<p class="lede">Everything this site knows about a Hawaii PCS, on one page, in the order the
+decisions actually arrive. Each section gives you the direct answer and hands you the full guide
+— every figure on those pages is dated and sourced, and none of this is official guidance: your
+orders, your transportation office, and Military OneSource govern your entitlements.</p>
+<p><a class="btn" href="/pcs-checklist/">Open the interactive checklist</a>
+<a class="btn ghost" href="/bah-report/">Check the BAH-vs-rent numbers</a></p>
+</div></div>
+<div class="wrap">
+<h2>The direct answer</h2>
+<p style="max-width:46rem">A Hawaii PCS is an OCONUS move wearing a domestic nametape: your
+household goods travel by ship, your car needs a booking, your pet is on a months-long
+rabies-program clock, and your family lands in temporary lodging before you've seen a single
+rental. The families who land soft all do the same thing — they run the clocks that start the day
+orders drop <em>first</em>, and leave the fun decisions (pocket, house, beach) for the
+<a href="/tla/">TLA window</a> when they can see the island. This page walks that order.</p>
+
+<h2>1 — The day orders drop</h2>
+<p style="max-width:46rem">Four clocks start immediately, and none of them wait for your flight.
+<strong><a href="/guides/pets-to-hawaii.html">The pet clock</a></strong> is the least forgiving:
+Hawaii is rabies-free, and Direct Airport Release only works if the microchip → vaccination →
+blood test → waiting period sequence is run early and in order.
+<strong><a href="/guides/household-goods.html">Household goods</a></strong> move by sea in
+multiple shipments — unaccompanied baggage first, the main lift later — booked through your
+transportation office and DPS. <strong><a href="/vehicle-shipping/">Your one shipped
+vehicle</a></strong> has its own booking and port timeline. And the
+<strong><a href="/guides/on-base-waitlist.html">on-base housing waitlist</a></strong> costs
+nothing to join, commits you to nothing, and on the Army side can backdate your position if you
+apply promptly. Families with kids should also start
+<a href="/guides/school-transition.html">records and health paperwork</a> mainland-side — Hawaii
+enforces immunization and TB clearance at enrollment, and the school year starts earlier than
+most mainland calendars.</p>
+
+<h2>2 — Know your money before you shop</h2>
+<p style="max-width:46rem">Two allowances shape the whole move. <strong>BAH:</strong> every Oahu
+installation draws the same Honolulu County rate — set by rank and dependents, never by base —
+and whether that rate covers a real pocket is the island's defining housing question. The
+<a href="/bah-report/">BAH Reality Report</a> puts the current anchors next to dated rent bands,
+pocket by pocket. <strong>TLA:</strong> Temporary Lodging Allowance bridges wheels-down to keys —
+the <a href="/tla/">temporary-lodging guide</a> covers how the window works in practice and the
+<a href="/tla/field-notes.html">lodging field notes</a> cover where people actually stay. Verify
+both entitlements against your orders with your finance office and Military OneSource — this site
+maps the market, not your LES.</p>
+
+<h2>3 — Pick your gate's pockets, not a postcard</h2>
+<p style="max-width:46rem">Housing search order matters here more than anywhere on the mainland:
+<strong>gate → corridor → pocket → rent → drive test</strong>. The
+<a href="/guides/commute-first.html">commute-first decision guide</a> walks the method, the
+<a href="/neighborhoods/">pocket table</a> carries the dated rent bands, and the
+<a href="/quiz/">pocket-match quiz</a> automates the first pass. Then read your installation's
+own page — each pairs the allowance with the pockets people actually commute from:</p>
+<ul style="max-width:46rem;columns:2;gap:2rem">
+<li><a href="/bases/pearl-harbor-hickam.html">Joint Base Pearl Harbor–Hickam</a></li>
+<li><a href="/bases/schofield-wheeler.html">Schofield Barracks &amp; Wheeler</a></li>
+<li><a href="/bases/kaneohe-bay.html">MCBH Kaneohe Bay</a></li>
+<li><a href="/bases/fort-shafter.html">Fort Shafter</a></li>
+<li><a href="/bases/tripler.html">Tripler Army Medical Center</a></li>
+<li><a href="/bases/camp-smith.html">Camp Smith</a></li>
+<li><a href="/bases/coast-guard-honolulu.html">Coast Guard Base Honolulu</a></li>
+</ul>
+
+<h2>4 — Rent, buy, or wait for the waitlist</h2>
+<p style="max-width:46rem">Three legitimate paths, one honest framework.
+<strong>Renting</strong> points your BAH at the pocket that survived the commute test.
+<strong>Buying</strong> can work on Oahu's VA math — no down payment, no PMI, the strongest BAH
+in the force — but the <a href="/guides/rent-vs-buy.html">rent-vs-buy framework</a> and the
+<a href="/buy/">VA buyer brief</a> are honest about the break-even horizon, condo approval, and
+the leasehold trap. <strong>On-base</strong> trades your whole allowance for proximity and zero
+landlord risk — the <a href="/on-base/">on-base guide</a> runs that ledger. Families with kids:
+read the <a href="/schools/">schools guide</a> before the lease, not after — Hawaii's statewide
+district ties school to address. And <a href="/guides/dodea-schools.html">no, there are no DoDEA
+schools here</a>.</p>
+
+<h2>5 — Wheels-down: the first 30 days</h2>
+<p style="max-width:46rem">Land, start TLA, and run the arrival clocks: the
+<a href="/guides/vehicle-registration.html">30-day vehicle registration window</a> once your car
+clears the port, <a href="/guides/school-transition.html">school enrollment</a> with the records
+you staged, <a href="/guides/childcare.html">childcare waitlists</a> (start these even earlier if
+you can), <a href="/guides/utilities.html">utilities</a>, and
+<a href="/guides/healthcare.html">TRICARE enrollment</a>. The
+<a href="/pcs-checklist/">interactive checklist</a> sequences all of it into six phases and saves
+progress on your device.</p>
+
+<h2>6 — The other half of the cycle</h2>
+<p style="max-width:46rem">Every arrival is somebody's departure. When your own outbound orders
+come, the <a href="/sell/">sell-or-rent brief</a> runs the accidental-landlord math, and the
+<a href="/guides/harpta.html">HARPTA guide</a> explains the 7.25% withholding that surprises
+outbound owners — with the pre-closing paperwork clock that matters more than the rate.</p>
+
+<h2>Verify against the source</h2>
+<p style="max-width:46rem">This is an independent field guide, not an official resource.
+Entitlements, weight allowances, TLA rules, and shipment rights come from your orders, your
+transportation office, your finance office, and Military OneSource — the linked guides above cite
+the official sources for each topic inline, with the date each fact was verified. When this page
+and your orders disagree, your orders win. Page verified <strong>September 6, 2026</strong>.</p>
+{lead_form("PCSHUB", "pcs-renter",
+  heading="Orders in hand?",
+  blurb="Join the list and the arrival brief lands before you do: current BAH-vs-rent numbers "
+        "for your gaining base, the clock checklist, and a heads-up timed to your report window.")}
+</div>'''
+    p = "/pcs-to-hawaii/"
+    return page(p, "PCS to Hawaii: The Complete Oahu Move Guide | PCS Oahu",
+        "PCSing to Hawaii? The whole Oahu move in order: the four clocks that start with orders, "
+        "BAH and TLA money, commute-first housing, base-by-base guides, arrival logistics, and "
+        "the outbound cycle. Independent, dated, and sourced.",
+        body, "/pcs-to-hawaii/",
+        jsonld={"@context": "https://schema.org", "@graph": [
+            {"@type": "Article",
+             "headline": "PCS to Hawaii: the complete Oahu move, in order",
+             "description": "The master guide to a Hawaii PCS — clocks, money, housing, arrival, "
+                            "and departure — routing to every detailed guide on the site.",
+             "datePublished": "2026-09-06", "dateModified": "2026-09-06",
+             "author": {"@type": "Organization", "name": "PCS Oahu"},
+             "publisher": {"@type": "Organization", "name": "PCS Oahu"},
+             "mainEntityOfPage": DOMAIN + p}]})
+
+
 def base_page(b):
     prows = [(f'<a href="/neighborhoods/{p}.html">{POCKETS[p][0]}</a>', POCKETS[p][1])
              for p in b["pockets"]]
@@ -200,11 +334,16 @@ office the day orders drop) is the better bridge.</p>
   ("E-5 / E-6 without dependents", BAH["e5_solo"] + " / " + BAH["e6_solo"]),
 ], "DTMO " + BAH_YEAR + " Honolulu County tables, effective " + BAH["effective"] +
    ". Anchors only — pull your exact grade from the DTMO calculator.")}
+{('<h2 id="bah">' + b["bah_note"][0] + '</h2><p style="max-width:46rem">' + b["bah_note"][1] + '</p>') if b.get("bah_note") else ""}
 <h2>The rent side, by commute-real pocket</h2>
 {rates(prows, RENT_SRC)}
 <h2>Commute reality</h2>
 <table class="data"><thead><tr><th>Pocket</th><th>What the drive is actually like</th></tr></thead>
 <tbody>{commute_rows}</tbody></table>
+<p style="max-width:46rem;font-size:.88rem;color:#5b6b73">Drive descriptions are resident-reported
+orientation, not measured promises — schedules, gates, and seasons move them. Before signing, run
+the route yourself at your actual report time (the
+<a href="/guides/commute-first.html">commute-first guide</a> walks the method).</p>
 <div class="note"><strong>Field note.</strong> {b["note"]}</div>
 <div class="grid c3">
   <div class="card"><span class="tag">Next</span><h3><a href="/tla/">Land first, then look</a></h3>
@@ -250,7 +389,8 @@ with dated rent bands in the neighborhoods people at that base actually commute 
                 body, "/bases/")
 
 def build():
-    out = {"/index.html": homepage(), "/bases/index.html": bases_hub()}
+    out = {"/index.html": homepage(), "/bases/index.html": bases_hub(),
+           "/pcs-to-hawaii/index.html": pcs_to_hawaii()}
     for b in BASES:
         p, h = base_page(b)
         out[p] = h
