@@ -1,0 +1,2373 @@
+{
+ "dataset": "Dallas Towers - DFW Condominium Registry",
+ "version": "2026-08.4",
+ "license": "CC BY 4.0 - attribution: Dallas Towers (dallastowers.com)",
+ "record_count": 89,
+ "notes": "County fields aggregate Dallas CAD 2026 certified roll unit accounts. Texas is a non-disclosure state; no sale prices. Verify before transacting. v2026-08.2: removed the legacy 'psf' field (an unsourced per-sf estimate inconsistent with non-disclosure sourcing); assessed $/sf lives in county_2026.psf_med with certified-roll provenance. v2026-08.3: Museum Tower dues corrected 1.42 -> 1.34 $/sf/mo per a 2026 listing disclosure (single-disclosure basis; the prior figure carried no provenance). v2026-08.4: The Claridge dues corrected 0.98 -> 1.15 $/sf/mo per the 2026 listing disclosure cited on its building file (the prior figure carried no provenance).",
+ "buildings": [
+  {
+   "name": "Museum Tower",
+   "city": "DAL",
+   "hood": "Arts District",
+   "addr": "1918 Olive St",
+   "era": "2013",
+   "fl": 42,
+   "un": 104,
+   "type": "Tower",
+   "dues": 1.34,
+   "conf": "v",
+   "county_2026": {
+    "acct": 104,
+    "ooc_pct": 82,
+    "sf_min": 1827,
+    "sf_med": 3114,
+    "sf_max": 10038,
+    "yr_mode": 2011,
+    "bed_mix": {
+     "1": 1,
+     "2": 41,
+     "3": 53,
+     "4": 4,
+     "5": 1,
+     "6": 4
+    },
+    "val_med": 3528775,
+    "psf_med": 1091,
+    "hs_pct": 65,
+    "t12": 13,
+    "t24": 24,
+    "latest_deed": "2026-06-05",
+    "fp_pct": 3,
+    "bath_mix": {
+     "1": 2,
+     "2": 38,
+     "3": 54,
+     "4": 4,
+     "5": 2,
+     "6": 4
+    }
+   }
+  },
+  {
+   "name": "Hall Arts Residences",
+   "city": "DAL",
+   "hood": "Arts District",
+   "addr": "1747 Leonard St",
+   "era": "2020",
+   "fl": 28,
+   "un": 48,
+   "type": "Tower",
+   "conf": "v",
+   "county_2026": {
+    "acct": 48,
+    "ooc_pct": 56,
+    "sf_min": 1612,
+    "sf_med": 3677,
+    "sf_max": 13440,
+    "yr_mode": 2017,
+    "bed_mix": {
+     "0": 2,
+     "2": 12,
+     "3": 22,
+     "4": 12
+    },
+    "val_med": 3578465,
+    "psf_med": 1029,
+    "hs_pct": 50,
+    "t12": 7,
+    "t24": 12,
+    "latest_deed": "2026-05-26",
+    "fp_pct": 0,
+    "bath_mix": {
+     "2": 10,
+     "3": 24,
+     "4": 12
+    }
+   }
+  },
+  {
+   "name": "One Arts Plaza",
+   "city": "DAL",
+   "hood": "Arts District",
+   "addr": "1722 Routh St",
+   "era": "2007",
+   "fl": 24,
+   "un": 61,
+   "type": "Tower",
+   "conf": "v"
+  },
+  {
+   "name": "Bleu Ciel",
+   "city": "DAL",
+   "hood": "Harwood",
+   "addr": "3130 N Harwood St",
+   "era": "2017",
+   "fl": 33,
+   "un": 133,
+   "type": "Tower",
+   "dues": 1.28,
+   "conf": "v",
+   "county_2026": {
+    "acct": 133,
+    "ooc_pct": 66,
+    "sf_min": 962,
+    "sf_med": 1766,
+    "sf_max": 8236,
+    "yr_mode": 2015,
+    "bed_mix": {
+     "2": 43,
+     "3": 72,
+     "4": 4,
+     "5": 8,
+     "6": 4,
+     "8": 2
+    },
+    "val_med": 1375000,
+    "psf_med": 740,
+    "hs_pct": 41,
+    "t12": 36,
+    "t24": 54,
+    "latest_deed": "2026-06-09",
+    "fp_pct": 4,
+    "bath_mix": {
+     "2": 43,
+     "3": 73,
+     "4": 3,
+     "5": 8,
+     "6": 4
+    }
+   }
+  },
+  {
+   "name": "Azure",
+   "city": "DAL",
+   "hood": "Harwood",
+   "addr": "2900 McKinnon St",
+   "era": "2007",
+   "fl": 31,
+   "un": 138,
+   "type": "Tower",
+   "dues": 1.18,
+   "conf": "v",
+   "county_2026": {
+    "acct": 138,
+    "ooc_pct": 77,
+    "sf_min": 881,
+    "sf_med": 1512,
+    "sf_max": 5214,
+    "yr_mode": 2005,
+    "bed_mix": {
+     "1": 43,
+     "2": 65,
+     "3": 28,
+     "4": 1,
+     "5": 1
+    },
+    "val_med": 975430,
+    "psf_med": 601,
+    "hs_pct": 51,
+    "t12": 21,
+    "t24": 38,
+    "latest_deed": "2026-06-15",
+    "fp_pct": 98,
+    "bath_mix": {
+     "1": 42,
+     "2": 65,
+     "3": 27,
+     "4": 3,
+     "5": 1
+    }
+   }
+  },
+  {
+   "name": "The House",
+   "city": "DAL",
+   "hood": "Victory Park",
+   "addr": "2200 Victory Ave",
+   "era": "2010",
+   "fl": 28,
+   "un": 117,
+   "type": "Tower",
+   "dues": 1.1,
+   "conf": "v",
+   "county_2026": {
+    "acct": 117,
+    "ooc_pct": 80,
+    "sf_min": 894,
+    "sf_med": 1702,
+    "sf_max": 7744,
+    "yr_mode": 2007,
+    "bed_mix": {
+     "1": 51,
+     "2": 54,
+     "3": 10,
+     "4": 2
+    },
+    "val_med": 807760,
+    "psf_med": 503,
+    "hs_pct": 61,
+    "t12": 7,
+    "t24": 15,
+    "latest_deed": "2026-02-24",
+    "fp_pct": 1,
+    "bath_mix": {
+     "1": 52,
+     "2": 53,
+     "3": 10,
+     "4": 2
+    }
+   }
+  },
+  {
+   "name": "W Dallas Residences",
+   "city": "DAL",
+   "hood": "Victory Park",
+   "addr": "2408\u20132430 Victory Park Ln",
+   "era": "2006",
+   "fl": 33,
+   "un": 131,
+   "type": "Tower",
+   "dues": 1.35,
+   "conf": "v",
+   "county_2026": {
+    "acct": 131,
+    "ooc_pct": 60,
+    "sf_min": 285,
+    "sf_med": 1652,
+    "sf_max": 11309,
+    "yr_mode": 2005,
+    "bed_mix": {
+     "1": 47,
+     "2": 65,
+     "3": 16,
+     "4": 2,
+     "5": 1
+    },
+    "val_med": 874260,
+    "psf_med": 540,
+    "hs_pct": 40,
+    "t12": 10,
+    "t24": 29,
+    "latest_deed": "2026-05-18",
+    "fp_pct": 7,
+    "bath_mix": {
+     "1": 41,
+     "2": 75,
+     "3": 12,
+     "4": 1,
+     "5": 1
+    }
+   }
+  },
+  {
+   "name": "The Residences at the Stoneleigh",
+   "city": "DAL",
+   "hood": "Uptown",
+   "addr": "2300 Wolf St",
+   "era": "2009",
+   "fl": 22,
+   "un": 64,
+   "type": "Tower",
+   "conf": "v",
+   "county_2026": {
+    "acct": 64,
+    "ooc_pct": 86,
+    "sf_min": 1599,
+    "sf_med": 3368,
+    "sf_max": 7450,
+    "yr_mode": 2008,
+    "bed_mix": {
+     "1": 2,
+     "2": 21,
+     "3": 33,
+     "4": 7,
+     "5": 1
+    },
+    "val_med": 3594710,
+    "psf_med": 914,
+    "hs_pct": 72,
+    "t12": 4,
+    "t24": 11,
+    "latest_deed": "2026-05-01",
+    "fp_pct": 88,
+    "bath_mix": {
+     "1": 2,
+     "2": 30,
+     "3": 22,
+     "4": 10
+    }
+   }
+  },
+  {
+   "name": "Residences at The Ritz-Carlton I",
+   "city": "DAL",
+   "hood": "Uptown",
+   "addr": "2525 N Pearl St",
+   "era": "2007",
+   "fl": 21,
+   "un": 66,
+   "type": "Tower",
+   "dues": 1.75,
+   "conf": "v",
+   "county_2026": {
+    "acct": 66,
+    "ooc_pct": 62,
+    "sf_min": 1628,
+    "sf_med": 2614,
+    "sf_max": 8298,
+    "yr_mode": 2005,
+    "bed_mix": {
+     "2": 47,
+     "3": 16,
+     "4": 3
+    },
+    "val_med": 2930805,
+    "psf_med": 1050,
+    "hs_pct": 55,
+    "t12": 9,
+    "t24": 16,
+    "latest_deed": "2026-06-16",
+    "fp_pct": 98,
+    "bath_mix": {
+     "2": 55,
+     "3": 3,
+     "4": 8
+    }
+   }
+  },
+  {
+   "name": "The Tower Residences (Ritz-Carlton)",
+   "city": "DAL",
+   "hood": "Uptown",
+   "addr": "2555 N Pearl St",
+   "era": "2007\u201309",
+   "fl": 23,
+   "un": 92,
+   "type": "Tower",
+   "conf": "v",
+   "county_2026": {
+    "acct": 92,
+    "ooc_pct": 71,
+    "sf_min": 1375,
+    "sf_med": 2164,
+    "sf_max": 7402,
+    "yr_mode": 2007,
+    "bed_mix": {
+     "1": 36,
+     "2": 41,
+     "3": 11,
+     "4": 4
+    },
+    "val_med": 2179630,
+    "psf_med": 990,
+    "hs_pct": 47,
+    "t12": 8,
+    "t24": 21,
+    "latest_deed": "2026-05-04",
+    "fp_pct": 98,
+    "bath_mix": {
+     "1": 23,
+     "2": 54,
+     "3": 9,
+     "4": 5,
+     "5": 1
+    }
+   }
+  },
+  {
+   "name": "La Tour",
+   "city": "DAL",
+   "hood": "Uptown",
+   "addr": "3030 McKinney Ave",
+   "era": "1981",
+   "fl": 24,
+   "un": 95,
+   "type": "Tower",
+   "conf": "v",
+   "county_2026": {
+    "acct": 95,
+    "ooc_pct": 76,
+    "sf_min": 996,
+    "sf_med": 1353,
+    "sf_max": 6449,
+    "yr_mode": 1981,
+    "bed_mix": {
+     "1": 9,
+     "2": 67,
+     "3": 17,
+     "5": 1,
+     "6": 1
+    },
+    "val_med": 595320,
+    "psf_med": 415,
+    "hs_pct": 67,
+    "t12": 11,
+    "t24": 18,
+    "latest_deed": "2026-06-15",
+    "fp_pct": 5,
+    "bath_mix": {
+     "1": 9,
+     "2": 82,
+     "3": 2,
+     "5": 1,
+     "6": 1
+    }
+   }
+  },
+  {
+   "name": "The Claridge",
+   "city": "DAL",
+   "hood": "Turtle Creek",
+   "addr": "3510 Turtle Creek Blvd",
+   "era": "1983\u201384",
+   "fl": 18,
+   "un": 82,
+   "type": "Tower",
+   "dues": 1.15,
+   "conf": "v",
+   "county_2026": {
+    "acct": 82,
+    "ooc_pct": 84,
+    "sf_min": 311,
+    "sf_med": 2770,
+    "sf_max": 8734,
+    "yr_mode": 1984,
+    "bed_mix": {
+     "1": 3,
+     "2": 43,
+     "3": 27,
+     "4": 4,
+     "6": 5
+    },
+    "val_med": 1204950,
+    "psf_med": 435,
+    "hs_pct": 80,
+    "t12": 5,
+    "t24": 15,
+    "latest_deed": "2026-06-17",
+    "fp_pct": 2,
+    "bath_mix": {
+     "1": 3,
+     "2": 56,
+     "3": 13,
+     "4": 6,
+     "5": 1,
+     "6": 1
+    }
+   }
+  },
+  {
+   "name": "The Warrington",
+   "city": "DAL",
+   "hood": "Turtle Creek",
+   "addr": "3831 Turtle Creek Blvd",
+   "era": "1981",
+   "fl": 24,
+   "un": 125,
+   "type": "Tower",
+   "dues": 1.05,
+   "conf": "v",
+   "county_2026": {
+    "acct": 125,
+    "ooc_pct": 86,
+    "sf_min": 942,
+    "sf_med": 1753,
+    "sf_max": 4906,
+    "yr_mode": 1981,
+    "bed_mix": {
+     "1": 15,
+     "2": 71,
+     "3": 35,
+     "4": 4
+    },
+    "val_med": 815150,
+    "psf_med": 500,
+    "hs_pct": 74,
+    "t12": 9,
+    "t24": 23,
+    "latest_deed": "2026-04-29",
+    "fp_pct": 17,
+    "bath_mix": {
+     "1": 15,
+     "2": 96,
+     "3": 10,
+     "4": 4
+    }
+   }
+  },
+  {
+   "name": "The Vendome",
+   "city": "DAL",
+   "hood": "Turtle Creek",
+   "addr": "3505 Turtle Creek Blvd",
+   "era": "2000",
+   "fl": 20,
+   "un": 109,
+   "type": "Tower",
+   "conf": "v",
+   "county_2026": {
+    "acct": 109,
+    "ooc_pct": 80,
+    "sf_min": 1190,
+    "sf_med": 3077,
+    "sf_max": 14740,
+    "yr_mode": 2000,
+    "bed_mix": {
+     "1": 14,
+     "2": 58,
+     "3": 32,
+     "4": 5
+    },
+    "val_med": 1904860,
+    "psf_med": 666,
+    "hs_pct": 67,
+    "t12": 13,
+    "t24": 22,
+    "latest_deed": "2026-06-24",
+    "fp_pct": 99,
+    "bath_mix": {
+     "1": 13,
+     "2": 21,
+     "3": 24,
+     "4": 50,
+     "5": 1
+    }
+   }
+  },
+  {
+   "name": "3525 Turtle Creek",
+   "city": "DAL",
+   "hood": "Turtle Creek",
+   "addr": "3525 Turtle Creek Blvd",
+   "era": "1957",
+   "fl": 21,
+   "un": 78,
+   "type": "Tower",
+   "conf": "v",
+   "county_2026": {
+    "acct": 78,
+    "ooc_pct": 86,
+    "sf_min": 772,
+    "sf_med": 2085,
+    "sf_max": 5123,
+    "yr_mode": 1957,
+    "bed_mix": {
+     "1": 13,
+     "2": 41,
+     "3": 24
+    },
+    "val_med": 552530,
+    "psf_med": 265,
+    "hs_pct": 77,
+    "t12": 7,
+    "t24": 10,
+    "latest_deed": "2026-05-20",
+    "fp_pct": 5,
+    "bath_mix": {
+     "1": 13,
+     "2": 41,
+     "3": 22,
+     "4": 2
+    }
+   }
+  },
+  {
+   "name": "Twenty-One Turtle Creek",
+   "city": "DAL",
+   "hood": "Turtle Creek",
+   "addr": "3883 Turtle Creek Blvd",
+   "era": "1963",
+   "fl": 22,
+   "un": 310,
+   "type": "Co-op era",
+   "conf": "v",
+   "county_2026": {
+    "acct": 310,
+    "ooc_pct": 76,
+    "sf_min": 170,
+    "sf_med": 862,
+    "sf_max": 2342,
+    "yr_mode": 1963,
+    "bed_mix": {
+     "0": 1,
+     "1": 196,
+     "2": 110,
+     "3": 3
+    },
+    "val_med": 249980,
+    "psf_med": 295,
+    "hs_pct": 57,
+    "t12": 34,
+    "t24": 51,
+    "latest_deed": "2026-06-17",
+    "fp_pct": 0,
+    "bath_mix": {
+     "1": 195,
+     "2": 112,
+     "3": 3
+    }
+   }
+  },
+  {
+   "name": "Gold Crest",
+   "city": "DAL",
+   "hood": "Turtle Creek",
+   "addr": "3601 Turtle Creek Blvd",
+   "era": "1962\u201364",
+   "fl": 11,
+   "un": 49,
+   "type": "Boutique tower",
+   "conf": "v",
+   "county_2026": {
+    "acct": 49,
+    "ooc_pct": 92,
+    "sf_min": 961,
+    "sf_med": 2073,
+    "sf_max": 5166,
+    "yr_mode": 1964,
+    "bed_mix": {
+     "1": 11,
+     "2": 29,
+     "3": 7,
+     "4": 2
+    },
+    "val_med": 1220940,
+    "psf_med": 480,
+    "hs_pct": 80,
+    "t12": 7,
+    "t24": 12,
+    "latest_deed": "2026-05-14",
+    "fp_pct": 0,
+    "bath_mix": {
+     "1": 11,
+     "2": 27,
+     "3": 9,
+     "4": 2
+    }
+   }
+  },
+  {
+   "name": "The Renaissance on Turtle Creek",
+   "city": "DAL",
+   "hood": "Turtle Creek",
+   "addr": "3225 Turtle Creek Blvd",
+   "era": "1998",
+   "fl": 16,
+   "un": 482,
+   "type": "Twin tower",
+   "conf": "v",
+   "county_2026": {
+    "acct": 482,
+    "ooc_pct": 70,
+    "sf_min": 250,
+    "sf_med": 1126,
+    "sf_max": 2568,
+    "yr_mode": 1998,
+    "bed_mix": {
+     "0": 2,
+     "1": 207,
+     "2": 262,
+     "3": 11
+    },
+    "val_med": 386590,
+    "psf_med": 355,
+    "hs_pct": 49,
+    "t12": 42,
+    "t24": 79,
+    "latest_deed": "2026-06-17",
+    "fp_pct": 0,
+    "bath_mix": {
+     "1": 207,
+     "2": 273
+    }
+   }
+  },
+  {
+   "name": "The Mayfair",
+   "city": "DAL",
+   "hood": "Turtle Creek",
+   "addr": "3401 Lee Pkwy",
+   "era": "1998",
+   "fl": 24,
+   "un": 132,
+   "type": "Tower",
+   "conf": "v",
+   "county_2026": {
+    "acct": 132,
+    "ooc_pct": 86,
+    "sf_min": 823,
+    "sf_med": 2080,
+    "sf_max": 5395,
+    "yr_mode": 1998,
+    "bed_mix": {
+     "0": 8,
+     "1": 26,
+     "2": 77,
+     "3": 18,
+     "4": 3
+    },
+    "val_med": 910360,
+    "psf_med": 425,
+    "hs_pct": 79,
+    "t12": 9,
+    "t24": 25,
+    "latest_deed": "2026-03-26",
+    "fp_pct": 7,
+    "bath_mix": {
+     "1": 23,
+     "2": 89,
+     "3": 15,
+     "4": 5
+    }
+   }
+  },
+  {
+   "name": "Park Towers",
+   "city": "DAL",
+   "hood": "Oak Lawn",
+   "addr": "3310 Fairmount St",
+   "era": "1964",
+   "fl": 20,
+   "un": 80,
+   "type": "Tower",
+   "conf": "v",
+   "county_2026": {
+    "acct": 80,
+    "ooc_pct": 89,
+    "sf_min": 1075,
+    "sf_med": 2084,
+    "sf_max": 5998,
+    "yr_mode": 1964,
+    "bed_mix": {
+     "1": 1,
+     "2": 73,
+     "3": 6
+    },
+    "val_med": 642040,
+    "psf_med": 315,
+    "hs_pct": 76,
+    "t12": 11,
+    "t24": 21,
+    "latest_deed": "2026-06-12",
+    "fp_pct": 16,
+    "bath_mix": {
+     "1": 1,
+     "2": 77,
+     "3": 1,
+     "4": 1
+    }
+   }
+  },
+  {
+   "name": "The Metropolitan",
+   "city": "DAL",
+   "hood": "Downtown",
+   "addr": "1200 Main St",
+   "era": "conv. ~2005 (built 1974)",
+   "fl": 26,
+   "un": 223,
+   "type": "Conversion",
+   "dues": 0.72,
+   "conf": "v",
+   "county_2026": {
+    "acct": 223,
+    "ooc_pct": 76,
+    "sf_min": 660,
+    "sf_med": 1169,
+    "sf_max": 3743,
+    "yr_mode": 1974,
+    "bed_mix": {
+     "1": 114,
+     "2": 97,
+     "3": 11,
+     "5": 1
+    },
+    "val_med": 344860,
+    "psf_med": 313,
+    "hs_pct": 55,
+    "t12": 22,
+    "t24": 39,
+    "latest_deed": "2026-06-16",
+    "fp_pct": 0,
+    "bath_mix": {
+     "1": 94,
+     "2": 122,
+     "3": 6,
+     "5": 1
+    }
+   }
+  },
+  {
+   "name": "SoCo Urban Lofts",
+   "city": "DAL",
+   "hood": "Downtown",
+   "addr": "1122 Jackson St",
+   "era": "conv. 2004 (built 1925)",
+   "fl": 11,
+   "un": 164,
+   "type": "Historic loft conversion",
+   "conf": "v",
+   "county_2026": {
+    "acct": 164,
+    "ooc_pct": 76,
+    "sf_min": 778,
+    "sf_med": 1067,
+    "sf_max": 2176,
+    "yr_mode": 1925,
+    "bed_mix": {
+     "1": 145,
+     "2": 19
+    },
+    "val_med": 277160,
+    "psf_med": 260,
+    "hs_pct": 57,
+    "t12": 10,
+    "t24": 16,
+    "latest_deed": "2026-06-16",
+    "fp_pct": 0,
+    "bath_mix": {
+     "1": 161,
+     "2": 3
+    }
+   }
+  },
+  {
+   "name": "The Beat at South Side Station",
+   "city": "DAL",
+   "hood": "The Cedars",
+   "addr": "1001 Belleview St",
+   "era": "2007",
+   "fl": 8,
+   "un": 66,
+   "type": "Mid-rise",
+   "conf": "v",
+   "county_2026": {
+    "acct": 66,
+    "ooc_pct": 80,
+    "sf_min": 608,
+    "sf_med": 1198,
+    "sf_max": 2544,
+    "yr_mode": 2007,
+    "bed_mix": {
+     "1": 25,
+     "2": 39,
+     "3": 2
+    },
+    "val_med": 394120,
+    "psf_med": 330,
+    "hs_pct": 62,
+    "t12": 3,
+    "t24": 12,
+    "latest_deed": "2026-04-30",
+    "fp_pct": 2,
+    "bath_mix": {
+     "1": 27,
+     "2": 37,
+     "3": 2
+    }
+   }
+  },
+  {
+   "name": "The Travis at Katy Trail",
+   "city": "DAL",
+   "hood": "Knox / Katy Trail",
+   "addr": "4611 Travis St",
+   "era": "2000",
+   "un": 52,
+   "type": "Mid-rise",
+   "conf": "v",
+   "county_2026": {
+    "acct": 52,
+    "ooc_pct": 62,
+    "hs_pct": 46,
+    "sf_min": 910,
+    "sf_med": 1608,
+    "sf_max": 3443,
+    "yr_mode": 2000,
+    "val_med": 754915,
+    "psf_med": 445
+   }
+  },
+  {
+   "name": "Preston Tower",
+   "city": "DAL",
+   "hood": "Preston Ctr & NW Hwy",
+   "addr": "6211 W Northwest Hwy",
+   "era": "1966",
+   "fl": 29,
+   "un": 261,
+   "type": "Tower",
+   "conf": "v",
+   "county_2026": {
+    "acct": 261,
+    "ooc_pct": 74,
+    "sf_min": 116,
+    "sf_med": 1105,
+    "sf_max": 2855,
+    "yr_mode": 1966,
+    "bed_mix": {
+     "1": 117,
+     "2": 122,
+     "3": 17,
+     "4": 5
+    },
+    "val_med": 284250,
+    "psf_med": 320,
+    "hs_pct": 57,
+    "t12": 21,
+    "t24": 46,
+    "latest_deed": "2026-06-15",
+    "fp_pct": 0,
+    "bath_mix": {
+     "1": 116,
+     "2": 139,
+     "3": 4,
+     "4": 2
+    }
+   }
+  },
+  {
+   "name": "The Athena",
+   "city": "DAL",
+   "hood": "Preston Ctr & NW Hwy",
+   "addr": "6335 W Northwest Hwy",
+   "era": "1966",
+   "fl": 22,
+   "un": 120,
+   "type": "Tower",
+   "conf": "v",
+   "county_2026": {
+    "acct": 120,
+    "ooc_pct": 85,
+    "sf_min": 784,
+    "sf_med": 1770,
+    "sf_max": 4588,
+    "yr_mode": 1966,
+    "bed_mix": {
+     "0": 1,
+     "1": 5,
+     "2": 62,
+     "3": 51,
+     "4": 1
+    },
+    "val_med": 435885,
+    "psf_med": 230,
+    "hs_pct": 72,
+    "t12": 14,
+    "t24": 31,
+    "latest_deed": "2026-06-16",
+    "fp_pct": 0,
+    "bath_mix": {
+     "1": 6,
+     "2": 63,
+     "3": 50,
+     "4": 1
+    }
+   }
+  },
+  {
+   "name": "The Shelton",
+   "city": "DAL",
+   "hood": "Preston Ctr & NW Hwy",
+   "addr": "5909 Luther Ln",
+   "era": "1983",
+   "fl": 21,
+   "un": 100,
+   "type": "Tower",
+   "conf": "v",
+   "county_2026": {
+    "acct": 100,
+    "ooc_pct": 70,
+    "sf_min": 741,
+    "sf_med": 1435,
+    "sf_max": 4111,
+    "yr_mode": 1983,
+    "bed_mix": {
+     "1": 8,
+     "2": 69,
+     "3": 21,
+     "4": 2
+    },
+    "val_med": 699250,
+    "psf_med": 425,
+    "hs_pct": 46,
+    "t12": 8,
+    "t24": 19,
+    "latest_deed": "2026-05-20",
+    "fp_pct": 0,
+    "bath_mix": {
+     "1": 8,
+     "2": 71,
+     "3": 19,
+     "4": 2
+    }
+   }
+  },
+  {
+   "name": "The Tower",
+   "city": "FW",
+   "hood": "Downtown FW",
+   "addr": "500 Throckmorton St",
+   "era": "conv. 2005",
+   "fl": 35,
+   "un": 300,
+   "type": "Conversion",
+   "dues": 0.76,
+   "conf": "v"
+  },
+  {
+   "name": "Omni Fort Worth Residences",
+   "city": "FW",
+   "hood": "Downtown FW",
+   "addr": "1301 Throckmorton St",
+   "era": "2009",
+   "un": 97,
+   "type": "Hotel-branded \u00b7 fl 16\u201332",
+   "dues": 1.12,
+   "conf": "v"
+  },
+  {
+   "name": "Neil P at Burnett Park",
+   "city": "FW",
+   "hood": "Downtown FW",
+   "addr": "411 W 7th St",
+   "era": "conv. (built 1921)",
+   "fl": 11,
+   "un": 88,
+   "type": "Conversion",
+   "dues": 0.68,
+   "conf": "v"
+  },
+  {
+   "name": "Texas & Pacific Lofts",
+   "city": "FW",
+   "hood": "Lancaster Corridor",
+   "addr": "221 W Lancaster Ave (MLS: 201)",
+   "era": "conv. 2005\u201306 (built 1931)",
+   "fl": 12,
+   "un": 149,
+   "type": "Deco conversion",
+   "dues": 0.71,
+   "conf": "v"
+  },
+  {
+   "name": "One Montgomery Plaza Residences",
+   "city": "FW",
+   "hood": "West 7th",
+   "addr": "2600 W 7th St",
+   "era": "conv. 2007 (built 1928)",
+   "fl": 8,
+   "un": 240,
+   "type": "Deco conversion",
+   "conf": "v"
+  },
+  {
+   "name": "Villa de Leon",
+   "city": "FW",
+   "hood": "Trinity Bluff \u00b7 Samuels Ave",
+   "addr": "501 Samuels Ave",
+   "era": "2008",
+   "fl": 12,
+   "un": 24,
+   "type": "Boutique",
+   "dues": 1.02,
+   "conf": "v"
+  },
+  {
+   "name": "Le Bijou",
+   "city": "FW",
+   "hood": "Downtown FW",
+   "addr": "409 E 7th St",
+   "era": "2006",
+   "fl": 3,
+   "un": 14,
+   "type": "Luxury townhome condos",
+   "dues": 0.92,
+   "conf": "v"
+  },
+  {
+   "name": "The Grand Treviso",
+   "city": "BEY",
+   "hood": "Las Colinas \u00b7 Irving",
+   "addr": "330 E Las Colinas Blvd",
+   "era": "2001",
+   "fl": 17,
+   "un": 205,
+   "type": "Tower",
+   "conf": "v",
+   "county_2026": {
+    "acct": 205,
+    "hs_pct": 50,
+    "sf_min": 733,
+    "sf_med": 905,
+    "sf_max": 3169,
+    "yr_mode": 2001,
+    "val_med": 272360,
+    "psf_med": 302,
+    "orig_units": 245,
+    "t12": 18,
+    "t24": 41,
+    "latest_deed": "2026-06-24",
+    "fp_pct": 1,
+    "bath_mix": {
+     "1": 138,
+     "2": 61,
+     "3": 6
+    }
+   }
+  },
+  {
+   "name": "The Bonaventure",
+   "city": "BEY",
+   "hood": "North Dallas",
+   "addr": "5200 Keller Springs Rd",
+   "era": "1981",
+   "fl": 12,
+   "un": 285,
+   "type": "Twin tower",
+   "conf": "v",
+   "county_2026": {
+    "acct": 285,
+    "ooc_pct": 87,
+    "sf_min": 1685,
+    "sf_med": 1863,
+    "sf_max": 7915,
+    "yr_mode": 1981,
+    "bed_mix": {
+     "0": 7,
+     "1": 2,
+     "2": 195,
+     "3": 80,
+     "4": 1
+    },
+    "val_med": 419180,
+    "psf_med": 222,
+    "hs_pct": 72,
+    "t12": 22,
+    "t24": 51,
+    "latest_deed": "2026-06-11",
+    "fp_pct": 0,
+    "bath_mix": {
+     "2": 222,
+     "3": 60,
+     "4": 3
+    }
+   }
+  },
+  {
+   "name": "Plaza at Turtle Creek I",
+   "city": "DAL",
+   "hood": "Turtle Creek",
+   "addr": "3535 Gillespie St",
+   "era": "1980s",
+   "fl": 7,
+   "un": 47,
+   "type": "Boutique",
+   "conf": "v",
+   "county_2026": {
+    "acct": 47,
+    "ooc_pct": 77,
+    "sf_min": 1185,
+    "sf_med": 2522,
+    "sf_max": 5510,
+    "yr_mode": 2000,
+    "bed_mix": {
+     "1": 12,
+     "2": 20,
+     "3": 15
+    },
+    "val_med": 1063790,
+    "psf_med": 475,
+    "hs_pct": 62,
+    "t12": 5,
+    "t24": 12,
+    "latest_deed": "2026-06-11",
+    "fp_pct": 70,
+    "bath_mix": {
+     "1": 10,
+     "2": 20,
+     "3": 17
+    }
+   }
+  },
+  {
+   "name": "Plaza at Turtle Creek II",
+   "city": "DAL",
+   "hood": "Turtle Creek",
+   "addr": "2828 Hood St",
+   "era": "1980s",
+   "un": 96,
+   "type": "Boutique",
+   "conf": "v",
+   "county_2026": {
+    "acct": 96,
+    "ooc_pct": 82,
+    "sf_min": 447,
+    "sf_med": 2061,
+    "sf_max": 6379,
+    "yr_mode": 2000,
+    "bed_mix": {
+     "0": 2,
+     "1": 11,
+     "2": 48,
+     "3": 35
+    },
+    "val_med": 931515,
+    "psf_med": 490,
+    "hs_pct": 66,
+    "t12": 13,
+    "t24": 20,
+    "latest_deed": "2026-04-03",
+    "fp_pct": 98,
+    "bath_mix": {
+     "1": 18,
+     "2": 11,
+     "3": 48,
+     "4": 15,
+     "5": 2
+    }
+   }
+  },
+  {
+   "name": "Beverly on Turtle Creek",
+   "city": "DAL",
+   "hood": "Turtle Creek",
+   "addr": "3621 Turtle Creek Blvd",
+   "era": "1981",
+   "un": 37,
+   "type": "Tower",
+   "conf": "v",
+   "county_2026": {
+    "acct": 37,
+    "ooc_pct": 81,
+    "sf_min": 1109,
+    "sf_med": 1603,
+    "sf_max": 3619,
+    "yr_mode": 1981,
+    "bed_mix": {
+     "1": 6,
+     "2": 30,
+     "4": 1
+    },
+    "val_med": 540260,
+    "psf_med": 340,
+    "hs_pct": 70,
+    "t12": 2,
+    "t24": 2,
+    "latest_deed": "2026-06-11",
+    "fp_pct": 92,
+    "bath_mix": {
+     "1": 6,
+     "2": 30,
+     "4": 1
+    }
+   }
+  },
+  {
+   "name": "LTD Edition 2505",
+   "city": "DAL",
+   "hood": "Turtle Creek",
+   "addr": "2505 Turtle Creek Blvd",
+   "era": "2010s",
+   "type": "Boutique",
+   "conf": "p"
+  },
+  {
+   "name": "Mansion Residences",
+   "city": "DAL",
+   "hood": "Turtle Creek",
+   "addr": "2801 Turtle Creek Blvd",
+   "era": "1992\u201394",
+   "fl": 12,
+   "un": 24,
+   "type": "Hotel-managed boutique",
+   "conf": "v",
+   "county_2026": {
+    "acct": 24,
+    "ooc_pct": 67,
+    "sf_min": 3375,
+    "sf_med": 4663,
+    "sf_max": 9638,
+    "yr_mode": 1992,
+    "bed_mix": {
+     "2": 11,
+     "3": 12,
+     "4": 1
+    },
+    "val_med": 3700000,
+    "psf_med": 765,
+    "hs_pct": 54,
+    "t12": 2,
+    "t24": 7,
+    "latest_deed": "2026-03-11",
+    "fp_pct": 54,
+    "bath_mix": {
+     "2": 8,
+     "3": 6,
+     "4": 9,
+     "5": 1
+    }
+   }
+  },
+  {
+   "name": "Turtle Creek North",
+   "city": "DAL",
+   "hood": "Turtle Creek",
+   "addr": "3701 Turtle Creek Blvd",
+   "era": "1962",
+   "un": 98,
+   "type": "Tower",
+   "conf": "v",
+   "county_2026": {
+    "acct": 98,
+    "ooc_pct": 85,
+    "sf_min": 598,
+    "sf_med": 1083,
+    "sf_max": 3340,
+    "yr_mode": 1962,
+    "bed_mix": {
+     "1": 48,
+     "2": 43,
+     "3": 6,
+     "4": 1
+    },
+    "val_med": 343390,
+    "psf_med": 350,
+    "hs_pct": 66,
+    "t12": 14,
+    "t24": 25,
+    "latest_deed": "2026-06-16",
+    "fp_pct": 0,
+    "bath_mix": {
+     "1": 48,
+     "2": 43,
+     "3": 6,
+     "4": 1
+    }
+   }
+  },
+  {
+   "name": "Centrum Tower",
+   "city": "DAL",
+   "hood": "Oak Lawn",
+   "addr": "3111 Welborn St",
+   "era": "1985",
+   "un": 30,
+   "type": "Mixed-use",
+   "conf": "v",
+   "county_2026": {
+    "acct": 30,
+    "ooc_pct": 77,
+    "sf_min": 1605,
+    "sf_med": 2299,
+    "sf_max": 7465,
+    "yr_mode": 1985,
+    "bed_mix": {
+     "0": 1,
+     "1": 1,
+     "2": 24,
+     "3": 2,
+     "4": 2
+    },
+    "val_med": 807540,
+    "psf_med": 327,
+    "hs_pct": 60,
+    "t12": 5,
+    "t24": 6,
+    "latest_deed": "2026-04-27",
+    "fp_pct": 7,
+    "bath_mix": {
+     "1": 1,
+     "2": 23,
+     "3": 2,
+     "4": 3
+    }
+   }
+  },
+  {
+   "name": "509 Elm Place Lofts",
+   "city": "DAL",
+   "hood": "Downtown",
+   "addr": "509 Elm St",
+   "era": "conv. (built 1930)",
+   "un": 25,
+   "type": "Loft conversion",
+   "conf": "v",
+   "county_2026": {
+    "acct": 25,
+    "ooc_pct": 80,
+    "sf_min": 630,
+    "sf_med": 1487,
+    "sf_max": 2675,
+    "yr_mode": 1930,
+    "bed_mix": {
+     "1": 11,
+     "2": 11,
+     "3": 1,
+     "4": 2
+    },
+    "val_med": 343750,
+    "psf_med": 275,
+    "hs_pct": 48,
+    "t12": 3,
+    "t24": 5,
+    "latest_deed": "2026-04-15",
+    "fp_pct": 4,
+    "bath_mix": {
+     "1": 11,
+     "2": 12,
+     "3": 2
+    }
+   }
+  },
+  {
+   "name": "Thirty Thirty Bryan Condos",
+   "city": "DAL",
+   "hood": "Bryan Place",
+   "addr": "3030 Bryan St",
+   "era": "2005",
+   "un": 30,
+   "type": "Boutique loft",
+   "conf": "v",
+   "county_2026": {
+    "acct": 30,
+    "ooc_pct": 93,
+    "sf_min": 1313,
+    "sf_med": 1646,
+    "sf_max": 3692,
+    "yr_mode": 2005,
+    "bed_mix": {
+     "1": 2,
+     "2": 27,
+     "4": 1
+    },
+    "val_med": 559640,
+    "psf_med": 337,
+    "hs_pct": 77,
+    "t12": 4,
+    "t24": 9,
+    "latest_deed": "2026-06-15",
+    "fp_pct": 0,
+    "bath_mix": {
+     "1": 7,
+     "2": 22,
+     "3": 1
+    }
+   }
+  },
+  {
+   "name": "Art House at So7",
+   "city": "FW",
+   "hood": "Cultural District \u00b7 So7",
+   "addr": "2600\u20132608 Museum Way",
+   "era": "late 2000s",
+   "fl": 5,
+   "un": 63,
+   "type": "Mid-rise",
+   "conf": "v"
+  },
+  {
+   "name": "Forest Park Tower",
+   "city": "FW",
+   "hood": "Forest Park \u00b7 South Side",
+   "addr": "2306 Park Place Ave",
+   "era": "1927\u201330",
+   "fl": 12,
+   "un": 36,
+   "type": "Historic tower",
+   "conf": "v"
+  },
+  {
+   "name": "Houston Place Lofts",
+   "city": "FW",
+   "hood": "Downtown FW",
+   "addr": "910 Houston St",
+   "era": "conv. 2005 (built 1906)",
+   "fl": 9,
+   "un": 30,
+   "type": "Historic loft conversion",
+   "conf": "v"
+  },
+  {
+   "name": "The Lakeside Tower",
+   "city": "BEY",
+   "hood": "Lakeside DFW \u00b7 Flower Mound",
+   "addr": "\u2014",
+   "era": "\u2014",
+   "type": "Tower",
+   "conf": "p"
+  },
+  {
+   "name": "Lone Star Tower",
+   "city": "FW",
+   "hood": "Texas Motor Speedway",
+   "addr": "3575 Lone Star Circle",
+   "era": "1997\u201398",
+   "fl": 10,
+   "un": 76,
+   "type": "Trackside tower",
+   "conf": "v"
+  },
+  {
+   "name": "One Museum Place Residences",
+   "city": "FW",
+   "hood": "Cultural District",
+   "addr": "\u2014",
+   "era": "2008",
+   "un": 36,
+   "type": "Condos atop mixed-use",
+   "conf": "v"
+  },
+  {
+   "name": "Pecan Place",
+   "city": "FW",
+   "hood": "Downtown FW",
+   "addr": "601 E 1st St",
+   "era": "2004",
+   "fl": 4,
+   "un": 9,
+   "type": "Boutique low-rise",
+   "conf": "v"
+  },
+  {
+   "name": "Westview",
+   "city": "FW",
+   "hood": "West Fort Worth",
+   "addr": "\u2014",
+   "era": "\u2014",
+   "type": "Mid-rise",
+   "conf": "p"
+  },
+  {
+   "name": "Rosewood Residences Turtle Creek",
+   "city": "DAL",
+   "hood": "Turtle Creek",
+   "addr": "3555 Dickason Ave",
+   "era": "2026 (u/c)",
+   "fl": 17,
+   "un": 33,
+   "type": "Pipeline \u00b7 topped out",
+   "conf": "v"
+  },
+  {
+   "name": "The Knox Residences (Auberge)",
+   "city": "DAL",
+   "hood": "Knox / Henderson",
+   "addr": "Knox St at Travis, Katy Trail",
+   "era": "2026\u201327 (u/c)",
+   "un": 48,
+   "type": "Pipeline \u00b7 hotel-branded",
+   "conf": "v"
+  },
+  {
+   "name": "1505 Elm",
+   "city": "DAL",
+   "hood": "Downtown",
+   "addr": "1505 Elm St",
+   "era": "conv. 2002 (built 1957)",
+   "fl": 16,
+   "un": 67,
+   "type": "Conversion",
+   "conf": "v",
+   "county_2026": {
+    "acct": 67,
+    "ooc_pct": 76,
+    "sf_min": 690,
+    "sf_med": 1482,
+    "sf_max": 4573,
+    "yr_mode": 1957,
+    "bed_mix": {
+     "1": 13,
+     "2": 52,
+     "3": 2
+    },
+    "val_med": 288990,
+    "psf_med": 195,
+    "hs_pct": 57,
+    "t12": 7,
+    "t24": 18,
+    "latest_deed": "2026-05-13",
+    "fp_pct": 9,
+    "bath_mix": {
+     "1": 13,
+     "2": 54
+    }
+   }
+  },
+  {
+   "name": "588 Lofts",
+   "city": "DAL",
+   "hood": "Uptown",
+   "addr": "3110 Thomas Ave",
+   "era": "1998",
+   "fl": 5,
+   "un": 104,
+   "type": "Mid-rise loft",
+   "conf": "v",
+   "county_2026": {
+    "acct": 104,
+    "ooc_pct": 64,
+    "sf_min": 835,
+    "sf_med": 1073,
+    "sf_max": 3843,
+    "yr_mode": 1998,
+    "bed_mix": {
+     "1": 69,
+     "2": 35
+    },
+    "val_med": 429200,
+    "psf_med": 375,
+    "hs_pct": 43,
+    "t12": 7,
+    "t24": 16,
+    "latest_deed": "2026-04-27",
+    "fp_pct": 0,
+    "bath_mix": {
+     "1": 69,
+     "2": 35
+    }
+   }
+  },
+  {
+   "name": "2220 Canton Lofts",
+   "city": "DAL",
+   "hood": "Farmers Market / Deep Ellum",
+   "addr": "2220 Canton St",
+   "era": "conv. (built 1925)",
+   "un": 39,
+   "type": "Loft conversion",
+   "conf": "v",
+   "county_2026": {
+    "acct": 39,
+    "ooc_pct": 79,
+    "sf_min": 640,
+    "sf_med": 1529,
+    "sf_max": 2960,
+    "yr_mode": 1925,
+    "bed_mix": {
+     "1": 35,
+     "2": 3,
+     "3": 1
+    },
+    "val_med": 466350,
+    "psf_med": 305,
+    "hs_pct": 62,
+    "t12": 2,
+    "t24": 7,
+    "latest_deed": "2026-01-09",
+    "fp_pct": 3,
+    "bath_mix": {
+     "1": 37,
+     "2": 1,
+     "3": 1
+    }
+   }
+  },
+  {
+   "name": "Victory Park Terrace",
+   "city": "DAL",
+   "hood": "Victory Park",
+   "addr": "2323 N Houston St",
+   "era": "2005",
+   "un": 81,
+   "type": "Mid-rise",
+   "conf": "v",
+   "county_2026": {
+    "acct": 81,
+    "ooc_pct": 75,
+    "sf_min": 775,
+    "sf_med": 1206,
+    "sf_max": 2362,
+    "yr_mode": 2005,
+    "bed_mix": {
+     "1": 30,
+     "2": 50,
+     "3": 1
+    },
+    "val_med": 447300,
+    "psf_med": 359,
+    "hs_pct": 56,
+    "t12": 2,
+    "t24": 10,
+    "latest_deed": "2026-06-05",
+    "fp_pct": 0,
+    "bath_mix": {
+     "1": 30,
+     "2": 50,
+     "3": 1
+    }
+   }
+  },
+  {
+   "name": "Main 7",
+   "city": "FW",
+   "hood": "Downtown FW",
+   "addr": "\u2014",
+   "era": "\u2014",
+   "type": "Boutique",
+   "conf": "p"
+  },
+  {
+   "name": "Versailles",
+   "city": "FW",
+   "hood": "Downtown FW area",
+   "addr": "\u2014",
+   "era": "\u2014",
+   "type": "Mid-rise",
+   "conf": "p"
+  },
+  {
+   "name": "Royale Orleans",
+   "city": "FW",
+   "hood": "TCU / Tanglewood",
+   "addr": "\u2014",
+   "era": "\u2014",
+   "type": "Garden condos",
+   "conf": "p"
+  },
+  {
+   "name": "1999 McKinney",
+   "city": "DAL",
+   "hood": "Uptown",
+   "addr": "1999 McKinney Ave",
+   "era": "2000",
+   "fl": 18,
+   "un": 57,
+   "type": "Tower",
+   "conf": "v",
+   "county_2026": {
+    "acct": 57,
+    "ooc_pct": 81,
+    "sf_min": 2362,
+    "sf_med": 2421,
+    "sf_max": 5493,
+    "yr_mode": 2000,
+    "bed_mix": {
+     "1": 1,
+     "2": 51,
+     "3": 2,
+     "4": 3
+    },
+    "val_med": 900990,
+    "psf_med": 355,
+    "hs_pct": 67,
+    "t12": 8,
+    "t24": 16,
+    "latest_deed": "2026-03-11",
+    "fp_pct": 4,
+    "bath_mix": {
+     "2": 54,
+     "4": 3
+    }
+   }
+  },
+  {
+   "name": "2011 Cedar Springs Lofts",
+   "city": "DAL",
+   "hood": "Uptown",
+   "addr": "2011 Cedar Springs Rd",
+   "era": "1999",
+   "un": 42,
+   "type": "Loft mid-rise",
+   "conf": "v",
+   "county_2026": {
+    "acct": 42,
+    "ooc_pct": 81,
+    "sf_min": 2190,
+    "sf_med": 2354,
+    "sf_max": 4776,
+    "yr_mode": 1999,
+    "bed_mix": {
+     "2": 40,
+     "4": 2
+    },
+    "val_med": 1045310,
+    "psf_med": 445,
+    "hs_pct": 60,
+    "t12": 3,
+    "t24": 4,
+    "latest_deed": "2026-01-14",
+    "fp_pct": 2,
+    "bath_mix": {
+     "2": 40,
+     "4": 2
+    }
+   }
+  },
+  {
+   "name": "Crestpark in Highland Park",
+   "city": "DAL",
+   "hood": "Highland Park area",
+   "addr": "4242 Lomo Alto Dr",
+   "era": "1950",
+   "fl": 10,
+   "un": 126,
+   "type": "Tower",
+   "conf": "v",
+   "county_2026": {
+    "acct": 126,
+    "ooc_pct": 79,
+    "sf_min": 934,
+    "sf_med": 2011,
+    "sf_max": 5380,
+    "yr_mode": 1950,
+    "bed_mix": {
+     "1": 26,
+     "2": 41,
+     "3": 58,
+     "4": 1
+    },
+    "val_med": 551150,
+    "psf_med": 315,
+    "hs_pct": 57,
+    "t12": 11,
+    "t24": 26,
+    "latest_deed": "2026-06-01",
+    "fp_pct": 99,
+    "bath_mix": {
+     "1": 25,
+     "2": 37,
+     "3": 63,
+     "4": 1
+    }
+   }
+  },
+  {
+   "name": "Metropolitan Club at Hotel ZaZa",
+   "city": "DAL",
+   "hood": "Uptown",
+   "addr": "\u2014",
+   "era": "2000s",
+   "type": "Hotel-branded",
+   "conf": "p"
+  },
+  {
+   "name": "Park Plaza",
+   "city": "DAL",
+   "hood": "Turtle Creek",
+   "addr": "4500 Roland Ave (see note)",
+   "era": "\u2014",
+   "type": "Tower",
+   "conf": "p"
+  },
+  {
+   "name": "Parkside Condominiums",
+   "city": "DAL",
+   "hood": "Uptown",
+   "addr": "4777 Cedar Springs Rd",
+   "era": "1983",
+   "un": 75,
+   "type": "Mid-rise",
+   "conf": "v",
+   "county_2026": {
+    "acct": 75,
+    "ooc_pct": 71,
+    "sf_min": 768,
+    "sf_med": 890,
+    "sf_max": 1143,
+    "yr_mode": 1983,
+    "bed_mix": {
+     "1": 17,
+     "2": 58
+    },
+    "val_med": 218500,
+    "psf_med": 235,
+    "hs_pct": 56,
+    "t12": 2,
+    "t24": 7,
+    "latest_deed": "2026-06-23",
+    "fp_pct": 55,
+    "bath_mix": {
+     "1": 48,
+     "2": 27
+    }
+   }
+  },
+  {
+   "name": "The Residence at Turtle Creek",
+   "city": "DAL",
+   "hood": "Turtle Creek",
+   "addr": "2811 Hood St",
+   "era": "2011",
+   "un": 6,
+   "type": "Mid-rise",
+   "conf": "v",
+   "county_2026": {
+    "acct": 6,
+    "ooc_pct": 83,
+    "hs_pct": 100,
+    "sf_min": 1701,
+    "sf_med": 2010,
+    "sf_max": 2235,
+    "yr_mode": 2011,
+    "val_med": 804500,
+    "psf_med": 393
+   }
+  },
+  {
+   "name": "The Terminal at Katy Trail",
+   "city": "DAL",
+   "hood": "Knox / Katy Trail",
+   "addr": "4205 Buena Vista St",
+   "era": "2022",
+   "un": 16,
+   "type": "Loft conversion",
+   "conf": "v",
+   "county_2026": {
+    "acct": 16,
+    "ooc_pct": 62,
+    "hs_pct": 56,
+    "sf_min": 2511,
+    "sf_med": 3185,
+    "sf_max": 6960,
+    "yr_mode": 2022,
+    "val_med": 4524200,
+    "psf_med": 1403
+   }
+  },
+  {
+   "name": "The Wyndemere at Turtle Creek",
+   "city": "DAL",
+   "hood": "Turtle Creek",
+   "addr": "3400 Welborn St",
+   "era": "\u2014",
+   "fl": 4,
+   "un": 101,
+   "type": "Low-rise",
+   "conf": "v",
+   "county_2026": {
+    "acct": 101,
+    "ooc_pct": 74,
+    "sf_min": 517,
+    "sf_med": 937,
+    "sf_max": 1392,
+    "yr_mode": 1998,
+    "bed_mix": {
+     "1": 53,
+     "2": 48
+    },
+    "val_med": 351380,
+    "psf_med": 345,
+    "hs_pct": 57,
+    "t12": 10,
+    "t24": 17,
+    "latest_deed": "2026-06-25",
+    "fp_pct": 79,
+    "bath_mix": {
+     "1": 53,
+     "2": 48
+    }
+   }
+  },
+  {
+   "name": "The Grand at Turtle Creek",
+   "city": "DAL",
+   "hood": "Turtle Creek",
+   "addr": "3303 Blackburn St",
+   "era": "2001",
+   "un": 22,
+   "type": "Tower",
+   "conf": "v",
+   "county_2026": {
+    "acct": 22,
+    "ooc_pct": 86,
+    "hs_pct": 64,
+    "sf_min": 1125,
+    "sf_med": 1933,
+    "sf_max": 2083,
+    "yr_mode": 2001,
+    "val_med": 628230,
+    "psf_med": 325
+   }
+  },
+  {
+   "name": "Mercer Square",
+   "city": "DAL",
+   "hood": "Uptown",
+   "addr": "2950 Mckinney Ave",
+   "era": "2006",
+   "un": 75,
+   "type": "Mid-rise",
+   "conf": "v",
+   "county_2026": {
+    "acct": 75,
+    "ooc_pct": 64,
+    "hs_pct": 45,
+    "sf_min": 806,
+    "sf_med": 1027,
+    "sf_max": 2480,
+    "yr_mode": 2006,
+    "val_med": 369000,
+    "psf_med": 350
+   }
+  },
+  {
+   "name": "The Belvedere",
+   "city": "DAL",
+   "hood": "Uptown / Arts District edge",
+   "addr": "Between Arts District & Uptown",
+   "era": "1999",
+   "fl": 3,
+   "un": 102,
+   "type": "Low-rise",
+   "conf": "v"
+  },
+  {
+   "name": "Bryan Street Station",
+   "city": "DAL",
+   "hood": "Bryan Place",
+   "addr": "3025 Bryan St",
+   "era": "2006",
+   "un": 47,
+   "type": "Mid-rise",
+   "conf": "v",
+   "county_2026": {
+    "acct": 47,
+    "ooc_pct": 83,
+    "hs_pct": 51,
+    "sf_min": 712,
+    "sf_med": 933,
+    "sf_max": 2100,
+    "yr_mode": 2006,
+    "val_med": 293460,
+    "psf_med": 326
+   }
+  },
+  {
+   "name": "Live Oak Lofts",
+   "city": "DAL",
+   "hood": "Deep Ellum edge \u00b7 Old East Dallas",
+   "addr": "2502 Live Oak St",
+   "era": "1998",
+   "fl": 4,
+   "un": 92,
+   "type": "Loft mid-rise",
+   "conf": "v",
+   "county_2026": {
+    "acct": 92,
+    "ooc_pct": 73,
+    "sf_min": 681,
+    "sf_med": 872,
+    "sf_max": 1482,
+    "yr_mode": 1998,
+    "bed_mix": {
+     "1": 82,
+     "2": 9,
+     "3": 1
+    },
+    "val_med": 250665,
+    "psf_med": 290,
+    "hs_pct": 63,
+    "t12": 7,
+    "t24": 16,
+    "latest_deed": "2026-04-10",
+    "fp_pct": 0,
+    "bath_mix": {
+     "1": 82,
+     "2": 10
+    }
+   }
+  },
+  {
+   "name": "The Sorrento",
+   "city": "DAL",
+   "hood": "Preston Hollow",
+   "addr": "8616 Turtle Creek Blvd",
+   "era": "2006",
+   "un": 84,
+   "type": "Mid-rise",
+   "conf": "v",
+   "county_2026": {
+    "acct": 84,
+    "ooc_pct": 80,
+    "sf_min": 753,
+    "sf_med": 1288,
+    "sf_max": 2340,
+    "yr_mode": 2006,
+    "bed_mix": {
+     "0": 20,
+     "1": 29,
+     "2": 26,
+     "3": 9
+    },
+    "val_med": 425040,
+    "psf_med": 315,
+    "hs_pct": 67,
+    "t12": 11,
+    "t24": 19,
+    "latest_deed": "2026-06-22",
+    "fp_pct": 33,
+    "bath_mix": {
+     "1": 27,
+     "2": 31,
+     "3": 1
+    }
+   }
+  },
+  {
+   "name": "Avanti on Avondale",
+   "city": "DAL",
+   "hood": "Oak Lawn",
+   "addr": "4122 Avondale Ave",
+   "era": "2004",
+   "un": 14,
+   "type": "Mid-rise",
+   "conf": "v",
+   "county_2026": {
+    "acct": 14,
+    "ooc_pct": 79,
+    "hs_pct": 57,
+    "sf_min": 825,
+    "sf_med": 1095,
+    "sf_max": 1725,
+    "yr_mode": 2004,
+    "val_med": 354250,
+    "psf_med": 315
+   }
+  },
+  {
+   "name": "Alix Condos",
+   "city": "DAL",
+   "hood": "Oak Lawn",
+   "addr": "4107 Bowser Ave",
+   "era": "2008",
+   "un": 18,
+   "type": "Mid-rise",
+   "conf": "v",
+   "county_2026": {
+    "acct": 18,
+    "ooc_pct": 72,
+    "hs_pct": 39,
+    "sf_min": 1218,
+    "sf_med": 1332,
+    "sf_max": 1455,
+    "yr_mode": 2008,
+    "val_med": 394050,
+    "psf_med": 302
+   }
+  },
+  {
+   "name": "Woodshire Court",
+   "city": "DAL",
+   "hood": "Uptown \u00b7 Knox",
+   "addr": "3235 Cole Ave",
+   "era": "1985",
+   "un": 29,
+   "type": "Mid-rise",
+   "conf": "v",
+   "county_2026": {
+    "acct": 29,
+    "ooc_pct": 79,
+    "hs_pct": 59,
+    "sf_min": 1220,
+    "sf_med": 1678,
+    "sf_max": 1678,
+    "yr_mode": 1985,
+    "val_med": 393250,
+    "psf_med": 276
+   }
+  },
+  {
+   "name": "Colonnade at Turtle Creek",
+   "city": "DAL",
+   "hood": "Turtle Creek",
+   "addr": "3311 Blackburn St",
+   "era": "1982",
+   "un": 47,
+   "type": "Mid-rise",
+   "conf": "v",
+   "county_2026": {
+    "acct": 47,
+    "hs_pct": 49,
+    "sf_min": 599,
+    "sf_med": 729,
+    "sf_max": 888,
+    "yr_mode": 1982,
+    "val_med": 290690,
+    "psf_med": 380,
+    "t12": 4,
+    "t24": 10,
+    "latest_deed": "2026-06-08",
+    "fp_pct": 100,
+    "bath_mix": {
+     "1": 47
+    }
+   }
+  },
+  {
+   "name": "Schaumburg Lofts",
+   "city": "FW",
+   "hood": "Downtown FW",
+   "addr": "\u2014",
+   "era": "\u2014",
+   "type": "Loft conversion",
+   "conf": "p"
+  },
+  {
+   "name": "Dickson Jenkins Lofts",
+   "city": "FW",
+   "hood": "Downtown FW",
+   "addr": "\u2014",
+   "era": "\u2014",
+   "type": "Loft conversion",
+   "conf": "p"
+  },
+  {
+   "name": "959 West Bluff",
+   "city": "FW",
+   "hood": "Downtown FW area",
+   "addr": "959 West Bluff St",
+   "era": "\u2014",
+   "type": "Mid-rise",
+   "conf": "p"
+  },
+  {
+   "name": "Piazza Siena",
+   "city": "DAL",
+   "hood": "Oak Lawn",
+   "addr": "3102 Kings Rd",
+   "era": "2001",
+   "un": 227,
+   "type": "Mid-rise",
+   "conf": "v",
+   "county_2026": {
+    "acct": 227,
+    "ooc_pct": 69,
+    "sf_min": 640,
+    "sf_med": 942,
+    "sf_max": 1688,
+    "yr_mode": 2001,
+    "bed_mix": {
+     "0": 140,
+     "1": 41,
+     "2": 45,
+     "3": 1
+    },
+    "val_med": 246710,
+    "psf_med": 272,
+    "hs_pct": 17,
+    "t12": 15,
+    "t24": 36,
+    "latest_deed": "2026-06-23",
+    "fp_pct": 1,
+    "bath_mix": {
+     "1": 42,
+     "2": 45
+    }
+   }
+  },
+  {
+   "name": "Lake Cliff Tower",
+   "city": "DAL",
+   "hood": "Oak Cliff",
+   "addr": "329 E Colorado Blvd",
+   "era": "conv. 2006 (built 1929)",
+   "fl": 11,
+   "un": 49,
+   "type": "Historic tower",
+   "conf": "v",
+   "county_2026": {
+    "acct": 49,
+    "ooc_pct": 16,
+    "sf_min": 895,
+    "sf_med": 994,
+    "sf_max": 2572,
+    "yr_mode": 1929,
+    "bed_mix": {
+     "1": 32,
+     "2": 17
+    },
+    "val_med": 228000,
+    "psf_med": 200,
+    "hs_pct": 12,
+    "t12": 2,
+    "t24": 5,
+    "latest_deed": "2025-11-05",
+    "fp_pct": 0,
+    "bath_mix": {
+     "1": 32,
+     "2": 17
+    }
+   }
+  },
+  {
+   "name": "M Central Residences (The Highland)",
+   "city": "DAL",
+   "hood": "Mockingbird / SMU",
+   "addr": "5656 N Central Expy",
+   "era": "2000s",
+   "un": 55,
+   "type": "Hotel-connected tower",
+   "conf": "v",
+   "county_2026": {
+    "acct": 55,
+    "ooc_pct": 73,
+    "sf_min": 1151,
+    "sf_med": 2147,
+    "sf_max": 4475,
+    "yr_mode": 2005,
+    "bed_mix": {
+     "1": 8,
+     "2": 34,
+     "3": 12,
+     "4": 1
+    },
+    "val_med": 789600,
+    "psf_med": 350,
+    "hs_pct": 36,
+    "t12": 8,
+    "t24": 13,
+    "latest_deed": "2026-06-05",
+    "fp_pct": 0,
+    "bath_mix": {
+     "1": 8,
+     "2": 33,
+     "3": 13,
+     "4": 1
+    }
+   }
+  },
+  {
+   "name": "Park Highlander",
+   "city": "DAL",
+   "hood": "Oak Lawn",
+   "addr": "4240 Prescott Ave",
+   "era": "2004",
+   "un": 44,
+   "type": "Mid-rise",
+   "conf": "v",
+   "county_2026": {
+    "acct": 44,
+    "ooc_pct": 98,
+    "hs_pct": 86,
+    "sf_min": 1611,
+    "sf_med": 2344,
+    "sf_max": 4477,
+    "yr_mode": 2004,
+    "val_med": 1164745,
+    "psf_med": 485
+   }
+  },
+  {
+   "name": "Buzz Condos",
+   "city": "DAL",
+   "hood": "The Cedars",
+   "addr": "1111 S Akard St",
+   "era": "2006",
+   "un": 39,
+   "type": "Mid-rise",
+   "conf": "v",
+   "county_2026": {
+    "acct": 39,
+    "ooc_pct": 72,
+    "hs_pct": 67,
+    "sf_min": 814,
+    "sf_med": 984,
+    "sf_max": 1854,
+    "yr_mode": 2006,
+    "val_med": 277670,
+    "psf_med": 295
+   }
+  }
+ ]
+}
