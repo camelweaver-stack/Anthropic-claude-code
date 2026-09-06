@@ -806,6 +806,42 @@ rentals/buy pages) — HTTP 200.
 
 ---
 
+## 2026-09-06 — URL-duplication audit and canonicalization hardening (operator-requested)
+
+- **Trigger:** Operator request following GSC coverage report (74 "alternate page" +
+  redirect/duplicate buckets): audit and fix URL duplication sitewide.
+### Audit findings
+Convention confirmed (extensionless pages, trailing-slash section indexes) and already
+enforced for links/canonicals/sitemap/redirects by the standing gates. New findings:
+(1) ~180 absolute https://westfwliving.com/*.html URLs in non-link positions — JSON-LD
+url/mainEntityOfPage on ~115 pages and every lead form's _next post-submit target —
+which the link canonicalizer never covered; (2) netlify.toml X-Robots-Tag noindex
+headers matched only .html paths, which now 301, so /thanks, /es/gracias, /tv, /poster
+served canonically with NO noindex (tv/poster also lacked meta fallback); (3) sitemap
+listed two inline-noindexed gated pages (buy/field-guide, relocate/guide). Clean:
+internal links, canonical tags, hreflang (form + reciprocity), sitemap forms, case
+variants, redirect chains/loops (none), _redirects parity (311 rules).
+### Fixes (commit d323dad, deploy 6a9d7552)
+fix_absolute_html_urls pass + gate added to apply_standing_fixes.py (folds into
+link-canonical-assert; idempotent); noindex headers added for the four extensionless
+paths (kept .html forms); meta noindex added to tv.html/poster.html; sitemap generation
++ parity gate now detect inline meta noindex (sitemap 307 -> 305); new
+scripts/audit_urls.py (static + --live URL auditor: canonical uniqueness, redirect
+parity, chain/loop, non-canonical links, absolute .html URLs, sitemap parity, hreflang
+reciprocity; live mode probes every canonical for 200 and every alternate for one
+direct 301).
+### Verification
+Ten gates GATE PASSED x2 (idempotent); validator 311 files 0 prohibited; auditor repo
+mode clean; full live probe (311 pages x 2-3 URLs) clean; user-listed duplicate groups
+each 301 once directly to canonical; Lockheed guide 200 at canonical, .html variant
+single 301; X-Robots-Tag noindex confirmed on all four canonical utility URLs; forms
+post to /thanks (200); JSON-LD urls canonical (spot-checked); live sitemap 305.
+### Next recommended action
+- Resubmit sitemap.xml in GSC (URL set changed: -2 noindexed pages) and Request
+  Indexing on the Lockheed guide's canonical URL. Coverage re-export ~09-22 (reminder set).
+
+---
+
 ## Entry template
 
 ```
