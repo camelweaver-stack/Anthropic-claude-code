@@ -246,6 +246,16 @@ for f, s in site_pages.items():
     if t in titles: fails.append(f"[title] duplicate: {f} == {titles[t]} ({t[:60]!r})")
     titles[t] = f
 
+# --- 14. duplicate meta descriptions across sitemap pages ---
+descs={}
+for f, s in site_pages.items():
+    if f not in sm_files: continue
+    m=re.search(r'name="description" content="([^"]*)"', s)
+    if not m: fails.append(f"[meta] {f}: missing description"); continue
+    d=m.group(1)
+    if d in descs: fails.append(f"[meta] duplicate description: {f} == {descs[d]}")
+    descs[d]=f
+
 fails = list(dict.fromkeys(fails))
 if fails:
     print(f"FAIL — {len(fails)} finding(s):")
