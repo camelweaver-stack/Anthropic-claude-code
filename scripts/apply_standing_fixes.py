@@ -43,6 +43,14 @@ CHECK_ONLY = "--check" in sys.argv
 # tv/poster added 2026-08-24: screen/print display artifacts, not search content.
 NOINDEX = {"thanks.html", "es/gracias.html", "tv.html", "poster.html"}
 
+# A page that declares noindex in its own meta robots is also excluded —
+# a sitemap must never list URLs the pages themselves ask crawlers to drop.
+ROBOTS_NOINDEX_RE = re.compile(r'name="robots" content="[^"]*noindex')
+
+
+def is_noindex(rel, doc):
+    return rel in NOINDEX or bool(ROBOTS_NOINDEX_RE.search(doc))
+
 # ---------------------------------------------------------------- nav specs
 # hrefs are the targets' own canonical URL forms (see url_for/canonical_path),
 # so fix_nav and fix_internal_links agree and the pass stays idempotent.
@@ -341,7 +349,7 @@ def build_sitemap(files, docs):
     today = date.today().isoformat()
     rows = []
     for rel in files:
-        if rel in NOINDEX:
+        if is_noindex(rel, docs[rel]):
             continue
         url = canonical_path(docs[rel], rel) or url_for(rel)
         rows.append((url, lastmod.get(rel, today)))
@@ -482,6 +490,46 @@ def _materially_changed(path):
 
 
 LINK_RE = re.compile(r"""(href=["'])(/[^"'>]*)(["'])""")
+
+# Absolute self-URLs in non-link positions (JSON-LD url/mainEntityOfPage,
+# form _next values, og:url) that still use a redirected .html form.
+ABS_HTML_RE = re.compile(r"""https://westfwliving\.com(/[^"'<>\s]*)\.html(?=["'<>\s])""")
+
+
+def fix_absolute_html_urls(doc, rel):
+    """Rewrite absolute westfwliving.com .html URLs to the canonical form.
+
+    LINK_RE only covers root-relative hrefs; JSON-LD blocks and hidden form
+    _next fields carry absolute URLs, and a .html form there points every
+    structured-data and post-submit signal at a 301 instead of the canonical.
+    /dir/index.html collapses to /dir/; everything else just drops .html.
+    """
+    changed = [0]
+
+    def repl(m):
+        path = m.group(1)
+        want = path[: -len("index")] if path.endswith("/index") else path
+        if not want:
+            want = "/"
+        changed[0] += 1
+        return "https://westfwliving.com" + want
+
+    new = ABS_HTML_RE.sub(repl, doc)
+    if changed[0]:
+        note(f"absurl    {rel} ({changed[0]} absolute .html URL(s) -> canonical)")
+    return new
+
+
+def gate_absolute_html_urls(docs):
+    bad = 0
+    for rel, doc in docs.items():
+        for m in ABS_HTML_RE.finditer(doc):
+            bad += 1
+            if bad <= 5:
+                fail(f"{rel}: link-canonical-assert — absolute .html self-URL "
+                     f"https://westfwliving.com{m.group(1)}.html")
+    if bad > 5:
+        fail(f"link-canonical-assert — {bad} absolute .html self-URLs in total")
 
 
 def canonical_map(files, docs):
@@ -762,6 +810,7 @@ def main():
     if not CHECK_ONLY:
         for rel in files:
             docs[rel] = fix_internal_links(docs[rel], rel, cmap)
+            docs[rel] = fix_absolute_html_urls(docs[rel], rel)
             docs[rel] = fix_hreflang(docs[rel], rel, cmap)
             if docs[rel] != originals[rel]:
                 with open(rel, "w", encoding="utf-8") as fh:
@@ -796,10 +845,12 @@ def main():
     gate_hreflang(docs)
     gate_links(docs)
     gate_internal_links_canonical(docs, cmap)
+    gate_absolute_html_urls(docs)
     gate_placeholders(docs)
 
     # sitemap-assert: parity between the indexable file set and the derived sitemap.
-    expect = {canonical_path(docs[r], r) or url_for(r) for r in files if r not in NOINDEX}
+    expect = {canonical_path(docs[r], r) or url_for(r)
+              for r in files if not is_noindex(r, docs[r])}
     if expect != set(present_urls):
         fail(f"sitemap-assert — parity mismatch: {expect ^ set(present_urls)}")
     if len(present_urls) != len(set(present_urls)):

@@ -35,8 +35,16 @@
   [headers.values]
     Cache-Control = "public, max-age=86400"
 
+# noindex utility pages. Each path needs BOTH forms: the .html form 301s to
+# the extensionless canonical (via _redirects), and it is the canonical form
+# that actually serves content — a header matching only .html never fires.
 [[headers]]
   for = "/thanks.html"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
+[[headers]]
+  for = "/thanks"
   [headers.values]
     X-Robots-Tag = "noindex"
 
@@ -46,11 +54,26 @@
     X-Robots-Tag = "noindex"
 
 [[headers]]
+  for = "/es/gracias"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
+[[headers]]
   for = "/tv.html"
   [headers.values]
     X-Robots-Tag = "noindex"
 
 [[headers]]
+  for = "/tv"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
+[[headers]]
   for = "/poster.html"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
+[[headers]]
+  for = "/poster"
   [headers.values]
     X-Robots-Tag = "noindex"
