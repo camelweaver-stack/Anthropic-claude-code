@@ -842,6 +842,40 @@ post to /thanks (200); JSON-LD urls canonical (spot-checked); live sitemap 305.
 
 ---
 
+## 2026-09-06 — SEO sprint: CTR engineering + freshness pass on GSC strike-zone pages (operator-requested)
+
+- **Trigger:** Operator sprint brief with GSC baseline (1,868 imp / 11 clicks / 0.59% CTR,
+  ~35 active days; page-one zero-click pages named).
+### Validated, not recreated
+Phases 1-2 of the brief were already shipped and re-verified rather than redone: URL
+consolidation (09-02/09-06, auditor green repo+live), sitemap/canonical/hreflang gates,
+hub architecture (relocate/, schools/, military/, compare/, neighborhoods/, data/,
+working-at-lockheed hub), lead-form protections, trust layer. New page inventory at
+reports/seo/2026-09-06-page-inventory.csv (311 pages, 0 duplicate titles, 4 orphans).
+### Changes (commit 781a93f, deploy 6a9d77ab)
+CTR/metadata: Divvy review (title/desc to verified-status question; Divvy status
+re-checked 2026-09-06 via its own site — new-application path still absent — and dated
+on-page + in the rent-to-own status table), fine-print guide (desc; new clawback
+trapdoor), Westpoint complex page (title+dated desc), private-schools (110-char title
+trimmed), WP-vs-HO compare (desc + September rental-divergence section). Content:
+Lockheed guide (gates/corridors/pets section, Sept spot-check note on bands, dual CTA
+row), data/property-tax (2026 adoption watch: Aledo ISD $1.1775 adopted 08-24;
+Weatherford $0.392246 PROPOSED, vote 09-08; parcel-verify path via parkercad.org /
+tad.org / comptroller.texas.gov; compare links). Orphans fixed: screening-signals,
+es/donde-vivir, newsletter, for-leasing-teams. docs/RENT_REPORT_PLAYBOOK.md added.
+Walsh-vs-Morningstar (pos 2.9) deliberately untouched.
+### Verification
+Ten gates GATE PASSED x2; auditor repo + live-sample green post-deploy; validator 311/0;
+no duplicate titles; FAQ JSON-LD matches rendered content on touched pages; changed
+pages 200 live with new content confirmed. 7 events logged to data/seo/events.jsonl
+(before-positions from 2026-08-28 snapshot + operator baseline); IndexNow 11 URLs (200).
+### Next recommended action
+- Operator: GSC sitemap resubmit if not done 09-06; Request Indexing on Lockheed guide,
+  Divvy review, property-tax page. Fresh GSC export ~09-20 unlocks Lockheed round 2 and
+  the 7d/28d checkpoints on today's ledger entries.
+
+---
+
 ## Entry template
 
 ```
