@@ -876,6 +876,48 @@ pages 200 live with new content confirmed. 7 events logged to data/seo/events.js
 
 ---
 
+## 2026-09-18 — Daily cycle: 2026–27 adopted tax rates land (Weatherford city + WISD)
+
+- **Trigger:** Daily cycle. Staleness scan hit: data/property-tax still said Weatherford's
+  rate vote was "scheduled September 8" (10 days past). Backlog #2 actionable.
+### Selection
+#2 (2026–27 tax rates as districts adopt) — Data & Tools/Buyers cluster; fixes a stale
+claim on a ranking page (pos 8–10) rather than creating a new page.
+### Research + verification (2026-09-18)
+City of Weatherford: adopted $0.392246 per $100 on 2026-09-08, unchanged from 2025 (the
+no-new-revenue rate) — first-party, weatherfordtx.gov/3232/Property-Tax-Rates.
+Weatherford ISD: adopted $0.9342 for 2026–27 on 2026-09-14 (M&O $0.7552 + I&S $0.1790),
+−$0.10 vs 2025's $1.0342 — board action as reported by the Weatherford Democrat
+(district's own tax pages still showed 2025–26 on verify date; labeled accordingly).
+Exemption arithmetic: $140,000 × 0.9342% = $1,307.88 (~$1,308); $200,000 × 0.9342% =
+$1,868.40 (~$1,868); Aledo–WISD school-rate gap widens to $0.2433. Pending, verified as
+unfindable/not adopted: Parker County (hearing notices posted; ambiguous vintage — number
+omitted), Willow Park (site posts FY25-26 PDFs), Aledo/Hudson Oaks cities, FWISD, WSISD.
+### Safeguard decisions
+None triggered. Mixed-year stacks avoided per the page's own rule; WISD figure source
+labeled as press-reported board action, not first-party.
+### Produced
+Adoption-watch updates on /data/property-tax (as-of 2026-09-18, three adopted units,
+honest pending list, gap-widening analysis) and /buy/homestead-exemption EN + ES mirror
+(via gen/pages_buy_homestead.py; VERIFIED 2026-09-18; new WISD dollar arithmetic).
+### Build + gate
+gen/build.py 12 pages; GATE PASSED all ten gates ×2 (idempotent, 0 rewrites on second
+pass); URL auditor green; validator 311 files / 0 prohibited. Only the three content
+pages + sitemap lastmod changed (5 files).
+### Deployment status
+Commit e65478b pushed; deploy 6aad5678 ready on westfwliving.com.
+### Production verification
+All three URLs 200; 404 correct; hreflang EN↔ES resolves both directions live; sitemap
+carries all three; $0.9342/$1,308 confirmed in served EN and ES HTML.
+### IndexNow
+3 URLs, HTTP 200.
+### Next recommended action
+- Re-check FWISD/WSISD/counties/cities adoptions next cycle; roll the full 2026–27 stacks
+  into wfl-data.js tax table once a majority land. GSC coverage re-export reminder fires
+  09-22. October month-roll due 10-01 (playbook: docs/RENT_REPORT_PLAYBOOK.md).
+
+---
+
 ## Entry template
 
 ```
