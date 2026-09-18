@@ -266,7 +266,7 @@ routinely rival mainland car payments and lenders count every dollar of them.</p
 fee-simple (you own the land) and leasehold (you own the improvements and rent the land under
 them until a lease expiration). Leasehold listings can price hundreds of thousands below
 comparable fee-simple units — that discount is the market pricing the lease term, the lease rent,
-and the reversion risk. VA financing on leasehold is possible only within strict term rules, and
+and the reversion risk. VA financing on leasehold is possible only within <a href="/guides/leasehold-vs-fee-simple.html">strict term rules</a>, and
 resale gets harder every year the lease runs down. If a listing looks too cheap for its pocket,
 tenure is the first thing to check.</div>
 <h2>The honest close</h2>
@@ -1064,7 +1064,7 @@ home as a rental if orders moved you? That answer drives everything below.</li>
 <li><strong>Get a Loan Estimate, not a guess.</strong> Ask a VA-experienced lender for the funding
 fee (or confirm your exemption), the closing costs, and the real monthly payment <em>including HOA
 and insurance</em> before you compare it to rent.</li>
-<li><strong>Check tenure and condo approval early.</strong> Confirm fee-simple vs. leasehold and
+<li><strong>Check tenure and condo approval early.</strong> Confirm <a href="/guides/leasehold-vs-fee-simple.html">fee-simple vs. leasehold</a> and
 whether the project is on the VA-approved condo list — see the <a href="/buy/">buyer brief</a> —
 before you fall for a price.</li>
 <li><strong>Sanity-check the rent side.</strong> Compare against real asking rents for your pocket
@@ -1238,6 +1238,164 @@ that's the only measurement that binds.</p>
                 "during TLA before you sign. No invented commute times — a method, not a promise.",
                 body, "/neighborhoods/", jsonld=ld)
 
+def leasehold_fee_simple():
+    qas = [
+      ("What is the difference between fee simple and leasehold in Hawaii?",
+       "Fee simple means you own the home and the land under it, indefinitely. Leasehold means "
+       "you own the improvements — the house or the condo unit — but the land belongs to someone "
+       "else (the lessor), and you rent it under a long ground lease with a fixed expiration date. "
+       "You pay lease rent on top of your mortgage, HOA, and taxes; the lease sets when that rent "
+       "gets renegotiated and what happens at expiration. On the mainland the distinction barely "
+       "comes up. On Oahu it appears in ordinary condo searches, priced far below comparable "
+       "fee-simple units — and the discount is the market pricing the lease, not a bargain."),
+      ("Can I use a VA loan on a leasehold property in Hawaii?",
+       "Sometimes — the term rules decide. VA regulation (38 CFR § 36.4354) requires a leasehold "
+       "to run, or be renewable at your option, for at least 14 years past the maturity of the "
+       "loan, and to be assignable or transferable. On a 30-year VA loan that means roughly 44 "
+       "years of lease remaining at closing, and the same arithmetic confronts the next buyer's "
+       "lender when you PCS out and sell. Conventional financing runs a similar clock: Fannie Mae "
+       "requires the unexpired term to exceed the loan's maturity by at least five years. A lease "
+       "can have decades left and still fail the financing math."),
+      ("Why are leasehold condos in Hawaii so much cheaper?",
+       "Because you are buying less. The price gap versus a comparable fee-simple unit reflects "
+       "the remaining lease term (a wasting asset — every year the term shortens), the lease rent "
+       "and the step-up risk at the next renegotiation, and the surrender terms at expiration, "
+       "under which the improvements can revert to the landowner. The unit can lose value on the "
+       "calendar even while the island market rises, and the pool of buyers who can finance it "
+       "shrinks as the term runs down. Cheap is real; free is not."),
+    ]
+    body = f'''
+<div class="hero"><div class="wrap">
+<p class="eyebrow">Buying · read tenure before price</p>
+<h1>Leasehold vs. fee simple on Oahu: the two words that change everything</h1>
+<p class="lede">Every Oahu listing sells one of two very different things. Fee simple sells you the
+home and the land. Leasehold sells you the building and a countdown clock. The listing price won't
+warn you — a leasehold condo can sit in the same search results at half the price of the identical
+fee-simple unit next door — and for a military buyer on PCS timelines, the difference decides
+whether the VA loan even works.</p>
+</div></div>
+<div class="wrap">
+<h2>The direct answer</h2>
+<p style="max-width:46rem"><strong>Fee simple:</strong> you own the land, indefinitely — the default
+almost everywhere on the mainland, and what most buyers assume they're getting.
+<strong>Leasehold:</strong> you own the improvements and rent the land under them from a lessor,
+under a ground lease with a fixed expiration; you pay <em>lease rent</em> on top of everything
+else, the rent can step up at scheduled renegotiations, and at expiration the lease's surrender
+clause controls — in the classic form, the improvements revert to the landowner. Confirm which one
+a listing is before you react to its price. On Oahu the word to search the listing for is
+<strong>"leasehold"</strong> or tenure "LH" — and if the price looks impossibly good for the
+pocket, that's usually the answer.</p>
+<h2>Why Hawaii still has leasehold at all</h2>
+<p style="max-width:46rem">It's a land-history artifact. Well into the twentieth century, private
+land ownership in Hawaii was extraordinarily concentrated — large private estates held much of the
+developable land and ground-leased homesites rather than selling them. The Hawaii Legislature's
+<strong>Land Reform Act of 1967</strong> (HRS chapter 516) created a condemnation mechanism letting
+owner-occupants of single-family homes in larger leasehold tracts compel conversion — buy the land
+under their homes — and the U.S. Supreme Court upheld it in <em>Hawaii Housing Authority v.
+Midkiff</em>, 467 U.S. 229 (1984). That act, plus decades of voluntary sales, converted most
+single-family leaseholds to fee simple.</p>
+<p style="max-width:46rem">Condominiums were a different story. Honolulu enacted its own
+condo lease-to-fee ordinance (Chapter 38, Revised Ordinances of Honolulu) in 1991, but the City
+Council repealed it effective <strong>February 9, 2005</strong> (Ordinance 05-001). The practical
+consequence for a buyer today: <strong>a leasehold condo has no general legal path to force a
+conversion</strong>. You get fee simple only if the lessor chooses to sell the leased fee — at the
+lessor's price — so underwrite the lease you're buying, not the conversion you're hoping for.
+What remains of residential leasehold on Oahu today is concentrated in condos, townhomes, and
+co-ops, which is exactly the segment where military buyers shop at island prices.</p>
+<h2>The lender math that decides it for you</h2>
+<p style="max-width:46rem">Financing rules turn the lease term into a hard gate, and they are the
+single most useful screen a military buyer has:</p>
+<ul style="max-width:46rem">
+<li><strong>VA:</strong> the leasehold must run — or be renewable at <em>your</em> option — for at
+least <strong>14 years past the maturity of the loan</strong>, and must be assignable
+(<a href="https://www.law.cornell.edu/cfr/text/38/36.4354">38 CFR § 36.4354</a>). A 30-year VA
+loan therefore wants roughly <strong>44 years of lease remaining</strong> at closing.</li>
+<li><strong>Conventional (Fannie Mae):</strong> the unexpired term must exceed the loan's maturity
+by at least <strong>five years</strong>
+(<a href="https://selling-guide.fanniemae.com/sel/b2-3-03/special-property-eligibility-and-underwriting-considerations-leasehold-estates">Selling
+Guide B2-3-03</a>).</li>
+</ul>
+<div class="warn"><strong>The clock runs against your exit, not just your entry.</strong> You
+might clear the 44-year screen today — but you buy on this tour and sell on a future one, and the
+next buyer's lender runs the same arithmetic against a shorter lease. The window in which a
+leasehold unit is <em>financeable</em> closes decades before the lease actually ends, and as it
+narrows, the market thins toward cash buyers. On a PCS timeline you don't control your sale date;
+combining a forced sale date with a wasting lease term is how the "bargain" becomes the loss. If
+you're weighing this trade at all, read the <a href="/guides/rent-vs-buy.html">rent-vs-buy
+framework</a> first — leasehold sharpens every one of its three questions.</div>
+<h2>The four things to pull from the lease before you offer</h2>
+<ol style="max-width:46rem">
+<li><strong>The expiration date.</strong> Not "years left" from a listing blurb — the date, from
+the lease documents, and the arithmetic against your loan term and the next buyer's.</li>
+<li><strong>The lease rent, and the next renegotiation date.</strong> Many Hawaii ground leases fix
+the rent for a period, then reset it at scheduled renegotiations. Get the current figure, the reset
+date, and how the reset is calculated — a reset tied to the land's then-market value can move
+dramatically.</li>
+<li><strong>Whether the leased fee is available.</strong> Some lessors sell the fee interest to
+unit owners; a listing may say "fee available." That converts the analysis — price the package
+(unit + fee purchase) against fee-simple comparables.</li>
+<li><strong>The surrender clause.</strong> What happens at expiration — reversion of improvements,
+and any obligations attached. This is the paragraph the price discount has been quietly pricing
+all along.</li>
+</ol>
+<h2>Who this applies to</h2>
+<p style="max-width:46rem"><strong>Every buyer</strong> should confirm tenure on every listing —
+it's one word in the MLS data and thirty seconds of diligence. <strong>Junior and single buyers</strong>
+shopping the condo band where leasehold clusters should be the most alert: that's where the
+too-good prices live. <strong>Longer-horizon buyers</strong> — retiring here, or planning decades of
+hold — can sometimes use leasehold deliberately, buying housing (not land appreciation) at a deep
+discount with eyes open. That's a strategy, not an accident, and it needs the lease documents and
+professional advice you choose, not a hunch at an open house.</p>
+<h2>Straight answers</h2>
+<h3 style="font-size:1.02rem">What is the difference between fee simple and leasehold in Hawaii?</h3>
+<p style="max-width:46rem">{qas[0][1]}</p>
+<h3 style="font-size:1.02rem">Can I use a VA loan on a leasehold property in Hawaii?</h3>
+<p style="max-width:46rem">{qas[1][1]}</p>
+<h3 style="font-size:1.02rem">Why are leasehold condos in Hawaii so much cheaper?</h3>
+<p style="max-width:46rem">{qas[2][1]}</p>
+<h2>Next steps</h2>
+<ol style="max-width:46rem">
+<li><strong>Check tenure first on every listing</strong> — before price, before photos. Fee simple
+(FS) vs. leasehold (LH) appears in the listing data; if it isn't stated, ask.</li>
+<li><strong>On any leasehold, pull the four numbers above</strong> from the actual lease documents
+during due diligence — not from the listing remarks.</li>
+<li><strong>Ask a VA-experienced lender to run the term math early</strong> — yours and a
+hypothetical resale buyer's five years from now — before you write an offer.</li>
+<li><strong>Zoom out to the real decision.</strong> If leasehold is the only way the numbers reach,
+that is the market telling you something — compare honestly against renting the same BAH via the
+<a href="/guides/rent-vs-buy.html">rent-vs-buy framework</a> and the
+<a href="/bah-report/">BAH Reality Report</a>, and read the <a href="/buy/">VA buyer brief</a> for
+the condo-approval gate that runs in parallel with this one.</li>
+</ol>
+<p style="max-width:46rem">Compiled from 38 CFR § 36.4354, Fannie Mae Selling Guide B2-3-03,
+HRS chapter 516 and <em>Hawaii Housing Authority v. Midkiff</em>, 467 U.S. 229 (1984), and City
+&amp; County of Honolulu Ordinance 05-001 (repealing ROH Chapter 38), verified
+<strong>September 18, 2026</strong>. Lease terms, lease rents, and lessor policies are
+property-specific and change — nothing here is a valuation, an offer of financing, or legal or
+tax advice. The lease documents and professionals you choose decide your case.</p>
+{lead_form("LEASEHOLD", "pcs-buyer",
+  heading="Sorting fee simple from leasehold this tour?",
+  blurb="Join the list for the buyer-side refresh: entitlement math updates, condo-approval notes, "
+        "and market medians as they move. First access when full service opens.")}
+</div>'''
+    p = "/guides/leasehold-vs-fee-simple.html"
+    ld = {"@context": "https://schema.org", "@graph": [
+        {"@type": "Article",
+         "headline": "Leasehold vs. fee simple on Oahu: the two words that change everything",
+         "description": "What leasehold means in Hawaii, why it still exists, the VA and Fannie Mae "
+                        "lease-term rules that decide financeability, and the four lease numbers to "
+                        "pull before offering on a leasehold condo.",
+         "datePublished": "2026-09-18", "dateModified": "2026-09-18",
+         "author": {"@type": "Organization", "name": "PCS Oahu"},
+         "publisher": {"@type": "Organization", "name": "PCS Oahu"},
+         "mainEntityOfPage": DOMAIN + p},
+        faq_ld(qas)]}
+    return p, page(p, "Leasehold vs Fee Simple in Hawaii: What Military Buyers Must Check | PCS Oahu",
+                "Fee simple sells you the land; leasehold sells you a countdown clock. The VA 14-year "
+                "rule, the Fannie Mae 5-year rule, Hawaii's land-reform history, and the four lease "
+                "numbers to pull before you offer on an Oahu leasehold condo.",
+                body, "/buy/", jsonld=ld)
+
 def guides_hub():
     body = f'''
 <div class="hero"><div class="wrap">
@@ -1296,6 +1454,9 @@ Hawaii PCS that paperwork alone doesn't cover.</p>
   <div class="card"><span class="tag">Buying</span>
     <h3><a href="/guides/rent-vs-buy.html">Rent or buy with a VA loan?</a></h3>
     <p>The honest framework: the PCS break-even horizon, what BAH reaches at island prices, and the forced-exit risk.</p></div>
+  <div class="card"><span class="tag">Buying</span>
+    <h3><a href="/guides/leasehold-vs-fee-simple.html">Leasehold vs. fee simple</a></h3>
+    <p>The countdown clock hiding in ordinary condo searches: the VA 14-year rule, renegotiation risk, and the four lease numbers to pull before offering.</p></div>
   <div class="card"><span class="tag">Departing</span>
     <h3><a href="/sell/">PCSing out: sell or rent?</a></h3>
     <p>HARPTA, the accidental-landlord napkin, and VA seller notes.</p></div>
@@ -1564,7 +1725,8 @@ def build():
         "/guides/household-goods.html": household_goods(),
     }
     for fn in (spouse, school_transition, pets, harpta, dodea_schools, onbase_waitlist,
-               vehicle_registration, rent_vs_buy, commute_first):
+               vehicle_registration, rent_vs_buy, commute_first,
+               leasehold_fee_simple):
         p, h = fn()
         out[p] = h
     return out
