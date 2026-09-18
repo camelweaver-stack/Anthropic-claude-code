@@ -20,17 +20,23 @@ These are tax-year 2025 adopted rates — the rates on current bills. Taxing
 units adopt tax-year 2026 rates around September 2026; refresh then (see the
 calendar anchor).
 
-  2026 adoption watch (verified 2026-09-02):
+  2026 adoption watch (verified 2026-09-18):
     Aledo ISD        $1.1775  first-party: district news 2026-08-24, adopted
                               2026-27, eighth consecutive reduction (-$0.0167)
                               -> $140K x 1.1775% = $1,648.50 (~$1,649);
                                  $200K x 1.1775% = $2,355
-    Weatherford ISD / Fort Worth ISD / White Settlement ISD: not yet verified
-    as adopted for 2026 on 2026-09-02 — table stays on 2025 until each lands.
+    Weatherford ISD  $0.9342  adopted 2026-09-14 (M&O $0.7552 + I&S $0.1790),
+                              -$0.10 vs 2025's $1.0342; board action reported
+                              by the Weatherford Democrat (district tax pages
+                              not yet updated on verify date)
+                              -> $140K x 0.9342% = $1,307.88 (~$1,308);
+                                 $200K x 0.9342% = $1,868.40 (~$1,868)
+    Fort Worth ISD / White Settlement ISD: not yet verified as adopted for
+    2026 on 2026-09-18 — table stays on 2025 until each lands.
 """
 from common import page, lead_form, article_ld, faq_ld, _url
 
-VERIFIED = "2026-09-02"
+VERIFIED = "2026-09-18"
 
 EN_PATH = "/buy/homestead-exemption.html"
 ES_PATH = "/es/comprar/exencion-homestead.html"
@@ -39,6 +45,7 @@ SRC_COMPTROLLER = "https://comptroller.texas.gov/taxes/property-tax/exemptions/"
 SRC_ALEDO = "https://www.aledoisd.org/aledo-isd-news/~board/aledo-isd-news/post/aledo-isd-trustees-adopt-2025-2026-budget"
 SRC_ALEDO_2026 = "https://www.aledoisd.org/aledo-isd-news/~board/aledo-isd-news/post/aledo-isd-trustees-adopt-2026-2027-budget"
 SRC_WISD = "https://www.weatherfordisd.com/apps/news/article/1958550"
+SRC_WISD_2026 = "https://www.weatherforddemocrat.com/news/weatherford-school-trustees-approve-93-42-cent-tax-rate/article_b0513451-324b-40c6-b41f-638afb9475d9.html"
 SRC_FWISD = "https://www.fwisd.org/departments/budget/tax-rates/adopted-tax-rates"
 SRC_TNT = "https://tarranttaxinfo.com"
 
@@ -151,7 +158,7 @@ def build_en():
   <h2>One honest timing note</h2>
   <p>The rates above are the <strong>adopted 2025 rates</strong> &mdash; what current bills are computed on. Texas taxing units adopt their tax-year 2026 rates around September 2026, and several corridor districts have been cutting rates for years. When the 2026 rates land, the per-district arithmetic here shifts slightly; this page is refreshed each cycle.</p>
   <h3>2026 adoption watch</h3>
-  <p><strong>Aledo ISD is in:</strong> on August 24, 2026 the board <a href="{SRC_ALEDO_2026}" rel="nofollow">adopted a 2026&ndash;27 rate of $1.1775</a> per $100 &mdash; down $0.0167 from $1.1942 and the district's eighth consecutive reduction. Once 2026 bills issue, the $140,000 exemption is worth about <strong>$1,649</strong> a year in Aledo ISD (65+/disabled at $200,000: about <strong>$2,355</strong>) &mdash; roughly $23 less than on the 2025 rate, because a lower rate makes every exemption dollar worth slightly less. Weatherford ISD, Fort Worth ISD and White Settlement ISD had not published 2026 adoptions as of the verified date above; the table stays on 2025 rates until each one lands.</p>
+  <p><strong>Aledo ISD is in:</strong> on August 24, 2026 the board <a href="{SRC_ALEDO_2026}" rel="nofollow">adopted a 2026&ndash;27 rate of $1.1775</a> per $100 &mdash; down $0.0167 from $1.1942 and the district's eighth consecutive reduction. Once 2026 bills issue, the $140,000 exemption is worth about <strong>$1,649</strong> a year in Aledo ISD (65+/disabled at $200,000: about <strong>$2,355</strong>) &mdash; roughly $23 less than on the 2025 rate, because a lower rate makes every exemption dollar worth slightly less. <strong>Weatherford ISD followed on September 14:</strong> trustees <a href="{SRC_WISD_2026}" rel="nofollow">adopted a 2026&ndash;27 rate of $0.9342</a> per $100 (M&amp;O $0.7552 + I&amp;S $0.1790) &mdash; a full $0.10 below 2025's $1.0342, with the cut on the debt side (board action as reported by the <em>Weatherford Democrat</em>; the district's own tax pages still showed 2025&ndash;26 on our verify date). On the new rate, the $140,000 exemption is worth about <strong>$1,308</strong> a year in Weatherford ISD (65+/disabled at $200,000: about <strong>$1,868</strong>) &mdash; and the Aledo-vs-Weatherford school-tax gap widens to $0.2433 per $100. Fort Worth ISD and White Settlement ISD had not published 2026 adoptions as of the verified date above; the table stays on 2025 rates until each one lands.</p>
 </section>
 
 <section>
@@ -247,7 +254,7 @@ def build_es():
   <h2>Una nota honesta de calendario</h2>
   <p>Las tasas de arriba son las <strong>adoptadas para 2025</strong>. Las unidades fiscales de Texas adoptan sus tasas de 2026 alrededor de septiembre de 2026. Cuando lleguen las tasas de 2026, la aritm&eacute;tica cambia un poco; esta p&aacute;gina se actualiza cada ciclo.</p>
   <h3>Seguimiento de las tasas 2026</h3>
-  <p><strong>Aledo ISD ya adopt&oacute;:</strong> el 24 de agosto de 2026 la junta <a href="{SRC_ALEDO_2026}" rel="nofollow">adopt&oacute; una tasa 2026&ndash;27 de $1.1775</a> por cada $100 &mdash; $0.0167 menos que $1.1942, y la octava reducci&oacute;n consecutiva del distrito. Cuando salgan los recibos de 2026, la exenci&oacute;n de $140,000 valdr&aacute; unos <strong>$1,649</strong> al a&ntilde;o en Aledo ISD (65+/discapacidad con $200,000: unos <strong>$2,355</strong>) &mdash; unos $23 menos que con la tasa 2025, porque una tasa m&aacute;s baja hace que cada d&oacute;lar exento valga un poco menos. Weatherford ISD, Fort Worth ISD y White Settlement ISD no hab&iacute;an publicado adopciones 2026 a la fecha verificada arriba; la tabla se queda en tasas 2025 hasta que cada una se adopte.</p>
+  <p><strong>Aledo ISD ya adopt&oacute;:</strong> el 24 de agosto de 2026 la junta <a href="{SRC_ALEDO_2026}" rel="nofollow">adopt&oacute; una tasa 2026&ndash;27 de $1.1775</a> por cada $100 &mdash; $0.0167 menos que $1.1942, y la octava reducci&oacute;n consecutiva del distrito. Cuando salgan los recibos de 2026, la exenci&oacute;n de $140,000 valdr&aacute; unos <strong>$1,649</strong> al a&ntilde;o en Aledo ISD (65+/discapacidad con $200,000: unos <strong>$2,355</strong>) &mdash; unos $23 menos que con la tasa 2025, porque una tasa m&aacute;s baja hace que cada d&oacute;lar exento valga un poco menos. <strong>Weatherford ISD sigui&oacute; el 14 de septiembre:</strong> la junta <a href="{SRC_WISD_2026}" rel="nofollow">adopt&oacute; una tasa 2026&ndash;27 de $0.9342</a> por cada $100 (M&amp;O $0.7552 + I&amp;S $0.1790) &mdash; $0.10 completos por debajo del $1.0342 de 2025, con el recorte en el lado de la deuda (acci&oacute;n de la junta reportada por el <em>Weatherford Democrat</em>; las p&aacute;ginas fiscales del distrito a&uacute;n mostraban 2025&ndash;26 en nuestra fecha de verificaci&oacute;n). Con la nueva tasa, la exenci&oacute;n de $140,000 valdr&aacute; unos <strong>$1,308</strong> al a&ntilde;o en Weatherford ISD (65+/discapacidad con $200,000: unos <strong>$1,868</strong>) &mdash; y la brecha escolar Aledo-vs-Weatherford se ampl&iacute;a a $0.2433 por cada $100. Fort Worth ISD y White Settlement ISD no hab&iacute;an publicado adopciones 2026 a la fecha verificada arriba; la tabla se queda en tasas 2025 hasta que cada una se adopte.</p>
 </section>
 
 <section>
