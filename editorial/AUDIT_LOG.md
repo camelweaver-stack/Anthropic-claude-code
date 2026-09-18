@@ -4,6 +4,60 @@ Append-only. Newest entry on top. One record per daily run. Template at the bott
 
 ---
 
+## 2026-09-18 — Leasehold vs. fee simple on Oahu (backlog #3, shipped same-day)
+
+- **Date/time:** 2026-09-18 (UTC session)
+- **Selected topic:** Leasehold vs. fee simple on Oahu — land-tenure history, the VA/Fannie
+  lease-term financing rules, and the four lease numbers to pull before offering.
+- **Reason for selection:** Highest-utility unshipped backlog item (#3, Buying cluster, H
+  transaction relevance). Staleness scan clean (link integrity green, no duplicate titles, all
+  2024/2025 matches are photo-credit filenames; rent-band refresh not due until 2026-10-01).
+  Buying cluster last received a new page 2026-08-06 — cluster balance holds. Completes the
+  hub-and-spoke: /buy/'s leasehold warning and rent-vs-buy's tenure step now link to a full guide.
+- **Audience:** Inbound military buyers, especially junior/single buyers shopping the condo band
+  where leasehold inventory clusters; buyer-leaning CTA.
+- **Content type:** Evergreen decision/diligence guide.
+- **URL:** https://pcsoahu.com/guides/leasehold-vs-fee-simple.html
+- **Sources used (verified 2026-09-18):**
+  - 38 CFR § 36.4354 (Cornell LII) — VA leasehold: term ≥14 years past loan maturity, or renewable
+    at lessee's option; assignable/transferable requirement.
+  - Fannie Mae Selling Guide B2-3-03 — unexpired lease term must exceed loan maturity by ≥5 years.
+  - Hawaii Land Reform Act of 1967 (HRS ch. 516) + Hawaii Housing Authority v. Midkiff, 467 U.S.
+    229 (1984) — single-family lease-to-fee condemnation mechanism, upheld; 1967 Oahu land
+    concentration figures from the Hawaii State Auditor's 1992 study of the Act.
+  - Young v. City & County of Honolulu (9th Cir. 2011) record — ROH Chapter 38 condo lease-to-fee
+    ordinance (enacted 1991) repealed by Ordinance 05-001, effective 2005-02-09.
+- **Facts requiring future revalidation:** None time-bound. Deliberately NOT asserted: any count
+  or share of remaining leasehold inventory, any lease-rent dollar figures, any specific project
+  or lessor, and any claim that conversion offers exist for a given building (reader directed to
+  the lease documents). Regulatory cites (38 CFR / B2-3-03) stable but recheck if either program
+  revises leasehold rules.
+- **Internal links added:** New page → /guides/rent-vs-buy.html (×2), /buy/, /bah-report/.
+  Reciprocal links added FROM: /buy/ (leasehold warning "strict term rules" now links the guide),
+  /guides/rent-vs-buy.html (next-steps tenure check), guides hub (new Buying card after
+  rent-vs-buy card).
+- **CTA used:** "Sorting fee simple from leasehold this tour?" → lead_form("LEASEHOLD",
+  "pcs-buyer") — hashed endpoint, honeypot, consent, attribution fields (gate-enforced).
+- **Files changed:** `gen/pages_content.py` (new `leasehold_fee_simple()` + build() wiring +
+  guides-hub card + two reciprocal-link edits) on BOTH branches via the proven splice pattern
+  (assert-count-1 anchors, ast.parse before build). Regenerated `site/` on both.
+- **Build status:** dd373n: `GATE PASSED — 66 pages, 64 sitemap URLs, all assertions green.`
+  1289q3: `GATE PASSED — 56 pages, 54 sitemap URLs, all assertions green.`
+- **Deployment status:** DEPLOYED via git push to `claude/pcs-oahu-deploy-dd373n` (commit
+  `e33edbc`) → Netlify CD auto-deploy. Sitemap verified additive-only pre-push (live 63 → new 64;
+  removed: none; added: the one new URL). IndexNow POST HTTP 200 (new page + /buy/ +
+  /guides/rent-vs-buy.html + /guides/).
+- **Production verification:** PASS — new URL 200 with self-canonical + correct title; nonexistent
+  path 404; URL present in live sitemap.xml (64 locs); reciprocal links live on /buy/,
+  /guides/rent-vs-buy.html, /guides/; lead form on new page uses hashed endpoint (cleartext count
+  site-wide still 0 on sampled page).
+- **Next recommended related topics:** Backlog #9 (VA condo approval on Oahu — natural companion,
+  same cluster, but wait a cycle for balance), #7 (spouse licensure MSAAA/compact map), #8 (TLA
+  deepen). Calendar anchor: 2026-10-01 rent-band + medians quarterly refresh (needs verifiable
+  listing data — flag, don't fabricate).
+
+---
+
 ## 2026-09-06 — Indexing-recovery & conversion sprint (operator-directed; production form regression fixed)
 
 - **Trigger:** Operator-directed sprint: GSC shows homepage-only impressions (133 impr. / 4 clicks
