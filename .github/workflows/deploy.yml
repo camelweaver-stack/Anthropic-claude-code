@@ -1,0 +1,52 @@
+name: Deploy westfwliving.com
+
+# Every push to the publishing branch deploys the repo root to Netlify —
+# the same "repo == production" contract the manual connector deploys kept.
+# The content validator runs first here AND again inside Netlify's build
+# (netlify.toml), so prohibited content can never ship from either path.
+
+on:
+  push:
+    branches: [claude/wfl-daily-publishing-i7lmp9]
+  workflow_dispatch: {}
+
+concurrency:
+  group: deploy-westfwliving
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      NETLIFY_SITE_ID: a975e513-e8b1-46c2-9d31-1f769e103f2c
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Guard — deploy token present
+        run: |
+          if [ -z "${{ secrets.NETLIFY_AUTH_TOKEN }}" ]; then
+            echo "::error::NETLIFY_AUTH_TOKEN secret is not set. Create a Netlify personal access token (app.netlify.com -> User settings -> Applications -> New access token) and add it in GitHub: repo Settings -> Secrets and variables -> Actions -> New repository secret, name NETLIFY_AUTH_TOKEN."
+            exit 1
+          fi
+
+      - name: Validate production content
+        run: node scripts/validate-production.js
+
+      - name: Deploy to Netlify (production)
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        run: npx -y netlify-cli@17 deploy --prod --dir . --site "$NETLIFY_SITE_ID" --message "GH Actions ${GITHUB_SHA::9}"
+
+      - name: Smoke check
+        run: |
+          sleep 15
+          code=$(curl -s -o /dev/null -w "%{http_code}" https://westfwliving.com/)
+          echo "homepage: $code"
+          [ "$code" = "200" ]
+          smap=$(curl -s -o /dev/null -w "%{http_code}" https://westfwliving.com/sitemap.xml)
+          echo "sitemap: $smap"
+          [ "$smap" = "200" ]

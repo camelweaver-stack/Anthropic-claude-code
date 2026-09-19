@@ -22,9 +22,16 @@ The master driver lives in Google Drive: *Daily Publishing Driver — PCS Oahu +
 | IndexNow keyLocation | https://westfwliving.com/f61db218770282944b56755e36b90509.txt |
 | Legacy key (also served) | `ad9df71e17eb3f5d04105f21e8ec56e4` |
 
-Deploy: Netlify deploy-site connector for the siteId above → run the returned
-`npx @netlify/mcp …` command from the repo root with `--no-wait`, then poll until
-`state=ready`.
+Deploy (primary, since 2026-09-19): **push to `claude/wfl-daily-publishing-i7lmp9`
+auto-deploys** via GitHub Actions (`.github/workflows/deploy.yml` — validates content,
+then `netlify-cli deploy --prod` with the repo `NETLIFY_AUTH_TOKEN` secret, then smoke-
+checks the live site). After pushing, confirm the "Deploy westfwliving.com" workflow run
+succeeded (GitHub MCP actions tools, or poll the live site for the new content), then run
+the live-verification step as usual. Fallback (interactive sessions with the Netlify
+connector attached): deploy-site connector for the siteId above → run the returned
+`npx @netlify/mcp …` command from the repo root, wait for "Deploy is ready". If the
+workflow fails on the missing-token guard, the `NETLIFY_AUTH_TOKEN` repo secret has not
+been set — record the blocker; the push is safe and production is simply unchanged.
 
 ## Publish model — read this before editing anything
 
@@ -126,7 +133,7 @@ link fails the gate, so a new regression can't hide behind them.
    (not breadcrumb-anchored). Verify with a **rendered screenshot**, not grep.
 7. **Validate** — re-read every number and date against its source.
 8. **Build + gate** — the two commands above. `GATE PASSED` required.
-9. **Deploy** — Netlify connector, siteId above, `--no-wait`, poll to `state=ready`.
+9. **Deploy** — push triggers the GitHub Actions deploy (see Deploy section above); confirm the workflow run succeeded. Connector deploy is the fallback.
 10. **Verify live** — new URL 200 · a nonexistent path 404 · URL present in
     https://westfwliving.com/sitemap.xml · canonical is the apex URL · for ES mirrors,
     hreflang resolves both directions.
