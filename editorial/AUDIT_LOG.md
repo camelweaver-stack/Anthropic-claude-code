@@ -918,6 +918,44 @@ carries all three; $0.9342/$1,308 confirmed in served EN and ES HTML.
 
 ---
 
+## 2026-09-22 — Daily cycle (run from primary session): Parker County proposed rate + automation incident record
+
+- **Trigger:** Daily cycle, run in the primary session after the scheduled fresh-session
+  runs of 09-20/21/22 all completed work but failed to push (see incident below).
+### Selection
+Adoption-watch continuation (#2): re-check FWISD, WSISD, Parker/Tarrant counties.
+### Research + verification (2026-09-22)
+Parker County: FY27 rate PROPOSED at the no-new-revenue level, $0.284719 combined; public
+hearing and expected adoption 2026-09-22 (per the commissioners court's posted rate-setting
+actions) — labeled proposed on-page, confirm adoption next cycle. FWISD: no 2026–27
+adoption findable (district Adopted Tax Rates page and press show 2025–26 $1.0291 as
+latest) — stays pending. WSISD/Tarrant: pending.
+### Produced
+data/property-tax adoption-watch: as-of date → 09-22; Parker County upgraded from vague
+"hearings in process" to the labeled proposed NNR figure with date; pending list trimmed.
+### Build + gate
+Ten gates GATE PASSED; URL auditor green; validator 311/0.
+### Deployment status
+Commit + connector deploy from this session (SHA/deploy ID in the commit that follows).
+### AUTOMATION INCIDENT (recorded for operations)
+The scheduled fresh-session Routine ran 09-20, 09-21, and twice on 09-22 (~$3/run). Every
+run completed its cycle but ended with staged, unpushed work that was lost on container
+reclaim. Mitigations tried: project .claude/settings.json permission allowlist (commit
+4db72ec) — did not resolve; prompt hardening with commit-first ordering and a
+mcp__github__push_files API fallback — did not resolve. Root cause in trigger-spawned
+fresh sessions not yet identified (their transcripts are not inspectable from here).
+Resolution: fresh-session Routine DISABLED (trig_01DbXbb242wkuSy9gtrTN7mL); replaced by a
+Routine that fires the cycle into the primary session (trig_012Be7REkereqSKQbFUzi9ir,
+daily 12:01 UTC), where push/deploy/verify are proven. GitHub Actions deploy workflow
+remains in place; NETLIFY_AUTH_TOKEN secret still not configured (guard fails), so
+deploys continue via the Netlify connector from the primary session.
+### Next recommended action
+- Confirm Parker County adoption (vote was today) next cycle; FWISD/WSISD re-check.
+- Operator: NETLIFY_AUTH_TOKEN secret; fresh GSC coverage export (requested 09-22).
+- October month-roll due 10-01.
+
+---
+
 ## Entry template
 
 ```
