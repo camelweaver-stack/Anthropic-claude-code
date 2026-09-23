@@ -956,6 +956,41 @@ deploys continue via the Netlify connector from the primary session.
 
 ---
 
+## 2026-09-23 — Daily cycle (first scheduled main-session run): City of Willow Park adopts $0.429041
+
+- **Trigger:** Scheduled Routine (main-session binding), first firing.
+### Staleness scan
+Property-tax watch said Parker County adoption "expected September 22" — checked; no
+adoption confirmation findable yet (only the proposed ceiling $0.284719, components M&O
+$0.185698 + I&S $0.049859 + R&B $0.049162, hearing held 09-22). Wording already hedged
+correctly; left as-is.
+### Selection + research (2026-09-23)
+Adoption watch #2 continuation. VERIFIED: City of Willow Park adopted $0.429041 per $100
+for FY 2026–27 — the no-new-revenue rate, down from $0.4325 — per Weatherford Democrat
+coverage of the council's budget/rate adoption, matching the council's published proposed
+rate 0.429041. NOT verifiable, left pending: WSISD (2026 tax-rate ordinance posted on the
+district's transparency page but the figure is only in PDFs; an adoption-notice snippet
+exists but is ambiguous — no number published), FWISD, Tarrant County, Aledo/Hudson Oaks
+cities.
+### Produced
+data/property-tax adoption watch: Willow Park city added to adopted list (4 units now:
+Aledo ISD, City of Weatherford, WISD, City of Willow Park); note that the flagship Willow
+Park–Aledo ISD stack has 2 of 3 slices adopted, both down (~2¢ stack shrink pending the
+county slice); WSISD pending note clarified; as-of 09-23. Full-stack roll into
+wfl-data.js still deferred (county slices pending — no mixed-year stacks).
+### Build + gate
+Ten gates GATE PASSED ×2 (idempotent); URL auditor green; validator 311/0.
+### Deployment status + verification + IndexNow
+Commit/deploy from this session; live checks and IndexNow recorded in the shipping
+commit sequence.
+### Next recommended action
+- Confirm Parker County adoption (minutes/order should post within days) — that
+  completes the Willow Park and Weatherford stacks and triggers the wfl-data.js roll.
+- WSISD/FWISD re-check; October month-roll due 10-01; operator still owes GSC coverage
+  export + NETLIFY_AUTH_TOKEN secret.
+
+---
+
 ## Entry template
 
 ```
