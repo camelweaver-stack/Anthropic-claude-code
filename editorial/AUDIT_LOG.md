@@ -991,6 +991,40 @@ commit sequence.
 
 ---
 
+## 2026-09-23 (supplemental) — WSISD $1.1528 and FWISD $1.029099 adopted: all four corridor ISDs done
+
+- **Trigger:** Operator said "Continue" after the scheduled cycle's summary — deeper dig
+  on the same adoption-watch item.
+### Research
+Found Tarrant County's official Truth-in-Taxation summary
+(tarrantcountytx.gov /tax/property-tax/truth-in-taxation-summary.html), which renders
+"Adopted Tax Rate" values inline — solving the WSISD PDF-only problem from the morning
+run. VERIFIED there: **White Settlement ISD 2026 adopted $1.152800** (M&O $0.6928 + I&S
+$0.46; down $0.0541 from $1.2069 — the corridor's largest school-district cut) and
+**Fort Worth ISD 2026 adopted $1.029099** (M&O $0.7869 + I&S $0.242199; flat). Tarrant
+County / JPS hospital district / TCC rows show empty 2026 cells (not yet adopted).
+### Produced
+- data/property-tax adoption watch: both districts added with source link; "completes
+  all four corridor school districts for 2026–27, every one flat or down"; pending list
+  narrowed to county-side slices + Parker County (still proposed $0.284719) + Aledo and
+  Hudson Oaks cities.
+- buy/homestead-exemption EN/ES (generator): adoption-watch paragraph extended with both
+  adopted rates and exemption values (WSISD ~$1,614 at $140K / ~$2,306 at $200K; FWISD
+  ~$1,441 / ~$2,058); verified date rolled to 2026-09-23. Main table stays on 2025–26
+  rates until Parker-side figures are cross-confirmed on the official county record.
+### Build + gate
+Ten gates GATE PASSED, third pass idempotent no-op; URL auditor green; validator 311/0.
+### Deployment + verification + IndexNow
+Commit 9e06111 pushed; Netlify deploy 6ab44612 "Deploy is ready"; live checks: all three
+pages 200 with $1.1528 and $1.029099 present, 404 handling intact; IndexNow 200 for
+/data/property-tax, /buy/homestead-exemption, /es/comprar/exencion-homestead.
+### Next recommended action
+- Parker County adoption + Tarrant county-side slices (county/JPS/TCC) are now the only
+  blockers for rolling full 2026–27 stacks into wfl-data.js and the homestead main table.
+- Re-check Aledo & Hudson Oaks city adoptions; October month-roll due 10-01.
+
+---
+
 ## Entry template
 
 ```
