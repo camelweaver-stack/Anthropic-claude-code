@@ -27,7 +27,7 @@ window.WFL = {
   "expandedN": 11
  },
  "mortgage": {
-  "note": "30-yr fixed near 6.75% \u00b7 5% down \u00b7 verified Jul 2026"
+  "note": "30-yr fixed near 6.95% \u00b7 5% down \u00b7 verified Sep 2026 (Freddie Mac PMMS week of Sep 17)"
  },
  "bah": {
   "effective": "January 1, 2026",

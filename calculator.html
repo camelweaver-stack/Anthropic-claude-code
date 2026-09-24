@@ -27,7 +27,7 @@
 <section class="hero hero-inner">
   <span class="eyebrow">30 SECONDS · NO SIGN-UP · NO CREDIT PULL</span>
   <h1>What does your rent actually buy?</h1>
-<p class="byline" data-trust="v1">Published by <a href="/">West FW Living</a>, an independent publication of Anastasia Weaver Media · Updated <time datetime="2026-09-06">September 6, 2026</time></p>
+<p class="byline" data-trust="v1">Published by <a href="/">West FW Living</a>, an independent publication of Anastasia Weaver Media · Updated <time datetime="2026-09-24">September 24, 2026</time></p>
 <p class="tool-note" style="margin-top:6px">Want the full version? <a href="/buy/rent-vs-buy">Rent-vs-buy with real tracked rents and actual local tax rates</a> — or check <a href="/builder-report/2026-08">what builders are giving away this month</a>.</p>
   <p class="lede">Slide to your rent. The math includes Texas property taxes (they're real out here) and insurance — not just the loan. This is an estimate to start a conversation, not a loan offer.</p>
 
@@ -38,13 +38,13 @@
       <span class="finevalue" id="rentVal">$1,650</span>
     </div>
     <p style="margin:14px 0 4px;font-size:.9rem;color:var(--ink-soft)">That payment supports roughly…</p>
-    <div class="calc-result" id="price" aria-live="polite">≈ $195,000</div>
+    <div class="calc-result" id="price" aria-live="polite">≈ $200,000</div>
     <div class="receipt" style="max-width:100%">
       <div class="row"><span>Principal &amp; interest</span><span id="pi">$—</span></div>
       <div class="row"><span>Property tax (est. 2.1%/yr)</span><span id="tax">$—</span></div>
       <div class="row"><span>Home insurance (est.)</span><span id="ins">$—</span></div>
       <div class="row total"><span>Total monthly</span><span id="total">$—</span></div>
-      <div class="stamp" id="ratestamp">assumes 30-yr fixed near 6.75% · 5% down · verified Jul 2026</div>
+      <div class="stamp" id="ratestamp">assumes 30-yr fixed near 6.95% · 5% down · verified Sep 2026</div>
     </div>
     <div class="btn-row">
       <a class="btn" id="smslink" href="sms:+16822331426">Text this number → join the early list</a>
@@ -95,7 +95,7 @@
 
 <script>
 // ---- CONFIG: update RATE monthly; ratestamp text too ----
-const RATE = 0.0675;         // 30-yr fixed, verified 2026-07-30
+const RATE = 0.0695;         // 30-yr fixed, Freddie Mac PMMS week of 2026-09-17, verified 2026-09-24
 const TAX_RATE = 0.021;      // effective TX property tax est.
 const INS_MONTHLY_PER_100K = 21; // insurance est. $/mo per $100K value
 const DOWN = 0.05;           // 5% down assumption

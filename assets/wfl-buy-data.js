@@ -4,8 +4,8 @@
 window.WFLBUY = {
  "verified": "July 31, 2026",
  "rates": {
-  "resale30": 6.75,
-  "resaleNote": "30-yr fixed, Freddie Mac PMMS range, verified Jul 2026 \u2014 update monthly with the Builder Report",
+  "resale30": 6.95,
+  "resaleNote": "30-yr fixed, Freddie Mac PMMS week of Sep 17, verified Sep 2026 \u2014 update monthly with the Builder Report",
   "builderAdvertised": 4.99,
   "builderNote": "Lowest widely-advertised builder buydown rates in the corridor, spring\u2013summer 2026, via builders' preferred lenders; terms and qualification vary"
  },
