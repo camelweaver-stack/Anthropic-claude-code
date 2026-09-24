@@ -1025,6 +1025,38 @@ pages 200 with $1.1528 and $1.029099 present, 404 handling intact; IndexNow 200 
 
 ---
 
+## 2026-09-24 — Adoption watch: no new adoptions; Aledo city proposed rate added (labeled proposed)
+
+- **Trigger:** Operator "Continue" — next pass on the pending adoption-watch units.
+### Research (all official/first-party checks)
+- Parker County: financial-transparency page (parkercountytx.gov/155) still lists only
+  proposed FY 2026–27 documents; adopted rates shown remain 2025–26 ($0.285070 total).
+  Hearing was held 09-22 but no adoption posted. A Weatherford Democrat "Parker County
+  adopts tax rate decrease" headline turned out to be from **2018** — rejected as a source.
+- Tarrant County Truth-in-Taxation summary: Tarrant County, JPS, TCC 2026 cells still empty.
+- City of Aledo: finance page posts a **proposed** FY 26–27 rate of $0.352415
+  (M&O $0.267298 + I&S $0.085117), a shade under the current adopted $0.355353. NEW —
+  publishable labeled proposed.
+- Hudson Oaks: nothing published/findable.
+### Produced
+data/property-tax adoption watch only: as-of rolled to 09-24; Parker County sentence now
+carries the proposed components and post-hearing status (hearing held, adoption not yet
+on the official record); Aledo city proposed rate added with source link, marked
+"proposed only, pending council adoption." No adopted-rate claims added; no table changes.
+### Build + gate
+Ten gates GATE PASSED ×2 then idempotent no-op; URL auditor green; validator 311/0.
+### Deployment + verification + IndexNow
+Commit f094575; Netlify deploy 6ab4eb41 "Deploy is ready"; live check 200 with $0.352415
+and the 09-24 date present; IndexNow 200 for /data/property-tax.
+### Next recommended action
+- Parker County adoption should post to the transparency page within days — check the
+  DocumentCenter for an adopted-budget/tax-rate order; that plus Tarrant county-side
+  slices remain the gate for the full 2026–27 stack roll.
+- Aledo city council adoption (from $0.352415 proposed); Hudson Oaks; October month-roll
+  due 10-01; operator still owes GSC coverage export + NETLIFY_AUTH_TOKEN secret.
+
+---
+
 ## Entry template
 
 ```
