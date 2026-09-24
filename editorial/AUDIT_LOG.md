@@ -1057,6 +1057,41 @@ and the 09-24 date present; IndexNow 200 for /data/property-tax.
 
 ---
 
+## 2026-09-24 (scheduled firing) — Mortgage-rate roll to 6.95% (PMMS), sitewide
+
+- **Trigger:** Daily Routine fired 12:04 UTC. The adoption watch had already been checked
+  and shipped earlier today (f094575 / deploy 6ab4eb41), so this run took the staleness
+  scan's next finding.
+### Staleness scan
+Oldest live stamp on the site: calculator.html `RATE = 0.0675 // verified 2026-07-30`,
+whose own config comment says "update RATE monthly" — 8 weeks overdue. Same stale rate in
+assets/wfl-buy-data.js (`resale30: 6.75`, verified Jul 31, feeds the rent-vs-buy /
+affordability / rent-or-buy town pages / VA-loans cluster) and wfl-data.js mortgage note.
+Community-page "August 2026" verification stamps and the August rent report's ~6.75%
+reference are contemporaneous archives/labels — left alone. Weatherford College guide
+already freshness-passed 09-06.
+### Research
+Freddie Mac PMMS week of 2026-09-17: 30-yr fixed **6.95%** (up from 6.76%, highest since
+January 2025) — confirmed on freddiemac.com/pmms AND Freddie Mac's own press release.
+### Produced
+Rate rolled to 6.95% in calculator.html (RATE, stamp, initial $195K→$200K to match the
+formula at $1,650), es/calculadora (heuristic recomputed from the EN formula: $11,700→
+$11,500 per $100, divisor 8.5→8.7, meta/lede/JS), es/index card, wfl-buy-data.js
+resale30 + PMMS-dated note, wfl-data.js mortgage note. Builder buydown/incentive figures
+untouched (not re-verified). Updated dates rolled to 09-24 on both calculator pages.
+### Build + gate
+Ten gates GATE PASSED ×2 then idempotent no-op; URL auditor green; validator 311/0.
+### Deployment + verification + IndexNow
+Commit 67a2e02; deploy 6ab51374 "Deploy is ready"; live: calculator, es/calculadora,
+es/, and the served wfl-buy-data.js all show 6.95/11,500 with zero stale strings;
+IndexNow 200 for the two calculator pages, es/, rent-vs-buy, affordability-calculator.
+### Next recommended action
+- Parker County adoption + Tarrant county-side slices (stack-roll gate); Aledo city
+  ($0.352415 proposed) and Hudson Oaks; October month-roll due 10-01 — roll `resale30`
+  again with the Builder Report per its note.
+
+---
+
 ## Entry template
 
 ```
