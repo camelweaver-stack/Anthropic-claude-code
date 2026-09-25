@@ -1125,6 +1125,41 @@ paragraph and 09-25 date; IndexNow 200 for both URLs.
 
 ---
 
+## 2026-09-25 (supplemental) — Growth directive: compare-cluster expansion, tranche 1
+
+- **Trigger:** Operator: "We need this site to be more, have more. It needs to bring in
+  more traffic."
+### Strategy (grounded in reports/seo/2026-08-28-opportunities.md)
+Google ranks this site's compare cluster fastest (pos 2–16 on near-zero inbound links)
+while generic national topics sit at pos 68–100 (testing, not ranking). Growth therefore
+= expand proven clusters + widen the town footprint, never thin filler. Scored expansion
+backlog added to the calendar (#16 compare build-out, #17 WISD campus files, #18 Brock →
+Azle/Springtown town expansion, #19 cost-of-living file, #20 operator measurement items).
+### Produced (tranche 1)
+Two new comparison pages, template-faithful (Article+FAQPage JSON-LD, hardened form,
+canonical, provenance note), every figure from the site's own verified layer:
+- /compare/willow-park-vs-weatherford — price-vs-proximity ladder (2.091% vs 1.902%
+  2024–25 stacks; Aledo ISD seam vs WISD 11 campuses; District/Crown Pointe vs courthouse
+  square; commute delta) + labeled 2026–27 adoption update.
+- /compare/hudson-oaks-vs-weatherford — shared-WISD matchup: ~1.32% median effective vs
+  1.902% published stack; lightest line vs lowest entry prices + adoption note.
+Wired: compare hub link list + JS pair map; inbound links from both towns' vibe files,
+rent-or-buy-willow-park, rent-or-buy-weatherford. Site now 313 pages / sitemap 307.
+### Build + gate
+Ten gates GATE PASSED ×2 then idempotent no-op; URL auditor green; validator 313/0.
+### Deployment + verification + IndexNow
+Commit 242c44b; deploy 6ab6f36f "Deploy is ready"; both pages live 200 with canonical,
+table and adoption paragraph; .html forms 301 to canonical; both in sitemap; IndexNow 200
+(both URLs + /compare/).
+### Next recommended action
+- Tranche 2 (#17): WISD campus files off the TEA 2026 spreadsheet via the schools
+  generator. Then #18 Brock town coverage (its ISD compare already ranks pos 3).
+- OPERATOR: request GSC indexing for the two new URLs; fresh GSC coverage/performance
+  export (owed since 09-22) to re-score the queue; NETLIFY_AUTH_TOKEN secret; decide on
+  GA4 (CSP already allows it).
+
+---
+
 ## Entry template
 
 ```
