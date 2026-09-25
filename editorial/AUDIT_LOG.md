@@ -1092,6 +1092,39 @@ IndexNow 200 for the two calculator pages, es/, rent-vs-buy, affordability-calcu
 
 ---
 
+## 2026-09-25 — Daily cycle: comparison-page freshness pass (backlog #15)
+
+- **Trigger:** Daily Routine fired 12:04 UTC.
+### Staleness scan + adoption watch
+Parker County: transparency page still proposed-only (new "Taxpayer Impact Statement"
+doc posted, still no adopted budget; two more Democrat "approved" headlines checked and
+both dated to prior years — rejected). Tarrant county-side 2026 cells (county/JPS/TCC)
+still empty. Nothing new to adopt-watch today.
+### Selection
+Backlog #15 — Tier A/B defend-and-push on the two already-ranking comparison pages
+(/compare/willow-park-vs-hudson-oaks GSC pos ~2; /compare/aledo-vs-weatherford pos ~8.5),
+which still showed only 2024–25 stacks with no mention of the 2026–27 adoption wave.
+### Produced
+One clearly labeled "2026–27 adoption update (verified September 25, 2026)" paragraph
+under each comparison table, built only from facts already verified on-site (Willow Park
+city $0.429041; WISD $0.9342; City of Weatherford flat; Aledo ISD $1.1775; City of Aledo
+$0.352415 labeled proposed; pending units named), each linking to the tax table's
+adoption watch. Table figures + FAQ schema untouched (no mixed-year stacks). Bylines
+rolled to 09-25. Inbound-link audit: both pages already have 8+ referrers incl. hubs and
+data/property-tax — no new links needed.
+### Build + gate
+Ten gates GATE PASSED ×2 then idempotent no-op; URL auditor green; validator 311/0.
+### Deployment + verification + IndexNow
+Commit 171ceed; deploy 6ab66460 "Deploy is ready"; both pages live 200 with the update
+paragraph and 09-25 date; IndexNow 200 for both URLs.
+### Next recommended action
+- Parker County adoption + Tarrant county-side slices (stack-roll gate); Aledo city and
+  Hudson Oaks adoptions; October month-roll due 10-01 (specials + rent report + builder
+  check + resale30 refresh per its note); operator still owes GSC coverage export +
+  NETLIFY_AUTH_TOKEN secret.
+
+---
+
 ## Entry template
 
 ```
