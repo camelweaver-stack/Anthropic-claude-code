@@ -1160,6 +1160,37 @@ table and adoption paragraph; .html forms 301 to canonical; both in sitemap; Ind
 
 ---
 
+## 2026-09-26 — Daily cycle (growth tranche 2): ten Weatherford ISD campus files
+
+- **Trigger:** Daily Routine fired 12:04 UTC; growth mode per operator directive 09-25.
+### Adoption watch
+Parker County transparency page still proposed-only (now also posts Taxpayer Impact
+Statement, Elected Officials Salaries Notice, Notice of Estimated Taxes — all still
+pre-adoption). No publish from the watch today.
+### Selection
+Backlog #17. Evidence: Aledo ISD campus pages rank pos 7.6–9.3 in GSC with near-zero
+support; WISD had a hub but no campus pages despite the district's C→B 2026 story.
+### Produced
+Ten campus pages under /schools/weatherford-isd/ (WHS, Tison, Hall, Mary Martin, Austin,
+Ikard, Seguin, Wright, Curtis, Crockett) on the Aledo campus template: TEA 2026-vs-2025
+result per campus (from the on-site TEA data), campus-specific role notes (Tison D→B +14
+— the corridor's biggest jump; Mary Martin as the Hudson Oaks seam campus; Crockett Pre-K
+hub; Curtis −15 flagged with letter-grade caveats), written-zone-verification rule via
+wisd.net, district tax math (published 1.0342% ≈ $1,448 exemption value; adopted $0.9342
+for 2026–27 ≈ $1,308). Addresses from the hub's verified July 2026 directory — zero new
+unverified claims. Hub directory links all ten. Site: 323 pages / sitemap 317.
+### Build + gate
+Ten gates GATE PASSED ×2 then idempotent no-op; URL auditor green; validator 323/0.
+### Deployment + verification + IndexNow
+Commit 390482d; deploy 6ab7b8a1 "Deploy is ready"; all 10 pages live 200, hub links live,
+Tison's TEA line verified in production; IndexNow 200 (hub + 10 URLs).
+### Next recommended action
+- Tranche 3 (#18): Brock town coverage (its ISD compare ranks pos 3 bare). Then #19
+  cost-of-living file. October month-roll due 10-01 (Thursday) — takes precedence.
+- OPERATOR: request GSC indexing for the new URLs; fresh GSC export re-scores the queue.
+
+---
+
 ## Entry template
 
 ```
